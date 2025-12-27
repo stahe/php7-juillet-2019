@@ -1,0 +1,1976 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduction au langage PHP7 par l'exemple.">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/php7-juillet-2019/exercice-dapplication---version-6.html">
+      
+      
+        <link rel="prev" href="exercice-dapplication---version-5.html">
+      
+      
+        <link rel="next" href="exercice-dapplication---version-7.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>14. Exercice d’application – version 6 - Introduction au langage PHP7 par l'exemple</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14-exercice-dapplication-version-6" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-header__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction au langage PHP7 par l'exemple
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              14. Exercice d’application – version 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-nav__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introduction au langage PHP7 par l'exemple
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-au-langage-php-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction au langage PHP 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Installation d&#x27;un environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-bases-de-php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Les bases de PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exercice d&#x27;application – versions 1 et 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-classes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Les classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Les interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-exceptions-et-erreurs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Les exceptions et erreurs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Exercice d&#x27;application – version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-traits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Les Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="applications-en-couches.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Applications en couches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Exercice d’application – version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utilisation-du-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Utilisation du SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Exercice d’application – version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Exercice d’application – version 6
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="exercice-dapplication---version-6.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Exercice d’application – version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#141-installation-du-sgbd-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1. Installation du SGBD PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-activation-de-lextension-pdo-du-sgbd-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2. Activation de l’extension PDO du SGBD PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-administrer-postgresql-avec-loutil-pgadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3. Administrer PostgreSQL avec l’outil [pgAdmin]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-remplissage-de-la-table-tbtranches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4. Remplissage de la table [tbtranches]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-calcul-de-limpot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5. Calcul de l’impôt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-tests-codeception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6. Tests [Codeception]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.6. Tests [Codeception]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1461-test-de-la-couche-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.1. Test de la couche [dao]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1462-test-de-la-couche-metier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6.2. Test de la couche [métier]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Exercice d’application – version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fonctions-reseau.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Fonctions réseau
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="services-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Services web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Exercice d’application – version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Exercice d’application – version 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Exercice d’application – version 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="traitement-de-documents-xml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Traitement de documents XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Exercice d’application – version 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Exercice d’application – version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercice-dapplication---version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Exercice d’application – version 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="14-exercice-dapplication-version-6">14. Exercice d’application – version 6</h1>
+<p><img src="images/100000000000033900000176F745DD56.png" style="width:7.64cm;height:3.462cm;" alt="Image" /></p>
+<p>Nous venons d’implémenter la structure en couches suivante :</p>
+<p><img src="images/10000000000006AB0000019213DCB83F.png" style="width:13.551cm;height:3.192cm;" alt="Image" /></p>
+<p>Le SGBD utilisé dans les exemples était MySQL. Au paragraphe <a href="#_Architecture"><u><u>lien</u></u></a> nous avions remarqué que rien dans la classe implémentant la couche <strong>[dao]</strong> ne laissait supposer qu’on utilisait un SGBD particulier. C’est ce que nous allons vérifier maintenant en utilisant un autre SGBD, le SGBD PostgreSQL. L’architecture en couches devient la suivante :</p>
+<p><img src="images/10000000000006CE0000018D52E71EDC.png" style="width:13.831cm;height:3.151cm;" alt="Image" /></p>
+<h2 id="141-installation-du-sgbd-postgresql">14.1. Installation du  SGBD PostgreSQL</h2>
+<p>Les distributions du SGBD PostgreSQL sont disponibles à l’URL <strong>[https://www.postgresql.org/download/]</strong> (mai 2019). Nous montrons l’installation de la version pour Windows 64 bits :</p>
+<p><img src="images/1000000000000769000001BF973D6CB8.png" style="width:15.061cm;height:3.551cm;" alt="Image" /></p>
+<p><img src="images/10000000000009120000010F66A7F239.png" style="width:18.432cm;height:2.151cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[1-4]</strong>, on télécharge l’installateur du SGBD ;
+On lance l’installateur téléchargé :</li>
+</ul>
+<p><img src="images/10000000000007D40000032285ACD5D7.png" style="width:15.911cm;height:6.37cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[6]</strong>, indiquez un dossier d’installation ;</li>
+</ul>
+<p><img src="images/10000000000007D00000030C5349EB67.png" style="width:15.881cm;height:6.19cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[8]</strong>, l’option <strong>[Stack Builder]</strong> est inutile pour ce qu’on veut faire ici ;</li>
+<li>en <strong>[10]</strong>, laissez la valeur qui vous sera présentée ;</li>
+</ul>
+<p><img src="images/10000000000007D30000032A461AD3B1.png" style="width:15.9cm;height:6.43cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[12-13]</strong>, on a mis ici le mot de passe <strong>[root]</strong>. Ce sera le mot de passe de l’administrateur du SGBD qui s’appelle <strong>[postgres]</strong>. PostgreSQL l’appelle également le super-utilisateur ;</li>
+<li>en <strong>[15]</strong>, laissez la valeur par défaut : c’est le port d’écoute du SGBD ;</li>
+</ul>
+<p><img src="images/10000000000007DB00000329DCE6E296.png" style="width:15.96cm;height:6.421cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[17]</strong>, laissez la valeur par défaut ;</li>
+<li>en <strong>[19]</strong>, le résumé de la configuration de l’installation ;</li>
+</ul>
+<p><img src="images/10000000000007DA0000031222A77818.png" style="width:15.952cm;height:6.241cm;" alt="Image" /></p>
+<p><img src="images/10000000000006840000033F938D03A7.png" style="width:15.451cm;height:7.7cm;" alt="Image" /></p>
+<p>Sous windows, le SGBD PostgreSQL est installé comme un service windows lancé automatiquement. La plupart du temps ce n’est pas souhaitable. Nous allons modifier cette configuration. Tapez <strong>[services]</strong> dans la barre de recherche de Windows <strong>[24-26]</strong> :</p>
+<p><img src="images/1000000000000772000002F0F6A10596.png" style="width:15.131cm;height:5.972cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[29]</strong>, on voit que le service du SGBD PostgreSQL est en mode automatique. On change cela en accédant aux propriétés du service <strong>[30]</strong> :</li>
+</ul>
+<p><img src="images/10000000000007A3000003000B13CB94.png" style="width:15.521cm;height:6.1cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[31-32]</strong>, mettez le démarrage en mode manuel ;</li>
+<li>en <strong>[33]</strong>, arrêtez le service ;
+Lorsque vous voudrez démarrer manuellement le SGBD, revenez à l’application <strong>[services]</strong>, cliquez droit sur le service <strong>[postgresql]</strong> (34) et lancez le (35).</li>
+</ul>
+<h2 id="142-activation-de-lextension-pdo-du-sgbd-postgresql">14.2. Activation de l’extension PDO du SGBD PostgreSQL</h2>
+<p>Nous allons modifier le fichier <strong>[php.ini]</strong> qui configure PHP (cf paragraphe <a href="#_Configuration_de_PHP"><u><u>lien</u></u></a>) :</p>
+<p><img src="images/10000000000007A40000042DC1FB1A3C.png" style="width:15.53cm;height:8.482cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[2]</strong>, vérifiez que l’extension PDO de PostgreSQL est activée. Ceci fait, sauvegardez la modification puis relancez Laragon pour être sûrs que la modification va être prise en compte. Ensuite vérifiez la configuration de PHP directement à partir de Laragon <strong>[3-5]</strong>.</li>
+</ul>
+<h2 id="143-administrer-postgresql-avec-loutil-pgadmin">14.3. Administrer PostgreSQL avec l’outil [pgAdmin]</h2>
+<p>Lancez le service windows du SGBD PostgreSQL (cf paragraphe <a href="#_Installation_du_"><u><u>lien</u></u></a>). Puis de la même façon que vous avez lancé l’outil <strong>[services]</strong>, lancez l’outil <strong>[pgadmin]</strong> qui permet d’administrer le SGBD PostgreSQL <strong>[1-3]</strong> :</p>
+<p><img src="images/10000000000006600000035818B2CB82.png" style="width:12.951cm;height:6.79cm;" alt="Image" /></p>
+<p>Il est possible qu’à un moment donné on vous demande le mot de passe du super-utilisateur. Celui-ci s’appelle <strong>[postgres]</strong>. Vous avez défini son mot de passe lors de l’installation du SGBD. Dans ce document, nous avons donné le mot de passe <strong>[root]</strong> au super-utilisateur lors de l’installation.</p>
+<ul>
+<li>en <strong>[4]</strong>, <strong>[pgAdmin]</strong> est une application web ;</li>
+<li>en <strong>[5]</strong>, la liste des serveurs PostgreSQL détectés par <strong>[pgAdmin]</strong>, ici 1 ;</li>
+<li>en <strong>[6]</strong>, le serveur PostgreSQL que nous avons lancé ;</li>
+<li>en <strong>[7]</strong>, les bases de données du SGBD, ici 1 ;</li>
+<li>en <strong>[8]</strong>, la base <strong>[postgresql]</strong> est gérée par le super-utilisateur <strong>[postgres]</strong> ;
+Créons tout d’abord un utilisateur <strong>[admimpots]</strong> avec le mot de passe <strong>[mdpimpots]</strong> :</li>
+</ul>
+<p><img src="images/10000000000007C30000016064A704A0.png" style="width:15.77cm;height:2.791cm;" alt="Image" /></p>
+<p><img src="images/10000000000006B7000002C2C2023F5E.png" style="width:13.641cm;height:5.601cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[17]</strong>, on a mis <strong>[mdpimpots]</strong> ;</li>
+</ul>
+<p><img src="images/1000000000000718000002119833D399.png" style="width:14.41cm;height:4.201cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[21]</strong>, le code SQL que va émettre l’outil <strong>[pgAdmin]</strong> vers le SGBD PostgreSQL. C’est une façon d’apprendre le langage SQL propriétaire de PostgreSQL ;</li>
+<li>en <strong>[22]</strong>, après validation de l’assistant <strong>[Save]</strong>, l’utilisateur <strong>[admimpots]</strong> a été créé ;
+Maintenant nous créons la base <strong>[dbimpots-2019]</strong> :</li>
+</ul>
+<p><img src="images/10000000000006DB0000018BF44756B9.png" style="width:13.93cm;height:3.13cm;" alt="Image" /></p>
+<p>On clique droit sur <strong>[23]</strong>, puis <strong>[24-25]</strong> pour créer une nouvelle base de données. Dans l’onglet <strong>[26]</strong>, on définit le nom de la base <strong>[27]</strong> et son propriétaire <strong>[admimpots]</strong> <strong>[28]</strong>.</p>
+<p><img src="images/100000000000066D00000277A309E941.png" style="width:13.061cm;height:5.001cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[30]</strong>, le code SQL de création de la base ;</li>
+<li>en <strong>[31]</strong>, après validation de l’assistant <strong>[Save]</strong>, la base <strong>[dbimpots-2019]</strong> est créée ;
+Maintenant, nous allons créer la table <strong>[tbtranches]</strong> avec les colonnes <strong>[id, limites, coeffr, coeffn]</strong>. Une particularité de PostgreSQL est que les noms de colonnes sont sensibles à la casse (majuscules / minuscules) ce qui n’est habituellement pas le cas avec les autres SGBD. Ainsi avec MySQL, l’ordre <strong>[select limites, coeffR, coeffN from tbtranches]</strong> fonctionnera même si les colonnes réelles de la table <strong>[tbtranches]</strong> sont <strong>[LIMITES, COEFFR, COEFFN]</strong>. Avec PostgreSQL, l’ordre SQL ne fonctionnera pas. On pourrait alors écrire <strong>[select LIMITES, COEFFR, COEFFN from tbtranches]</strong> mais ça ne fonctionnera toujours pas, car PostgreSQL va exécuter l’ordre <strong>[select limites, coeffr, coeffn from tbtranches]</strong> : il passe par défaut les noms des colonnes en minuscules. Pour qu’il ne fasse pas cela, il faut écrire : <strong>[select &quot;LIMITES&quot;, &quot;COEFFR&quot;, &quot;COEFFN&quot; from tbtranches]</strong>, ç-à-d qu’il faut protéger les noms des colonnes avec des guillemets. Pour ces raisons, nous allons donner aux colonnes des noms en minuscules. Les noms des objets d’une base de données peuvent être une source d’incompatibilité entre SGBD, certains noms étant des mots réservés dans certains SGBD et pas dans d’autres.</li>
+</ul>
+<p>Nous créons la table <strong>[tbtranches]</strong> :</p>
+<p><img src="images/100000000000079A0000048B433655B5.png" style="width:15.451cm;height:9.231cm;" alt="Image" /></p>
+<ul>
+<li>utilisez le bouton <strong>[40]</strong> pour créer des colonnes ;</li>
+</ul>
+<p><img src="images/100000000000057D000002F44236F3AC.png" style="width:11.15cm;height:6.002cm;" alt="Image" /></p>
+<p><img src="images/100000000000072A000002AC435E99B4.png" style="width:14.589cm;height:5.44cm;" alt="Image" /></p>
+<ul>
+<li>après avoir terminé l’assistant de création par <strong>[Save]</strong>, la table <strong>[tbtranches]</strong> est créée <strong>[52-53]</strong> ;
+Il nous faut indiquer au SGBD qu’il doit lui-même générer la clé primaire <strong>[id]</strong> lors de l’insertion d’une ligne dans la table :</li>
+</ul>
+<p><img src="images/1000000000000652000002E49E6050ED.png" style="width:12.84cm;height:5.871cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[56]</strong> on accède aux propriétés de la clé primaire <strong>[id]</strong> ;</li>
+<li>en <strong>[59]</strong>, on indique que la colonne est de type <strong>[Identity]</strong>. Cela va entraîner que le SGBD va générer les valeurs de la clé primaire ;</li>
+</ul>
+<p><img src="images/10000000000003E00000015718B80DB0.png" style="width:7.871cm;height:2.721cm;" alt="Image" /></p>
+<ul>
+<li>en <strong>[62]</strong>, le code SQL généré pour cette opération ;
+La table <strong>[tbtranches]</strong> est désormais prête.</li>
+</ul>
+<p>Nous refaisons les mêmes opérations pour créer la table <strong>[tbconstantes]</strong>. Nous donnons le résultat à obtenir :</p>
+<p><img src="images/1000000000000679000003877ED3FC08.png" style="width:13.151cm;height:7.171cm;" alt="Image" /></p>
+<p><img src="images/100000000000068D00000522254023EE.png" style="width:13.311cm;height:10.431cm;" alt="Image" /></p>
+<p><img src="images/100000000000064F00000379713C3E1E.png" style="width:12.821cm;height:7.062cm;" alt="Image" /></p>
+<p>La base <strong>[dbimpots-2019]</strong> est désormais prête. Nous allons la remplir avec des données.</p>
+<p>Comme nous l’avons fait avec MySQL, il est possible d’exporter la base de données <strong>[dbimpots-2019]</strong> dans un fichier SQL. On peut ensuite importer ce fichier SQL pour recréer la base si on l’a perdue ou détériorée. Nous n’exporterons ici que la structure de la base et non ses données :</p>
+<p><img src="images/1000000000000797000002EF9E7E56EE.png" style="width:15.421cm;height:5.961cm;" alt="Image" /></p>
+<p><img src="images/10000000000004AF000001CF3AA4160E.png" style="width:9.52cm;height:3.671cm;" alt="Image" /></p>
+<p>Le fichier généré est le suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-0-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-0-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-0-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-0-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-0-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-0-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-0-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-0-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-0-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-0-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-0-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-0-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-0-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-0-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-0-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-0-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-0-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-0-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-0-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-0-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-0-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-0-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-0-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-0-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-0-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-0-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-0-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-0-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-0-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-0-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-0-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-0-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-0-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-0-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-0-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-0-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-0-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-0-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-0-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span>
+<span class="normal"><a href="#__codelineno-0-113">113</a></span>
+<span class="normal"><a href="#__codelineno-0-114">114</a></span>
+<span class="normal"><a href="#__codelineno-0-115">115</a></span>
+<span class="normal"><a href="#__codelineno-0-116">116</a></span>
+<span class="normal"><a href="#__codelineno-0-117">117</a></span>
+<span class="normal"><a href="#__codelineno-0-118">118</a></span>
+<span class="normal"><a href="#__codelineno-0-119">119</a></span>
+<span class="normal"><a href="#__codelineno-0-120">120</a></span>
+<span class="normal"><a href="#__codelineno-0-121">121</a></span>
+<span class="normal"><a href="#__codelineno-0-122">122</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="x">--</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="x">-- PostgreSQL database dump</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="x">--</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="x">-- Dumped from database version 11.2</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="x">-- Dumped by pg_dump version 11.2</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="x">-- Started on 2019-07-04 08:20:31</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="x">SET statement_timeout = 0;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="x">SET lock_timeout = 0;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="x">SET idle_in_transaction_session_timeout = 0;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="x">SET client_encoding = &#39;UTF8&#39;;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="x">SET standard_conforming_strings = on;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="x">SELECT pg_catalog.set_config(&#39;search_path&#39;, &#39;&#39;, false);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="x">SET check_function_bodies = false;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="x">SET client_min_messages = warning;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="x">SET row_security = off;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="x">SET default_tablespace = &#39;&#39;;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="x">SET default_with_oids = false;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="x">--</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="x">-- TOC entry 198 (class 1259 OID 16408)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="x">-- Name: tbconstantes; Type: TABLE; Schema: public; Owner: postgres</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="x">--</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="x">CREATE TABLE public.tbconstantes (</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="x">    plafond_qf_demi_part double precision NOT NULL,</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="x">    id integer NOT NULL,</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="x">    plafond_revenus_celibataire_pour_reduction double precision NOT NULL,</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="x">    plafond_revenus_couple_pour_reduction double precision NOT NULL,</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="x">    valeur_reduc_demi_part double precision NOT NULL,</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="x">    plafond_decote_celibataire double precision NOT NULL,</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="x">    plafond_decote_couple double precision NOT NULL,</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="x">    plafond_impot_celibataire_pour_decote double precision NOT NULL,</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="x">    plafond_impot_couple_pour_decote double precision NOT NULL,</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="x">    abattement_dix_pourcent_max double precision NOT NULL,</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="x">    abattement_dix_pourcent_min double precision NOT NULL</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="x">);</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="x">ALTER TABLE public.tbconstantes OWNER TO postgres;</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="x">--</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="x">-- TOC entry 199 (class 1259 OID 16411)</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="x">-- Name: tbconstantes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="x">--</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="x">ALTER TABLE public.tbconstantes ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="x">    SEQUENCE NAME public.tbconstantes_id_seq</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="x">    START WITH 1</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="x">    INCREMENT BY 1</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="x">    NO MINVALUE</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="x">    NO MAXVALUE</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="x">    CACHE 1</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="x">);</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="x">--</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="x">-- TOC entry 196 (class 1259 OID 16399)</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="x">-- Name: tbtranches; Type: TABLE; Schema: public; Owner: admimpots</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="x">--</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="x">CREATE TABLE public.tbtranches (</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="x">    limites double precision NOT NULL,</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="x">    id integer NOT NULL,</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="x">    coeffr double precision NOT NULL,</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="x">    coeffn double precision NOT NULL</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="x">);</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="x">ALTER TABLE public.tbtranches OWNER TO admimpots;</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="x">--</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="x">-- TOC entry 197 (class 1259 OID 16404)</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="x">-- Name: tbimpots_id_seq; Type: SEQUENCE; Schema: public; Owner: admimpots</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="x">--</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="x">ALTER TABLE public.tbtranches ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="x">    SEQUENCE NAME public.tbimpots_id_seq</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="x">    START WITH 1</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="x">    INCREMENT BY 1</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="x">    NO MINVALUE</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="x">    NO MAXVALUE</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="x">    CACHE 1</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="x">);</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="x">--</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="x">-- TOC entry 2694 (class 2606 OID 16429)</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="x">-- Name: tbconstantes tbconstantes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="x">--</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="x">ALTER TABLE ONLY public.tbconstantes</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="x">    ADD CONSTRAINT tbconstantes_pkey PRIMARY KEY (id);</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="x">--</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="x">-- TOC entry 2692 (class 2606 OID 16403)</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="x">-- Name: tbtranches tbimpots_pkey; Type: CONSTRAINT; Schema: public; Owner: admimpots</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="x">--</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="x">ALTER TABLE ONLY public.tbtranches</span>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="x">    ADD CONSTRAINT tbimpots_pkey PRIMARY KEY (id);</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a><span class="x">--</span>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a><span class="x">-- TOC entry 2821 (class 0 OID 0)</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="x">-- Dependencies: 198</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="x">-- Name: TABLE tbconstantes; Type: ACL; Schema: public; Owner: postgres</span>
+<a id="__codelineno-0-113" name="__codelineno-0-113"></a><span class="x">--</span>
+<a id="__codelineno-0-114" name="__codelineno-0-114"></a>
+<a id="__codelineno-0-115" name="__codelineno-0-115"></a><span class="x">GRANT ALL ON TABLE public.tbconstantes TO admimpots;</span>
+<a id="__codelineno-0-116" name="__codelineno-0-116"></a>
+<a id="__codelineno-0-117" name="__codelineno-0-117"></a>
+<a id="__codelineno-0-118" name="__codelineno-0-118"></a><span class="x">-- Completed on 2019-07-04 08:20:32</span>
+<a id="__codelineno-0-119" name="__codelineno-0-119"></a>
+<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="x">--</span>
+<a id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="x">-- PostgreSQL database dump complete</span>
+<a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="x">--</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="144-remplissage-de-la-table-tbtranches">14.4. Remplissage de la table [tbtranches]</h2>
+<p>Nous avons déjà fait ce travail avec le SGBD MySQL au paragraphe <a href="#_Remplissage_de_base"><u><u>lien</u></u></a>. Il nous suffit de modifier le fichier <strong>[database.json]</strong> qui décrit la base de données :</p>
+<p><img src="images/100000000000034C000001212ADD794F.png" style="width:7.82cm;height:2.68cm;" alt="Image" /></p>
+<p>Le fichier <strong>[database.json]</strong> devient le suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="x">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="x">    &quot;dsn&quot;: &quot;pgsql:host=localhost;dbname=dbimpots-2019&quot;,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="x">    &quot;id&quot;: &quot;admimpots&quot;,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="x">    &quot;pwd&quot;: &quot;mdpimpots&quot;,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="x">    &quot;tableTranches&quot;: &quot;public.tbtranches&quot;,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="x">    &quot;colLimites&quot;: &quot;limites&quot;,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="x">    &quot;colCoeffR&quot;: &quot;coeffr&quot;,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="x">    &quot;colCoeffN&quot;: &quot;coeffn&quot;,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="x">    &quot;tableConstantes&quot;: &quot;public.tbconstantes&quot;,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="x">    &quot;colPlafondQfDemiPart&quot;: &quot;plafond_qf_demi_part&quot;,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="x">    &quot;colPlafondRevenusCelibatairePourReduction&quot;: &quot;plafond_revenus_celibataire_pour_reduction&quot;,</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="x">    &quot;colPlafondRevenusCouplePourReduction&quot;: &quot;plafond_revenus_couple_pour_reduction&quot;,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="x">    &quot;colValeurReducDemiPart&quot;: &quot;valeur_reduc_demi_part&quot;,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="x">    &quot;colPlafondDecoteCelibataire&quot;: &quot;plafond_decote_celibataire&quot;,</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="x">    &quot;colPlafondDecoteCouple&quot;: &quot;plafond_decote_couple&quot;,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="x">    &quot;colPlafondImpotCelibatairePourDecote&quot;: &quot;plafond_impot_celibataire_pour_decote&quot;,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="x">    &quot;colPlafondImpotCouplePourDecote&quot;: &quot;plafond_impot_couple_pour_decote&quot;,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="x">    &quot;colAbattementDixPourcentMax&quot;: &quot;abattement_dix_pourcent_max&quot;,</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="x">    &quot;colAbattementDixPourcentMin&quot;: &quot;abattement_dix_pourcent_min&quot;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="x">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>ligne 2 : le DSN a changé, <strong>[pgsql]</strong> indiquant qu’on a affaire au SGBD Postgres ;</li>
+<li>lignes 5 et 9 : on a précédé le nom des tables par le nom du schéma auquel elles appartiennent <strong>[public]</strong>. Ce n’était pas indispensable puisque que <strong>[public]</strong> est le schéma utilisé par défaut lorsqu’aucun schéma n’est précisé dans le nom de la table ;</li>
+<li>lignes 6-8, 10-19 : les noms des colonnes ont changé ;
+Le script <strong>[MainTransferAdminDataFromJsonFile2PostgresDatabase.php]</strong> de remplissage de la base <strong>[dbimpots-2019]</strong> est le suivant :</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">// gestion des erreurs par PHP</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao4TransferAdminData2Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/DaoTransferAdminDataFromJsonFile2Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="c1">//</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="k">const</span> <span class="no">TAXADMINDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxadmindata.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="c1">//</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="k">try</span> <span class="p">{</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>  <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoTransferAdminDataFromJsonFile2Database</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">,</span> <span class="nx">TAXADMINDATA_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>  <span class="c1">// transfert des données dans la base</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>  <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">transferAdminData2Database</span><span class="p">();</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>  <span class="c1">// on affiche l&#39;erreur</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>  <span class="k">print</span> <span class="s2">&quot;L&#39;erreur suivante s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="p">}</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="c1">// fin</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="k">exit</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Commentaires</strong></p>
+<p>Seules les lignes 12-21 qui chargent les fichiers nécessaires à l’exécution de l’application changent. Elles changent parce que la valeur <strong>[<strong>DIR</strong>]</strong> change : elle désigne désormais le dossier <strong>[version-07/Main]</strong>.</p>
+<p>Lorsqu’on exécute ce script, on obtient le résultat suivant dans la table <strong>[tbtranches]</strong> :</p>
+<p><img src="images/1000000000000775000002B0FE71B410.png" style="width:15.151cm;height:5.46cm;" alt="Image" /></p>
+<ul>
+<li>on clique droit sur <strong>[1]</strong>, puis ensuite <strong>[2-3]</strong> ;</li>
+<li>en <strong>[4]</strong>, on a bien les données des tranches d’impôts ;
+On refait la même chose pour la table des constantes <strong>[tbconstantes]</strong> :</li>
+</ul>
+<p><img src="images/100000000000066700000204B8506A3C.png" style="width:13.011cm;height:4.1cm;" alt="Image" /></p>
+<p><img src="images/100000000000063C00000201376D4538.png" style="width:12.671cm;height:4.07cm;" alt="Image" /></p>
+<p><img src="images/1000000000000690000001FFF7A56810.png" style="width:13.341cm;height:4.061cm;" alt="Image" /></p>
+<p>On notera que pour l’exécution du script, l’application Laragon n’a pas besoin d’être active : on n’a besoin ni du serveur Apache, ni du SGBD MySQL. On a seulement besoin du SGBD PostgreSQL dont on a lancé le service windows.</p>
+<h2 id="145-calcul-de-limpot">14.5. Calcul de l’impôt</h2>
+<p><img src="images/10000000000006AF00000194B78C4923.png" style="width:13.581cm;height:3.211cm;" alt="Image" /></p>
+<p>Les couches <strong>[dao]</strong> (3) et <strong>[métier]</strong> (2) ont déjà été écrites. Nous avons déjà écrit le script principal pour le SGBD MySQL au paragraphe <a href="#_Calcul_de_l’impôt"><u><u>lien</u></u></a>. Il nous suffit de reprendre le script <strong>[MainCalculateImpotsWithTaxAdminDataInMySQLDatabase.php]</strong> et de l’adapter au SGBD PostgreSQL. Il s’appelle désormais <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase.php]</strong> :</p>
+<p><img src="images/100000000000034C000001216153822E.png" style="width:7.82cm;height:2.68cm;" alt="Image" /></p>
+<p>Le script <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase.php]</strong> est le suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">// gestion des erreurs par PHP</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1">//ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Métier/InterfaceMetier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Métier/Metier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1">//</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="k">const</span> <span class="no">TAXADMINDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxadmindata.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="k">const</span> <span class="no">RESULTS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/resultats.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="k">const</span> <span class="no">ERRORS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/errors.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="k">const</span> <span class="no">TAXPAYERSDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxpayersdata.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="k">try</span> <span class="p">{</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>  <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>  <span class="c1">// création de la couche [métier]</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a>  <span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="c1">// calcul de l&#39;impôts en mode batch</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">executeBatchImpots</span><span class="p">(</span><span class="nx">TAXPAYERSDATA_FILENAME</span><span class="p">,</span> <span class="nx">RESULTS_FILENAME</span><span class="p">,</span> <span class="nx">ERRORS_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a>  <span class="c1">// on affiche l&#39;erreur</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a>  <span class="k">print</span> <span class="s2">&quot;Une erreur s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="p">}</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="c1">// fin</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="k">exit</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Commentaires</strong></p>
+<p>Seules les lignes 12-22 qui chargent les fichiers nécessaires à l’exécution de l’application changent. Elles changent parce que la valeur <strong>[<strong>DIR</strong>]</strong> change : elle désigne désormais le dossier <strong>[version-07/Main]</strong>.</p>
+<p><strong>Résultats d’exécution</strong></p>
+<p>Les mêmes que ceux obtenus dans les versions précédentes.</p>
+<h2 id="146-tests-codeception">14.6. Tests [Codeception]</h2>
+<p>Comme pour les versions précédentes, nous validons cette version avec des tests <strong>[Codeception]</strong> :</p>
+<p><img src="images/10000000000001AC0000020FC3FE17BA.png" style="width:3.961cm;height:4.881cm;" alt="Image" /></p>
+<h3 id="1461-test-de-la-couche-dao">14.6.1. Test de la couche [dao]</h3>
+<p>Le test <strong>[DaoTest.php]</strong> est le suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span>
+<span class="normal"><a href="#__codelineno-4-40">40</a></span>
+<span class="normal"><a href="#__codelineno-4-41">41</a></span>
+<span class="normal"><a href="#__codelineno-4-42">42</a></span>
+<span class="normal"><a href="#__codelineno-4-43">43</a></span>
+<span class="normal"><a href="#__codelineno-4-44">44</a></span>
+<span class="normal"><a href="#__codelineno-4-45">45</a></span>
+<span class="normal"><a href="#__codelineno-4-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">// répertoires racines</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-06&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;VENDOR&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="c1">// bibliothèques tierces</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="k">require_once</span> <span class="nx">VENDOR</span> <span class="o">.</span> <span class="s2">&quot;/autoload.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="nx">ROOT</span> <span class="o">.</span><span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="k">class</span> <span class="nc">DaoTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a>  <span class="c1">// TaxAdminData</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a>  <span class="k">private</span> <span class="nv">$taxAdminData</span><span class="p">;</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a>    <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">taxAdminData</span> <span class="o">=</span> <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">getTaxAdminData</span><span class="p">();</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39"></a>  <span class="p">}</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40"></a>
+<a id="__codelineno-4-41" name="__codelineno-4-41"></a>  <span class="c1">// tests</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">testTaxAdminData</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43"></a>    <span class="nx">…</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44"></a>  <span class="p">}</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45"></a>
+<a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Commentaires</strong></p>
+<ul>
+<li>lignes 9-28 : définition de l’environnement du test. Nous utilisons le même, sans la couche <strong>[métier]</strong>, que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Calcul_de_l’impôt_1"><u><u>lien</u></u></a> ;</li>
+<li>lignes 34-39 : construction de la couche <strong>[dao]</strong> ;</li>
+<li>ligne 38 : l’attribut <strong>[$this→taxAdminData]</strong> contient les données à tester ;</li>
+<li>lignes 42-44 : la méthode <strong>[testTaxAdminData]</strong> est celle décrite au paragraphe <a href="#_Tests_de_la"><u><u>lien</u></u></a> ;
+Les résultats du test sont les suivants :</li>
+</ul>
+<p><img src="images/100000000000060B0000015A4A8CF10A.png" style="width:14.331cm;height:3.2cm;" alt="Image" /></p>
+<h3 id="1462-test-de-la-couche-metier">14.6.2. Test de la couche [métier]</h3>
+<p>Le test <strong>[MetierTest.php]</strong> est le suivant :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#__codelineno-5-28">28</a></span>
+<span class="normal"><a href="#__codelineno-5-29">29</a></span>
+<span class="normal"><a href="#__codelineno-5-30">30</a></span>
+<span class="normal"><a href="#__codelineno-5-31">31</a></span>
+<span class="normal"><a href="#__codelineno-5-32">32</a></span>
+<span class="normal"><a href="#__codelineno-5-33">33</a></span>
+<span class="normal"><a href="#__codelineno-5-34">34</a></span>
+<span class="normal"><a href="#__codelineno-5-35">35</a></span>
+<span class="normal"><a href="#__codelineno-5-36">36</a></span>
+<span class="normal"><a href="#__codelineno-5-37">37</a></span>
+<span class="normal"><a href="#__codelineno-5-38">38</a></span>
+<span class="normal"><a href="#__codelineno-5-39">39</a></span>
+<span class="normal"><a href="#__codelineno-5-40">40</a></span>
+<span class="normal"><a href="#__codelineno-5-41">41</a></span>
+<span class="normal"><a href="#__codelineno-5-42">42</a></span>
+<span class="normal"><a href="#__codelineno-5-43">43</a></span>
+<span class="normal"><a href="#__codelineno-5-44">44</a></span>
+<span class="normal"><a href="#__codelineno-5-45">45</a></span>
+<span class="normal"><a href="#__codelineno-5-46">46</a></span>
+<span class="normal"><a href="#__codelineno-5-47">47</a></span>
+<span class="normal"><a href="#__codelineno-5-48">48</a></span>
+<span class="normal"><a href="#__codelineno-5-49">49</a></span>
+<span class="normal"><a href="#__codelineno-5-50">50</a></span>
+<span class="normal"><a href="#__codelineno-5-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1">// répertoires racines</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-06&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;VENDOR&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Métier/InterfaceMetier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Métier/Metier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="c1">// bibliothèques tierces</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="k">require_once</span> <span class="nx">VENDOR</span> <span class="o">.</span> <span class="s2">&quot;/autoload.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="k">class</span> <span class="nc">MetierTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a>  <span class="c1">// couche métier</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a>  <span class="k">private</span> <span class="nv">$métier</span><span class="p">;</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36"></a>    <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38"></a>    <span class="c1">// création de la couche [métier]</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40"></a>  <span class="p">}</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41"></a>
+<a id="__codelineno-5-42" name="__codelineno-5-42"></a>  <span class="c1">// tests</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test1</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44"></a>    <span class="nx">…</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45"></a>  <span class="p">}</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46"></a><span class="o">--------------------------------------------------------------------</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test11</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48"></a>    <span class="nx">…</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49"></a>  <span class="p">}</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50"></a>
+<a id="__codelineno-5-51" name="__codelineno-5-51"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Commentaires</strong></p>
+<ul>
+<li>lignes 9-28 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Calcul_de_l’impôt_1"><u><u>lien</u></u></a> ;</li>
+<li>lignes 34-40 : construction des couches <strong>[dao]</strong> et <strong>[métier]</strong> ;</li>
+<li>ligne 39 : l’attribut <strong>[$this→métier]</strong> référence la couche <strong>[métier]</strong></li>
+<li>lignes 43-49 : les méthodes <strong>[test1, test2…, test11]</strong> sont celles décrites au paragraphe <a href="#_Tests_de_la_1"><u><u>lien</u></u></a> ;
+Les résultats du test sont les suivants :</li>
+</ul>
+<p><img src="images/100000000000062100000189747666A0.png" style="width:14.53cm;height:3.641cm;" alt="Image" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
+        Partage dans les Mêmes Conditions 3.0 non transposé</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
