@@ -1,1 +1,6 @@
-body.md-focus .md-sidebar { display: none; } body.md-focus .md-content { max-width: 90%; margin: 0 auto; } .odt-table img { max-width: 100%; }
+
+    body.md-focus .md-sidebar { display: none !important; }
+    body.md-focus .md-content { max-width: 90% !important; margin: 0 auto; }
+    /* Ajustement de la table des matières si intégrée */
+    body.md-focus .md-nav--secondary { display: none !important; }
+    
