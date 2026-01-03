@@ -6,13 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Introduction au langage PHP7 par l'exemple.">
       
-      
-        <meta name="author" content="Serge Tahé">
-      
-      
-        <link rel="canonical" href="https://stahe.github.io/php7-juillet-2019/les-interfaces.html">
       
       
         <link rel="prev" href="les-classes.html">
@@ -197,18 +191,6 @@
       
     
     
-      <div class="md-header__source">
-        <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-      </div>
-    
   </nav>
   
 </header>
@@ -244,18 +226,6 @@
     </a>
     Introduction au langage PHP7 par l'exemple
   </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -320,14 +290,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d&#x27;un environnement de travail
+    2. Installation d'un environnement de travail
   
 
     
@@ -374,14 +344,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d&#x27;application – versions 1 et 2
+    4. Exercice d'application – versions 1 et 2
   
 
     
@@ -573,14 +543,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
+      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d&#x27;application – version 3
+    8. Exercice d'application – version 3
   
 
     
@@ -1041,14 +1011,11 @@
                   
 
 
-  
-  
-
 
 <h1 id="6-les-interfaces">6. Les interfaces</h1>
-<p>Une interface est une structure définissant des prototypes de méthodes. Une classe implémentant une interface doit définir le code de toutes les méthodes de l&#x27;interface.</p>
+<p>Une interface est une structure définissant des prototypes de méthodes. Une classe implémentant une interface doit définir le code de toutes les méthodes de l'interface.</p>
 <h2 id="61-larborescence-des-scripts">6.1. L’arborescence des scripts</h2>
-<p><img src="images/100000000000019C000001E2B4512BE4.png" style="width:3.821cm;height:4.462cm;" alt="Image" /></p>
+<p><img src="images/100000000000019C000001E2B4512BE4.png" style="width:3.821cm;" /></p>
 <h2 id="62-une-premiere-interface">6.2. Une première interface</h2>
 <p>Nous définissons une interface <strong>[IExemple]</strong> dans un script <strong>[IExemple.php]</strong>. Dans ce même script, nous définissons deux classes implémentant l’interface <strong>[IExemple]</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -1129,11 +1096,17 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 10-14 : l&#x27;interface IExemple définit deux méthodes : la fonction ajouter (ligne 12) et la fonction soustraire (ligne 13). L&#x27;interface ne définit pas le code de ces méthodes. Ce sont les classes implémentant l&#x27;interface qui vont le faire ;</li>
-<li>ligne 17 : la classe Classe1 implémente (<strong>implements</strong>) l&#x27;interface IExemple. Elle définit donc un code pour les méthodes ajouter (ligne 18) et soustraire (ligne 22) ;</li>
-<li>lignes 29-38 : idem pour la classe Classe2 ;
-Nous utilisons l’interface <strong>[IExemple]</strong> dans le script <strong>[interfaces-01.php]</strong> suivant :</li>
+<li>
+<p>lignes 10-14 : l'interface <em>IExemple</em> définit deux méthodes : la fonction <em>ajouter</em> (ligne 12) et la fonction <em>soustraire</em> (ligne 13). L'interface ne définit pas le code de ces méthodes. Ce sont les classes implémentant l'interface qui vont le faire ;</p>
+</li>
+<li>
+<p>ligne 17 : la classe <em>Classe1</em> implémente (<strong>implements</strong>) l'interface <em>IExemple</em>. Elle définit donc un code pour les méthodes <em>ajouter</em> (ligne 18) et <em>soustraire</em> (ligne 22) ;</p>
+</li>
+<li>
+<p>lignes 29-38 : idem pour la classe <em>Classe2 ;</em></p>
+</li>
 </ul>
+<p>Nous utilisons l’interface <strong>[IExemple]</strong> dans le script <strong>[interfaces-01.php]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1176,22 +1149,36 @@ Nous utilisons l’interface <strong>[IExemple]</strong> dans le script <strong>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 3-6 : inclusion et définition des classes et interfaces utilisées par le script ;</li>
-<li>ligne 3 : au lieu de l’instruction <strong>include</strong> nous avons utilisé ici l’instruction <strong>require_once</strong>. L’instruction <strong>include</strong> inclut un fichier dans le script en cours même si celui-ci a déjà été inclus alors que l’instruction <strong>require_once</strong> ne l’inclut qu’une fois. Donc pour ce qui est de l’inclusion de code, on préfèrera l’instruction <strong>require_once </strong>;</li>
-<li>lignes 9-12 : on définit une fonction ;</li>
-<li>ligne 9 : nous avons déclaré ici le type des trois paramètres. Si à l’exécution, le paramètre effectif n’est pas du type attendu, une erreur est lancée. Le 3e paramètre est de type <strong>[IExemple]</strong>. Cela veut dire que le paramètre effectif doit être une instance de classe implémentant l’interface <strong>[IExemple]</strong>, donc dans notre exemple, une instance des classes <strong>[Classe1]</strong> ou <strong>[Classe2]</strong> ;</li>
-<li>lignes 10-11 : nous utilisons les méthodes <strong>[ajouter, soustraire]</strong> de l’interface <strong>[IExemple]</strong> ;</li>
-<li>ligne 19 : le 3e paramètre effectif est de type <strong>[Classe1]</strong> compatible avec le type <strong>[IExemple]</strong> du 3e paramètre formel de la fonction ;</li>
-<li>ligne 20 : idem pour la classe <strong>[Classe2]</strong> ;
-<strong>Résultats</strong></li>
+<li>
+<p>lignes 3-6 : inclusion et définition des classes et interfaces utilisées par le script ;</p>
+</li>
+<li>
+<p>ligne 3 : au lieu de l’instruction <strong>include</strong> nous avons utilisé ici l’instruction <strong>require_once</strong>. L’instruction <strong>include</strong> inclut un fichier dans le script en cours même si celui-ci a déjà été inclus alors que l’instruction <strong>require_once</strong> ne l’inclut qu’une fois. Donc pour ce qui est de l’inclusion de code, on préfèrera l’instruction <strong>require_once </strong>;</p>
+</li>
+<li>
+<p>lignes 9-12 : on définit une fonction ;</p>
+</li>
+<li>
+<p>ligne 9 : nous avons déclaré ici le type des trois paramètres. Si à l’exécution, le paramètre effectif n’est pas du type attendu, une erreur est lancée. Le 3e paramètre est de type <strong>[IExemple]</strong>. Cela veut dire que le paramètre effectif doit être une instance de classe implémentant l’interface <strong>[IExemple]</strong>, donc dans notre exemple, une instance des classes <strong>[Classe1]</strong> ou <strong>[Classe2]</strong> ;</p>
+</li>
+<li>
+<p>lignes 10-11 : nous utilisons les méthodes <strong>[ajouter, soustraire]</strong> de l’interface <strong>[IExemple]</strong> ;</p>
+</li>
+<li>
+<p>ligne 19 : le 3e paramètre effectif est de type <strong>[Classe1]</strong> compatible avec le type <strong>[IExemple]</strong> du 3e paramètre formel de la fonction ;</p>
+</li>
+<li>
+<p>ligne 20 : idem pour la classe <strong>[Classe2]</strong> ;</p>
+</li>
 </ul>
+<p>Résultats</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="x">17</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="x">21</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="x">127</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="x">201</span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>17
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>21
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>127
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>201
 </code></pre></div></td></tr></table></div>
 <h2 id="63-derivation-dune-interface">6.3. Dérivation d’une interface</h2>
 <p>De la même façon qu’une classe fille peut étendre une classe parent, une interface fille peut étendre une interface parent.</p>
@@ -1246,12 +1233,20 @@ Nous utilisons l’interface <strong>[IExemple]</strong> dans le script <strong>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 6 : l’interface <strong>[IExemple2]</strong> sera dans le même espace de noms que l’interface <strong>[Iexemple]</strong> ;</li>
-<li>ligne 9 : on inclut le fichier de définition de l’interface <strong>[Iexemple]</strong> ;</li>
-<li>lignes 12-15 : définissent l’interface <strong>[IExemple2]</strong> qui étend (hérite) l’interface <strong>[Iexemple]</strong> (<strong>extends</strong>) et lui ajoute une nouvelle méthode (ligne 14);</li>
-<li>lignes 18-24 : la classe <strong>[Classe3]</strong> étend la classe <strong>[Classe2]</strong>. Comme celle-ci implémente l’interface <strong>[IExemple]</strong>, ce sera également le cas de la classe <strong>[Classe3]</strong>. En effet, <strong>[Classe3]</strong> hérite de toutes les méthodes publiques et protégées de la classe <strong>[Classe2]</strong>, donc des méthodes <strong>ajouter</strong> et <strong>soustraire</strong>. Par ailleurs, on indique que <strong>[Classe3]</strong> implémente l’interface <strong>[IExemple2]</strong>. A ce titre, elle doit également implémenter la méthode <strong>multiplier</strong>, ce que ne fait pas <strong>[Classe2]</strong>. C’est ce que font les lignes 20-22;
-L’interface <strong>[IExemple2]</strong> est exploitée par le script <strong>[interfaces-02]</strong> suivant:</li>
+<li>
+<p>ligne 6 : l’interface <strong>[IExemple2]</strong> sera dans le même espace de noms que l’interface <strong>[Iexemple]</strong> ;</p>
+</li>
+<li>
+<p>ligne 9 : on inclut le fichier de définition de l’interface <strong>[Iexemple]</strong> ;</p>
+</li>
+<li>
+<p>lignes 12-15 : définissent l’interface <strong>[IExemple2]</strong> qui étend (hérite) l’interface <strong>[Iexemple]</strong> (<strong>extends</strong>) et lui ajoute une nouvelle méthode (ligne 14);</p>
+</li>
+<li>
+<p>lignes 18-24 : la classe <strong>[Classe3]</strong> étend la classe <strong>[Classe2]</strong>. Comme celle-ci implémente l’interface <strong>[IExemple]</strong>, ce sera également le cas de la classe <strong>[Classe3]</strong>. En effet, <strong>[Classe3]</strong> hérite de toutes les méthodes publiques et protégées de la classe <strong>[Classe2]</strong>, donc des méthodes <strong>ajouter</strong> et <strong>soustraire</strong>. Par ailleurs, on indique que <strong>[Classe3]</strong> implémente l’interface <strong>[IExemple2]</strong>. A ce titre, elle doit également implémenter la méthode <strong>multiplier</strong>, ce que ne fait pas <strong>[Classe2]</strong>. C’est ce que font les lignes 20-22;</p>
+</li>
 </ul>
+<p>L’interface <strong>[IExemple2]</strong> est exploitée par le script <strong>[interfaces-02]</strong> suivant:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1298,19 +1293,25 @@ L’interface <strong>[IExemple2]</strong> est exploitée par le script <strong>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 12 : le 3e paramètre de la fonction <strong>[calculer]</strong> est de type <strong>[IExemple2]</strong> ;</li>
-<li>lignes 13-15 : on utilise les trois méthodes de l’interface <strong>[IExemple2]</strong> ;</li>
-<li>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme  3e paramètre un objet de type <strong>[IExemple2]</strong> (ligne 20) ;
-<strong>Résultats</strong></li>
+<li>
+<p>ligne 12 : le 3e paramètre de la fonction <strong>[calculer]</strong> est de type <strong>[IExemple2]</strong> ;</p>
+</li>
+<li>
+<p>lignes 13-15 : on utilise les trois méthodes de l’interface <strong>[IExemple2]</strong> ;</p>
+</li>
+<li>
+<p>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme  3e paramètre un objet de type <strong>[IExemple2]</strong> (ligne 20) ;</p>
+</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="x">107</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="x">201</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="x">12</span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>107
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>201
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>12
 </code></pre></div></td></tr></table></div>
 <h2 id="64-passage-dune-interface-en-parametre-dune-fonction">6.4. Passage d’une interface en paramètre d’une fonction</h2>
-<p>Nous avons vu au <a href="#_Passage_d’un_objet"><u><u>paragraphe</u></u></a> que lorsque le type attendu pour un paramètre de fonction est une classe alors le paramètre effectif peut être un objet du type attendu <strong>ou dérivé</strong>. Il en est de même pour les interfaces comme le montre le script suivant <strong>[interfaces-03.php]</strong> :</p>
+<p>Nous avons vu au <a href="#_Passage_d’un_objet"><u>paragraphe</u></a> que lorsque le type attendu pour un paramètre de fonction est une classe alors le paramètre effectif peut être un objet du type attendu <strong>ou dérivé</strong>. Il en est de même pour les interfaces comme le montre le script suivant <strong>[interfaces-03.php]</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1357,14 +1358,20 @@ L’interface <strong>[IExemple2]</strong> est exploitée par le script <strong>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 13, la fonction <strong>[calculer]</strong> attend comme troisième paramètre un type <strong>[IExemple]</strong>. Cela signifie que le type du paramètre effectif pourra être de type <strong>[IExemple]</strong> <strong>ou dérivé</strong> ;</li>
-<li>ligne 20 : on instancie un objet $<strong>c3</strong> de type <strong>[Classe3]</strong>, classe qui implémente l’interface <strong>[IExemple2]</strong> qui elle-même étend l’interface <strong>[IExemple]</strong>. Donc finalement $<strong>c3</strong> implémente l’interface <strong>[IExemple]</strong> ;</li>
-<li>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme troisième paramètre un objet $<strong>c3 </strong>de type <strong>[Classe3]</strong>. Par le jeu des héritages de classes et des implémentations, on a vu que l’objet $<strong>c3</strong> implémentait le type <strong>[IExemple]</strong>. On peut donc l’utiliser comme troisième paramètre ;
-<strong>Résultats</strong></li>
+<li>
+<p>ligne 13, la fonction <strong>[calculer]</strong> attend comme troisième paramètre un type <strong>[IExemple]</strong>. Cela signifie que le type du paramètre effectif pourra être de type <strong>[IExemple] ou dérivé</strong> ;</p>
+</li>
+<li>
+<p>ligne 20 : on instancie un objet $<strong>c3</strong> de type <strong>[Classe3]</strong>, classe qui implémente l’interface <strong>[IExemple2]</strong> qui elle-même étend l’interface <strong>[IExemple]</strong>. Donc finalement $<strong>c3</strong> implémente l’interface <strong>[IExemple]</strong> ;</p>
+</li>
+<li>
+<p>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme troisième paramètre un objet $<strong>c3 </strong>de type <strong>[Classe3]</strong>. Par le jeu des héritages de classes et des implémentations, on a vu que l’objet $<strong>c3</strong> implémentait le type <strong>[IExemple]</strong>. On peut donc l’utiliser comme troisième paramètre ;</p>
+</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="x">107</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="x">201</span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>107
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>201
 </code></pre></div></td></tr></table></div>
 
 
