@@ -23,7 +23,7 @@
     
     
       
-        <title>21. Traitement de documents XML - Introduction au langage PHP7 par l'exemple</title>
+        <title>21. Traitement de documents XML - Introduction au langage ECMASCRIPT6 par l'exemple</title>
       
     
     
@@ -92,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-header__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage ECMASCRIPT6 par l&#39;exemple" class="md-header__button md-logo" aria-label="Introduction au langage ECMASCRIPT6 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Introduction au langage PHP7 par l'exemple
+            Introduction au langage ECMASCRIPT6 par l'exemple
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-nav__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage ECMASCRIPT6 par l&#39;exemple" class="md-nav__button md-logo" aria-label="Introduction au langage ECMASCRIPT6 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Introduction au langage PHP7 par l'exemple
+    Introduction au langage ECMASCRIPT6 par l'exemple
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -954,27 +954,27 @@
 <span class="normal"><a href="#__codelineno-0-18">18</a></span>
 <span class="normal"><a href="#__codelineno-0-19">19</a></span>
 <span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<span class="normal"><a href="#__codelineno-0-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>&lt;tribu&gt;
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    &lt;enseignant&gt;
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>        &lt;personne sexe=&quot;M&quot;&gt;
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>            &lt;nom&gt;dupont&lt;/nom&gt;
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>            &lt;prenom&gt;jean&lt;/prenom&gt;
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>            &lt;age&gt;28&lt;/age&gt;
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>            ceci est un commentaire
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>        &lt;/personne&gt;
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        &lt;section&gt;27&lt;/section&gt;
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    &lt;/enseignant&gt;
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    &lt;etudiant&gt;
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        &lt;personne sexe=&quot;F&quot;&gt;
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>            &lt;nom&gt;martin&lt;/nom&gt;
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>            &lt;prenom&gt;charline&lt;/prenom&gt;
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>            &lt;age&gt;22&lt;/age&gt;
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        &lt;/personne&gt;
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        &lt;formation&gt;dess IAIE&lt;/formation&gt;
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    &lt;/etudiant&gt;
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>&lt;/tribu&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">&lt;tribu&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;enseignant&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nt">&lt;personne</span><span class="w"> </span><span class="na">sexe=</span><span class="s">&quot;M&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">            </span><span class="nt">&lt;nom&gt;</span>dupont<span class="nt">&lt;/nom&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">            </span><span class="nt">&lt;prenom&gt;</span>jean<span class="nt">&lt;/prenom&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">            </span><span class="nt">&lt;age&gt;</span>28<span class="nt">&lt;/age&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">            </span>ceci<span class="w"> </span>est<span class="w"> </span>un<span class="w"> </span>commentaire
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="nt">&lt;/personne&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="nt">&lt;section&gt;</span>27<span class="nt">&lt;/section&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="nt">&lt;/enseignant&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="nt">&lt;etudiant&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="nt">&lt;personne</span><span class="w"> </span><span class="na">sexe=</span><span class="s">&quot;F&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">            </span><span class="nt">&lt;nom&gt;</span>martin<span class="nt">&lt;/nom&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">            </span><span class="nt">&lt;prenom&gt;</span>charline<span class="nt">&lt;/prenom&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">            </span><span class="nt">&lt;age&gt;</span>22<span class="nt">&lt;/age&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="nt">&lt;/personne&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="nt">&lt;formation&gt;</span>dess<span class="w"> </span>IAIE<span class="nt">&lt;/formation&gt;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="nt">&lt;/etudiant&gt;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="nt">&lt;/tribu&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>Nous analysons ce document avec le script suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
