@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas">
+        <meta name="description" content="Introduction au langage PHP7 par l'exemple">
       
       
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/java-spring-dec-2015/applications-en-couches.html">
+        <link rel="canonical" href="https://stahe.github.io/php7-juillet-2019/applications-en-couches.html">
       
       
         <link rel="prev" href="les-traits.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>10. Applications en couches - Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas</title>
+        <title>10. Applications en couches - Introduction au langage PHP7 par l'exemple</title>
       
     
     
@@ -60,6 +60,20 @@
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
+    var siteName = "Introduction au langage PHP7 par l'exemple";
+
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+    console.log("[GA Debug] page_title forced to: " + siteName);
+  </script>
 
     
     
@@ -98,7 +112,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-header__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-header__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +126,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+            Introduction au langage PHP7 par l'exemple
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -198,7 +212,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -236,17 +250,17 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-nav__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-nav__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+    Introduction au langage PHP7 par l'exemple
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -320,14 +334,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d'un environnement de travail
+    2. Installation d&#x27;un environnement de travail
   
 
     
@@ -374,14 +388,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d'application – versions 1 et 2
+    4. Exercice d&#x27;application – versions 1 et 2
   
 
     
@@ -482,14 +496,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
+      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d'application – version 3
+    8. Exercice d&#x27;application – version 3
   
 
     
@@ -1063,21 +1077,23 @@
 <p><img src="images/10000000000004EB000001154342CD64.png" style="width:9.991cm;height:2.2cm;" alt="Image" /></p>
 <p>Dans ce schéma, c’est la <strong>couche de gauche qui prend l’initiative d’utiliser la couche de droite</strong>. Le rôle des couches est le suivant :</p>
 <ul>
-<li><strong>[1]</strong> : la couche appelée <strong>[dao]</strong> (Data Access Objects) s'occupe des échanges avec des entrepôts de données externes <strong>[4]</strong> (fichiers, bases de données, services web…). Cette couche est parfois appelée <strong>[DAL]</strong> (Data Access Layer) un terme qui décrit mieux le rôle de la couche. Cette couche peut lire des données <strong>[3]</strong> ou en écrire <strong>[2]</strong>. Elle est sollicitée par la couche <strong>[métier]</strong> <strong>[6]</strong> et lui rend des résultats <strong>[7]</strong> ;</li>
+<li><strong>[1]</strong> : la couche appelée <strong>[dao]</strong> (Data Access Objects) s&#x27;occupe des échanges avec des entrepôts de données externes <strong>[4]</strong> (fichiers, bases de données, services web…). Cette couche est parfois appelée <strong>[DAL]</strong> (Data Access Layer) un terme qui décrit mieux le rôle de la couche. Cette couche peut lire des données <strong>[3]</strong> ou en écrire <strong>[2]</strong>. Elle est sollicitée par la couche <strong>[métier]</strong> <strong>[6]</strong> et lui rend des résultats <strong>[7]</strong> ;</li>
 <li><strong>[5]</strong> :une couche appelée <strong>[métier]</strong> qui rassemble des procédures ‘métier’ à qui on fournit toutes les données dont elles ont besoin. C’est généralement la couche la plus stable d’un projet car elle ne dépend pas de la façon dont les données sont acquises. Celles-ci ont deux sources :</li>
 <li><strong>[9]</strong> : les données fournies par le script PHP ;</li>
 <li><strong>[6,7]</strong> : les données demandées à la couche <strong>[dao]</strong>.</li>
 <li><strong>[8]</strong> : le script principal est le chef d’orchestre. Dans une application console, il va :</li>
 <li>créer les couches <strong>[métier]</strong> et <strong>[dao]</strong> ;</li>
 <li>dérouler l’algorithme de l’application. Cet algorithme est celui d’un chef d’orchestre : on n’y trouve aucun code ‘métier’ ou d’accès aux données. Le script principal se contente d’appeler les procédures de la couche <strong>[métier]</strong> <strong>[9]</strong>. Il ignore totalement la couche <strong>[dao]</strong> et les données externes. Il peut fournir à la couche <strong>[métier]</strong> des données <strong>[9]</strong>. Dans une application console, celles-ci peuvent provenir de fichiers de configuration ou de l’utilisateur du script. Il reçoit des résultats <strong>[10]</strong> de la couche <strong>[métier]</strong>. Il peut avoir besoin de stocker certains résultats : pour cela il utilise de nouveau les procédures de la couche <strong>[métier]</strong> qui elles vont s’adresser à la couche <strong>[dao]</strong> qui va faire le travail ;</li>
-<li>parmi les résultats, le script principal peut recevoir des exceptions. C’est son rôle de gérer les exceptions qui remontent de toutes les couches ;</li>
+<li>
+<p>parmi les résultats, le script principal peut recevoir des exceptions. C’est son rôle de gérer les exceptions qui remontent de toutes les couches ;
+Ce découpage en couches est destiné à faciliter l’évolution de l’application. Pour cela, chaque couche implémente une interface. Supposons que :</p>
+</li>
+<li>
+<p>la couche <strong>[dao]</strong> est implémentée par une classe <strong>[Dao]</strong> qui implémente une interface <strong>[IDao]</strong> ;</p>
+</li>
+<li>la couche <strong>[métier]</strong> est implémentée par une classe <strong>[Métier]</strong> qui implémente une interface <strong>[IMétier]</strong> ;
+Les procédures de la couche <strong>[métier]</strong> vont alors utiliser l’interface <strong>[IDao]</strong> plutôt que la classe <strong>[Dao]</strong>. Ceci permet de faire évoluer la couche <strong>[Dao]</strong> sans toucher à la couche <strong>[Métier]</strong>. Supposons que dans une version 1, la couche <strong>[Dao1]</strong> utilise des données d’une base de données. Suite à une évolution, ces données sont maintenant fournies par un service web dans une version 2, <strong>[Dao2]</strong>. On s’assurera que les deux classes <strong>[Dao1]</strong> et <strong>[Dao2]</strong> implémentent la même interface <strong>[IDao]</strong> et qu’elles lancent les mêmes exceptions. Si ceci est vérifié, la couche <strong>[Métier]</strong> qui travaille avec l’interface <strong>[IDao]</strong> restera inchangée ;</li>
 </ul>
-<p>Ce découpage en couches est destiné à faciliter l’évolution de l’application. Pour cela, chaque couche implémente une interface. Supposons que :</p>
-<ul>
-<li>la couche <strong>[dao]</strong> est implémentée par une classe <strong>[Dao]</strong> qui implémente une interface <strong>[IDao]</strong> ;</li>
-<li>la couche <strong>[métier]</strong> est implémentée par une classe <strong>[Métier]</strong> qui implémente une interface <strong>[IMétier]</strong> ;</li>
-</ul>
-<p>Les procédures de la couche <strong>[métier]</strong> vont alors utiliser l’interface <strong>[IDao]</strong> plutôt que la classe <strong>[Dao]</strong>. Ceci permet de faire évoluer la couche <strong>[Dao]</strong> sans toucher à la couche <strong>[Métier]</strong>. Supposons que dans une version 1, la couche <strong>[Dao1]</strong> utilise des données d’une base de données. Suite à une évolution, ces données sont maintenant fournies par un service web dans une version 2, <strong>[Dao2]</strong>. On s’assurera que les deux classes <strong>[Dao1]</strong> et <strong>[Dao2]</strong> implémentent la même interface <strong>[IDao]</strong> et qu’elles lancent les mêmes exceptions. Si ceci est vérifié, la couche <strong>[Métier]</strong> qui travaille avec l’interface <strong>[IDao]</strong> restera inchangée ;</p>
 <p>Le même raisonnement s’applique à la couche <strong>[Métier]</strong>.</p>
 <p>Voyons une implémentation avec des classes et interfaces :</p>
 <p><img src="images/100000000000012A00000145FDB3E370.png" style="width:2.761cm;height:3.01cm;" alt="Image" /></p>
@@ -1102,28 +1118,28 @@
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">// une personne</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">class</span> <span class="nc">Personne</span> <span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  <span class="c1">// identifiant</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>  <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="o">//</span> <span class="n">une</span> <span class="n">personne</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Personne</span> <span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  <span class="o">//</span> <span class="n">identifiant</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>  <span class="n">private</span> <span class="err">$</span><span class="nb">id</span><span class="p">;</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>  <span class="c1">// constructeur</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>  <span class="o">//</span> <span class="n">constructeur</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="nb">id</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="nb">id</span> <span class="o">=</span> <span class="err">$</span><span class="nb">id</span><span class="p">;</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a>  <span class="p">}</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>  <span class="c1">// toString</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__toString</span><span class="p">()</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="k">return</span> <span class="s2">&quot;[Personne(</span><span class="si">$this-&gt;id</span><span class="s2">)]&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>  <span class="o">//</span> <span class="n">toString</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__toString</span><span class="p">():</span> <span class="n">string</span> <span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="k">return</span> <span class="s2">&quot;[Personne($this-&gt;id)]&quot;</span><span class="p">;</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a>  <span class="p">}</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17"></a>
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 6 : la personne n’a qu’un attribut, son identifiant <strong>[\$id]</strong>. On va supposer que celui-ci désigne une personne unique dans un entrepôt de données ;</li>
+<li>ligne 6 : la personne n’a qu’un attribut, son identifiant <strong>[$id]</strong>. On va supposer que celui-ci désigne une personne unique dans un entrepôt de données ;</li>
 <li>lignes 9-11 : le constructeur qui permet de construire un type <strong>[Personne]</strong> avec son identifiant ;</li>
 <li>lignes 14-16 : la méthode <strong>[__toString]</strong> qui affiche l’identifiant de la personne ;</li>
 </ul>
@@ -1141,18 +1157,18 @@
 <span class="normal"><a href="#__codelineno-1-10">10</a></span>
 <span class="normal"><a href="#__codelineno-1-11">11</a></span>
 <span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">// couche [dao] ------------------------</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">interface</span> <span class="nx">IDao</span> <span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="o">//</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span> <span class="o">------------------------</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">interface</span> <span class="n">IDao</span> <span class="p">{</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>  <span class="c1">// récupération d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>  <span class="c1">// on passe l&#39;identifiant de la personne</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>  <span class="o">//</span> <span class="n">récupération</span> <span class="n">d</span><span class="s1">&#39;une personne dans un entrepôt externe</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">passe</span> <span class="n">l</span><span class="s1">&#39;identifiant de la personne</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">get</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="nb">id</span><span class="p">):</span> <span class="n">Personne</span><span class="p">;</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>  <span class="c1">// sauvegarde d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>  <span class="o">//</span> <span class="n">sauvegarde</span> <span class="n">d</span><span class="s1">&#39;une personne dans un entrepôt externe</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">save</span><span class="p">(</span><span class="n">Personne</span> <span class="err">$</span><span class="n">p</span><span class="p">):</span> <span class="n">void</span><span class="p">;</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Cette interface est implémentée par la classe <strong>[Dao1]</strong> suivante <strong>[Dao1.php]</strong> :</p>
@@ -1171,19 +1187,19 @@
 <span class="normal"><a href="#__codelineno-2-13">13</a></span>
 <span class="normal"><a href="#__codelineno-2-14">14</a></span>
 <span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">class</span> <span class="nc">Dao1</span> <span class="k">implements</span> <span class="nx">IDao</span> <span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Dao1</span> <span class="n">implements</span> <span class="n">IDao</span> <span class="p">{</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>  <span class="c1">// sauvegarde d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao1] : Sauvegarde de la personne </span><span class="si">$p</span><span class="s2"> en base de données [locale]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>  <span class="o">//</span> <span class="n">sauvegarde</span> <span class="n">d</span><span class="s1">&#39;une personne dans un entrepôt externe</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">save</span><span class="p">(</span><span class="n">Personne</span> <span class="err">$</span><span class="n">p</span><span class="p">):</span> <span class="n">void</span> <span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="nb">print</span> <span class="s2">&quot;[Dao1] : Sauvegarde de la personne $p en base de données [locale]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a>  <span class="p">}</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>  <span class="c1">// récupération d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span> <span class="p">{</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao1] : Récupération de la personne d&#39;identité (</span><span class="si">$id</span><span class="s2">) en base de données [locale]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="k">return</span> <span class="k">new</span> <span class="nx">Personne</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>  <span class="o">//</span> <span class="n">récupération</span> <span class="n">d</span><span class="s1">&#39;une personne dans un entrepôt externe</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">get</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="nb">id</span><span class="p">):</span> <span class="n">Personne</span> <span class="p">{</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="nb">print</span> <span class="s2">&quot;[Dao1] : Récupération de la personne d&#39;identité ($id) en base de données [locale]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="k">return</span> <span class="n">new</span> <span class="n">Personne</span><span class="p">(</span><span class="err">$</span><span class="nb">id</span><span class="p">);</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14"></a>  <span class="p">}</span>
 <a id="__codelineno-2-15" name="__codelineno-2-15"></a>
 <a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="p">}</span>
@@ -1191,9 +1207,9 @@
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>la classe n’interagit pas avec un entrepôt de données. On se contente d’afficher des messages pour suivre le déroulement du code (lignes 7 et 12) ;</li>
-<li>ligne 13 : on rend bien une personne ayant l’identifiant passé en paramètre à la méthode (ligne 11) ;</li>
+<li>ligne 13 : on rend bien une personne ayant l’identifiant passé en paramètre à la méthode (ligne 11) ;
+Nous implémentons également l’interface <strong>[IDao]</strong> avec la classe <strong>[Dao2]</strong> suivante <strong>[Dao2.php]</strong> :</li>
 </ul>
-<p>Nous implémentons également l’interface <strong>[IDao]</strong> avec la classe <strong>[Dao2]</strong> suivante <strong>[Dao2.php]</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -1209,19 +1225,19 @@
 <span class="normal"><a href="#__codelineno-3-13">13</a></span>
 <span class="normal"><a href="#__codelineno-3-14">14</a></span>
 <span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">class</span> <span class="nc">Dao2</span> <span class="k">implements</span> <span class="nx">IDao</span> <span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Dao2</span> <span class="n">implements</span> <span class="n">IDao</span> <span class="p">{</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>  <span class="c1">// sauvegarde d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao2] : Sauvegarde de la personne </span><span class="si">$p</span><span class="s2"> en base de données [distante]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>  <span class="o">//</span> <span class="n">sauvegarde</span> <span class="n">d</span><span class="s1">&#39;une personne dans un entrepôt externe</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">save</span><span class="p">(</span><span class="n">Personne</span> <span class="err">$</span><span class="n">p</span><span class="p">):</span> <span class="n">void</span> <span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="nb">print</span> <span class="s2">&quot;[Dao2] : Sauvegarde de la personne $p en base de données [distante]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>  <span class="p">}</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>  <span class="c1">// récupération d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span> <span class="p">{</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao2] : Récupération de la personne d&#39;identité (</span><span class="si">$id</span><span class="s2">) en base de données [distante]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="k">return</span> <span class="k">new</span> <span class="nx">Personne</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>  <span class="o">//</span> <span class="n">récupération</span> <span class="n">d</span><span class="s1">&#39;une personne dans un entrepôt externe</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">get</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="nb">id</span><span class="p">):</span> <span class="n">Personne</span> <span class="p">{</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="nb">print</span> <span class="s2">&quot;[Dao2] : Récupération de la personne d&#39;identité ($id) en base de données [distante]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="k">return</span> <span class="n">new</span> <span class="n">Personne</span><span class="p">(</span><span class="err">$</span><span class="nb">id</span><span class="p">);</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14"></a>  <span class="p">}</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15"></a>
 <a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="p">}</span>
@@ -1236,21 +1252,21 @@
 <span class="normal"><a href="#__codelineno-4-5">5</a></span>
 <span class="normal"><a href="#__codelineno-4-6">6</a></span>
 <span class="normal"><a href="#__codelineno-4-7">7</a></span>
-<span class="normal"><a href="#__codelineno-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// couche [métier] ------------------------</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">interface</span> <span class="nx">IMétier</span> <span class="k">extends</span> <span class="nx">IDao</span> <span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">//</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span> <span class="o">------------------------</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">interface</span> <span class="n">IMétier</span> <span class="n">extends</span> <span class="n">IDao</span> <span class="p">{</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>  <span class="c1">// on exploite une personne identifiée par son id</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">exploite</span> <span class="n">une</span> <span class="n">personne</span> <span class="n">identifiée</span> <span class="n">par</span> <span class="n">son</span> <span class="nb">id</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">doSomething</span><span class="p">(</span><span class="n">Personne</span> <span class="err">$</span><span class="n">p</span><span class="p">):</span> <span class="n">void</span><span class="p">;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>l’interface <strong>[IMétier]</strong> étend l’interface <strong>[IDao]</strong>. Ce n’est pas du tout obligatoire. On le fait ici parce que l’exemple est simple ;</li>
-<li>ligne 7 : la méthode <strong>[doSomething]</strong> est propre à la couche <strong>[Métier]</strong> ;</li>
+<li>ligne 7 : la méthode <strong>[doSomething]</strong> est propre à la couche <strong>[Métier]</strong> ;
+L’interface <strong>[IMétier]</strong> sera implémentée par la classe <strong>[Métier]</strong> suivante <strong>[Métier.php]</strong> :</li>
 </ul>
-<p>L’interface <strong>[IMétier]</strong> sera implémentée par la classe <strong>[Métier]</strong> suivante <strong>[Métier.php]</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1286,39 +1302,39 @@
 <span class="normal"><a href="#__codelineno-5-33">33</a></span>
 <span class="normal"><a href="#__codelineno-5-34">34</a></span>
 <span class="normal"><a href="#__codelineno-5-35">35</a></span>
-<span class="normal"><a href="#__codelineno-5-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-5-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">class</span> <span class="nc">Métier</span> <span class="k">implements</span> <span class="nx">IMétier</span> <span class="p">{</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>  <span class="c1">// couche [dao]</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>  <span class="k">private</span> <span class="nv">$dao</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Métier</span> <span class="n">implements</span> <span class="n">IMétier</span> <span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>  <span class="o">//</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">dao</span><span class="p">;</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  <span class="c1">// getter / setter</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">setDao</span><span class="p">(</span><span class="nx">IDao</span> <span class="nv">$dao</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span> <span class="o">=</span> <span class="nv">$dao</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  <span class="o">//</span> <span class="n">getter</span> <span class="o">/</span> <span class="n">setter</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">setDao</span><span class="p">(</span><span class="n">IDao</span> <span class="err">$</span><span class="n">dao</span><span class="p">):</span> <span class="n">void</span> <span class="p">{</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">dao</span> <span class="o">=</span> <span class="err">$</span><span class="n">dao</span><span class="p">;</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10"></a>  <span class="p">}</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">getDao</span><span class="p">()</span><span class="o">:</span> <span class="nx">IDao</span> <span class="p">{</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span><span class="p">;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">getDao</span><span class="p">():</span> <span class="n">IDao</span> <span class="p">{</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    <span class="k">return</span> <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">dao</span><span class="p">;</span>
 <a id="__codelineno-5-14" name="__codelineno-5-14"></a>  <span class="p">}</span>
 <a id="__codelineno-5-15" name="__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>  <span class="c1">// on exploite une personne</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="c1">// traitement</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="k">print</span> <span class="s2">&quot;Métier : Traitement métier de la personne </span><span class="si">$p</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">exploite</span> <span class="n">une</span> <span class="n">personne</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">doSomething</span><span class="p">(</span><span class="n">Personne</span> <span class="err">$</span><span class="n">p</span><span class="p">):</span> <span class="n">void</span> <span class="p">{</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="o">//</span> <span class="n">traitement</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="nb">print</span> <span class="s2">&quot;Métier : Traitement métier de la personne $p</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-5-20" name="__codelineno-5-20"></a>  <span class="p">}</span>
 <a id="__codelineno-5-21" name="__codelineno-5-21"></a>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a>  <span class="c1">// sauvegarde de la personne</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="k">print</span> <span class="s2">&quot;[Métier] : Sauvegarde de la personne </span><span class="si">$p</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    <span class="c1">// on demande à la couche [dao] de faire la sauvegarde</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>  <span class="o">//</span> <span class="n">sauvegarde</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">save</span><span class="p">(</span><span class="n">Personne</span> <span class="err">$</span><span class="n">p</span><span class="p">):</span> <span class="n">void</span> <span class="p">{</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="nb">print</span> <span class="s2">&quot;[Métier] : Sauvegarde de la personne $p</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">demande</span> <span class="n">à</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span> <span class="n">de</span> <span class="n">faire</span> <span class="n">la</span> <span class="n">sauvegarde</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">dao</span><span class="o">-&gt;</span><span class="n">save</span><span class="p">(</span><span class="err">$</span><span class="n">p</span><span class="p">);</span>
 <a id="__codelineno-5-27" name="__codelineno-5-27"></a>  <span class="p">}</span>
 <a id="__codelineno-5-28" name="__codelineno-5-28"></a>
-<a id="__codelineno-5-29" name="__codelineno-5-29"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span> <span class="p">{</span>
-<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="k">print</span> <span class="s2">&quot;[Métier] : récupération de la personne d&#39;identifiant </span><span class="si">$id</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    <span class="c1">// on demande la personne à la couche [dao]</span>
-<a id="__codelineno-5-32" name="__codelineno-5-32"></a>    <span class="nv">$personne</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
-<a id="__codelineno-5-33" name="__codelineno-5-33"></a>    <span class="k">return</span> <span class="nv">$personne</span><span class="p">;</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">get</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="nb">id</span><span class="p">):</span> <span class="n">Personne</span> <span class="p">{</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="nb">print</span> <span class="s2">&quot;[Métier] : récupération de la personne d&#39;identifiant $id</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">demande</span> <span class="n">la</span> <span class="n">personne</span> <span class="n">à</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a>    <span class="err">$</span><span class="n">personne</span> <span class="o">=</span> <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">dao</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="err">$</span><span class="nb">id</span><span class="p">);</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a>    <span class="k">return</span> <span class="err">$</span><span class="n">personne</span><span class="p">;</span>
 <a id="__codelineno-5-34" name="__codelineno-5-34"></a>  <span class="p">}</span>
 <a id="__codelineno-5-35" name="__codelineno-5-35"></a>
 <a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="p">}</span>
@@ -1329,9 +1345,9 @@
 <li>lignes 8-10 : la méthode <strong>[setDao]</strong> permet de donner à la couche <strong>[métier]</strong> la référence de la couche <strong>[dao]</strong>. On notera que le type du paramètre est <strong>[IDao]</strong>. Ainsi la couche <strong>[métier]</strong> va être capable de travailler avec toute classe implémentant l’interface <strong>[IDao]</strong>. Si on passe d’une couche <strong>[Dao1]</strong> à une couche <strong>[Dao2]</strong> et que toutes deux implémentent l’interface <strong>[IDao]</strong>, la couche <strong>[métier]</strong> n’a pas à être réécrite ;</li>
 <li>lignes 17-20 : implémentation de <strong>[IMetier::doSomething]</strong> ;</li>
 <li>lignes 23-27 : implémentation de <strong>[IMetier::save]</strong>. Cette méthode doit sauvegarder une personne dans un entrepôt de données. La couche <strong>[métier]</strong> ne sait pas faire ça. Elle s’adresse à la couche <strong>[dao]</strong> pour faire cette sauvegarde ;</li>
-<li>lignes 29-34 : implémentation de <strong>[IMetier::get]</strong>. Cette méthode doit récupérer dans un entrepôt de données la personne dont l’identifiant lui est passé en paramètre. La couche <strong>[métier]</strong> ne sait pas faire ça. Elle s’adresse à la couche <strong>[dao]</strong> pour faire le travail (ligne 32) ;</li>
+<li>lignes 29-34 : implémentation de <strong>[IMetier::get]</strong>. Cette méthode doit récupérer dans un entrepôt de données la personne dont l’identifiant lui est passé en paramètre. La couche <strong>[métier]</strong> ne sait pas faire ça. Elle s’adresse à la couche <strong>[dao]</strong> pour faire le travail (ligne 32) ;
+<strong>Conclusion</strong></li>
 </ul>
-<p><strong>Conclusion</strong></p>
 <p>Dès que la couche <strong>[métier]</strong> a besoin d’accéder aux données stockées dans l’entrepôt de données, elle doit passer par la couche <strong>[dao]</strong> qui a été créée pour accéder à ces données.</p>
 <h2 id="105-script-principal">10.5. Script principal</h2>
 <p>Nous allons écrire deux scripts, chefs d’orchestre pour cette application. Le 1er <strong>[main1.php]</strong> utilisera la couche <strong>[Dao1]</strong> alors que le second <strong>[main2.php]</strong> utilisera la couche <strong>[Dao2]</strong>. Nous voulons montrer que cela n’a aucune incidence sur le code de la couche <strong>[Métier]</strong>.</p>
@@ -1356,27 +1372,27 @@
 <span class="normal"><a href="#__codelineno-6-18">18</a></span>
 <span class="normal"><a href="#__codelineno-6-19">19</a></span>
 <span class="normal"><a href="#__codelineno-6-20">20</a></span>
-<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">// respect strict des paramètres des fonctions</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">des</span> <span class="n">fonctions</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">// inclusion classes et interfaces</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Personne.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IMetier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Dao1.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Métier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">classes</span> <span class="n">et</span> <span class="n">interfaces</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Personne.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IMetier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Dao1.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Métier.php&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="c1">// test ----------------</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="c1">// création des couches</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="nv">$dao1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dao1</span><span class="p">();</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Métier</span><span class="p">();</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">setDao</span><span class="p">(</span><span class="nv">$dao1</span><span class="p">);</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="c1">// utilisation de la couche [métier]</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="nv">$personne</span> <span class="o">=</span> <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="o">//</span> <span class="n">test</span> <span class="o">----------------</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="o">//</span> <span class="n">création</span> <span class="n">des</span> <span class="n">couches</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="err">$</span><span class="n">dao1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dao1</span><span class="p">();</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="err">$</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Métier</span><span class="p">();</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">setDao</span><span class="p">(</span><span class="err">$</span><span class="n">dao1</span><span class="p">);</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="o">//</span> <span class="n">utilisation</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="err">$</span><span class="n">personne</span> <span class="o">=</span> <span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">doSomething</span><span class="p">(</span><span class="err">$</span><span class="n">personne</span><span class="p">);</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">save</span><span class="p">(</span><span class="err">$</span><span class="n">personne</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
@@ -1389,19 +1405,19 @@
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
 <span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>[Métier] : récupération de la personne d&#39;identifiant 4
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>[Dao1] : Récupération de la personne d&#39;identité (4) en base de données [locale]
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>[Métier] : Traitement métier de la personne [Personne(4)]
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>[Métier] : Sauvegarde de la personne [Personne(4)]
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>[Dao1] : Sauvegarde de la personne [Personne(4)] en base de données [locale]
+<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">[</span><span class="n">Métier</span><span class="p">]</span> <span class="p">:</span> <span class="n">récupération</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="n">d</span><span class="s1">&#39;identifiant 4</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p">[</span><span class="n">Dao1</span><span class="p">]</span> <span class="p">:</span> <span class="n">Récupération</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="n">d</span><span class="s1">&#39;identité (4) en base de données [locale]</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="p">[</span><span class="n">Métier</span><span class="p">]</span> <span class="p">:</span> <span class="n">Traitement</span> <span class="n">métier</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="p">[</span><span class="n">Personne</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="p">[</span><span class="n">Métier</span><span class="p">]</span> <span class="p">:</span> <span class="n">Sauvegarde</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="p">[</span><span class="n">Personne</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="p">[</span><span class="n">Dao1</span><span class="p">]</span> <span class="p">:</span> <span class="n">Sauvegarde</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="p">[</span><span class="n">Personne</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="n">en</span> <span class="n">base</span> <span class="n">de</span> <span class="n">données</span> <span class="p">[</span><span class="n">locale</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>la ligne 10 du code a provoqué l’écriture des lignes 1 et 2 des résultats ;</li>
 <li>la ligne 20 du code a provoqué l’écriture de la ligne 3 des résultats ;</li>
-<li>la ligne 21 du code a provoqué l’écriture des lignes 4 et 5 des résultats ;</li>
+<li>la ligne 21 du code a provoqué l’écriture des lignes 4 et 5 des résultats ;
+Le script <strong>[main2.php]</strong> est le suivant :</li>
 </ul>
-<p>Le script <strong>[main2.php]</strong> est le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -1422,42 +1438,42 @@
 <span class="normal"><a href="#__codelineno-8-18">18</a></span>
 <span class="normal"><a href="#__codelineno-8-19">19</a></span>
 <span class="normal"><a href="#__codelineno-8-20">20</a></span>
-<span class="normal"><a href="#__codelineno-8-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1">// respect strict des paramètres des fonctions</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">des</span> <span class="n">fonctions</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1">// inclusion classes et interfaces</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Personne.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IMetier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Dao2.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Métier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">classes</span> <span class="n">et</span> <span class="n">interfaces</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Personne.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IMetier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Dao2.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Métier.php&quot;</span><span class="p">;</span>
 <a id="__codelineno-8-12" name="__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="c1">// test ----------------</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="c1">// création des couches</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="nv">$dao2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dao2</span><span class="p">();</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Métier</span><span class="p">();</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">setDao</span><span class="p">(</span><span class="nv">$dao2</span><span class="p">);</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="c1">// utilisation de la couche [métier]</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="nv">$personne</span> <span class="o">=</span> <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="o">//</span> <span class="n">test</span> <span class="o">----------------</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="o">//</span> <span class="n">création</span> <span class="n">des</span> <span class="n">couches</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="err">$</span><span class="n">dao2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dao2</span><span class="p">();</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="err">$</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Métier</span><span class="p">();</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">setDao</span><span class="p">(</span><span class="err">$</span><span class="n">dao2</span><span class="p">);</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="o">//</span> <span class="n">utilisation</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="err">$</span><span class="n">personne</span> <span class="o">=</span> <span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">doSomething</span><span class="p">(</span><span class="err">$</span><span class="n">personne</span><span class="p">);</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">save</span><span class="p">(</span><span class="err">$</span><span class="n">personne</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 36-38 : la structure en couches utilise désormais la couche <strong>[Dao2]</strong> ;</li>
+<li>lignes 36-38 : la structure en couches utilise désormais la couche <strong>[Dao2]</strong> ;
+Les résultats de l’exécution sont les suivants :</li>
 </ul>
-<p>Les résultats de l’exécution sont les suivants :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>[Métier] : récupération de la personne d&#39;identifiant 4
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>[Dao2] : Récupération de la personne d&#39;identité (4) en base de données [distante]
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a>[Métier] : Traitement métier de la personne [Personne(4)]
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>[Métier] : Sauvegarde de la personne [Personne(4)]
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>[Dao2] : Sauvegarde de la personne [Personne(4)] en base de données [distante]
+<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">[</span><span class="n">Métier</span><span class="p">]</span> <span class="p">:</span> <span class="n">récupération</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="n">d</span><span class="s1">&#39;identifiant 4</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">[</span><span class="n">Dao2</span><span class="p">]</span> <span class="p">:</span> <span class="n">Récupération</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="n">d</span><span class="s1">&#39;identité (4) en base de données [distante]</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="p">[</span><span class="n">Métier</span><span class="p">]</span> <span class="p">:</span> <span class="n">Traitement</span> <span class="n">métier</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="p">[</span><span class="n">Personne</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="p">[</span><span class="n">Métier</span><span class="p">]</span> <span class="p">:</span> <span class="n">Sauvegarde</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="p">[</span><span class="n">Personne</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">[</span><span class="n">Dao2</span><span class="p">]</span> <span class="p">:</span> <span class="n">Sauvegarde</span> <span class="n">de</span> <span class="n">la</span> <span class="n">personne</span> <span class="p">[</span><span class="n">Personne</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="n">en</span> <span class="n">base</span> <span class="n">de</span> <span class="n">données</span> <span class="p">[</span><span class="n">distante</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p>La couche <strong>[Dao1]</strong> simule un accès à une base de données locale alors que la couche <strong>[Dao2]</strong> simule un accès à une base de données distante. Tant que ces deux couches respectent l’interface <strong>[IDao]</strong>, on voit que le code de la couche <strong>[Métier]</strong> n’a pas eu à être changé.</p>
 <p>Nous allons appliquer ce que nous venons d’apprendre à l’exercice du calcul d’impôts qui nous sert de fil rouge.</p>
@@ -1469,6 +1485,8 @@
 
 
 
+
+  
 
 
 
@@ -1516,7 +1534,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>

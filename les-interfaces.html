@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas">
+        <meta name="description" content="Introduction au langage PHP7 par l'exemple">
       
       
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/java-spring-dec-2015/les-interfaces.html">
+        <link rel="canonical" href="https://stahe.github.io/php7-juillet-2019/les-interfaces.html">
       
       
         <link rel="prev" href="les-classes.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>6. Les interfaces - Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas</title>
+        <title>6. Les interfaces - Introduction au langage PHP7 par l'exemple</title>
       
     
     
@@ -60,6 +60,20 @@
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
+    var siteName = "Introduction au langage PHP7 par l'exemple";
+
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+    console.log("[GA Debug] page_title forced to: " + siteName);
+  </script>
 
     
     
@@ -98,7 +112,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-header__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-header__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +126,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+            Introduction au langage PHP7 par l'exemple
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -198,7 +212,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -236,17 +250,17 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-nav__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-nav__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+    Introduction au langage PHP7 par l'exemple
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -320,14 +334,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d'un environnement de travail
+    2. Installation d&#x27;un environnement de travail
   
 
     
@@ -374,14 +388,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d'application – versions 1 et 2
+    4. Exercice d&#x27;application – versions 1 et 2
   
 
     
@@ -573,14 +587,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
+      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d'application – version 3
+    8. Exercice d&#x27;application – version 3
   
 
     
@@ -1046,7 +1060,7 @@
 
 
 <h1 id="6-les-interfaces">6. Les interfaces</h1>
-<p>Une interface est une structure définissant des prototypes de méthodes. Une classe implémentant une interface doit définir le code de toutes les méthodes de l'interface.</p>
+<p>Une interface est une structure définissant des prototypes de méthodes. Une classe implémentant une interface doit définir le code de toutes les méthodes de l&#x27;interface.</p>
 <h2 id="61-larborescence-des-scripts">6.1. L’arborescence des scripts</h2>
 <p><img src="images/100000000000019C000001E2B4512BE4.png" style="width:3.821cm;height:4.462cm;" alt="Image" /></p>
 <h2 id="62-une-premiere-interface">6.2. Une première interface</h2>
@@ -1088,52 +1102,52 @@
 <span class="normal"><a href="#__codelineno-0-35">35</a></span>
 <span class="normal"><a href="#__codelineno-0-36">36</a></span>
 <span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">// respect strict des types des paramètres des fonctions</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">des</span> <span class="n">fonctions</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">namespace</span> <span class="nx">Exemples</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">namespace</span> <span class="n">Exemples</span><span class="p">;</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">// une interface</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">interface</span> <span class="nx">IExemple</span> <span class="p">{</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="c1">// les méthodes de l&#39;interface</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">ajouter</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$i</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$j</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span><span class="p">;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">soustraire</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$i</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$j</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="o">//</span> <span class="n">une</span> <span class="n">interface</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">interface</span> <span class="n">IExemple</span> <span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="o">//</span> <span class="n">les</span> <span class="n">méthodes</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;interface</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">ajouter</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">i</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">j</span><span class="p">):</span> <span class="nb">int</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">soustraire</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">i</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">j</span><span class="p">):</span> <span class="nb">int</span><span class="p">;</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="c1">// implémentation 1 de l&#39;interface IExemple</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">class</span> <span class="nc">Classe1</span> <span class="k">implements</span> <span class="nx">IExemple</span> <span class="p">{</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">ajouter</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="o">//</span> <span class="n">implémentation</span> <span class="mi">1</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;interface IExemple</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">class</span><span class="w"> </span><span class="nc">Classe1</span> <span class="n">implements</span> <span class="n">IExemple</span> <span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">ajouter</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">):</span> <span class="nb">int</span> <span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="k">return</span> <span class="err">$</span><span class="n">a</span> <span class="o">+</span> <span class="err">$</span><span class="n">b</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="p">}</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">soustraire</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">-</span> <span class="nv">$b</span> <span class="o">+</span> <span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">soustraire</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">):</span> <span class="nb">int</span> <span class="p">{</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="k">return</span> <span class="err">$</span><span class="n">a</span> <span class="o">-</span> <span class="err">$</span><span class="n">b</span> <span class="o">+</span> <span class="mi">20</span><span class="p">;</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="p">}</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25"></a>
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="p">}</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="c1">// implémentation 2 de l&#39;interface IExemple</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="k">class</span> <span class="nc">Classe2</span> <span class="k">implements</span> <span class="nx">IExemple</span> <span class="p">{</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">ajouter</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span><span class="p">{</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span> <span class="o">+</span> <span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="o">//</span> <span class="n">implémentation</span> <span class="mi">2</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;interface IExemple</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="k">class</span><span class="w"> </span><span class="nc">Classe2</span> <span class="n">implements</span> <span class="n">IExemple</span> <span class="p">{</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">ajouter</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span> <span class="p">:</span> <span class="nb">int</span><span class="p">{</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="k">return</span> <span class="err">$</span><span class="n">a</span> <span class="o">+</span> <span class="err">$</span><span class="n">b</span> <span class="o">+</span> <span class="mi">100</span><span class="p">;</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="p">}</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">soustraire</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">-</span> <span class="nv">$b</span> <span class="o">+</span> <span class="mi">200</span><span class="p">;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">soustraire</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span> <span class="p">:</span> <span class="nb">int</span> <span class="p">{</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="k">return</span> <span class="err">$</span><span class="n">a</span> <span class="o">-</span> <span class="err">$</span><span class="n">b</span> <span class="o">+</span> <span class="mi">200</span><span class="p">;</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="p">}</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 10-14 : l'interface IExemple définit deux méthodes : la fonction ajouter (ligne 12) et la fonction soustraire (ligne 13). L'interface ne définit pas le code de ces méthodes. Ce sont les classes implémentant l'interface qui vont le faire ;</li>
-<li>ligne 17 : la classe Classe1 implémente (<strong>implements</strong>) l'interface IExemple. Elle définit donc un code pour les méthodes ajouter (ligne 18) et soustraire (ligne 22) ;</li>
-<li>lignes 29-38 : idem pour la classe Classe2 ;</li>
+<li>lignes 10-14 : l&#x27;interface IExemple définit deux méthodes : la fonction ajouter (ligne 12) et la fonction soustraire (ligne 13). L&#x27;interface ne définit pas le code de ces méthodes. Ce sont les classes implémentant l&#x27;interface qui vont le faire ;</li>
+<li>ligne 17 : la classe Classe1 implémente (<strong>implements</strong>) l&#x27;interface IExemple. Elle définit donc un code pour les méthodes ajouter (ligne 18) et soustraire (ligne 22) ;</li>
+<li>lignes 29-38 : idem pour la classe Classe2 ;
+Nous utilisons l’interface <strong>[IExemple]</strong> dans le script <strong>[interfaces-01.php]</strong> suivant :</li>
 </ul>
-<p>Nous utilisons l’interface <strong>[IExemple]</strong> dans le script <strong>[interfaces-01.php]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1153,26 +1167,26 @@
 <span class="normal"><a href="#__codelineno-1-17">17</a></span>
 <span class="normal"><a href="#__codelineno-1-18">18</a></span>
 <span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">require_once</span> <span class="s2">&quot;IExemple.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">use</span> <span class="nx">\Exemples\Classe1</span><span class="p">;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">use</span> <span class="nx">\Exemples\Classe2</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="k">use</span> <span class="nx">\Exemples\IExemple</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">require_once</span> <span class="s2">&quot;IExemple.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">use</span> \<span class="n">Exemples</span>\<span class="n">Classe1</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">use</span> \<span class="n">Exemples</span>\<span class="n">Classe2</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">use</span> \<span class="n">Exemples</span>\<span class="n">IExemple</span><span class="p">;</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1">// fonction</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="k">function</span> <span class="nf">calculer</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="nx">IExemple</span> <span class="nv">$interface</span><span class="p">)</span> <span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>  <span class="k">print</span> <span class="nv">$interface</span><span class="o">-&gt;</span><span class="na">ajouter</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>  <span class="k">print</span> <span class="nv">$interface</span><span class="o">-&gt;</span><span class="na">soustraire</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="o">//</span> <span class="n">fonction</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">function</span> <span class="n">calculer</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">,</span> <span class="n">IExemple</span> <span class="err">$</span><span class="n">interface</span><span class="p">)</span> <span class="p">:</span> <span class="n">void</span> <span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">interface</span><span class="o">-&gt;</span><span class="n">ajouter</span><span class="p">(</span><span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">interface</span><span class="o">-&gt;</span><span class="n">soustraire</span><span class="p">(</span><span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">}</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13"></a>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="c1">// ------------------- main</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">// création de 2 objets de type Classe1 et Classe2</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nv">$c1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classe1</span><span class="p">();</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="nv">$c2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classe2</span><span class="p">();</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="c1">// appel de la fonction calculer</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nx">calculer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$c1</span><span class="p">);</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="nx">calculer</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="nv">$c2</span><span class="p">);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="o">//</span> <span class="o">-------------------</span> <span class="n">main</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="mi">2</span> <span class="n">objets</span> <span class="n">de</span> <span class="nb">type</span> <span class="n">Classe1</span> <span class="n">et</span> <span class="n">Classe2</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="err">$</span><span class="n">c1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Classe1</span><span class="p">();</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="err">$</span><span class="n">c2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Classe2</span><span class="p">();</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="o">//</span> <span class="n">appel</span> <span class="n">de</span> <span class="n">la</span> <span class="n">fonction</span> <span class="n">calculer</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="n">calculer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="err">$</span><span class="n">c1</span><span class="p">);</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="n">calculer</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="err">$</span><span class="n">c2</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
@@ -1182,16 +1196,16 @@
 <li>ligne 9 : nous avons déclaré ici le type des trois paramètres. Si à l’exécution, le paramètre effectif n’est pas du type attendu, une erreur est lancée. Le 3e paramètre est de type <strong>[IExemple]</strong>. Cela veut dire que le paramètre effectif doit être une instance de classe implémentant l’interface <strong>[IExemple]</strong>, donc dans notre exemple, une instance des classes <strong>[Classe1]</strong> ou <strong>[Classe2]</strong> ;</li>
 <li>lignes 10-11 : nous utilisons les méthodes <strong>[ajouter, soustraire]</strong> de l’interface <strong>[IExemple]</strong> ;</li>
 <li>ligne 19 : le 3e paramètre effectif est de type <strong>[Classe1]</strong> compatible avec le type <strong>[IExemple]</strong> du 3e paramètre formel de la fonction ;</li>
-<li>ligne 20 : idem pour la classe <strong>[Classe2]</strong> ;</li>
+<li>ligne 20 : idem pour la classe <strong>[Classe2]</strong> ;
+<strong>Résultats</strong></li>
 </ul>
-<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>17
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>21
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>127
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>201
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="mi">17</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="mi">21</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="mi">127</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="mi">201</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="63-derivation-dune-interface">6.3. Dérivation d’une interface</h2>
 <p>De la même façon qu’une classe fille peut étendre une classe parent, une interface fille peut étendre une interface parent.</p>
@@ -1219,27 +1233,27 @@
 <span class="normal"><a href="#__codelineno-3-21">21</a></span>
 <span class="normal"><a href="#__codelineno-3-22">22</a></span>
 <span class="normal"><a href="#__codelineno-3-23">23</a></span>
-<span class="normal"><a href="#__codelineno-3-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// respect strict des types des paramètres des fonctions</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="k">namespace</span> <span class="nx">Exemples</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">des</span> <span class="n">fonctions</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">namespace</span> <span class="n">Exemples</span><span class="p">;</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1">// inclusion de la définition de l&#39;interface IExemple</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IExemple.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">de</span> <span class="n">la</span> <span class="n">définition</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;interface IExemple</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IExemple.php&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">// une interface qui dérive de IExemple</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">interface</span> <span class="nx">IExemple2</span> <span class="k">extends</span> <span class="nx">IExemple</span> <span class="p">{</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="c1">// la méthode de l&#39;interface</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">multiplier</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$i</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$j</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span><span class="p">;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="o">//</span> <span class="n">une</span> <span class="n">interface</span> <span class="n">qui</span> <span class="n">dérive</span> <span class="n">de</span> <span class="n">IExemple</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">interface</span> <span class="n">IExemple2</span> <span class="n">extends</span> <span class="n">IExemple</span> <span class="p">{</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="o">//</span> <span class="n">la</span> <span class="n">méthode</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;interface</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">multiplier</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">i</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">j</span><span class="p">):</span> <span class="nb">int</span><span class="p">;</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="p">}</span>
 <a id="__codelineno-3-16" name="__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1">// implémentation de l&#39;interface IExemple2</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">class</span> <span class="nc">Classe3</span> <span class="k">extends</span> <span class="nx">Classe2</span> <span class="k">implements</span> <span class="nx">IExemple2</span> <span class="p">{</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="o">//</span> <span class="n">implémentation</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;interface IExemple2</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">Classe3</span> <span class="n">extends</span> <span class="n">Classe2</span> <span class="n">implements</span> <span class="n">IExemple2</span> <span class="p">{</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>    <span class="k">public</span> <span class="k">function</span> <span class="nf">multiplier</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a>        <span class="k">return</span> <span class="nv">$a</span> <span class="o">*</span> <span class="nv">$b</span><span class="p">;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>    <span class="n">public</span> <span class="n">function</span> <span class="n">multiplier</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">):</span> <span class="nb">int</span> <span class="p">{</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>        <span class="k">return</span> <span class="err">$</span><span class="n">a</span> <span class="o">*</span> <span class="err">$</span><span class="n">b</span><span class="p">;</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22"></a>    <span class="p">}</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23"></a>
 <a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="p">}</span>
@@ -1249,9 +1263,9 @@
 <li>ligne 6 : l’interface <strong>[IExemple2]</strong> sera dans le même espace de noms que l’interface <strong>[Iexemple]</strong> ;</li>
 <li>ligne 9 : on inclut le fichier de définition de l’interface <strong>[Iexemple]</strong> ;</li>
 <li>lignes 12-15 : définissent l’interface <strong>[IExemple2]</strong> qui étend (hérite) l’interface <strong>[Iexemple]</strong> (<strong>extends</strong>) et lui ajoute une nouvelle méthode (ligne 14);</li>
-<li>lignes 18-24 : la classe <strong>[Classe3]</strong> étend la classe <strong>[Classe2]</strong>. Comme celle-ci implémente l’interface <strong>[IExemple]</strong>, ce sera également le cas de la classe <strong>[Classe3]</strong>. En effet, <strong>[Classe3]</strong> hérite de toutes les méthodes publiques et protégées de la classe <strong>[Classe2]</strong>, donc des méthodes <strong>ajouter</strong> et <strong>soustraire</strong>. Par ailleurs, on indique que <strong>[Classe3]</strong> implémente l’interface <strong>[IExemple2]</strong>. A ce titre, elle doit également implémenter la méthode <strong>multiplier</strong>, ce que ne fait pas <strong>[Classe2]</strong>. C’est ce que font les lignes 20-22;</li>
+<li>lignes 18-24 : la classe <strong>[Classe3]</strong> étend la classe <strong>[Classe2]</strong>. Comme celle-ci implémente l’interface <strong>[IExemple]</strong>, ce sera également le cas de la classe <strong>[Classe3]</strong>. En effet, <strong>[Classe3]</strong> hérite de toutes les méthodes publiques et protégées de la classe <strong>[Classe2]</strong>, donc des méthodes <strong>ajouter</strong> et <strong>soustraire</strong>. Par ailleurs, on indique que <strong>[Classe3]</strong> implémente l’interface <strong>[IExemple2]</strong>. A ce titre, elle doit également implémenter la méthode <strong>multiplier</strong>, ce que ne fait pas <strong>[Classe2]</strong>. C’est ce que font les lignes 20-22;
+L’interface <strong>[IExemple2]</strong> est exploitée par le script <strong>[interfaces-02]</strong> suivant:</li>
 </ul>
-<p>L’interface <strong>[IExemple2]</strong> est exploitée par le script <strong>[interfaces-02]</strong> suivant:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1273,41 +1287,41 @@
 <span class="normal"><a href="#__codelineno-4-19">19</a></span>
 <span class="normal"><a href="#__codelineno-4-20">20</a></span>
 <span class="normal"><a href="#__codelineno-4-21">21</a></span>
-<span class="normal"><a href="#__codelineno-4-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// respect strict des types des paramètres des fonctions</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">des</span> <span class="n">fonctions</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// inclusion et qualifications des classes et interfaces nécessaires au script</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Iexemple2.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="k">use</span> <span class="nx">\Exemples\IExemple2</span><span class="p">;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">use</span> <span class="nx">\Exemples\Classe3</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">et</span> <span class="n">qualifications</span> <span class="n">des</span> <span class="n">classes</span> <span class="n">et</span> <span class="n">interfaces</span> <span class="n">nécessaires</span> <span class="n">au</span> <span class="n">script</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Iexemple2.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="n">use</span> \<span class="n">Exemples</span>\<span class="n">IExemple2</span><span class="p">;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">use</span> \<span class="n">Exemples</span>\<span class="n">Classe3</span><span class="p">;</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10"></a>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1">// fonction</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="k">function</span> <span class="nf">calculer</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="nx">IExemple2</span> <span class="nv">$interface</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="k">print</span> <span class="nv">$interface</span><span class="o">-&gt;</span><span class="na">ajouter</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a>    <span class="k">print</span> <span class="nv">$interface</span><span class="o">-&gt;</span><span class="na">soustraire</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="k">print</span> <span class="nv">$interface</span><span class="o">-&gt;</span><span class="na">multiplier</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="o">//</span> <span class="n">fonction</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="n">function</span> <span class="n">calculer</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">,</span> <span class="n">IExemple2</span> <span class="err">$</span><span class="n">interface</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="nb">print</span> <span class="err">$</span><span class="n">interface</span><span class="o">-&gt;</span><span class="n">ajouter</span><span class="p">(</span><span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>    <span class="nb">print</span> <span class="err">$</span><span class="n">interface</span><span class="o">-&gt;</span><span class="n">soustraire</span><span class="p">(</span><span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="nb">print</span> <span class="err">$</span><span class="n">interface</span><span class="o">-&gt;</span><span class="n">multiplier</span><span class="p">(</span><span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="p">}</span>
 <a id="__codelineno-4-17" name="__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="c1">// ------------------- main</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="c1">// création d&#39;1 objet de type Classe3 qui implémente IExemple2</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="nv">$c3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classe3</span><span class="p">();</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="c1">// appel de la fonction calculer</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="nx">calculer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$c3</span><span class="p">);</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="o">//</span> <span class="o">-------------------</span> <span class="n">main</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="o">//</span> <span class="n">création</span> <span class="n">d</span><span class="s1">&#39;1 objet de type Classe3 qui implémente IExemple2</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="err">$</span><span class="n">c3</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Classe3</span><span class="p">();</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="o">//</span> <span class="n">appel</span> <span class="n">de</span> <span class="n">la</span> <span class="n">fonction</span> <span class="n">calculer</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="n">calculer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="err">$</span><span class="n">c3</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>ligne 12 : le 3e paramètre de la fonction <strong>[calculer]</strong> est de type <strong>[IExemple2]</strong> ;</li>
 <li>lignes 13-15 : on utilise les trois méthodes de l’interface <strong>[IExemple2]</strong> ;</li>
-<li>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme  3e paramètre un objet de type <strong>[IExemple2]</strong> (ligne 20) ;</li>
+<li>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme  3e paramètre un objet de type <strong>[IExemple2]</strong> (ligne 20) ;
+<strong>Résultats</strong></li>
 </ul>
-<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>107
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>201
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>12
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="mi">107</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="mi">201</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="mi">12</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="64-passage-dune-interface-en-parametre-dune-fonction">6.4. Passage d’une interface en paramètre d’une fonction</h2>
 <p>Nous avons vu au <a href="#_Passage_d’un_objet"><u><u>paragraphe</u></u></a> que lorsque le type attendu pour un paramètre de fonction est une classe alors le paramètre effectif peut être un objet du type attendu <strong>ou dérivé</strong>. Il en est de même pour les interfaces comme le montre le script suivant <strong>[interfaces-03.php]</strong> :</p>
@@ -1332,39 +1346,39 @@
 <span class="normal"><a href="#__codelineno-6-19">19</a></span>
 <span class="normal"><a href="#__codelineno-6-20">20</a></span>
 <span class="normal"><a href="#__codelineno-6-21">21</a></span>
-<span class="normal"><a href="#__codelineno-6-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">// respect strict des types des paramètres des fonctions</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">des</span> <span class="n">fonctions</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">declare</span><span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">// inclusion et qualifications des classes et interfaces nécessaires au script</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IExemple.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">use</span> <span class="nx">\Exemples\IExemple</span><span class="p">;</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IExemple2.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">use</span> <span class="nx">\Exemples\Classe3</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">et</span> <span class="n">qualifications</span> <span class="n">des</span> <span class="n">classes</span> <span class="n">et</span> <span class="n">interfaces</span> <span class="n">nécessaires</span> <span class="n">au</span> <span class="n">script</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IExemple.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">use</span> \<span class="n">Exemples</span>\<span class="n">IExemple</span><span class="p">;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">require_once</span> <span class="n">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IExemple2.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">use</span> \<span class="n">Exemples</span>\<span class="n">Classe3</span><span class="p">;</span>
 <a id="__codelineno-6-11" name="__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="c1">// fonction</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="k">function</span> <span class="nf">calculer</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="nx">IExemple</span> <span class="nv">$interface</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a>  <span class="k">print</span> <span class="nv">$interface</span><span class="o">-&gt;</span><span class="na">ajouter</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a>  <span class="k">print</span> <span class="nv">$interface</span><span class="o">-&gt;</span><span class="na">soustraire</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="o">//</span> <span class="n">fonction</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="n">function</span> <span class="n">calculer</span><span class="p">(</span><span class="nb">int</span> <span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">b</span><span class="p">,</span> <span class="n">IExemple</span> <span class="err">$</span><span class="n">interface</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">interface</span><span class="o">-&gt;</span><span class="n">ajouter</span><span class="p">(</span><span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">interface</span><span class="o">-&gt;</span><span class="n">soustraire</span><span class="p">(</span><span class="err">$</span><span class="n">a</span><span class="p">,</span> <span class="err">$</span><span class="n">b</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="p">}</span>
 <a id="__codelineno-6-17" name="__codelineno-6-17"></a>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="c1">// ------------------- main</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="c1">// création d&#39;1 objet de type Classe3 qui implémente IExemple2 et donc IExemple</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="nv">$c3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classe3</span><span class="p">();</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="c1">// appel de la fonction calculer</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="nx">calculer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">$c3</span><span class="p">);</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="o">//</span> <span class="o">-------------------</span> <span class="n">main</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="o">//</span> <span class="n">création</span> <span class="n">d</span><span class="s1">&#39;1 objet de type Classe3 qui implémente IExemple2 et donc IExemple</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="err">$</span><span class="n">c3</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Classe3</span><span class="p">();</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="o">//</span> <span class="n">appel</span> <span class="n">de</span> <span class="n">la</span> <span class="n">fonction</span> <span class="n">calculer</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="n">calculer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="err">$</span><span class="n">c3</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>ligne 13, la fonction <strong>[calculer]</strong> attend comme troisième paramètre un type <strong>[IExemple]</strong>. Cela signifie que le type du paramètre effectif pourra être de type <strong>[IExemple]</strong> <strong>ou dérivé</strong> ;</li>
-<li>ligne 20 : on instancie un objet \$<strong>c3</strong> de type <strong>[Classe3]</strong>, classe qui implémente l’interface <strong>[IExemple2]</strong> qui elle-même étend l’interface <strong>[IExemple]</strong>. Donc finalement \$<strong>c3</strong> implémente l’interface <strong>[IExemple]</strong> ;</li>
-<li>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme troisième paramètre un objet \$<strong>c3 </strong>de type <strong>[Classe3]</strong>. Par le jeu des héritages de classes et des implémentations, on a vu que l’objet \$<strong>c3</strong> implémentait le type <strong>[IExemple]</strong>. On peut donc l’utiliser comme troisième paramètre ;</li>
+<li>ligne 20 : on instancie un objet $<strong>c3</strong> de type <strong>[Classe3]</strong>, classe qui implémente l’interface <strong>[IExemple2]</strong> qui elle-même étend l’interface <strong>[IExemple]</strong>. Donc finalement $<strong>c3</strong> implémente l’interface <strong>[IExemple]</strong> ;</li>
+<li>ligne 22 : on appelle la fonction <strong>[calculer]</strong> avec comme troisième paramètre un objet $<strong>c3 </strong>de type <strong>[Classe3]</strong>. Par le jeu des héritages de classes et des implémentations, on a vu que l’objet $<strong>c3</strong> implémentait le type <strong>[IExemple]</strong>. On peut donc l’utiliser comme troisième paramètre ;
+<strong>Résultats</strong></li>
 </ul>
-<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>107
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>201
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="mi">107</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="mi">201</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -1374,6 +1388,8 @@
 
 
 
+
+  
 
 
 
@@ -1421,7 +1437,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>

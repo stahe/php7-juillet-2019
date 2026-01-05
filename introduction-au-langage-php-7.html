@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas">
+        <meta name="description" content="Introduction au langage PHP7 par l'exemple">
       
       
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/java-spring-dec-2015/introduction-au-langage-php-7.html">
+        <link rel="canonical" href="https://stahe.github.io/php7-juillet-2019/introduction-au-langage-php-7.html">
       
       
         <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="installation-dun-environnement-de-travail.html">
+        <link rel="next" href="installation-dx27un-environnement-de-travail.html">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>1. Introduction au langage PHP 7 - Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas</title>
+        <title>1. Introduction au langage PHP 7 - Introduction au langage PHP7 par l'exemple</title>
       
     
     
@@ -60,6 +60,20 @@
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
+    var siteName = "Introduction au langage PHP7 par l'exemple";
+
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+    console.log("[GA Debug] page_title forced to: " + siteName);
+  </script>
 
     
     
@@ -98,7 +112,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-header__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-header__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +126,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+            Introduction au langage PHP7 par l'exemple
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -198,7 +212,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -236,17 +250,17 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-nav__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-nav__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+    Introduction au langage PHP7 par l'exemple
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -330,14 +344,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d'un environnement de travail
+    2. Installation d&#x27;un environnement de travail
   
 
     
@@ -384,14 +398,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d'application – versions 1 et 2
+    4. Exercice d&#x27;application – versions 1 et 2
   
 
     
@@ -492,14 +506,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
+      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d'application – version 3
+    8. Exercice d&#x27;application – version 3
   
 
     
@@ -966,36 +980,38 @@
 
 <h1 id="1-introduction-au-langage-php-7">1. Introduction au langage PHP 7</h1>
 <p>Ce document fait partie d’une série de quatre articles :</p>
-<ol>
+<ul>
 <li>[<a href="https://tahe.developpez.com/tutoriels-cours/php7">Introduction au langage </a><a href="https://tahe.developpez.com/tutoriels-cours/php7"><strong><em>*PHP7</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/php7"> par l’exemple</a>]. <strong>C’est le document présent</strong> ;</li>
 <li>[<a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6">Introduction au langage </a><a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6"><strong><em>*ECMASCRIPT 6</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6"> par l’exemple</a>] ;</li>
 <li>[<a href="https://tahe.developpez.com/tutoriels-cours/vuejs">Introduction au framework </a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><strong><em>*VUE.JS</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"> par l’exemple</a>] ;</li>
-<li>[<a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs">Introduction au framework </a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"><strong><em>*NUXT.JS</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"> par l’exemple</a>] ;</li>
-</ol>
-<p>Ce sont tous des documents pour <strong>débutants</strong>. Les articles ont une suite logique mais <strong>sont faiblement couplés</strong> :</p>
-<ul>
-<li>le document [1] présente le langage PHP 7. Le lecteur seulement intéressé par le langage PHP et pas par le langage Javascript des articles suivants s’arrêtera là ;</li>
+<li>
+<p>[<a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs">Introduction au framework </a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"><strong><em>*NUXT.JS</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"> par l’exemple</a>] ;
+Ce sont tous des documents pour <strong>débutants</strong>. Les articles ont une suite logique mais <strong>sont faiblement couplés</strong> :</p>
+</li>
+<li>
+<p>le document [1] présente le langage PHP 7. Le lecteur seulement intéressé par le langage PHP et pas par le langage Javascript des articles suivants s’arrêtera là ;</p>
+</li>
 <li>les documents [2-4] visent à construire un client Javascript au serveur de calcul de l’impôt développé dans le document [1] ;</li>
 <li>les frameworks Javascript [vue.js] et [nuxt.js] des articles 3 et 4 nécessitent de connaître le Javascript des dernières versions d’ECMASCRIPT, celles de la version 6. Le document [2] est donc destiné à ceux qui ne connaissent pas cette version de Javascript. Il fait référence au serveur de calcul de l’impôt construit dans le document [1]. Le lecteur de [2] aura alors parfois besoin de se référer au document [1] ;</li>
 <li>une fois ECMASCRIPT 6 maîtrisé, on peut aborder le framework VUE.JS qui permet de construire des clients Javascript s’exécutant dans un navigateur en mode SPA (Single Page Application). C’est le document [3]. Il fait référence à la fois au serveur de calcul de l’impôt construit dans le document [1] et au code du client Javascript autonome construit en [2]. Le lecteur de [3] aura alors parfois besoin de se référer aux documents [1] et [2] ;</li>
-<li>une fois VUE.JS maîtrisé, on peut aborder le framework NUXT.JS qui permet de construire des clients Javascript s’exécutant dans un navigateur en mode SSR (Server Side Rendered). Il fait référence à la fois au serveur de calcul de l’impôt construit dans le document [1], au code du client Javascript autonome construit en [2] ainsi qu’à l’application [vue.js] développée dans le document [3]. Le lecteur de [4] aura alors parfois besoin de se référer aux documents [1] [2] et [3] ;</li>
+<li>une fois VUE.JS maîtrisé, on peut aborder le framework NUXT.JS qui permet de construire des clients Javascript s’exécutant dans un navigateur en mode SSR (Server Side Rendered). Il fait référence à la fois au serveur de calcul de l’impôt construit dans le document [1], au code du client Javascript autonome construit en [2] ainsi qu’à l’application [vue.js] développée dans le document [3]. Le lecteur de [4] aura alors parfois besoin de se référer aux documents [1] [2] et [3] ;
+Ce document propose une liste de <strong>scripts console</strong> PHP 7 dans différents domaines (structures du langage, accès aux fichiers, aux bases de données, au réseau internet). La programmation web est abordée via des <strong>services web</strong>. On a appelé dans ce document, service web, toute application web produisant du texte brut. Ce sont des serveurs de données et non des serveurs de pages web qui sont un mixte HTML, CSS et Javascript. On y aborde des concepts web classiques (protocole HTTP, réponses jSON ou XML, gestion de session, authentification) également utilisés dans la programmation web classique.</li>
 </ul>
-<p>Ce document propose une liste de <strong>scripts console</strong> PHP 7 dans différents domaines (structures du langage, accès aux fichiers, aux bases de données, au réseau internet). La programmation web est abordée via des <strong>services web</strong>. On a appelé dans ce document, service web, toute application web produisant du texte brut. Ce sont des serveurs de données et non des serveurs de pages web qui sont un mixte HTML, CSS et Javascript. On y aborde des concepts web classiques (protocole HTTP, réponses jSON ou XML, gestion de session, authentification) également utilisés dans la programmation web classique.</p>
 <p>De nos jours, il est fréquent de construire des applications web en mode client / serveur :</p>
 <p><img src="images/100000000000082800000365F64BD6A3.png" style="width:16.571cm;height:6.901cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le navigateur web affiche des pages web à destination d’un utilisateur <strong>[5, 7]</strong>. Ces pages contiennent du Javascript implémentant un client d’un service web de données <strong>[2]</strong> ainsi qu’un client d’un serveur de fragments de pages web <strong>[3]</strong>. Un framework JS bien établi dans ce domaine est <strong>Angular 2</strong> de Google (mai 2019) ;</li>
 <li>en <strong>[2]</strong>, le serveur web est un serveur de données. Il peut être écrit dans n’importe quel langage. Il ne produit pas de pages web au sens classique (HTML, CSS, Javascript) sauf peut-être la 1ère fois. Mais cette 1ère page peut être obtenue d’un serveur web classique <strong>[3]</strong> (pas un serveur de données). Le Javascript de la page initiale va alors générer les différentes pages web de l’application en obtenant les données <strong>[4]</strong> à afficher auprès du serveur web qui agit comme un serveur de données <strong>[2]</strong>. Il peut également obtenir des fragments de page web <strong>[5]</strong> pour habiller ces données auprès du serveur de pages web <strong>[3]</strong> ;</li>
 <li>en <strong>[4]</strong>, l’utilisateur initie une action ;</li>
-<li>en <strong>[6,7]</strong> : il reçoit des données habillées par un fragment de page web ;</li>
+<li>en <strong>[6,7]</strong> : il reçoit des données habillées par un fragment de page web ;
+Nous allons dans ce document écrire des applications client / serveur en PHP7 ayant la structure suivante :</li>
 </ul>
-<p>Nous allons dans ce document écrire des applications client / serveur en PHP7 ayant la structure suivante :</p>
 <p><img src="images/10000000000006A800000291FCA421D9.png" style="width:15.781cm;height:6.081cm;" alt="Image" /></p>
 <p>On a là une application client / serveur écrite en PHP. Un script console <strong>[9]</strong> interrogera un serveur de données <strong>[4]</strong>. Ce qui sera appris ici pour écrire le service de données pourra être réutilisé dans une application web. Le service de données en PHP pourra être conservé et le client PHP sera lui remplacé par un client Javascript.</p>
 <p>Comme fil rouge du document, nous construirons un service de calcul de l’impôt en 13 versions. La version 13 aura l’architecture suivante :</p>
 <p><img src="images/100000000000072E0000021F81624F47.png" style="width:17.021cm;height:5.001cm;" alt="Image" /></p>
 <p>La couche <strong>[web]</strong> du serveur aura une architecture MVC (Model – View – Controller). Tout le cours PHP 7 vise à construire cette version.</p>
-<p>Les scripts de ce document sont commentés et leur exécution console reproduite. Des explications supplémentaires sont parfois fournies. Le document nécessite une lecture active : pour comprendre un script, il faut à la fois lire son code, ses commentaires et ses résultats d'exécution.</p>
+<p>Les scripts de ce document sont commentés et leur exécution console reproduite. Des explications supplémentaires sont parfois fournies. Le document nécessite une lecture active : pour comprendre un script, il faut à la fois lire son code, ses commentaires et ses résultats d&#x27;exécution.</p>
 <p>Les exemples du document sont disponibles |<a href="https://tahe.developpez.com/tutoriels-cours/php7/documents/php7.rar"><strong><em>*ici</em></strong>*</a><strong>|</strong>.</p>
 <p>L’application serveur PHP 7 peut être testée |<a href="https://sergetahe.com/apps/impot/serveur-php7/"><strong><em>*ici</em></strong>*</a><strong>|</strong>.</p>
 <p>Serge Tahé, juillet 2019</p>
@@ -1007,6 +1023,8 @@
 
 
 
+
+  
 
 
 
@@ -1054,7 +1072,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>

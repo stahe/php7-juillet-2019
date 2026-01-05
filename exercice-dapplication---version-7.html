@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas">
+        <meta name="description" content="Introduction au langage PHP7 par l'exemple">
       
       
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/java-spring-dec-2015/exercice-dapplication---version-7.html">
+        <link rel="canonical" href="https://stahe.github.io/php7-juillet-2019/exercice-dapplication---version-7.html">
       
       
         <link rel="prev" href="exercice-dapplication---version-6.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>15. Exercice d’application – version 7 - Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas</title>
+        <title>15. Exercice d’application – version 7 - Introduction au langage PHP7 par l'exemple</title>
       
     
     
@@ -60,6 +60,20 @@
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
+    var siteName = "Introduction au langage PHP7 par l'exemple";
+
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+    console.log("[GA Debug] page_title forced to: " + siteName);
+  </script>
 
     
     
@@ -98,7 +112,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-header__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-header__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +126,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+            Introduction au langage PHP7 par l'exemple
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -198,7 +212,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -236,17 +250,17 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Introduction au langage Java et à l&#39;écosystème Spring au travers d&#39;une étude de cas" class="md-nav__button md-logo" aria-label="Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas" data-md-component="logo">
+    <a href="index.html" title="Introduction au langage PHP7 par l&#39;exemple" class="md-nav__button md-logo" aria-label="Introduction au langage PHP7 par l'exemple" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Introduction au langage Java et à l'écosystème Spring au travers d'une étude de cas
+    Introduction au langage PHP7 par l'exemple
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/stahe/java-spring-dec-2015" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/stahe/php7-juillet-2019" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -320,14 +334,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d'un environnement de travail
+    2. Installation d&#x27;un environnement de travail
   
 
     
@@ -374,14 +388,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d'application – versions 1 et 2
+    4. Exercice d&#x27;application – versions 1 et 2
   
 
     
@@ -482,14 +496,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
+      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d'application – version 3
+    8. Exercice d&#x27;application – version 3
   
 
     
@@ -1099,51 +1113,51 @@
 <span class="normal"><a href="#__codelineno-0-42">42</a></span>
 <span class="normal"><a href="#__codelineno-0-43">43</a></span>
 <span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>{
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    &quot;rootDirectory&quot;: &quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;,
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    &quot;databaseFilename&quot;: &quot;Data/database.json&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    &quot;taxAdminDataFileName&quot;: &quot;Data/taxadmindata.json&quot;,
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    &quot;taxPayersDataFileName&quot;: &quot;Data/taxpayersdata.json&quot;,
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    &quot;resultsFileName&quot;: &quot;Data/results.json&quot;,
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    &quot;errorsFileName&quot;: &quot;Data/errors.json&quot;,
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    &quot;dependencies&quot;: {
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        &quot;BaseEntity&quot;: &quot;/../version-05/Entities/BaseEntity.php&quot;,
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>        &quot;TaxAdminData&quot;: &quot;/../version-05/Entities/TaxAdminData.php&quot;,
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        &quot;TaxPayerData&quot;: &quot;/../version-05/Entities/TaxPayerData.php&quot;,
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        &quot;Database&quot;: &quot;/../version-05/Entities/Database.php&quot;,
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        &quot;ExceptionImpots&quot;: &quot;/../version-05/Entities/ExceptionImpots.php&quot;,
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        &quot;Utilitaires&quot;: &quot;/../version-05/Utilities/Utilitaires.php&quot;,
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        &quot;InterfaceDao&quot;: &quot;/../version-05/Dao/InterfaceDao.php&quot;,
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        &quot;TraitDao&quot;: &quot;/../version-05/Dao/TraitDao.php&quot;,
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        &quot;InterfaceDao4TransferAdminData2Database&quot;: &quot;/../version-05/Dao/InterfaceDao4TransferAdminData2Database.php&quot;,
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        &quot;DaoTransferAdminDataFromJsonFile2Database&quot;: &quot;/../version-05/Dao/DaoTransferAdminDataFromJsonFile2Database.php&quot;,        
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        &quot;DaoImpotsWithTaxAdminDataInDatabase&quot;: &quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;,
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>        &quot;InterfaceMetier&quot;: &quot;/../version-05/Métier/InterfaceMetier.php&quot;,
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        &quot;Metier&quot;: &quot;/../version-05/Métier/Metier.php&quot;
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    },
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    &quot;dependencies4calculate&quot;: [
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>        &quot;BaseEntity&quot;,
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        &quot;TaxAdminData&quot;,
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        &quot;TaxPayerData&quot;,
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        &quot;Database&quot;,
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        &quot;ExceptionImpots&quot;,
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        &quot;Utilitaires&quot;,
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        &quot;InterfaceDao&quot;,
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        &quot;TraitDao&quot;,
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        &quot;DaoImpotsWithTaxAdminDataInDatabase&quot;,
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        &quot;InterfaceMetier&quot;,
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        &quot;Metier&quot;],
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    &quot;dependencies4transfer&quot;: [
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        &quot;BaseEntity&quot;,
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>        &quot;TaxAdminData&quot;,
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        &quot;Database&quot;,
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        &quot;ExceptionImpots&quot;,
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        &quot;Utilitaires&quot;,
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>        &quot;InterfaceDao&quot;,
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        &quot;TraitDao&quot;,  
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a>        &quot;InterfaceDao4TransferAdminData2Database&quot;,
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a>        &quot;DaoTransferAdminDataFromJsonFile2Database&quot;]
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a>}
+<span class="normal"><a href="#__codelineno-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="s2">&quot;rootDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="s2">&quot;databaseFilename&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/database.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="s2">&quot;taxAdminDataFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/taxadmindata.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="s2">&quot;taxPayersDataFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/taxpayersdata.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="s2">&quot;resultsFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/results.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="s2">&quot;errorsFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/errors.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="s2">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="s2">&quot;BaseEntity&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Entities/BaseEntity.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="s2">&quot;TaxAdminData&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="s2">&quot;TaxPayerData&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="s2">&quot;Database&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Entities/Database.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="s2">&quot;ExceptionImpots&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="s2">&quot;Utilitaires&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="s2">&quot;InterfaceDao&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="s2">&quot;TraitDao&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Dao/TraitDao.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="s2">&quot;InterfaceDao4TransferAdminData2Database&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao4TransferAdminData2Database.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="s2">&quot;DaoTransferAdminDataFromJsonFile2Database&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Dao/DaoTransferAdminDataFromJsonFile2Database.php&quot;</span><span class="p">,</span>        
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="s2">&quot;DaoImpotsWithTaxAdminDataInDatabase&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>        <span class="s2">&quot;InterfaceMetier&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Métier/InterfaceMetier.php&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="s2">&quot;Metier&quot;</span><span class="p">:</span> <span class="s2">&quot;/../version-05/Métier/Metier.php&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="p">},</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>        <span class="s2">&quot;BaseEntity&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="s2">&quot;TaxAdminData&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="s2">&quot;TaxPayerData&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="s2">&quot;Database&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="s2">&quot;ExceptionImpots&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="s2">&quot;Utilitaires&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="s2">&quot;InterfaceDao&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="s2">&quot;TraitDao&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="s2">&quot;DaoImpotsWithTaxAdminDataInDatabase&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="s2">&quot;InterfaceMetier&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="s2">&quot;Metier&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="s2">&quot;dependencies4transfer&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="s2">&quot;BaseEntity&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>        <span class="s2">&quot;TaxAdminData&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="s2">&quot;Database&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="s2">&quot;ExceptionImpots&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="s2">&quot;Utilitaires&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>        <span class="s2">&quot;InterfaceDao&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="s2">&quot;TraitDao&quot;</span><span class="p">,</span>  
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>        <span class="s2">&quot;InterfaceDao4TransferAdminData2Database&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>        <span class="s2">&quot;DaoTransferAdminDataFromJsonFile2Database&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Dans cette configuration :</p>
 <ul>
@@ -1151,9 +1165,9 @@
 <li>lignes 3-7 : les chemins de tous les fichiers jSON de l’application ;</li>
 <li>lignes 8-22 : les chemins de tous les fichiers de l’application, sous la formé <strong>[clé=&gt;chemin]</strong> ;</li>
 <li>lignes 23-34 : les dépendances pour le calcul de l’impôt sous la forme d’une liste de clés du dictionnaire <strong>[dependencies]</strong> (lignes 8-22) ;</li>
-<li>lignes 35-44 : les dépendances pour le transfert en base des données du fichier jSON <strong>[taxadmindata.json]</strong> sous la forme d’une liste de clés du dictionnaire <strong>[dependencies]</strong> (lignes 8-22) ;</li>
+<li>lignes 35-44 : les dépendances pour le transfert en base des données du fichier jSON <strong>[taxadmindata.json]</strong> sous la forme d’une liste de clés du dictionnaire <strong>[dependencies]</strong> (lignes 8-22) ;
+Le script de transfert en base des données de l’administration fiscale <strong>[MainTransferAdminDataFromFile2PostgresSQLDatabase.php]</strong> devient le suivant :</li>
 </ul>
-<p>Le script de transfert en base des données de l’administration fiscale <strong>[MainTransferAdminDataFromFile2PostgresSQLDatabase.php]</strong> devient le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1193,56 +1207,56 @@
 <span class="normal"><a href="#__codelineno-1-37">37</a></span>
 <span class="normal"><a href="#__codelineno-1-38">38</a></span>
 <span class="normal"><a href="#__codelineno-1-39">39</a></span>
-<span class="normal"><a href="#__codelineno-1-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">// gestion des erreurs par PHP</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">//</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;../Data/config.json&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="o">//</span> <span class="n">gestion</span> <span class="n">des</span> <span class="n">erreurs</span> <span class="n">par</span> <span class="n">PHP</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="o">//</span> <span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="o">//</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="o">//</span> <span class="n">chemin</span> <span class="n">du</span> <span class="n">fichier</span> <span class="n">de</span> <span class="n">configuration</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;../Data/config.json&quot;</span><span class="p">);</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">configuration</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="err">$</span><span class="n">config</span> <span class="o">=</span> \<span class="n">json_decode</span><span class="p">(</span>\<span class="n">file_get_contents</span><span class="p">(</span><span class="n">CONFIG_FILENAME</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
 <a id="__codelineno-1-17" name="__codelineno-1-17"></a>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4transfer&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="o">//</span> <span class="n">on</span> <span class="n">inclut</span> <span class="n">les</span> <span class="n">dépendances</span> <span class="n">nécessaires</span> <span class="n">au</span> <span class="n">script</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="err">$</span><span class="n">rootDirectory</span> <span class="o">=</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies4transfer&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="err">$</span><span class="n">dependency</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>  <span class="n">require</span> <span class="err">$</span><span class="n">rootDirectory</span> <span class="o">.</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="err">$</span><span class="n">dependency</span><span class="p">];</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="p">}</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23"></a>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="c1">// définition des constantes</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;TAXADMINDATA_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;taxAdminDataFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">databaseFilename</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;TAXADMINDATA_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">taxAdminDataFileName</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
 <a id="__codelineno-1-27" name="__codelineno-1-27"></a>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="c1">//</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="o">//</span>
 <a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a>  <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoTransferAdminDataFromJsonFile2Database</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">,</span> <span class="nx">TAXADMINDATA_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32"></a>  <span class="c1">// transfert des données dans la base</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33"></a>  <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">transferAdminData2Database</span><span class="p">();</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35"></a>  <span class="c1">// on affiche l&#39;erreur</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36"></a>  <span class="k">print</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>  <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>  <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoTransferAdminDataFromJsonFile2Database</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">,</span> <span class="n">TAXADMINDATA_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>  <span class="o">//</span> <span class="n">transfert</span> <span class="n">des</span> <span class="n">données</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">base</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a>  <span class="err">$</span><span class="n">dao</span><span class="o">-&gt;</span><span class="n">transferAdminData2Database</span><span class="p">();</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">ExceptionImpots</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">affiche</span> <span class="n">l</span><span class="s1">&#39;erreur</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="p">}</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="c1">// fin</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="o">//</span> <span class="n">fin</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="n">exit</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <p>Le code reste celui qu’il était au paragraphe <a href="#_Remplissage_de_la"><u><u>lien</u></u></a>. La seule différence est l’exploitation du fichier <strong>[config.json]</strong> en lieu et place des constantes aux lignes 18-26 ;</p>
 <ul>
-<li>ligne 16 : la fonction <strong>[file_get_contents]</strong> transfère le fichier <strong>[config.json]</strong> dans une chaîne de caractères. La fonction <strong>[json_decode]</strong> exploite ensuite cette chaîne pour construire le dictionnaire <strong>[\$config]</strong>. Le second paramètre <strong>[true]</strong> de la fonction <strong>[json_decode]</strong> indique qu’on veut construire un dictionnaire ;</li>
+<li>ligne 16 : la fonction <strong>[file_get_contents]</strong> transfère le fichier <strong>[config.json]</strong> dans une chaîne de caractères. La fonction <strong>[json_decode]</strong> exploite ensuite cette chaîne pour construire le dictionnaire <strong>[$config]</strong>. Le second paramètre <strong>[true]</strong> de la fonction <strong>[json_decode]</strong> indique qu’on veut construire un dictionnaire ;</li>
 <li>lignes 19-22 : on inclut les dépendances nécessaires au script de transfert des données du fichier <strong>[taxadmindata.json]</strong> vers la base de données ;</li>
-<li><strong>[\$config["dependencies4transfer"]</strong>] est le tableau des dépendances nécessaires au script de transfert. C’est une liste de <strong>clés</strong>. Les chemins des fichiers à inclure dans le projet sont trouvés dans le dictionnaire <strong>[\$config["dependencies"]</strong>] ;</li>
-<li>\$config<strong>["rootDirectory"]</strong> représente le chemin avec lequel les fichiers à inclure doivent être préfixés ;</li>
+<li><strong>[$config[&quot;dependencies4transfer&quot;]</strong>] est le tableau des dépendances nécessaires au script de transfert. C’est une liste de <strong>clés</strong>. Les chemins des fichiers à inclure dans le projet sont trouvés dans le dictionnaire <strong>[$config[&quot;dependencies&quot;]</strong>] ;</li>
+<li>$config<strong>[&quot;rootDirectory&quot;]</strong> représente le chemin avec lequel les fichiers à inclure doivent être préfixés ;
+De la même façon, le script de calcul de l’impôt devient le suivant <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> :</li>
 </ul>
-<p>De la même façon, le script de calcul de l’impôt devient le suivant <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -1286,50 +1300,50 @@
 <span class="normal"><a href="#__codelineno-2-41">41</a></span>
 <span class="normal"><a href="#__codelineno-2-42">42</a></span>
 <span class="normal"><a href="#__codelineno-2-43">43</a></span>
-<span class="normal"><a href="#__codelineno-2-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-2-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">// gestion des erreurs par PHP</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1">//</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;../Data/config.json&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="o">//</span> <span class="n">gestion</span> <span class="n">des</span> <span class="n">erreurs</span> <span class="n">par</span> <span class="n">PHP</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="o">//</span> <span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="o">//</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="o">//</span> <span class="n">chemin</span> <span class="n">du</span> <span class="n">fichier</span> <span class="n">de</span> <span class="n">configuration</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;../Data/config.json&quot;</span><span class="p">);</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">configuration</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="err">$</span><span class="n">config</span> <span class="o">=</span> \<span class="n">json_decode</span><span class="p">(</span>\<span class="n">file_get_contents</span><span class="p">(</span><span class="n">CONFIG_FILENAME</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
 <a id="__codelineno-2-17" name="__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="o">//</span> <span class="n">on</span> <span class="n">inclut</span> <span class="n">les</span> <span class="n">dépendances</span> <span class="n">nécessaires</span> <span class="n">au</span> <span class="n">script</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="err">$</span><span class="n">rootDirectory</span> <span class="o">=</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="err">$</span><span class="n">dependency</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>  <span class="n">require</span> <span class="err">$</span><span class="n">rootDirectory</span> <span class="o">.</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="err">$</span><span class="n">dependency</span><span class="p">];</span>
 <a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="p">}</span>
 <a id="__codelineno-2-23" name="__codelineno-2-23"></a>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="c1">// définition des constantes</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;TAXPAYERSDATA_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;taxPayersDataFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;RESULTS_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;resultsFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ERRORS_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;errorsFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">databaseFilename</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;TAXPAYERSDATA_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">taxPayersDataFileName</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;RESULTS_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">resultsFileName</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;ERRORS_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">errorsFileName</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
 <a id="__codelineno-2-29" name="__codelineno-2-29"></a>
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="c1">//</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="o">//</span>
 <a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32"></a>  <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-2-34" name="__codelineno-2-34"></a>  <span class="c1">// création de la couche [métier]</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35"></a>  <span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
-<a id="__codelineno-2-36" name="__codelineno-2-36"></a>  <span class="c1">// calcul de l&#39;impôts en mode batch</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37"></a>  <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">executeBatchImpots</span><span class="p">(</span><span class="nx">TAXPAYERSDATA_FILENAME</span><span class="p">,</span> <span class="nx">RESULTS_FILENAME</span><span class="p">,</span> <span class="nx">ERRORS_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-2-39" name="__codelineno-2-39"></a>  <span class="c1">// on affiche l&#39;erreur</span>
-<a id="__codelineno-2-40" name="__codelineno-2-40"></a>  <span class="k">print</span> <span class="s2">&quot;Une erreur s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>  <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>  <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>  <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>  <span class="err">$</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Metier</span><span class="p">(</span><span class="err">$</span><span class="n">dao</span><span class="p">);</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a>  <span class="o">//</span> <span class="n">calcul</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;impôts en mode batch</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a>  <span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">executeBatchImpots</span><span class="p">(</span><span class="n">TAXPAYERSDATA_FILENAME</span><span class="p">,</span> <span class="n">RESULTS_FILENAME</span><span class="p">,</span> <span class="n">ERRORS_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">ExceptionImpots</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">affiche</span> <span class="n">l</span><span class="s1">&#39;erreur</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40"></a>  <span class="nb">print</span> <span class="s2">&quot;Une erreur s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="n">utf8_encode</span><span class="p">(</span><span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="p">}</span>
-<a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="c1">// fin</span>
-<a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="o">//</span> <span class="n">fin</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="n">exit</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="152-tests-codeception">15.2. Tests [Codeception]</h2>
 <p>Cette version comme les précédentes est validée par des tests <strong>[Codeception]</strong>.</p>
@@ -1376,44 +1390,44 @@
 <span class="normal"><a href="#__codelineno-3-38">38</a></span>
 <span class="normal"><a href="#__codelineno-3-39">39</a></span>
 <span class="normal"><a href="#__codelineno-3-40">40</a></span>
-<span class="normal"><a href="#__codelineno-3-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// respect strict des types déclarés des paramètres de fonctions</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">fonctions</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">// définition de constantes</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="nx">ROOT</span><span class="o">.</span><span class="s2">&quot;/Data/config.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">de</span> <span class="n">constantes</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="o">//</span> <span class="n">chemin</span> <span class="n">du</span> <span class="n">fichier</span> <span class="n">de</span> <span class="n">configuration</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="n">ROOT</span><span class="o">.</span><span class="s2">&quot;/Data/config.json&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">configuration</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="err">$</span><span class="n">config</span> <span class="o">=</span> \<span class="n">json_decode</span><span class="p">(</span>\<span class="n">file_get_contents</span><span class="p">(</span><span class="n">CONFIG_FILENAME</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="o">//</span> <span class="n">on</span> <span class="n">inclut</span> <span class="n">les</span> <span class="n">dépendances</span> <span class="n">nécessaires</span> <span class="n">au</span> <span class="n">script</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="err">$</span><span class="n">rootDirectory</span> <span class="o">=</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="err">$</span><span class="n">dependency</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>  <span class="n">require</span> <span class="err">$</span><span class="n">rootDirectory</span> <span class="o">.</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="err">$</span><span class="n">dependency</span><span class="p">];</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="p">}</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="c1">// autres constantes</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="o">//</span> <span class="n">autres</span> <span class="n">constantes</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">databaseFilename</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22"></a>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1">// test -----------------------------------------------------</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="o">//</span> <span class="n">test</span> <span class="o">-----------------------------------------------------</span>
 <a id="__codelineno-3-24" name="__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="k">class</span> <span class="nc">DaoTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a>  <span class="c1">// TaxAdminData</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>  <span class="k">private</span> <span class="nv">$taxAdminData</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="k">class</span><span class="w"> </span><span class="nc">DaoTest</span> <span class="n">extends</span> \<span class="n">Codeception</span>\<span class="n">Test</span>\<span class="n">Unit</span> <span class="p">{</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a>  <span class="o">//</span> <span class="n">TaxAdminData</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">taxAdminData</span><span class="p">;</span>
 <a id="__codelineno-3-28" name="__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31"></a>    <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">taxAdminData</span> <span class="o">=</span> <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">getTaxAdminData</span><span class="p">();</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>    <span class="n">parent</span><span class="p">::</span><span class="n">__construct</span><span class="p">();</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>    <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">taxAdminData</span> <span class="o">=</span> <span class="err">$</span><span class="n">dao</span><span class="o">-&gt;</span><span class="n">getTaxAdminData</span><span class="p">();</span>
 <a id="__codelineno-3-34" name="__codelineno-3-34"></a>  <span class="p">}</span>
 <a id="__codelineno-3-35" name="__codelineno-3-35"></a>
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="c1">// tests</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">testTaxAdminData</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a>    <span class="nx">…</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="o">//</span> <span class="n">tests</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">testTaxAdminData</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a>    <span class="err">…</span>
 <a id="__codelineno-3-39" name="__codelineno-3-39"></a>  <span class="p">}</span>
 <a id="__codelineno-3-40" name="__codelineno-3-40"></a>
 <a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="p">}</span>
@@ -1422,10 +1436,10 @@
 <ul>
 <li>lignes 9-21 : définition de l’environnement du test. Nous utilisons le même, sans la couche <strong>[métier]</strong>, que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Implémentation"><u><u>lien</u></u></a> ;</li>
 <li>lignes 29-34 : construction de la couche <strong>[dao]</strong> ;</li>
-<li>ligne 33 : l’attribut <strong>[\$this→taxAdminData]</strong> contient les données à tester ;</li>
-<li>lignes 37-39 : la méthode <strong>[testTaxAdminData]</strong> est celle décrite au paragraphe <a href="#_Tests_de_la"><u><u>lien</u></u></a> ;</li>
+<li>ligne 33 : l’attribut <strong>[$this→taxAdminData]</strong> contient les données à tester ;</li>
+<li>lignes 37-39 : la méthode <strong>[testTaxAdminData]</strong> est celle décrite au paragraphe <a href="#_Tests_de_la"><u><u>lien</u></u></a> ;
+Les résultats du test sont les suivants :</li>
 </ul>
-<p>Les résultats du test sont les suivants :</p>
 <p><img src="images/1000000000000670000001BA029FABB4.png" style="width:15.26cm;height:4.091cm;" alt="Image" /></p>
 <h3 id="1522-test-de-la-couche-metier">15.2.2. Test de la couche [métier]</h3>
 <p>Le test <strong>[MetierTest.php]</strong> est le suivant :</p>
@@ -1475,50 +1489,50 @@
 <span class="normal"><a href="#__codelineno-4-44">44</a></span>
 <span class="normal"><a href="#__codelineno-4-45">45</a></span>
 <span class="normal"><a href="#__codelineno-4-46">46</a></span>
-<span class="normal"><a href="#__codelineno-4-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
+<span class="normal"><a href="#__codelineno-4-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">// définition de constantes</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/Data/config.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">de</span> <span class="n">constantes</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="o">//</span> <span class="n">chemin</span> <span class="n">du</span> <span class="n">fichier</span> <span class="n">de</span> <span class="n">configuration</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/Data/config.json&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">configuration</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="err">$</span><span class="n">config</span> <span class="o">=</span> \<span class="n">json_decode</span><span class="p">(</span>\<span class="n">file_get_contents</span><span class="p">(</span><span class="n">CONFIG_FILENAME</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="o">//</span> <span class="n">on</span> <span class="n">inclut</span> <span class="n">les</span> <span class="n">dépendances</span> <span class="n">nécessaires</span> <span class="n">au</span> <span class="n">script</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="err">$</span><span class="n">rootDirectory</span> <span class="o">=</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="err">$</span><span class="n">dependency</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>  <span class="n">require</span> <span class="err">$</span><span class="n">rootDirectory</span> <span class="o">.</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="err">$</span><span class="n">dependency</span><span class="p">];</span>
 <a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="p">}</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="c1">// autres constantes</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="o">//</span> <span class="n">autres</span> <span class="n">constantes</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;$rootDirectory/{$config[&quot;</span><span class="n">databaseFilename</span><span class="s2">&quot;]}&quot;</span><span class="p">);</span>
 <a id="__codelineno-4-22" name="__codelineno-4-22"></a>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="c1">// classe de test</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="k">class</span> <span class="nc">MetierTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a>  <span class="c1">// couche métier</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a>  <span class="k">private</span> <span class="nv">$métier</span><span class="p">;</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="o">//</span> <span class="n">classe</span> <span class="n">de</span> <span class="n">test</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="k">class</span><span class="w"> </span><span class="nc">MetierTest</span> <span class="n">extends</span> \<span class="n">Codeception</span>\<span class="n">Test</span>\<span class="n">Unit</span> <span class="p">{</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a>  <span class="o">//</span> <span class="n">couche</span> <span class="n">métier</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">métier</span><span class="p">;</span>
 <a id="__codelineno-4-27" name="__codelineno-4-27"></a>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a>    <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="c1">// création de la couche [métier]</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="n">parent</span><span class="p">::</span><span class="n">__construct</span><span class="p">();</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Metier</span><span class="p">(</span><span class="err">$</span><span class="n">dao</span><span class="p">);</span>
 <a id="__codelineno-4-34" name="__codelineno-4-34"></a>  <span class="p">}</span>
 <a id="__codelineno-4-35" name="__codelineno-4-35"></a>
-<a id="__codelineno-4-36" name="__codelineno-4-36"></a>  <span class="c1">// tests</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test1</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="nx">…</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a>  <span class="o">//</span> <span class="n">tests</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">test1</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="err">…</span>
 <a id="__codelineno-4-39" name="__codelineno-4-39"></a>  <span class="p">}</span>
 <a id="__codelineno-4-40" name="__codelineno-4-40"></a>
 <a id="__codelineno-4-41" name="__codelineno-4-41"></a>  <span class="o">-----------------------------------</span>
 <a id="__codelineno-4-42" name="__codelineno-4-42"></a>
-<a id="__codelineno-4-43" name="__codelineno-4-43"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test11</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-44" name="__codelineno-4-44"></a>    <span class="nx">…</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">test11</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44"></a>    <span class="err">…</span>
 <a id="__codelineno-4-45" name="__codelineno-4-45"></a>  <span class="p">}</span>
 <a id="__codelineno-4-46" name="__codelineno-4-46"></a>
 <a id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="p">}</span>
@@ -1527,10 +1541,10 @@
 <ul>
 <li>lignes 9-21 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Implémentation"><u><u>lien</u></u></a> ;</li>
 <li>lignes 28-34 : construction de la couche <strong>[dao]</strong> ;</li>
-<li>ligne 33 : l’attribut <strong>[\$this→métier]</strong> est une référence sur la couche <strong>[métier]</strong> à tester ;</li>
-<li>lignes 37-45 : les méthodes <strong>[test1, test2…, test11]</strong> sont celles décrites au paragraphe <a href="#_Tests_de_la_1"><u><u>lien</u></u></a> ;</li>
+<li>ligne 33 : l’attribut <strong>[$this→métier]</strong> est une référence sur la couche <strong>[métier]</strong> à tester ;</li>
+<li>lignes 37-45 : les méthodes <strong>[test1, test2…, test11]</strong> sont celles décrites au paragraphe <a href="#_Tests_de_la_1"><u><u>lien</u></u></a> ;
+Les résultats du test sont les suivants :</li>
 </ul>
-<p>Les résultats du test sont les suivants :</p>
 <p><img src="images/10000000000006D7000001D92E33D431.png" style="width:16.221cm;height:4.381cm;" alt="Image" /></p>
 
 
@@ -1540,6 +1554,8 @@
 
 
 
+
+  
 
 
 
@@ -1587,7 +1603,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
