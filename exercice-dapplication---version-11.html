@@ -65,14 +65,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
     var siteName = "Introduction au langage PHP7 par l'exemple";
-
     gtag('config', 'G-EBZC3JVJNR', {
         'page_title': siteName
     });
-    console.log("[GA Debug] page_title forced to: " + siteName);
   </script>
 
     
@@ -1097,9 +1093,9 @@
 <p>Il est encore fréquent que des services web envoient leur réponse sous la forme d’un flux XML plutôt que d’un flux jSON :</p>
 <ul>
 <li>le flux jSON est plus léger mais il faut un mode d’emploi pour le comprendre ;</li>
-<li>le flux XML est plus verbeux mais il est autodocumenté. Sa compréhension est immédiate ;
-Nous modifions la version 11 client / serveur pour que le serveur envoie désormais un flux XML comme réponse à ses clients :</li>
+<li>le flux XML est plus verbeux mais il est autodocumenté. Sa compréhension est immédiate ;</li>
 </ul>
+<p>Nous modifions la version 11 client / serveur pour que le serveur envoie désormais un flux XML comme réponse à ses clients :</p>
 <p><img src="images/100000000000067C0000022074E2D2BD.png" style="width:13.181cm;height:4.321cm;" alt="Image" /></p>
 <h2 id="221-le-serveur">22.1. Le serveur</h2>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" /></p>
@@ -1143,39 +1139,39 @@ Nous modifions la version 11 client / serveur pour que le serveur envoie désorm
 <span class="normal"><a href="#__codelineno-0-34">34</a></span>
 <span class="normal"><a href="#__codelineno-0-35">35</a></span>
 <span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="o">//</span> <span class="n">une</span> <span class="n">classe</span> <span class="n">de</span> <span class="n">fonctions</span> <span class="n">utilitaires</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">abstract</span> <span class="k">class</span><span class="w"> </span><span class="nc">Utilitaires</span> <span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">// une classe de fonctions utilitaires</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Utilitaires</span> <span class="p">{</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>  <span class="n">public</span> <span class="n">static</span> <span class="n">function</span> <span class="n">cutNewLinechar</span><span class="p">(</span><span class="n">string</span> <span class="err">$</span><span class="n">ligne</span><span class="p">):</span> <span class="n">string</span> <span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="err">…</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>  <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">cutNewLinechar</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$ligne</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="nx">…</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a>  <span class="p">}</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a>
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>  <span class="o">//</span> <span class="kn">from</span><span class="w"> </span><span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="n">stackoverflow</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">questions</span><span class="o">/</span><span class="mi">1397036</span><span class="o">/</span><span class="n">how</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">convert</span><span class="o">-</span><span class="n">array</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">simplexml</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>  <span class="n">public</span> <span class="n">static</span> <span class="n">function</span> <span class="n">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="n">array</span> <span class="err">$</span><span class="n">arrayOfAttributes</span><span class="p">,</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    \<span class="n">SimpleXmlElement</span> <span class="o">&amp;</span><span class="err">$</span><span class="n">node</span><span class="p">):</span> <span class="n">void</span> <span class="p">{</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">scanne</span> <span class="n">les</span> <span class="n">attributs</span> <span class="n">du</span> <span class="n">tableau</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">arrayOfAttributes</span> <span class="k">as</span> <span class="err">$</span><span class="n">attribute</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>      <span class="o">//</span> <span class="n">l</span><span class="s1">&#39;attribut est-il numérique ?</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">is_numeric</span><span class="p">(</span><span class="err">$</span><span class="n">attribute</span><span class="p">))</span> <span class="p">{</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="o">//</span> <span class="n">cas</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;index de tableau (mais aussi autres cas)</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="err">$</span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;i&#39;</span> <span class="o">.</span> <span class="err">$</span><span class="n">attribute</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>  <span class="c1">// from https://stackoverflow.com/questions/1397036/how-to-convert-array-to-simplexml</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>  <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="k">array</span> <span class="nv">$arrayOfAttributes</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="nx">\SimpleXmlElement</span> <span class="o">&amp;</span><span class="nv">$node</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="c1">// on scanne les attributs du tableau</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$arrayOfAttributes</span> <span class="k">as</span> <span class="nv">$attribute</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>      <span class="c1">// l&#39;attribut est-il numérique ?</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>      <span class="k">if</span> <span class="p">(</span><span class="nb">is_numeric</span><span class="p">(</span><span class="nv">$attribute</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="c1">// cas de l&#39;index de tableau (mais aussi autres cas)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="nv">$attribute</span> <span class="o">=</span> <span class="s1">&#39;i&#39;</span> <span class="o">.</span> <span class="nv">$attribute</span><span class="p">;</span>
 <a id="__codelineno-0-23" name="__codelineno-0-23"></a>      <span class="p">}</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>      <span class="o">//</span> <span class="err">$</span><span class="n">value</span> <span class="n">est</span><span class="o">-</span><span class="n">il</span> <span class="n">un</span> <span class="n">tableau</span> <span class="err">?</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">is_array</span><span class="p">(</span><span class="err">$</span><span class="n">value</span><span class="p">))</span> <span class="p">{</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="o">//</span> <span class="n">on</span> <span class="n">va</span> <span class="n">explorer</span> <span class="n">le</span> <span class="n">tableau</span> <span class="p">[</span><span class="err">$</span><span class="n">value</span><span class="p">]</span> <span class="n">à</span> <span class="n">son</span> <span class="n">tour</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="o">//</span> <span class="n">on</span> <span class="n">ajoute</span> <span class="n">un</span> <span class="n">nœud</span> <span class="n">au</span> <span class="n">graphe</span> <span class="n">XML</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="err">$</span><span class="n">subnode</span> <span class="o">=</span> <span class="err">$</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">addChild</span><span class="p">(</span><span class="err">$</span><span class="n">attribute</span><span class="p">);</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="o">//</span> <span class="n">appel</span> <span class="n">récursif</span> <span class="n">pour</span> <span class="n">explorer</span> <span class="n">le</span> <span class="n">tableau</span> <span class="p">[</span><span class="err">$</span><span class="n">value</span><span class="p">]</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="n">Utilitaires</span><span class="p">::</span><span class="n">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="err">$</span><span class="n">value</span><span class="p">,</span> <span class="err">$</span><span class="n">subnode</span><span class="p">);</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>      <span class="c1">// $value est-il un tableau ?</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>      <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$value</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="c1">// on va explorer le tableau [$value] à son tour</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="c1">// on ajoute un nœud au graphe XML</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="nv">$subnode</span> <span class="o">=</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">addChild</span><span class="p">(</span><span class="nv">$attribute</span><span class="p">);</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="c1">// appel récursif pour explorer le tableau [$value]</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="nx">Utilitaires</span><span class="o">::</span><span class="na">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="nv">$subnode</span><span class="p">);</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="o">//</span> <span class="n">on</span> <span class="n">ajoute</span> <span class="n">le</span> <span class="n">nœud</span> <span class="n">au</span> <span class="n">graphe</span> <span class="n">XML</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="err">$</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">addChild</span><span class="p">(</span><span class="s2">&quot;$attribute&quot;</span><span class="p">,</span> <span class="n">htmlspecialchars</span><span class="p">(</span><span class="s2">&quot;$value&quot;</span><span class="p">));</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="c1">// on ajoute le nœud au graphe XML</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">addChild</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">$attribute</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">$value</span><span class="s2">&quot;</span><span class="p">));</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a>      <span class="p">}</span>
 <a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="p">}</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a>  <span class="p">}</span>
@@ -1183,9 +1179,9 @@ Nous modifions la version 11 client / serveur pour que le serveur envoie désorm
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 14-36 : nous introduisons la méthode statique <strong>[getXmlForArrayOfAttributes]</strong> qui rend la chaîne XML d’un tableau <strong>[arrayOfAttributes]</strong> passé en paramètre. Le second paramètre est la référence d’un nœud d’un graphe XML, de type <strong>[SimpleXmlElement]</strong>. Après exécution, ce nœud contient le graphe XML du tableau <strong>[arrayOfAttributes]</strong> ;
-Nous écrivons le test <strong>[testXml.php]</strong> suivant :</li>
+<li>lignes 14-36 : nous introduisons la méthode statique <strong>[getXmlForArrayOfAttributes]</strong> qui rend la chaîne XML d’un tableau <strong>[arrayOfAttributes]</strong> passé en paramètre. Le second paramètre est la référence d’un nœud d’un graphe XML, de type <strong>[SimpleXmlElement]</strong>. Après exécution, ce nœud contient le graphe XML du tableau <strong>[arrayOfAttributes]</strong> ;</li>
 </ul>
+<p>Nous écrivons le test <strong>[testXml.php]</strong> suivant :</p>
 <p><img src="images/1000000000000499000001A3DCD3B111.png" style="width:10.902cm;height:3.881cm;" alt="Image" /></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1199,19 +1195,19 @@ Nous écrivons le test <strong>[testXml.php]</strong> suivant :</li>
 <span class="normal"><a href="#__codelineno-1-10">10</a></span>
 <span class="normal"><a href="#__codelineno-1-11">11</a></span>
 <span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="o">//</span> <span class="n">dépendance</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">require</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/Utilitaires.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="o">//</span> <span class="n">tableau</span> <span class="n">associatif</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="err">$</span><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;amédée&quot;</span><span class="p">,</span> <span class="s2">&quot;prénom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;sylvain&quot;</span><span class="p">,</span> <span class="s2">&quot;âge&quot;</span> <span class="o">=&gt;</span> <span class="mi">40</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">// dépendance</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">// tableau associatif</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;amédée&quot;</span><span class="p">,</span> <span class="s2">&quot;prénom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;sylvain&quot;</span><span class="p">,</span> <span class="s2">&quot;âge&quot;</span> <span class="o">=&gt;</span> <span class="mi">40</span><span class="p">,</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>  <span class="s2">&quot;enfants&quot;</span> <span class="o">=&gt;</span> <span class="p">[[</span><span class="s2">&quot;nom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;amédée&quot;</span><span class="p">,</span> <span class="s2">&quot;prénom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;béatrice&quot;</span><span class="p">,</span> <span class="s2">&quot;âge&quot;</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="p">],</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="p">[</span><span class="s2">&quot;nom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;amédée&quot;</span><span class="p">,</span> <span class="s2">&quot;prénom&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;bertrand&quot;</span><span class="p">,</span> <span class="s2">&quot;âge&quot;</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">]]];</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="o">//</span> <span class="n">xml</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Content-Type: application/xml&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="err">$</span><span class="n">node</span> <span class="o">=</span> <span class="n">new</span> \<span class="n">SimpleXMLElement</span><span class="p">(</span><span class="s2">&quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;root&gt;&lt;/root&gt;&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>\<span class="n">Application</span>\<span class="n">Utilitaires</span><span class="p">::</span><span class="n">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="err">$</span><span class="n">array</span><span class="p">,</span> <span class="err">$</span><span class="n">node</span><span class="p">);</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nb">print</span> <span class="err">$</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">asXML</span><span class="p">();</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">// xml</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-Type: application/xml&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="nv">$node</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\SimpleXMLElement</span><span class="p">(</span><span class="s2">&quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;root&gt;&lt;/root&gt;&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="nx">\Application\Utilitaires</span><span class="o">::</span><span class="na">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="nv">$array</span><span class="p">,</span> <span class="nv">$node</span><span class="p">);</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="k">print</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">asXML</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <p>Lorsqu’on exécute ce script <strong>[2]</strong>, nous obtenons la chose suivante dans un navigateur Chrome :</p>
 <p><img src="images/10000000000004B400000357F7BE40DE.png" style="width:9.561cm;height:6.79cm;" alt="Image" /></p>
@@ -1296,9 +1292,9 @@ Nous écrivons le test <strong>[testXml.php]</strong> suivant :</li>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>la racine du projet est désormais le dossier de la version 11 ;</li>
-<li>ligne 16 : on inclut la nouvelle classe <strong>[Utilitaires]</strong> ;
-Les modifications du script serveur sont les suivantes :</li>
+<li>ligne 16 : on inclut la nouvelle classe <strong>[Utilitaires]</strong> ;</li>
 </ul>
+<p>Les modifications du script serveur sont les suivantes :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -1357,63 +1353,63 @@ Les modifications du script serveur sont les suivantes :</li>
 <span class="normal"><a href="#__codelineno-3-56">56</a></span>
 <span class="normal"><a href="#__codelineno-3-57">57</a></span>
 <span class="normal"><a href="#__codelineno-3-58">58</a></span>
-<span class="normal"><a href="#__codelineno-3-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-3-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="err">…</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="o">//</span> <span class="n">préparation</span> <span class="n">de</span> <span class="n">la</span> <span class="n">réponse</span> <span class="n">JSON</span> <span class="n">du</span> <span class="n">serveur</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="err">$</span><span class="n">response</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Response</span><span class="p">();</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">headers</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="s2">&quot;content-type&quot;</span><span class="p">,</span> <span class="s2">&quot;application/xml&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">setCharset</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="err">…</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="err">$</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ServerMetier</span><span class="p">(</span><span class="err">$</span><span class="n">dao</span><span class="p">);</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="o">//</span> <span class="n">calcul</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;impôt</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="err">$</span><span class="n">result</span> <span class="o">=</span> <span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">calculerImpot</span><span class="p">(</span><span class="err">$</span><span class="n">marié</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="err">$</span><span class="n">enfants</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="err">$</span><span class="n">salaire</span><span class="p">);</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="o">//</span> <span class="n">on</span> <span class="n">rend</span> <span class="n">la</span> <span class="n">réponse</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="n">sendResponse</span><span class="p">(</span><span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="err">$</span><span class="n">result</span><span class="p">,</span> <span class="n">Response</span><span class="p">::</span><span class="n">HTTP_OK</span><span class="p">,</span> <span class="p">[],</span> <span class="err">$</span><span class="n">logger</span><span class="p">,</span> <span class="err">$</span><span class="n">redis</span><span class="p">);</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="o">//</span> <span class="n">fin</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="nx">…</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1">// préparation de la réponse JSON du serveur</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">headers</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">&quot;content-type&quot;</span><span class="p">,</span> <span class="s2">&quot;application/xml&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCharset</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="nx">…</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="c1">// création de la couche [métier]</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerMetier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1">// calcul de l&#39;impôt</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">calculerImpot</span><span class="p">(</span><span class="nv">$marié</span><span class="p">,</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$enfants</span><span class="p">,</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$salaire</span><span class="p">);</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="c1">// on rend la réponse</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="nv">$result</span><span class="p">,</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="c1">// fin</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="k">exit</span><span class="p">;</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23"></a>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="n">function</span> <span class="n">doInternalServerError</span><span class="p">(</span><span class="n">string</span> <span class="err">$</span><span class="n">message</span><span class="p">,</span> <span class="n">Response</span> <span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="n">array</span> <span class="err">$</span><span class="n">infos</span><span class="p">,</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a>  <span class="err">…</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="k">function</span> <span class="nf">doInternalServerError</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$message</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$infos</span><span class="p">,</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a>  <span class="nx">…</span>
 <a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="p">}</span>
 <a id="__codelineno-3-27" name="__codelineno-3-27"></a>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="o">//</span> <span class="n">fonction</span> <span class="n">d</span><span class="s1">&#39;envoi de la réponse HTTP au client</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="n">function</span> <span class="n">sendResponse</span><span class="p">(</span><span class="n">Response</span> <span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="n">array</span> <span class="err">$</span><span class="n">result</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">statusCode</span><span class="p">,</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a>  <span class="n">array</span> <span class="err">$</span><span class="n">headers</span><span class="p">,</span> <span class="n">Logger</span> <span class="err">$</span><span class="n">logger</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">,</span> \<span class="n">Predis</span>\<span class="n">Client</span> <span class="err">$</span><span class="n">predisClient</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">response</span> <span class="p">:</span> <span class="n">réponse</span> <span class="n">HTTP</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">result</span> <span class="p">:</span> <span class="n">tableau</span> <span class="n">des</span> <span class="n">résultats</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">statusCode</span> <span class="p">:</span> <span class="n">statut</span> <span class="n">HTTP</span> <span class="n">de</span> <span class="n">la</span> <span class="n">réponse</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">headers</span> <span class="p">:</span> <span class="n">entêtes</span> <span class="n">HTTP</span> <span class="n">à</span> <span class="n">mettre</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">réponse</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">logger</span> <span class="p">:</span> <span class="n">le</span> <span class="n">logueur</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;application</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">predisClient</span> <span class="p">:</span> <span class="n">un</span> <span class="n">client</span> <span class="p">[</span><span class="n">predis</span><span class="p">]</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="o">//</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a>  <span class="o">//</span> <span class="n">statut</span> <span class="n">HTTTP</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">setStatusCode</span><span class="p">(</span><span class="err">$</span><span class="n">statusCode</span><span class="p">);</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40"></a>  <span class="o">//</span> <span class="n">body</span> <span class="n">XML</span>
-<a id="__codelineno-3-41" name="__codelineno-3-41"></a>  <span class="err">$</span><span class="n">node</span> <span class="o">=</span> <span class="n">new</span> \<span class="n">SimpleXMLElement</span><span class="p">(</span><span class="s2">&quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;réponse&gt;&lt;/réponse&gt;&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-42" name="__codelineno-3-42"></a>  <span class="n">Utilitaires</span><span class="p">::</span><span class="n">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="err">$</span><span class="n">result</span><span class="p">,</span> <span class="err">$</span><span class="n">node</span><span class="p">);</span>
-<a id="__codelineno-3-43" name="__codelineno-3-43"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">setContent</span><span class="p">(</span><span class="err">$</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">asXML</span><span class="p">());</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44"></a>  <span class="o">//</span> <span class="n">headers</span>
-<a id="__codelineno-3-45" name="__codelineno-3-45"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">headers</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="err">$</span><span class="n">headers</span><span class="p">);</span>
-<a id="__codelineno-3-46" name="__codelineno-3-46"></a>  <span class="o">//</span> <span class="n">envoi</span>
-<a id="__codelineno-3-47" name="__codelineno-3-47"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">send</span><span class="p">();</span>
-<a id="__codelineno-3-48" name="__codelineno-3-48"></a>  <span class="o">//</span> <span class="n">log</span>
-<a id="__codelineno-3-49" name="__codelineno-3-49"></a>  <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">logger</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-3-50" name="__codelineno-3-50"></a>    <span class="o">//</span> <span class="n">log</span> <span class="n">en</span> <span class="n">jSON</span>
-<a id="__codelineno-3-51" name="__codelineno-3-51"></a>    <span class="err">$</span><span class="n">log</span> <span class="o">=</span> \<span class="n">json_encode</span><span class="p">([</span><span class="s2">&quot;réponse&quot;</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="n">result</span><span class="p">],</span> <span class="n">JSON_UNESCAPED_UNICODE</span><span class="p">);</span>
-<a id="__codelineno-3-52" name="__codelineno-3-52"></a>    <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;$log</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-53" name="__codelineno-3-53"></a>    <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">close</span><span class="p">();</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="c1">// fonction d&#39;envoi de la réponse HTTP au client</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="k">function</span> <span class="nf">sendResponse</span><span class="p">(</span><span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$result</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$statusCode</span><span class="p">,</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>  <span class="k">array</span> <span class="nv">$headers</span><span class="p">,</span> <span class="nx">Logger</span> <span class="nv">$logger</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">,</span> <span class="nx">\Predis\Client</span> <span class="nv">$predisClient</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a>  <span class="c1">// $response : réponse HTTP</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>  <span class="c1">// $result : tableau des résultats</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a>  <span class="c1">// $statusCode : statut HTTP de la réponse</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>  <span class="c1">// $headers : entêtes HTTP à mettre dans la réponse</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a>  <span class="c1">// $logger : le logueur de l&#39;application</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="c1">// $predisClient : un client [predis]</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="c1">//</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a>  <span class="c1">// statut HTTTP</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nv">$statusCode</span><span class="p">);</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a>  <span class="c1">// body XML</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a>  <span class="nv">$node</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\SimpleXMLElement</span><span class="p">(</span><span class="s2">&quot;&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;réponse&gt;&lt;/réponse&gt;&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a>  <span class="nx">Utilitaires</span><span class="o">::</span><span class="na">getXmlForArrayOfAttributes</span><span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nv">$node</span><span class="p">);</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="nv">$node</span><span class="o">-&gt;</span><span class="na">asXML</span><span class="p">());</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a>  <span class="c1">// headers</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">headers</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$headers</span><span class="p">);</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46"></a>  <span class="c1">// envoi</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48"></a>  <span class="c1">// log</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49"></a>  <span class="k">if</span> <span class="p">(</span><span class="nv">$logger </span><span class="o">!=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50"></a>    <span class="c1">// log en jSON</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51"></a>    <span class="nv">$log</span> <span class="o">=</span> <span class="nx">\json_encode</span><span class="p">([</span><span class="s2">&quot;réponse&quot;</span> <span class="o">=&gt;</span> <span class="nv">$result</span><span class="p">],</span> <span class="nx">JSON_UNESCAPED_UNICODE</span><span class="p">);</span>
+<a id="__codelineno-3-52" name="__codelineno-3-52"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">$log</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-53" name="__codelineno-3-53"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 <a id="__codelineno-3-54" name="__codelineno-3-54"></a>  <span class="p">}</span>
-<a id="__codelineno-3-55" name="__codelineno-3-55"></a>  <span class="o">//</span> <span class="n">fermeture</span> <span class="n">de</span> <span class="n">la</span> <span class="n">connexion</span> <span class="p">[</span><span class="n">redis</span><span class="p">]</span>
-<a id="__codelineno-3-56" name="__codelineno-3-56"></a>  <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">predisClient</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-3-57" name="__codelineno-3-57"></a>    <span class="err">$</span><span class="n">predisClient</span><span class="o">-&gt;</span><span class="n">disconnect</span><span class="p">();</span>
+<a id="__codelineno-3-55" name="__codelineno-3-55"></a>  <span class="c1">// fermeture de la connexion [redis]</span>
+<a id="__codelineno-3-56" name="__codelineno-3-56"></a>  <span class="k">if</span> <span class="p">(</span><span class="nv">$predisClient </span><span class="o">!=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-57" name="__codelineno-3-57"></a>    <span class="nv">$predisClient</span><span class="o">-&gt;</span><span class="na">disconnect</span><span class="p">();</span>
 <a id="__codelineno-3-58" name="__codelineno-3-58"></a>  <span class="p">}</span>
 <a id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
@@ -1423,9 +1419,9 @@ Les modifications du script serveur sont les suivantes :</li>
 <li>lignes 29-59 : la réponse du serveur est désormais du XML ;</li>
 <li>ligne 41 : création du nœud racine <strong>[&lt;réponse&gt;&lt;/réponse&gt;]</strong> du graphe XML ;</li>
 <li>ligne 42 : ce graphe est complété avec le graphe XML du tableau <strong>[$result]</strong> des résultats à envoyer au client ;</li>
-<li>ligne 43 : le graphe XML est converti en chaîne XML pour envoi au client ;
-<strong>Test</strong></li>
+<li>ligne 43 : le graphe XML est converti en chaîne XML pour envoi au client ;</li>
 </ul>
+<p><strong>Test</strong></p>
 <p>Directement dans un navigateur Chrome, on tape l’URL <strong>[http://localhost/php7/scripts-web/impots/version-11/impots-server.php?mari%C3%A9=oui&amp;enfants=2&amp;salaire=60000]</strong>. On obtient le résultat suivant <strong>[1]</strong> dans un navigateur Chrome :</p>
 <p><img src="images/100000000000067F0000020EF639D2C6.png" style="width:13.2cm;height:4.181cm;" alt="Image" /></p>
 <h2 id="222-le-client">22.2. Le client</h2>
@@ -1436,9 +1432,9 @@ Les modifications du script serveur sont les suivantes :</li>
 <p>Dans la nouvelle version, seuls changent :</p>
 <ul>
 <li>le fichier de configuration <strong>[config-client.json]</strong> ;</li>
-<li>la couche <strong>[dao]</strong> du client ;
-Le fichier de configuration <strong>[config-client.json]</strong> devient le suivant :</li>
+<li>la couche <strong>[dao]</strong> du client ;</li>
 </ul>
+<p>Le fichier de configuration <strong>[config-client.json]</strong> devient le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1463,31 +1459,31 @@ Le fichier de configuration <strong>[config-client.json]</strong> devient le sui
 <span class="normal"><a href="#__codelineno-4-22">22</a></span>
 <span class="normal"><a href="#__codelineno-4-23">23</a></span>
 <span class="normal"><a href="#__codelineno-4-24">24</a></span>
-<span class="normal"><a href="#__codelineno-4-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="s2">&quot;rootDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-11&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="s2">&quot;taxPayersDataFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/taxpayersdata.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="s2">&quot;resultsFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/results.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="s2">&quot;errorsFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/errors.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="s2">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        <span class="s2">&quot;/../version-08/Entities/BaseEntity.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>        <span class="s2">&quot;/../version-08/Entities/TaxPayerData.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>        <span class="s2">&quot;/../version-08/Entities/ExceptionImpots.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a>        <span class="s2">&quot;/../version-08/Utilities/Utilitaires.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="s2">&quot;/../version-08/Dao/InterfaceClientDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a>        <span class="s2">&quot;/../version-08/Dao/TraitDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a>        <span class="s2">&quot;/Dao/ClientDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="s2">&quot;/../version-08/Métier/InterfaceClientMetier.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>        <span class="s2">&quot;/../version-08/Métier/ClientMetier.php&quot;</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a>    <span class="p">],</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="s2">&quot;absoluteDependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>        <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="p">],</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a>    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a>        <span class="s2">&quot;login&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a>        <span class="s2">&quot;passwd&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a>    <span class="p">},</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a>    <span class="s2">&quot;urlServer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://localhost:443/php7/scripts-web/impots/version-11/impots-server.php&quot;</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>{
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    &quot;rootDirectory&quot;: &quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-11&quot;,
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    &quot;taxPayersDataFileName&quot;: &quot;Data/taxpayersdata.json&quot;,
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    &quot;resultsFileName&quot;: &quot;Data/results.json&quot;,
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    &quot;errorsFileName&quot;: &quot;Data/errors.json&quot;,
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    &quot;dependencies&quot;: [
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        &quot;/../version-08/Entities/BaseEntity.php&quot;,
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>        &quot;/../version-08/Entities/TaxPayerData.php&quot;,
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>        &quot;/../version-08/Entities/ExceptionImpots.php&quot;,
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>        &quot;/../version-08/Utilities/Utilitaires.php&quot;,
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>        &quot;/../version-08/Dao/InterfaceClientDao.php&quot;,
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>        &quot;/../version-08/Dao/TraitDao.php&quot;,
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>        &quot;/Dao/ClientDao.php&quot;,
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>        &quot;/../version-08/Métier/InterfaceClientMetier.php&quot;,
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>        &quot;/../version-08/Métier/ClientMetier.php&quot;
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>    ],
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>    &quot;absoluteDependencies&quot;: [
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>        &quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    ],
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>    &quot;user&quot;: {
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>        &quot;login&quot;: &quot;admin&quot;,
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>        &quot;passwd&quot;: &quot;admin&quot;
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>    },
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a>    &quot;urlServer&quot;: &quot;https://localhost:443/php7/scripts-web/impots/version-11/impots-server.php&quot;
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a>}
 </code></pre></div></td></tr></table></div>
 <h3 id="2221-la-couche-dao">22.2.1. La couche [dao]</h3>
 <p>Le client <strong>[ClientDao.php]</strong> (ligne 13 ci-dessus) est modifié pour tenir compte du nouveau format de la réponse. On utilise <strong>[simpleXML]</strong> pour traiter celle-ci :</p>
@@ -1546,59 +1542,59 @@ Le fichier de configuration <strong>[config-client.json]</strong> devient le sui
 <span class="normal"><a href="#__codelineno-5-53">53</a></span>
 <span class="normal"><a href="#__codelineno-5-54">54</a></span>
 <span class="normal"><a href="#__codelineno-5-55">55</a></span>
-<span class="normal"><a href="#__codelineno-5-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-5-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="o">//</span> <span class="n">dépendances</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">use</span> \<span class="n">Symfony</span>\<span class="n">Component</span>\<span class="n">HttpClient</span>\<span class="n">HttpClient</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c1">// dépendances</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">use</span> <span class="nx">\Symfony\Component\HttpClient\HttpClient</span><span class="p">;</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">ClientDao</span> <span class="n">implements</span> <span class="n">InterfaceClientDao</span> <span class="p">{</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>  <span class="o">//</span> <span class="n">utilisation</span> <span class="n">d</span><span class="s1">&#39;un Trait</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>  <span class="n">use</span> <span class="n">TraitDao</span><span class="p">;</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>  <span class="o">//</span> <span class="n">attributs</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">urlServer</span><span class="p">;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">user</span><span class="p">;</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">sessionCookie</span><span class="p">;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="k">class</span> <span class="nc">ClientDao</span> <span class="k">implements</span> <span class="nx">InterfaceClientDao</span> <span class="p">{</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>  <span class="c1">// utilisation d&#39;un Trait</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>  <span class="k">use</span> <span class="nx">TraitDao</span><span class="p">;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>  <span class="c1">// attributs</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>  <span class="k">private</span> <span class="nv">$urlServer</span><span class="p">;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>  <span class="k">private</span> <span class="nv">$user</span><span class="p">;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>  <span class="k">private</span> <span class="nv">$sessionCookie</span><span class="p">;</span>
 <a id="__codelineno-5-15" name="__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>  <span class="o">//</span> <span class="n">constructeur</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__construct</span><span class="p">(</span><span class="n">string</span> <span class="err">$</span><span class="n">urlServer</span><span class="p">,</span> <span class="n">array</span> <span class="err">$</span><span class="n">user</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">urlServer</span> <span class="o">=</span> <span class="err">$</span><span class="n">urlServer</span><span class="p">;</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">user</span> <span class="o">=</span> <span class="err">$</span><span class="n">user</span><span class="p">;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>  <span class="c1">// constructeur</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$urlServer</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">urlServer</span> <span class="o">=</span> <span class="nv">$urlServer</span><span class="p">;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user</span> <span class="o">=</span> <span class="nv">$user</span><span class="p">;</span>
 <a id="__codelineno-5-20" name="__codelineno-5-20"></a>  <span class="p">}</span>
 <a id="__codelineno-5-21" name="__codelineno-5-21"></a>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a>  <span class="o">//</span> <span class="n">calcul</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;impôt</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">calculerImpot</span><span class="p">(</span><span class="n">string</span> <span class="err">$</span><span class="n">marié</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">enfants</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">salaire</span><span class="p">):</span> <span class="n">array</span> <span class="p">{</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="err">…</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">réponse</span> <span class="n">XML</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a>    <span class="err">$</span><span class="n">réponse</span> <span class="o">=</span> <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">getContent</span><span class="p">(</span><span class="n">false</span><span class="p">);</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27"></a>    <span class="err">$</span><span class="n">xml</span> <span class="o">=</span> <span class="n">new</span> \<span class="n">SimpleXMLElement</span><span class="p">(</span><span class="err">$</span><span class="n">réponse</span><span class="p">);</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28"></a>    <span class="o">//</span> <span class="n">logs</span>
-<a id="__codelineno-5-29" name="__codelineno-5-29"></a>    <span class="o">//</span> <span class="nb">print</span> <span class="s2">&quot;$réponse</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">le</span> <span class="n">statut</span> <span class="n">de</span> <span class="n">la</span> <span class="n">réponse</span>
-<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    <span class="err">$</span><span class="n">statusCode</span> <span class="o">=</span> <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">getStatusCode</span><span class="p">();</span>
-<a id="__codelineno-5-32" name="__codelineno-5-32"></a>    <span class="o">//</span> <span class="n">erreur</span> <span class="err">?</span>
-<a id="__codelineno-5-33" name="__codelineno-5-33"></a>    <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">statusCode</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-34" name="__codelineno-5-34"></a>      <span class="o">//</span> <span class="n">on</span> <span class="n">a</span> <span class="n">une</span> <span class="n">erreur</span> <span class="o">-</span> <span class="n">on</span> <span class="n">lance</span> <span class="n">une</span> <span class="n">exception</span>
-<a id="__codelineno-5-35" name="__codelineno-5-35"></a>      <span class="err">$</span><span class="n">message</span> <span class="o">=</span> \<span class="n">json_encode</span><span class="p">([</span><span class="s2">&quot;statut HTTP&quot;</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="n">statusCode</span><span class="p">,</span> <span class="s2">&quot;réponse&quot;</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="n">xml</span><span class="p">],</span> <span class="n">JSON_UNESCAPED_UNICODE</span><span class="p">);</span>
-<a id="__codelineno-5-36" name="__codelineno-5-36"></a>      <span class="n">throw</span> <span class="n">new</span> <span class="n">ExceptionImpots</span><span class="p">(</span><span class="err">$</span><span class="n">message</span><span class="p">);</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>  <span class="c1">// calcul de l&#39;impôt</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">calculerImpot</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$marié</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$enfants</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$salaire</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span> <span class="p">{</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="nx">…</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    <span class="c1">// on récupère la réponse XML</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a>    <span class="nv">$réponse</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getContent</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a>    <span class="nv">$xml</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\SimpleXMLElement</span><span class="p">(</span><span class="nv">$réponse</span><span class="p">);</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a>    <span class="c1">// logs</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a>    <span class="c1">// print &quot;$réponse\n&quot;;</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="c1">// on récupère le statut de la réponse</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    <span class="nv">$statusCode</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getStatusCode</span><span class="p">();</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a>    <span class="c1">// erreur ?</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$statusCode </span><span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a>      <span class="c1">// on a une erreur - on lance une exception</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a>      <span class="nv">$message</span> <span class="o">=</span> <span class="nx">\json_encode</span><span class="p">([</span><span class="s2">&quot;statut HTTP&quot;</span> <span class="o">=&gt;</span> <span class="nv">$statusCode</span><span class="p">,</span> <span class="s2">&quot;réponse&quot;</span> <span class="o">=&gt;</span> <span class="nv">$xml</span><span class="p">],</span> <span class="nx">JSON_UNESCAPED_UNICODE</span><span class="p">);</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36"></a>      <span class="k">throw</span> <span class="k">new</span> <span class="nx">ExceptionImpots</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
 <a id="__codelineno-5-37" name="__codelineno-5-37"></a>    <span class="p">}</span>
-<a id="__codelineno-5-38" name="__codelineno-5-38"></a>    <span class="k">if</span> <span class="p">(</span><span class="err">!$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">sessionCookie</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-39" name="__codelineno-5-39"></a>      <span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">le</span> <span class="n">cookie</span> <span class="n">de</span> <span class="n">session</span>
-<a id="__codelineno-5-40" name="__codelineno-5-40"></a>      <span class="err">$</span><span class="n">headers</span> <span class="o">=</span> <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">getHeaders</span><span class="p">();</span>
-<a id="__codelineno-5-41" name="__codelineno-5-41"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">isset</span><span class="p">(</span><span class="err">$</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;set-cookie&quot;</span><span class="p">]))</span> <span class="p">{</span>
-<a id="__codelineno-5-42" name="__codelineno-5-42"></a>        <span class="o">//</span> <span class="n">cookie</span> <span class="n">de</span> <span class="n">session</span> <span class="err">?</span>
-<a id="__codelineno-5-43" name="__codelineno-5-43"></a>        <span class="n">foreach</span> <span class="p">(</span><span class="err">$</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;set-cookie&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="err">$</span><span class="n">cookie</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-44" name="__codelineno-5-44"></a>          <span class="err">$</span><span class="n">match</span> <span class="o">=</span> <span class="p">[];</span>
-<a id="__codelineno-5-45" name="__codelineno-5-45"></a>          <span class="err">$</span><span class="n">match</span> <span class="o">=</span> <span class="n">preg_match</span><span class="p">(</span><span class="s2">&quot;/^PHPSESSID=(.+?);/&quot;</span><span class="p">,</span> <span class="err">$</span><span class="n">cookie</span><span class="p">,</span> <span class="err">$</span><span class="n">champs</span><span class="p">);</span>
-<a id="__codelineno-5-46" name="__codelineno-5-46"></a>          <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">match</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-5-47" name="__codelineno-5-47"></a>            <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">sessionCookie</span> <span class="o">=</span> <span class="s2">&quot;PHPSESSID=&quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">champs</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sessionCookie</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39"></a>      <span class="c1">// on récupère le cookie de session</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40"></a>      <span class="nv">$headers</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getHeaders</span><span class="p">();</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41"></a>      <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$headers</span><span class="p">[</span><span class="s2">&quot;set-cookie&quot;</span><span class="p">]))</span> <span class="p">{</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42"></a>        <span class="c1">// cookie de session ?</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43"></a>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$headers</span><span class="p">[</span><span class="s2">&quot;set-cookie&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$cookie</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44"></a>          <span class="nv">$match</span> <span class="o">=</span> <span class="p">[];</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45"></a>          <span class="nv">$match</span> <span class="o">=</span> <span class="nb">preg_match</span><span class="p">(</span><span class="s2">&quot;/^PHPSESSID=(.+?);/&quot;</span><span class="p">,</span> <span class="nv">$cookie</span><span class="p">,</span> <span class="nv">$champs</span><span class="p">);</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46"></a>          <span class="k">if</span> <span class="p">(</span><span class="nv">$match</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47"></a>            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">sessionCookie</span> <span class="o">=</span> <span class="s2">&quot;PHPSESSID=&quot;</span> <span class="o">.</span> <span class="nv">$champs</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 <a id="__codelineno-5-48" name="__codelineno-5-48"></a>          <span class="p">}</span>
 <a id="__codelineno-5-49" name="__codelineno-5-49"></a>        <span class="p">}</span>
 <a id="__codelineno-5-50" name="__codelineno-5-50"></a>      <span class="p">}</span>
 <a id="__codelineno-5-51" name="__codelineno-5-51"></a>    <span class="p">}</span>
-<a id="__codelineno-5-52" name="__codelineno-5-52"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">rend</span> <span class="n">la</span> <span class="n">réponse</span> <span class="n">sous</span> <span class="n">forme</span> <span class="n">d</span><span class="s1">&#39;un tableau</span>
-<a id="__codelineno-5-53" name="__codelineno-5-53"></a>    <span class="k">return</span> \<span class="n">json_decode</span><span class="p">(</span>\<span class="n">json_encode</span><span class="p">(</span><span class="err">$</span><span class="n">xml</span><span class="p">,</span> <span class="n">JSON_UNESCAPED_UNICODE</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52"></a>    <span class="c1">// on rend la réponse sous forme d&#39;un tableau</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53"></a>    <span class="k">return</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\json_encode</span><span class="p">(</span><span class="nv">$xml</span><span class="p">,</span> <span class="nx">JSON_UNESCAPED_UNICODE</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
 <a id="__codelineno-5-54" name="__codelineno-5-54"></a>  <span class="p">}</span>
 <a id="__codelineno-5-55" name="__codelineno-5-55"></a>
 <a id="__codelineno-5-56" name="__codelineno-5-56"></a><span class="p">}</span>
@@ -1607,11 +1603,13 @@ Le fichier de configuration <strong>[config-client.json]</strong> devient le sui
 <ul>
 <li>lignes 26-27 : la réponse du serveur est lue. C&#x27;est un document XML <strong>[&lt;réponse&gt;…&lt;/réponse&gt;]</strong>. Un objet <strong>[SimpleXMLElement]</strong> est construit à partir du document XML reçu ;</li>
 <li>lignes 33-37 : en cas d’erreur, le message de l’exception sera la chaîne jSON de la réponse du serveur plutôt que la chaîne XML recue. En effet, la chaîne jSON est plus concise ;</li>
-<li>ligne 53 : on rend le tableau des résultats en deux étapes :</li>
+<li>ligne 53 : on rend le tableau des résultats en deux étapes :<ul>
 <li>l’objet <strong>[$xml]</strong> de type <strong>[\SimpleXMLElement]</strong> est passé en jSON ;</li>
-<li>on transforme la chaîne jSON obtenue en tableau associatif. C’est le résultat à rendre ;
-<strong>Test</strong></li>
+<li>on transforme la chaîne jSON obtenue en tableau associatif. C’est le résultat à rendre ;</li>
 </ul>
+</li>
+</ul>
+<p><strong>Test</strong></p>
 <p>Si on lance le client avec un environnement correct (base de données, authentification, logs), on obtient les résultats habituels (vérifiez les fichiers <strong>[taxpayersdata.json, results.txt, errors.json]</strong>. Côté serveur, les logs sont eux les suivants :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
@@ -1633,27 +1631,27 @@ Le fichier de configuration <strong>[config-client.json]</strong> devient le sui
 <span class="normal"><a href="#__codelineno-6-18">18</a></span>
 <span class="normal"><a href="#__codelineno-6-19">19</a></span>
 <span class="normal"><a href="#__codelineno-6-20">20</a></span>
-<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">877</span> <span class="p">:</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="o">---</span><span class="n">nouvelle</span> <span class="n">requête</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">882</span> <span class="p">:</span> <span class="n">Autentification</span> <span class="n">en</span> <span class="n">cours</span><span class="err">…</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">883</span> <span class="p">:</span> <span class="n">Authentification</span> <span class="n">réussie</span> <span class="p">[</span><span class="n">admin</span><span class="p">,</span> <span class="n">admin</span><span class="p">]</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">883</span> <span class="p">:</span> <span class="n">paramètres</span> <span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="o">=&gt;</span><span class="n">oui</span><span class="p">,</span> <span class="s1">&#39;enfants&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;salaire&#39;</span><span class="o">=&gt;</span><span class="mi">55555</span><span class="p">]</span> <span class="n">valides</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">908</span> <span class="p">:</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">prises</span> <span class="n">en</span> <span class="n">base</span> <span class="n">de</span> <span class="n">données</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">959</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;réponse&quot;</span><span class="p">:{</span><span class="s2">&quot;impôt&quot;</span><span class="p">:</span><span class="mi">2814</span><span class="p">,</span><span class="s2">&quot;surcôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;décôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;réduction&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;taux&quot;</span><span class="p">:</span><span class="mf">0.14</span><span class="p">}}</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">070</span> <span class="p">:</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="o">---</span><span class="n">nouvelle</span> <span class="n">requête</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">077</span> <span class="p">:</span> <span class="n">Authentification</span> <span class="n">prise</span> <span class="n">en</span> <span class="n">session</span><span class="err">…</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">077</span> <span class="p">:</span> <span class="n">paramètres</span> <span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="o">=&gt;</span><span class="n">oui</span><span class="p">,</span> <span class="s1">&#39;enfants&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;salaire&#39;</span><span class="o">=&gt;</span><span class="mi">50000</span><span class="p">]</span> <span class="n">valides</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">099</span> <span class="p">:</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">prises</span> <span class="n">dans</span> <span class="n">redis</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">100</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;réponse&quot;</span><span class="p">:{</span><span class="s2">&quot;impôt&quot;</span><span class="p">:</span><span class="mi">1384</span><span class="p">,</span><span class="s2">&quot;surcôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;décôte&quot;</span><span class="p">:</span><span class="mi">384</span><span class="p">,</span><span class="s2">&quot;réduction&quot;</span><span class="p">:</span><span class="mi">347</span><span class="p">,</span><span class="s2">&quot;taux&quot;</span><span class="p">:</span><span class="mf">0.14</span><span class="p">}}</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">189</span> <span class="p">:</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="o">---</span><span class="n">nouvelle</span> <span class="n">requête</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">202</span> <span class="p">:</span> <span class="n">Authentification</span> <span class="n">prise</span> <span class="n">en</span> <span class="n">session</span><span class="err">…</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">202</span> <span class="p">:</span> <span class="n">paramètres</span> <span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="o">=&gt;</span><span class="n">oui</span><span class="p">,</span> <span class="s1">&#39;enfants&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;salaire&#39;</span><span class="o">=&gt;</span><span class="mi">50000</span><span class="p">]</span> <span class="n">valides</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">233</span> <span class="p">:</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">prises</span> <span class="n">dans</span> <span class="n">redis</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">233</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;réponse&quot;</span><span class="p">:{</span><span class="s2">&quot;impôt&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;surcôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;décôte&quot;</span><span class="p">:</span><span class="mi">720</span><span class="p">,</span><span class="s2">&quot;réduction&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;taux&quot;</span><span class="p">:</span><span class="mf">0.14</span><span class="p">}}</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="mi">06</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">07</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">318</span> <span class="p">:</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="err">…</span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>06/07/19 07:41:32:877 :
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>---nouvelle requête
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>06/07/19 07:41:32:882 : Autentification en cours…
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>06/07/19 07:41:32:883 : Authentification réussie [admin, admin]
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>06/07/19 07:41:32:883 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;2, &#39;salaire&#39;=&gt;55555] valides
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>06/07/19 07:41:32:908 : données fiscales prises en base de données
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>06/07/19 07:41:32:959 : {&quot;réponse&quot;:{&quot;impôt&quot;:2814,&quot;surcôte&quot;:0,&quot;décôte&quot;:0,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>06/07/19 07:41:33:070 :
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>---nouvelle requête
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>06/07/19 07:41:33:077 : Authentification prise en session…
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>06/07/19 07:41:33:077 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;2, &#39;salaire&#39;=&gt;50000] valides
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>06/07/19 07:41:33:099 : données fiscales prises dans redis
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>06/07/19 07:41:33:100 : {&quot;réponse&quot;:{&quot;impôt&quot;:1384,&quot;surcôte&quot;:0,&quot;décôte&quot;:384,&quot;réduction&quot;:347,&quot;taux&quot;:0.14}}
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>06/07/19 07:41:33:189 :
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>---nouvelle requête
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a>06/07/19 07:41:33:202 : Authentification prise en session…
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>06/07/19 07:41:33:202 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;3, &#39;salaire&#39;=&gt;50000] valides
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>06/07/19 07:41:33:233 : données fiscales prises dans redis
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>06/07/19 07:41:33:233 : {&quot;réponse&quot;:{&quot;impôt&quot;:0,&quot;surcôte&quot;:0,&quot;décôte&quot;:720,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a>06/07/19 07:41:33:318 :
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>…
 </code></pre></div></td></tr></table></div>
 <h3 id="2222-tests-codeception">22.2.2. Tests [Codeception]</h3>
 <p><img src="images/10000000000001F40000028EBFB4C61C.png" style="width:4.631cm;height:6.061cm;" alt="Image" /></p>
@@ -1693,41 +1691,41 @@ Le fichier de configuration <strong>[config-client.json]</strong> devient le sui
 <span class="normal"><a href="#__codelineno-7-33">33</a></span>
 <span class="normal"><a href="#__codelineno-7-34">34</a></span>
 <span class="normal"><a href="#__codelineno-7-35">35</a></span>
-<span class="normal"><a href="#__codelineno-7-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-7-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-11&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-11&quot;</span><span class="p">);</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11"></a>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="o">//</span> <span class="n">chemin</span> <span class="n">du</span> <span class="n">fichier</span> <span class="n">de</span> <span class="n">configuration</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/Data/config-client.json&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="c1">// chemin du fichier de configuration</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/Data/config-client.json&quot;</span><span class="p">);</span>
 <a id="__codelineno-7-14" name="__codelineno-7-14"></a>
-<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">configuration</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="err">$</span><span class="n">config</span> <span class="o">=</span> \<span class="n">json_decode</span><span class="p">(</span><span class="n">file_get_contents</span><span class="p">(</span><span class="n">CONFIG_FILENAME</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="c1">// on récupère la configuration</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
 <a id="__codelineno-7-17" name="__codelineno-7-17"></a>
-<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="err">…</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="o">//</span> <span class="n">classe</span> <span class="n">de</span> <span class="n">test</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="k">class</span><span class="w"> </span><span class="nc">ClientMetierTest</span> <span class="n">extends</span> <span class="n">Unit</span> <span class="p">{</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21"></a>  <span class="o">//</span> <span class="n">couche</span> <span class="n">métier</span>
-<a id="__codelineno-7-22" name="__codelineno-7-22"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">métier</span><span class="p">;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="nx">…</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="c1">// classe de test</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="k">class</span> <span class="nc">ClientMetierTest</span> <span class="k">extends</span> <span class="nx">Unit</span> <span class="p">{</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a>  <span class="c1">// couche métier</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a>  <span class="k">private</span> <span class="nv">$métier</span><span class="p">;</span>
 <a id="__codelineno-7-23" name="__codelineno-7-23"></a>
-<a id="__codelineno-7-24" name="__codelineno-7-24"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25"></a>    <span class="n">parent</span><span class="p">::</span><span class="n">__construct</span><span class="p">();</span>
-<a id="__codelineno-7-26" name="__codelineno-7-26"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">configuration</span>
-<a id="__codelineno-7-27" name="__codelineno-7-27"></a>    <span class="err">$</span><span class="n">config</span> <span class="o">=</span> \<span class="n">json_decode</span><span class="p">(</span>\<span class="n">file_get_contents</span><span class="p">(</span><span class="n">CONFIG_FILENAME</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
-<a id="__codelineno-7-28" name="__codelineno-7-28"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-7-29" name="__codelineno-7-29"></a>    <span class="err">$</span><span class="n">clientDao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ClientDao</span><span class="p">(</span><span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;urlServer&quot;</span><span class="p">],</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]);</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
-<a id="__codelineno-7-31" name="__codelineno-7-31"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ClientMetier</span><span class="p">(</span><span class="err">$</span><span class="n">clientDao</span><span class="p">);</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a>    <span class="c1">// on récupère la configuration</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a>    <span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28"></a>    <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29"></a>    <span class="nv">$clientDao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClientDao</span><span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;urlServer&quot;</span><span class="p">],</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]);</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30"></a>    <span class="c1">// création de la couche [métier]</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClientMetier</span><span class="p">(</span><span class="nv">$clientDao</span><span class="p">);</span>
 <a id="__codelineno-7-32" name="__codelineno-7-32"></a>  <span class="p">}</span>
 <a id="__codelineno-7-33" name="__codelineno-7-33"></a>
-<a id="__codelineno-7-34" name="__codelineno-7-34"></a>  <span class="o">//</span> <span class="n">tests</span>
-<a id="__codelineno-7-35" name="__codelineno-7-35"></a>  <span class="err">…</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34"></a>  <span class="c1">// tests</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35"></a>  <span class="nx">…</span>
 <a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Les résultats du test sont les suivants :</p>
@@ -1771,7 +1769,7 @@ Le fichier de configuration <strong>[config-client.json]</strong> devient le sui
           https://tahe.developpez.com
         </a>
         <br>
-        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
         <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
         Partage dans les Mêmes Conditions 3.0 non transposé</em>.
       </div>

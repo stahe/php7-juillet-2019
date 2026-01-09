@@ -65,14 +65,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
     var siteName = "Introduction au langage PHP7 par l'exemple";
-
     gtag('config', 'G-EBZC3JVJNR', {
         'page_title': siteName
     });
-    console.log("[GA Debug] page_title forced to: " + siteName);
   </script>
 
     
@@ -1120,9 +1116,9 @@
 <p><img src="images/1000000000000769000001BF973D6CB8.png" style="width:15.061cm;height:3.551cm;" alt="Image" /></p>
 <p><img src="images/10000000000009120000010F66A7F239.png" style="width:18.432cm;height:2.151cm;" alt="Image" /></p>
 <ul>
-<li>en <strong>[1-4]</strong>, on télécharge l’installateur du SGBD ;
-On lance l’installateur téléchargé :</li>
+<li>en <strong>[1-4]</strong>, on télécharge l’installateur du SGBD ;</li>
 </ul>
+<p>On lance l’installateur téléchargé :</p>
 <p><img src="images/10000000000007D40000032285ACD5D7.png" style="width:15.911cm;height:6.37cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[6]</strong>, indiquez un dossier d’installation ;</li>
@@ -1152,9 +1148,9 @@ On lance l’installateur téléchargé :</li>
 <p><img src="images/10000000000007A3000003000B13CB94.png" style="width:15.521cm;height:6.1cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[31-32]</strong>, mettez le démarrage en mode manuel ;</li>
-<li>en <strong>[33]</strong>, arrêtez le service ;
-Lorsque vous voudrez démarrer manuellement le SGBD, revenez à l’application <strong>[services]</strong>, cliquez droit sur le service <strong>[postgresql]</strong> (34) et lancez le (35).</li>
+<li>en <strong>[33]</strong>, arrêtez le service ;</li>
 </ul>
+<p>Lorsque vous voudrez démarrer manuellement le SGBD, revenez à l’application <strong>[services]</strong>, cliquez droit sur le service <strong>[postgresql]</strong> (34) et lancez le (35).</p>
 <h2 id="142-activation-de-lextension-pdo-du-sgbd-postgresql">14.2. Activation de l’extension PDO du SGBD PostgreSQL</h2>
 <p>Nous allons modifier le fichier <strong>[php.ini]</strong> qui configure PHP (cf paragraphe <a href="#_Configuration_de_PHP"><u><u>lien</u></u></a>) :</p>
 <p><img src="images/10000000000007A40000042DC1FB1A3C.png" style="width:15.53cm;height:8.482cm;" alt="Image" /></p>
@@ -1170,9 +1166,9 @@ Lorsque vous voudrez démarrer manuellement le SGBD, revenez à l’application 
 <li>en <strong>[5]</strong>, la liste des serveurs PostgreSQL détectés par <strong>[pgAdmin]</strong>, ici 1 ;</li>
 <li>en <strong>[6]</strong>, le serveur PostgreSQL que nous avons lancé ;</li>
 <li>en <strong>[7]</strong>, les bases de données du SGBD, ici 1 ;</li>
-<li>en <strong>[8]</strong>, la base <strong>[postgresql]</strong> est gérée par le super-utilisateur <strong>[postgres]</strong> ;
-Créons tout d’abord un utilisateur <strong>[admimpots]</strong> avec le mot de passe <strong>[mdpimpots]</strong> :</li>
+<li>en <strong>[8]</strong>, la base <strong>[postgresql]</strong> est gérée par le super-utilisateur <strong>[postgres]</strong> ;</li>
 </ul>
+<p>Créons tout d’abord un utilisateur <strong>[admimpots]</strong> avec le mot de passe <strong>[mdpimpots]</strong> :</p>
 <p><img src="images/10000000000007C30000016064A704A0.png" style="width:15.77cm;height:2.791cm;" alt="Image" /></p>
 <p><img src="images/10000000000006B7000002C2C2023F5E.png" style="width:13.641cm;height:5.601cm;" alt="Image" /></p>
 <ul>
@@ -1181,17 +1177,17 @@ Créons tout d’abord un utilisateur <strong>[admimpots]</strong> avec le mot d
 <p><img src="images/1000000000000718000002119833D399.png" style="width:14.41cm;height:4.201cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[21]</strong>, le code SQL que va émettre l’outil <strong>[pgAdmin]</strong> vers le SGBD PostgreSQL. C’est une façon d’apprendre le langage SQL propriétaire de PostgreSQL ;</li>
-<li>en <strong>[22]</strong>, après validation de l’assistant <strong>[Save]</strong>, l’utilisateur <strong>[admimpots]</strong> a été créé ;
-Maintenant nous créons la base <strong>[dbimpots-2019]</strong> :</li>
+<li>en <strong>[22]</strong>, après validation de l’assistant <strong>[Save]</strong>, l’utilisateur <strong>[admimpots]</strong> a été créé ;</li>
 </ul>
+<p>Maintenant nous créons la base <strong>[dbimpots-2019]</strong> :</p>
 <p><img src="images/10000000000006DB0000018BF44756B9.png" style="width:13.93cm;height:3.13cm;" alt="Image" /></p>
 <p>On clique droit sur <strong>[23]</strong>, puis <strong>[24-25]</strong> pour créer une nouvelle base de données. Dans l’onglet <strong>[26]</strong>, on définit le nom de la base <strong>[27]</strong> et son propriétaire <strong>[admimpots]</strong> <strong>[28]</strong>.</p>
 <p><img src="images/100000000000066D00000277A309E941.png" style="width:13.061cm;height:5.001cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[30]</strong>, le code SQL de création de la base ;</li>
-<li>en <strong>[31]</strong>, après validation de l’assistant <strong>[Save]</strong>, la base <strong>[dbimpots-2019]</strong> est créée ;
-Maintenant, nous allons créer la table <strong>[tbtranches]</strong> avec les colonnes <strong>[id, limites, coeffr, coeffn]</strong>. Une particularité de PostgreSQL est que les noms de colonnes sont sensibles à la casse (majuscules / minuscules) ce qui n’est habituellement pas le cas avec les autres SGBD. Ainsi avec MySQL, l’ordre <strong>[select limites, coeffR, coeffN from tbtranches]</strong> fonctionnera même si les colonnes réelles de la table <strong>[tbtranches]</strong> sont <strong>[LIMITES, COEFFR, COEFFN]</strong>. Avec PostgreSQL, l’ordre SQL ne fonctionnera pas. On pourrait alors écrire <strong>[select LIMITES, COEFFR, COEFFN from tbtranches]</strong> mais ça ne fonctionnera toujours pas, car PostgreSQL va exécuter l’ordre <strong>[select limites, coeffr, coeffn from tbtranches]</strong> : il passe par défaut les noms des colonnes en minuscules. Pour qu’il ne fasse pas cela, il faut écrire : <strong>[select &quot;LIMITES&quot;, &quot;COEFFR&quot;, &quot;COEFFN&quot; from tbtranches]</strong>, ç-à-d qu’il faut protéger les noms des colonnes avec des guillemets. Pour ces raisons, nous allons donner aux colonnes des noms en minuscules. Les noms des objets d’une base de données peuvent être une source d’incompatibilité entre SGBD, certains noms étant des mots réservés dans certains SGBD et pas dans d’autres.</li>
+<li>en <strong>[31]</strong>, après validation de l’assistant <strong>[Save]</strong>, la base <strong>[dbimpots-2019]</strong> est créée ;</li>
 </ul>
+<p>Maintenant, nous allons créer la table <strong>[tbtranches]</strong> avec les colonnes <strong>[id, limites, coeffr, coeffn]</strong>. Une particularité de PostgreSQL est que les noms de colonnes sont sensibles à la casse (majuscules / minuscules) ce qui n’est habituellement pas le cas avec les autres SGBD. Ainsi avec MySQL, l’ordre <strong>[select limites, coeffR, coeffN from tbtranches]</strong> fonctionnera même si les colonnes réelles de la table <strong>[tbtranches]</strong> sont <strong>[LIMITES, COEFFR, COEFFN]</strong>. Avec PostgreSQL, l’ordre SQL ne fonctionnera pas. On pourrait alors écrire <strong>[select LIMITES, COEFFR, COEFFN from tbtranches]</strong> mais ça ne fonctionnera toujours pas, car PostgreSQL va exécuter l’ordre <strong>[select limites, coeffr, coeffn from tbtranches]</strong> : il passe par défaut les noms des colonnes en minuscules. Pour qu’il ne fasse pas cela, il faut écrire : <strong>[select &quot;LIMITES&quot;, &quot;COEFFR&quot;, &quot;COEFFN&quot; from tbtranches]</strong>, ç-à-d qu’il faut protéger les noms des colonnes avec des guillemets. Pour ces raisons, nous allons donner aux colonnes des noms en minuscules. Les noms des objets d’une base de données peuvent être une source d’incompatibilité entre SGBD, certains noms étant des mots réservés dans certains SGBD et pas dans d’autres.</p>
 <p>Nous créons la table <strong>[tbtranches]</strong> :</p>
 <p><img src="images/100000000000079A0000048B433655B5.png" style="width:15.451cm;height:9.231cm;" alt="Image" /></p>
 <ul>
@@ -1200,9 +1196,9 @@ Maintenant, nous allons créer la table <strong>[tbtranches]</strong> avec les c
 <p><img src="images/100000000000057D000002F44236F3AC.png" style="width:11.15cm;height:6.002cm;" alt="Image" /></p>
 <p><img src="images/100000000000072A000002AC435E99B4.png" style="width:14.589cm;height:5.44cm;" alt="Image" /></p>
 <ul>
-<li>après avoir terminé l’assistant de création par <strong>[Save]</strong>, la table <strong>[tbtranches]</strong> est créée <strong>[52-53]</strong> ;
-Il nous faut indiquer au SGBD qu’il doit lui-même générer la clé primaire <strong>[id]</strong> lors de l’insertion d’une ligne dans la table :</li>
+<li>après avoir terminé l’assistant de création par <strong>[Save]</strong>, la table <strong>[tbtranches]</strong> est créée <strong>[52-53]</strong> ;</li>
 </ul>
+<p>Il nous faut indiquer au SGBD qu’il doit lui-même générer la clé primaire <strong>[id]</strong> lors de l’insertion d’une ligne dans la table :</p>
 <p><img src="images/1000000000000652000002E49E6050ED.png" style="width:12.84cm;height:5.871cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[56]</strong> on accède aux propriétés de la clé primaire <strong>[id]</strong> ;</li>
@@ -1210,9 +1206,9 @@ Il nous faut indiquer au SGBD qu’il doit lui-même générer la clé primaire 
 </ul>
 <p><img src="images/10000000000003E00000015718B80DB0.png" style="width:7.871cm;height:2.721cm;" alt="Image" /></p>
 <ul>
-<li>en <strong>[62]</strong>, le code SQL généré pour cette opération ;
-La table <strong>[tbtranches]</strong> est désormais prête.</li>
+<li>en <strong>[62]</strong>, le code SQL généré pour cette opération ;</li>
 </ul>
+<p>La table <strong>[tbtranches]</strong> est désormais prête.</p>
 <p>Nous refaisons les mêmes opérations pour créer la table <strong>[tbconstantes]</strong>. Nous donnons le résultat à obtenir :</p>
 <p><img src="images/1000000000000679000003877ED3FC08.png" style="width:13.151cm;height:7.171cm;" alt="Image" /></p>
 <p><img src="images/100000000000068D00000522254023EE.png" style="width:13.311cm;height:10.431cm;" alt="Image" /></p>
@@ -1489,33 +1485,33 @@ La table <strong>[tbtranches]</strong> est désormais prête.</li>
 <span class="normal"><a href="#__codelineno-1-17">17</a></span>
 <span class="normal"><a href="#__codelineno-1-18">18</a></span>
 <span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="s2">&quot;dsn&quot;</span><span class="p">:</span> <span class="s2">&quot;pgsql:host=localhost;dbname=dbimpots-2019&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;admimpots&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    <span class="s2">&quot;pwd&quot;</span><span class="p">:</span> <span class="s2">&quot;mdpimpots&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="s2">&quot;tableTranches&quot;</span><span class="p">:</span> <span class="s2">&quot;public.tbtranches&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="s2">&quot;colLimites&quot;</span><span class="p">:</span> <span class="s2">&quot;limites&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="s2">&quot;colCoeffR&quot;</span><span class="p">:</span> <span class="s2">&quot;coeffr&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="s2">&quot;colCoeffN&quot;</span><span class="p">:</span> <span class="s2">&quot;coeffn&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="s2">&quot;tableConstantes&quot;</span><span class="p">:</span> <span class="s2">&quot;public.tbconstantes&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>    <span class="s2">&quot;colPlafondQfDemiPart&quot;</span><span class="p">:</span> <span class="s2">&quot;plafond_qf_demi_part&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="s2">&quot;colPlafondRevenusCelibatairePourReduction&quot;</span><span class="p">:</span> <span class="s2">&quot;plafond_revenus_celibataire_pour_reduction&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="s2">&quot;colPlafondRevenusCouplePourReduction&quot;</span><span class="p">:</span> <span class="s2">&quot;plafond_revenus_couple_pour_reduction&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>    <span class="s2">&quot;colValeurReducDemiPart&quot;</span><span class="p">:</span> <span class="s2">&quot;valeur_reduc_demi_part&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>    <span class="s2">&quot;colPlafondDecoteCelibataire&quot;</span><span class="p">:</span> <span class="s2">&quot;plafond_decote_celibataire&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>    <span class="s2">&quot;colPlafondDecoteCouple&quot;</span><span class="p">:</span> <span class="s2">&quot;plafond_decote_couple&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>    <span class="s2">&quot;colPlafondImpotCelibatairePourDecote&quot;</span><span class="p">:</span> <span class="s2">&quot;plafond_impot_celibataire_pour_decote&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>    <span class="s2">&quot;colPlafondImpotCouplePourDecote&quot;</span><span class="p">:</span> <span class="s2">&quot;plafond_impot_couple_pour_decote&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    <span class="s2">&quot;colAbattementDixPourcentMax&quot;</span><span class="p">:</span> <span class="s2">&quot;abattement_dix_pourcent_max&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a>    <span class="s2">&quot;colAbattementDixPourcentMin&quot;</span><span class="p">:</span> <span class="s2">&quot;abattement_dix_pourcent_min&quot;</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    &quot;dsn&quot;: &quot;pgsql:host=localhost;dbname=dbimpots-2019&quot;,
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    &quot;id&quot;: &quot;admimpots&quot;,
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    &quot;pwd&quot;: &quot;mdpimpots&quot;,
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    &quot;tableTranches&quot;: &quot;public.tbtranches&quot;,
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>    &quot;colLimites&quot;: &quot;limites&quot;,
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    &quot;colCoeffR&quot;: &quot;coeffr&quot;,
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    &quot;colCoeffN&quot;: &quot;coeffn&quot;,
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    &quot;tableConstantes&quot;: &quot;public.tbconstantes&quot;,
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>    &quot;colPlafondQfDemiPart&quot;: &quot;plafond_qf_demi_part&quot;,
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    &quot;colPlafondRevenusCelibatairePourReduction&quot;: &quot;plafond_revenus_celibataire_pour_reduction&quot;,
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>    &quot;colPlafondRevenusCouplePourReduction&quot;: &quot;plafond_revenus_couple_pour_reduction&quot;,
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>    &quot;colValeurReducDemiPart&quot;: &quot;valeur_reduc_demi_part&quot;,
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>    &quot;colPlafondDecoteCelibataire&quot;: &quot;plafond_decote_celibataire&quot;,
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>    &quot;colPlafondDecoteCouple&quot;: &quot;plafond_decote_couple&quot;,
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>    &quot;colPlafondImpotCelibatairePourDecote&quot;: &quot;plafond_impot_celibataire_pour_decote&quot;,
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>    &quot;colPlafondImpotCouplePourDecote&quot;: &quot;plafond_impot_couple_pour_decote&quot;,
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    &quot;colAbattementDixPourcentMax&quot;: &quot;abattement_dix_pourcent_max&quot;,
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>    &quot;colAbattementDixPourcentMin&quot;: &quot;abattement_dix_pourcent_min&quot;
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>}
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>ligne 2 : le DSN a changé, <strong>[pgsql]</strong> indiquant qu’on a affaire au SGBD Postgres ;</li>
 <li>lignes 5 et 9 : on a précédé le nom des tables par le nom du schéma auquel elles appartiennent <strong>[public]</strong>. Ce n’était pas indispensable puisque que <strong>[public]</strong> est le schéma utilisé par défaut lorsqu’aucun schéma n’est précisé dans le nom de la table ;</li>
-<li>lignes 6-8, 10-19 : les noms des colonnes ont changé ;
-Le script <strong>[MainTransferAdminDataFromJsonFile2PostgresDatabase.php]</strong> de remplissage de la base <strong>[dbimpots-2019]</strong> est le suivant :</li>
+<li>lignes 6-8, 10-19 : les noms des colonnes ont changé ;</li>
 </ul>
+<p>Le script <strong>[MainTransferAdminDataFromJsonFile2PostgresDatabase.php]</strong> de remplissage de la base <strong>[dbimpots-2019]</strong> est le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -1554,55 +1550,55 @@ Le script <strong>[MainTransferAdminDataFromJsonFile2PostgresDatabase.php]</stro
 <span class="normal"><a href="#__codelineno-2-36">36</a></span>
 <span class="normal"><a href="#__codelineno-2-37">37</a></span>
 <span class="normal"><a href="#__codelineno-2-38">38</a></span>
-<span class="normal"><a href="#__codelineno-2-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="o">//</span> <span class="n">gestion</span> <span class="n">des</span> <span class="n">erreurs</span> <span class="n">par</span> <span class="n">PHP</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="o">//</span> <span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">interface</span> <span class="n">et</span> <span class="n">classes</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao4TransferAdminData2Database.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/DaoTransferAdminDataFromJsonFile2Database.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="o">//</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="n">const</span> <span class="n">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="n">const</span> <span class="n">TAXADMINDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxadmindata.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">// gestion des erreurs par PHP</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao4TransferAdminData2Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/DaoTransferAdminDataFromJsonFile2Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="c1">//</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="k">const</span> <span class="no">TAXADMINDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxadmindata.json&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-26" name="__codelineno-2-26"></a>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="o">//</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="c1">//</span>
 <a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a>  <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a>  <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoTransferAdminDataFromJsonFile2Database</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">,</span> <span class="n">TAXADMINDATA_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31"></a>  <span class="o">//</span> <span class="n">transfert</span> <span class="n">des</span> <span class="n">données</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">base</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32"></a>  <span class="err">$</span><span class="n">dao</span><span class="o">-&gt;</span><span class="n">transferAdminData2Database</span><span class="p">();</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">ExceptionImpots</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-2-34" name="__codelineno-2-34"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">affiche</span> <span class="n">l</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35"></a>  <span class="nb">print</span> <span class="s2">&quot;L&#39;erreur suivante s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="n">utf8_encode</span><span class="p">(</span><span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>  <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoTransferAdminDataFromJsonFile2Database</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">,</span> <span class="nx">TAXADMINDATA_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>  <span class="c1">// transfert des données dans la base</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>  <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">transferAdminData2Database</span><span class="p">();</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>  <span class="c1">// on affiche l&#39;erreur</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>  <span class="k">print</span> <span class="s2">&quot;L&#39;erreur suivante s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="p">}</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="o">//</span> <span class="n">fin</span>
-<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="c1">// fin</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="k">exit</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
-<p>Seules les lignes 12-21 qui chargent les fichiers nécessaires à l’exécution de l’application changent. Elles changent parce que la valeur <strong>[<strong>DIR</strong>]</strong> change : elle désigne désormais le dossier <strong>[version-07/Main]</strong>.</p>
+<p>Seules les lignes 12-21 qui chargent les fichiers nécessaires à l’exécution de l’application changent. Elles changent parce que la valeur <strong>[__DIR__]</strong> change : elle désigne désormais le dossier <strong>[version-07/Main]</strong>.</p>
 <p>Lorsqu’on exécute ce script, on obtient le résultat suivant dans la table <strong>[tbtranches]</strong> :</p>
 <p><img src="images/1000000000000775000002B0FE71B410.png" style="width:15.151cm;height:5.46cm;" alt="Image" /></p>
 <ul>
 <li>on clique droit sur <strong>[1]</strong>, puis ensuite <strong>[2-3]</strong> ;</li>
-<li>en <strong>[4]</strong>, on a bien les données des tranches d’impôts ;
-On refait la même chose pour la table des constantes <strong>[tbconstantes]</strong> :</li>
+<li>en <strong>[4]</strong>, on a bien les données des tranches d’impôts ;</li>
 </ul>
+<p>On refait la même chose pour la table des constantes <strong>[tbconstantes]</strong> :</p>
 <p><img src="images/100000000000066700000204B8506A3C.png" style="width:13.011cm;height:4.1cm;" alt="Image" /></p>
 <p><img src="images/100000000000063C00000201376D4538.png" style="width:12.671cm;height:4.07cm;" alt="Image" /></p>
 <p><img src="images/1000000000000690000001FFF7A56810.png" style="width:13.341cm;height:4.061cm;" alt="Image" /></p>
@@ -1655,53 +1651,53 @@ On refait la même chose pour la table des constantes <strong>[tbconstantes]</st
 <span class="normal"><a href="#__codelineno-3-41">41</a></span>
 <span class="normal"><a href="#__codelineno-3-42">42</a></span>
 <span class="normal"><a href="#__codelineno-3-43">43</a></span>
-<span class="normal"><a href="#__codelineno-3-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">//</span> <span class="n">gestion</span> <span class="n">des</span> <span class="n">erreurs</span> <span class="n">par</span> <span class="n">PHP</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="o">//</span><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">interface</span> <span class="n">et</span> <span class="n">classes</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Métier/InterfaceMetier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="n">require_once</span> <span class="n">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Métier/Metier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="o">//</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="n">const</span> <span class="n">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="n">const</span> <span class="n">TAXADMINDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxadmindata.json&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="n">const</span> <span class="n">RESULTS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/resultats.json&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="n">const</span> <span class="n">ERRORS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/errors.json&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="n">const</span> <span class="n">TAXPAYERSDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxpayersdata.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">// gestion des erreurs par PHP</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1">//ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Métier/InterfaceMetier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s2">&quot;/../../version-05/Métier/Metier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1">//</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="k">const</span> <span class="no">TAXADMINDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxadmindata.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="k">const</span> <span class="no">RESULTS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/resultats.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="k">const</span> <span class="no">ERRORS_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/errors.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="k">const</span> <span class="no">TAXPAYERSDATA_FILENAME</span> <span class="o">=</span> <span class="s2">&quot;../Data/taxpayersdata.json&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-30" name="__codelineno-3-30"></a>
 <a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a>  <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a>  <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34"></a>  <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35"></a>  <span class="err">$</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Metier</span><span class="p">(</span><span class="err">$</span><span class="n">dao</span><span class="p">);</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="o">//</span> <span class="n">calcul</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;impôts en mode batch</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">executeBatchImpots</span><span class="p">(</span><span class="n">TAXPAYERSDATA_FILENAME</span><span class="p">,</span> <span class="n">RESULTS_FILENAME</span><span class="p">,</span> <span class="n">ERRORS_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">ExceptionImpots</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">affiche</span> <span class="n">l</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40"></a>  <span class="nb">print</span> <span class="s2">&quot;Une erreur s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="n">utf8_encode</span><span class="p">(</span><span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>  <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>  <span class="c1">// création de la couche [métier]</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a>  <span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="c1">// calcul de l&#39;impôts en mode batch</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">executeBatchImpots</span><span class="p">(</span><span class="nx">TAXPAYERSDATA_FILENAME</span><span class="p">,</span> <span class="nx">RESULTS_FILENAME</span><span class="p">,</span> <span class="nx">ERRORS_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a>  <span class="c1">// on affiche l&#39;erreur</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a>  <span class="k">print</span> <span class="s2">&quot;Une erreur s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="p">}</span>
-<a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="o">//</span> <span class="n">fin</span>
-<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="c1">// fin</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="k">exit</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
-<p>Seules les lignes 12-22 qui chargent les fichiers nécessaires à l’exécution de l’application changent. Elles changent parce que la valeur <strong>[<strong>DIR</strong>]</strong> change : elle désigne désormais le dossier <strong>[version-07/Main]</strong>.</p>
+<p>Seules les lignes 12-22 qui chargent les fichiers nécessaires à l’exécution de l’application changent. Elles changent parce que la valeur <strong>[__DIR__]</strong> change : elle désigne désormais le dossier <strong>[version-07/Main]</strong>.</p>
 <p><strong>Résultats d’exécution</strong></p>
 <p>Les mêmes que ceux obtenus dans les versions précédentes.</p>
 <h2 id="146-tests-codeception">14.6. Tests [Codeception]</h2>
@@ -1754,49 +1750,49 @@ On refait la même chose pour la table des constantes <strong>[tbconstantes]</st
 <span class="normal"><a href="#__codelineno-4-43">43</a></span>
 <span class="normal"><a href="#__codelineno-4-44">44</a></span>
 <span class="normal"><a href="#__codelineno-4-45">45</a></span>
-<span class="normal"><a href="#__codelineno-4-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-4-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="o">//</span> <span class="n">répertoires</span> <span class="n">racines</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-06&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;VENDOR&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">// répertoires racines</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-06&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;VENDOR&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor&quot;</span><span class="p">);</span>
 <a id="__codelineno-4-12" name="__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">interface</span> <span class="n">et</span> <span class="n">classes</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-23" name="__codelineno-4-23"></a>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="o">//</span> <span class="n">bibliothèques</span> <span class="n">tierces</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="n">require_once</span> <span class="n">VENDOR</span> <span class="o">.</span> <span class="s2">&quot;/autoload.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="c1">// bibliothèques tierces</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="k">require_once</span> <span class="nx">VENDOR</span> <span class="o">.</span> <span class="s2">&quot;/autoload.php&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-26" name="__codelineno-4-26"></a>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="n">const</span> <span class="n">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">.</span><span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="nx">ROOT</span> <span class="o">.</span><span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-29" name="__codelineno-4-29"></a>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="k">class</span><span class="w"> </span><span class="nc">DaoTest</span> <span class="n">extends</span> \<span class="n">Codeception</span>\<span class="n">Test</span>\<span class="n">Unit</span> <span class="p">{</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a>  <span class="o">//</span> <span class="n">TaxAdminData</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">taxAdminData</span><span class="p">;</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="k">class</span> <span class="nc">DaoTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a>  <span class="c1">// TaxAdminData</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a>  <span class="k">private</span> <span class="nv">$taxAdminData</span><span class="p">;</span>
 <a id="__codelineno-4-33" name="__codelineno-4-33"></a>
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a>    <span class="n">parent</span><span class="p">::</span><span class="n">__construct</span><span class="p">();</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37"></a>    <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">taxAdminData</span> <span class="o">=</span> <span class="err">$</span><span class="n">dao</span><span class="o">-&gt;</span><span class="n">getTaxAdminData</span><span class="p">();</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a>    <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">taxAdminData</span> <span class="o">=</span> <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">getTaxAdminData</span><span class="p">();</span>
 <a id="__codelineno-4-39" name="__codelineno-4-39"></a>  <span class="p">}</span>
 <a id="__codelineno-4-40" name="__codelineno-4-40"></a>
-<a id="__codelineno-4-41" name="__codelineno-4-41"></a>  <span class="o">//</span> <span class="n">tests</span>
-<a id="__codelineno-4-42" name="__codelineno-4-42"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">testTaxAdminData</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-43" name="__codelineno-4-43"></a>    <span class="err">…</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41"></a>  <span class="c1">// tests</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">testTaxAdminData</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43"></a>    <span class="nx">…</span>
 <a id="__codelineno-4-44" name="__codelineno-4-44"></a>  <span class="p">}</span>
 <a id="__codelineno-4-45" name="__codelineno-4-45"></a>
 <a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="p">}</span>
@@ -1806,9 +1802,9 @@ On refait la même chose pour la table des constantes <strong>[tbconstantes]</st
 <li>lignes 9-28 : définition de l’environnement du test. Nous utilisons le même, sans la couche <strong>[métier]</strong>, que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Calcul_de_l’impôt_1"><u><u>lien</u></u></a> ;</li>
 <li>lignes 34-39 : construction de la couche <strong>[dao]</strong> ;</li>
 <li>ligne 38 : l’attribut <strong>[$this→taxAdminData]</strong> contient les données à tester ;</li>
-<li>lignes 42-44 : la méthode <strong>[testTaxAdminData]</strong> est celle décrite au paragraphe <a href="#_Tests_de_la"><u><u>lien</u></u></a> ;
-Les résultats du test sont les suivants :</li>
+<li>lignes 42-44 : la méthode <strong>[testTaxAdminData]</strong> est celle décrite au paragraphe <a href="#_Tests_de_la"><u><u>lien</u></u></a> ;</li>
 </ul>
+<p>Les résultats du test sont les suivants :</p>
 <p><img src="images/100000000000060B0000015A4A8CF10A.png" style="width:14.331cm;height:3.2cm;" alt="Image" /></p>
 <h3 id="1462-test-de-la-couche-metier">14.6.2. Test de la couche [métier]</h3>
 <p>Le test <strong>[MetierTest.php]</strong> est le suivant :</p>
@@ -1862,54 +1858,54 @@ Les résultats du test sont les suivants :</li>
 <span class="normal"><a href="#__codelineno-5-48">48</a></span>
 <span class="normal"><a href="#__codelineno-5-49">49</a></span>
 <span class="normal"><a href="#__codelineno-5-50">50</a></span>
-<span class="normal"><a href="#__codelineno-5-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-5-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="o">//</span> <span class="n">répertoires</span> <span class="n">racines</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-06&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;VENDOR&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1">// répertoires racines</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-06&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;VENDOR&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor&quot;</span><span class="p">);</span>
 <a id="__codelineno-5-12" name="__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="o">//</span> <span class="n">inclusion</span> <span class="n">interface</span> <span class="n">et</span> <span class="n">classes</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Métier/InterfaceMetier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="n">require_once</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Métier/Metier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="o">//</span> <span class="n">bibliothèques</span> <span class="n">tierces</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="n">require_once</span> <span class="n">VENDOR</span> <span class="o">.</span> <span class="s2">&quot;/autoload.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="n">const</span> <span class="n">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">.</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="c1">// inclusion interface et classes</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/BaseEntity.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/Database.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/TraitDao.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Métier/InterfaceMetier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="k">require_once</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/../version-05/Métier/Metier.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="c1">// bibliothèques tierces</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="k">require_once</span> <span class="nx">VENDOR</span> <span class="o">.</span> <span class="s2">&quot;/autoload.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="k">const</span> <span class="no">DATABASE_CONFIG_FILENAME</span> <span class="o">=</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;../Data/database.json&quot;</span><span class="p">;</span>
 <a id="__codelineno-5-29" name="__codelineno-5-29"></a>
-<a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="k">class</span><span class="w"> </span><span class="nc">MetierTest</span> <span class="n">extends</span> \<span class="n">Codeception</span>\<span class="n">Test</span>\<span class="n">Unit</span> <span class="p">{</span>
-<a id="__codelineno-5-31" name="__codelineno-5-31"></a>  <span class="o">//</span> <span class="n">couche</span> <span class="n">métier</span>
-<a id="__codelineno-5-32" name="__codelineno-5-32"></a>  <span class="n">private</span> <span class="err">$</span><span class="n">métier</span><span class="p">;</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="k">class</span> <span class="nc">MetierTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a>  <span class="c1">// couche métier</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a>  <span class="k">private</span> <span class="nv">$métier</span><span class="p">;</span>
 <a id="__codelineno-5-33" name="__codelineno-5-33"></a>
-<a id="__codelineno-5-34" name="__codelineno-5-34"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-5-35" name="__codelineno-5-35"></a>    <span class="n">parent</span><span class="p">::</span><span class="n">__construct</span><span class="p">();</span>
-<a id="__codelineno-5-36" name="__codelineno-5-36"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-5-37" name="__codelineno-5-37"></a>    <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="n">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-5-38" name="__codelineno-5-38"></a>    <span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
-<a id="__codelineno-5-39" name="__codelineno-5-39"></a>    <span class="err">$</span><span class="n">this</span><span class="o">-&gt;</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Metier</span><span class="p">(</span><span class="err">$</span><span class="n">dao</span><span class="p">);</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36"></a>    <span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38"></a>    <span class="c1">// création de la couche [métier]</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
 <a id="__codelineno-5-40" name="__codelineno-5-40"></a>  <span class="p">}</span>
 <a id="__codelineno-5-41" name="__codelineno-5-41"></a>
-<a id="__codelineno-5-42" name="__codelineno-5-42"></a>  <span class="o">//</span> <span class="n">tests</span>
-<a id="__codelineno-5-43" name="__codelineno-5-43"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">test1</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-5-44" name="__codelineno-5-44"></a>    <span class="err">…</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42"></a>  <span class="c1">// tests</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test1</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44"></a>    <span class="nx">…</span>
 <a id="__codelineno-5-45" name="__codelineno-5-45"></a>  <span class="p">}</span>
 <a id="__codelineno-5-46" name="__codelineno-5-46"></a><span class="o">--------------------------------------------------------------------</span>
-<a id="__codelineno-5-47" name="__codelineno-5-47"></a>  <span class="n">public</span> <span class="n">function</span> <span class="n">test11</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-5-48" name="__codelineno-5-48"></a>    <span class="err">…</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test11</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48"></a>    <span class="nx">…</span>
 <a id="__codelineno-5-49" name="__codelineno-5-49"></a>  <span class="p">}</span>
 <a id="__codelineno-5-50" name="__codelineno-5-50"></a>
 <a id="__codelineno-5-51" name="__codelineno-5-51"></a><span class="p">}</span>
@@ -1919,9 +1915,9 @@ Les résultats du test sont les suivants :</li>
 <li>lignes 9-28 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Calcul_de_l’impôt_1"><u><u>lien</u></u></a> ;</li>
 <li>lignes 34-40 : construction des couches <strong>[dao]</strong> et <strong>[métier]</strong> ;</li>
 <li>ligne 39 : l’attribut <strong>[$this→métier]</strong> référence la couche <strong>[métier]</strong></li>
-<li>lignes 43-49 : les méthodes <strong>[test1, test2…, test11]</strong> sont celles décrites au paragraphe <a href="#_Tests_de_la_1"><u><u>lien</u></u></a> ;
-Les résultats du test sont les suivants :</li>
+<li>lignes 43-49 : les méthodes <strong>[test1, test2…, test11]</strong> sont celles décrites au paragraphe <a href="#_Tests_de_la_1"><u><u>lien</u></u></a> ;</li>
 </ul>
+<p>Les résultats du test sont les suivants :</p>
 <p><img src="images/100000000000062100000189747666A0.png" style="width:14.53cm;height:3.641cm;" alt="Image" /></p>
 
 
@@ -1962,7 +1958,7 @@ Les résultats du test sont les suivants :</li>
           https://tahe.developpez.com
         </a>
         <br>
-        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
         <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
         Partage dans les Mêmes Conditions 3.0 non transposé</em>.
       </div>

@@ -65,14 +65,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
     var siteName = "Introduction au langage PHP7 par l'exemple";
-
     gtag('config', 'G-EBZC3JVJNR', {
         'page_title': siteName
     });
-    console.log("[GA Debug] page_title forced to: " + siteName);
   </script>
 
     
@@ -980,32 +976,30 @@
 
 <h1 id="1-introduction-au-langage-php-7">1. Introduction au langage PHP 7</h1>
 <p>Ce document fait partie d’une série de quatre articles :</p>
-<ul>
+<ol>
 <li>[<a href="https://tahe.developpez.com/tutoriels-cours/php7">Introduction au langage </a><a href="https://tahe.developpez.com/tutoriels-cours/php7"><strong><em>*PHP7</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/php7"> par l’exemple</a>]. <strong>C’est le document présent</strong> ;</li>
 <li>[<a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6">Introduction au langage </a><a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6"><strong><em>*ECMASCRIPT 6</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/ecmascript6"> par l’exemple</a>] ;</li>
 <li>[<a href="https://tahe.developpez.com/tutoriels-cours/vuejs">Introduction au framework </a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"><strong><em>*VUE.JS</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/vuejs"> par l’exemple</a>] ;</li>
-<li>
-<p>[<a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs">Introduction au framework </a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"><strong><em>*NUXT.JS</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"> par l’exemple</a>] ;
-Ce sont tous des documents pour <strong>débutants</strong>. Les articles ont une suite logique mais <strong>sont faiblement couplés</strong> :</p>
-</li>
-<li>
-<p>le document [1] présente le langage PHP 7. Le lecteur seulement intéressé par le langage PHP et pas par le langage Javascript des articles suivants s’arrêtera là ;</p>
-</li>
+<li>[<a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs">Introduction au framework </a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"><strong><em>*NUXT.JS</em></strong>*</a><a href="https://tahe.developpez.com/tutoriels-cours/nuxtjs"> par l’exemple</a>] ;</li>
+</ol>
+<p>Ce sont tous des documents pour <strong>débutants</strong>. Les articles ont une suite logique mais <strong>sont faiblement couplés</strong> :</p>
+<ul>
+<li>le document [1] présente le langage PHP 7. Le lecteur seulement intéressé par le langage PHP et pas par le langage Javascript des articles suivants s’arrêtera là ;</li>
 <li>les documents [2-4] visent à construire un client Javascript au serveur de calcul de l’impôt développé dans le document [1] ;</li>
 <li>les frameworks Javascript [vue.js] et [nuxt.js] des articles 3 et 4 nécessitent de connaître le Javascript des dernières versions d’ECMASCRIPT, celles de la version 6. Le document [2] est donc destiné à ceux qui ne connaissent pas cette version de Javascript. Il fait référence au serveur de calcul de l’impôt construit dans le document [1]. Le lecteur de [2] aura alors parfois besoin de se référer au document [1] ;</li>
 <li>une fois ECMASCRIPT 6 maîtrisé, on peut aborder le framework VUE.JS qui permet de construire des clients Javascript s’exécutant dans un navigateur en mode SPA (Single Page Application). C’est le document [3]. Il fait référence à la fois au serveur de calcul de l’impôt construit dans le document [1] et au code du client Javascript autonome construit en [2]. Le lecteur de [3] aura alors parfois besoin de se référer aux documents [1] et [2] ;</li>
-<li>une fois VUE.JS maîtrisé, on peut aborder le framework NUXT.JS qui permet de construire des clients Javascript s’exécutant dans un navigateur en mode SSR (Server Side Rendered). Il fait référence à la fois au serveur de calcul de l’impôt construit dans le document [1], au code du client Javascript autonome construit en [2] ainsi qu’à l’application [vue.js] développée dans le document [3]. Le lecteur de [4] aura alors parfois besoin de se référer aux documents [1] [2] et [3] ;
-Ce document propose une liste de <strong>scripts console</strong> PHP 7 dans différents domaines (structures du langage, accès aux fichiers, aux bases de données, au réseau internet). La programmation web est abordée via des <strong>services web</strong>. On a appelé dans ce document, service web, toute application web produisant du texte brut. Ce sont des serveurs de données et non des serveurs de pages web qui sont un mixte HTML, CSS et Javascript. On y aborde des concepts web classiques (protocole HTTP, réponses jSON ou XML, gestion de session, authentification) également utilisés dans la programmation web classique.</li>
+<li>une fois VUE.JS maîtrisé, on peut aborder le framework NUXT.JS qui permet de construire des clients Javascript s’exécutant dans un navigateur en mode SSR (Server Side Rendered). Il fait référence à la fois au serveur de calcul de l’impôt construit dans le document [1], au code du client Javascript autonome construit en [2] ainsi qu’à l’application [vue.js] développée dans le document [3]. Le lecteur de [4] aura alors parfois besoin de se référer aux documents [1] [2] et [3] ;</li>
 </ul>
+<p>Ce document propose une liste de <strong>scripts console</strong> PHP 7 dans différents domaines (structures du langage, accès aux fichiers, aux bases de données, au réseau internet). La programmation web est abordée via des <strong>services web</strong>. On a appelé dans ce document, service web, toute application web produisant du texte brut. Ce sont des serveurs de données et non des serveurs de pages web qui sont un mixte HTML, CSS et Javascript. On y aborde des concepts web classiques (protocole HTTP, réponses jSON ou XML, gestion de session, authentification) également utilisés dans la programmation web classique.</p>
 <p>De nos jours, il est fréquent de construire des applications web en mode client / serveur :</p>
 <p><img src="images/100000000000082800000365F64BD6A3.png" style="width:16.571cm;height:6.901cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le navigateur web affiche des pages web à destination d’un utilisateur <strong>[5, 7]</strong>. Ces pages contiennent du Javascript implémentant un client d’un service web de données <strong>[2]</strong> ainsi qu’un client d’un serveur de fragments de pages web <strong>[3]</strong>. Un framework JS bien établi dans ce domaine est <strong>Angular 2</strong> de Google (mai 2019) ;</li>
 <li>en <strong>[2]</strong>, le serveur web est un serveur de données. Il peut être écrit dans n’importe quel langage. Il ne produit pas de pages web au sens classique (HTML, CSS, Javascript) sauf peut-être la 1ère fois. Mais cette 1ère page peut être obtenue d’un serveur web classique <strong>[3]</strong> (pas un serveur de données). Le Javascript de la page initiale va alors générer les différentes pages web de l’application en obtenant les données <strong>[4]</strong> à afficher auprès du serveur web qui agit comme un serveur de données <strong>[2]</strong>. Il peut également obtenir des fragments de page web <strong>[5]</strong> pour habiller ces données auprès du serveur de pages web <strong>[3]</strong> ;</li>
 <li>en <strong>[4]</strong>, l’utilisateur initie une action ;</li>
-<li>en <strong>[6,7]</strong> : il reçoit des données habillées par un fragment de page web ;
-Nous allons dans ce document écrire des applications client / serveur en PHP7 ayant la structure suivante :</li>
+<li>en <strong>[6,7]</strong> : il reçoit des données habillées par un fragment de page web ;</li>
 </ul>
+<p>Nous allons dans ce document écrire des applications client / serveur en PHP7 ayant la structure suivante :</p>
 <p><img src="images/10000000000006A800000291FCA421D9.png" style="width:15.781cm;height:6.081cm;" alt="Image" /></p>
 <p>On a là une application client / serveur écrite en PHP. Un script console <strong>[9]</strong> interrogera un serveur de données <strong>[4]</strong>. Ce qui sera appris ici pour écrire le service de données pourra être réutilisé dans une application web. Le service de données en PHP pourra être conservé et le client PHP sera lui remplacé par un client Javascript.</p>
 <p>Comme fil rouge du document, nous construirons un service de calcul de l’impôt en 13 versions. La version 13 aura l’architecture suivante :</p>
@@ -1013,7 +1007,7 @@ Nous allons dans ce document écrire des applications client / serveur en PHP7 a
 <p>La couche <strong>[web]</strong> du serveur aura une architecture MVC (Model – View – Controller). Tout le cours PHP 7 vise à construire cette version.</p>
 <p>Les scripts de ce document sont commentés et leur exécution console reproduite. Des explications supplémentaires sont parfois fournies. Le document nécessite une lecture active : pour comprendre un script, il faut à la fois lire son code, ses commentaires et ses résultats d&#x27;exécution.</p>
 <p>Les exemples du document sont disponibles |<a href="https://tahe.developpez.com/tutoriels-cours/php7/documents/php7.rar"><strong><em>*ici</em></strong>*</a><strong>|</strong>.</p>
-<p>L’application serveur PHP 7 peut être testée |<a href="https://sergetahe.com/apps/impot/serveur-php7/"><strong><em>*ici</em></strong>*</a><strong>|</strong>.</p>
+<p>Le PDF du document peut être trouvé |<a href="https://stahe.github.io/php7-juillet-2019/php7.pdf"><u><strong>ici</strong></u></a><strong>|</strong>.</p>
 <p>Serge Tahé, juillet 2019</p>
 
 
@@ -1054,7 +1048,7 @@ Nous allons dans ce document écrire des applications client / serveur en PHP7 a
           https://tahe.developpez.com
         </a>
         <br>
-        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
         <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
         Partage dans les Mêmes Conditions 3.0 non transposé</em>.
       </div>

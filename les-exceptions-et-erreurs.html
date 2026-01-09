@@ -65,14 +65,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
     var siteName = "Introduction au langage PHP7 par l'exemple";
-
     gtag('config', 'G-EBZC3JVJNR', {
         'page_title': siteName
     });
-    console.log("[GA Debug] page_title forced to: " + siteName);
   </script>
 
     
@@ -1175,24 +1171,24 @@
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="o">//</span> <span class="n">affichage</span> <span class="n">de</span> <span class="n">toutes</span> <span class="n">les</span> <span class="n">erreurs</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;error_reporting&quot;</span><span class="p">,</span> <span class="n">E_ALL</span><span class="p">);</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="p">);</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="o">//</span> <span class="n">code</span> <span class="o">--------</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="err">$</span><span class="n">var</span><span class="o">=</span><span class="p">[];</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="o">//</span> <span class="n">clé</span> <span class="n">inconnue</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">print</span> <span class="err">$</span><span class="n">var</span><span class="p">[</span><span class="s2">&quot;abcd&quot;</span><span class="p">];</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="o">//</span> <span class="n">division</span> <span class="n">par</span> <span class="n">zéro</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="err">$</span><span class="n">var</span><span class="o">=</span><span class="mi">7</span><span class="o">/</span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">var_dump</span><span class="p">(</span><span class="err">$</span><span class="n">var</span><span class="p">);</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="o">//</span> <span class="n">tableau</span> <span class="n">à</span> <span class="n">bornes</span> <span class="n">fixes</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="err">$</span><span class="n">array</span> <span class="o">=</span> <span class="n">new</span> \<span class="n">SplFixedArray</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">//</span> <span class="n">indice</span> <span class="n">en</span><span class="o">-</span><span class="n">dehors</span> <span class="n">des</span> <span class="n">bornes</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">// affichage de toutes les erreurs</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;error_reporting&quot;</span><span class="p">,</span> <span class="k">E_ALL</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">// code --------</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nv">$var</span><span class="o">=</span><span class="p">[];</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">// clé inconnue</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">print</span> <span class="nv">$var</span><span class="p">[</span><span class="s2">&quot;abcd&quot;</span><span class="p">];</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">// division par zéro</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nv">$var</span><span class="o">=</span><span class="mi">7</span><span class="o">/</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$var</span><span class="p">);</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="c1">// tableau à bornes fixes</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="nv">$array</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\SplFixedArray</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="nv">$array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="nv">$array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="c1">// indice en-dehors des bornes</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="nv">$array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="mi">8</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
@@ -1205,9 +1201,9 @@
 <li>ligne 9 : on accède à un élément inexistant du tableau <strong>[$var]</strong> ;</li>
 <li>ligne 11 : on fait une division par zéro ;</li>
 <li>ligne 14 : on crée une instance de la classe <strong>[SplFixedArray]</strong>. Cette classe permet de créer un tableau à bornes fixes et à indices entiers ;</li>
-<li>ligne 18 : on accède à un élément inexistant du tableau ;
-<strong>Résultats</strong></li>
+<li>ligne 18 : on accède à un élément inexistant du tableau ;</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -1259,40 +1255,40 @@
 <span class="normal"><a href="#__codelineno-2-23">23</a></span>
 <span class="normal"><a href="#__codelineno-2-24">24</a></span>
 <span class="normal"><a href="#__codelineno-2-25">25</a></span>
-<span class="normal"><a href="#__codelineno-2-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">//</span> <span class="n">on</span> <span class="n">affiche</span> <span class="n">toutes</span> <span class="n">les</span> <span class="n">erreurs</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;error_reporting&quot;</span><span class="p">,</span> <span class="n">E_ALL</span><span class="p">);</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="o">//</span> <span class="n">on</span> <span class="n">entoure</span> <span class="n">le</span> <span class="n">code</span> <span class="n">par</span> <span class="n">un</span> <span class="k">try</span> <span class="o">/</span> <span class="n">catch</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">// on affiche toutes les erreurs</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;error_reporting&quot;</span><span class="p">,</span> <span class="k">E_ALL</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">// on entoure le code par un try / catch</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>  <span class="err">$</span><span class="n">var</span> <span class="o">=</span> <span class="p">[];</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>  <span class="o">//</span> <span class="n">clé</span> <span class="n">inconnue</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">var</span><span class="p">[</span><span class="s2">&quot;abcd&quot;</span><span class="p">];</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  <span class="o">//</span> <span class="n">division</span> <span class="n">par</span> <span class="n">zéro</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>  <span class="err">$</span><span class="n">var</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>  <span class="n">var_dump</span><span class="p">(</span><span class="err">$</span><span class="n">var</span><span class="p">);</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>  <span class="o">//</span> <span class="n">tableau</span> <span class="n">à</span> <span class="n">bornes</span> <span class="n">fixes</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>  <span class="err">$</span><span class="n">array</span> <span class="o">=</span> <span class="n">new</span> \<span class="n">SplFixedArray</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>  <span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>  <span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>  <span class="o">//</span> <span class="n">indice</span> <span class="n">en</span><span class="o">-</span><span class="n">dehors</span> <span class="n">des</span> <span class="n">bornes</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a>  <span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>  <span class="o">//</span> <span class="n">vérification</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>  <span class="nb">print</span> <span class="s2">&quot;ce message ne sera pas affiché</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">Throwable</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>  <span class="o">//</span> \<span class="n">Throwable</span> <span class="n">est</span> <span class="n">l</span><span class="s1">&#39;interface implémentée par la plupart des erreurs et exceptions</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">affiche</span> <span class="n">l</span><span class="s1">&#39;exception</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a>  <span class="nb">print</span> <span class="s2">&quot;erreur, message : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;, type : &quot;</span> <span class="o">.</span> <span class="n">get_class</span><span class="p">(</span><span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>  <span class="nv">$var</span> <span class="o">=</span> <span class="p">[];</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>  <span class="c1">// clé inconnue</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>  <span class="k">print</span> <span class="nv">$var</span><span class="p">[</span><span class="s2">&quot;abcd&quot;</span><span class="p">];</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  <span class="c1">// division par zéro</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>  <span class="nv">$var</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$var</span><span class="p">);</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>  <span class="c1">// tableau à bornes fixes</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>  <span class="nv">$array</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\SplFixedArray</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>  <span class="nv">$array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>  <span class="nv">$array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>  <span class="c1">// indice en-dehors des bornes</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>  <span class="nv">$array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>  <span class="c1">// vérification</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>  <span class="k">print</span> <span class="s2">&quot;ce message ne sera pas affiché</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Throwable</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>  <span class="c1">// \Throwable est l&#39;interface implémentée par la plupart des erreurs et exceptions</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>  <span class="c1">// on affiche l&#39;exception</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>  <span class="k">print</span> <span class="s2">&quot;erreur, message : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;, type : &quot;</span> <span class="o">.</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$ex</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>le script est celui qui a été présenté au paragraphe précédent. Seulement maintenant on a entouré le code des lignes 8-19 susceptible de provoquer des erreurs par une structure <strong>try / catch</strong> : si le code des lignes 8-21 provoque (lance) une exception ou une erreur, celle-ci sera gérée par la clause <strong>catch</strong> des lignes 22-26 ;</li>
 <li>ligne 22 : le paramètre de la clause <strong>[catch]</strong> est le type d’exception ou d’erreur que l’on veut gérer. En mettant comme type <strong>[\Throwable]</strong> qui est une interface, on indique qu’on veut gérer toute instance de classe implémentant l’interface <strong>[\Throwable]</strong>. Comme toutes les classes d’erreurs et d’exceptions implémentent cette interface, la clause <strong>[catch]</strong> gère ici toute erreur / exception encapsulée dans une classe ;</li>
-<li>ligne 19 : l’instruction qui déclenche l’erreur et donne naissance à l’exception. Dès qu’il y a exception, il y a branchement sur la clause <strong>[catch]</strong>. Le code derrière la ligne 19 ne sera donc pas exécuté ;
-<strong>Résultats</strong></li>
+<li>ligne 19 : l’instruction qui déclenche l’erreur et donne naissance à l’exception. Dès qu’il y a exception, il y a branchement sur la clause <strong>[catch]</strong>. Le code derrière la ligne 19 ne sera donc pas exécuté ;</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -1371,82 +1367,86 @@
 <span class="normal"><a href="#__codelineno-4-59">59</a></span>
 <span class="normal"><a href="#__codelineno-4-60">60</a></span>
 <span class="normal"><a href="#__codelineno-4-61">61</a></span>
-<span class="normal"><a href="#__codelineno-4-62">62</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-4-62">62</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">//</span> <span class="n">on</span> <span class="n">affiche</span> <span class="n">toutes</span> <span class="n">les</span> <span class="n">erreurs</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;error_reporting&quot;</span><span class="p">,</span> <span class="n">E_ALL</span><span class="p">);</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// on affiche toutes les erreurs</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;error_reporting&quot;</span><span class="p">,</span> <span class="k">E_ALL</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="p">);</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="o">//</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">à</span> <span class="n">bornes</span> <span class="n">fixes</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="err">$</span><span class="n">array</span> <span class="o">=</span> <span class="n">new</span> \<span class="n">SplFixedArray</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1">// un tableau à bornes fixes</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="nv">$array</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\SplFixedArray</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a>  <span class="o">//</span> <span class="n">indice</span> <span class="n">en</span><span class="o">-</span><span class="n">dehors</span> <span class="n">des</span> <span class="n">bornes</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>  <span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">Throwable</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a>  <span class="o">//</span> <span class="n">affichage</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a>  <span class="nb">print</span> <span class="s2">&quot;Erreur 1 : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>  <span class="c1">// indice en-dehors des bornes</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>  <span class="nv">$array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Throwable</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>  <span class="c1">// affichage message d&#39;erreur</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>  <span class="k">print</span> <span class="s2">&quot;Erreur 1 : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="p">}</span>
 <a id="__codelineno-4-16" name="__codelineno-4-16"></a>
 <a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>  <span class="o">//</span> <span class="n">indice</span> <span class="n">en</span><span class="o">-</span><span class="n">dehors</span> <span class="n">des</span> <span class="n">bornes</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a>  <span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="ne">Exception</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a>  <span class="o">//</span> <span class="n">affichage</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a>  <span class="nb">print</span> <span class="s2">&quot;Erreur 2 : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>  <span class="c1">// indice en-dehors des bornes</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>  <span class="nv">$array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>  <span class="c1">// affichage message d&#39;erreur</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>  <span class="k">print</span> <span class="s2">&quot;Erreur 2 : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="p">}</span>
 <a id="__codelineno-4-24" name="__codelineno-4-24"></a>
 <a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a>  <span class="o">//</span> <span class="n">indice</span> <span class="n">en</span><span class="o">-</span><span class="n">dehors</span> <span class="n">des</span> <span class="n">bornes</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a>  <span class="err">$</span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">RuntimeException</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a>  <span class="o">//</span> <span class="n">affichage</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a>  <span class="nb">print</span> <span class="s2">&quot;Erreur 3 : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>  <span class="c1">// indice en-dehors des bornes</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>  <span class="nv">$array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\RuntimeException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>  <span class="c1">// affichage message d&#39;erreur</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a>  <span class="k">print</span> <span class="s2">&quot;Erreur 3 : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="p">}</span>
 <a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a>  <span class="o">//</span> <span class="n">division</span> <span class="n">par</span> <span class="mi">0</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a>  <span class="n">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">Throwable</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36"></a>  <span class="o">//</span> <span class="n">affichage</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37"></a>  <span class="nb">print</span> <span class="s2">&quot;Erreur 4 : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a>  <span class="c1">// division par 0</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a>  <span class="nb">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Throwable</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a>  <span class="c1">// affichage message d&#39;erreur</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a>  <span class="k">print</span> <span class="s2">&quot;Erreur 4 : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="p">}</span>
 <a id="__codelineno-4-39" name="__codelineno-4-39"></a>
 <a id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-4-41" name="__codelineno-4-41"></a>  <span class="o">//</span> <span class="n">division</span> <span class="n">par</span> <span class="mi">0</span>
-<a id="__codelineno-4-42" name="__codelineno-4-42"></a>  <span class="n">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">DivisionByzeroError</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-44" name="__codelineno-4-44"></a>  <span class="o">//</span> <span class="n">affichage</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-4-45" name="__codelineno-4-45"></a>  <span class="nb">print</span> <span class="s2">&quot;Erreur 5 : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41"></a>  <span class="c1">// division par 0</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42"></a>  <span class="nb">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\DivisionByzeroError</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44"></a>  <span class="c1">// affichage message d&#39;erreur</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45"></a>  <span class="k">print</span> <span class="s2">&quot;Erreur 5 : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="p">}</span>
 <a id="__codelineno-4-47" name="__codelineno-4-47"></a>
 <a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-4-49" name="__codelineno-4-49"></a>  <span class="o">//</span> <span class="n">division</span> <span class="n">par</span> <span class="mi">0</span>
-<a id="__codelineno-4-50" name="__codelineno-4-50"></a>  <span class="n">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">Error</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-52" name="__codelineno-4-52"></a>  <span class="o">//</span> <span class="n">affichage</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-4-53" name="__codelineno-4-53"></a>  <span class="nb">print</span> <span class="s2">&quot;Erreur 6 : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49"></a>  <span class="c1">// division par 0</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50"></a>  <span class="nb">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Error</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52"></a>  <span class="c1">// affichage message d&#39;erreur</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53"></a>  <span class="k">print</span> <span class="s2">&quot;Erreur 6 : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="p">}</span>
 <a id="__codelineno-4-55" name="__codelineno-4-55"></a>
 <a id="__codelineno-4-56" name="__codelineno-4-56"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-4-57" name="__codelineno-4-57"></a>  <span class="o">//</span> <span class="n">division</span> <span class="n">par</span> <span class="mi">0</span>
-<a id="__codelineno-4-58" name="__codelineno-4-58"></a>  <span class="n">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="ne">Exception</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-60" name="__codelineno-4-60"></a>  <span class="o">//</span> <span class="n">affichage</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-4-61" name="__codelineno-4-61"></a>  <span class="nb">print</span> <span class="s2">&quot;Erreur 6 : &quot;</span> <span class="o">.</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57"></a>  <span class="c1">// division par 0</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58"></a>  <span class="nb">intdiv</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60"></a>  <span class="c1">// affichage message d&#39;erreur</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61"></a>  <span class="k">print</span> <span class="s2">&quot;Erreur 6 : &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-4-62" name="__codelineno-4-62"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 8-31 : 3 façons différentes de gérer l’exception générée par l’utilisation d’un indice incorrect avec la classe <strong>[\SplFixedArray]</strong>. Nous avons vu que cette erreur générait une exception de type <strong>[RuntimeException]</strong> ;</li>
+<li>lignes 8-31 : 3 façons différentes de gérer l’exception générée par l’utilisation d’un indice incorrect avec la classe <strong>[\SplFixedArray]</strong>. Nous avons vu que cette erreur générait une exception de type <strong>[RuntimeException]</strong> ;<ul>
 <li>ligne 12 : gère une erreur de type <strong>[\Throwable]</strong>. C’est valide puisque le type <strong>[RuntimeException]</strong> dérive du type <strong>[\Exception]</strong> qui implémente l’interface <strong>[\Throwable]</strong> ;</li>
 <li>ligne 20 : gère une erreur de type <strong>[\Exception]</strong>. C’est valide puisque le type <strong>[RuntimeException]</strong> dérive du type <strong>[\Exception]</strong> ;</li>
 <li>ligne 28 : gère une erreur de type <strong>[\RuntimeException]</strong>. C’est la méthode à privilégier puisque c’est le type exact de l’exception générée ;</li>
-<li>lignes 32-62 : 4 façons différentes de gérer l’exception générée par la fonction <strong>[intdiv]</strong> lorsqu’on passe à celle-ci un diviseur égal à 0. La fonction <strong>[ intdiv ( int $dividend , int $divisor ) : int]</strong> fait la division entière $dividend / $divisor. Lorsque le diviseur est nul, l’exception <strong>[\DivisionByzeroError]</strong> est lancée ;</li>
+</ul>
+</li>
+<li>lignes 32-62 : 4 façons différentes de gérer l’exception générée par la fonction <strong>[intdiv]</strong> lorsqu’on passe à celle-ci un diviseur égal à 0. La fonction <strong>[ intdiv ( int $dividend , int $divisor ) : int]</strong> fait la division entière $dividend / $divisor. Lorsque le diviseur est nul, l’exception <strong>[\DivisionByzeroError]</strong> est lancée ;<ul>
 <li>ligne 35 : on intercepte toute erreur implémentant l’interface <strong>[\Throwable]</strong>. C’est valide ;</li>
 <li>ligne 43 : on intercepte le type exact de l’erreur : c’est la méthode à privilégier ;</li>
 <li>ligne 51 : on intercepte le type <strong>[\Error]</strong>. C’est valide puisque la classe <strong>[DivisionByzeroError]</strong> étend la classe <strong>[Error]</strong> ;</li>
-<li>ligne 59 : on intercepte le type <strong>[\Exception]</strong>. C’est invalide car la classe <strong>[DivisionByzeroError]</strong> n’a aucun lien avec la classe <strong>[\Exception]</strong> ;
-<strong>Résultats</strong></li>
+<li>ligne 59 : on intercepte le type <strong>[\Exception]</strong>. C’est invalide car la classe <strong>[DivisionByzeroError]</strong> n’a aucun lien avec la classe <strong>[\Exception]</strong> ;</li>
 </ul>
+</li>
+</ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1458,33 +1458,31 @@
 <span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-5-10">10</a></span>
 <span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">Erreur</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">Index</span> <span class="n">invalid</span> <span class="ow">or</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">Erreur</span> <span class="mi">2</span> <span class="p">:</span> <span class="n">Index</span> <span class="n">invalid</span> <span class="ow">or</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">Erreur</span> <span class="mi">3</span> <span class="p">:</span> <span class="n">Index</span> <span class="n">invalid</span> <span class="ow">or</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">Erreur</span> <span class="mi">4</span> <span class="p">:</span> <span class="n">Division</span> <span class="n">by</span> <span class="n">zero</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">Erreur</span> <span class="mi">5</span> <span class="p">:</span> <span class="n">Division</span> <span class="n">by</span> <span class="n">zero</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">Erreur</span> <span class="mi">6</span> <span class="p">:</span> <span class="n">Division</span> <span class="n">by</span> <span class="n">zero</span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>Erreur 1 : Index invalid or out of range
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>Erreur 2 : Index invalid or out of range
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>Erreur 3 : Index invalid or out of range
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>Erreur 4 : Division by zero
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>Erreur 5 : Division by zero
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>Erreur 6 : Division by zero
 <a id="__codelineno-5-7" name="__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="n">Fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">Uncaught</span> <span class="n">DivisionByZeroError</span><span class="p">:</span> <span class="n">Division</span> <span class="n">by</span> <span class="n">zero</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">php7</span>\<span class="n">php5</span><span class="o">-</span><span class="n">exemples</span>\<span class="n">exemples</span>\<span class="n">exceptions</span>\<span class="n">exceptions</span><span class="o">-</span><span class="mf">03.</span><span class="n">php</span><span class="p">:</span><span class="mi">58</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">Stack</span> <span class="n">trace</span><span class="p">:</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="c1">#0 C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-03.php(58): intdiv(5, 0)</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c1">#1 {main}</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="n">thrown</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">php7</span>\<span class="n">php5</span><span class="o">-</span><span class="n">exemples</span>\<span class="n">exemples</span>\<span class="n">exceptions</span>\<span class="n">exceptions</span><span class="o">-</span><span class="mf">03.</span><span class="n">php</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">58</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>Fatal error: Uncaught DivisionByZeroError: Division by zero in C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-03.php:58
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>Stack trace:
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>#0 C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-03.php(58): intdiv(5, 0)
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>#1 {main}
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>thrown in C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-03.php on line 58
 </code></pre></div></td></tr></table></div>
 <h2 id="78-clause-finally">7.8. Clause [finally]</h2>
 <p>La structure try / catch peut avoir un troisième élément et devenir une structure <strong>try / catch / finally</strong>. Le code de la clausse <strong>[finally]</strong> est exécuté dans les deux cas suivants :</p>
 <ul>
 <li>la clause <strong>[try]</strong> ne lance pas d’exception. Elle est alors exécutée entièrement puis l’exécution du code passe à la clause <strong>[finally]</strong> qui est exécutée entièrement ;</li>
-<li>
-<p>la clause <strong>[try]</strong> lance une exception. Elle est alors exécutée jusqu’à l’instruction qui lance l’exception. L’exécution du code passe alors à la clause <strong>[catch]</strong> qui est exécutée entièrement. Puis l’exécution du code passe à la clause <strong>[finally]</strong> qui est exécutée entièrement ;
-Finalement, le code de la clause <strong>[finally]</strong> est toujours exécuté. Ce scénario est utile dans le cas suivant :</p>
-</li>
-<li>
-<p>dans le <strong>[try]</strong>, le code a obtenu des ressources (fichiers, bases de données, connexions réseau, files d’attente). En général ces ressources sont coûteuses en mémoire. Il faut alors les rendre (on dit le plus souvent <strong>fermer</strong>) dès que c’est possible ;</p>
-</li>
-<li>si l’acquisition des ressources a été faite dans le <strong>[try]</strong>, on mettra leur restitution dans le <strong>[finally]</strong>. Cela nous assure que dans tous les cas (erreur ou pas), les ressources acquises sont restituées au système ;
-Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous montre le fonctionnement de la clause <strong>[finally]</strong> dans diverses situations :</li>
+<li>la clause <strong>[try]</strong> lance une exception. Elle est alors exécutée jusqu’à l’instruction qui lance l’exception. L’exécution du code passe alors à la clause <strong>[catch]</strong> qui est exécutée entièrement. Puis l’exécution du code passe à la clause <strong>[finally]</strong> qui est exécutée entièrement ;</li>
 </ul>
+<p>Finalement, le code de la clause <strong>[finally]</strong> est toujours exécuté. Ce scénario est utile dans le cas suivant :</p>
+<ul>
+<li>dans le <strong>[try]</strong>, le code a obtenu des ressources (fichiers, bases de données, connexions réseau, files d’attente). En général ces ressources sont coûteuses en mémoire. Il faut alors les rendre (on dit le plus souvent <strong>fermer</strong>) dès que c’est possible ;</li>
+<li>si l’acquisition des ressources a été faite dans le <strong>[try]</strong>, on mettra leur restitution dans le <strong>[finally]</strong>. Cela nous assure que dans tous les cas (erreur ou pas), les ressources acquises sont restituées au système ;</li>
+</ul>
+<p>Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous montre le fonctionnement de la clause <strong>[finally]</strong> dans diverses situations :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1518,39 +1516,39 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <span class="normal"><a href="#__codelineno-6-31">31</a></span>
 <span class="normal"><a href="#__codelineno-6-32">32</a></span>
 <span class="normal"><a href="#__codelineno-6-33">33</a></span>
-<span class="normal"><a href="#__codelineno-6-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-6-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="o">//</span> <span class="n">ou</span> <span class="n">crée</span> <span class="n">une</span> <span class="n">instance</span> <span class="n">d</span><span class="s1">&#39;exception</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="err">$</span><span class="n">e</span> <span class="o">=</span> <span class="n">new</span> \<span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Erreur…&quot;</span><span class="p">);</span>    
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">var_dump</span><span class="p">(</span><span class="err">$</span><span class="n">e</span><span class="p">);</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">// ou crée une instance d&#39;exception</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nv">$e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Erreur…&quot;</span><span class="p">);</span>    
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="o">//</span> <span class="n">premier</span> <span class="n">test</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1">// premier test</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>  <span class="nb">print</span> <span class="s2">&quot;Premier test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a>  <span class="n">throw</span> <span class="err">$</span><span class="n">e</span><span class="p">;</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="ne">Exception</span> <span class="err">$</span><span class="n">ex1</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex1</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>  <span class="k">print</span> <span class="s2">&quot;Premier test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>  <span class="k">throw</span> <span class="nv">$e</span><span class="p">;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$ex1</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>  <span class="k">print</span> <span class="nv">$ex1</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a>  <span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>  <span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="p">}</span>
 <a id="__codelineno-6-16" name="__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="o">//</span> <span class="n">second</span> <span class="n">test</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="c1">// second test</span>
 <a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a>  <span class="nb">print</span> <span class="s2">&quot;Second test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="ne">Exception</span> <span class="err">$</span><span class="n">ex1</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex1</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>  <span class="k">print</span> <span class="s2">&quot;Second test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$ex1</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>  <span class="k">print</span> <span class="nv">$ex1</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23"></a>  <span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a>  <span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="p">}</span>
 <a id="__codelineno-6-25" name="__codelineno-6-25"></a>
-<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="o">//</span> <span class="n">trosième</span> <span class="n">test</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="c1">// trosième test</span>
 <a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28"></a>  <span class="nb">print</span> <span class="s2">&quot;Troisième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a>  <span class="k">print</span> <span class="s2">&quot;Troisième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-29" name="__codelineno-6-29"></a>  <span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="ne">Exception</span> <span class="err">$</span><span class="n">ex1</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-6-31" name="__codelineno-6-31"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex1</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$ex1</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a>  <span class="k">print</span> <span class="nv">$ex1</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-<a id="__codelineno-6-33" name="__codelineno-6-33"></a>  <span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33"></a>  <span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-6-34" name="__codelineno-6-34"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires du code</strong></p>
@@ -1560,22 +1558,22 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <li>ligne 11 : l’exception <strong>[\Exception]</strong> est interceptée et son message d’erreur écrit sur la console ;</li>
 <li>lignes 13-15 : la clause <strong>[finally]</strong> écrit un message. D’après ce qui a été dit précédemment, ce message devrait être tout le temps écrit, erreur ou pas dans le <strong>[try]</strong> ;</li>
 <li>lignes 18-24 : il n’y a pas d’erreur dans le <strong>[try]</strong>. On devrait là également passer dans le <strong>[finally]</strong> ;</li>
-<li>lignes 27-34 : il y a une instruction <strong>[return]</strong> dans le try et pas d’erreur. On peut se demander alors si on va passer dans la clause <strong>[finally]</strong>. L’exécution montre que oui ;
-<strong>Résultats</strong></li>
+<li>lignes 27-34 : il y a une instruction <strong>[return]</strong> dans le try et pas d’erreur. On peut se demander alors si on va passer dans la clause <strong>[finally]</strong>. L’exécution montre que oui ;</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
 <span class="normal"><a href="#__codelineno-7-4">4</a></span>
 <span class="normal"><a href="#__codelineno-7-5">5</a></span>
 <span class="normal"><a href="#__codelineno-7-6">6</a></span>
-<span class="normal"><a href="#__codelineno-7-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">Premier</span> <span class="n">test</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">Erreur</span><span class="err">…</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">Terminé</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">Second</span> <span class="n">test</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">Terminé</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="n">Troisième</span> <span class="n">test</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="n">Terminé</span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>Premier test
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>Erreur…
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>Terminé
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>Second test
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>Terminé
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>Troisième test
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>Terminé
 </code></pre></div></td></tr></table></div>
 <p>Examinons un autre cas <strong>[exceptions-05.php]</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
@@ -1586,23 +1584,23 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <span class="normal"><a href="#__codelineno-8-6">6</a></span>
 <span class="normal"><a href="#__codelineno-8-7">7</a></span>
 <span class="normal"><a href="#__codelineno-8-8">8</a></span>
-<span class="normal"><a href="#__codelineno-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="o">//</span> <span class="n">quatrième</span> <span class="n">test</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1">// quatrième test</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>  <span class="nb">print</span> <span class="s2">&quot;Quatrième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>  <span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>  <span class="k">print</span> <span class="s2">&quot;Quatrième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>  <span class="k">exit</span><span class="p">;</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a>  <span class="nb">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>  <span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>ligne 6 : l’instruction <strong>[exit]</strong> arrête immédiatement l’exécution du script : la clause <strong>[finally]</strong> n’est pas exécutée ;</li>
-<li>lignes 4-9 : un exemple de try / catch / finally sans clause <strong>[catch]</strong>. C’est possible ;
-<strong>Résultats</strong></li>
+<li>lignes 4-9 : un exemple de try / catch / finally sans clause <strong>[catch]</strong>. C’est possible ;</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">Quatrième</span> <span class="n">test</span>
+<p><strong>Résultats</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>Quatrième test
 </code></pre></div></td></tr></table></div>
 <h2 id="79-creer-ses-propres-classes-dexceptions">7.9. Créer ses propres classes d’exceptions</h2>
 <p>Dans un projet un peu important, il est utile de différentier les différentes erreurs en les encapsulant dans différentes classes d’exceptions. Dans le script précédent, nous avons vu que toute exception pouvait être interceptée par une clause <strong>[catch (\Throwable]</strong>. C’est recommandé si on n’a aucune idée de l’erreur interceptée et que le traitement est le même pour toutes les erreurs. C’est parfois le cas mais on a souvent besoin d’adapter le traitement au type exact de l’erreur. Il faut alors différentier les erreurs entre-elles.</p>
@@ -1668,67 +1666,67 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <span class="normal"><a href="#__codelineno-10-59">59</a></span>
 <span class="normal"><a href="#__codelineno-10-60">60</a></span>
 <span class="normal"><a href="#__codelineno-10-61">61</a></span>
-<span class="normal"><a href="#__codelineno-10-62">62</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-10-62">62</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="o">//</span> <span class="n">on</span> <span class="n">définit</span> <span class="n">notre</span> <span class="n">propre</span> <span class="n">famille</span> <span class="n">d</span><span class="s1">&#39;exceptions</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Exception1</span> <span class="n">extends</span> \<span class="n">RuntimeException</span> <span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">// on définit notre propre famille d&#39;exceptions</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="k">class</span> <span class="nc">Exception1</span> <span class="k">extends</span> <span class="nx">\RuntimeException</span> <span class="p">{</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5"></a>
 <a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">}</span>
 <a id="__codelineno-10-7" name="__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">Exception2</span> <span class="n">extends</span> \<span class="n">RuntimeException</span> <span class="p">{</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="k">class</span> <span class="nc">Exception2</span> <span class="k">extends</span> <span class="nx">\RuntimeException</span> <span class="p">{</span>
 <a id="__codelineno-10-9" name="__codelineno-10-9"></a>
 <a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="p">}</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11"></a>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="o">//</span> <span class="n">ou</span> <span class="n">utilise</span> <span class="n">nos</span> <span class="n">exceptions</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="err">$</span><span class="n">e1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Exception1</span><span class="p">(</span><span class="s2">&quot;Erreur1…&quot;</span><span class="p">);</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="n">var_dump</span><span class="p">(</span><span class="err">$</span><span class="n">e1</span><span class="p">);</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="err">$</span><span class="n">e2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Exception2</span><span class="p">(</span><span class="s2">&quot;Erreur2…&quot;</span><span class="p">);</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="n">var_dump</span><span class="p">(</span><span class="err">$</span><span class="n">e2</span><span class="p">);</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="c1">// ou utilise nos exceptions</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="nv">$e1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Exception1</span><span class="p">(</span><span class="s2">&quot;Erreur1…&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$e1</span><span class="p">);</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="nv">$e2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Exception2</span><span class="p">(</span><span class="s2">&quot;Erreur2…&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$e2</span><span class="p">);</span>
 <a id="__codelineno-10-17" name="__codelineno-10-17"></a>
-<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="o">//</span> <span class="n">premier</span> <span class="n">test</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;premier test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="c1">// premier test</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="k">print</span> <span class="p">(</span><span class="s2">&quot;premier test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-10-21" name="__codelineno-10-21"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">lance</span> <span class="n">un</span> <span class="nb">type</span> <span class="n">Exception1</span>
-<a id="__codelineno-10-22" name="__codelineno-10-22"></a>  <span class="n">throw</span> <span class="err">$</span><span class="n">e1</span><span class="p">;</span>
-<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception1</span> <span class="err">$</span><span class="n">ex1</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-24" name="__codelineno-10-24"></a>  <span class="nb">print</span> <span class="s2">&quot;Exception 1&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-25" name="__codelineno-10-25"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex1</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception2</span> <span class="err">$</span><span class="n">ex2</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-27" name="__codelineno-10-27"></a>  <span class="nb">print</span> <span class="s2">&quot;Exception 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-28" name="__codelineno-10-28"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex2</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a>  <span class="c1">// on lance un type Exception1</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a>  <span class="k">throw</span> <span class="nv">$e1</span><span class="p">;</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception1</span> <span class="nv">$ex1</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a>  <span class="k">print</span> <span class="s2">&quot;Exception 1&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25"></a>  <span class="k">print</span> <span class="nv">$ex1</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception2</span> <span class="nv">$ex2</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27"></a>  <span class="k">print</span> <span class="s2">&quot;Exception 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28"></a>  <span class="k">print</span> <span class="nv">$ex2</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="p">}</span>
 <a id="__codelineno-10-30" name="__codelineno-10-30"></a>
-<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="o">//</span> <span class="n">second</span> <span class="n">test</span>
-<a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;second test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="c1">// second test</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="k">print</span> <span class="p">(</span><span class="s2">&quot;second test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-10-34" name="__codelineno-10-34"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">lance</span> <span class="n">un</span> <span class="nb">type</span> <span class="n">Exception2</span>
-<a id="__codelineno-10-35" name="__codelineno-10-35"></a>  <span class="n">throw</span> <span class="err">$</span><span class="n">e2</span><span class="p">;</span>
-<a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception1</span> <span class="err">$</span><span class="n">ex1</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-37" name="__codelineno-10-37"></a>  <span class="nb">print</span> <span class="s2">&quot;Exception 1&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-38" name="__codelineno-10-38"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex1</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-39" name="__codelineno-10-39"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception2</span> <span class="err">$</span><span class="n">ex2</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-40" name="__codelineno-10-40"></a>  <span class="nb">print</span> <span class="s2">&quot;Exception 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-41" name="__codelineno-10-41"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex2</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34"></a>  <span class="c1">// on lance un type Exception2</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35"></a>  <span class="k">throw</span> <span class="nv">$e2</span><span class="p">;</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception1</span> <span class="nv">$ex1</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37"></a>  <span class="k">print</span> <span class="s2">&quot;Exception 1&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38"></a>  <span class="k">print</span> <span class="nv">$ex1</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-39" name="__codelineno-10-39"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception2</span> <span class="nv">$ex2</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-40" name="__codelineno-10-40"></a>  <span class="k">print</span> <span class="s2">&quot;Exception 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-41" name="__codelineno-10-41"></a>  <span class="k">print</span> <span class="nv">$ex2</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-10-42" name="__codelineno-10-42"></a><span class="p">}</span>
 <a id="__codelineno-10-43" name="__codelineno-10-43"></a>
-<a id="__codelineno-10-44" name="__codelineno-10-44"></a><span class="o">//</span> <span class="n">troisième</span> <span class="n">test</span>
-<a id="__codelineno-10-45" name="__codelineno-10-45"></a><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;troisième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-44" name="__codelineno-10-44"></a><span class="c1">// troisième test</span>
+<a id="__codelineno-10-45" name="__codelineno-10-45"></a><span class="k">print</span> <span class="p">(</span><span class="s2">&quot;troisième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-10-46" name="__codelineno-10-46"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-10-47" name="__codelineno-10-47"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">lance</span> <span class="n">un</span> <span class="nb">type</span> <span class="n">Exception1</span>
-<a id="__codelineno-10-48" name="__codelineno-10-48"></a>  <span class="n">throw</span> <span class="err">$</span><span class="n">e1</span><span class="p">;</span>
-<a id="__codelineno-10-49" name="__codelineno-10-49"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception1</span> <span class="o">|</span> <span class="n">Exception2</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-50" name="__codelineno-10-50"></a>  <span class="nb">print</span> <span class="s2">&quot;Exception 1 ou 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-51" name="__codelineno-10-51"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-47" name="__codelineno-10-47"></a>  <span class="c1">// on lance un type Exception1</span>
+<a id="__codelineno-10-48" name="__codelineno-10-48"></a>  <span class="k">throw</span> <span class="nv">$e1</span><span class="p">;</span>
+<a id="__codelineno-10-49" name="__codelineno-10-49"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception1</span> <span class="o">|</span> <span class="nx">Exception2</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-50" name="__codelineno-10-50"></a>  <span class="k">print</span> <span class="s2">&quot;Exception 1 ou 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-51" name="__codelineno-10-51"></a>  <span class="k">print</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-10-52" name="__codelineno-10-52"></a><span class="p">}</span>
 <a id="__codelineno-10-53" name="__codelineno-10-53"></a>
-<a id="__codelineno-10-54" name="__codelineno-10-54"></a><span class="o">//</span> <span class="n">quatrième</span> <span class="n">test</span>
-<a id="__codelineno-10-55" name="__codelineno-10-55"></a><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;quatrième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-54" name="__codelineno-10-54"></a><span class="c1">// quatrième test</span>
+<a id="__codelineno-10-55" name="__codelineno-10-55"></a><span class="k">print</span> <span class="p">(</span><span class="s2">&quot;quatrième test</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-10-56" name="__codelineno-10-56"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-10-57" name="__codelineno-10-57"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">lance</span> <span class="n">un</span> <span class="nb">type</span> <span class="n">Exception2</span>
-<a id="__codelineno-10-58" name="__codelineno-10-58"></a>  <span class="n">throw</span> <span class="err">$</span><span class="n">e2</span><span class="p">;</span>
-<a id="__codelineno-10-59" name="__codelineno-10-59"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception1</span> <span class="o">|</span> <span class="n">Exception2</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-60" name="__codelineno-10-60"></a>  <span class="nb">print</span> <span class="s2">&quot;Exception 1 ou 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-10-61" name="__codelineno-10-61"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-57" name="__codelineno-10-57"></a>  <span class="c1">// on lance un type Exception2</span>
+<a id="__codelineno-10-58" name="__codelineno-10-58"></a>  <span class="k">throw</span> <span class="nv">$e2</span><span class="p">;</span>
+<a id="__codelineno-10-59" name="__codelineno-10-59"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception1</span> <span class="o">|</span> <span class="nx">Exception2</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-60" name="__codelineno-10-60"></a>  <span class="k">print</span> <span class="s2">&quot;Exception 1 ou 2&quot;</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-10-61" name="__codelineno-10-61"></a>  <span class="k">print</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-10-62" name="__codelineno-10-62"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
@@ -1738,9 +1736,9 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <li>lignes 20-29 : on a une structure try / catch / catch. Cela permet de gérer différents types d’exception avec différentes clauses <strong>[catch]</strong> ;</li>
 <li>ligne 23 : intercepte les exceptions de type <strong>[Exception1]</strong> ;</li>
 <li>ligne 26 : intercepte les exceptions de type <strong>[Exception2]</strong> ;</li>
-<li>ligne 49 : intercepte les exceptions de type <strong>[Exception1]</strong> ou (|) <strong>[Exception2]</strong> ;
-<strong>Résultats</strong></li>
+<li>ligne 49 : intercepte les exceptions de type <strong>[Exception1]</strong> ou (|) <strong>[Exception2]</strong> ;</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
@@ -1786,61 +1784,63 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <span class="normal"><a href="#__codelineno-11-43">43</a></span>
 <span class="normal"><a href="#__codelineno-11-44">44</a></span>
 <span class="normal"><a href="#__codelineno-11-45">45</a></span>
-<span class="normal"><a href="#__codelineno-11-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nb">object</span><span class="p">(</span><span class="n">Exception1</span><span class="p">)</span><span class="c1">#1 (7) {</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>  <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="s2">&quot;Erreur1…&quot;</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>  <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a>  <span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a>  <span class="nb">int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a>  <span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">76</span><span class="p">)</span> <span class="s2">&quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-06.php&quot;</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a>  <span class="p">[</span><span class="s2">&quot;line&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a>  <span class="nb">int</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12"></a>  <span class="p">[</span><span class="s2">&quot;trace&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13"></a>  <span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14"></a>  <span class="p">}</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15"></a>  <span class="p">[</span><span class="s2">&quot;previous&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16"></a>  <span class="n">NULL</span>
-<a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="p">}</span>
-<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="nb">object</span><span class="p">(</span><span class="n">Exception2</span><span class="p">)</span><span class="c1">#2 (7) {</span>
-<a id="__codelineno-11-19" name="__codelineno-11-19"></a>  <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-20" name="__codelineno-11-20"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="s2">&quot;Erreur2…&quot;</span>
-<a id="__codelineno-11-21" name="__codelineno-11-21"></a>  <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-22" name="__codelineno-11-22"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-11-23" name="__codelineno-11-23"></a>  <span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-24" name="__codelineno-11-24"></a>  <span class="nb">int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-11-25" name="__codelineno-11-25"></a>  <span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-26" name="__codelineno-11-26"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">76</span><span class="p">)</span> <span class="s2">&quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-06.php&quot;</span>
-<a id="__codelineno-11-27" name="__codelineno-11-27"></a>  <span class="p">[</span><span class="s2">&quot;line&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-28" name="__codelineno-11-28"></a>  <span class="nb">int</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
-<a id="__codelineno-11-29" name="__codelineno-11-29"></a>  <span class="p">[</span><span class="s2">&quot;trace&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-30" name="__codelineno-11-30"></a>  <span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-11-31" name="__codelineno-11-31"></a>  <span class="p">}</span>
-<a id="__codelineno-11-32" name="__codelineno-11-32"></a>  <span class="p">[</span><span class="s2">&quot;previous&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-11-33" name="__codelineno-11-33"></a>  <span class="n">NULL</span>
-<a id="__codelineno-11-34" name="__codelineno-11-34"></a><span class="p">}</span>
-<a id="__codelineno-11-35" name="__codelineno-11-35"></a><span class="n">premier</span> <span class="n">test</span>
-<a id="__codelineno-11-36" name="__codelineno-11-36"></a><span class="ne">Exception</span> <span class="mi">1</span>
-<a id="__codelineno-11-37" name="__codelineno-11-37"></a><span class="n">Erreur1</span><span class="err">…</span>
-<a id="__codelineno-11-38" name="__codelineno-11-38"></a><span class="n">second</span> <span class="n">test</span>
-<a id="__codelineno-11-39" name="__codelineno-11-39"></a><span class="ne">Exception</span> <span class="mi">2</span>
-<a id="__codelineno-11-40" name="__codelineno-11-40"></a><span class="n">Erreur2</span><span class="err">…</span>
-<a id="__codelineno-11-41" name="__codelineno-11-41"></a><span class="n">troisième</span> <span class="n">test</span>
-<a id="__codelineno-11-42" name="__codelineno-11-42"></a><span class="ne">Exception</span> <span class="mi">1</span> <span class="n">ou</span> <span class="mi">2</span>
-<a id="__codelineno-11-43" name="__codelineno-11-43"></a><span class="n">Erreur1</span><span class="err">…</span>
-<a id="__codelineno-11-44" name="__codelineno-11-44"></a><span class="n">quatrième</span> <span class="n">test</span>
-<a id="__codelineno-11-45" name="__codelineno-11-45"></a><span class="ne">Exception</span> <span class="mi">1</span> <span class="n">ou</span> <span class="mi">2</span>
-<a id="__codelineno-11-46" name="__codelineno-11-46"></a><span class="n">Erreur2</span><span class="err">…</span>
+<span class="normal"><a href="#__codelineno-11-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>object(Exception1)#1 (7) {
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>  [&quot;message&quot;:protected]=&gt;
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>  string(10) &quot;Erreur1…&quot;
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>  [&quot;string&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>  string(0) &quot;&quot;
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>  [&quot;code&quot;:protected]=&gt;
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>  int(0)
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>  [&quot;file&quot;:protected]=&gt;
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>  string(76) &quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-06.php&quot;
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>  [&quot;line&quot;:protected]=&gt;
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>  int(13)
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a>  [&quot;trace&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>  array(0) {
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a>  }
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a>  [&quot;previous&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a>  NULL
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a>}
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a>object(Exception2)#2 (7) {
+<a id="__codelineno-11-19" name="__codelineno-11-19"></a>  [&quot;message&quot;:protected]=&gt;
+<a id="__codelineno-11-20" name="__codelineno-11-20"></a>  string(10) &quot;Erreur2…&quot;
+<a id="__codelineno-11-21" name="__codelineno-11-21"></a>  [&quot;string&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-11-22" name="__codelineno-11-22"></a>  string(0) &quot;&quot;
+<a id="__codelineno-11-23" name="__codelineno-11-23"></a>  [&quot;code&quot;:protected]=&gt;
+<a id="__codelineno-11-24" name="__codelineno-11-24"></a>  int(0)
+<a id="__codelineno-11-25" name="__codelineno-11-25"></a>  [&quot;file&quot;:protected]=&gt;
+<a id="__codelineno-11-26" name="__codelineno-11-26"></a>  string(76) &quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-06.php&quot;
+<a id="__codelineno-11-27" name="__codelineno-11-27"></a>  [&quot;line&quot;:protected]=&gt;
+<a id="__codelineno-11-28" name="__codelineno-11-28"></a>  int(15)
+<a id="__codelineno-11-29" name="__codelineno-11-29"></a>  [&quot;trace&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-11-30" name="__codelineno-11-30"></a>  array(0) {
+<a id="__codelineno-11-31" name="__codelineno-11-31"></a>  }
+<a id="__codelineno-11-32" name="__codelineno-11-32"></a>  [&quot;previous&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-11-33" name="__codelineno-11-33"></a>  NULL
+<a id="__codelineno-11-34" name="__codelineno-11-34"></a>}
+<a id="__codelineno-11-35" name="__codelineno-11-35"></a>premier test
+<a id="__codelineno-11-36" name="__codelineno-11-36"></a>Exception 1
+<a id="__codelineno-11-37" name="__codelineno-11-37"></a>Erreur1…
+<a id="__codelineno-11-38" name="__codelineno-11-38"></a>second test
+<a id="__codelineno-11-39" name="__codelineno-11-39"></a>Exception 2
+<a id="__codelineno-11-40" name="__codelineno-11-40"></a>Erreur2…
+<a id="__codelineno-11-41" name="__codelineno-11-41"></a>troisième test
+<a id="__codelineno-11-42" name="__codelineno-11-42"></a>Exception 1 ou 2
+<a id="__codelineno-11-43" name="__codelineno-11-43"></a>Erreur1…
+<a id="__codelineno-11-44" name="__codelineno-11-44"></a>quatrième test
+<a id="__codelineno-11-45" name="__codelineno-11-45"></a>Exception 1 ou 2
+<a id="__codelineno-11-46" name="__codelineno-11-46"></a>Erreur2…
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires des résultats</strong></p>
 <ul>
-<li>lignes 1-17 : le ‘contenu’ d’une exception :</li>
+<li>lignes 1-17 : le ‘contenu’ d’une exception :<ul>
 <li>lignes 2-3 : le message d’erreur ;</li>
 <li>lignes 6-7 : le code d’erreur ;</li>
 <li>lignes 8-9 : le nom du fichier dans lequel s’est produite l’exception ;</li>
 <li>lignes 10-11 : la ligne à laquelle s’est produite l’exception ;</li>
 <li>lignes 15-16 : l’exception précédente. Une exception peut encapsuler une autre exception et définir ainsi une pile d’exceptions. L’attribut <strong>[previous]</strong> va permettre d’exploiter cette pile ;</li>
+</ul>
+</li>
 </ul>
 <h2 id="710-relancer-une-exception">7.10. Relancer une exception</h2>
 <p>Une exception peut être lancée plusieurs fois comme le montre le script <strong>[exceptions-07.php]</strong> suivant :</p>
@@ -1863,25 +1863,25 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <span class="normal"><a href="#__codelineno-12-17">17</a></span>
 <span class="normal"><a href="#__codelineno-12-18">18</a></span>
 <span class="normal"><a href="#__codelineno-12-19">19</a></span>
-<span class="normal"><a href="#__codelineno-12-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">try</span> <span class="p">{</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a>  <span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">lance</span> <span class="n">une</span> <span class="n">exception</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="n">throw</span> <span class="n">new</span> \<span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a>  <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="ne">Exception</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">relance</span> <span class="n">l</span><span class="s1">&#39;exception interceptée</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a>    <span class="n">throw</span> <span class="err">$</span><span class="n">ex</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>    <span class="c1">// on lance une exception</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="c1">// on relance l&#39;exception interceptée</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>    <span class="k">throw</span> <span class="nv">$ex</span><span class="p">;</span>
 <a id="__codelineno-12-10" name="__codelineno-12-10"></a>  <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">passera</span> <span class="n">bien</span> <span class="n">dans</span> <span class="n">le</span> <span class="k">finally</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12"></a>    <span class="nb">print</span> <span class="s2">&quot;finally 1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a>    <span class="c1">// on passera bien dans le finally</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a>    <span class="k">print</span> <span class="s2">&quot;finally 1</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-12-13" name="__codelineno-12-13"></a>  <span class="p">}</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="ne">Exception</span> <span class="err">$</span><span class="n">ex2</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">bien</span> <span class="n">l</span><span class="s1">&#39;exception initiale</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">ex2</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot; dans try / catch / finally externe</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$ex2</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a>  <span class="c1">// on récupère bien l&#39;exception initiale</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a>  <span class="k">print</span> <span class="nv">$ex2</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot; dans try / catch / finally externe</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">passera</span> <span class="n">bien</span> <span class="n">dans</span> <span class="n">le</span> <span class="k">finally</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19"></a>  <span class="nb">print</span> <span class="s2">&quot;finally 2</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a>  <span class="c1">// on passera bien dans le finally</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a>  <span class="k">print</span> <span class="s2">&quot;finally 2</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
@@ -1890,31 +1890,18 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <li>ligne 7 : on l’intercepte ;</li>
 <li>ligne 9 : on la relance. Elle passe alors dans la structure try / catch / finally du niveau supérieur ;</li>
 <li>ligne 14 : on l’intercepte de nouveau ;</li>
-<li>lignes 10-12 : l’exécution montre que même après le <strong>[throw]</strong> de la ligne 9, on passe bien dans la clause <strong>[finally]</strong> du try / catch / finally ;
-<strong>Résultats</strong></li>
+<li>lignes 10-12 : l’exécution montre que même après le <strong>[throw]</strong> de la ligne 9, on passe bien dans la clause <strong>[finally]</strong> du try / catch / finally ;</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
-<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">finally</span> <span class="mi">1</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">test</span> <span class="n">dans</span> <span class="k">try</span> <span class="o">/</span> <span class="n">catch</span> <span class="o">/</span> <span class="k">finally</span> <span class="n">externe</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="k">finally</span> <span class="mi">2</span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>finally 1
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>test dans try / catch / finally externe
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>finally 2
 </code></pre></div></td></tr></table></div>
 <h2 id="711-exploitation-dune-pile-dexceptions">7.11. Exploitation d’une pile d’exceptions</h2>
 <p>Une exception peut encapsuler une autre exception qui elle-même peut en encapsuler une autre formant finalement une pile d’exceptions. Voici un exemple <strong>[exceptions-08.php]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-14-10">10</a></span>
-<span class="normal"><a href="#__codelineno-14-11">11</a></span>
-<span class="normal"><a href="#__codelineno-14-12">12</a></span>
-<span class="normal"><a href="#__codelineno-14-13">13</a></span>
-<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-14">14</a></span>
 <span class="normal"><a href="#__codelineno-14-15">15</a></span>
 <span class="normal"><a href="#__codelineno-14-16">16</a></span>
 <span class="normal"><a href="#__codelineno-14-17">17</a></span>
@@ -1927,33 +1914,46 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <span class="normal"><a href="#__codelineno-14-24">24</a></span>
 <span class="normal"><a href="#__codelineno-14-25">25</a></span>
 <span class="normal"><a href="#__codelineno-14-26">26</a></span>
-<span class="normal"><a href="#__codelineno-14-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="o">//</span> <span class="n">on</span> <span class="n">définit</span> <span class="n">notre</span> <span class="n">propre</span> <span class="n">famille</span> <span class="n">d</span><span class="s1">&#39;exceptions</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Exception1</span> <span class="n">extends</span> \<span class="n">RuntimeException</span> <span class="p">{</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a>
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="p">}</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">Exception2</span> <span class="n">extends</span> \<span class="n">RuntimeException</span> <span class="p">{</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a>
-<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="p">}</span>
-<a id="__codelineno-14-11" name="__codelineno-14-11"></a>
-<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="k">class</span><span class="w"> </span><span class="nc">Exception3</span> <span class="n">extends</span> \<span class="n">RuntimeException</span> <span class="p">{</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13"></a>
-<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-14-27">27</a></span>
+<span class="normal"><a href="#__codelineno-14-28">28</a></span>
+<span class="normal"><a href="#__codelineno-14-29">29</a></span>
+<span class="normal"><a href="#__codelineno-14-30">30</a></span>
+<span class="normal"><a href="#__codelineno-14-31">31</a></span>
+<span class="normal"><a href="#__codelineno-14-32">32</a></span>
+<span class="normal"><a href="#__codelineno-14-33">33</a></span>
+<span class="normal"><a href="#__codelineno-14-34">34</a></span>
+<span class="normal"><a href="#__codelineno-14-35">35</a></span>
+<span class="normal"><a href="#__codelineno-14-36">36</a></span>
+<span class="normal"><a href="#__codelineno-14-37">37</a></span>
+<span class="normal"><a href="#__codelineno-14-38">38</a></span>
+<span class="normal"><a href="#__codelineno-14-39">39</a></span>
+<span class="normal"><a href="#__codelineno-14-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-14-15" name="__codelineno-14-15"></a>
-<a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="o">//</span> <span class="n">ou</span> <span class="n">utilise</span> <span class="n">nos</span> <span class="n">exceptions</span>
-<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="err">$</span><span class="n">e1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Exception1</span><span class="p">(</span><span class="s2">&quot;Erreur 1…&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">new</span> <span class="n">Exception2</span><span class="p">(</span><span class="s2">&quot;Erreur 2…&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">new</span> <span class="n">Exception3</span><span class="p">(</span><span class="s2">&quot;Erreur 3…&quot;</span><span class="p">)));</span>
-<a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="n">var_dump</span><span class="p">(</span><span class="err">$</span><span class="n">e1</span><span class="p">);</span>
-<a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="o">//</span> <span class="n">exploitation</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;exception courante</span>
-<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="nb">print</span> <span class="err">$</span><span class="n">e1</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="err">$</span><span class="n">e</span> <span class="o">=</span> <span class="err">$</span><span class="n">e1</span><span class="p">;</span>
-<a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="k">while</span> <span class="p">(</span><span class="err">$</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">getPrevious</span><span class="p">()</span> <span class="o">!==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-14-23" name="__codelineno-14-23"></a>  <span class="o">//</span> <span class="n">exception</span> <span class="n">précédente</span>
-<a id="__codelineno-14-24" name="__codelineno-14-24"></a>  <span class="err">$</span><span class="n">e</span> <span class="o">=</span> <span class="err">$</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">getPrevious</span><span class="p">();</span>
-<a id="__codelineno-14-25" name="__codelineno-14-25"></a>  <span class="o">//</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-14-26" name="__codelineno-14-26"></a>  <span class="nb">print</span> <span class="err">$</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="c1">// on définit notre propre famille d&#39;exceptions</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="k">class</span> <span class="nc">Exception1</span> <span class="k">extends</span> <span class="nx">\RuntimeException</span> <span class="p">{</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="p">}</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20"></a>
+<a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="k">class</span> <span class="nc">Exception2</span> <span class="k">extends</span> <span class="nx">\RuntimeException</span> <span class="p">{</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22"></a>
+<a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="p">}</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24"></a>
+<a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="k">class</span> <span class="nc">Exception3</span> <span class="k">extends</span> <span class="nx">\RuntimeException</span> <span class="p">{</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26"></a>
 <a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="p">}</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28"></a>
+<a id="__codelineno-14-29" name="__codelineno-14-29"></a><span class="c1">// ou utilise nos exceptions</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30"></a><span class="nv">$e1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Exception1</span><span class="p">(</span><span class="s2">&quot;Erreur 1…&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Exception2</span><span class="p">(</span><span class="s2">&quot;Erreur 2…&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Exception3</span><span class="p">(</span><span class="s2">&quot;Erreur 3…&quot;</span><span class="p">)));</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31"></a><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$e1</span><span class="p">);</span>
+<a id="__codelineno-14-32" name="__codelineno-14-32"></a><span class="c1">// exploitation de l&#39;exception courante</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33"></a><span class="k">print</span> <span class="nv">$e1</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-34" name="__codelineno-14-34"></a><span class="nv">$e</span> <span class="o">=</span> <span class="nv">$e1</span><span class="p">;</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35"></a><span class="k">while</span> <span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getPrevious</span><span class="p">()</span> <span class="o">!==</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-14-36" name="__codelineno-14-36"></a>  <span class="c1">// exception précédente</span>
+<a id="__codelineno-14-37" name="__codelineno-14-37"></a>  <span class="nv">$e</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getPrevious</span><span class="p">();</span>
+<a id="__codelineno-14-38" name="__codelineno-14-38"></a>  <span class="c1">// message d&#39;erreur</span>
+<a id="__codelineno-14-39" name="__codelineno-14-39"></a>  <span class="k">print</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-40" name="__codelineno-14-40"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
@@ -1964,10 +1964,14 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <p>Le 3e paramètre du constructeur permet d’encapsuler une exception. Cela peut être utile dans le scénario suivant :</p>
 <ul>
 <li>on définit une méthode M qui peut générer une exception de type <strong>[Exception1]</strong> et seulement de ce type pour des raisons de compatibilité par exemple avec une interface ;</li>
-<li>or dans la méthode M peuvent se produire d’autres types d’exceptions. Pour remonter une erreur au code appelant la méthode M, on encapsulera alors ces exceptions dans le type <strong>[Exception1]</strong> que l’on lancera. Cela permet de ne pas perdre l’information contenue dans l’exception encapsulée et qui a été la cause originelle de l’erreur ;</li>
-<li>les lignes 20-27 montrent comment gérer la pile des exceptions internes à une exception ;
-<strong>Résultats</strong></li>
+<li>
+<p>or dans la méthode M peuvent se produire d’autres types d’exceptions. Pour remonter une erreur au code appelant la méthode M, on encapsulera alors ces exceptions dans le type <strong>[Exception1]</strong> que l’on lancera. Cela permet de ne pas perdre l’information contenue dans l’exception encapsulée et qui a été la cause originelle de l’erreur ;</p>
+</li>
+<li>
+<p>les lignes 20-27 montrent comment gérer la pile des exceptions internes à une exception ;</p>
+</li>
 </ul>
+<p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
@@ -2019,58 +2023,58 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
 <span class="normal"><a href="#__codelineno-15-49">49</a></span>
 <span class="normal"><a href="#__codelineno-15-50">50</a></span>
 <span class="normal"><a href="#__codelineno-15-51">51</a></span>
-<span class="normal"><a href="#__codelineno-15-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nb">object</span><span class="p">(</span><span class="n">Exception1</span><span class="p">)</span><span class="c1">#1 (7) {</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a>  <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="s2">&quot;Erreur 1…&quot;</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a>  <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a>  <span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7"></a>  <span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8"></a>  <span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-9" name="__codelineno-15-9"></a>  <span class="n">string</span><span class="p">(</span><span class="mi">76</span><span class="p">)</span> <span class="s2">&quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-08.php&quot;</span>
-<a id="__codelineno-15-10" name="__codelineno-15-10"></a>  <span class="p">[</span><span class="s2">&quot;line&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-11" name="__codelineno-15-11"></a>  <span class="nb">int</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
-<a id="__codelineno-15-12" name="__codelineno-15-12"></a>  <span class="p">[</span><span class="s2">&quot;trace&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-13" name="__codelineno-15-13"></a>  <span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-15-14" name="__codelineno-15-14"></a>  <span class="p">}</span>
-<a id="__codelineno-15-15" name="__codelineno-15-15"></a>  <span class="p">[</span><span class="s2">&quot;previous&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-16" name="__codelineno-15-16"></a>  <span class="nb">object</span><span class="p">(</span><span class="n">Exception2</span><span class="p">)</span><span class="c1">#2 (7) {</span>
-<a id="__codelineno-15-17" name="__codelineno-15-17"></a>    <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-18" name="__codelineno-15-18"></a>    <span class="n">string</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="s2">&quot;Erreur 2…&quot;</span>
-<a id="__codelineno-15-19" name="__codelineno-15-19"></a>    <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-20" name="__codelineno-15-20"></a>    <span class="n">string</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-15-21" name="__codelineno-15-21"></a>    <span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-22" name="__codelineno-15-22"></a>    <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-15-23" name="__codelineno-15-23"></a>    <span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-24" name="__codelineno-15-24"></a>    <span class="n">string</span><span class="p">(</span><span class="mi">76</span><span class="p">)</span> <span class="s2">&quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-08.php&quot;</span>
-<a id="__codelineno-15-25" name="__codelineno-15-25"></a>    <span class="p">[</span><span class="s2">&quot;line&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-26" name="__codelineno-15-26"></a>    <span class="nb">int</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
-<a id="__codelineno-15-27" name="__codelineno-15-27"></a>    <span class="p">[</span><span class="s2">&quot;trace&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-28" name="__codelineno-15-28"></a>    <span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-15-29" name="__codelineno-15-29"></a>    <span class="p">}</span>
-<a id="__codelineno-15-30" name="__codelineno-15-30"></a>    <span class="p">[</span><span class="s2">&quot;previous&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-31" name="__codelineno-15-31"></a>    <span class="nb">object</span><span class="p">(</span><span class="n">Exception3</span><span class="p">)</span><span class="c1">#3 (7) {</span>
-<a id="__codelineno-15-32" name="__codelineno-15-32"></a>      <span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-33" name="__codelineno-15-33"></a>      <span class="n">string</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="s2">&quot;Erreur 3…&quot;</span>
-<a id="__codelineno-15-34" name="__codelineno-15-34"></a>      <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-35" name="__codelineno-15-35"></a>      <span class="n">string</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-15-36" name="__codelineno-15-36"></a>      <span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-37" name="__codelineno-15-37"></a>      <span class="nb">int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-15-38" name="__codelineno-15-38"></a>      <span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-39" name="__codelineno-15-39"></a>      <span class="n">string</span><span class="p">(</span><span class="mi">76</span><span class="p">)</span> <span class="s2">&quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-08.php&quot;</span>
-<a id="__codelineno-15-40" name="__codelineno-15-40"></a>      <span class="p">[</span><span class="s2">&quot;line&quot;</span><span class="p">:</span><span class="n">protected</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-41" name="__codelineno-15-41"></a>      <span class="nb">int</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
-<a id="__codelineno-15-42" name="__codelineno-15-42"></a>      <span class="p">[</span><span class="s2">&quot;trace&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-43" name="__codelineno-15-43"></a>      <span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-15-44" name="__codelineno-15-44"></a>      <span class="p">}</span>
-<a id="__codelineno-15-45" name="__codelineno-15-45"></a>      <span class="p">[</span><span class="s2">&quot;previous&quot;</span><span class="p">:</span><span class="s2">&quot;Exception&quot;</span><span class="p">:</span><span class="n">private</span><span class="p">]</span><span class="o">=&gt;</span>
-<a id="__codelineno-15-46" name="__codelineno-15-46"></a>      <span class="n">NULL</span>
-<a id="__codelineno-15-47" name="__codelineno-15-47"></a>    <span class="p">}</span>
-<a id="__codelineno-15-48" name="__codelineno-15-48"></a>  <span class="p">}</span>
-<a id="__codelineno-15-49" name="__codelineno-15-49"></a><span class="p">}</span>
-<a id="__codelineno-15-50" name="__codelineno-15-50"></a><span class="n">Erreur</span> <span class="mi">1</span><span class="err">…</span>
-<a id="__codelineno-15-51" name="__codelineno-15-51"></a><span class="n">Erreur</span> <span class="mi">2</span><span class="err">…</span>
-<a id="__codelineno-15-52" name="__codelineno-15-52"></a><span class="n">Erreur</span> <span class="mi">3</span><span class="err">…</span>
+<span class="normal"><a href="#__codelineno-15-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>object(Exception1)#1 (7) {
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>  [&quot;message&quot;:protected]=&gt;
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>  string(11) &quot;Erreur 1…&quot;
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>  [&quot;string&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a>  string(0) &quot;&quot;
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a>  [&quot;code&quot;:protected]=&gt;
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a>  int(1)
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a>  [&quot;file&quot;:protected]=&gt;
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a>  string(76) &quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-08.php&quot;
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a>  [&quot;line&quot;:protected]=&gt;
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a>  int(17)
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a>  [&quot;trace&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a>  array(0) {
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a>  }
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a>  [&quot;previous&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-16" name="__codelineno-15-16"></a>  object(Exception2)#2 (7) {
+<a id="__codelineno-15-17" name="__codelineno-15-17"></a>    [&quot;message&quot;:protected]=&gt;
+<a id="__codelineno-15-18" name="__codelineno-15-18"></a>    string(11) &quot;Erreur 2…&quot;
+<a id="__codelineno-15-19" name="__codelineno-15-19"></a>    [&quot;string&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-20" name="__codelineno-15-20"></a>    string(0) &quot;&quot;
+<a id="__codelineno-15-21" name="__codelineno-15-21"></a>    [&quot;code&quot;:protected]=&gt;
+<a id="__codelineno-15-22" name="__codelineno-15-22"></a>    int(2)
+<a id="__codelineno-15-23" name="__codelineno-15-23"></a>    [&quot;file&quot;:protected]=&gt;
+<a id="__codelineno-15-24" name="__codelineno-15-24"></a>    string(76) &quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-08.php&quot;
+<a id="__codelineno-15-25" name="__codelineno-15-25"></a>    [&quot;line&quot;:protected]=&gt;
+<a id="__codelineno-15-26" name="__codelineno-15-26"></a>    int(17)
+<a id="__codelineno-15-27" name="__codelineno-15-27"></a>    [&quot;trace&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-28" name="__codelineno-15-28"></a>    array(0) {
+<a id="__codelineno-15-29" name="__codelineno-15-29"></a>    }
+<a id="__codelineno-15-30" name="__codelineno-15-30"></a>    [&quot;previous&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-31" name="__codelineno-15-31"></a>    object(Exception3)#3 (7) {
+<a id="__codelineno-15-32" name="__codelineno-15-32"></a>      [&quot;message&quot;:protected]=&gt;
+<a id="__codelineno-15-33" name="__codelineno-15-33"></a>      string(11) &quot;Erreur 3…&quot;
+<a id="__codelineno-15-34" name="__codelineno-15-34"></a>      [&quot;string&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-35" name="__codelineno-15-35"></a>      string(0) &quot;&quot;
+<a id="__codelineno-15-36" name="__codelineno-15-36"></a>      [&quot;code&quot;:protected]=&gt;
+<a id="__codelineno-15-37" name="__codelineno-15-37"></a>      int(0)
+<a id="__codelineno-15-38" name="__codelineno-15-38"></a>      [&quot;file&quot;:protected]=&gt;
+<a id="__codelineno-15-39" name="__codelineno-15-39"></a>      string(76) &quot;C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-08.php&quot;
+<a id="__codelineno-15-40" name="__codelineno-15-40"></a>      [&quot;line&quot;:protected]=&gt;
+<a id="__codelineno-15-41" name="__codelineno-15-41"></a>      int(17)
+<a id="__codelineno-15-42" name="__codelineno-15-42"></a>      [&quot;trace&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-43" name="__codelineno-15-43"></a>      array(0) {
+<a id="__codelineno-15-44" name="__codelineno-15-44"></a>      }
+<a id="__codelineno-15-45" name="__codelineno-15-45"></a>      [&quot;previous&quot;:&quot;Exception&quot;:private]=&gt;
+<a id="__codelineno-15-46" name="__codelineno-15-46"></a>      NULL
+<a id="__codelineno-15-47" name="__codelineno-15-47"></a>    }
+<a id="__codelineno-15-48" name="__codelineno-15-48"></a>  }
+<a id="__codelineno-15-49" name="__codelineno-15-49"></a>}
+<a id="__codelineno-15-50" name="__codelineno-15-50"></a>Erreur 1…
+<a id="__codelineno-15-51" name="__codelineno-15-51"></a>Erreur 2…
+<a id="__codelineno-15-52" name="__codelineno-15-52"></a>Erreur 3…
 </code></pre></div></td></tr></table></div>
 
 
@@ -2111,7 +2115,7 @@ Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous 
           https://tahe.developpez.com
         </a>
         <br>
-        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
         <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
         Partage dans les Mêmes Conditions 3.0 non transposé</em>.
       </div>

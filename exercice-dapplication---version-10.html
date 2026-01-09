@@ -65,14 +65,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
     var siteName = "Introduction au langage PHP7 par l'exemple";
-
     gtag('config', 'G-EBZC3JVJNR', {
         'page_title': siteName
     });
-    console.log("[GA Debug] page_title forced to: " + siteName);
   </script>
 
     
@@ -1113,17 +1109,17 @@
 <p><img src="images/100000000000073600000303CE510638.png" style="width:14.652cm;height:6.121cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[3]</strong>, activer le serveur <strong>[Redis]</strong> ;</li>
-<li>en <strong>[4]</strong>, laisser le port <strong>[6379]</strong> que les clients Redis utilisent par défaut ;
-Les services Laragon sont automatiquement relancés après activation de Redis :</li>
+<li>en <strong>[4]</strong>, laisser le port <strong>[6379]</strong> que les clients Redis utilisent par défaut ;</li>
 </ul>
+<p>Les services Laragon sont automatiquement relancés après activation de Redis :</p>
 <p><img src="images/10000000000004F6000001F85B242593.png" style="width:10.081cm;height:4.001cm;" alt="Image" /></p>
 <h2 id="203-le-client-redis-en-mode-commande">20.3. Le client Redis en mode commande</h2>
 <p>Le serveur Redis peut être interrogé en mode commande. On ouvre un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><u>lien</u></u></a>) :</p>
 <p><img src="images/100000000000079C00000250F06351A7.png" style="width:18.04cm;height:5.481cm;" alt="Image" /></p>
 <ul>
-<li>en <strong>[1]</strong>, la commande <strong>[redis-cli]</strong> lance le client en mode commande du serveur Redis ;
-En juillet 2019, le client Redis peut utiliser 172 commandes pour dialoguer avec le serveur <strong>[https://redis.io/commands#list]</strong>. L’une d’elles <strong>[command count]</strong> <strong>[2]</strong>, affiche ce nombre <strong>[3]</strong>.</li>
+<li>en <strong>[1]</strong>, la commande <strong>[redis-cli]</strong> lance le client en mode commande du serveur Redis ;</li>
 </ul>
+<p>En juillet 2019, le client Redis peut utiliser 172 commandes pour dialoguer avec le serveur <strong>[https://redis.io/commands#list]</strong>. L’une d’elles <strong>[command count]</strong> <strong>[2]</strong>, affiche ce nombre <strong>[3]</strong>.</p>
 <p>Nous n’allons présenter que celles dont nous allons avoir besoin dans notre application PHP. Nous allons utiliser Redis pour une unique chose : stocker un tableau <strong>[‘attribut’=&gt;’valeur’]</strong> dans la mémoire de Redis. Cela se fait avec la commande Redis <strong>[set attribut valeur]</strong> <strong>[4]</strong>. La valeur peut ensuite être récupérée avec la commande <strong>[get attribut]</strong> <strong>[5]</strong>. C’est tout ce dont nous aurons besoin.</p>
 <p>Il peut être nécessaire de vider la mémoire de Redis. Cela se fait avec la commande <strong>[flushdb]</strong> <strong>[6]</strong>. Ensuite si on demande la valeur de l’attribut <strong>[titre]</strong> <strong>[7]</strong>, on obtient une référence <strong>[nil]</strong> <strong>[8]</strong> indiquant que l’attribut n’a pas été trouvé. On peut également utiliser la commande <strong>[exists]</strong> <strong>[9-10]</strong> pour vérifier l’existence d’un attribut.</p>
 <p>Pour quitter le client Redis, taper la commande <strong>[quit]</strong> <strong>[11]</strong>.</p>
@@ -1212,9 +1208,9 @@ En juillet 2019, le client Redis peut utiliser 172 commandes pour dialoguer avec
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>lignes 5-15 : la version 10 n’amène rien de nouveau en dehors du script <strong>[impots-server.php]</strong>. Elle utilise des éléments des verions 08 et 09 ;</li>
-<li>ligne 19 : une dépendance nécessaire à la bibliothèque <strong>[predis]</strong> que l’on vient d’installer ;
-Le code du serveur <strong>[impots-server.php]</strong> évolue de la façon suivante :</li>
+<li>ligne 19 : une dépendance nécessaire à la bibliothèque <strong>[predis]</strong> que l’on vient d’installer ;</li>
 </ul>
+<p>Le code du serveur <strong>[impots-server.php]</strong> évolue de la façon suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">  3</a></span>
@@ -1361,160 +1357,162 @@ Le code du serveur <strong>[impots-server.php]</strong> évolue de la façon sui
 <span class="normal"><a href="#__codelineno-1-144">144</a></span>
 <span class="normal"><a href="#__codelineno-1-145">145</a></span>
 <span class="normal"><a href="#__codelineno-1-146">146</a></span>
-<span class="normal"><a href="#__codelineno-1-147">147</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-1-147">147</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="o">//</span> <span class="n">gestion</span> <span class="n">des</span> <span class="n">erreurs</span> <span class="n">par</span> <span class="n">PHP</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="o">//</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="o">//</span> <span class="n">chemin</span> <span class="n">du</span> <span class="n">fichier</span> <span class="n">de</span> <span class="n">configuration</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;Data/config-server.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="o">//</span> <span class="n">alias</span> <span class="n">de</span> <span class="n">classe</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="n">use</span> \<span class="n">Application</span>\<span class="n">ServerDaoWithSession</span> <span class="k">as</span> <span class="n">ServerDaoWithRedis</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">// gestion des erreurs par PHP</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">//</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1">// chemin du fichier de configuration</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;Data/config-server.json&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="c1">// alias de classe</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="k">use</span> <span class="nx">\Application\ServerDaoWithSession</span> <span class="k">as</span> <span class="nx">ServerDaoWithRedis</span><span class="p">;</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="o">//</span> <span class="n">session</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="err">$</span><span class="n">session</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Session</span><span class="p">();</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="err">$</span><span class="n">session</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="err">…</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="err">…</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="o">//</span> <span class="mi">1</span><span class="n">er</span> <span class="n">log</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---nouvelle requête</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="c1">// session</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nv">$session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">();</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nv">$session</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="nx">…</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="nx">…</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="c1">// 1er log</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---nouvelle requête</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-1-24" name="__codelineno-1-24"></a>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="o">//</span> <span class="n">on</span> <span class="n">récupère</span> <span class="n">la</span> <span class="n">requête</span> <span class="n">courante</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="err">$</span><span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">::</span><span class="n">createFromGlobals</span><span class="p">();</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="o">//</span> <span class="n">authentification</span> <span class="n">seulement</span> <span class="n">la</span> <span class="mi">1</span><span class="n">re</span> <span class="n">fois</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="k">if</span> <span class="p">(</span><span class="err">!$</span><span class="n">session</span><span class="o">-&gt;</span><span class="n">has</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">))</span> <span class="p">{</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a>  <span class="err">…</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="c1">// on récupère la requête courante</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="nv">$request</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">createFromGlobals</span><span class="p">();</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="c1">// authentification seulement la 1re fois</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$session</span><span class="o">-&gt;</span><span class="na">has</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>  <span class="nx">…</span>
 <a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a>  <span class="o">//</span> <span class="n">log</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32"></a>  <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Authentification prise en session…</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>  <span class="c1">// log</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;Authentification prise en session…</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="p">}</span>
 <a id="__codelineno-1-34" name="__codelineno-1-34"></a>
-<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="o">//</span> <span class="n">on</span> <span class="n">a</span> <span class="n">un</span> <span class="n">utilisateur</span> <span class="n">valide</span> <span class="o">-</span> <span class="n">on</span> <span class="n">vérifie</span> <span class="n">les</span> <span class="n">paramètres</span> <span class="n">reçus</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="err">$</span><span class="n">erreurs</span> <span class="o">=</span> <span class="p">[];</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="o">//</span> <span class="n">on</span> <span class="n">doit</span> <span class="n">avoir</span> <span class="n">trois</span> <span class="n">paramètres</span> <span class="n">GET</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="err">$</span><span class="n">method</span> <span class="o">=</span> <span class="n">strtolower</span><span class="p">(</span><span class="err">$</span><span class="n">request</span><span class="o">-&gt;</span><span class="n">getMethod</span><span class="p">());</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="err">…</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="c1">// on a un utilisateur valide - on vérifie les paramètres reçus</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="nv">$erreurs</span> <span class="o">=</span> <span class="p">[];</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="c1">// on doit avoir trois paramètres GET</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="nv">$method</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getMethod</span><span class="p">());</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="nx">…</span>
 <a id="__codelineno-1-40" name="__codelineno-1-40"></a>
-<a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="o">//</span> <span class="n">erreurs</span> <span class="err">?</span>
-<a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">erreurs</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="o">//</span> <span class="n">on</span> <span class="n">envoie</span> <span class="n">un</span> <span class="n">code</span> <span class="n">d</span><span class="s1">&#39;erreur 400 HTTP_BAD_REQUEST au client</span>
-<a id="__codelineno-1-44" name="__codelineno-1-44"></a>  <span class="n">sendResponse</span><span class="p">(</span><span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;erreurs&quot;</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="n">erreurs</span><span class="p">],</span> <span class="n">Response</span><span class="p">::</span><span class="n">HTTP_BAD_REQUEST</span><span class="p">,</span> <span class="p">[],</span> <span class="err">$</span><span class="n">logger</span><span class="p">);</span>
-<a id="__codelineno-1-45" name="__codelineno-1-45"></a>  <span class="o">//</span> <span class="n">terminé</span>
-<a id="__codelineno-1-46" name="__codelineno-1-46"></a>  <span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="c1">// erreurs ?</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$erreurs</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="c1">// on envoie un code d&#39;erreur 400 HTTP_BAD_REQUEST au client</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a>  <span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;erreurs&quot;</span> <span class="o">=&gt;</span> <span class="nv">$erreurs</span><span class="p">],</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_BAD_REQUEST</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">);</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a>  <span class="c1">// terminé</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a>  <span class="k">exit</span><span class="p">;</span>
 <a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-1-48" name="__codelineno-1-48"></a>  <span class="o">//</span> <span class="n">logs</span>
-<a id="__codelineno-1-49" name="__codelineno-1-49"></a>  <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;paramètres [&#39;marié&#39;=&gt;$marié, &#39;enfants&#39;=&gt;$enfants, &#39;salaire&#39;=&gt;$salaire] valides</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a>  <span class="c1">// logs</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;paramètres [&#39;marié&#39;=&gt;</span><span class="si">$marié</span><span class="s2">, &#39;enfants&#39;=&gt;</span><span class="si">$enfants</span><span class="s2">, &#39;salaire&#39;=&gt;</span><span class="si">$salaire</span><span class="s2">] valides</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="p">}</span>
 <a id="__codelineno-1-51" name="__codelineno-1-51"></a>
-<a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="o">//</span> <span class="n">on</span> <span class="n">a</span> <span class="n">tout</span> <span class="n">ce</span> <span class="n">qu</span><span class="s1">&#39;il faut pour travailler</span>
-<a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="o">//</span> <span class="n">Redis</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54"></a>\<span class="n">Predis</span>\<span class="n">Autoloader</span><span class="p">::</span><span class="n">register</span><span class="p">();</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="c1">// on a tout ce qu&#39;il faut pour travailler</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="c1">// Redis</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="nx">\Predis\Autoloader</span><span class="o">::</span><span class="na">register</span><span class="p">();</span>
 <a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56"></a>  <span class="o">//</span> <span class="n">client</span> <span class="p">[</span><span class="n">predis</span><span class="p">]</span>
-<a id="__codelineno-1-57" name="__codelineno-1-57"></a>  <span class="err">$</span><span class="n">redis</span> <span class="o">=</span> <span class="n">new</span> \<span class="n">Predis</span>\<span class="n">Client</span><span class="p">();</span>
-<a id="__codelineno-1-58" name="__codelineno-1-58"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">se</span> <span class="n">connecte</span> <span class="n">au</span> <span class="n">serveur</span> <span class="n">pour</span> <span class="n">voir</span> <span class="n">s</span><span class="s1">&#39;il est là</span>
-<a id="__codelineno-1-59" name="__codelineno-1-59"></a>  <span class="err">$</span><span class="n">redis</span><span class="o">-&gt;</span><span class="n">connect</span><span class="p">();</span>
-<a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">Predis</span>\<span class="n">Connection</span>\<span class="n">ConnectionException</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-61" name="__codelineno-1-61"></a>  <span class="o">//</span> <span class="n">internal</span> <span class="n">server</span> <span class="n">error</span>
-<a id="__codelineno-1-62" name="__codelineno-1-62"></a>  <span class="n">doInternalServerError</span><span class="p">(</span><span class="s2">&quot;[redis], &quot;</span> <span class="o">.</span> <span class="n">utf8_encode</span><span class="p">(</span><span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()),</span> <span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;adminMail&#39;</span><span class="p">],</span> <span class="err">$</span><span class="n">logger</span><span class="p">);</span>
-<a id="__codelineno-1-63" name="__codelineno-1-63"></a>  <span class="o">//</span> <span class="n">terminé</span>
-<a id="__codelineno-1-64" name="__codelineno-1-64"></a>  <span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56"></a>  <span class="c1">// client [predis]</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57"></a>  <span class="nv">$redis</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Predis\Client</span><span class="p">();</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58"></a>  <span class="c1">// on se connecte au serveur pour voir s&#39;il est là</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59"></a>  <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Predis\Connection\ConnectionException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61"></a>  <span class="c1">// internal server error</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62"></a>  <span class="nx">doInternalServerError</span><span class="p">(</span><span class="s2">&quot;[redis], &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()),</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;adminMail&#39;</span><span class="p">],</span> <span class="nv">$logger</span><span class="p">);</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63"></a>  <span class="c1">// terminé</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64"></a>  <span class="k">exit</span><span class="p">;</span>
 <a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="p">}</span>
 <a id="__codelineno-1-66" name="__codelineno-1-66"></a>
-<a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="k">if</span> <span class="p">(</span><span class="err">!$</span><span class="n">redis</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">))</span> <span class="p">{</span>
-<a id="__codelineno-1-69" name="__codelineno-1-69"></a>  <span class="o">//</span> <span class="n">les</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">sont</span> <span class="n">prises</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">base</span> <span class="n">de</span> <span class="n">données</span>
-<a id="__codelineno-1-70" name="__codelineno-1-70"></a>  <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;données fiscales prises en base de données</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="c1">// création de la couche [dao]</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-1-69" name="__codelineno-1-69"></a>  <span class="c1">// les données fiscales sont prises dans la base de données</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;données fiscales prises en base de données</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-1-71" name="__codelineno-1-71"></a>  <span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-1-72" name="__codelineno-1-72"></a>    <span class="o">//</span> <span class="n">construction</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-1-73" name="__codelineno-1-73"></a>    <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ServerDaoWithRedis</span><span class="p">(</span><span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">],</span> <span class="n">NULL</span><span class="p">);</span>
-<a id="__codelineno-1-74" name="__codelineno-1-74"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">met</span> <span class="n">les</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">mémoire</span> <span class="n">de</span> <span class="n">portée</span> <span class="p">[</span><span class="n">application</span><span class="p">]</span>
-<a id="__codelineno-1-75" name="__codelineno-1-75"></a>    <span class="o">//</span> <span class="n">la</span> <span class="n">méthode</span> <span class="p">[</span><span class="n">TaxAdminData</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">__toString</span> <span class="n">va</span> <span class="n">être</span> <span class="n">appelée</span> <span class="n">implicitement</span>
-<a id="__codelineno-1-76" name="__codelineno-1-76"></a>    <span class="err">$</span><span class="n">redis</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">,</span> <span class="err">$</span><span class="n">dao</span><span class="o">-&gt;</span><span class="n">getTaxAdminData</span><span class="p">());</span>
-<a id="__codelineno-1-77" name="__codelineno-1-77"></a>  <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span>\<span class="n">RuntimeException</span> <span class="err">$</span><span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-78" name="__codelineno-1-78"></a>    <span class="o">//</span> <span class="n">on</span> <span class="n">note</span> <span class="n">l</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-1-79" name="__codelineno-1-79"></a>    <span class="n">doInternalServerError</span><span class="p">(</span><span class="s2">&quot;[dao], &quot;</span> <span class="o">.</span> <span class="n">utf8_encode</span><span class="p">(</span><span class="err">$</span><span class="n">ex</span><span class="o">-&gt;</span><span class="n">getMessage</span><span class="p">()),</span> <span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="err">$</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;adminMail&#39;</span><span class="p">],</span> <span class="err">$</span><span class="n">logger</span><span class="p">,</span> <span class="err">$</span><span class="n">redis</span><span class="p">);</span>
-<a id="__codelineno-1-80" name="__codelineno-1-80"></a>    <span class="o">//</span> <span class="n">terminé</span>
-<a id="__codelineno-1-81" name="__codelineno-1-81"></a>    <span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-1-72" name="__codelineno-1-72"></a>    <span class="c1">// construction de la couche [dao]</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerDaoWithRedis</span><span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">],</span> <span class="k">NULL</span><span class="p">);</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74"></a>    <span class="c1">// on met les données fiscales dans la mémoire de portée [application]</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75"></a>    <span class="c1">// la méthode [TaxAdminData]-&gt;__toString va être appelée implicitement</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76"></a>    <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">,</span> <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">getTaxAdminData</span><span class="p">());</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77"></a>  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\RuntimeException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78"></a>    <span class="c1">// on note l&#39;erreur</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79"></a>    <span class="nx">doInternalServerError</span><span class="p">(</span><span class="s2">&quot;[dao], &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()),</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;adminMail&#39;</span><span class="p">],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80"></a>    <span class="c1">// terminé</span>
+<a id="__codelineno-1-81" name="__codelineno-1-81"></a>    <span class="k">exit</span><span class="p">;</span>
 <a id="__codelineno-1-82" name="__codelineno-1-82"></a>  <span class="p">}</span>
 <a id="__codelineno-1-83" name="__codelineno-1-83"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-1-84" name="__codelineno-1-84"></a>  <span class="o">//</span> <span class="n">les</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">sont</span> <span class="n">prises</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">mémoire</span> <span class="n">de</span> <span class="n">portée</span> <span class="p">[</span><span class="n">application</span><span class="p">]</span>
-<a id="__codelineno-1-85" name="__codelineno-1-85"></a>  <span class="err">$</span><span class="n">arrayOfAttributes</span> <span class="o">=</span> \<span class="n">json_decode</span><span class="p">(</span><span class="err">$</span><span class="n">redis</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">),</span> <span class="n">true</span><span class="p">);</span>
-<a id="__codelineno-1-86" name="__codelineno-1-86"></a>  <span class="err">$</span><span class="n">taxAdminData</span> <span class="o">=</span> <span class="p">(</span><span class="n">new</span> <span class="n">TaxAdminData</span><span class="p">())</span><span class="o">-&gt;</span><span class="n">setFromArrayOfAttributes</span><span class="p">(</span><span class="err">$</span><span class="n">arrayOfAttributes</span><span class="p">);</span>
-<a id="__codelineno-1-87" name="__codelineno-1-87"></a>  <span class="o">//</span> <span class="n">isntanciation</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">dao</span><span class="p">]</span>
-<a id="__codelineno-1-88" name="__codelineno-1-88"></a>  <span class="err">$</span><span class="n">dao</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ServerDaoWithRedis</span><span class="p">(</span><span class="n">NULL</span><span class="p">,</span> <span class="err">$</span><span class="n">taxAdminData</span><span class="p">);</span>
-<a id="__codelineno-1-89" name="__codelineno-1-89"></a>  <span class="o">//</span> <span class="n">logs</span>
-<a id="__codelineno-1-90" name="__codelineno-1-90"></a>  <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;données fiscales prises dans redis</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84"></a>  <span class="c1">// les données fiscales sont prises dans la mémoire de portée [application]</span>
+<a id="__codelineno-1-85" name="__codelineno-1-85"></a>  <span class="nv">$arrayOfAttributes</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86"></a>  <span class="nv">$taxAdminData</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">TaxAdminData</span><span class="p">())</span><span class="o">-&gt;</span><span class="na">setFromArrayOfAttributes</span><span class="p">(</span><span class="nv">$arrayOfAttributes</span><span class="p">);</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87"></a>  <span class="c1">// isntanciation de la couche [dao]</span>
+<a id="__codelineno-1-88" name="__codelineno-1-88"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerDaoWithRedis</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="nv">$taxAdminData</span><span class="p">);</span>
+<a id="__codelineno-1-89" name="__codelineno-1-89"></a>  <span class="c1">// logs</span>
+<a id="__codelineno-1-90" name="__codelineno-1-90"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;données fiscales prises dans redis</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="p">}</span>
-<a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="o">//</span> <span class="n">création</span> <span class="n">de</span> <span class="n">la</span> <span class="n">couche</span> <span class="p">[</span><span class="n">métier</span><span class="p">]</span>
-<a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="err">$</span><span class="n">métier</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ServerMetier</span><span class="p">(</span><span class="err">$</span><span class="n">dao</span><span class="p">);</span>
-<a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="o">//</span> <span class="n">calcul</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;impôt</span>
-<a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="err">$</span><span class="n">result</span> <span class="o">=</span> <span class="err">$</span><span class="n">métier</span><span class="o">-&gt;</span><span class="n">calculerImpot</span><span class="p">(</span><span class="err">$</span><span class="n">marié</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="err">$</span><span class="n">enfants</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="err">$</span><span class="n">salaire</span><span class="p">);</span>
-<a id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="o">//</span> <span class="n">on</span> <span class="n">rend</span> <span class="n">la</span> <span class="n">réponse</span>
-<a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="n">sendResponse</span><span class="p">(</span><span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="err">$</span><span class="n">result</span><span class="p">,</span> <span class="n">Response</span><span class="p">::</span><span class="n">HTTP_OK</span><span class="p">,</span> <span class="p">[],</span> <span class="err">$</span><span class="n">logger</span><span class="p">,</span> <span class="err">$</span><span class="n">redis</span><span class="p">);</span>
-<a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="o">//</span> <span class="n">fin</span>
-<a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="n">exit</span><span class="p">;</span>
+<a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="c1">// création de la couche [métier]</span>
+<a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerMetier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
+<a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="c1">// calcul de l&#39;impôt</span>
+<a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">calculerImpot</span><span class="p">(</span><span class="nv">$marié</span><span class="p">,</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$enfants</span><span class="p">,</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$salaire</span><span class="p">);</span>
+<a id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="c1">// on rend la réponse</span>
+<a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="nv">$result</span><span class="p">,</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
+<a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="c1">// fin</span>
+<a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="k">exit</span><span class="p">;</span>
 <a id="__codelineno-1-100" name="__codelineno-1-100"></a>
-<a id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="n">function</span> <span class="n">doInternalServerError</span><span class="p">(</span><span class="n">string</span> <span class="err">$</span><span class="n">message</span><span class="p">,</span> <span class="n">Response</span> <span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="n">array</span> <span class="err">$</span><span class="n">infos</span><span class="p">,</span>
-<a id="__codelineno-1-102" name="__codelineno-1-102"></a>  <span class="n">Logger</span> <span class="err">$</span><span class="n">logger</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">,</span> \<span class="n">Predis</span>\<span class="n">Client</span> <span class="err">$</span><span class="n">predisClient</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-103" name="__codelineno-1-103"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">message</span> <span class="p">:</span> <span class="n">le</span> <span class="n">message</span> <span class="n">d</span><span class="s1">&#39;erreur</span>
-<a id="__codelineno-1-104" name="__codelineno-1-104"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">response</span> <span class="p">:</span> <span class="n">réponse</span> <span class="n">HTTP</span>
-<a id="__codelineno-1-105" name="__codelineno-1-105"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">infos</span> <span class="p">:</span> <span class="n">tableau</span> <span class="n">d</span><span class="s1">&#39;informations pour l&#39;</span><span class="n">envoi</span> <span class="n">du</span> <span class="n">mail</span>
-<a id="__codelineno-1-106" name="__codelineno-1-106"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">result</span> <span class="p">:</span> <span class="n">tableau</span> <span class="n">des</span> <span class="n">résultats</span>
-<a id="__codelineno-1-107" name="__codelineno-1-107"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">logger</span> <span class="p">:</span> <span class="n">le</span> <span class="n">logueur</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;application</span>
-<a id="__codelineno-1-108" name="__codelineno-1-108"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">predisClient</span> <span class="p">:</span> <span class="n">un</span> <span class="n">client</span> <span class="p">[</span><span class="n">predis</span><span class="p">]</span>
-<a id="__codelineno-1-109" name="__codelineno-1-109"></a>  <span class="o">//</span>
-<a id="__codelineno-1-110" name="__codelineno-1-110"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">envoie</span> <span class="n">un</span> <span class="n">mail</span> <span class="n">à</span> <span class="n">l</span><span class="s1">&#39;administrateur</span>
-<a id="__codelineno-1-111" name="__codelineno-1-111"></a>  <span class="o">//</span> <span class="n">SendAdminMail</span> <span class="n">intercepte</span> <span class="n">toutes</span> <span class="n">les</span> <span class="n">exception</span> <span class="n">et</span> <span class="n">les</span> <span class="n">logue</span> <span class="n">lui</span><span class="o">-</span><span class="n">même</span>
-<a id="__codelineno-1-112" name="__codelineno-1-112"></a>  <span class="err">$</span><span class="n">infos</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="err">$</span><span class="n">message</span><span class="p">;</span>
-<a id="__codelineno-1-113" name="__codelineno-1-113"></a>  <span class="err">$</span><span class="n">sendAdminMail</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SendAdminMail</span><span class="p">(</span><span class="err">$</span><span class="n">infos</span><span class="p">,</span> <span class="err">$</span><span class="n">logger</span><span class="p">);</span>
-<a id="__codelineno-1-114" name="__codelineno-1-114"></a>  <span class="err">$</span><span class="n">sendAdminMail</span><span class="o">-&gt;</span><span class="n">send</span><span class="p">();</span>
-<a id="__codelineno-1-115" name="__codelineno-1-115"></a>  <span class="o">//</span> <span class="n">on</span> <span class="n">envoie</span> <span class="n">un</span> <span class="n">code</span> <span class="n">d</span><span class="s1">&#39;erreur 500 au client</span>
-<a id="__codelineno-1-116" name="__codelineno-1-116"></a>  <span class="n">sendResponse</span><span class="p">(</span><span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;erreur&quot;</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="n">message</span><span class="p">],</span> <span class="n">Response</span><span class="p">::</span><span class="n">HTTP_INTERNAL_SERVER_ERROR</span><span class="p">,</span> <span class="p">[],</span> <span class="err">$</span><span class="n">logger</span><span class="p">,</span> <span class="err">$</span><span class="n">predisClient</span><span class="p">);</span>
+<a id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="k">function</span> <span class="nf">doInternalServerError</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$message</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$infos</span><span class="p">,</span>
+<a id="__codelineno-1-102" name="__codelineno-1-102"></a>  <span class="nx">Logger</span> <span class="nv">$logger</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">,</span> <span class="nx">\Predis\Client</span> <span class="nv">$predisClient</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-103" name="__codelineno-1-103"></a>  <span class="c1">// $message : le message d&#39;erreur</span>
+<a id="__codelineno-1-104" name="__codelineno-1-104"></a>  <span class="c1">// $response : réponse HTTP</span>
+<a id="__codelineno-1-105" name="__codelineno-1-105"></a>  <span class="c1">// $infos : tableau d&#39;informations pour l&#39;envoi du mail</span>
+<a id="__codelineno-1-106" name="__codelineno-1-106"></a>  <span class="c1">// $result : tableau des résultats</span>
+<a id="__codelineno-1-107" name="__codelineno-1-107"></a>  <span class="c1">// $logger : le logueur de l&#39;application</span>
+<a id="__codelineno-1-108" name="__codelineno-1-108"></a>  <span class="c1">// $predisClient : un client [predis]</span>
+<a id="__codelineno-1-109" name="__codelineno-1-109"></a>  <span class="c1">//</span>
+<a id="__codelineno-1-110" name="__codelineno-1-110"></a>  <span class="c1">// on envoie un mail à l&#39;administrateur</span>
+<a id="__codelineno-1-111" name="__codelineno-1-111"></a>  <span class="c1">// SendAdminMail intercepte toutes les exception et les logue lui-même</span>
+<a id="__codelineno-1-112" name="__codelineno-1-112"></a>  <span class="nv">$infos</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$message</span><span class="p">;</span>
+<a id="__codelineno-1-113" name="__codelineno-1-113"></a>  <span class="nv">$sendAdminMail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendAdminMail</span><span class="p">(</span><span class="nv">$infos</span><span class="p">,</span> <span class="nv">$logger</span><span class="p">);</span>
+<a id="__codelineno-1-114" name="__codelineno-1-114"></a>  <span class="nv">$sendAdminMail</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<a id="__codelineno-1-115" name="__codelineno-1-115"></a>  <span class="c1">// on envoie un code d&#39;erreur 500 au client</span>
+<a id="__codelineno-1-116" name="__codelineno-1-116"></a>  <span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;erreur&quot;</span> <span class="o">=&gt;</span> <span class="nv">$message</span><span class="p">],</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_INTERNAL_SERVER_ERROR</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$predisClient</span><span class="p">);</span>
 <a id="__codelineno-1-117" name="__codelineno-1-117"></a><span class="p">}</span>
 <a id="__codelineno-1-118" name="__codelineno-1-118"></a>
-<a id="__codelineno-1-119" name="__codelineno-1-119"></a><span class="o">//</span> <span class="n">fonction</span> <span class="n">d</span><span class="s1">&#39;envoi de la réponse HTTP au client</span>
-<a id="__codelineno-1-120" name="__codelineno-1-120"></a><span class="n">function</span> <span class="n">sendResponse</span><span class="p">(</span><span class="n">Response</span> <span class="err">$</span><span class="n">response</span><span class="p">,</span> <span class="n">array</span> <span class="err">$</span><span class="n">result</span><span class="p">,</span> <span class="nb">int</span> <span class="err">$</span><span class="n">statusCode</span><span class="p">,</span>
-<a id="__codelineno-1-121" name="__codelineno-1-121"></a>  <span class="n">array</span> <span class="err">$</span><span class="n">headers</span><span class="p">,</span> <span class="n">Logger</span> <span class="err">$</span><span class="n">logger</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">,</span> \<span class="n">Predis</span>\<span class="n">Client</span> <span class="err">$</span><span class="n">predisClient</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-122" name="__codelineno-1-122"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">response</span> <span class="p">:</span> <span class="n">réponse</span> <span class="n">HTTP</span>
-<a id="__codelineno-1-123" name="__codelineno-1-123"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">result</span> <span class="p">:</span> <span class="n">tableau</span> <span class="n">des</span> <span class="n">résultats</span>
-<a id="__codelineno-1-124" name="__codelineno-1-124"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">statusCode</span> <span class="p">:</span> <span class="n">statut</span> <span class="n">HTTP</span> <span class="n">de</span> <span class="n">la</span> <span class="n">réponse</span>
-<a id="__codelineno-1-125" name="__codelineno-1-125"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">headers</span> <span class="p">:</span> <span class="n">entêtes</span> <span class="n">HTTP</span> <span class="n">à</span> <span class="n">mettre</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">réponse</span>
-<a id="__codelineno-1-126" name="__codelineno-1-126"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">logger</span> <span class="p">:</span> <span class="n">le</span> <span class="n">logueur</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;application</span>
-<a id="__codelineno-1-127" name="__codelineno-1-127"></a>  <span class="o">//</span> <span class="err">$</span><span class="n">predisClient</span> <span class="p">:</span> <span class="n">un</span> <span class="n">client</span> <span class="p">[</span><span class="n">predis</span><span class="p">]</span>
-<a id="__codelineno-1-128" name="__codelineno-1-128"></a>  <span class="o">//</span>
-<a id="__codelineno-1-129" name="__codelineno-1-129"></a>  <span class="o">//</span> <span class="n">statut</span> <span class="n">HTTTP</span>
-<a id="__codelineno-1-130" name="__codelineno-1-130"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">setStatusCode</span><span class="p">(</span><span class="err">$</span><span class="n">statusCode</span><span class="p">);</span>
-<a id="__codelineno-1-131" name="__codelineno-1-131"></a>  <span class="o">//</span> <span class="n">body</span>
-<a id="__codelineno-1-132" name="__codelineno-1-132"></a>  <span class="err">$</span><span class="n">body</span> <span class="o">=</span> \<span class="n">json_encode</span><span class="p">([</span><span class="s2">&quot;réponse&quot;</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="n">result</span><span class="p">],</span> <span class="n">JSON_UNESCAPED_UNICODE</span><span class="p">);</span>
-<a id="__codelineno-1-133" name="__codelineno-1-133"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">setContent</span><span class="p">(</span><span class="err">$</span><span class="n">body</span><span class="p">);</span>
-<a id="__codelineno-1-134" name="__codelineno-1-134"></a>  <span class="o">//</span> <span class="n">headers</span>
-<a id="__codelineno-1-135" name="__codelineno-1-135"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">headers</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="err">$</span><span class="n">headers</span><span class="p">);</span>
-<a id="__codelineno-1-136" name="__codelineno-1-136"></a>  <span class="o">//</span> <span class="n">envoi</span>
-<a id="__codelineno-1-137" name="__codelineno-1-137"></a>  <span class="err">$</span><span class="n">response</span><span class="o">-&gt;</span><span class="n">send</span><span class="p">();</span>
-<a id="__codelineno-1-138" name="__codelineno-1-138"></a>  <span class="o">//</span> <span class="n">log</span>
-<a id="__codelineno-1-139" name="__codelineno-1-139"></a>  <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">logger</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-140" name="__codelineno-1-140"></a>    <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;$body</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-141" name="__codelineno-1-141"></a>    <span class="err">$</span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">close</span><span class="p">();</span>
+<a id="__codelineno-1-119" name="__codelineno-1-119"></a><span class="c1">// fonction d&#39;envoi de la réponse HTTP au client</span>
+<a id="__codelineno-1-120" name="__codelineno-1-120"></a><span class="k">function</span> <span class="nf">sendResponse</span><span class="p">(</span><span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$result</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$statusCode</span><span class="p">,</span>
+<a id="__codelineno-1-121" name="__codelineno-1-121"></a>  <span class="k">array</span> <span class="nv">$headers</span><span class="p">,</span> <span class="nx">Logger</span> <span class="nv">$logger</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">,</span> <span class="nx">\Predis\Client</span> <span class="nv">$predisClient</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-122" name="__codelineno-1-122"></a>  <span class="c1">// $response : réponse HTTP</span>
+<a id="__codelineno-1-123" name="__codelineno-1-123"></a>  <span class="c1">// $result : tableau des résultats</span>
+<a id="__codelineno-1-124" name="__codelineno-1-124"></a>  <span class="c1">// $statusCode : statut HTTP de la réponse</span>
+<a id="__codelineno-1-125" name="__codelineno-1-125"></a>  <span class="c1">// $headers : entêtes HTTP à mettre dans la réponse</span>
+<a id="__codelineno-1-126" name="__codelineno-1-126"></a>  <span class="c1">// $logger : le logueur de l&#39;application</span>
+<a id="__codelineno-1-127" name="__codelineno-1-127"></a>  <span class="c1">// $predisClient : un client [predis]</span>
+<a id="__codelineno-1-128" name="__codelineno-1-128"></a>  <span class="c1">//</span>
+<a id="__codelineno-1-129" name="__codelineno-1-129"></a>  <span class="c1">// statut HTTTP</span>
+<a id="__codelineno-1-130" name="__codelineno-1-130"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nv">$statusCode</span><span class="p">);</span>
+<a id="__codelineno-1-131" name="__codelineno-1-131"></a>  <span class="c1">// body</span>
+<a id="__codelineno-1-132" name="__codelineno-1-132"></a>  <span class="nv">$body</span> <span class="o">=</span> <span class="nx">\json_encode</span><span class="p">([</span><span class="s2">&quot;réponse&quot;</span> <span class="o">=&gt;</span> <span class="nv">$result</span><span class="p">],</span> <span class="nx">JSON_UNESCAPED_UNICODE</span><span class="p">);</span>
+<a id="__codelineno-1-133" name="__codelineno-1-133"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="nv">$body</span><span class="p">);</span>
+<a id="__codelineno-1-134" name="__codelineno-1-134"></a>  <span class="c1">// headers</span>
+<a id="__codelineno-1-135" name="__codelineno-1-135"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">headers</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$headers</span><span class="p">);</span>
+<a id="__codelineno-1-136" name="__codelineno-1-136"></a>  <span class="c1">// envoi</span>
+<a id="__codelineno-1-137" name="__codelineno-1-137"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<a id="__codelineno-1-138" name="__codelineno-1-138"></a>  <span class="c1">// log</span>
+<a id="__codelineno-1-139" name="__codelineno-1-139"></a>  <span class="k">if</span> <span class="p">(</span><span class="nv">$logger </span><span class="o">!=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-140" name="__codelineno-1-140"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">$body</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-141" name="__codelineno-1-141"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 <a id="__codelineno-1-142" name="__codelineno-1-142"></a>  <span class="p">}</span>
-<a id="__codelineno-1-143" name="__codelineno-1-143"></a>  <span class="o">//</span> <span class="n">fermeture</span> <span class="n">de</span> <span class="n">la</span> <span class="n">connexion</span> <span class="p">[</span><span class="n">redis</span><span class="p">]</span>
-<a id="__codelineno-1-144" name="__codelineno-1-144"></a>  <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">predisClient</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-145" name="__codelineno-1-145"></a>    <span class="err">$</span><span class="n">predisClient</span><span class="o">-&gt;</span><span class="n">disconnect</span><span class="p">();</span>
+<a id="__codelineno-1-143" name="__codelineno-1-143"></a>  <span class="c1">// fermeture de la connexion [redis]</span>
+<a id="__codelineno-1-144" name="__codelineno-1-144"></a>  <span class="k">if</span> <span class="p">(</span><span class="nv">$predisClient </span><span class="o">!=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-145" name="__codelineno-1-145"></a>    <span class="nv">$predisClient</span><span class="o">-&gt;</span><span class="na">disconnect</span><span class="p">();</span>
 <a id="__codelineno-1-146" name="__codelineno-1-146"></a>  <span class="p">}</span>
 <a id="__codelineno-1-147" name="__codelineno-1-147"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>ligne 15 : on donne l’alias <strong>[ServerDaoWithRedis]</strong> à la classe <strong>[\Application\ServerDaoWithSession]</strong> pour refléter le changement d’implémentation du script serveur ;</li>
-<li>lignes 18-19 : la session est conservée. Nous avons ici deux informations à mémoriser :</li>
+<li>lignes 18-19 : la session est conservée. Nous avons ici deux informations à mémoriser :<ul>
 <li>le fait que l’utilisateur se soit authentifié correctement. Cette information est de portée <strong>[session]</strong> : elle est liée à un utilisateur précis et n’est pas valable pour les autres utilisateurs ;</li>
 <li>les données de l’administration fiscale. Cette information est de portée <strong>[application]</strong> : elle n’est pas liée à un utilisateur précis mais est valable pour tous les utilisateurs ;</li>
+</ul>
+</li>
 <li>lignes 54-64 : création du client <strong>[redis]</strong> qui va communiquer avec le serveur <strong>[redis]</strong>. Ce client va communiquer avec le port par défaut du serveur. Si celui-ci ne communiquait pas sur son port par défaut ou s’il n’était pas sur la machine <strong>[localhost]</strong>, il faudrait passer ces informations au constructeur de la classe <strong>[\Predis\Client]</strong> ;</li>
 <li>ligne 59 : on connecte tout de suite le client au serveur pour savoir si celui-ci répond ;</li>
 <li>lignes 60-65 : si la connexion au serveur Redis échoue, on envoie une réponse d’erreur au client et un mail sera envoyé à l’administrateur de l’application ;</li>
@@ -1551,39 +1549,39 @@ Le code du serveur <strong>[impots-server.php]</strong> évolue de la façon sui
 <span class="normal"><a href="#__codelineno-2-22">22</a></span>
 <span class="normal"><a href="#__codelineno-2-23">23</a></span>
 <span class="normal"><a href="#__codelineno-2-24">24</a></span>
-<span class="normal"><a href="#__codelineno-2-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="s2">&quot;rootDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="s2">&quot;taxPayersDataFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/taxpayersdata.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="s2">&quot;resultsFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/results.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="s2">&quot;errorsFileName&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/errors.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="s2">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        <span class="s2">&quot;/../version-08/Entities/BaseEntity.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        <span class="s2">&quot;/../version-08/Entities/TaxPayerData.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        <span class="s2">&quot;/../version-08/Entities/ExceptionImpots.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>        <span class="s2">&quot;/../version-08/Utilities/Utilitaires.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        <span class="s2">&quot;/../version-08/Dao/InterfaceClientDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>        <span class="s2">&quot;/../version-08/Dao/TraitDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="s2">&quot;/../version-09/Dao/ClientDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>        <span class="s2">&quot;/../version-08/Métier/InterfaceClientMetier.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>        <span class="s2">&quot;/../version-08/Métier/ClientMetier.php&quot;</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>    <span class="p">],</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    <span class="s2">&quot;absoluteDependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>        <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a>    <span class="p">],</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>        <span class="s2">&quot;login&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a>        <span class="s2">&quot;passwd&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>    <span class="p">},</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a>    <span class="s2">&quot;urlServer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://localhost:443/php7/scripts-web/impots/version-10/impots-server.php&quot;</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    &quot;rootDirectory&quot;: &quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10&quot;,
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    &quot;taxPayersDataFileName&quot;: &quot;Data/taxpayersdata.json&quot;,
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    &quot;resultsFileName&quot;: &quot;Data/results.json&quot;,
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    &quot;errorsFileName&quot;: &quot;Data/errors.json&quot;,
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    &quot;dependencies&quot;: [
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        &quot;/../version-08/Entities/BaseEntity.php&quot;,
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        &quot;/../version-08/Entities/TaxPayerData.php&quot;,
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        &quot;/../version-08/Entities/ExceptionImpots.php&quot;,
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>        &quot;/../version-08/Utilities/Utilitaires.php&quot;,
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        &quot;/../version-08/Dao/InterfaceClientDao.php&quot;,
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>        &quot;/../version-08/Dao/TraitDao.php&quot;,
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>        &quot;/../version-09/Dao/ClientDao.php&quot;,
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>        &quot;/../version-08/Métier/InterfaceClientMetier.php&quot;,
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>        &quot;/../version-08/Métier/ClientMetier.php&quot;
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>    ],
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    &quot;absoluteDependencies&quot;: [
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>        &quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>    ],
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    &quot;user&quot;: {
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>        &quot;login&quot;: &quot;admin&quot;,
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>        &quot;passwd&quot;: &quot;admin&quot;
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>    },
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>    &quot;urlServer&quot;: &quot;https://localhost:443/php7/scripts-web/impots/version-10/impots-server.php&quot;
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>}
 </code></pre></div></td></tr></table></div>
 <p>Seule change, ligne 24, l’URL du serveur.</p>
 <p>Les résultats sont les mêmes que dans la version 09. Testons simplement un nouveau cas d’erreur :</p>
 <p><img src="images/1000000000000722000002C9845AE03A.png" style="width:14.491cm;height:5.661cm;" alt="Image" /></p>
 <p>Le résultat dans la console est le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">L</span><span class="s1">&#39;erreur suivante s&#39;</span><span class="n">est</span> <span class="n">produite</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;statut HTTP&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="s2">&quot;erreur&quot;</span><span class="p">:</span><span class="s2">&quot;[redis], Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée. [tcp:\/\/127.0.0.1:6379]&quot;</span><span class="p">}</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">Terminé</span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>L&#39;erreur suivante s&#39;est produite : {&quot;statut HTTP&quot;:500,&quot;erreur&quot;:&quot;[redis], Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée. [tcp:\/\/127.0.0.1:6379]&quot;}
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>Terminé
 </code></pre></div></td></tr></table></div>
 <h2 id="207-tests-codeception-du-client">20.7. Tests [Codeception] du client</h2>
 <p><img src="images/10000000000001CB000001AE771AA7CC.png" style="width:4.25cm;height:3.98cm;" alt="Image" /></p>
@@ -1601,25 +1599,25 @@ Le code du serveur <strong>[impots-server.php]</strong> évolue de la façon sui
 <span class="normal"><a href="#__codelineno-4-11">11</a></span>
 <span class="normal"><a href="#__codelineno-4-12">12</a></span>
 <span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">//</span> <span class="n">respect</span> <span class="n">strict</span> <span class="n">des</span> <span class="n">types</span> <span class="n">déclarés</span> <span class="n">des</span> <span class="n">paramètres</span> <span class="n">de</span> <span class="n">foctions</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">declare</span> <span class="p">(</span><span class="n">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="o">//</span> <span class="n">espace</span> <span class="n">de</span> <span class="n">noms</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">namespace</span> <span class="n">Application</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// espace de noms</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="o">//</span> <span class="n">définition</span> <span class="n">des</span> <span class="n">constantes</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">// définition des constantes</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10&quot;</span><span class="p">);</span>
 <a id="__codelineno-4-11" name="__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="err">…</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="nx">…</span>
 <a id="__codelineno-4-13" name="__codelineno-4-13"></a>
 <a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 10 : l’environnement du test est celui du client de la version 10 ;
-Avant de commencer les tests, supprimons à l’aide du client <strong>[redis-cli]</strong> la clé <strong>[taxAdminData]</strong> de la mémoire du serveur <strong>[redis]</strong> :</li>
+<li>ligne 10 : l’environnement du test est celui du client de la version 10 ;</li>
 </ul>
+<p>Avant de commencer les tests, supprimons à l’aide du client <strong>[redis-cli]</strong> la clé <strong>[taxAdminData]</strong> de la mémoire du serveur <strong>[redis]</strong> :</p>
 <p><img src="images/10000000000002A90000016365250EAD.png" style="width:6.31cm;height:3.29cm;" alt="Image" /></p>
 <p>Maintenant, exécutons le test :</p>
 <p><img src="images/100000000000067400000231D9299178.png" style="width:13.11cm;height:4.451cm;" alt="Image" /></p>
@@ -1647,30 +1645,30 @@ Avant de commencer les tests, supprimons à l’aide du client <strong>[redis-cl
 <span class="normal"><a href="#__codelineno-5-21">21</a></span>
 <span class="normal"><a href="#__codelineno-5-22">22</a></span>
 <span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">396</span> <span class="p">:</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="o">---</span><span class="n">nouvelle</span> <span class="n">requête</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">403</span> <span class="p">:</span> <span class="n">Autentification</span> <span class="n">en</span> <span class="n">cours</span><span class="err">…</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">403</span> <span class="p">:</span> <span class="n">Authentification</span> <span class="n">réussie</span> <span class="p">[</span><span class="n">admin</span><span class="p">,</span> <span class="n">admin</span><span class="p">]</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">403</span> <span class="p">:</span> <span class="n">paramètres</span> <span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="o">=&gt;</span><span class="n">oui</span><span class="p">,</span> <span class="s1">&#39;enfants&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;salaire&#39;</span><span class="o">=&gt;</span><span class="mi">55555</span><span class="p">]</span> <span class="n">valides</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">407</span> <span class="p">:</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">prises</span> <span class="n">en</span> <span class="n">base</span> <span class="n">de</span> <span class="n">données</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">420</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;réponse&quot;</span><span class="p">:{</span><span class="s2">&quot;impôt&quot;</span><span class="p">:</span><span class="mi">2814</span><span class="p">,</span><span class="s2">&quot;surcôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;décôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;réduction&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;taux&quot;</span><span class="p">:</span><span class="mf">0.14</span><span class="p">}}</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">546</span> <span class="p">:</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="o">---</span><span class="n">nouvelle</span> <span class="n">requête</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">555</span> <span class="p">:</span> <span class="n">Autentification</span> <span class="n">en</span> <span class="n">cours</span><span class="err">…</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">555</span> <span class="p">:</span> <span class="n">Authentification</span> <span class="n">réussie</span> <span class="p">[</span><span class="n">admin</span><span class="p">,</span> <span class="n">admin</span><span class="p">]</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">556</span> <span class="p">:</span> <span class="n">paramètres</span> <span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="o">=&gt;</span><span class="n">oui</span><span class="p">,</span> <span class="s1">&#39;enfants&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;salaire&#39;</span><span class="o">=&gt;</span><span class="mi">50000</span><span class="p">]</span> <span class="n">valides</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">559</span> <span class="p">:</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">prises</span> <span class="n">dans</span> <span class="n">redis</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">559</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;réponse&quot;</span><span class="p">:{</span><span class="s2">&quot;impôt&quot;</span><span class="p">:</span><span class="mi">1384</span><span class="p">,</span><span class="s2">&quot;surcôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;décôte&quot;</span><span class="p">:</span><span class="mi">384</span><span class="p">,</span><span class="s2">&quot;réduction&quot;</span><span class="p">:</span><span class="mi">347</span><span class="p">,</span><span class="s2">&quot;taux&quot;</span><span class="p">:</span><span class="mf">0.14</span><span class="p">}}</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">668</span> <span class="p">:</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="o">---</span><span class="n">nouvelle</span> <span class="n">requête</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">675</span> <span class="p">:</span> <span class="n">Autentification</span> <span class="n">en</span> <span class="n">cours</span><span class="err">…</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">675</span> <span class="p">:</span> <span class="n">Authentification</span> <span class="n">réussie</span> <span class="p">[</span><span class="n">admin</span><span class="p">,</span> <span class="n">admin</span><span class="p">]</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">675</span> <span class="p">:</span> <span class="n">paramètres</span> <span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="o">=&gt;</span><span class="n">oui</span><span class="p">,</span> <span class="s1">&#39;enfants&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;salaire&#39;</span><span class="o">=&gt;</span><span class="mi">50000</span><span class="p">]</span> <span class="n">valides</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">678</span> <span class="p">:</span> <span class="n">données</span> <span class="n">fiscales</span> <span class="n">prises</span> <span class="n">dans</span> <span class="n">redis</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">678</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;réponse&quot;</span><span class="p">:{</span><span class="s2">&quot;impôt&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;surcôte&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;décôte&quot;</span><span class="p">:</span><span class="mi">720</span><span class="p">,</span><span class="s2">&quot;réduction&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;taux&quot;</span><span class="p">:</span><span class="mf">0.14</span><span class="p">}}</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="mi">05</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">19</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">776</span> <span class="p">:</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="o">---</span><span class="n">nouvelle</span> <span class="n">requête</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="err">…</span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>05/07/19 08:52:16:396 :
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>---nouvelle requête
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>05/07/19 08:52:16:403 : Autentification en cours…
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>05/07/19 08:52:16:403 : Authentification réussie [admin, admin]
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>05/07/19 08:52:16:403 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;2, &#39;salaire&#39;=&gt;55555] valides
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>05/07/19 08:52:16:407 : données fiscales prises en base de données
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>05/07/19 08:52:16:420 : {&quot;réponse&quot;:{&quot;impôt&quot;:2814,&quot;surcôte&quot;:0,&quot;décôte&quot;:0,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>05/07/19 08:52:16:546 :
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>---nouvelle requête
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>05/07/19 08:52:16:555 : Autentification en cours…
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>05/07/19 08:52:16:555 : Authentification réussie [admin, admin]
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>05/07/19 08:52:16:556 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;2, &#39;salaire&#39;=&gt;50000] valides
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>05/07/19 08:52:16:559 : données fiscales prises dans redis
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>05/07/19 08:52:16:559 : {&quot;réponse&quot;:{&quot;impôt&quot;:1384,&quot;surcôte&quot;:0,&quot;décôte&quot;:384,&quot;réduction&quot;:347,&quot;taux&quot;:0.14}}
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>05/07/19 08:52:16:668 :
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>---nouvelle requête
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>05/07/19 08:52:16:675 : Autentification en cours…
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>05/07/19 08:52:16:675 : Authentification réussie [admin, admin]
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>05/07/19 08:52:16:675 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;3, &#39;salaire&#39;=&gt;50000] valides
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>05/07/19 08:52:16:678 : données fiscales prises dans redis
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>05/07/19 08:52:16:678 : {&quot;réponse&quot;:{&quot;impôt&quot;:0,&quot;surcôte&quot;:0,&quot;décôte&quot;:720,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>05/07/19 08:52:16:776 :
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>---nouvelle requête
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>…
 </code></pre></div></td></tr></table></div>
 <p>On a déjà dit qu’à chaque test, le constructeur de la classe de test est réexécuté, ce qui fait que la classe <strong>[ClientDao]</strong> testée est à chaque test instanciée avec un cookie de session inexistant. Tout se passe donc comme si les 11 tests représentaient 11 utilisateurs différents, avec 11 sessions différentes.</p>
 <ul>
@@ -1683,9 +1681,9 @@ Avant de commencer les tests, supprimons à l’aide du client <strong>[redis-cl
 <ul>
 <li>en <strong>[4]</strong>, l’URL d’aministration ;</li>
 <li>en <strong>[5]</strong>, les clés mémorisées par le serveur ;</li>
-<li>en <strong>[6]</strong>, l’état actuel du serveur ;
-En cliquant sur <strong>[5]</strong>, on obtient des informations sur la clé <strong>[taxAdminData]</strong> :</li>
+<li>en <strong>[6]</strong>, l’état actuel du serveur ;</li>
 </ul>
+<p>En cliquant sur <strong>[5]</strong>, on obtient des informations sur la clé <strong>[taxAdminData]</strong> :</p>
 <p><img src="images/10000000000006AD000002EEF7B4330F.png" style="width:13.562cm;height:5.95cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[7]</strong>, l’URL qui donne accès aux informations de la clé <strong>[taxAdminData]</strong> <strong>[8]</strong> ;</li>
@@ -1733,7 +1731,7 @@ En cliquant sur <strong>[5]</strong>, on obtient des informations sur la clé <s
           https://tahe.developpez.com
         </a>
         <br>
-        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
         <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
         Partage dans les Mêmes Conditions 3.0 non transposé</em>.
       </div>

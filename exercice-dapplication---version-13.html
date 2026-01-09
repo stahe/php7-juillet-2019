@@ -63,14 +63,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
     var siteName = "Introduction au langage PHP7 par l'exemple";
-
     gtag('config', 'G-EBZC3JVJNR', {
         'page_title': siteName
     });
-    console.log("[GA Debug] page_title forced to: " + siteName);
   </script>
 
     
@@ -986,9 +982,9 @@
 <ul>
 <li>en <strong>[1]</strong>, dans le dossier racine de l’application, nous ne laissons que les scripts <strong>[index.php, main.php]</strong> ;</li>
 <li>en <strong>[2]</strong>, les fichiers de configuration sont placés dans un dossier <strong>[Config]</strong> ;</li>
-<li>en <strong>[3]</strong>, l’image <strong>[logo.jpg]</strong> est placée dans un dossier <strong>[Resources]</strong> ;
-Le serveur HTTP utilisé est ici un serveur Apache. Celui-ci permet de contrôler l’accès à un dossier via un fichier <strong>[.htaccess]</strong>. Dans tous les dossiers auxquels nous voulons interdire un accès direct par URL, nous créons le fichier <strong>[.htaccess]</strong> suivant :</li>
+<li>en <strong>[3]</strong>, l’image <strong>[logo.jpg]</strong> est placée dans un dossier <strong>[Resources]</strong> ;</li>
 </ul>
+<p>Le serveur HTTP utilisé est ici un serveur Apache. Celui-ci permet de contrôler l’accès à un dossier via un fichier <strong>[.htaccess]</strong>. Dans tous les dossiers auxquels nous voulons interdire un accès direct par URL, nous créons le fichier <strong>[.htaccess]</strong> suivant :</p>
 <p><img src="images/10000000000001D6000000E31188E69B.png" style="width:4.351cm;height:2.102cm;" alt="Image" /></p>
 <p>Ces deux lignes font que tout accès au dossier est interdit à tous.</p>
 <p>Nous plaçons ce fichier dans tous les dossiers de l’application sauf dans le dossier racine et le dossier <strong>[Resources]</strong>. Finalement seuls trois fichiers sont accessibles de l’extérieur : <strong>[index.php, main.php, Resources/logo.jpg]</strong>.</p>
@@ -1044,7 +1040,7 @@ Le serveur HTTP utilisé est ici un serveur Apache. Celui-ci permet de contrôle
           https://tahe.developpez.com
         </a>
         <br>
-        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
         <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
         Partage dans les Mêmes Conditions 3.0 non transposé</em>.
       </div>

@@ -65,14 +65,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // CORRECTION ICI : Utilisation de guillemets doubles pour entourer le titre qui contient une apostrophe
     var siteName = "Introduction au langage PHP7 par l'exemple";
-
     gtag('config', 'G-EBZC3JVJNR', {
         'page_title': siteName
     });
-    console.log("[GA Debug] page_title forced to: " + siteName);
   </script>
 
     
@@ -1049,9 +1045,9 @@
 <li>un serveur web Apache. Nous l&#x27;utiliserons pour l&#x27;écriture de scripts web en PHP ;</li>
 <li>le SGBD MySQL ;</li>
 <li>le langage de script PHP ;</li>
-<li>un serveur Redis implémentant un cache pour des applications web :
-Laragon peut être téléchargé (mars 2019) à l&#x27;adresse suivante :</li>
+<li>un serveur Redis implémentant un cache pour des applications web :</li>
 </ul>
+<p>Laragon peut être téléchargé (mars 2019) à l&#x27;adresse suivante :</p>
 <p><a href="https://laragon.org/download/"><u><u>https://laragon.org/download/</u></u></a></p>
 <p><img src="images/10000000000005AC000003184BDF25EA.png" style="width:9.602cm;height:5.241cm;" alt="Image" /></p>
 <p><img src="images/100000000000086200000337E13872C5.png" style="width:14.191cm;height:5.441cm;" alt="Image" /></p>
@@ -1061,9 +1057,9 @@ Laragon peut être téléchargé (mars 2019) à l&#x27;adresse suivante :</li>
 </ul>
 <p><img src="images/100000000000083D000003996FDD348B.png" style="width:16.74cm;height:7.31cm;" alt="Image" /></p>
 <ul>
-<li>en <strong>[6]</strong> le dossier d&#x27;installation de PHP ;
-Le lancement de <strong>[Laragon]</strong> affiche la fenêtre suivante :</li>
+<li>en <strong>[6]</strong> le dossier d&#x27;installation de PHP ;</li>
 </ul>
+<p>Le lancement de <strong>[Laragon]</strong> affiche la fenêtre suivante :</p>
 <p><img src="images/10000000000004F800000346ED7C4AFF.png" style="width:10.101cm;height:6.651cm;" alt="Image" /></p>
 <ul>
 <li><strong>[1]</strong> : le menu principal de Laragon ;</li>
@@ -1071,9 +1067,9 @@ Le lancement de <strong>[Laragon]</strong> affiche la fenêtre suivante :</li>
 <li><strong>[3]</strong> : le bouton <strong>[WEB]</strong> affiche la page web <strong>[http://localhost]</strong> qui correspond au fichier PHP <strong>[&lt;laragon&gt;/www/index.php]</strong> où &lt;laragon&gt; est le dossier d’installation de Laragon ;</li>
 <li><strong>[4]</strong> : le bouton <strong>[Database]</strong> permet de gérer le SGBD MySQL avec l’outil <strong>[phpMyAdmin]</strong>. Il faut auparavant installer celui-ci ;</li>
 <li><strong>[5]</strong> : le bouton <strong>[Terminal]</strong> ouvre un terminal de commandes ;</li>
-<li><strong>[6]</strong> : le bouton <strong>[Root]</strong> ouvre un explorateur Windows positionné sur le dossier <strong>[&lt;laragon&gt;/www]</strong> qui est la racine du site web <strong>[http://localhost]</strong>. C’est là qu’il faut placer toutes les applications web gérées par le serveur Apache de Laragon ;
-Ouvrons un terminal Laragon <strong>[5]</strong> :</li>
+<li><strong>[6]</strong> : le bouton <strong>[Root]</strong> ouvre un explorateur Windows positionné sur le dossier <strong>[&lt;laragon&gt;/www]</strong> qui est la racine du site web <strong>[http://localhost]</strong>. C’est là qu’il faut placer toutes les applications web gérées par le serveur Apache de Laragon ;</li>
 </ul>
+<p>Ouvrons un terminal Laragon <strong>[5]</strong> :</p>
 <p><img src="images/1000000000000745000002AC1D4C0E92.png" style="width:14.772cm;height:5.43cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le type du terminal. Trois types de terminaux sont disponibles en <strong>[6]</strong> ;</li>
@@ -1114,9 +1110,9 @@ Ouvrons un terminal Laragon <strong>[5]</strong> :</li>
 <ul>
 <li>en <strong>[14]</strong>, les résultats dans la fenêtre <strong>[output]</strong> de Netbeans ;</li>
 <li>en <strong>[15]</strong>, on crée un nouveau script ;</li>
-<li>en <strong>[16]</strong>, le nouveau script ;
-Le lecteur pourra créer tous les scripts qui vont suivre dans différents dossiers du même projet PHP. Les codes source des scripts de ce document sont disponibles sous la forme de l’arborescence Netbeans suivante :</li>
+<li>en <strong>[16]</strong>, le nouveau script ;</li>
 </ul>
+<p>Le lecteur pourra créer tous les scripts qui vont suivre dans différents dossiers du même projet PHP. Les codes source des scripts de ce document sont disponibles sous la forme de l’arborescence Netbeans suivante :</p>
 <p><img src="images/1000000000000644000002E5AEA38430.png" style="width:14.851cm;height:6.861cm;" alt="Image" /></p>
 <p>Les scripts de ce document sont placés dans l’arborescence du projet <strong>[scripts-console]</strong> <strong>[1]</strong>. Nous allons utiliser également des bibliothèques PHP qui seront placées dans le dossier <strong>[&lt;laragon-lite&gt;/www/vendor]</strong> <strong>[2]</strong> où &lt;laragon-lite&gt; est le dossier d’installation du logiciel Laragon. Pour que Netbeans reconnaisse les bibliothèques de <strong>[2]</strong> comme faisant partie du projet <strong>[scripts-console]</strong>, il nous faut inclure le dossier <strong>[vendor]</strong> <strong>[2]</strong> dans la branche <strong>[Include Path]</strong> <strong>[3]</strong> du projet. Nous allons configurer Netbeans pour que le dossier <strong>[&lt;laragon-lite&gt;/www/vendor]</strong> <strong>[2]</strong> soit inclus dans tout nouveau projet PHP et pas seulement dans le projet <strong>[scripts-console]</strong> :</p>
 <p><img src="images/10000000000007C4000002C3270A2133.png" style="width:18.41cm;height:6.55cm;" alt="Image" /></p>
@@ -1134,9 +1130,9 @@ Le lecteur pourra créer tous les scripts qui vont suivre dans différents dossi
 <ul>
 <li>en <strong>[12]</strong>, un code utilise la classe <strong>[PhpMimeMailParser\Parser]</strong> de la bibliothèque <strong>[vendor/php-mime-mail-parser]</strong> ;</li>
 <li>en <strong>[13]</strong>, Netbeans propose les méthodes de cette classe ;</li>
-<li>en <strong>[14-15]</strong>, Netbeans affiche la documentation de la méthode sélectionnée ;
-La notion d’<strong>[Include Path]</strong> est ici propre à Netbeans. PHP a également cette notion mais ce sont a priori deux notions différentes.</li>
+<li>en <strong>[14-15]</strong>, Netbeans affiche la documentation de la méthode sélectionnée ;</li>
 </ul>
+<p>La notion d’<strong>[Include Path]</strong> est ici propre à Netbeans. PHP a également cette notion mais ce sont a priori deux notions différentes.</p>
 <p>Maintenant que l&#x27;environnement de travail a été installé, nous pouvons aborder les bases de PHP.</p>
 
 
@@ -1177,7 +1173,7 @@ La notion d’<strong>[Include Path]</strong> est ici propre à Netbeans. PHP a 
           https://tahe.developpez.com
         </a>
         <br>
-        Ce cours tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
+        Ce cours-tutoriel écrit par <strong>Serge Tahé</strong> est mis à disposition du public selon les termes de la
         <em>Licence Creative Commons Attribution – Pas d’Utilisation Commerciale –
         Partage dans les Mêmes Conditions 3.0 non transposé</em>.
       </div>
