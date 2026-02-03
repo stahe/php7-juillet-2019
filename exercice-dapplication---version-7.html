@@ -330,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d&#x27;un environnement de travail
+    2. Installation d'un environnement de travail
   
 
     
@@ -384,14 +384,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d&#x27;application – versions 1 et 2
+    4. Exercice d'application – versions 1 et 2
   
 
     
@@ -492,14 +492,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
+      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d&#x27;application – version 3
+    8. Exercice d'application – version 3
   
 
     
@@ -1061,101 +1061,68 @@
   
 
 
+<p><a id="toc42689974"></a>
+<a id="toc42690360"></a>
+<a id="toc42690746"></a>
+<a id="refheadingtoc900823955410047"></a></p>
 <h1 id="15-exercice-dapplication-version-7">15. Exercice d’application – version 7</h1>
 <p><img src="images/100000000000034800000153334DDAE2.png" style="width:7.781cm;height:3.14cm;" alt="Image" /></p>
+<p><a id="implementation"></a>
+<a id="refheadingtoc1808333931965946"></a>
+<a id="toc42689975"></a>
+<a id="toc42690361"></a>
+<a id="toc42690747"></a></p>
 <h2 id="151-implementation">15.1. Implémentation</h2>
-<p>Nous allons ici reprendre la version 6 en externalisant dans un fichier de configuration les constantes utilisées dans les scripts principaux. Le fichier de configuration sera un fichier jSON dont le contenu sera le suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>{
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    &quot;rootDirectory&quot;: &quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;,
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    &quot;databaseFilename&quot;: &quot;Data/database.json&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    &quot;taxAdminDataFileName&quot;: &quot;Data/taxadmindata.json&quot;,
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    &quot;taxPayersDataFileName&quot;: &quot;Data/taxpayersdata.json&quot;,
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    &quot;resultsFileName&quot;: &quot;Data/results.json&quot;,
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    &quot;errorsFileName&quot;: &quot;Data/errors.json&quot;,
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    &quot;dependencies&quot;: {
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        &quot;BaseEntity&quot;: &quot;/../version-05/Entities/BaseEntity.php&quot;,
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>        &quot;TaxAdminData&quot;: &quot;/../version-05/Entities/TaxAdminData.php&quot;,
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        &quot;TaxPayerData&quot;: &quot;/../version-05/Entities/TaxPayerData.php&quot;,
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        &quot;Database&quot;: &quot;/../version-05/Entities/Database.php&quot;,
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        &quot;ExceptionImpots&quot;: &quot;/../version-05/Entities/ExceptionImpots.php&quot;,
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        &quot;Utilitaires&quot;: &quot;/../version-05/Utilities/Utilitaires.php&quot;,
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        &quot;InterfaceDao&quot;: &quot;/../version-05/Dao/InterfaceDao.php&quot;,
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        &quot;TraitDao&quot;: &quot;/../version-05/Dao/TraitDao.php&quot;,
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        &quot;InterfaceDao4TransferAdminData2Database&quot;: &quot;/../version-05/Dao/InterfaceDao4TransferAdminData2Database.php&quot;,
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        &quot;DaoTransferAdminDataFromJsonFile2Database&quot;: &quot;/../version-05/Dao/DaoTransferAdminDataFromJsonFile2Database.php&quot;,        
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        &quot;DaoImpotsWithTaxAdminDataInDatabase&quot;: &quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;,
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>        &quot;InterfaceMetier&quot;: &quot;/../version-05/Métier/InterfaceMetier.php&quot;,
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        &quot;Metier&quot;: &quot;/../version-05/Métier/Metier.php&quot;
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    },
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    &quot;dependencies4calculate&quot;: [
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>        &quot;BaseEntity&quot;,
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        &quot;TaxAdminData&quot;,
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        &quot;TaxPayerData&quot;,
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        &quot;Database&quot;,
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        &quot;ExceptionImpots&quot;,
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        &quot;Utilitaires&quot;,
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        &quot;InterfaceDao&quot;,
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        &quot;TraitDao&quot;,
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        &quot;DaoImpotsWithTaxAdminDataInDatabase&quot;,
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        &quot;InterfaceMetier&quot;,
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        &quot;Metier&quot;],
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    &quot;dependencies4transfer&quot;: [
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        &quot;BaseEntity&quot;,
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>        &quot;TaxAdminData&quot;,
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        &quot;Database&quot;,
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        &quot;ExceptionImpots&quot;,
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        &quot;Utilitaires&quot;,
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>        &quot;InterfaceDao&quot;,
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        &quot;TraitDao&quot;,  
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a>        &quot;InterfaceDao4TransferAdminData2Database&quot;,
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a>        &quot;DaoTransferAdminDataFromJsonFile2Database&quot;]
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a>}
-</code></pre></div></td></tr></table></div>
-<p>Dans cette configuration :</p>
+<p><span style="color: #000000">Nous allons ici reprendre la version 6 en externalisant dans un fichier de configuration les constantes utilisées dans les scripts principaux. Le fichier de configuration sera un fichier jSON dont le contenu sera le suivant :</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;rootDirectory&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;databaseFilename&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/database.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;taxAdminDataFileName&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/taxadmindata.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;taxPayersDataFileName&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/taxpayersdata.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;resultsFileName&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/results.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;errorsFileName&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/errors.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;dependencies&quot;</span>: {</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;BaseEntity&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Entities/BaseEntity.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;TaxAdminData&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Entities/TaxAdminData.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;TaxPayerData&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Entities/TaxPayerData.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;Database&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Entities/Database.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;ExceptionImpots&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Entities/ExceptionImpots.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;Utilitaires&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Utilities/Utilitaires.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;InterfaceDao&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Dao/InterfaceDao.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;TraitDao&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Dao/TraitDao.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;InterfaceDao4TransferAdminData2Database&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Dao/InterfaceDao4TransferAdminData2Database.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;DaoTransferAdminDataFromJsonFile2Database&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Dao/DaoTransferAdminDataFromJsonFile2Database.php&quot;</span>,        </span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;DaoImpotsWithTaxAdminDataInDatabase&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Dao/DaoImpotsWithTaxAdminDataInDatabase.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;InterfaceMetier&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Métier/InterfaceMetier.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;Metier&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;/../version-05/Métier/Metier.php&quot;</span></span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;dependencies4calculate&quot;</span>: [</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;BaseEntity&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;TaxAdminData&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;TaxPayerData&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;Database&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;ExceptionImpots&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;Utilitaires&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;InterfaceDao&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;TraitDao&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;DaoImpotsWithTaxAdminDataInDatabase&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;InterfaceMetier&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;Metier&quot;</span>],</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;dependencies4transfer&quot;</span>: [</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;BaseEntity&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;TaxAdminData&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;Database&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;ExceptionImpots&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;Utilitaires&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;InterfaceDao&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;TraitDao&quot;</span>,  </span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;InterfaceDao4TransferAdminData2Database&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;DaoTransferAdminDataFromJsonFile2Database&quot;</span>]</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
+<p><span style="color: #000000">Dans cette configuration :</span></p>
 <ul>
 <li>ligne 2 : le dossier à partir duquel tous les chemins de ce fichier de configuration sont mesurés ;</li>
 <li>lignes 3-7 : les chemins de tous les fichiers jSON de l’application ;</li>
@@ -1163,386 +1130,238 @@
 <li>lignes 23-34 : les dépendances pour le calcul de l’impôt sous la forme d’une liste de clés du dictionnaire <strong>[dependencies]</strong> (lignes 8-22) ;</li>
 <li>lignes 35-44 : les dépendances pour le transfert en base des données du fichier jSON <strong>[taxadmindata.json]</strong> sous la forme d’une liste de clés du dictionnaire <strong>[dependencies]</strong> (lignes 8-22) ;</li>
 </ul>
-<p>Le script de transfert en base des données de l’administration fiscale <strong>[MainTransferAdminDataFromFile2PostgresSQLDatabase.php]</strong> devient le suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span>
-<span class="normal"><a href="#__codelineno-1-29">29</a></span>
-<span class="normal"><a href="#__codelineno-1-30">30</a></span>
-<span class="normal"><a href="#__codelineno-1-31">31</a></span>
-<span class="normal"><a href="#__codelineno-1-32">32</a></span>
-<span class="normal"><a href="#__codelineno-1-33">33</a></span>
-<span class="normal"><a href="#__codelineno-1-34">34</a></span>
-<span class="normal"><a href="#__codelineno-1-35">35</a></span>
-<span class="normal"><a href="#__codelineno-1-36">36</a></span>
-<span class="normal"><a href="#__codelineno-1-37">37</a></span>
-<span class="normal"><a href="#__codelineno-1-38">38</a></span>
-<span class="normal"><a href="#__codelineno-1-39">39</a></span>
-<span class="normal"><a href="#__codelineno-1-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">// gestion des erreurs par PHP</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">//</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;../Data/config.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4transfer&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="p">}</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="c1">// définition des constantes</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;TAXADMINDATA_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;taxAdminDataFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="c1">//</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a>  <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoTransferAdminDataFromJsonFile2Database</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">,</span> <span class="nx">TAXADMINDATA_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32"></a>  <span class="c1">// transfert des données dans la base</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33"></a>  <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">transferAdminData2Database</span><span class="p">();</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35"></a>  <span class="c1">// on affiche l&#39;erreur</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36"></a>  <span class="k">print</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="p">}</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="c1">// fin</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="k">exit</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
-<p><strong>Commentaires</strong></p>
-<p>Le code reste celui qu’il était au paragraphe <a href="#_Remplissage_de_la"><u><u>lien</u></u></a>. La seule différence est l’exploitation du fichier <strong>[config.json]</strong> en lieu et place des constantes aux lignes 18-26 ;</p>
+<p><span style="color: #000000">Le script de transfert en base des données de l’administration fiscale </span><strong><span style="color: #000000">[MainTransferAdminDataFromFile2PostgresSQLDatabase.php]</span></strong><span style="color: #000000"> devient le suivant :</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// respect strict des types déclarés des paramètres de foctions</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">declare </span><span style="color:#000000">(strict_types=1);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// espace de noms</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">namespace </span><span style="color:#000000">Application;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// gestion des erreurs par PHP</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">//</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// chemin du fichier de configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;../Data/config.json&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on récupère la configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$config = \</span><span style="font-style:italic;color:#000000">json_decode</span><span style="color:#000000">(\</span><span style="font-style:italic;color:#000000">file_get_contents</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">CONFIG_FILENAME</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on inclut les dépendances nécessaires au script</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$rootDirectory = $config</span><span style="font-weight:bold;color:#000000">[&quot;rootDirectory&quot;]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">foreach </span><span style="color:#000000">($config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies4transfer&quot;]</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">as </span><span style="color:#000000">$dependency) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">require </span><span style="color:#000000">$rootDirectory . $config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies&quot;][$dependency]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// définition des constantes</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;databaseFilename&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;TAXADMINDATA_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;taxAdminDataFileName&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">//</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $dao = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">DaoTransferAdminDataFromJsonFile2Database</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">DATABASE_CONFIG_FILENAME</span><span style="color:#000000">, </span><span style="font-style:italic;color:#0000c0">TAXADMINDATA_FILENAME</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// transfert des données dans la base</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $dao-&gt;transferAdminData2Database();</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">} </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(</span><span style="color:#005032">ExceptionImpots</span><span style="color:#000000"> $ex) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// on affiche l&#x27;erreur</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">print </span><span style="color:#000000">$ex-&gt;getMessage() . </span><span style="color:#0000c0">&quot;\n&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// fin</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">print </span><span style="color:#0000c0">&quot;Terminé\n&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">exit</span><span style="color:#000000">;</span></span>
+</code></pre></div>
+
+<p><strong><span style="color: #000000">Commentaires</span></strong></p>
+<p><span style="color: #000000">Le code reste celui qu’il était au paragraphe </span><a href="#_Remplissage_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">. La seule différence est l’exploitation du fichier </span><strong><span style="color: #000000">[config.json]</span></strong><span style="color: #000000"> en lieu et place des constantes aux lignes 18-26 ;</span></p>
 <ul>
-<li>ligne 16 : la fonction <strong>[file_get_contents]</strong> transfère le fichier <strong>[config.json]</strong> dans une chaîne de caractères. La fonction <strong>[json_decode]</strong> exploite ensuite cette chaîne pour construire le dictionnaire <strong>[$config]</strong>. Le second paramètre <strong>[true]</strong> de la fonction <strong>[json_decode]</strong> indique qu’on veut construire un dictionnaire ;</li>
-<li>lignes 19-22 : on inclut les dépendances nécessaires au script de transfert des données du fichier <strong>[taxadmindata.json]</strong> vers la base de données ;<ul>
-<li><strong>[$config[&quot;dependencies4transfer&quot;]</strong>] est le tableau des dépendances nécessaires au script de transfert. C’est une liste de <strong>clés</strong>. Les chemins des fichiers à inclure dans le projet sont trouvés dans le dictionnaire <strong>[$config[&quot;dependencies&quot;]</strong>] ;</li>
-<li>$config<strong>[&quot;rootDirectory&quot;]</strong> représente le chemin avec lequel les fichiers à inclure doivent être préfixés ;</li>
+<li><span style="color: #000000">ligne 16 : la fonction </span><strong><span style="color: #000000">[file_get_contents]</span></strong><span style="color: #000000"> transfère le fichier </span><strong><span style="color: #000000">[config.json]</span></strong><span style="color: #000000"> dans une chaîne de caractères. La fonction </span><strong><span style="color: #000000">[json_decode]</span></strong><span style="color: #000000"> exploite ensuite cette chaîne pour construire le dictionnaire </span><strong><span style="color: #000000">[$config]</span></strong><span style="color: #000000">. Le second paramètre </span><strong><span style="color: #000000">[true]</span></strong><span style="color: #000000"> de la fonction </span><strong><span style="color: #000000">[json_decode]</span></strong><span style="color: #000000"> indique qu’on veut construire un dictionnaire ;</span></li>
+<li><span style="color: #000000">lignes 19-22 : on inclut les dépendances nécessaires au script de transfert des données du fichier </span><strong><span style="color: #000000">[taxadmindata.json]</span></strong><span style="color: #000000"> vers la base de données ;</span><ul>
+<li><strong><span style="color: #000000">[$config[&quot;dependencies4transfer&quot;]</span></strong><span style="color: #000000">] est le tableau des dépendances nécessaires au script de transfert. C’est une liste de </span><strong><span style="color: #000000">clés</span></strong><span style="color: #000000">. Les chemins des fichiers à inclure dans le projet sont trouvés dans le dictionnaire </span><strong><span style="color: #000000">[$config[&quot;dependencies&quot;]</span></strong><span style="color: #000000">] ;</span></li>
+<li><span style="color: #0000ff">$config</span><strong><span style="color: #000000">[&quot;rootDirectory&quot;]</span></strong><span style="color: #000000"> représente le chemin avec lequel les fichiers à inclure doivent être préfixés ;</span></li>
 </ul>
 </li>
 </ul>
-<p>De la même façon, le script de calcul de l’impôt devient le suivant <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span>
-<span class="normal"><a href="#__codelineno-2-23">23</a></span>
-<span class="normal"><a href="#__codelineno-2-24">24</a></span>
-<span class="normal"><a href="#__codelineno-2-25">25</a></span>
-<span class="normal"><a href="#__codelineno-2-26">26</a></span>
-<span class="normal"><a href="#__codelineno-2-27">27</a></span>
-<span class="normal"><a href="#__codelineno-2-28">28</a></span>
-<span class="normal"><a href="#__codelineno-2-29">29</a></span>
-<span class="normal"><a href="#__codelineno-2-30">30</a></span>
-<span class="normal"><a href="#__codelineno-2-31">31</a></span>
-<span class="normal"><a href="#__codelineno-2-32">32</a></span>
-<span class="normal"><a href="#__codelineno-2-33">33</a></span>
-<span class="normal"><a href="#__codelineno-2-34">34</a></span>
-<span class="normal"><a href="#__codelineno-2-35">35</a></span>
-<span class="normal"><a href="#__codelineno-2-36">36</a></span>
-<span class="normal"><a href="#__codelineno-2-37">37</a></span>
-<span class="normal"><a href="#__codelineno-2-38">38</a></span>
-<span class="normal"><a href="#__codelineno-2-39">39</a></span>
-<span class="normal"><a href="#__codelineno-2-40">40</a></span>
-<span class="normal"><a href="#__codelineno-2-41">41</a></span>
-<span class="normal"><a href="#__codelineno-2-42">42</a></span>
-<span class="normal"><a href="#__codelineno-2-43">43</a></span>
-<span class="normal"><a href="#__codelineno-2-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">// gestion des erreurs par PHP</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1">//</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;../Data/config.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="p">}</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="c1">// définition des constantes</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;TAXPAYERSDATA_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;taxPayersDataFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;RESULTS_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;resultsFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ERRORS_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;errorsFileName&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a>
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="c1">//</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32"></a>  <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-2-34" name="__codelineno-2-34"></a>  <span class="c1">// création de la couche [métier]</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35"></a>  <span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
-<a id="__codelineno-2-36" name="__codelineno-2-36"></a>  <span class="c1">// calcul de l&#39;impôts en mode batch</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37"></a>  <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">executeBatchImpots</span><span class="p">(</span><span class="nx">TAXPAYERSDATA_FILENAME</span><span class="p">,</span> <span class="nx">RESULTS_FILENAME</span><span class="p">,</span> <span class="nx">ERRORS_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ExceptionImpots</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-2-39" name="__codelineno-2-39"></a>  <span class="c1">// on affiche l&#39;erreur</span>
-<a id="__codelineno-2-40" name="__codelineno-2-40"></a>  <span class="k">print</span> <span class="s2">&quot;Une erreur s&#39;est produite : &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">())</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="p">}</span>
-<a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="c1">// fin</span>
-<a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="k">print</span> <span class="s2">&quot;Terminé</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="k">exit</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
+<p><span style="color: #000000">De la même façon, le script de calcul de l’impôt devient le suivant </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</span></strong><span style="color: #000000"> :</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// respect strict des types déclarés des paramètres de foctions</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">declare </span><span style="color:#000000">(strict_types=1);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// espace de noms</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">namespace </span><span style="color:#000000">Application;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// gestion des erreurs par PHP</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// ini_set(&quot;display_errors&quot;, &quot;0&quot;);</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">//</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// chemin du fichier de configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;../Data/config.json&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on récupère la configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$config = \</span><span style="font-style:italic;color:#000000">json_decode</span><span style="color:#000000">(</span><span style="background-color:#d4d4d4;color:#000000">\</span><span style="font-style:italic;background-color:#d4d4d4;color:#000000">file_get_contents</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">CONFIG_FILENAME</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on inclut les dépendances nécessaires au script</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$rootDirectory = $config</span><span style="font-weight:bold;color:#000000">[&quot;rootDirectory&quot;]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">foreach </span><span style="color:#000000">($config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies4calculate&quot;]</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">as </span><span style="color:#000000">$dependency) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">require </span><span style="color:#000000">$rootDirectory . $config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies&quot;][$dependency]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// définition des constantes</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;databaseFilename&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;TAXPAYERSDATA_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;taxPayersDataFileName&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;RESULTS_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;resultsFileName&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;ERRORS_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;errorsFileName&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">//</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $dao = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">DaoImpotsWithTaxAdminDataInDatabase</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">DATABASE_CONFIG_FILENAME</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[métier]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $métier = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">Metier</span><span style="color:#000000">($dao);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// calcul de l&#x27;impôts en mode batch</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $métier-&gt;executeBatchImpots(</span><span style="font-style:italic;color:#0000c0">TAXPAYERSDATA_FILENAME</span><span style="color:#000000">, </span><span style="font-style:italic;color:#0000c0">RESULTS_FILENAME</span><span style="color:#000000">, </span><span style="font-style:italic;color:#0000c0">ERRORS_FILENAME</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">} </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(</span><span style="color:#005032">ExceptionImpots</span><span style="color:#000000"> $ex) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// on affiche l&#x27;erreur</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">print </span><span style="color:#0000c0">&quot;Une erreur s&#x27;est produite : &quot; </span><span style="color:#000000">. </span><span style="font-style:italic;color:#000000">utf8_encode</span><span style="color:#000000">($ex-&gt;getMessage()) . </span><span style="color:#0000c0">&quot;\n&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// fin</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">print </span><span style="color:#0000c0">&quot;Terminé\n&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">exit</span><span style="color:#000000">;</span></span>
+</code></pre></div>
+
+<p><a id="toc42689976"></a>
+<a id="toc42690362"></a>
+<a id="toc42690748"></a>
+<a id="refheadingtoc185673971629160"></a></p>
 <h2 id="152-tests-codeception">15.2. Tests [Codeception]</h2>
 <p>Cette version comme les précédentes est validée par des tests <strong>[Codeception]</strong>.</p>
 <p><img src="images/100000000000019E000002680528CFCC.png" style="width:3.83cm;height:5.702cm;" alt="Image" /></p>
+<p><a id="toc42689977"></a>
+<a id="toc42690363"></a>
+<a id="toc42690749"></a>
+<a id="refheadingtoc185675971629160"></a></p>
 <h3 id="1521-test-de-la-couche-dao">15.2.1. Test de la couche [dao]</h3>
-<p>Le test <strong>[DaoTest.php]</strong> est le suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span>
-<span class="normal"><a href="#__codelineno-3-20">20</a></span>
-<span class="normal"><a href="#__codelineno-3-21">21</a></span>
-<span class="normal"><a href="#__codelineno-3-22">22</a></span>
-<span class="normal"><a href="#__codelineno-3-23">23</a></span>
-<span class="normal"><a href="#__codelineno-3-24">24</a></span>
-<span class="normal"><a href="#__codelineno-3-25">25</a></span>
-<span class="normal"><a href="#__codelineno-3-26">26</a></span>
-<span class="normal"><a href="#__codelineno-3-27">27</a></span>
-<span class="normal"><a href="#__codelineno-3-28">28</a></span>
-<span class="normal"><a href="#__codelineno-3-29">29</a></span>
-<span class="normal"><a href="#__codelineno-3-30">30</a></span>
-<span class="normal"><a href="#__codelineno-3-31">31</a></span>
-<span class="normal"><a href="#__codelineno-3-32">32</a></span>
-<span class="normal"><a href="#__codelineno-3-33">33</a></span>
-<span class="normal"><a href="#__codelineno-3-34">34</a></span>
-<span class="normal"><a href="#__codelineno-3-35">35</a></span>
-<span class="normal"><a href="#__codelineno-3-36">36</a></span>
-<span class="normal"><a href="#__codelineno-3-37">37</a></span>
-<span class="normal"><a href="#__codelineno-3-38">38</a></span>
-<span class="normal"><a href="#__codelineno-3-39">39</a></span>
-<span class="normal"><a href="#__codelineno-3-40">40</a></span>
-<span class="normal"><a href="#__codelineno-3-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// respect strict des types déclarés des paramètres de fonctions</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">// définition de constantes</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="nx">ROOT</span><span class="o">.</span><span class="s2">&quot;/Data/config.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="p">}</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="c1">// autres constantes</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1">// test -----------------------------------------------------</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="k">class</span> <span class="nc">DaoTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a>  <span class="c1">// TaxAdminData</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>  <span class="k">private</span> <span class="nv">$taxAdminData</span><span class="p">;</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31"></a>    <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">taxAdminData</span> <span class="o">=</span> <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">getTaxAdminData</span><span class="p">();</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34"></a>  <span class="p">}</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35"></a>
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  <span class="c1">// tests</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">testTaxAdminData</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a>    <span class="nx">…</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39"></a>  <span class="p">}</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40"></a>
-<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<p><strong>Commentaires</strong></p>
+<p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[DaoTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// respect strict des types déclarés des paramètres de fonctions</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">declare </span><span style="color:#000000">(strict_types=1);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// espace de noms</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">namespace </span><span style="color:#000000">Application;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// définition de constantes</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;ROOT&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// chemin du fichier de configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="font-style:italic;color:#0000c0">ROOT</span><span style="color:#000000">.</span><span style="color:#0000c0">&quot;/Data/config.json&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on récupère la configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$config = \</span><span style="font-style:italic;color:#000000">json_decode</span><span style="color:#000000">(\</span><span style="font-style:italic;color:#000000">file_get_contents</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">CONFIG_FILENAME</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on inclut les dépendances nécessaires au script</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$rootDirectory = $config</span><span style="font-weight:bold;color:#000000">[&quot;rootDirectory&quot;]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">foreach </span><span style="color:#000000">($config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies4calculate&quot;]</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">as </span><span style="color:#000000">$dependency) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">require </span><span style="color:#000000">$rootDirectory . $config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies&quot;][$dependency]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// autres constantes</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;databaseFilename&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// test -----------------------------------------------------</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#005032">DaoTest</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">\Codeception\Test\</span><span style="color:#005032">Unit</span><span style="color:#000000"> {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// TaxAdminData</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#008040">private </span><span style="color:#0000c0">$taxAdminData</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000"> __construct() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">parent</span><span style="color:#000000">::</span><span style="font-style:italic;color:#000000">__construct</span><span style="color:#000000">();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $dao = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">DaoImpotsWithTaxAdminDataInDatabase</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">DATABASE_CONFIG_FILENAME</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $this-&gt;</span><span style="color:#0000c0">taxAdminData</span><span style="color:#000000"> = $dao-&gt;getTaxAdminData();</span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// tests</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000"> testTaxAdminData() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    …</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+</code></pre></div>
+
+<p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li>lignes 9-21 : définition de l’environnement du test. Nous utilisons le même, sans la couche <strong>[métier]</strong>, que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Implémentation"><u><u>lien</u></u></a> ;</li>
-<li>lignes 29-34 : construction de la couche <strong>[dao]</strong> ;</li>
-<li>ligne 33 : l’attribut <strong>[$this→taxAdminData]</strong> contient les données à tester ;</li>
-<li>lignes 37-39 : la méthode <strong>[testTaxAdminData]</strong> est celle décrite au paragraphe <a href="#_Tests_de_la"><u><u>lien</u></u></a> ;</li>
+<li><span style="color: #000000">lignes 9-21 : définition de l’environnement du test. Nous utilisons le même, sans la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000">, que celui utilisé par le script principal </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</span></strong><span style="color: #000000"> décrit au paragraphe </span><a href="#_Implémentation"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+<li><span style="color: #000000">lignes 29-34 : construction de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
+<li><span style="color: #000000">ligne 33 : l’attribut </span><strong><span style="color: #000000">[$this→taxAdminData]</span></strong><span style="color: #000000"> contient les données à tester ;</span></li>
+<li><span style="color: #000000">lignes 37-39 : la méthode </span><strong><span style="color: #000000">[testTaxAdminData]</span></strong><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
 </ul>
-<p>Les résultats du test sont les suivants :</p>
+<p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/1000000000000670000001BA029FABB4.png" style="width:15.26cm;height:4.091cm;" alt="Image" /></p>
+<p><a id="toc42689978"></a>
+<a id="toc42690364"></a>
+<a id="toc42690750"></a>
+<a id="refheadingtoc185677971629160"></a></p>
 <h3 id="1522-test-de-la-couche-metier">15.2.2. Test de la couche [métier]</h3>
-<p>Le test <strong>[MetierTest.php]</strong> est le suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span>
-<span class="normal"><a href="#__codelineno-4-15">15</a></span>
-<span class="normal"><a href="#__codelineno-4-16">16</a></span>
-<span class="normal"><a href="#__codelineno-4-17">17</a></span>
-<span class="normal"><a href="#__codelineno-4-18">18</a></span>
-<span class="normal"><a href="#__codelineno-4-19">19</a></span>
-<span class="normal"><a href="#__codelineno-4-20">20</a></span>
-<span class="normal"><a href="#__codelineno-4-21">21</a></span>
-<span class="normal"><a href="#__codelineno-4-22">22</a></span>
-<span class="normal"><a href="#__codelineno-4-23">23</a></span>
-<span class="normal"><a href="#__codelineno-4-24">24</a></span>
-<span class="normal"><a href="#__codelineno-4-25">25</a></span>
-<span class="normal"><a href="#__codelineno-4-26">26</a></span>
-<span class="normal"><a href="#__codelineno-4-27">27</a></span>
-<span class="normal"><a href="#__codelineno-4-28">28</a></span>
-<span class="normal"><a href="#__codelineno-4-29">29</a></span>
-<span class="normal"><a href="#__codelineno-4-30">30</a></span>
-<span class="normal"><a href="#__codelineno-4-31">31</a></span>
-<span class="normal"><a href="#__codelineno-4-32">32</a></span>
-<span class="normal"><a href="#__codelineno-4-33">33</a></span>
-<span class="normal"><a href="#__codelineno-4-34">34</a></span>
-<span class="normal"><a href="#__codelineno-4-35">35</a></span>
-<span class="normal"><a href="#__codelineno-4-36">36</a></span>
-<span class="normal"><a href="#__codelineno-4-37">37</a></span>
-<span class="normal"><a href="#__codelineno-4-38">38</a></span>
-<span class="normal"><a href="#__codelineno-4-39">39</a></span>
-<span class="normal"><a href="#__codelineno-4-40">40</a></span>
-<span class="normal"><a href="#__codelineno-4-41">41</a></span>
-<span class="normal"><a href="#__codelineno-4-42">42</a></span>
-<span class="normal"><a href="#__codelineno-4-43">43</a></span>
-<span class="normal"><a href="#__codelineno-4-44">44</a></span>
-<span class="normal"><a href="#__codelineno-4-45">45</a></span>
-<span class="normal"><a href="#__codelineno-4-46">46</a></span>
-<span class="normal"><a href="#__codelineno-4-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">// définition de constantes</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="nx">ROOT</span> <span class="o">.</span> <span class="s2">&quot;/Data/config.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="c1">// on récupère la configuration</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nx">\file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="c1">// on inclut les dépendances nécessaires au script</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;rootDirectory&quot;</span><span class="p">];</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies4calculate&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>  <span class="k">require</span> <span class="nv">$rootDirectory</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">][</span><span class="nv">$dependency</span><span class="p">];</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="p">}</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="c1">// autres constantes</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$rootDirectory</span><span class="s2">/</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="c1">// classe de test</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="k">class</span> <span class="nc">MetierTest</span> <span class="k">extends</span> <span class="nx">\Codeception\Test\Unit</span> <span class="p">{</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a>  <span class="c1">// couche métier</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a>  <span class="k">private</span> <span class="nv">$métier</span><span class="p">;</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a>    <span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DaoImpotsWithTaxAdminDataInDatabase</span><span class="p">(</span><span class="nx">DATABASE_CONFIG_FILENAME</span><span class="p">);</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="c1">// création de la couche [métier]</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Metier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a>  <span class="p">}</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a>
-<a id="__codelineno-4-36" name="__codelineno-4-36"></a>  <span class="c1">// tests</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test1</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="nx">…</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39"></a>  <span class="p">}</span>
-<a id="__codelineno-4-40" name="__codelineno-4-40"></a>
-<a id="__codelineno-4-41" name="__codelineno-4-41"></a>  <span class="o">-----------------------------------</span>
-<a id="__codelineno-4-42" name="__codelineno-4-42"></a>
-<a id="__codelineno-4-43" name="__codelineno-4-43"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">test11</span><span class="p">()</span> <span class="p">{</span>
-<a id="__codelineno-4-44" name="__codelineno-4-44"></a>    <span class="nx">…</span>
-<a id="__codelineno-4-45" name="__codelineno-4-45"></a>  <span class="p">}</span>
-<a id="__codelineno-4-46" name="__codelineno-4-46"></a>
-<a id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<p><strong>Commentaires</strong></p>
+<p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[MetierTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// respect strict des types déclarés des paramètres de foctions</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">declare </span><span style="color:#000000">(strict_types=1);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// espace de noms</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">namespace </span><span style="color:#000000">Application;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// définition de constantes</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;ROOT&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-07&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// chemin du fichier de configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="font-style:italic;color:#0000c0">ROOT</span><span style="color:#000000"> . </span><span style="color:#0000c0">&quot;/Data/config.json&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on récupère la configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$config = \</span><span style="font-style:italic;color:#000000">json_decode</span><span style="color:#000000">(\</span><span style="font-style:italic;color:#000000">file_get_contents</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">CONFIG_FILENAME</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on inclut les dépendances nécessaires au script</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$rootDirectory = $config</span><span style="font-weight:bold;color:#000000">[&quot;rootDirectory&quot;]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">foreach </span><span style="color:#000000">($config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies4calculate&quot;]</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">as </span><span style="color:#000000">$dependency) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">require </span><span style="color:#000000">$rootDirectory . $config</span><span style="font-weight:bold;color:#000000">[&quot;dependencies&quot;][$dependency]</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// autres constantes</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;DATABASE_CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$rootDirectory</span><span style="color:#0000c0">/</span><span style="color:#000000">{$config</span><span style="font-weight:bold;color:#000000">[&quot;databaseFilename&quot;]</span><span style="color:#000000">}</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// classe de test</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#005032">MetierTest</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="text-decoration:underline;color:#000000">\Codeception\Test\</span><span style="text-decoration:underline;color:#005032">Unit</span><span style="color:#000000"> {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// couche métier</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#008040">private </span><span style="color:#0000c0">$métier</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000"> __construct() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">parent</span><span style="color:#000000">::</span><span style="font-style:italic;color:#000000">__construct</span><span style="color:#000000">();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $dao = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">DaoImpotsWithTaxAdminDataInDatabase</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">DATABASE_CONFIG_FILENAME</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[métier]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $this-&gt;</span><span style="color:#0000c0">métier</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">Metier</span><span style="color:#000000">($dao);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// tests</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000"> test1() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    …</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  -----------------------------------</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000"> test11() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    …</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+</code></pre></div>
+
+<p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li>lignes 9-21 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal <strong>[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</strong> décrit au paragraphe <a href="#_Implémentation"><u><u>lien</u></u></a> ;</li>
-<li>lignes 28-34 : construction de la couche <strong>[dao]</strong> ;</li>
-<li>ligne 33 : l’attribut <strong>[$this→métier]</strong> est une référence sur la couche <strong>[métier]</strong> à tester ;</li>
-<li>lignes 37-45 : les méthodes <strong>[test1, test2…, test11]</strong> sont celles décrites au paragraphe <a href="#_Tests_de_la_1"><u><u>lien</u></u></a> ;</li>
+<li><span style="color: #000000">lignes 9-21 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</span></strong><span style="color: #000000"> décrit au paragraphe </span><a href="#_Implémentation"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+<li><span style="color: #000000">lignes 28-34 : construction de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
+<li><span style="color: #000000">ligne 33 : l’attribut </span><strong><span style="color: #000000">[$this→métier]</span></strong><span style="color: #000000"> est une référence sur la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> à tester ;</span></li>
+<li><span style="color: #000000">lignes 37-45 : les méthodes </span><strong><span style="color: #000000">[test1, test2…, test11]</span></strong><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
 </ul>
-<p>Les résultats du test sont les suivants :</p>
+<p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/10000000000006D7000001D92E33D431.png" style="width:16.221cm;height:4.381cm;" alt="Image" /></p>
 
 
@@ -1601,7 +1420,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>

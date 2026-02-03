@@ -330,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d&#x27;un environnement de travail
+    2. Installation d'un environnement de travail
   
 
     
@@ -384,14 +384,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d&#x27;application – versions 1 et 2
+    4. Exercice d'application – versions 1 et 2
   
 
     
@@ -492,14 +492,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
+      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d&#x27;application – version 3
+    8. Exercice d'application – version 3
   
 
     
@@ -974,85 +974,58 @@
   
 
 
+<p><a id="toc42690096"></a>
+<a id="toc42690482"></a>
+<a id="toc42690868"></a>
+<a id="refheading400021881943603"></a></p>
 <h1 id="21-traitement-de-documents-xml">21. Traitement de documents XML</h1>
 <p><img src="images/10000000000001C8000002BEFCF65A2E.png" style="width:4.22cm;height:6.501cm;" alt="Image" /></p>
 <p>Nous considérons le fichier XML <strong>[data.xml]</strong> suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">&lt;tribu&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;enseignant&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nt">&lt;personne</span><span class="w"> </span><span class="na">sexe=</span><span class="s">&quot;M&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">            </span><span class="nt">&lt;nom&gt;</span>dupont<span class="nt">&lt;/nom&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">            </span><span class="nt">&lt;prenom&gt;</span>jean<span class="nt">&lt;/prenom&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">            </span><span class="nt">&lt;age&gt;</span>28<span class="nt">&lt;/age&gt;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">            </span>ceci<span class="w"> </span>est<span class="w"> </span>un<span class="w"> </span>commentaire
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="nt">&lt;/personne&gt;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="nt">&lt;section&gt;</span>27<span class="nt">&lt;/section&gt;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="nt">&lt;/enseignant&gt;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="nt">&lt;etudiant&gt;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="nt">&lt;personne</span><span class="w"> </span><span class="na">sexe=</span><span class="s">&quot;F&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">            </span><span class="nt">&lt;nom&gt;</span>martin<span class="nt">&lt;/nom&gt;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">            </span><span class="nt">&lt;prenom&gt;</span>charline<span class="nt">&lt;/prenom&gt;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">            </span><span class="nt">&lt;age&gt;</span>22<span class="nt">&lt;/age&gt;</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="nt">&lt;/personne&gt;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="nt">&lt;formation&gt;</span>dess<span class="w"> </span>IAIE<span class="nt">&lt;/formation&gt;</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="nt">&lt;/etudiant&gt;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="nt">&lt;/tribu&gt;</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#800080">&lt;tribu&gt;</span><span style="color:#800080"></span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;enseignant&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800080">&lt;personne</span><span style="color:#008080"> </span><span style="color:#808000">sexe</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">M</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800080">&lt;nom&gt;</span><span style="color:#000000">dupont</span><span style="color:#800080">&lt;/nom&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800080">&lt;prenom&gt;</span><span style="color:#000000">jean</span><span style="color:#800080">&lt;/prenom&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800080">&lt;age&gt;</span><span style="color:#000000">28</span><span style="color:#800080">&lt;/age&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            ceci est un commentaire</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800080">&lt;/personne&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800080">&lt;section&gt;</span><span style="color:#000000">27</span><span style="color:#800080">&lt;/section&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;/enseignant&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;etudiant&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800080">&lt;personne</span><span style="color:#008080"> </span><span style="color:#808000">sexe</span><span style="color:#800080">=&quot;</span><span style="color:#0000ff">F</span><span style="color:#800080">&quot;&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800080">&lt;nom&gt;</span><span style="color:#000000">martin</span><span style="color:#800080">&lt;/nom&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800080">&lt;prenom&gt;</span><span style="color:#000000">charline</span><span style="color:#800080">&lt;/prenom&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800080">&lt;age&gt;</span><span style="color:#000000">22</span><span style="color:#800080">&lt;/age&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800080">&lt;/personne&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800080">&lt;formation&gt;</span><span style="color:#000000">dess IAIE</span><span style="color:#800080">&lt;/formation&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800080">&lt;/etudiant&gt;</span></span>
+<span class="odt-code-line"><span style="color:#800080">&lt;/tribu&gt;</span><span style="color:#800080"></span></span>
+</code></pre></div>
+
 <p>Nous analysons ce document avec le script suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">// fichier XML à exploiter</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nv">$FILE_NAME</span> <span class="o">=</span> <span class="s2">&quot;data.xml&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">// exploitation</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nv">$xml</span> <span class="o">=</span> <span class="nb">simplexml_load_file</span><span class="p">(</span><span class="nv">$FILE_NAME</span><span class="p">);</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="nb">print_r</span><span class="p">(</span><span class="nv">$xml</span><span class="p">);</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nb">print_r</span><span class="p">(</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">enseignant</span><span class="o">-&gt;</span><span class="na">personne</span><span class="p">[</span><span class="s1">&#39;sexe&#39;</span><span class="p">]);</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nv">$nom</span><span class="o">=</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">enseignant</span><span class="o">-&gt;</span><span class="na">personne</span><span class="o">-&gt;</span><span class="na">nom</span><span class="p">;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">print</span> <span class="s2">&quot;nom=</span><span class="si">$nom</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="nv">$sexe</span><span class="o">=</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">enseignant</span><span class="o">-&gt;</span><span class="na">personne</span><span class="p">[</span><span class="s1">&#39;sexe&#39;</span><span class="p">];</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="k">print</span> <span class="s2">&quot;sexe=</span><span class="si">$sexe</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nv">$formation</span><span class="o">=</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">etudiant</span><span class="o">-&gt;</span><span class="na">formation</span><span class="p">;</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="k">print</span> <span class="s2">&quot;formation=</span><span class="si">$formation</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="k">print</span> <span class="s2">&quot;isset=&quot;</span><span class="o">.</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">enseignant</span><span class="o">-&gt;</span><span class="na">personne</span><span class="o">-&gt;</span><span class="na">nom</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="k">print</span> <span class="s2">&quot;isset=&quot;</span><span class="o">.</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$xml</span><span class="o">-&gt;</span><span class="na">enseignant</span><span class="o">-&gt;</span><span class="na">personne</span><span class="o">-&gt;</span><span class="na">xx</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
-<p>Nous utilisons ici un module PHP appelé <strong>[simpleXML]</strong> qui permet d&#x27;exploiter des documents XML.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#808080">// fichier XML à exploiter</span><span style="font-style:italic;color:#808080"></span></span>
+<span class="odt-code-line"><span style="color:#0000ff">$FILE_NAME</span><span style="color:#008080"> </span>=<span style="color:#008080"> </span><span style="color:#008000">&quot;data.xml&quot;</span>;</span>
+<span class="odt-code-line"><span style="font-style:italic;color:#808080">// exploitation</span><span style="font-style:italic;color:#808080"></span></span>
+<span class="odt-code-line"><span style="color:#0000ff">$xml</span><span style="color:#008080"> </span>=<span style="color:#008080"> </span>simplexml_load_file(<span style="color:#0000ff">$FILE_NAME</span>);</span>
+<span class="odt-code-line">print_r(<span style="color:#0000ff">$xml</span>);</span>
+<span class="odt-code-line">print_r(<span style="color:#0000ff">$xml</span>-&gt;enseignant-&gt;personne<span style="font-weight:bold">[&#x27;sexe&#x27;]</span>);</span>
+<span class="odt-code-line"><span style="color:#0000ff">$nom</span>=<span style="color:#0000ff">$xml</span>-&gt;enseignant-&gt;personne-&gt;nom;</span>
+<span class="odt-code-line"><span style="font-weight:bold">print</span><span style="color:#008080"> </span><span style="color:#008000">&quot;nom=</span><span style="color:#0000ff">$nom</span><span style="color:#008000">\n&quot;</span>;</span>
+<span class="odt-code-line"><span style="color:#0000ff">$sexe</span>=<span style="color:#0000ff">$xml</span>-&gt;enseignant-&gt;personne<span style="font-weight:bold">[&#x27;sexe&#x27;]</span>;</span>
+<span class="odt-code-line"><span style="font-weight:bold">print</span><span style="color:#008080"> </span><span style="color:#008000">&quot;sexe=</span><span style="color:#0000ff">$sexe</span><span style="color:#008000">\n&quot;</span>;</span>
+<span class="odt-code-line"><span style="color:#0000ff">$formation</span>=<span style="color:#0000ff">$xml</span>-&gt;etudiant-&gt;formation;</span>
+<span class="odt-code-line"><span style="font-weight:bold">print</span><span style="color:#008080"> </span><span style="color:#008000">&quot;formation=</span><span style="color:#0000ff">$formation</span><span style="color:#008000">\n&quot;</span>;</span>
+<span class="odt-code-line"><span style="font-weight:bold">print</span><span style="color:#008080"> </span><span style="color:#008000">&quot;isset=&quot;</span>.<span style="font-weight:bold">isset</span>(<span style="color:#0000ff">$xml</span>-&gt;enseignant-&gt;personne-&gt;nom).<span style="color:#008000">&quot;\n&quot;</span>;</span>
+<span class="odt-code-line"><span style="font-weight:bold">print</span><span style="color:#008080"> </span><span style="color:#008000">&quot;isset=&quot;</span>.<span style="font-weight:bold">isset</span>(<span style="color:#0000ff">$xml</span>-&gt;enseignant-&gt;personne-&gt;xx).<span style="color:#008000">&quot;\n&quot;</span>;</span>
+</code></pre></div>
+
+<p><span style="color: #000000">Nous utilisons ici un module PHP appelé </span><strong><span style="color: #000000">[simpleXML]</span></strong><span style="color: #000000"> qui permet d&#x27;exploiter des documents XML.</span></p>
 <ul>
 <li>ligne 6 : chargement du fichier XML ;</li>
 <li>ligne 7 : affichage du document XML ;</li>
@@ -1061,98 +1034,55 @@
 </ul>
 <p>On notera que la balise racine &lt;tribu&gt; n’intervient pas dans le code. Elle pourrait être n’importe quoi ;</p>
 <p><strong>Résultats console</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span>
-<span class="normal"><a href="#__codelineno-2-23">23</a></span>
-<span class="normal"><a href="#__codelineno-2-24">24</a></span>
-<span class="normal"><a href="#__codelineno-2-25">25</a></span>
-<span class="normal"><a href="#__codelineno-2-26">26</a></span>
-<span class="normal"><a href="#__codelineno-2-27">27</a></span>
-<span class="normal"><a href="#__codelineno-2-28">28</a></span>
-<span class="normal"><a href="#__codelineno-2-29">29</a></span>
-<span class="normal"><a href="#__codelineno-2-30">30</a></span>
-<span class="normal"><a href="#__codelineno-2-31">31</a></span>
-<span class="normal"><a href="#__codelineno-2-32">32</a></span>
-<span class="normal"><a href="#__codelineno-2-33">33</a></span>
-<span class="normal"><a href="#__codelineno-2-34">34</a></span>
-<span class="normal"><a href="#__codelineno-2-35">35</a></span>
-<span class="normal"><a href="#__codelineno-2-36">36</a></span>
-<span class="normal"><a href="#__codelineno-2-37">37</a></span>
-<span class="normal"><a href="#__codelineno-2-38">38</a></span>
-<span class="normal"><a href="#__codelineno-2-39">39</a></span>
-<span class="normal"><a href="#__codelineno-2-40">40</a></span>
-<span class="normal"><a href="#__codelineno-2-41">41</a></span>
-<span class="normal"><a href="#__codelineno-2-42">42</a></span>
-<span class="normal"><a href="#__codelineno-2-43">43</a></span>
-<span class="normal"><a href="#__codelineno-2-44">44</a></span>
-<span class="normal"><a href="#__codelineno-2-45">45</a></span>
-<span class="normal"><a href="#__codelineno-2-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>SimpleXMLElement Object
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>(
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    [enseignant] =&gt; SimpleXMLElement Object
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>        (
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>            [personne] =&gt; SimpleXMLElement Object
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>                (
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>                    [@attributes] =&gt; Array
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>                        (
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>                            [sexe] =&gt; M
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>                        )
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>                    [nom] =&gt; dupont
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>                    [prenom] =&gt; jean
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>                    [age] =&gt; 28
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>                )
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>            [section] =&gt; 27
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>        )
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    [etudiant] =&gt; SimpleXMLElement Object
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>        (
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a>            [personne] =&gt; SimpleXMLElement Object
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>                (
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a>                    [@attributes] =&gt; Array
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a>                        (
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a>                            [sexe] =&gt; F
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a>                        )
-<a id="__codelineno-2-28" name="__codelineno-2-28"></a>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a>                    [nom] =&gt; martin
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a>                    [prenom] =&gt; charline
-<a id="__codelineno-2-31" name="__codelineno-2-31"></a>                    [age] =&gt; 22
-<a id="__codelineno-2-32" name="__codelineno-2-32"></a>                )
-<a id="__codelineno-2-33" name="__codelineno-2-33"></a>
-<a id="__codelineno-2-34" name="__codelineno-2-34"></a>            [formation] =&gt; dess IAIE
-<a id="__codelineno-2-35" name="__codelineno-2-35"></a>        )
-<a id="__codelineno-2-36" name="__codelineno-2-36"></a>
-<a id="__codelineno-2-37" name="__codelineno-2-37"></a>)
-<a id="__codelineno-2-38" name="__codelineno-2-38"></a>SimpleXMLElement Object
-<a id="__codelineno-2-39" name="__codelineno-2-39"></a>(
-<a id="__codelineno-2-40" name="__codelineno-2-40"></a>    [0] =&gt; M
-<a id="__codelineno-2-41" name="__codelineno-2-41"></a>)
-<a id="__codelineno-2-42" name="__codelineno-2-42"></a>nom=dupont
-<a id="__codelineno-2-43" name="__codelineno-2-43"></a>sexe=M
-<a id="__codelineno-2-44" name="__codelineno-2-44"></a>formation=dess IAIE
-<a id="__codelineno-2-45" name="__codelineno-2-45"></a>isset=1
-<a id="__codelineno-2-46" name="__codelineno-2-46"></a>isset=
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">SimpleXMLElement Object</span>
+<span class="odt-code-line">(</span>
+<span class="odt-code-line">    <span style="font-weight:bold">[enseignant]</span> =&gt; SimpleXMLElement Object</span>
+<span class="odt-code-line">        (</span>
+<span class="odt-code-line">            <span style="font-weight:bold">[personne]</span> =&gt; SimpleXMLElement Object</span>
+<span class="odt-code-line">                (</span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[@attributes]</span> =&gt; Array</span>
+<span class="odt-code-line">                        (</span>
+<span class="odt-code-line">                            <span style="font-weight:bold">[sexe]</span> =&gt; M</span>
+<span class="odt-code-line">                        )</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[nom]</span> =&gt; dupont</span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[prenom]</span> =&gt; jean</span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[age]</span> =&gt; 28</span>
+<span class="odt-code-line">                )</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold">[section]</span> =&gt; 27</span>
+<span class="odt-code-line">        )</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="font-weight:bold">[etudiant]</span> =&gt; SimpleXMLElement Object</span>
+<span class="odt-code-line">        (</span>
+<span class="odt-code-line">            <span style="font-weight:bold">[personne]</span> =&gt; SimpleXMLElement Object</span>
+<span class="odt-code-line">                (</span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[@attributes]</span> =&gt; Array</span>
+<span class="odt-code-line">                        (</span>
+<span class="odt-code-line">                            <span style="font-weight:bold">[sexe]</span> =&gt; F</span>
+<span class="odt-code-line">                        )</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[nom]</span> =&gt; martin</span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[prenom]</span> =&gt; charline</span>
+<span class="odt-code-line">                    <span style="font-weight:bold">[age]</span> =&gt; 22</span>
+<span class="odt-code-line">                )</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="font-weight:bold">[formation]</span> =&gt; dess IAIE</span>
+<span class="odt-code-line">        )</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">)</span>
+<span class="odt-code-line">SimpleXMLElement Object</span>
+<span class="odt-code-line">(</span>
+<span class="odt-code-line">    <span style="font-weight:bold">[0]</span> =&gt; M</span>
+<span class="odt-code-line">)</span>
+<span class="odt-code-line">nom=dupont</span>
+<span class="odt-code-line">sexe=M</span>
+<span class="odt-code-line">formation=dess IAIE</span>
+<span class="odt-code-line">isset=1</span>
+<span class="odt-code-line">isset=</span>
+</code></pre></div>
+
 <ul>
 <li>lignes 1-37 : le document XML sous la forme d&#x27;un objet de type <strong>[simpleXML]</strong>.</li>
 </ul>
@@ -1214,7 +1144,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>

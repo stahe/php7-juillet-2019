@@ -330,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d&#x27;un environnement de travail
+    2. Installation d'un environnement de travail
   
 
     
@@ -384,14 +384,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d&#x27;application – versions 1 et 2
+    4. Exercice d'application – versions 1 et 2
   
 
     
@@ -492,14 +492,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
+      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d&#x27;application – version 3
+    8. Exercice d'application – version 3
   
 
     
@@ -1066,7 +1066,15 @@
   
 
 
+<p><a id="toc42689907"></a>
+<a id="toc42690293"></a>
+<a id="toc42690679"></a>
+<a id="refheadingtoc788352244347140"></a></p>
 <h1 id="10-applications-en-couches">10. Applications en couches</h1>
+<p><a id="toc42689908"></a>
+<a id="toc42690294"></a>
+<a id="toc42690680"></a>
+<a id="refheadingtoc788372244347140"></a></p>
 <h2 id="101-introduction">10.1. Introduction</h2>
 <p><img src="images/1000000000000183000001D944836178.png" style="width:3.581cm;height:4.381cm;" alt="Image" /></p>
 <p>Nous allons découvrir maintenant comment structurer une application PHP en couches :</p>
@@ -1097,246 +1105,169 @@
 <p><img src="images/100000000000012A00000145FDB3E370.png" style="width:2.761cm;height:3.01cm;" alt="Image" /></p>
 <p>L’application va implémenter la structure en couches suivante :</p>
 <p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" /></p>
+<p><a id="toc42689909"></a>
+<a id="toc42690295"></a>
+<a id="toc42690681"></a>
+<a id="refheadingtoc788392244347140"></a></p>
 <h2 id="102-objets-echanges-entre-couches">10.2. Objets échangés entre couches</h2>
 <p>En temps normal, les couches échangent divers objets. Ici elles échangeront la classe suivante <strong>[Personne.php]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">// une personne</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">class</span> <span class="nc">Personne</span> <span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  <span class="c1">// identifiant</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>  <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>  <span class="c1">// constructeur</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>  <span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>  <span class="c1">// toString</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>  <span class="k">public</span> <span class="k">function</span> <span class="fm">__toString</span><span class="p">()</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="k">return</span> <span class="s2">&quot;[Personne(</span><span class="si">$this-&gt;id</span><span class="s2">)]&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>  <span class="p">}</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// une personne</span>
+<span class="odt-code-line"><span style="font-weight:bold">class</span><span style="color:#008080"> </span>Personne<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// identifiant</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">private</span><span style="color:#008080"> </span><span style="color:#0000ff">$id</span>;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// constructeur</span>
+<span class="odt-code-line"><span style="color:#008080">  </span>public<span style="color:#008080"> </span>function<span style="color:#008080"> </span>__construct(int<span style="color:#008080"> </span><span style="color:#0000ff">$id</span>)<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span>$this<span style="color:#000000">-&gt;id</span><span style="color:#008080"> </span><span style="color:#000000">=</span><span style="color:#008080"> </span>$id<span style="color:#000000">;</span></span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// toString</span>
+<span class="odt-code-line"><span style="color:#008080">  </span>public<span style="color:#008080"> </span>function<span style="color:#008080"> </span>__toString():<span style="color:#008080"> </span>string<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">return</span><span style="color:#008080"> </span>&quot;[Personne($this-&gt;id)]&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>ligne 6 : la personne n’a qu’un attribut, son identifiant <strong>[$id]</strong>. On va supposer que celui-ci désigne une personne unique dans un entrepôt de données ;</li>
 <li>lignes 9-11 : le constructeur qui permet de construire un type <strong>[Personne]</strong> avec son identifiant ;</li>
 <li>lignes 14-16 : la méthode <strong>[__toString]</strong> qui affiche l’identifiant de la personne ;</li>
 </ul>
+<p><a id="toc42689910"></a>
+<a id="toc42690296"></a>
+<a id="toc42690682"></a>
+<a id="refheadingtoc788412244347140"></a></p>
 <h2 id="103-couche-dao">10.3. Couche [dao]</h2>
 <p>L’interface <strong>[IDao]</strong> implémentée par la couche <strong>[dao, 1]</strong> est la suivante <strong>[IDao.php]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">// couche [dao] ------------------------</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">interface</span> <span class="nx">IDao</span> <span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>  <span class="c1">// récupération d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>  <span class="c1">// on passe l&#39;identifiant de la personne</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span><span class="p">;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>  <span class="c1">// sauvegarde d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// couche <span style="font-weight:bold">[dao]</span> ------------------------</span>
+<span class="odt-code-line">interface<span style="color:#008080"> </span>IDao<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// récupération d&#x27;une personne dans un entrepôt externe</span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// on passe l&#x27;identifiant de la personne</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>get(<span style="font-weight:bold">int</span><span style="color:#008080"> </span><span style="color:#0000ff">$id</span>):<span style="color:#008080"> </span>Personne;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// sauvegarde d&#x27;une personne dans un entrepôt externe</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>save(Personne<span style="color:#008080"> </span><span style="color:#0000ff">$p</span>):<span style="color:#008080"> </span>void;</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p>Cette interface est implémentée par la classe <strong>[Dao1]</strong> suivante <strong>[Dao1.php]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">class</span> <span class="nc">Dao1</span> <span class="k">implements</span> <span class="nx">IDao</span> <span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>  <span class="c1">// sauvegarde d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao1] : Sauvegarde de la personne </span><span class="si">$p</span><span class="s2"> en base de données [locale]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>  <span class="p">}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>  <span class="c1">// récupération d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span> <span class="p">{</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao1] : Récupération de la personne d&#39;identité (</span><span class="si">$id</span><span class="s2">) en base de données [locale]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="k">return</span> <span class="k">new</span> <span class="nx">Personne</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>  <span class="p">}</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">class<span style="color:#008080"> </span>Dao1<span style="color:#008080"> </span>implements<span style="color:#008080"> </span>IDao<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// sauvegarde d&#x27;une personne dans un entrepôt externe</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>save(Personne<span style="color:#008080"> </span><span style="color:#0000ff">$p</span>):<span style="color:#008080"> </span>void<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">print</span><span style="color:#008080"> </span>&quot;<span style="font-weight:bold">[Dao1]</span> : Sauvegarde de la personne <span style="color:#0000ff">$p</span> en base de données <span style="font-weight:bold">[locale]</span>\n&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// récupération d&#x27;une personne dans un entrepôt externe</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>get(<span style="font-weight:bold">int</span><span style="color:#008080"> </span><span style="color:#0000ff">$id</span>):<span style="color:#008080"> </span>Personne<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">print</span><span style="color:#008080"> </span>&quot;<span style="font-weight:bold">[Dao1]</span> : Récupération de la personne d&#x27;identité (<span style="color:#0000ff">$id</span>) en base de données <span style="font-weight:bold">[locale]</span>\n&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold">return</span><span style="color:#008080"> </span><span style="font-weight:bold">new</span><span style="color:#008080"> </span>Personne(<span style="color:#0000ff">$id</span>);</span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>la classe n’interagit pas avec un entrepôt de données. On se contente d’afficher des messages pour suivre le déroulement du code (lignes 7 et 12) ;</li>
 <li>ligne 13 : on rend bien une personne ayant l’identifiant passé en paramètre à la méthode (ligne 11) ;</li>
 </ul>
 <p>Nous implémentons également l’interface <strong>[IDao]</strong> avec la classe <strong>[Dao2]</strong> suivante <strong>[Dao2.php]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">class</span> <span class="nc">Dao2</span> <span class="k">implements</span> <span class="nx">IDao</span> <span class="p">{</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>  <span class="c1">// sauvegarde d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao2] : Sauvegarde de la personne </span><span class="si">$p</span><span class="s2"> en base de données [distante]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>  <span class="p">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>  <span class="c1">// récupération d&#39;une personne dans un entrepôt externe</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span> <span class="p">{</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="k">print</span> <span class="s2">&quot;[Dao2] : Récupération de la personne d&#39;identité (</span><span class="si">$id</span><span class="s2">) en base de données [distante]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="k">return</span> <span class="k">new</span> <span class="nx">Personne</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>  <span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">class<span style="color:#008080"> </span>Dao2<span style="color:#008080"> </span>implements<span style="color:#008080"> </span>IDao<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// sauvegarde d&#x27;une personne dans un entrepôt externe</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>save(Personne<span style="color:#008080"> </span><span style="color:#0000ff">$p</span>):<span style="color:#008080"> </span>void<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">print</span><span style="color:#008080"> </span>&quot;<span style="font-weight:bold">[Dao2]</span> : Sauvegarde de la personne <span style="color:#0000ff">$p</span> en base de données <span style="font-weight:bold">[distante]</span>\n&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// récupération d&#x27;une personne dans un entrepôt externe</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>get(<span style="font-weight:bold">int</span><span style="color:#008080"> </span><span style="color:#0000ff">$id</span>):<span style="color:#008080"> </span>Personne<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">print</span><span style="color:#008080"> </span>&quot;<span style="font-weight:bold">[Dao2]</span> : Récupération de la personne d&#x27;identité (<span style="color:#0000ff">$id</span>) en base de données <span style="font-weight:bold">[distante]</span>\n&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold">return</span><span style="color:#008080"> </span><span style="font-weight:bold">new</span><span style="color:#008080"> </span>Personne(<span style="color:#0000ff">$id</span>);</span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p>La classe <strong>[Dao2]</strong> est similaire à la classe <strong>[Dao1]</strong> si ce n’est que nous avons modifié les messages affichés.</p>
+<p><a id="toc42689911"></a>
+<a id="toc42690297"></a>
+<a id="toc42690683"></a>
+<a id="refheadingtoc788432244347140"></a></p>
 <h2 id="104-couche-metier">10.4. Couche [métier]</h2>
 <p>La couche <strong>[métier, 2]</strong> offre l’interface <strong>[IMétier]</strong> suivante <strong>[IMetier.php]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span>
-<span class="normal"><a href="#__codelineno-4-7">7</a></span>
-<span class="normal"><a href="#__codelineno-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// couche [métier] ------------------------</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">interface</span> <span class="nx">IMétier</span> <span class="k">extends</span> <span class="nx">IDao</span> <span class="p">{</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>  <span class="c1">// on exploite une personne identifiée par son id</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// couche <span style="font-weight:bold">[métier]</span> ------------------------</span>
+<span class="odt-code-line"><span style="font-weight:bold">interface</span><span style="color:#008080"> </span>IMétier<span style="color:#008080"> </span><span style="font-weight:bold">extends</span><span style="color:#008080"> </span>IDao<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// on exploite une personne identifiée par son id</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>doSomething(Personne<span style="color:#008080"> </span><span style="color:#0000ff">$p</span>):<span style="color:#008080"> </span>void;</span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>l’interface <strong>[IMétier]</strong> étend l’interface <strong>[IDao]</strong>. Ce n’est pas du tout obligatoire. On le fait ici parce que l’exemple est simple ;</li>
 <li>ligne 7 : la méthode <strong>[doSomething]</strong> est propre à la couche <strong>[Métier]</strong> ;</li>
 </ul>
 <p>L’interface <strong>[IMétier]</strong> sera implémentée par la classe <strong>[Métier]</strong> suivante <strong>[Métier.php]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span>
-<span class="normal"><a href="#__codelineno-5-25">25</a></span>
-<span class="normal"><a href="#__codelineno-5-26">26</a></span>
-<span class="normal"><a href="#__codelineno-5-27">27</a></span>
-<span class="normal"><a href="#__codelineno-5-28">28</a></span>
-<span class="normal"><a href="#__codelineno-5-29">29</a></span>
-<span class="normal"><a href="#__codelineno-5-30">30</a></span>
-<span class="normal"><a href="#__codelineno-5-31">31</a></span>
-<span class="normal"><a href="#__codelineno-5-32">32</a></span>
-<span class="normal"><a href="#__codelineno-5-33">33</a></span>
-<span class="normal"><a href="#__codelineno-5-34">34</a></span>
-<span class="normal"><a href="#__codelineno-5-35">35</a></span>
-<span class="normal"><a href="#__codelineno-5-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">class</span> <span class="nc">Métier</span> <span class="k">implements</span> <span class="nx">IMétier</span> <span class="p">{</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>  <span class="c1">// couche [dao]</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>  <span class="k">private</span> <span class="nv">$dao</span><span class="p">;</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  <span class="c1">// getter / setter</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">setDao</span><span class="p">(</span><span class="nx">IDao</span> <span class="nv">$dao</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span> <span class="o">=</span> <span class="nv">$dao</span><span class="p">;</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>  <span class="p">}</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">getDao</span><span class="p">()</span><span class="o">:</span> <span class="nx">IDao</span> <span class="p">{</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span><span class="p">;</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>  <span class="p">}</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>  <span class="c1">// on exploite une personne</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="c1">// traitement</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="k">print</span> <span class="s2">&quot;Métier : Traitement métier de la personne </span><span class="si">$p</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a>  <span class="p">}</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a>  <span class="c1">// sauvegarde de la personne</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">Personne</span> <span class="nv">$p</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="k">print</span> <span class="s2">&quot;[Métier] : Sauvegarde de la personne </span><span class="si">$p</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a>    <span class="c1">// on demande à la couche [dao] de faire la sauvegarde</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27"></a>  <span class="p">}</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28"></a>
-<a id="__codelineno-5-29" name="__codelineno-5-29"></a>  <span class="k">public</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">)</span><span class="o">:</span> <span class="nx">Personne</span> <span class="p">{</span>
-<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="k">print</span> <span class="s2">&quot;[Métier] : récupération de la personne d&#39;identifiant </span><span class="si">$id</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    <span class="c1">// on demande la personne à la couche [dao]</span>
-<a id="__codelineno-5-32" name="__codelineno-5-32"></a>    <span class="nv">$personne</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dao</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
-<a id="__codelineno-5-33" name="__codelineno-5-33"></a>    <span class="k">return</span> <span class="nv">$personne</span><span class="p">;</span>
-<a id="__codelineno-5-34" name="__codelineno-5-34"></a>  <span class="p">}</span>
-<a id="__codelineno-5-35" name="__codelineno-5-35"></a>
-<a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold">class</span><span style="color:#008080"> </span>Métier<span style="color:#008080"> </span><span style="font-weight:bold">implements</span><span style="color:#008080"> </span>IMétier<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// couche <span style="font-weight:bold">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">private</span><span style="color:#008080"> </span><span style="color:#0000ff">$dao</span>;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// getter / setter</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>setDao(IDao<span style="color:#008080"> </span><span style="color:#0000ff">$dao</span>):<span style="color:#008080"> </span>void<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span>$this<span style="color:#000000">-&gt;dao</span><span style="color:#008080"> </span><span style="color:#000000">=</span><span style="color:#008080"> </span>$dao<span style="color:#000000">;</span></span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>getDao():<span style="color:#008080"> </span>IDao<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold">return</span><span style="color:#008080"> </span><span style="color:#0000ff">$this</span>-&gt;dao;</span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// on exploite une personne</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>doSomething(Personne<span style="color:#008080"> </span><span style="color:#0000ff">$p</span>):<span style="color:#008080"> </span>void<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span>// traitement</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">print</span><span style="color:#008080"> </span>&quot;Métier : Traitement métier de la personne <span style="color:#0000ff">$p</span>\n&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span>// sauvegarde de la personne</span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>save(Personne<span style="color:#008080"> </span><span style="color:#0000ff">$p</span>):<span style="color:#008080"> </span>void<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">print</span><span style="color:#008080"> </span>&quot;<span style="font-weight:bold">[Métier]</span> : Sauvegarde de la personne <span style="color:#0000ff">$p</span>\n&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008080">    </span>// on demande à la couche <span style="font-weight:bold">[dao]</span> de faire la sauvegarde</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="color:#0000ff">$this</span>-&gt;dao-&gt;save(<span style="color:#0000ff">$p</span>);</span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>get(<span style="font-weight:bold">int</span><span style="color:#008080"> </span><span style="color:#0000ff">$id</span>):<span style="color:#008080"> </span>Personne<span style="color:#008080"> </span>{</span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">print</span><span style="color:#008080"> </span>&quot;<span style="font-weight:bold">[Métier]</span> : récupération de la personne d&#x27;identifiant <span style="color:#0000ff">$id</span>\n&quot;<span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#008080">    </span>// on demande la personne à la couche <span style="font-weight:bold">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#008080">    </span>$personne<span style="color:#008080"> </span><span style="color:#000000">=</span><span style="color:#008080"> </span>$this<span style="color:#000000">-&gt;dao-&gt;get(</span>$id<span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#008080">    </span><span style="font-weight:bold;color:#000000">return</span><span style="color:#008080"> </span>$personne<span style="color:#000000">;</span></span>
+<span class="odt-code-line">  <span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>ligne 5 : la couche <strong>[métier]</strong> doit avoir une référence sur la couche <strong>[dao]</strong> pour pouvoir utiliser les méthodes de celle-ci ;</li>
@@ -1347,51 +1278,37 @@
 </ul>
 <p><strong>Conclusion</strong></p>
 <p>Dès que la couche <strong>[métier]</strong> a besoin d’accéder aux données stockées dans l’entrepôt de données, elle doit passer par la couche <strong>[dao]</strong> qui a été créée pour accéder à ces données.</p>
+<p><a id="toc42689912"></a>
+<a id="toc42690298"></a>
+<a id="toc42690684"></a>
+<a id="refheadingtoc788452244347140"></a></p>
 <h2 id="105-script-principal">10.5. Script principal</h2>
 <p>Nous allons écrire deux scripts, chefs d’orchestre pour cette application. Le 1er <strong>[main1.php]</strong> utilisera la couche <strong>[Dao1]</strong> alors que le second <strong>[main2.php]</strong> utilisera la couche <strong>[Dao2]</strong>. Nous voulons montrer que cela n’a aucune incidence sur le code de la couche <strong>[Métier]</strong>.</p>
 <p>Le script <strong>[main1.php]</strong> est le suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span>
-<span class="normal"><a href="#__codelineno-6-14">14</a></span>
-<span class="normal"><a href="#__codelineno-6-15">15</a></span>
-<span class="normal"><a href="#__codelineno-6-16">16</a></span>
-<span class="normal"><a href="#__codelineno-6-17">17</a></span>
-<span class="normal"><a href="#__codelineno-6-18">18</a></span>
-<span class="normal"><a href="#__codelineno-6-19">19</a></span>
-<span class="normal"><a href="#__codelineno-6-20">20</a></span>
-<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">// respect strict des paramètres des fonctions</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">// inclusion classes et interfaces</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Personne.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IMetier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Dao1.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Métier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="c1">// test ----------------</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="c1">// création des couches</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="nv">$dao1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dao1</span><span class="p">();</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Métier</span><span class="p">();</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">setDao</span><span class="p">(</span><span class="nv">$dao1</span><span class="p">);</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="c1">// utilisation de la couche [métier]</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="nv">$personne</span> <span class="o">=</span> <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// respect strict des paramètres des fonctions</span>
+<span class="odt-code-line"><span style="font-weight:bold">declare</span><span style="color:#008080"> </span>(strict_types=<span style="color:#000080">1</span>);</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// inclusion classes et interfaces</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/Personne.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/IDao.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/IMetier.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/Dao1.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/Métier.php&quot;</span>;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// test ----------------</span>
+<span class="odt-code-line">// création des couches</span>
+<span class="odt-code-line"><span style="color:#0000ff">$dao1</span><span style="color:#008080"> </span>=<span style="color:#008080"> </span><span style="font-weight:bold">new</span><span style="color:#008080"> </span>Dao1();</span>
+<span class="odt-code-line"><span style="color:#0000ff">$métier</span><span style="color:#008080"> </span>=<span style="color:#008080"> </span><span style="font-weight:bold">new</span><span style="color:#008080"> </span>Métier();</span>
+<span class="odt-code-line">$métier<span style="color:#000000">-&gt;setDao(</span>$dao1<span style="color:#000000">);</span></span>
+<span class="odt-code-line">// utilisation de la couche <span style="font-weight:bold">[métier]</span></span>
+<span class="odt-code-line">$personne<span style="color:#008080"> </span><span style="color:#000000">=</span><span style="color:#008080"> </span>$métier<span style="color:#000000">-&gt;get(</span><span style="color:#000080">4</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">$métier<span style="color:#000000">-&gt;doSomething(</span>$personne<span style="color:#000000">);</span></span>
+<span class="odt-code-line">$métier<span style="color:#000000">-&gt;save(</span>$personne<span style="color:#000000">);</span></span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>rappelons quelques points : le script <strong>[main1.php]</strong> est le chef d’orchestre de l’application. Il crée la structure en couches de l’application (lignes 15-17) puis ensuite commence à dialoguer avec la couche <strong>[métier]</strong> (lignes 19-21). La structure en couches est en effet la suivante :</li>
@@ -1399,16 +1316,14 @@
 <p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" /></p>
 <p>Selon ce schéma, le script <strong>[main1.php]</strong> ne doit s’adresser qu’à la couche <strong>[métier]</strong>. Elle ne doit pas s’adresser à la couche <strong>[dao]</strong> même si c’est théoriquement possible.</p>
 <p>Les résultats de l’exécution sont les suivants :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>[Métier] : récupération de la personne d&#39;identifiant 4
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>[Dao1] : Récupération de la personne d&#39;identité (4) en base de données [locale]
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>[Métier] : Traitement métier de la personne [Personne(4)]
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>[Métier] : Sauvegarde de la personne [Personne(4)]
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>[Dao1] : Sauvegarde de la personne [Personne(4)] en base de données [locale]
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="font-weight:bold">[Métier]</span> : récupération de la personne d&#x27;identifiant 4</span>
+<span class="odt-code-line"><span style="font-weight:bold">[Dao1]</span> : Récupération de la personne d&#x27;identité (4) en base de données <span style="font-weight:bold">[locale]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[Métier]</span> : Traitement métier de la personne <span style="font-weight:bold">[Personne(4)]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[Métier]</span> : Sauvegarde de la personne <span style="font-weight:bold">[Personne(4)]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[Dao1]</span> : Sauvegarde de la personne <span style="font-weight:bold">[Personne(4)]</span> en base de données <span style="font-weight:bold">[locale]</span></span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>la ligne 10 du code a provoqué l’écriture des lignes 1 et 2 des résultats ;</li>
@@ -1416,65 +1331,45 @@
 <li>la ligne 21 du code a provoqué l’écriture des lignes 4 et 5 des résultats ;</li>
 </ul>
 <p>Le script <strong>[main2.php]</strong> est le suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span>
-<span class="normal"><a href="#__codelineno-8-16">16</a></span>
-<span class="normal"><a href="#__codelineno-8-17">17</a></span>
-<span class="normal"><a href="#__codelineno-8-18">18</a></span>
-<span class="normal"><a href="#__codelineno-8-19">19</a></span>
-<span class="normal"><a href="#__codelineno-8-20">20</a></span>
-<span class="normal"><a href="#__codelineno-8-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1">// respect strict des paramètres des fonctions</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1">// inclusion classes et interfaces</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Personne.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IDao.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/IMetier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Dao2.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">require_once</span> <span class="no">__DIR__</span><span class="o">.</span><span class="s2">&quot;/Métier.php&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="c1">// test ----------------</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="c1">// création des couches</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="nv">$dao2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dao2</span><span class="p">();</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Métier</span><span class="p">();</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">setDao</span><span class="p">(</span><span class="nv">$dao2</span><span class="p">);</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="c1">// utilisation de la couche [métier]</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="nv">$personne</span> <span class="o">=</span> <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$personne</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// respect strict des paramètres des fonctions</span>
+<span class="odt-code-line"><span style="font-weight:bold">declare</span><span style="color:#008080"> </span>(strict_types=<span style="color:#000080">1</span>);</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// inclusion classes et interfaces</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/Personne.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/IDao.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/IMetier.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/Dao2.php&quot;</span>;</span>
+<span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/Métier.php&quot;</span>;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">// test ----------------</span>
+<span class="odt-code-line">// création des couches</span>
+<span class="odt-code-line"><span style="color:#0000ff">$dao2</span><span style="color:#008080"> </span>=<span style="color:#008080"> </span><span style="font-weight:bold">new</span><span style="color:#008080"> </span>Dao2();</span>
+<span class="odt-code-line"><span style="color:#0000ff">$métier</span><span style="color:#008080"> </span>=<span style="color:#008080"> </span><span style="font-weight:bold">new</span><span style="color:#008080"> </span>Métier();</span>
+<span class="odt-code-line">$métier<span style="color:#000000">-&gt;setDao(</span>$dao2<span style="color:#000000">);</span></span>
+<span class="odt-code-line">// utilisation de la couche <span style="font-weight:bold">[métier]</span></span>
+<span class="odt-code-line">$personne<span style="color:#008080"> </span><span style="color:#000000">=</span><span style="color:#008080"> </span>$métier<span style="color:#000000">-&gt;get(</span><span style="color:#000080">4</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">$métier<span style="color:#000000">-&gt;doSomething(</span>$personne<span style="color:#000000">);</span></span>
+<span class="odt-code-line">$métier<span style="color:#000000">-&gt;save(</span>$personne<span style="color:#000000">);</span></span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>lignes 36-38 : la structure en couches utilise désormais la couche <strong>[Dao2]</strong> ;</li>
 </ul>
 <p>Les résultats de l’exécution sont les suivants :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>[Métier] : récupération de la personne d&#39;identifiant 4
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>[Dao2] : Récupération de la personne d&#39;identité (4) en base de données [distante]
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a>[Métier] : Traitement métier de la personne [Personne(4)]
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>[Métier] : Sauvegarde de la personne [Personne(4)]
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>[Dao2] : Sauvegarde de la personne [Personne(4)] en base de données [distante]
-</code></pre></div></td></tr></table></div>
-<p>La couche <strong>[Dao1]</strong> simule un accès à une base de données locale alors que la couche <strong>[Dao2]</strong> simule un accès à une base de données distante. Tant que ces deux couches respectent l’interface <strong>[IDao]</strong>, on voit que le code de la couche <strong>[Métier]</strong> n’a pas eu à être changé.</p>
-<p>Nous allons appliquer ce que nous venons d’apprendre à l’exercice du calcul d’impôts qui nous sert de fil rouge.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="font-weight:bold">[Métier]</span> : récupération de la personne d&#x27;identifiant 4</span>
+<span class="odt-code-line"><span style="font-weight:bold">[Dao2]</span> : Récupération de la personne d&#x27;identité (4) en base de données <span style="font-weight:bold">[distante]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[Métier]</span> : Traitement métier de la personne <span style="font-weight:bold">[Personne(4)]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[Métier]</span> : Sauvegarde de la personne <span style="font-weight:bold">[Personne(4)]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[Dao2]</span> : Sauvegarde de la personne <span style="font-weight:bold">[Personne(4)]</span> en base de données <span style="font-weight:bold">[distante]</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">La couche </span><strong><span style="color: #000000">[Dao1]</span></strong><span style="color: #000000"> simule un accès à une base de données locale alors que la couche </span><strong><span style="color: #000000">[Dao2]</span></strong><span style="color: #000000"> simule un accès à une base de données distante. Tant que ces deux couches respectent l’interface </span><strong><span style="color: #000000">[IDao]</span></strong><span style="color: #000000">, on voit que le code de la couche </span><strong><span style="color: #000000">[Métier]</span></strong><span style="color: #000000"> n’a pas eu à être changé.</span></p>
+<p><span style="color: #000000">Nous allons appliquer ce que nous venons d’apprendre à l’exercice du calcul d’impôts qui nous sert de fil rouge.</span></p>
 
 
 
@@ -1532,7 +1427,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>

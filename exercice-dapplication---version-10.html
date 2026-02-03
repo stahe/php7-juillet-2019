@@ -330,14 +330,14 @@
   
   
     <li class="md-nav__item">
-      <a href="installation-dx27un-environnement-de-travail.html" class="md-nav__link">
+      <a href="installation-dun-environnement-de-travail.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. Installation d&#x27;un environnement de travail
+    2. Installation d'un environnement de travail
   
 
     
@@ -384,14 +384,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---versions-1-et-2.html" class="md-nav__link">
+      <a href="exercice-dapplication---versions-1-et-2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Exercice d&#x27;application – versions 1 et 2
+    4. Exercice d'application – versions 1 et 2
   
 
     
@@ -492,14 +492,14 @@
   
   
     <li class="md-nav__item">
-      <a href="exercice-dx27application---version-3.html" class="md-nav__link">
+      <a href="exercice-dapplication---version-3.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Exercice d&#x27;application – version 3
+    8. Exercice d'application – version 3
   
 
     
@@ -1099,11 +1099,23 @@
   
 
 
+<p><a id="toc42690087"></a>
+<a id="toc42690473"></a>
+<a id="toc42690859"></a>
+<a id="refheadingtoc185701971629160"></a></p>
 <h1 id="20-exercice-dapplication-version-10">20. Exercice d’application – version 10</h1>
 <p>La version précédente a montré que les données fiscales, partagées par tous les utilisateurs de l’application, devraient être stockées dans une mémoire de portée <strong>[Application]</strong>. Nous allons utiliser un serveur Redis <strong>[https://redis.io]</strong> pour implémenter celle-ci.</p>
+<p><a id="toc42690088"></a>
+<a id="toc42690474"></a>
+<a id="toc42690860"></a>
+<a id="refheadingtoc185703971629160"></a></p>
 <h2 id="201-redis">20.1. Redis</h2>
 <p>La mémoire de portée <strong>[Application]</strong> sera implémentée par un serveur Redis. Les scripts PHP ayant besoin de cette mémoire d’application seront des clients de ce serveur :</p>
 <p><img src="images/10000000000006E50000016D026275D9.png" style="width:14.011cm;height:2.901cm;" alt="Image" /></p>
+<p><a id="toc42690089"></a>
+<a id="toc42690475"></a>
+<a id="toc42690861"></a>
+<a id="refheadingtoc185705971629160"></a></p>
 <h2 id="202-installation-de-redis">20.2. Installation de Redis</h2>
 <p>Laragon vient avec un serveur Redis non activé par défaut. Il faut donc commencer par l’activer :</p>
 <p><img src="images/100000000000073600000303CE510638.png" style="width:14.652cm;height:6.121cm;" alt="Image" /></p>
@@ -1113,8 +1125,12 @@
 </ul>
 <p>Les services Laragon sont automatiquement relancés après activation de Redis :</p>
 <p><img src="images/10000000000004F6000001F85B242593.png" style="width:10.081cm;height:4.001cm;" alt="Image" /></p>
+<p><a id="toc42690090"></a>
+<a id="toc42690476"></a>
+<a id="toc42690862"></a>
+<a id="refheadingtoc185707971629160"></a></p>
 <h2 id="203-le-client-redis-en-mode-commande">20.3. Le client Redis en mode commande</h2>
-<p>Le serveur Redis peut être interrogé en mode commande. On ouvre un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><u>lien</u></u></a>) :</p>
+<p>Le serveur Redis peut être interrogé en mode commande. On ouvre un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
 <p><img src="images/100000000000079C00000250F06351A7.png" style="width:18.04cm;height:5.481cm;" alt="Image" /></p>
 <ul>
 <li>en <strong>[1]</strong>, la commande <strong>[redis-cli]</strong> lance le client en mode commande du serveur Redis ;</li>
@@ -1123,388 +1139,219 @@
 <p>Nous n’allons présenter que celles dont nous allons avoir besoin dans notre application PHP. Nous allons utiliser Redis pour une unique chose : stocker un tableau <strong>[‘attribut’=&gt;’valeur’]</strong> dans la mémoire de Redis. Cela se fait avec la commande Redis <strong>[set attribut valeur]</strong> <strong>[4]</strong>. La valeur peut ensuite être récupérée avec la commande <strong>[get attribut]</strong> <strong>[5]</strong>. C’est tout ce dont nous aurons besoin.</p>
 <p>Il peut être nécessaire de vider la mémoire de Redis. Cela se fait avec la commande <strong>[flushdb]</strong> <strong>[6]</strong>. Ensuite si on demande la valeur de l’attribut <strong>[titre]</strong> <strong>[7]</strong>, on obtient une référence <strong>[nil]</strong> <strong>[8]</strong> indiquant que l’attribut n’a pas été trouvé. On peut également utiliser la commande <strong>[exists]</strong> <strong>[9-10]</strong> pour vérifier l’existence d’un attribut.</p>
 <p>Pour quitter le client Redis, taper la commande <strong>[quit]</strong> <strong>[11]</strong>.</p>
+<p><a id="toc42690091"></a>
+<a id="toc42690477"></a>
+<a id="toc42690863"></a>
+<a id="refheadingtoc185709971629160"></a></p>
 <h2 id="204-installation-dun-client-redis-pour-php">20.4. Installation d’un client Redis pour PHP</h2>
 <p>Il nous faut maintenant installer un client Redis pour PHP :</p>
 <p><img src="images/10000000000006C1000001661065C383.png" style="width:13.72cm;height:2.841cm;" alt="Image" /></p>
 <p>Il existe plusieurs bibliothèques implémentant un client Redis. Nous utiliserons la bibliothèque <strong>[Predis]</strong> <strong>[https://github.com/nrk/predis]</strong> (juillet 2019). Celle-ci comme les précédentes s’installe avec <strong>[composer]</strong> dans un terminal Laragon :</p>
 <p><img src="images/1000000000000748000002925C134594.png" style="width:17.26cm;height:6.091cm;" alt="Image" /></p>
+<p><a id="codeduserveur"></a>
+<a id="refheadingtoc1906941531191796"></a>
+<a id="toc42690092"></a>
+<a id="toc42690478"></a>
+<a id="toc42690864"></a></p>
 <h2 id="205-code-du-serveur">20.5. Code du serveur</h2>
 <p><img src="images/100000000000017A000001060D4D315E.png" style="width:3.5cm;height:2.431cm;" alt="Image" /></p>
 <p>Le fichier de configuration <strong>[config-server.json]</strong> évolue de la façon suivante :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="s2">&quot;rootDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/myprograms/laragon-lite/www/php7/scripts-web/impots/version-10&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="s2">&quot;databaseFilename&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/database.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="s2">&quot;relativeDependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="s2">&quot;/../version-08/Entities/BaseEntity.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="s2">&quot;/../version-08/Entities/ExceptionImpots.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="s2">&quot;/../version-08/Entities/TaxAdminData.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="s2">&quot;/../version-08/Entities/Database.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="s2">&quot;/../version-08/Dao/InterfaceServerDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="s2">&quot;/../version-08/Dao/ServerDao.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="s2">&quot;/../version-09/Dao/ServerDaoWithSession.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="s2">&quot;/../version-08/Métier/InterfaceServerMetier.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="s2">&quot;/../version-08/Métier/ServerMetier.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="s2">&quot;/../version-09/Utilities/Logger.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="s2">&quot;/../version-09/Utilities/SendAdminMail.php&quot;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="p">],</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="s2">&quot;absoluteDependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="s2">&quot;C:/myprograms/laragon-lite/www/vendor/predis/predis/autoload.php&quot;</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="p">],</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="s2">&quot;users&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="p">{</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>            <span class="s2">&quot;login&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>            <span class="s2">&quot;passwd&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="p">}</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="p">],</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="s2">&quot;adminMail&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="s2">&quot;smtp-server&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="s2">&quot;smtp-port&quot;</span><span class="p">:</span> <span class="s2">&quot;25&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="s2">&quot;guest@localhost&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="s2">&quot;guest@localhost&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="s2">&quot;subject&quot;</span><span class="p">:</span> <span class="s2">&quot;plantage du serveur de calcul d&#39;impôts&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="s2">&quot;tls&quot;</span><span class="p">:</span> <span class="s2">&quot;FALSE&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="s2">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[]</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="p">},</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="s2">&quot;logsFilename&quot;</span><span class="p">:</span> <span class="s2">&quot;Data/logs.txt&quot;</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;rootDirectory&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;C:/myprograms/laragon-lite/www/php7/scripts-web/impots/version-10&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;databaseFilename&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/database.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;relativeDependencies&quot;</span>: [</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Entities/BaseEntity.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Entities/ExceptionImpots.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Entities/TaxAdminData.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Entities/Database.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Dao/InterfaceServerDao.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Dao/ServerDao.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-09/Dao/ServerDaoWithSession.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Métier/InterfaceServerMetier.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Métier/ServerMetier.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-09/Utilities/Logger.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-09/Utilities/SendAdminMail.php&quot;</span></span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;absoluteDependencies&quot;</span>: [</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;</span><span style="font-style:italic;background-color:#ffff00;color:#2a00ff">C:/myprograms/laragon-lite/www/vendor/predis/predis/autoload.php</span><span style="font-style:italic;color:#2a00ff">&quot;</span></span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;users&quot;</span>: [</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#7f007f">&quot;login&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;admin&quot;</span>,</span>
+<span class="odt-code-line">            <span style="color:#7f007f">&quot;passwd&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;admin&quot;</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;adminMail&quot;</span>: {</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;smtp-server&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;localhost&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;smtp-port&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;25&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;from&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;guest@localhost&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;to&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;guest@localhost&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;subject&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;plantage du serveur de calcul d&#x27;impôts&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;tls&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;FALSE&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;attachments&quot;</span>: []</span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;logsFilename&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/logs.txt&quot;</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>lignes 5-15 : la version 10 n’amène rien de nouveau en dehors du script <strong>[impots-server.php]</strong>. Elle utilise des éléments des verions 08 et 09 ;</li>
 <li>ligne 19 : une dépendance nécessaire à la bibliothèque <strong>[predis]</strong> que l’on vient d’installer ;</li>
 </ul>
 <p>Le code du serveur <strong>[impots-server.php]</strong> évolue de la façon suivante :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">  1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">  2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">  3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">  4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">  5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">  6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">  7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">  8</a></span>
-<span class="normal"><a href="#__codelineno-1-9">  9</a></span>
-<span class="normal"><a href="#__codelineno-1-10"> 10</a></span>
-<span class="normal"><a href="#__codelineno-1-11"> 11</a></span>
-<span class="normal"><a href="#__codelineno-1-12"> 12</a></span>
-<span class="normal"><a href="#__codelineno-1-13"> 13</a></span>
-<span class="normal"><a href="#__codelineno-1-14"> 14</a></span>
-<span class="normal"><a href="#__codelineno-1-15"> 15</a></span>
-<span class="normal"><a href="#__codelineno-1-16"> 16</a></span>
-<span class="normal"><a href="#__codelineno-1-17"> 17</a></span>
-<span class="normal"><a href="#__codelineno-1-18"> 18</a></span>
-<span class="normal"><a href="#__codelineno-1-19"> 19</a></span>
-<span class="normal"><a href="#__codelineno-1-20"> 20</a></span>
-<span class="normal"><a href="#__codelineno-1-21"> 21</a></span>
-<span class="normal"><a href="#__codelineno-1-22"> 22</a></span>
-<span class="normal"><a href="#__codelineno-1-23"> 23</a></span>
-<span class="normal"><a href="#__codelineno-1-24"> 24</a></span>
-<span class="normal"><a href="#__codelineno-1-25"> 25</a></span>
-<span class="normal"><a href="#__codelineno-1-26"> 26</a></span>
-<span class="normal"><a href="#__codelineno-1-27"> 27</a></span>
-<span class="normal"><a href="#__codelineno-1-28"> 28</a></span>
-<span class="normal"><a href="#__codelineno-1-29"> 29</a></span>
-<span class="normal"><a href="#__codelineno-1-30"> 30</a></span>
-<span class="normal"><a href="#__codelineno-1-31"> 31</a></span>
-<span class="normal"><a href="#__codelineno-1-32"> 32</a></span>
-<span class="normal"><a href="#__codelineno-1-33"> 33</a></span>
-<span class="normal"><a href="#__codelineno-1-34"> 34</a></span>
-<span class="normal"><a href="#__codelineno-1-35"> 35</a></span>
-<span class="normal"><a href="#__codelineno-1-36"> 36</a></span>
-<span class="normal"><a href="#__codelineno-1-37"> 37</a></span>
-<span class="normal"><a href="#__codelineno-1-38"> 38</a></span>
-<span class="normal"><a href="#__codelineno-1-39"> 39</a></span>
-<span class="normal"><a href="#__codelineno-1-40"> 40</a></span>
-<span class="normal"><a href="#__codelineno-1-41"> 41</a></span>
-<span class="normal"><a href="#__codelineno-1-42"> 42</a></span>
-<span class="normal"><a href="#__codelineno-1-43"> 43</a></span>
-<span class="normal"><a href="#__codelineno-1-44"> 44</a></span>
-<span class="normal"><a href="#__codelineno-1-45"> 45</a></span>
-<span class="normal"><a href="#__codelineno-1-46"> 46</a></span>
-<span class="normal"><a href="#__codelineno-1-47"> 47</a></span>
-<span class="normal"><a href="#__codelineno-1-48"> 48</a></span>
-<span class="normal"><a href="#__codelineno-1-49"> 49</a></span>
-<span class="normal"><a href="#__codelineno-1-50"> 50</a></span>
-<span class="normal"><a href="#__codelineno-1-51"> 51</a></span>
-<span class="normal"><a href="#__codelineno-1-52"> 52</a></span>
-<span class="normal"><a href="#__codelineno-1-53"> 53</a></span>
-<span class="normal"><a href="#__codelineno-1-54"> 54</a></span>
-<span class="normal"><a href="#__codelineno-1-55"> 55</a></span>
-<span class="normal"><a href="#__codelineno-1-56"> 56</a></span>
-<span class="normal"><a href="#__codelineno-1-57"> 57</a></span>
-<span class="normal"><a href="#__codelineno-1-58"> 58</a></span>
-<span class="normal"><a href="#__codelineno-1-59"> 59</a></span>
-<span class="normal"><a href="#__codelineno-1-60"> 60</a></span>
-<span class="normal"><a href="#__codelineno-1-61"> 61</a></span>
-<span class="normal"><a href="#__codelineno-1-62"> 62</a></span>
-<span class="normal"><a href="#__codelineno-1-63"> 63</a></span>
-<span class="normal"><a href="#__codelineno-1-64"> 64</a></span>
-<span class="normal"><a href="#__codelineno-1-65"> 65</a></span>
-<span class="normal"><a href="#__codelineno-1-66"> 66</a></span>
-<span class="normal"><a href="#__codelineno-1-67"> 67</a></span>
-<span class="normal"><a href="#__codelineno-1-68"> 68</a></span>
-<span class="normal"><a href="#__codelineno-1-69"> 69</a></span>
-<span class="normal"><a href="#__codelineno-1-70"> 70</a></span>
-<span class="normal"><a href="#__codelineno-1-71"> 71</a></span>
-<span class="normal"><a href="#__codelineno-1-72"> 72</a></span>
-<span class="normal"><a href="#__codelineno-1-73"> 73</a></span>
-<span class="normal"><a href="#__codelineno-1-74"> 74</a></span>
-<span class="normal"><a href="#__codelineno-1-75"> 75</a></span>
-<span class="normal"><a href="#__codelineno-1-76"> 76</a></span>
-<span class="normal"><a href="#__codelineno-1-77"> 77</a></span>
-<span class="normal"><a href="#__codelineno-1-78"> 78</a></span>
-<span class="normal"><a href="#__codelineno-1-79"> 79</a></span>
-<span class="normal"><a href="#__codelineno-1-80"> 80</a></span>
-<span class="normal"><a href="#__codelineno-1-81"> 81</a></span>
-<span class="normal"><a href="#__codelineno-1-82"> 82</a></span>
-<span class="normal"><a href="#__codelineno-1-83"> 83</a></span>
-<span class="normal"><a href="#__codelineno-1-84"> 84</a></span>
-<span class="normal"><a href="#__codelineno-1-85"> 85</a></span>
-<span class="normal"><a href="#__codelineno-1-86"> 86</a></span>
-<span class="normal"><a href="#__codelineno-1-87"> 87</a></span>
-<span class="normal"><a href="#__codelineno-1-88"> 88</a></span>
-<span class="normal"><a href="#__codelineno-1-89"> 89</a></span>
-<span class="normal"><a href="#__codelineno-1-90"> 90</a></span>
-<span class="normal"><a href="#__codelineno-1-91"> 91</a></span>
-<span class="normal"><a href="#__codelineno-1-92"> 92</a></span>
-<span class="normal"><a href="#__codelineno-1-93"> 93</a></span>
-<span class="normal"><a href="#__codelineno-1-94"> 94</a></span>
-<span class="normal"><a href="#__codelineno-1-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-1-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-1-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-1-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-1-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-1-100">100</a></span>
-<span class="normal"><a href="#__codelineno-1-101">101</a></span>
-<span class="normal"><a href="#__codelineno-1-102">102</a></span>
-<span class="normal"><a href="#__codelineno-1-103">103</a></span>
-<span class="normal"><a href="#__codelineno-1-104">104</a></span>
-<span class="normal"><a href="#__codelineno-1-105">105</a></span>
-<span class="normal"><a href="#__codelineno-1-106">106</a></span>
-<span class="normal"><a href="#__codelineno-1-107">107</a></span>
-<span class="normal"><a href="#__codelineno-1-108">108</a></span>
-<span class="normal"><a href="#__codelineno-1-109">109</a></span>
-<span class="normal"><a href="#__codelineno-1-110">110</a></span>
-<span class="normal"><a href="#__codelineno-1-111">111</a></span>
-<span class="normal"><a href="#__codelineno-1-112">112</a></span>
-<span class="normal"><a href="#__codelineno-1-113">113</a></span>
-<span class="normal"><a href="#__codelineno-1-114">114</a></span>
-<span class="normal"><a href="#__codelineno-1-115">115</a></span>
-<span class="normal"><a href="#__codelineno-1-116">116</a></span>
-<span class="normal"><a href="#__codelineno-1-117">117</a></span>
-<span class="normal"><a href="#__codelineno-1-118">118</a></span>
-<span class="normal"><a href="#__codelineno-1-119">119</a></span>
-<span class="normal"><a href="#__codelineno-1-120">120</a></span>
-<span class="normal"><a href="#__codelineno-1-121">121</a></span>
-<span class="normal"><a href="#__codelineno-1-122">122</a></span>
-<span class="normal"><a href="#__codelineno-1-123">123</a></span>
-<span class="normal"><a href="#__codelineno-1-124">124</a></span>
-<span class="normal"><a href="#__codelineno-1-125">125</a></span>
-<span class="normal"><a href="#__codelineno-1-126">126</a></span>
-<span class="normal"><a href="#__codelineno-1-127">127</a></span>
-<span class="normal"><a href="#__codelineno-1-128">128</a></span>
-<span class="normal"><a href="#__codelineno-1-129">129</a></span>
-<span class="normal"><a href="#__codelineno-1-130">130</a></span>
-<span class="normal"><a href="#__codelineno-1-131">131</a></span>
-<span class="normal"><a href="#__codelineno-1-132">132</a></span>
-<span class="normal"><a href="#__codelineno-1-133">133</a></span>
-<span class="normal"><a href="#__codelineno-1-134">134</a></span>
-<span class="normal"><a href="#__codelineno-1-135">135</a></span>
-<span class="normal"><a href="#__codelineno-1-136">136</a></span>
-<span class="normal"><a href="#__codelineno-1-137">137</a></span>
-<span class="normal"><a href="#__codelineno-1-138">138</a></span>
-<span class="normal"><a href="#__codelineno-1-139">139</a></span>
-<span class="normal"><a href="#__codelineno-1-140">140</a></span>
-<span class="normal"><a href="#__codelineno-1-141">141</a></span>
-<span class="normal"><a href="#__codelineno-1-142">142</a></span>
-<span class="normal"><a href="#__codelineno-1-143">143</a></span>
-<span class="normal"><a href="#__codelineno-1-144">144</a></span>
-<span class="normal"><a href="#__codelineno-1-145">145</a></span>
-<span class="normal"><a href="#__codelineno-1-146">146</a></span>
-<span class="normal"><a href="#__codelineno-1-147">147</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">// gestion des erreurs par PHP</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">//</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1">// chemin du fichier de configuration</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;CONFIG_FILENAME&quot;</span><span class="p">,</span> <span class="s2">&quot;Data/config-server.json&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="c1">// alias de classe</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="k">use</span> <span class="nx">\Application\ServerDaoWithSession</span> <span class="k">as</span> <span class="nx">ServerDaoWithRedis</span><span class="p">;</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="c1">// session</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nv">$session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">();</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nv">$session</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="nx">…</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="nx">…</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="c1">// 1er log</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---nouvelle requête</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="c1">// on récupère la requête courante</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="nv">$request</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">createFromGlobals</span><span class="p">();</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="c1">// authentification seulement la 1re fois</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$session</span><span class="o">-&gt;</span><span class="na">has</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">))</span> <span class="p">{</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a>  <span class="nx">…</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a>  <span class="c1">// log</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;Authentification prise en session…</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="p">}</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34"></a>
-<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="c1">// on a un utilisateur valide - on vérifie les paramètres reçus</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="nv">$erreurs</span> <span class="o">=</span> <span class="p">[];</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="c1">// on doit avoir trois paramètres GET</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="nv">$method</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getMethod</span><span class="p">());</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="nx">…</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40"></a>
-<a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="c1">// erreurs ?</span>
-<a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$erreurs</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="c1">// on envoie un code d&#39;erreur 400 HTTP_BAD_REQUEST au client</span>
-<a id="__codelineno-1-44" name="__codelineno-1-44"></a>  <span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;erreurs&quot;</span> <span class="o">=&gt;</span> <span class="nv">$erreurs</span><span class="p">],</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_BAD_REQUEST</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">);</span>
-<a id="__codelineno-1-45" name="__codelineno-1-45"></a>  <span class="c1">// terminé</span>
-<a id="__codelineno-1-46" name="__codelineno-1-46"></a>  <span class="k">exit</span><span class="p">;</span>
-<a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-1-48" name="__codelineno-1-48"></a>  <span class="c1">// logs</span>
-<a id="__codelineno-1-49" name="__codelineno-1-49"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;paramètres [&#39;marié&#39;=&gt;</span><span class="si">$marié</span><span class="s2">, &#39;enfants&#39;=&gt;</span><span class="si">$enfants</span><span class="s2">, &#39;salaire&#39;=&gt;</span><span class="si">$salaire</span><span class="s2">] valides</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="p">}</span>
-<a id="__codelineno-1-51" name="__codelineno-1-51"></a>
-<a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="c1">// on a tout ce qu&#39;il faut pour travailler</span>
-<a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="c1">// Redis</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="nx">\Predis\Autoloader</span><span class="o">::</span><span class="na">register</span><span class="p">();</span>
-<a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56"></a>  <span class="c1">// client [predis]</span>
-<a id="__codelineno-1-57" name="__codelineno-1-57"></a>  <span class="nv">$redis</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Predis\Client</span><span class="p">();</span>
-<a id="__codelineno-1-58" name="__codelineno-1-58"></a>  <span class="c1">// on se connecte au serveur pour voir s&#39;il est là</span>
-<a id="__codelineno-1-59" name="__codelineno-1-59"></a>  <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
-<a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Predis\Connection\ConnectionException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-61" name="__codelineno-1-61"></a>  <span class="c1">// internal server error</span>
-<a id="__codelineno-1-62" name="__codelineno-1-62"></a>  <span class="nx">doInternalServerError</span><span class="p">(</span><span class="s2">&quot;[redis], &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()),</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;adminMail&#39;</span><span class="p">],</span> <span class="nv">$logger</span><span class="p">);</span>
-<a id="__codelineno-1-63" name="__codelineno-1-63"></a>  <span class="c1">// terminé</span>
-<a id="__codelineno-1-64" name="__codelineno-1-64"></a>  <span class="k">exit</span><span class="p">;</span>
-<a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="p">}</span>
-<a id="__codelineno-1-66" name="__codelineno-1-66"></a>
-<a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="c1">// création de la couche [dao]</span>
-<a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">))</span> <span class="p">{</span>
-<a id="__codelineno-1-69" name="__codelineno-1-69"></a>  <span class="c1">// les données fiscales sont prises dans la base de données</span>
-<a id="__codelineno-1-70" name="__codelineno-1-70"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;données fiscales prises en base de données</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-71" name="__codelineno-1-71"></a>  <span class="k">try</span> <span class="p">{</span>
-<a id="__codelineno-1-72" name="__codelineno-1-72"></a>    <span class="c1">// construction de la couche [dao]</span>
-<a id="__codelineno-1-73" name="__codelineno-1-73"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerDaoWithRedis</span><span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">&quot;databaseFilename&quot;</span><span class="p">],</span> <span class="k">NULL</span><span class="p">);</span>
-<a id="__codelineno-1-74" name="__codelineno-1-74"></a>    <span class="c1">// on met les données fiscales dans la mémoire de portée [application]</span>
-<a id="__codelineno-1-75" name="__codelineno-1-75"></a>    <span class="c1">// la méthode [TaxAdminData]-&gt;__toString va être appelée implicitement</span>
-<a id="__codelineno-1-76" name="__codelineno-1-76"></a>    <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">,</span> <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">getTaxAdminData</span><span class="p">());</span>
-<a id="__codelineno-1-77" name="__codelineno-1-77"></a>  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\RuntimeException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-78" name="__codelineno-1-78"></a>    <span class="c1">// on note l&#39;erreur</span>
-<a id="__codelineno-1-79" name="__codelineno-1-79"></a>    <span class="nx">doInternalServerError</span><span class="p">(</span><span class="s2">&quot;[dao], &quot;</span> <span class="o">.</span> <span class="nb">utf8_encode</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()),</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;adminMail&#39;</span><span class="p">],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
-<a id="__codelineno-1-80" name="__codelineno-1-80"></a>    <span class="c1">// terminé</span>
-<a id="__codelineno-1-81" name="__codelineno-1-81"></a>    <span class="k">exit</span><span class="p">;</span>
-<a id="__codelineno-1-82" name="__codelineno-1-82"></a>  <span class="p">}</span>
-<a id="__codelineno-1-83" name="__codelineno-1-83"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-1-84" name="__codelineno-1-84"></a>  <span class="c1">// les données fiscales sont prises dans la mémoire de portée [application]</span>
-<a id="__codelineno-1-85" name="__codelineno-1-85"></a>  <span class="nv">$arrayOfAttributes</span> <span class="o">=</span> <span class="nx">\json_decode</span><span class="p">(</span><span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;taxAdminData&quot;</span><span class="p">),</span> <span class="k">true</span><span class="p">);</span>
-<a id="__codelineno-1-86" name="__codelineno-1-86"></a>  <span class="nv">$taxAdminData</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">TaxAdminData</span><span class="p">())</span><span class="o">-&gt;</span><span class="na">setFromArrayOfAttributes</span><span class="p">(</span><span class="nv">$arrayOfAttributes</span><span class="p">);</span>
-<a id="__codelineno-1-87" name="__codelineno-1-87"></a>  <span class="c1">// isntanciation de la couche [dao]</span>
-<a id="__codelineno-1-88" name="__codelineno-1-88"></a>  <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerDaoWithRedis</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="nv">$taxAdminData</span><span class="p">);</span>
-<a id="__codelineno-1-89" name="__codelineno-1-89"></a>  <span class="c1">// logs</span>
-<a id="__codelineno-1-90" name="__codelineno-1-90"></a>  <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;données fiscales prises dans redis</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="p">}</span>
-<a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="c1">// création de la couche [métier]</span>
-<a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="nv">$métier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerMetier</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
-<a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="c1">// calcul de l&#39;impôt</span>
-<a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$métier</span><span class="o">-&gt;</span><span class="na">calculerImpot</span><span class="p">(</span><span class="nv">$marié</span><span class="p">,</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$enfants</span><span class="p">,</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$salaire</span><span class="p">);</span>
-<a id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="c1">// on rend la réponse</span>
-<a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="nv">$result</span><span class="p">,</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
-<a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="c1">// fin</span>
-<a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="k">exit</span><span class="p">;</span>
-<a id="__codelineno-1-100" name="__codelineno-1-100"></a>
-<a id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="k">function</span> <span class="nf">doInternalServerError</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$message</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$infos</span><span class="p">,</span>
-<a id="__codelineno-1-102" name="__codelineno-1-102"></a>  <span class="nx">Logger</span> <span class="nv">$logger</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">,</span> <span class="nx">\Predis\Client</span> <span class="nv">$predisClient</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-103" name="__codelineno-1-103"></a>  <span class="c1">// $message : le message d&#39;erreur</span>
-<a id="__codelineno-1-104" name="__codelineno-1-104"></a>  <span class="c1">// $response : réponse HTTP</span>
-<a id="__codelineno-1-105" name="__codelineno-1-105"></a>  <span class="c1">// $infos : tableau d&#39;informations pour l&#39;envoi du mail</span>
-<a id="__codelineno-1-106" name="__codelineno-1-106"></a>  <span class="c1">// $result : tableau des résultats</span>
-<a id="__codelineno-1-107" name="__codelineno-1-107"></a>  <span class="c1">// $logger : le logueur de l&#39;application</span>
-<a id="__codelineno-1-108" name="__codelineno-1-108"></a>  <span class="c1">// $predisClient : un client [predis]</span>
-<a id="__codelineno-1-109" name="__codelineno-1-109"></a>  <span class="c1">//</span>
-<a id="__codelineno-1-110" name="__codelineno-1-110"></a>  <span class="c1">// on envoie un mail à l&#39;administrateur</span>
-<a id="__codelineno-1-111" name="__codelineno-1-111"></a>  <span class="c1">// SendAdminMail intercepte toutes les exception et les logue lui-même</span>
-<a id="__codelineno-1-112" name="__codelineno-1-112"></a>  <span class="nv">$infos</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$message</span><span class="p">;</span>
-<a id="__codelineno-1-113" name="__codelineno-1-113"></a>  <span class="nv">$sendAdminMail</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendAdminMail</span><span class="p">(</span><span class="nv">$infos</span><span class="p">,</span> <span class="nv">$logger</span><span class="p">);</span>
-<a id="__codelineno-1-114" name="__codelineno-1-114"></a>  <span class="nv">$sendAdminMail</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
-<a id="__codelineno-1-115" name="__codelineno-1-115"></a>  <span class="c1">// on envoie un code d&#39;erreur 500 au client</span>
-<a id="__codelineno-1-116" name="__codelineno-1-116"></a>  <span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;erreur&quot;</span> <span class="o">=&gt;</span> <span class="nv">$message</span><span class="p">],</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_INTERNAL_SERVER_ERROR</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$predisClient</span><span class="p">);</span>
-<a id="__codelineno-1-117" name="__codelineno-1-117"></a><span class="p">}</span>
-<a id="__codelineno-1-118" name="__codelineno-1-118"></a>
-<a id="__codelineno-1-119" name="__codelineno-1-119"></a><span class="c1">// fonction d&#39;envoi de la réponse HTTP au client</span>
-<a id="__codelineno-1-120" name="__codelineno-1-120"></a><span class="k">function</span> <span class="nf">sendResponse</span><span class="p">(</span><span class="nx">Response</span> <span class="nv">$response</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$result</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$statusCode</span><span class="p">,</span>
-<a id="__codelineno-1-121" name="__codelineno-1-121"></a>  <span class="k">array</span> <span class="nv">$headers</span><span class="p">,</span> <span class="nx">Logger</span> <span class="nv">$logger</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">,</span> <span class="nx">\Predis\Client</span> <span class="nv">$predisClient</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-122" name="__codelineno-1-122"></a>  <span class="c1">// $response : réponse HTTP</span>
-<a id="__codelineno-1-123" name="__codelineno-1-123"></a>  <span class="c1">// $result : tableau des résultats</span>
-<a id="__codelineno-1-124" name="__codelineno-1-124"></a>  <span class="c1">// $statusCode : statut HTTP de la réponse</span>
-<a id="__codelineno-1-125" name="__codelineno-1-125"></a>  <span class="c1">// $headers : entêtes HTTP à mettre dans la réponse</span>
-<a id="__codelineno-1-126" name="__codelineno-1-126"></a>  <span class="c1">// $logger : le logueur de l&#39;application</span>
-<a id="__codelineno-1-127" name="__codelineno-1-127"></a>  <span class="c1">// $predisClient : un client [predis]</span>
-<a id="__codelineno-1-128" name="__codelineno-1-128"></a>  <span class="c1">//</span>
-<a id="__codelineno-1-129" name="__codelineno-1-129"></a>  <span class="c1">// statut HTTTP</span>
-<a id="__codelineno-1-130" name="__codelineno-1-130"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="nv">$statusCode</span><span class="p">);</span>
-<a id="__codelineno-1-131" name="__codelineno-1-131"></a>  <span class="c1">// body</span>
-<a id="__codelineno-1-132" name="__codelineno-1-132"></a>  <span class="nv">$body</span> <span class="o">=</span> <span class="nx">\json_encode</span><span class="p">([</span><span class="s2">&quot;réponse&quot;</span> <span class="o">=&gt;</span> <span class="nv">$result</span><span class="p">],</span> <span class="nx">JSON_UNESCAPED_UNICODE</span><span class="p">);</span>
-<a id="__codelineno-1-133" name="__codelineno-1-133"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="nv">$body</span><span class="p">);</span>
-<a id="__codelineno-1-134" name="__codelineno-1-134"></a>  <span class="c1">// headers</span>
-<a id="__codelineno-1-135" name="__codelineno-1-135"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">headers</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$headers</span><span class="p">);</span>
-<a id="__codelineno-1-136" name="__codelineno-1-136"></a>  <span class="c1">// envoi</span>
-<a id="__codelineno-1-137" name="__codelineno-1-137"></a>  <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
-<a id="__codelineno-1-138" name="__codelineno-1-138"></a>  <span class="c1">// log</span>
-<a id="__codelineno-1-139" name="__codelineno-1-139"></a>  <span class="k">if</span> <span class="p">(</span><span class="nv">$logger </span><span class="o">!=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-140" name="__codelineno-1-140"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">$body</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-141" name="__codelineno-1-141"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
-<a id="__codelineno-1-142" name="__codelineno-1-142"></a>  <span class="p">}</span>
-<a id="__codelineno-1-143" name="__codelineno-1-143"></a>  <span class="c1">// fermeture de la connexion [redis]</span>
-<a id="__codelineno-1-144" name="__codelineno-1-144"></a>  <span class="k">if</span> <span class="p">(</span><span class="nv">$predisClient </span><span class="o">!=</span> <span class="k">NULL</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-145" name="__codelineno-1-145"></a>    <span class="nv">$predisClient</span><span class="o">-&gt;</span><span class="na">disconnect</span><span class="p">();</span>
-<a id="__codelineno-1-146" name="__codelineno-1-146"></a>  <span class="p">}</span>
-<a id="__codelineno-1-147" name="__codelineno-1-147"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// respect strict des types déclarés des paramètres de foctions</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">declare </span><span style="color:#000000">(strict_types=1);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// espace de noms</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">namespace </span><span style="color:#000000">Application;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// gestion des erreurs par PHP</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">ini_set</span><span style="color:#000000">(</span><span style="color:#0000c0">&quot;display_errors&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;0&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">//</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// chemin du fichier de configuration</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;CONFIG_FILENAME&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;Data/config-server.json&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line">// alias de classe</span>
+<span class="odt-code-line"><span style="font-weight:bold;background-color:#ffff00;color:#7f0055">use </span><span style="background-color:#ffff00;color:#000000">\Application\ServerDaoWithSession </span><span style="font-weight:bold;background-color:#ffff00;color:#7f0055">as </span><span style="background-color:#ffff00;color:#000000">ServerDaoWithRedis;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// session</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$session = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">Session</span><span style="color:#000000">();</span></span>
+<span class="odt-code-line"><span style="color:#000000">$session-&gt;start();</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">…</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">…</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// 1er log</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$logger-&gt;write(</span><span style="color:#0000c0">&quot;\n---nouvelle requête\n&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on récupère la requête courante</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$request = </span><span style="color:#005032">Request</span><span style="color:#000000">::</span><span style="font-style:italic;color:#000000">createFromGlobals</span><span style="color:#000000">();</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// authentification seulement la 1</span><span style="color:#557f5f">re</span><span style="color:#557f5f"> fois</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(!$session-&gt;has(</span><span style="color:#0000c0">&quot;user&quot;</span><span style="color:#000000">)) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  …</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">} </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// log</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $logger-&gt;write(</span><span style="color:#0000c0">&quot;Authentification prise en session…\n&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on a un utilisateur valide - on vérifie les paramètres reçus</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$erreurs = [];</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on doit avoir trois paramètres GET</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$method = </span><span style="font-style:italic;color:#000000">strtolower</span><span style="color:#000000">($request-&gt;getMethod());</span></span>
+<span class="odt-code-line"><span style="color:#000000">…</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// erreurs ?</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">($erreurs) {</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on envoie un code d&#x27;erreur 400 HTTP_BAD_REQUEST au client</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-style:italic;color:#000000">sendResponse</span><span style="color:#000000">($response, </span><span style="font-weight:bold;color:#000000">[&quot;erreurs&quot; =&gt; $erreurs]</span><span style="color:#000000">, </span><span style="color:#005032">Response</span><span style="color:#000000">::</span><span style="font-style:italic;color:#0000c0">HTTP_BAD_REQUEST</span><span style="color:#000000">, [], $logger);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// terminé</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">exit</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">} </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// logs</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $logger-&gt;write(</span><span style="color:#0000c0">&quot;paramètres </span><span style="font-weight:bold;color:#0000c0">[&#x27;marié&#x27;=&gt;$marié, &#x27;enfants&#x27;=&gt;$enfants, &#x27;salaire&#x27;=&gt;$salaire]</span><span style="color:#0000c0"> valides\n&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on a tout ce qu&#x27;il faut pour travailler</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// Redis</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">\Predis\</span><span style="color:#005032">Autoloader</span><span style="color:#000000">::</span><span style="font-style:italic;color:#000000">register</span><span style="color:#000000">();</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// client </span><span style="font-weight:bold;color:#557f5f">[predis]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $redis = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">\Predis\</span><span style="color:#005032">Client</span><span style="color:#000000">();</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// on se connecte au serveur pour voir s&#x27;il est là</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $redis-&gt;connect();</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">} </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(\Predis\Connection\</span><span style="color:#005032">ConnectionException</span><span style="color:#000000"> $ex) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// internal server error</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-style:italic;color:#000000">doInternalServerError</span><span style="color:#000000">(</span><span style="color:#0000c0">&quot;</span><span style="font-weight:bold;color:#0000c0">[redis]</span><span style="color:#0000c0">, &quot; </span><span style="color:#000000">. </span><span style="font-style:italic;color:#000000">utf8_encode</span><span style="color:#000000">($ex-&gt;getMessage()), $response, $config</span><span style="font-weight:bold;color:#000000">[&#x27;adminMail&#x27;]</span><span style="color:#000000">, $logger);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// terminé</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">exit</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[dao]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="background-color:#ffff00;color:#000000">!$redis-&gt;get(</span><span style="background-color:#ffff00;color:#0000c0">&quot;taxAdminData&quot;</span><span style="background-color:#ffff00;color:#000000">)</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// les données fiscales sont prises dans la base de données</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $logger-&gt;write(</span><span style="color:#0000c0">&quot;données fiscales prises en base de données\n&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// construction de la couche </span><span style="font-weight:bold;color:#557f5f">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $dao = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="background-color:#ffff00;color:#005032">ServerDaoWithRedis</span><span style="color:#000000">($config</span><span style="font-weight:bold;color:#000000">[&quot;databaseFilename&quot;]</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// on met les données fiscales dans la mémoire de portée </span><span style="font-weight:bold;color:#557f5f">[application]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// la méthode </span><span style="font-weight:bold;color:#557f5f">[TaxAdminData]</span><span style="color:#557f5f">-&gt;__toString va être appelée implicitement</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="background-color:#ffff00;color:#000000">$redis-&gt;set(</span><span style="background-color:#ffff00;color:#0000c0">&quot;taxAdminData&quot;</span><span style="background-color:#ffff00;color:#000000">, $dao-&gt;getTaxAdminData())</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(\</span><span style="color:#005032">RuntimeException</span><span style="color:#000000"> $ex) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// on note l&#x27;erreur</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-style:italic;color:#000000">doInternalServerError</span><span style="color:#000000">(</span><span style="color:#0000c0">&quot;</span><span style="font-weight:bold;color:#0000c0">[dao]</span><span style="color:#0000c0">, &quot; </span><span style="color:#000000">. </span><span style="font-style:italic;color:#000000">utf8_encode</span><span style="color:#000000">($ex-&gt;getMessage()), $response, $config</span><span style="font-weight:bold;color:#000000">[&#x27;adminMail&#x27;]</span><span style="color:#000000">, $logger, $redis);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#557f5f">// terminé</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">exit</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">} </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// les données fiscales sont prises dans la mémoire de portée </span><span style="font-weight:bold;color:#557f5f">[application]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $arrayOfAttributes = \</span><span style="font-style:italic;color:#000000">json_decode</span><span style="color:#000000">(</span><span style="background-color:#ffff00;color:#000000">$redis-&gt;get(</span><span style="background-color:#ffff00;color:#0000c0">&quot;taxAdminData&quot;</span><span style="background-color:#ffff00;color:#000000">)</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $taxAdminData = (</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">TaxAdminData</span><span style="color:#000000">())-&gt;setFromArrayOfAttributes($arrayOfAttributes);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// isntanciation de la couche </span><span style="font-weight:bold;color:#557f5f">[dao]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $dao = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="background-color:#ffff00;color:#005032">ServerDaoWithRedis</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">, $taxAdminData);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// logs</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $logger-&gt;write(</span><span style="color:#0000c0">&quot;données fiscales prises dans redis\n&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// création de la couche </span><span style="font-weight:bold;color:#557f5f">[métier]</span></span>
+<span class="odt-code-line"><span style="color:#000000">$métier = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">ServerMetier</span><span style="color:#000000">($dao);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// calcul de l&#x27;impôt</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="color:#000000">$result = $métier-&gt;calculerImpot($marié, (int) $enfants, (int) $salaire);</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// on rend la réponse</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">sendResponse</span><span style="color:#000000">($response, $result, </span><span style="color:#005032">Response</span><span style="color:#000000">::</span><span style="font-style:italic;color:#0000c0">HTTP_OK</span><span style="color:#000000">, [], $logger, $redis);</span></span>
+<span class="odt-code-line"><span style="color:#557f5f">// fin</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">exit</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000"> </span><span style="font-style:italic;color:#000000">doInternalServerError</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">string </span><span style="color:#000000">$message, </span><span style="color:#005032">Response</span><span style="color:#000000"> $response, </span><span style="font-weight:bold;color:#7f0055">array </span><span style="color:#000000">$infos,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#005032">Logger</span><span style="color:#000000"> $logger = </span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">, \Predis\</span><span style="color:#005032">Client</span><span style="color:#000000"> $</span><span style="background-color:#ffff00;color:#000000">predisClient</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $message : le message d&#x27;erreur</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $response : réponse HTTP</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $infos : tableau d&#x27;informations pour l&#x27;envoi du mail</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $result : tableau des résultats</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $logger : le logueur de l&#x27;application</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $predisClient : un client </span><span style="font-weight:bold;color:#557f5f">[predis]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">//</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// on envoie un mail à l&#x27;administrateur</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// SendAdminMail intercepte toutes les exception et les logue lui-même</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $infos</span><span style="font-weight:bold;color:#000000">[&#x27;message&#x27;]</span><span style="color:#000000"> = $message;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $sendAdminMail = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#005032">SendAdminMail</span><span style="color:#000000">($infos, $logger);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $sendAdminMail-&gt;send();</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// on envoie un code d&#x27;erreur 500 au client</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-style:italic;color:#000000">sendResponse</span><span style="color:#000000">($response, </span><span style="font-weight:bold;color:#000000">[&quot;erreur&quot; =&gt; $message]</span><span style="color:#000000">, </span><span style="color:#005032">Response</span><span style="color:#000000">::</span><span style="font-style:italic;color:#0000c0">HTTP_INTERNAL_SERVER_ERROR</span><span style="color:#000000">, [], $logger, $</span><span style="background-color:#ffff00;color:#000000">predisClient</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// fonction d&#x27;envoi de la réponse HTTP au client</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000"> </span><span style="font-style:italic;color:#000000">sendResponse</span><span style="color:#000000">(</span><span style="color:#005032">Response</span><span style="color:#000000"> $response, </span><span style="font-weight:bold;color:#7f0055">array </span><span style="color:#000000">$result, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#000000">$statusCode,</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">array </span><span style="color:#000000">$headers, </span><span style="color:#005032">Logger</span><span style="color:#000000"> $logger = </span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">, \Predis\</span><span style="color:#005032">Client</span><span style="color:#000000"> $</span><span style="background-color:#ffff00;color:#000000">predisClient</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $response : réponse HTTP</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $result : tableau des résultats</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $statusCode : statut HTTP de la réponse</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $headers : entêtes HTTP à mettre dans la réponse</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $logger : le logueur de l&#x27;application</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// $predisClient : un client </span><span style="font-weight:bold;color:#557f5f">[predis]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">//</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// statut HTTTP</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $response-&gt;setStatusCode($statusCode);</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// body</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $body = \</span><span style="font-style:italic;color:#000000">json_encode</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#000000">[&quot;réponse&quot; =&gt; $result]</span><span style="color:#000000">, </span><span style="font-style:italic;color:#0000c0">JSON_UNESCAPED_UNICODE</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $response-&gt;setContent($body);</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// headers</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $response-&gt;</span><span style="color:#0000c0">headers</span><span style="color:#000000">-&gt;add($headers);</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// envoi</span></span>
+<span class="odt-code-line"><span style="color:#000000">  $response-&gt;send();</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// log</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">($logger != </span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $logger-&gt;write(</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">$body</span><span style="color:#0000c0">\n&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $logger-&gt;close();</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#557f5f">// fermeture de la connexion </span><span style="font-weight:bold;color:#557f5f">[redis]</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">($predisClient != </span><span style="font-weight:bold;color:#7f0055">NULL</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="background-color:#ffff00;color:#000000">$predisClient-&gt;disconnect();</span></span>
+<span class="odt-code-line"><span style="color:#000000">  }</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+</code></pre></div>
+
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>ligne 15 : on donne l’alias <strong>[ServerDaoWithRedis]</strong> à la classe <strong>[\Application\ServerDaoWithSession]</strong> pour refléter le changement d’implémentation du script serveur ;</li>
@@ -1522,98 +1369,74 @@
 <li>ligne 85 : à partir de ce tableau, un nouvel objet <strong>[TaxAdminData]</strong> est instancié ;</li>
 <li>ligne 87 : la couche <strong>[dao]</strong> est instanciée ;</li>
 </ul>
+<p><a id="toc42690093"></a>
+<a id="toc42690479"></a>
+<a id="toc42690865"></a>
+<a id="refheadingtoc185711971629160"></a></p>
 <h2 id="206-code-du-client">20.6. Code du client</h2>
 <p><img src="images/10000000000001C60000012B855C7CB0.png" style="width:4.201cm;height:2.77cm;" alt="Image" /></p>
 <p>La version 10 du client est identique à la version 9. Seul change le fichier de configuration <strong>[config-client.json]</strong> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span>
-<span class="normal"><a href="#__codelineno-2-23">23</a></span>
-<span class="normal"><a href="#__codelineno-2-24">24</a></span>
-<span class="normal"><a href="#__codelineno-2-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>{
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    &quot;rootDirectory&quot;: &quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10&quot;,
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    &quot;taxPayersDataFileName&quot;: &quot;Data/taxpayersdata.json&quot;,
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    &quot;resultsFileName&quot;: &quot;Data/results.json&quot;,
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    &quot;errorsFileName&quot;: &quot;Data/errors.json&quot;,
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    &quot;dependencies&quot;: [
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        &quot;/../version-08/Entities/BaseEntity.php&quot;,
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        &quot;/../version-08/Entities/TaxPayerData.php&quot;,
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        &quot;/../version-08/Entities/ExceptionImpots.php&quot;,
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>        &quot;/../version-08/Utilities/Utilitaires.php&quot;,
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        &quot;/../version-08/Dao/InterfaceClientDao.php&quot;,
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>        &quot;/../version-08/Dao/TraitDao.php&quot;,
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>        &quot;/../version-09/Dao/ClientDao.php&quot;,
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>        &quot;/../version-08/Métier/InterfaceClientMetier.php&quot;,
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>        &quot;/../version-08/Métier/ClientMetier.php&quot;
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>    ],
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    &quot;absoluteDependencies&quot;: [
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>        &quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a>    ],
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    &quot;user&quot;: {
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>        &quot;login&quot;: &quot;admin&quot;,
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a>        &quot;passwd&quot;: &quot;admin&quot;
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a>    },
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a>    &quot;urlServer&quot;: &quot;https://localhost:443/php7/scripts-web/impots/version-10/impots-server.php&quot;
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a>}
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">{</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;rootDirectory&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;taxPayersDataFileName&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/taxpayersdata.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;resultsFileName&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/results.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;errorsFileName&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;Data/errors.json&quot;</span>,</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;dependencies&quot;</span>: [</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Entities/BaseEntity.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Entities/TaxPayerData.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Entities/ExceptionImpots.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Utilities/Utilitaires.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Dao/InterfaceClientDao.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Dao/TraitDao.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-09/Dao/ClientDao.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Métier/InterfaceClientMetier.php&quot;</span>,</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;/../version-08/Métier/ClientMetier.php&quot;</span></span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;absoluteDependencies&quot;</span>: [</span>
+<span class="odt-code-line">        <span style="font-style:italic;color:#2a00ff">&quot;C:/myprograms/laragon-lite/www/vendor/autoload.php&quot;</span></span>
+<span class="odt-code-line">    ],</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;user&quot;</span>: {</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;login&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;admin&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#7f007f">&quot;passwd&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;admin&quot;</span></span>
+<span class="odt-code-line">    },</span>
+<span class="odt-code-line">    <span style="color:#7f007f">&quot;urlServer&quot;</span>: <span style="font-style:italic;color:#2a00ff">&quot;</span><span style="font-style:italic;background-color:#ffff00;color:#2a00ff">https://localhost:443/php7/scripts-web/impots/version-10/impots-server.php</span><span style="font-style:italic;color:#2a00ff">&quot;</span></span>
+<span class="odt-code-line">}</span>
+</code></pre></div>
+
 <p>Seule change, ligne 24, l’URL du serveur.</p>
 <p>Les résultats sont les mêmes que dans la version 09. Testons simplement un nouveau cas d’erreur :</p>
 <p><img src="images/1000000000000722000002C9845AE03A.png" style="width:14.491cm;height:5.661cm;" alt="Image" /></p>
 <p>Le résultat dans la console est le suivant :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>L&#39;erreur suivante s&#39;est produite : {&quot;statut HTTP&quot;:500,&quot;erreur&quot;:&quot;[redis], Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée. [tcp:\/\/127.0.0.1:6379]&quot;}
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>Terminé
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">L&#x27;erreur suivante s&#x27;est produite : {&quot;statut HTTP&quot;:<span style="background-color:#ffb66c">500</span>,&quot;erreur&quot;:&quot;<span style="font-weight:bold;background-color:#ffff00">[redis]</span><span style="background-color:#ffff00">, Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée. </span><span style="font-weight:bold;background-color:#ffff00">[tcp:\/\/127.0.0.1:6379]</span>&quot;}</span>
+<span class="odt-code-line">Terminé</span>
+</code></pre></div>
+
+<p><a id="toc42690094"></a>
+<a id="toc42690480"></a>
+<a id="toc42690866"></a>
+<a id="refheadingtoc185713971629160"></a></p>
 <h2 id="207-tests-codeception-du-client">20.7. Tests [Codeception] du client</h2>
 <p><img src="images/10000000000001CB000001AE771AA7CC.png" style="width:4.25cm;height:3.98cm;" alt="Image" /></p>
 <p>La classe de test <strong>[ClientMetierTest]</strong> de la version 10 est identique à celle de la version 09 à une exception près :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">// respect strict des types déclarés des paramètres de foctions</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">declare</span> <span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">// espace de noms</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">// définition des constantes</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nb">define</span><span class="p">(</span><span class="s2">&quot;ROOT&quot;</span><span class="p">,</span> <span class="s2">&quot;C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="nx">…</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">&lt;?php</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// respect strict des types déclarés des paramètres de foctions</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">declare </span><span style="color:#000000">(strict_types=1);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// espace de noms</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">namespace </span><span style="color:#000000">Application;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#557f5f">// définition des constantes</span><span style="color:#557f5f"></span></span>
+<span class="odt-code-line"><span style="font-style:italic;color:#000000">define</span><span style="color:#000000">(</span><span style="font-style:italic;color:#0000c0">&quot;ROOT&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">&quot;</span><span style="background-color:#ffff00;color:#0000c0">C:/Data/st-2019/dev/php7/poly/scripts-console/impots/version-10</span><span style="color:#0000c0">&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">…</span><span style="color:#000000"></span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span><span style="color:#000000"></span></span>
+</code></pre></div>
+
 <ul>
 <li>ligne 10 : l’environnement du test est celui du client de la version 10 ;</li>
 </ul>
@@ -1622,59 +1445,42 @@
 <p>Maintenant, exécutons le test :</p>
 <p><img src="images/100000000000067400000231D9299178.png" style="width:13.11cm;height:4.451cm;" alt="Image" /></p>
 <p>Maintenant examinons les logs <strong>[logs.txt]</strong> du serveur :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>05/07/19 08:52:16:396 :
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>---nouvelle requête
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>05/07/19 08:52:16:403 : Autentification en cours…
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>05/07/19 08:52:16:403 : Authentification réussie [admin, admin]
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>05/07/19 08:52:16:403 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;2, &#39;salaire&#39;=&gt;55555] valides
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>05/07/19 08:52:16:407 : données fiscales prises en base de données
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>05/07/19 08:52:16:420 : {&quot;réponse&quot;:{&quot;impôt&quot;:2814,&quot;surcôte&quot;:0,&quot;décôte&quot;:0,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>05/07/19 08:52:16:546 :
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>---nouvelle requête
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>05/07/19 08:52:16:555 : Autentification en cours…
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>05/07/19 08:52:16:555 : Authentification réussie [admin, admin]
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>05/07/19 08:52:16:556 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;2, &#39;salaire&#39;=&gt;50000] valides
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>05/07/19 08:52:16:559 : données fiscales prises dans redis
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>05/07/19 08:52:16:559 : {&quot;réponse&quot;:{&quot;impôt&quot;:1384,&quot;surcôte&quot;:0,&quot;décôte&quot;:384,&quot;réduction&quot;:347,&quot;taux&quot;:0.14}}
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>05/07/19 08:52:16:668 :
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>---nouvelle requête
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>05/07/19 08:52:16:675 : Autentification en cours…
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>05/07/19 08:52:16:675 : Authentification réussie [admin, admin]
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>05/07/19 08:52:16:675 : paramètres [&#39;marié&#39;=&gt;oui, &#39;enfants&#39;=&gt;3, &#39;salaire&#39;=&gt;50000] valides
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a>05/07/19 08:52:16:678 : données fiscales prises dans redis
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a>05/07/19 08:52:16:678 : {&quot;réponse&quot;:{&quot;impôt&quot;:0,&quot;surcôte&quot;:0,&quot;décôte&quot;:720,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a>05/07/19 08:52:16:776 :
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>---nouvelle requête
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a>…
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">05/07/19 08:52:16:396 :</span>
+<span class="odt-code-line">---nouvelle requête</span>
+<span class="odt-code-line">05/07/19 08:52:16:403 : Autentification en cours…</span>
+<span class="odt-code-line">05/07/19 08:52:16:403 : Authentification réussie <span style="font-weight:bold">[admin, admin]</span></span>
+<span class="odt-code-line">05/07/19 08:52:16:403 : paramètres [&#x27;marié&#x27;=&gt;oui, &#x27;enfants&#x27;=&gt;2, &#x27;salaire&#x27;=&gt;55555] valides</span>
+<span class="odt-code-line">05/07/19 08:52:16:407 : <span style="background-color:#ffff00">données fiscales prises en base de données</span></span>
+<span class="odt-code-line">05/07/19 08:52:16:420 : {&quot;réponse&quot;:{&quot;impôt&quot;:2814,&quot;surcôte&quot;:0,&quot;décôte&quot;:0,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}</span>
+<span class="odt-code-line">05/07/19 08:52:16:546 :</span>
+<span class="odt-code-line">---nouvelle requête</span>
+<span class="odt-code-line">05/07/19 08:52:16:555 : Autentification en cours…</span>
+<span class="odt-code-line">05/07/19 08:52:16:555 : Authentification réussie <span style="font-weight:bold">[admin, admin]</span></span>
+<span class="odt-code-line">05/07/19 08:52:16:556 : paramètres [&#x27;marié&#x27;=&gt;oui, &#x27;enfants&#x27;=&gt;2, &#x27;salaire&#x27;=&gt;50000] valides</span>
+<span class="odt-code-line">05/07/19 08:52:16:559 : <span style="background-color:#ffff00">données fiscales prises dans redis</span></span>
+<span class="odt-code-line">05/07/19 08:52:16:559 : {&quot;réponse&quot;:{&quot;impôt&quot;:1384,&quot;surcôte&quot;:0,&quot;décôte&quot;:384,&quot;réduction&quot;:347,&quot;taux&quot;:0.14}}</span>
+<span class="odt-code-line">05/07/19 08:52:16:668 :</span>
+<span class="odt-code-line">---nouvelle requête</span>
+<span class="odt-code-line">05/07/19 08:52:16:675 : Autentification en cours…</span>
+<span class="odt-code-line">05/07/19 08:52:16:675 : Authentification réussie <span style="font-weight:bold">[admin, admin]</span></span>
+<span class="odt-code-line">05/07/19 08:52:16:675 : paramètres [&#x27;marié&#x27;=&gt;oui, &#x27;enfants&#x27;=&gt;3, &#x27;salaire&#x27;=&gt;50000] valides</span>
+<span class="odt-code-line">05/07/19 08:52:16:678 : <span style="background-color:#ffff00">données fiscales prises dans redis</span></span>
+<span class="odt-code-line">05/07/19 08:52:16:678 : {&quot;réponse&quot;:{&quot;impôt&quot;:0,&quot;surcôte&quot;:0,&quot;décôte&quot;:720,&quot;réduction&quot;:0,&quot;taux&quot;:0.14}}</span>
+<span class="odt-code-line">05/07/19 08:52:16:776 :</span>
+<span class="odt-code-line">---nouvelle requête</span>
+<span class="odt-code-line">…</span>
+</code></pre></div>
+
 <p>On a déjà dit qu’à chaque test, le constructeur de la classe de test est réexécuté, ce qui fait que la classe <strong>[ClientDao]</strong> testée est à chaque test instanciée avec un cookie de session inexistant. Tout se passe donc comme si les 11 tests représentaient 11 utilisateurs différents, avec 11 sessions différentes.</p>
 <ul>
 <li>ligne 6 : les données fiscales sont prises en base de données ;</li>
 <li>lignes 13, 20 : les données fiscales sont prises dans la mémoire <strong>[redis]</strong>. On a donc bien là une mémoire de portée <strong>[application]</strong> partagée par tous les utilisateurs de l’application ;</li>
 </ul>
+<p><a id="toc42690095"></a>
+<a id="toc42690481"></a>
+<a id="toc42690867"></a>
+<a id="refheadingtoc185715971629160"></a></p>
 <h2 id="208-interface-web-du-serveur-redis">20.8. Interface web du serveur [Redis]</h2>
 <p>Nous avons vu que le serveur <strong>[Redis]</strong> pouvait être géré en mode commande. Il peut également être géré grâce à une interface web :</p>
 <p><img src="images/100000000000078C000002E3B41FA763.png" style="width:15.341cm;height:5.86cm;" alt="Image" /></p>
@@ -1749,7 +1555,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
