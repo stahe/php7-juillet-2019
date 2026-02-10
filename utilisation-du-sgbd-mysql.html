@@ -1121,11 +1121,11 @@
 <a id="toc42690705"></a>
 <a id="refheading399121881943603"></a></p>
 <h1 id="12-utilisation-du-sgbd-mysql">12. Utilisation du SGBD MySQL</h1>
-<p><img src="images/10000000000001C9000002DA767154B2.png" style="width:4.231cm;height:6.76cm;" alt="Image" /></p>
+<p><img src="images/10000000000001C9000002DA767154B2.png" style="width:4.231cm;height:6.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C9000002DA767154B2.png" /></p>
 <p>Nous allons maintenant écrire des scripts PHP utilisant une base de données MySQL :</p>
-<p><img src="images/1000000000000719000001077C316F72.png" style="width:14.421cm;height:2.091cm;" alt="Image" /></p>
+<p><img src="images/1000000000000719000001077C316F72.png" style="width:14.421cm;height:2.091cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000719000001077C316F72.png" /></p>
 <p>Dans l’architecture ci-dessus, le script PHP (1) ne dialogue pas directement avec le SGBD (<strong>S</strong>ystème de <strong>G</strong>estion de <strong>B</strong>ases de <strong>D</strong>onnées) (3). Il dialogue avec un intermédiaire appelé <strong>pilote</strong> de SGBD ou encore <strong>driver</strong> de SGBD. PHP fournit une interface standard pour ces pilotes, l’interface <strong>PDO</strong> (<strong>P</strong>HP <strong>D</strong>ata <strong>O</strong>bjects). Cette interface est implémentée par différentes classes adaptées à chaque SGBD : une classe pour le SGBD MySQL, une autre pour le SGBD PostgreSQL… Pour changer de SGBD, on change de pilote :</p>
-<p><img src="images/10000000000006AE0000011454A7B884.png" style="width:13.57cm;height:2.192cm;" alt="Image" /></p>
+<p><img src="images/10000000000006AE0000011454A7B884.png" style="width:13.57cm;height:2.192cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006AE0000011454A7B884.png" /></p>
 <p>Le pilote PDO isole le script PHP (1) du SGBD (3, 6). Comme ces pilotes implémentent une interface standard, on peut s’attendre à ce que le script PHP (1) ne change pas si on passe du SGBD MySQL (3) au SGBD PostgreSQL (6). Dans la réalité cet idéal n’existe pas. En effet pour dialoguer avec le SGBD, le script PHP envoie des ordres SQL (<strong>S</strong>tandard <strong>Q</strong>uery <strong>L</strong>anguage). C’est un langage implémenté par tous les SGBD mais qui est incomplet. Aussi les SGBD lui ont-ils ajouté des ordres propriétaires. C’est une première cause d’incompatibilité entre SGBD. Par ailleurs les types de données utilisables dans les bases de données peuvent être différents d’un SGBD à l’autre. Ainsi PostgreSQL accepte un nombre de types de données bien plus grand que le SGBD MySQL. C’est une seconde cause d’incompatibilité. Une autre cause est la gestion des clés primaires automatiques (générées par le SGBD) : quasiment chaque SGBD a sa propre politique. Etc… Les causes d’incompatibilité sont nombreuses.</p>
 <p>Si on veut éviter de réécrire le script PHP (1) en passant de MySQL (3) à PostgreSQL (6), on est généralement amenés à insérer une nouvelle couche entre le script PHP (1) et le pilote PDO (2, 5) dont le rôle sera de gommer les incompatibilités entre les deux SGBD. Cependant dans les cas simples que nous allons rencontrer, cette couche supplémentaire ne sera pas nécessaire.</p>
 <p>Nous allons maintenant utiliser le SGBD MySQL. Celui-ci est inclus dans le paquetage Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>).</p>
@@ -1137,47 +1137,47 @@
 <a id="toc42690706"></a></p>
 <h2 id="121-creation-dune-base-de-donnees">12.1. Création d’une base de données</h2>
 <p>Nous montrons maintenant comment créer une base de données ainsi qu&#x27;un utilisateur MySQL avec l’outil Laragon.</p>
-<p><img src="images/1000000000000553000004751CF0B2F5.png" style="width:10.82cm;height:9.06cm;" alt="Image" /></p>
+<p><img src="images/1000000000000553000004751CF0B2F5.png" style="width:10.82cm;height:9.06cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000553000004751CF0B2F5.png" /></p>
 <ul>
 <li>une fois lancé, Laragon <strong>[1]</strong> peut être administré à partir d&#x27;un menu <strong>[2]</strong> ;</li>
 <li>en <strong>[3-5]</strong>, on installe l&#x27;outil <strong>[phpMyAdmin]</strong> d&#x27;administration de MySQL s’il n’a pas déjà été installé ;</li>
 </ul>
-<p><img src="images/10000000000006FC0000011798DFFB55.png" style="width:14.191cm;height:2.211cm;" alt="Image" /></p>
+<p><img src="images/10000000000006FC0000011798DFFB55.png" style="width:14.191cm;height:2.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FC0000011798DFFB55.png" /></p>
 <ul>
 <li>en <strong>[6]</strong>, on démarre le serveur web Apache ainsi que le SGBD MySQL ;</li>
 <li>en <strong>[7]</strong>, le serveur Apache est lancé ;</li>
 <li>en <strong>[8]</strong>, le SBD MySQL est lancé ;</li>
 </ul>
-<p><img src="images/10000000000007B8000003231C1634CE.png" style="width:15.68cm;height:6.37cm;" alt="Image" /></p>
+<p><img src="images/10000000000007B8000003231C1634CE.png" style="width:15.68cm;height:6.37cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007B8000003231C1634CE.png" /></p>
 <ul>
 <li>en <strong>[8-10]</strong>, on crée une base de données qu’on nomme <strong>[dbpersonnes]</strong> <strong>[11]</strong>. On va construire une base de données de personnes ;</li>
 </ul>
-<p><img src="images/1000000000000372000000A9BC1F927F.png" style="width:7.002cm;height:1.341cm;" alt="Image" /></p>
+<p><img src="images/1000000000000372000000A9BC1F927F.png" style="width:7.002cm;height:1.341cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000372000000A9BC1F927F.png" /></p>
 <ul>
 <li>en <strong>[11]</strong>, on va gérer la base de données qu’on vient de créer ;</li>
 </ul>
-<p><img src="images/1000000000000517000003778417D691.png" style="width:10.341cm;height:7.04cm;" alt="Image" /></p>
+<p><img src="images/1000000000000517000003778417D691.png" style="width:10.341cm;height:7.04cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000517000003778417D691.png" /></p>
 <ul>
 <li>l’opération <strong>[Bases de données]</strong> émet une requête web vers l’URL <strong>[http://localhost/phpmyadmin]</strong>. C’est le serveur web Apache de Laragon qui répond. L’URL <strong>[http://localhost/phpmyadmin]</strong> est l’URL de l’utilitaire <strong>[phpMyAdmin]</strong> que nous avons installé précédemment <strong>[5]</strong>. Cet utilitaire permet de gérer les bases de données MySQL ;</li>
 <li>par défaut, les identifiants de connexion de l’administrateur de la base sont : <strong>root</strong> <strong>[13]</strong> sans mot de passe <strong>[14]</strong> ;</li>
 </ul>
-<p><img src="images/10000000000004270000023D24733D5A.png" style="width:8.441cm;height:4.552cm;" alt="Image" /></p>
+<p><img src="images/10000000000004270000023D24733D5A.png" style="width:8.441cm;height:4.552cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004270000023D24733D5A.png" /></p>
 <ul>
 <li>en <strong>[16]</strong>, la base de données que nous avons créée précédemment ;</li>
 </ul>
-<p><img src="images/10000000000004FE000001A2825F24A3.png" style="width:10.141cm;height:3.32cm;" alt="Image" /></p>
+<p><img src="images/10000000000004FE000001A2825F24A3.png" style="width:10.141cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004FE000001A2825F24A3.png" /></p>
 <ul>
 <li>on a pour l’instant une base <strong>[dbpersonnes]</strong> <strong>[17]</strong> qui est vide <strong>[18]</strong> ;</li>
 </ul>
 <p>On crée un utilisateur <strong>[admpersonnes]</strong> avec le mot de passe <strong>[nobody]</strong> qui va avoir tous les droits sur la base de données <strong>[dbpersonnes]</strong> :</p>
-<p><img src="images/100000000000060A000002558164BA30.png" style="width:12.27cm;height:4.74cm;" alt="Image" /></p>
+<p><img src="images/100000000000060A000002558164BA30.png" style="width:12.27cm;height:4.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000060A000002558164BA30.png" /></p>
 <ul>
 <li>en <strong>[19]</strong>, on est positionnés sur la base <strong>[dbpersonnes]</strong> ;</li>
 <li>en <strong>[20]</strong>, on sélectionne l’onglet <strong>[Privileges]</strong> ;</li>
 <li>en <strong>[21-22]</strong>, on voit que l’utilisateur <strong>[root]</strong> a tous les droits sur la base <strong>[dbpersonnes]</strong> ;</li>
 <li>en <strong>[23]</strong>, on crée un nouvel utilisateur ;</li>
 </ul>
-<p><img src="images/10000000000006FD0000045029126D5B.png" style="width:14.2cm;height:8.76cm;" alt="Image" /></p>
+<p><img src="images/10000000000006FD0000045029126D5B.png" style="width:14.2cm;height:8.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FD0000045029126D5B.png" /></p>
 <ul>
 <li>en <strong>[25-26]</strong>, l’utilisateur aura l’identifiant <strong>[admdbpersonnes]</strong> ;</li>
 <li>en <strong>[27-29]</strong>, son mot de passe sera <strong>[nobody]</strong> ;</li>
@@ -1185,7 +1185,7 @@
 <li>en <strong>[32]</strong>, on indique que l’utilisateur <strong>[admdbpersonnes]</strong> doit avoir tous les droits sur la base <strong>[dbpersonnes]</strong> ;</li>
 <li>en <strong>[33]</strong>, on valide les renseignements donnés ;</li>
 </ul>
-<p><img src="images/10000000000008B600000156F61E68AF.png" style="width:17.701cm;height:2.71cm;" alt="Image" /></p>
+<p><img src="images/10000000000008B600000156F61E68AF.png" style="width:17.701cm;height:2.71cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008B600000156F61E68AF.png" /></p>
 <ul>
 <li>en <strong>[35]</strong>, phpMyAdmin indique que l’utilisateur a été créé ;</li>
 <li>en <strong>[36]</strong>, l’ordre SQL qui a été émis sur la base ;</li>
@@ -1197,15 +1197,15 @@
 <li>un utilisateur <strong>[admpersonnes/nobody]</strong> qui a tous les droits sur cette base de données ;</li>
 </ul>
 <p>Nous allons écrire des scripts PHP pour exploiter la base de données. PHP dispose de diverses bibliothèques pour gérer les bases de données. Nous utiliserons la bibliothèque PDO (PHP Data Objects) qui s&#x27;intercale entre le code PHP et le SGBD :</p>
-<p><img src="images/10000000000006F200000102F5E4EDD3.png" style="width:14.11cm;height:2.05cm;" alt="Image" /></p>
+<p><img src="images/10000000000006F200000102F5E4EDD3.png" style="width:14.11cm;height:2.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F200000102F5E4EDD3.png" /></p>
 <p>La bibliothèque PDO permet au script PHP de s&#x27;abstraire de la nature exacte du SGBD utilisé. Ainsi ci-dessus, le SGBD <strong>MySQL</strong> peut être remplacé par le SGBD <strong>PostgreSQL</strong> avec un impact minimum sur le code du script PHP. Cette bibliothèque n&#x27;est pas disponible par défaut. On peut vérifier sa disponibilité de la façon suivante :</p>
-<p><img src="images/10000000000005EF000003B0A69838B8.png" style="width:12.06cm;height:7.49cm;" alt="Image" /></p>
+<p><img src="images/10000000000005EF000003B0A69838B8.png" style="width:12.06cm;height:7.49cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EF000003B0A69838B8.png" /></p>
 <ul>
 <li>en <strong>[1-4]</strong>, on vérifie les extensions PDO actives ;</li>
 <li>en <strong>[5]</strong>, on voit que l’extension PDO pour le SGBD MySQL est active. Les autres ne le sont pas. Il suffirait de les cliquer pour les activer ;</li>
 </ul>
 <p>Une autre façon d’activer une extension est de modifier directement le fichier <strong>[php.ini]</strong> (paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a>) qui configure PHP :</p>
-<p><img src="images/1000000000000457000003E823FB7DD9.png" style="width:8.82cm;height:7.94cm;" alt="Image" /></p>
+<p><img src="images/1000000000000457000003E823FB7DD9.png" style="width:8.82cm;height:7.94cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000457000003E823FB7DD9.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, l’extension PDO de MySQL est activée ;</li>
 <li>en <strong>[2]</strong>, l’extension PDO de Firebird est désactivée ;</li>
@@ -1320,8 +1320,8 @@
 </ul>
 <p><strong>Résultats</strong> :</p>
 <p>Si l’exécution du script se passe sans erreurs, on peut voir la présence de la table dans phpMyAdmin  :</p>
-<p><img src="images/10000000000005B8000002B6E9CD2C8E.png" style="width:11.621cm;height:5.511cm;" alt="Image" /></p>
-<p><img src="images/1000000000000677000001B779F47741.png" style="width:13.14cm;height:3.481cm;" alt="Image" /></p>
+<p><img src="images/10000000000005B8000002B6E9CD2C8E.png" style="width:11.621cm;height:5.511cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B8000002B6E9CD2C8E.png" /></p>
+<p><img src="images/1000000000000677000001B779F47741.png" style="width:13.14cm;height:3.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000677000001B779F47741.png" /></p>
 <ul>
 <li>en <strong>[3]</strong> la base de données ;</li>
 <li>en <strong>[4]</strong>, la table présentée ;</li>
@@ -1329,7 +1329,7 @@
 <li>en <strong>[6-8]</strong>, les trois colonnes de la table ;</li>
 <li>en <strong>[9]</strong>, aucune des trois colonnes ne peut être vide ;</li>
 </ul>
-<p><img src="images/10000000000005210000013C193B2870.png" style="width:10.42cm;height:2.511cm;" alt="Image" /></p>
+<p><img src="images/10000000000005210000013C193B2870.png" style="width:10.42cm;height:2.511cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005210000013C193B2870.png" /></p>
 <ul>
 <li>en <strong>[10]</strong>, la liste des index de la table. Un index permet de retrouver dans la table les lignes ayant tel index, plus vite que si on parcourait séquentiellement les lignes de la table. La clé primaire fait toujours partie des index mais un index peut ne pas être une clé primaire ;</li>
 <li>en <strong>[11]</strong>, l’index est ici la clé primaire ;</li>
@@ -1383,7 +1383,7 @@
 <li>ligne 1 : on supprime la table <strong>[personnes]</strong> si elle existe ;</li>
 <li>ligne 2 : on indique au serveur MySQL qu’on va lui envoyer des caractères codés en UTF-8. Cet ordre SQL propre à MySQL est nécessaire ici par exemple pour avoir ligne 7, le é de Géraldine dans la base. Si on ne met pas la ligne 2, le é va être traduit en une suite de deux caractères étranges. Le client est le script PHP écrit sous Netbeans. Or celui-ci code les fichiers en UTF-8 <strong>[1-4]</strong> ci-dessous :</li>
 </ul>
-<p><img src="images/10000000000007B600000446BCEF1139.png" style="width:15.671cm;height:8.681cm;" alt="Image" /></p>
+<p><img src="images/10000000000007B600000446BCEF1139.png" style="width:15.671cm;height:8.681cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007B600000446BCEF1139.png" /></p>
 <ul>
 <li>ligne 3 : création de la table <strong>[personnes]</strong> avec les trois colonnes (prenom, nom, age) et la clé primaire (nom, prenom) ;</li>
 <li>lignes 4-10 : insertion de 7 lignes dans la table <strong>[personnes]</strong> ;</li>
@@ -1552,7 +1552,7 @@
 </code></pre></div>
 
 <p>Les insertions faites sont visibles avec phpMyAdmin :</p>
-<p><img src="images/100000000000031400000168D6F29E0B.png" style="width:6.25cm;height:2.86cm;" alt="Image" /></p>
+<p><img src="images/100000000000031400000168D6F29E0B.png" style="width:6.25cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000031400000168D6F29E0B.png" /></p>
 <p><a id="executiondordressql"></a>
 <a id="refheading399221881943603"></a>
 <a id="toc42689938"></a>
@@ -1921,7 +1921,7 @@
 <ul>
 <li>lignes 17-20 : on insère 10 lignes dans la table <strong>[personnes]</strong> de la base <strong>[admpersonnes]</strong> :</li>
 </ul>
-<p><img src="images/1000000000000557000003C59FE215B2.png" style="width:10.85cm;height:7.661cm;" alt="Image" /></p>
+<p><img src="images/1000000000000557000003C59FE215B2.png" style="width:10.85cm;height:7.661cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000557000003C59FE215B2.png" /></p>
 <ul>
 <li>ligne 22 : on « prépare » un ordre SQL <strong>[select]</strong> qu’on exécute ligne 23 ;</li>
 <li>ligne 25 : on récupère avec la méthode <strong>[PDOStatement::fetch]</strong> une ligne du résultat de l’opération SQL <strong>[select]</strong> exécutée. La méthode <strong>[PDOStatement::fetch]</strong> peut récupérer de diverses façons les lignes résultats d’une opération SQL <strong>[select]</strong> préparée. Le script en présente quelques unes. La méthode <strong>[PDOStatement::fetch]</strong> sans paramètres ramène la ligne courante du <strong>[select]</strong> sous la forme d’un dictionnaire indexé à la fois sur les n°s de colonnes et leurs noms ;</li>
@@ -2167,7 +2167,7 @@
 </ul>
 <p><strong>Résultats</strong></p>
 <p>Avant exécution du script, la base <strong>[admpersonnes]</strong> est dans l’état suivant :</p>
-<p><img src="images/10000000000004CA0000035ACA80495C.png" style="width:9.73cm;height:6.811cm;" alt="Image" /></p>
+<p><img src="images/10000000000004CA0000035ACA80495C.png" style="width:9.73cm;height:6.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004CA0000035ACA80495C.png" /></p>
 <p>On exécute le script <strong>[mysql-07.php]</strong>. Les affichages écran sont alors les suivants :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="font-weight:bold">[set names &#x27;utf8&#x27;]</span> : Exécution réussie</span>
@@ -2237,7 +2237,7 @@
 <li>ligne 54 : la transaction est alors annulée ;</li>
 </ul>
 <p>Si on vérifie l’état de la base, on la trouve dans le même état qu’avant l’exécution du script. On n’y voit pas notamment la ligne <strong>[Josette, Bruneau, 46]</strong> de la ligne 52 des résultats ci-dessus.</p>
-<p><img src="images/10000000000004CA0000035ACA80495C.png" style="width:9.73cm;height:6.811cm;" alt="Image" /></p>
+<p><img src="images/10000000000004CA0000035ACA80495C.png" style="width:9.73cm;height:6.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004CA0000035ACA80495C.png" /></p>
 <p><strong>Résumé</strong></p>
 <ul>
 <li>une transaction commence avec la méthode <strong>[PDO::beginTransaction]</strong> ;</li>

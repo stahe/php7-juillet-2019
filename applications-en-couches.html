@@ -1076,9 +1076,9 @@
 <a id="toc42690680"></a>
 <a id="refheadingtoc788372244347140"></a></p>
 <h2 id="101-introduction">10.1. Introduction</h2>
-<p><img src="images/1000000000000183000001D944836178.png" style="width:3.581cm;height:4.381cm;" alt="Image" /></p>
+<p><img src="images/1000000000000183000001D944836178.png" style="width:3.581cm;height:4.381cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000183000001D944836178.png" /></p>
 <p>Nous allons découvrir maintenant comment structurer une application PHP en couches :</p>
-<p><img src="images/10000000000004EB000001154342CD64.png" style="width:9.991cm;height:2.2cm;" alt="Image" /></p>
+<p><img src="images/10000000000004EB000001154342CD64.png" style="width:9.991cm;height:2.2cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004EB000001154342CD64.png" /></p>
 <p>Dans ce schéma, c’est la <strong>couche de gauche qui prend l’initiative d’utiliser la couche de droite</strong>. Le rôle des couches est le suivant :</p>
 <ul>
 <li><strong>[1]</strong> : la couche appelée <strong>[dao]</strong> (Data Access Objects) s&#x27;occupe des échanges avec des entrepôts de données externes <strong>[4]</strong> (fichiers, bases de données, services web…). Cette couche est parfois appelée <strong>[DAL]</strong> (Data Access Layer) un terme qui décrit mieux le rôle de la couche. Cette couche peut lire des données <strong>[3]</strong> ou en écrire <strong>[2]</strong>. Elle est sollicitée par la couche <strong>[métier]</strong> <strong>[6]</strong> et lui rend des résultats <strong>[7]</strong> ;</li>
@@ -1102,9 +1102,9 @@
 <p>Les procédures de la couche <strong>[métier]</strong> vont alors utiliser l’interface <strong>[IDao]</strong> plutôt que la classe <strong>[Dao]</strong>. Ceci permet de faire évoluer la couche <strong>[Dao]</strong> sans toucher à la couche <strong>[Métier]</strong>. Supposons que dans une version 1, la couche <strong>[Dao1]</strong> utilise des données d’une base de données. Suite à une évolution, ces données sont maintenant fournies par un service web dans une version 2, <strong>[Dao2]</strong>. On s’assurera que les deux classes <strong>[Dao1]</strong> et <strong>[Dao2]</strong> implémentent la même interface <strong>[IDao]</strong> et qu’elles lancent les mêmes exceptions. Si ceci est vérifié, la couche <strong>[Métier]</strong> qui travaille avec l’interface <strong>[IDao]</strong> restera inchangée ;</p>
 <p>Le même raisonnement s’applique à la couche <strong>[Métier]</strong>.</p>
 <p>Voyons une implémentation avec des classes et interfaces :</p>
-<p><img src="images/100000000000012A00000145FDB3E370.png" style="width:2.761cm;height:3.01cm;" alt="Image" /></p>
+<p><img src="images/100000000000012A00000145FDB3E370.png" style="width:2.761cm;height:3.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012A00000145FDB3E370.png" /></p>
 <p>L’application va implémenter la structure en couches suivante :</p>
-<p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" /></p>
+<p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000338000000EDAD236403.png" /></p>
 <p><a id="toc42689909"></a>
 <a id="toc42690295"></a>
 <a id="toc42690681"></a>
@@ -1313,7 +1313,7 @@
 <ul>
 <li>rappelons quelques points : le script <strong>[main1.php]</strong> est le chef d’orchestre de l’application. Il crée la structure en couches de l’application (lignes 15-17) puis ensuite commence à dialoguer avec la couche <strong>[métier]</strong> (lignes 19-21). La structure en couches est en effet la suivante :</li>
 </ul>
-<p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" /></p>
+<p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000338000000EDAD236403.png" /></p>
 <p>Selon ce schéma, le script <strong>[main1.php]</strong> ne doit s’adresser qu’à la couche <strong>[métier]</strong>. Elle ne doit pas s’adresser à la couche <strong>[dao]</strong> même si c’est théoriquement possible.</p>
 <p>Les résultats de l’exécution sont les suivants :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">

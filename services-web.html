@@ -1468,7 +1468,7 @@
 <h2 id="171-introduction">17.1. Introduction</h2>
 <p>Les programmes PHP pouvant être exécutés par un serveur WEB, un tel programme devient un programme serveur pouvant servir plusieurs clients. Du point de vue du client, appeler un service web revient à demander l&#x27;URL de ce service. Le client peut être écrit avec n&#x27;importe quel langage, notamment en PHP. Dans ce dernier cas, on utilise alors les fonctions réseau que nous venons de voir. Il nous faut par ailleurs savoir &quot;converser&quot; avec un service web, c&#x27;est-à-dire comprendre le protocole <em>http</em> de communication entre un serveur WEB et ses clients. C&#x27;était le but du paragraphe <a href="#_Le_protocole_HTTP"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p>Le client web décrit au paragraphe <a href="#_Exemple_6"><u><span style="color: #0563c1">lien</span></u></a> nous a permis de découvrir une partie du protocole HTTP.</p>
-<p><img src="images/1000000000000588000000CA8A308052.png" style="width:11.24cm;height:1.601cm;" alt="Image" /></p>
+<p><img src="images/1000000000000588000000CA8A308052.png" style="width:11.24cm;height:1.601cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000588000000CA8A308052.png" /></p>
 <p>Dans leur version la plus simple, les échanges client / serveur sont les suivants :</p>
 <ul>
 <li>le client ouvre une connexion avec le port 80 du serveur web ;</li>
@@ -1478,7 +1478,7 @@
 </ul>
 <p>Le document peut être de nature diverse : un texte au format HTML, une image, une vidéo… Ce peut être un document existant (document statique) ou bien un document généré à la volée par un script (document dynamique). Dans ce dernier cas, on parle de programmation web. Le script de génération dynamique de documents peut être écrit dans divers langages : PHP, Python, Perl, Java, Ruby, C#, VB.net…</p>
 <p>Dans la suite, nous allons utiliser des scripts PHP pour générer dynamiquement des documents texte.</p>
-<p><img src="images/10000000000007BE0000010B7CABB3B9.png" style="width:15.731cm;height:2.121cm;" alt="Image" /></p>
+<p><img src="images/10000000000007BE0000010B7CABB3B9.png" style="width:15.731cm;height:2.121cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007BE0000010B7CABB3B9.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le client ouvre une connexion avec le serveur, demande un script PHP, envoie ou non des paramètres à destination de ce script ;</li>
 <li>en <strong>[2]</strong>, le serveur web fait exécuter le script PHP par l&#x27;interpréteur PHP. Le script génère un document qui est envoyé au client <strong>[3]</strong><strong> ;</strong></li>
@@ -1486,38 +1486,38 @@
 </ul>
 <p>Le serveur web peut traiter plusieurs clients à la fois.</p>
 <p>Avec le paquetage logiciel <strong>[Laragon]</strong>, le serveur web est un serveur Apache, un serveur open source de l&#x27;Apache Foundation (http://www.apache.org/). Dans les applications qui suivent, <strong>[Laragon]</strong> doit être lancé :</p>
-<p><img src="images/10000000000007D6000002D412B07B9D.png" style="width:18.582cm;height:6.7cm;" alt="Image" /></p>
+<p><img src="images/10000000000007D6000002D412B07B9D.png" style="width:18.582cm;height:6.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D6000002D412B07B9D.png" /></p>
 <p>Cela lance le serveur web Apache ainsi que le SGBD MySQL.</p>
 <p>Les scripts exécutés par le serveur web seront écrits avec l&#x27;outil Netbeans. Nous avons écrit jusqu&#x27;à maintenant des scripts PHP exécutés dans un contexte console :</p>
-<p><img src="images/10000000000006EA000000FB5E50259C.png" style="width:14.05cm;height:1.99cm;" alt="Image" /></p>
+<p><img src="images/10000000000006EA000000FB5E50259C.png" style="width:14.05cm;height:1.99cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006EA000000FB5E50259C.png" /></p>
 <p>L&#x27;utilisateur utilise la console pour demander l&#x27;exécution d&#x27;un script PHP et en recevoir les résultats.</p>
 <p>Dans les applications client /serveur qui vont suivre :</p>
 <ul>
 <li>le script du client est exécuté dans un contexte console ;</li>
 <li>le script du serveur est exécuté dans un contexte web ;</li>
 </ul>
-<p><img src="images/100000000000073D00000269DE073C1A.png" style="width:14.712cm;height:4.901cm;" alt="Image" /></p>
+<p><img src="images/100000000000073D00000269DE073C1A.png" style="width:14.712cm;height:4.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000073D00000269DE073C1A.png" /></p>
 <p>Le script PHP du serveur ne peut pas être n&#x27;importe où dans le système de fichiers. En effet, le serveur web cherche dans des endroits précisés par configuration, les documents statiques et dynamiques qu&#x27;on lui demande. La configuration par défaut de Laragon fait que les documents sont cherchés dans le dossier <em>&lt;Laragon&gt;/www</em> où &lt;<em>Laragon</em>&gt; est le dossier d&#x27;installation de Laragon. Ainsi si un client web demande un document D avec l&#x27;URL <strong>[http://localhost/D]</strong>, le serveur web lui servira le document D de chemin <strong>[&lt;Laragon&gt;/www/D]</strong>.</p>
 <p>Dans les exemples qui suivent, nous mettrons les scripts serveur dans le dossier <strong>[www/php7/scripts-web]</strong>. Si un script serveur s&#x27;appelle <em>S.php</em>, il sera demandé au serveur web avec l&#x27;URL <strong>[http://localhost/php7/scripts-web/S.php]</strong>. Le document <strong>[&lt;Laragon&gt;/www/php7/scripts-web/S.php]</strong> lui sera alors servi.</p>
-<p><img src="images/100000000000036A000000D288886953.png" style="width:8.09cm;height:1.941cm;" alt="Image" /></p>
+<p><img src="images/100000000000036A000000D288886953.png" style="width:8.09cm;height:1.941cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000036A000000D288886953.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le dossier <strong>[&lt;laragon&gt;/www]</strong> ;</li>
 <li>en <strong>[2]</strong>, le dossier <strong>[php7/scripts-web]</strong> ;</li>
 </ul>
 <p>Pour créer des scripts serveur avec Netbeans, nous procéderons de la façon suivante :</p>
-<p><img src="images/1000000000000689000002066E37D2AC.png" style="width:15.491cm;height:4.8cm;" alt="Image" /></p>
+<p><img src="images/1000000000000689000002066E37D2AC.png" style="width:15.491cm;height:4.8cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000689000002066E37D2AC.png" /></p>
 <ul>
 <li>en <strong>[1-2]</strong>, nous créons un nouveau projet</li>
 <li>en <strong>[3-4]</strong>, nous prenons la catégorie <strong>[PHP]</strong> et le projet <strong>[PHP Application]</strong></li>
 </ul>
-<p><img src="images/10000000000007270000023BD359DD0C.png" style="width:16.961cm;height:5.291cm;" alt="Image" /></p>
+<p><img src="images/10000000000007270000023BD359DD0C.png" style="width:16.961cm;height:5.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007270000023BD359DD0C.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, le nom du projet ;</li>
 <li>en <strong>[6]</strong>, le dossier du projet dans le système de fichiers. Notez que celui-ci est dans le dossier <strong>[&lt;laragon&gt;/www]</strong> où il doit être ;</li>
 <li>en <strong>[7-8]</strong>, acceptez les valeurs par défaut proposées ;</li>
 <li>en <strong>[9-10]</strong>, acceptez les valeurs par défaut proposées. En <strong>[10]</strong>, notez que l’URL des scripts que nous placerons dans ce projet commencera par le chemin <strong>[http://localhost/php7/scripts-web/]</strong> ;</li>
 </ul>
-<p><img src="images/100000000000073A0000017B7E5A30DB.png" style="width:14.682cm;height:3.01cm;" alt="Image" /></p>
+<p><img src="images/100000000000073A0000017B7E5A30DB.png" style="width:14.682cm;height:3.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000073A0000017B7E5A30DB.png" /></p>
 <ul>
 <li>en <strong>[11]</strong>, des frameworks web écrits en PHP vous sont proposés. Ces frameworks sont indispensables dès que l’application web prend un peu d’ampleur ;</li>
 <li>en <strong>[12]</strong>, on peut ajouter des bibliothèques PHP à l’aide de l’outil <strong>[Composer]</strong>. Nous avons utilisé cet outil à deux reprises dans une fenêtre <strong>[Terminal]</strong> de Laragon :<ul>
@@ -1534,12 +1534,12 @@
 <h2 id="172-ecriture-dune-page-statique">17.2. Ecriture d’une page statique</h2>
 <p><strong>Note </strong>: Pour la suite, il faut que <strong>[Laragon]</strong> soit lancé.</p>
 <p>Nous allons montrer comment créer une page statique HTML (HyperText Markup Language) à l’aide de Netbeans :</p>
-<p><img src="images/10000000000006F4000001830F00ECFA.png" style="width:16.481cm;height:3.581cm;" alt="Image" /></p>
+<p><img src="images/10000000000006F4000001830F00ECFA.png" style="width:16.481cm;height:3.581cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F4000001830F00ECFA.png" /></p>
 <ul>
 <li>en <strong>[1-5]</strong>, nous créons un dossier nommé <strong>[01]</strong> ;</li>
 </ul>
-<p><img src="images/100000000000077C0000018504275ADA.png" style="width:17.74cm;height:3.601cm;" alt="Image" /></p>
-<p><img src="images/10000000000001A60000012728F2D4AA.png" style="width:3.911cm;height:2.731cm;" alt="Image" /></p>
+<p><img src="images/100000000000077C0000018504275ADA.png" style="width:17.74cm;height:3.601cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077C0000018504275ADA.png" /></p>
+<p><img src="images/10000000000001A60000012728F2D4AA.png" style="width:3.911cm;height:2.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A60000012728F2D4AA.png" /></p>
 <ul>
 <li>en <strong>[6-12]</strong>, nous créons un fichier HTML <strong>[exemple-01.html]</strong> ;</li>
 </ul>
@@ -1580,7 +1580,7 @@
 
 <p>Nous avons changé le titre de la page (ligne 4) ainsi que son contenu (ligne 9).</p>
 <p>Maintenant faisons afficher cette page HTML par le serveur Apache de Laragon :</p>
-<p><img src="images/1000000000000752000001C4991E97A3.png" style="width:17.35cm;height:4.19cm;" alt="Image" /></p>
+<p><img src="images/1000000000000752000001C4991E97A3.png" style="width:17.35cm;height:4.19cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000752000001C4991E97A3.png" /></p>
 <ul>
 <li>en <strong>[1-2]</strong>, nous  faisons afficher la page par le serveur Apache de Laragon ;</li>
 <li>en <strong>[3]</strong>, l’URL de la page affichée ;</li>
@@ -1589,19 +1589,19 @@
 </ul>
 <p>La page affichée est une page statique : on peut la charger autant de fois que l’on veut dans le navigateur (F5), c’est toujours le même contenu qui est affiché.</p>
 <p>La plupart des navigateurs donnent accès aux données échangées entre le client et le serveur, celles qui ont été décrites au paragraphe <a href="#_Le_protocole_HTTP"><u><span style="color: #0563c1">lien</span></u></a>. Avec le navigateur Firefox (mai 2019), il faut faire F12 pour avoir accès à ces données :</p>
-<p><img src="images/10000000000006ED00000170F82BE91C.png" style="width:14.071cm;height:2.92cm;" alt="Image" /></p>
+<p><img src="images/10000000000006ED00000170F82BE91C.png" style="width:14.071cm;height:2.92cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006ED00000170F82BE91C.png" /></p>
 <p>Comme indiqué en <strong>[1]</strong>, rechargeons la page (F5) :</p>
-<p><img src="images/100000000000070B0000013C5B2CFCD5.png" style="width:16.701cm;height:2.931cm;" alt="Image" /></p>
+<p><img src="images/100000000000070B0000013C5B2CFCD5.png" style="width:16.701cm;height:2.931cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000070B0000013C5B2CFCD5.png" /></p>
 <ul>
 <li>en <strong>[2]</strong>, le document chargé par le navigateur : nous le sélectionnons ;</li>
 </ul>
-<p><img src="images/10000000000007760000017FDD456BC3.png" style="width:17.691cm;height:3.551cm;" alt="Image" /></p>
+<p><img src="images/10000000000007760000017FDD456BC3.png" style="width:17.691cm;height:3.551cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007760000017FDD456BC3.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, le document à analyser est sélectionné ;</li>
 <li>en <strong>[3-4]</strong>, nous demandons à voir les échanges client / serveur ;</li>
 <li>en <strong>[6]</strong>, ces échanges ;</li>
 </ul>
-<p><img src="images/100000000000046E00000438E21A2588.png" style="width:9cm;height:8.572cm;" alt="Image" /></p>
+<p><img src="images/100000000000046E00000438E21A2588.png" style="width:9cm;height:8.572cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046E00000438E21A2588.png" /></p>
 <ul>
 <li>en <strong>[7]</strong>, on sélectionne l’onglet des entêtes ;</li>
 <li>en <strong>[8]</strong>, l’URL demandée par le navigateur ;</li>
@@ -1609,12 +1609,12 @@
 <li>en <strong>[10]</strong>, les entêtes HTTP envoyés ensuite par le navigateur (le client) ;</li>
 <li>en <strong>[11]</strong>, les entêtes HTTP de la réponse du serveur ;</li>
 </ul>
-<p><img src="images/100000000000044E0000025798B1DA49.png" style="width:8.751cm;height:4.751cm;" alt="Image" /></p>
+<p><img src="images/100000000000044E0000025798B1DA49.png" style="width:8.751cm;height:4.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000044E0000025798B1DA49.png" /></p>
 <ul>
 <li>en <strong>[12-14]</strong>, la réponse du serveur envoyée après les entêtes HTTP ;</li>
 <li>en <strong>[14]</strong>, on voit que le navigateur client a reçu la page HTML que nous avons construite. Il a ensuite interprété ce code pour afficher la chose suivante :</li>
 </ul>
-<p><img src="images/10000000000002F600000152EBA38675.png" style="width:6.021cm;height:2.68cm;" alt="Image" /></p>
+<p><img src="images/10000000000002F600000152EBA38675.png" style="width:6.021cm;height:2.68cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002F600000152EBA38675.png" /></p>
 <p><a id="creationdunepage"></a>
 <a id="refheadingtoc114634425309931"></a>
 <a id="toc42690017"></a>
@@ -1622,8 +1622,8 @@
 <a id="toc42690789"></a></p>
 <h2 id="173-creation-dune-page-dynamique-en-php">17.3. Création d’une page dynamique en PHP</h2>
 <p>Nous écrivons maintenant une page dynamique en PHP :</p>
-<p><img src="images/100000000000075C000001B7E049F65C.png" style="width:14.951cm;height:3.481cm;" alt="Image" /></p>
-<p><img src="images/100000000000019C0000013EAEFD0290.png" style="width:3.821cm;height:2.941cm;" alt="Image" /></p>
+<p><img src="images/100000000000075C000001B7E049F65C.png" style="width:14.951cm;height:3.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000075C000001B7E049F65C.png" /></p>
+<p><img src="images/100000000000019C0000013EAEFD0290.png" style="width:3.821cm;height:2.941cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019C0000013EAEFD0290.png" /></p>
 <ul>
 <li>en <strong>[1-8]</strong>, nous créons une page <strong>[exemple-01.php]</strong> ;</li>
 </ul>
@@ -1679,7 +1679,7 @@
 </ul>
 <p><span style="color: #000000">Basiquement, le script PHP ci-dessus écrit l&#x27;heure courante sur la console. Cependant, lorsqu&#x27;il est exécuté par un serveur web, le flux de sortie de l’instruction </span><strong><span style="color: #000000">[print]</span></strong><span style="color: #000000"> qui est habituellement associé à la console d’exécution du script est redirigé ici vers la connexion qui lie le serveur à son client. Donc, dans un contexte web, le script ci-dessus envoie l&#x27;heure courante sous forme de texte au client, ici un navigateur.</span></p>
 <p><span style="color: #000000">Exécutons le script </span><strong><span style="color: #000000">[exemple-01.php]</span></strong><span style="color: #000000"> :</span></p>
-<p><img src="images/10000000000007620000020525E2F5FD.png" style="width:15.001cm;height:4.1cm;" alt="Image" /></p>
+<p><img src="images/10000000000007620000020525E2F5FD.png" style="width:15.001cm;height:4.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007620000020525E2F5FD.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, l’URL demandée au serveur web Apache ;</li>
 <li>en <strong>[4]</strong>, le titre de la page que nous avons changé ;</li>
@@ -1687,7 +1687,7 @@
 </ul>
 <p>Nous avons ici une page <strong>dynamique</strong> car si on recharge plusieurs fois la page dans le navigateur (F5), son contenu change (l’heure change).</p>
 <p>Le navigateur a reçu un flux HTML. Pour connaître celui-ci, il faut faire apparaître le code source de la page dans le navigateur :</p>
-<p><img src="images/10000000000007CD0000036C74E6CBD2.png" style="width:15.851cm;height:6.95cm;" alt="Image" /></p>
+<p><img src="images/10000000000007CD0000036C74E6CBD2.png" style="width:15.851cm;height:6.95cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007CD0000036C74E6CBD2.png" /></p>
 <ul>
 <li>pour avoir le menu <strong>[1]</strong>, cliquer droit sur la page dans le navigateur ;</li>
 <li>en <strong>[2]</strong>, l’URL de la page <strong>[exemple-01.php]</strong> mais préfixée par <strong>[view-source :]</strong> <strong>[3]</strong> ;</li>
@@ -1695,7 +1695,7 @@
 </ul>
 <p>Il faut donc se rappeler qu’un script PHP destiné à être exécuté par un serveur web doit produire un flux HTML.</p>
 <p>Regardons (F12) maintenant les entêtes HTTP envoyés par le serveur au navigateur client :</p>
-<p><img src="images/10000000000005AB000004504F16F938.png" style="width:13.442cm;height:10.221cm;" alt="Image" /></p>
+<p><img src="images/10000000000005AB000004504F16F938.png" style="width:13.442cm;height:10.221cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005AB000004504F16F938.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, un entête HTTP qui n’était pas présent lorsqu’on a demandé la page statique. Cet entête montre que la réponse du serveur a été générée par un script PHP ;</li>
 </ul>
@@ -1715,7 +1715,7 @@
 <li>une image ;</li>
 <li>un lien.</li>
 </ul>
-<p><img src="images/10000000000006ED000004697A02EB3A.png" style="width:14.071cm;height:8.961cm;" alt="Image" /></p>
+<p><img src="images/10000000000006ED000004697A02EB3A.png" style="width:14.071cm;height:8.961cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006ED000004697A02EB3A.png" /></p>
 <p>Un document HTML a la forme générale suivante :</p>
 <p>&lt;html&gt;    &lt;head&gt;        &lt;title&gt;Un titre&lt;/title&gt;        ...    &lt;/head&gt;    &lt;body attributs&gt;        ...    &lt;/body&gt;&lt;/html&gt;</p>
 <p>L&#x27;ensemble du document est encadré par les balises <strong>&lt;html&gt;…&lt;/html&gt;</strong>. Il est formé de deux parties :</p>
@@ -1807,7 +1807,7 @@
 <li><em>http://localhost/php7/scripts-web/01/images/standard.jpg</em> pour obtenir l&#x27;image de fond <em>standard.jpg</em></li>
 </ol>
 <p>C’est ce que montrent les échanges réseau entre le client et le serveur (F12 dans le navigateur) :</p>
-<p><img src="images/10000000000005BA00000191A06858AE.png" style="width:13.57cm;height:3.71cm;" alt="Image" /></p>
+<p><img src="images/10000000000005BA00000191A06858AE.png" style="width:13.57cm;height:3.71cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005BA00000191A06858AE.png" /></p>
 <ul>
 <li>en <strong>[3-5]</strong>, on voit les trois requêtes faites par le navigateur ;</li>
 </ul>
@@ -1817,16 +1817,16 @@
 <a id="refheadingtoc1357422222329424"></a></p>
 <h2 id="175-rendre-dynamique-une-page-statique">17.5. Rendre dynamique une page statique</h2>
 <p>Montrons comment nous pouvons dynamiser la page HTML <strong>[exemple-01.html]</strong>. Copions le contenu</p>
-<p><img src="images/10000000000005880000024969686C7D.png" style="width:13.11cm;height:5.421cm;" alt="Image" /></p>
+<p><img src="images/10000000000005880000024969686C7D.png" style="width:13.11cm;height:5.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005880000024969686C7D.png" /></p>
 <p>Nous avons recopié le contenu de <strong>[exemple-01.html]</strong> dans le fichier <strong>[page-01.php]</strong>. Si nous exécutons <strong>[2]</strong> ce script web, nous obtenons la chose suivante dans le navigateur :</p>
-<p><img src="images/10000000000004500000011B8921F30D.png" style="width:10.221cm;height:2.62cm;" alt="Image" /></p>
+<p><img src="images/10000000000004500000011B8921F30D.png" style="width:10.221cm;height:2.62cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004500000011B8921F30D.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, l’URL demandée ;</li>
 <li>en <strong>[4]</strong>, le titre de la page ;</li>
 <li>en <strong>[5]</strong>, le contenu de la page ;</li>
 </ul>
 <p>Si on fait afficher le code reçu par le navigateur, on trouve ceci :</p>
-<p><img src="images/100000000000054A00000234B568A7C3.png" style="width:10.75cm;height:4.481cm;" alt="Image" /></p>
+<p><img src="images/100000000000054A00000234B568A7C3.png" style="width:10.75cm;height:4.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000054A00000234B568A7C3.png" /></p>
 <ul>
 <li>en <strong>[7]</strong>, on a le code HTML placé dans le script <strong>[exemple-01.php]</strong></li>
 </ul>
@@ -1848,14 +1848,14 @@
 
 <p>Lignes 4 et 9 on a mis du code PHP pour générer dynamiquement le titre et le contenu de la page. On fait ici l’hypothèse que la variable <strong>[$page]</strong> est un objet qui a les données à afficher.</p>
 <p>Si nous exécutons ce nouveau code, on a le résultat suivant dans le navigateur :</p>
-<p><img src="images/100000000000076F00000185FA732096.png" style="width:15.101cm;height:3.091cm;" alt="Image" /></p>
+<p><img src="images/100000000000076F00000185FA732096.png" style="width:15.101cm;height:3.091cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076F00000185FA732096.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, l’URL demandée ;</li>
 <li>en <strong>[2]</strong>, le titre de la page n’a pu être affiché parce que la variable <strong>[$page]</strong> n’était pas définie ;</li>
 <li>en <strong>[3]</strong>, pareil pour le contenu ;</li>
 </ul>
 <p>Maintenant, écrivons le script web <strong>[exemple-02.php]</strong> suivant :</p>
-<p><img src="images/10000000000001A4000001F586832A7E.png" style="width:3.89cm;height:4.642cm;" alt="Image" /></p>
+<p><img src="images/10000000000001A4000001F586832A7E.png" style="width:3.89cm;height:4.642cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A4000001F586832A7E.png" /></p>
 <p>Le script <strong>[exemple-02.php]</strong> sera le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1878,9 +1878,9 @@
 </li>
 </ul>
 <p>Maintenant si nous exécutons le script web <strong>[exemple-02.php]</strong>, nous obtenons la chose suivante dans le navigateur :</p>
-<p><img src="images/100000000000047C00000104020FA6F1.png" style="width:10.63cm;height:2.41cm;" alt="Image" /></p>
+<p><img src="images/100000000000047C00000104020FA6F1.png" style="width:10.63cm;height:2.41cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000047C00000104020FA6F1.png" /></p>
 <p>Si nous visualisons le contenu texte reçu par le navigateur :</p>
-<p><img src="images/100000000000056600000224E264E091.png" style="width:10.97cm;height:4.351cm;" alt="Image" /></p>
+<p><img src="images/100000000000056600000224E264E091.png" style="width:10.97cm;height:4.351cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000056600000224E264E091.png" /></p>
 <ul>
 <li>les codes PHP qui étaient en <strong>[2]</strong> et <strong>[3]</strong> ont été remplacés par les résultats des deux commandes <strong>[print]</strong> ;</li>
 </ul>
@@ -1905,13 +1905,13 @@
 <a id="refheading399401881943603"></a></p>
 <h2 id="176-application-client-serveur-de-dateheure">17.6. Application client/ serveur de date/heure</h2>
 <p>Nous nous plaçons maintenant dans la configuration suivante :</p>
-<p><img src="images/100000000000073D0000026950637B57.png" style="width:14.712cm;height:4.901cm;" alt="Image" /></p>
+<p><img src="images/100000000000073D0000026950637B57.png" style="width:14.712cm;height:4.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000073D0000026950637B57.png" /></p>
 <p>Nous allons écrire :</p>
 <ul>
 <li>un script web <strong>[1]</strong> qui envoie à son client la date et l’heure du moment présent ;</li>
 <li>un script console <strong>[2]</strong> qui sera le client du script web : il va récupérer la date et heure envoyées par le script web et les afficher sur la console ;</li>
 </ul>
-<p><img src="images/100000000000021F000004210334E41F.png" style="width:5.001cm;height:9.79cm;" alt="Image" /></p>
+<p><img src="images/100000000000021F000004210334E41F.png" style="width:5.001cm;height:9.79cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021F000004210334E41F.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le script web <strong>[date-time-server.php]</strong> ;</li>
 <li>en <strong>[2]</strong>, le script console <strong>[date-time-client]</strong> client du script web ;</li>
@@ -1968,9 +1968,9 @@
 <li>ligne 4 : on fixe l’entête HTTP <strong>[Content-Type]</strong> qui dit au client la nature du document qu’il va recevoir. Jusqu’à maintenant, le <strong>[Content-Type]</strong> était : <strong>[Content-Type: text/html; charset=UTF-8]</strong>. Ici, nous indiquons au client que le document est du texte sans habillage HTML. Ce n’est pas important pour notre client console qui ne cherchera pas à exploiter cet entête. C’est plus important pour les navigateurs clients qui eux exploitent cet entête ;</li>
 </ul>
 <p>Exécutons ce script serveur :</p>
-<p><img src="images/1000000000000796000003261DA13080.png" style="width:15.41cm;height:6.4cm;" alt="Image" /></p>
+<p><img src="images/1000000000000796000003261DA13080.png" style="width:15.41cm;height:6.4cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000796000003261DA13080.png" /></p>
 <p>Si nous examinons dans le navigateur la réponse du serveur (F12), nous voyons en <strong>[5]</strong> l’entête HTTP que le script serveur a fixé et en <strong>[8]</strong>, le document texte reçu ;</p>
-<p><img src="images/10000000000002CC0000014ADBD699FB.png" style="width:6.631cm;height:3.061cm;" alt="Image" /></p>
+<p><img src="images/10000000000002CC0000014ADBD699FB.png" style="width:6.631cm;height:3.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002CC0000014ADBD699FB.png" /></p>
 <p><a id="toc42690022"></a>
 <a id="toc42690408"></a>
 <a id="toc42690794"></a>
@@ -1978,7 +1978,7 @@
 <h3 id="1762-le-script-client">17.6.2. Le script client</h3>
 <p>Au paragraphe <a href="#_Le_protocole_HTTP"><u><span style="color: #0563c1">lien</span></u></a> nous avons développé plusieurs clients HTTP. Nous pourrions les utiliser pour récupérer le document texte envoyé par le script serveur <strong>[date-time-server.php]</strong>. Nous n’allons pas le faire. Comme nous l’avons fait pour les protocole SMTP et IMAP, nous allons utiliser une bibliothèque tierce, à savoir le composant <strong>[HttpClient]</strong> du framework Symfony <strong>[https://symfony.com/doc/master/components/http_client.html]</strong>.</p>
 <p>Comme pour les deux précédentes bibliothèques, on utilise l’outil <strong>[Composer]</strong> pour installer le  composant <strong>[HttpClient]</strong> de Symfony. Dans une fenêtre <strong>[Terminal]</strong> de Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>), on tape la commande suivante :</p>
-<p><img src="images/10000000000007A30000025B48B9117E.png" style="width:18.1cm;height:5.58cm;" alt="Image" /></p>
+<p><img src="images/10000000000007A30000025B48B9117E.png" style="width:18.1cm;height:5.58cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007A30000025B48B9117E.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, vérifiez que vous êtes positionné sur le dossier <strong>[&lt;laragon&gt;/www/]</strong> où &lt;laragon&gt; est le dossier d’installation de Laragon ;</li>
 <li>en <strong>[4]</strong>, la commande <strong>[composer]</strong> qui installe la bibliothèque <strong>[HttpClient]</strong> de Symfony ;</li>
@@ -2003,9 +2003,9 @@
 </code></pre></div>
 
 <p>Assurez-vous que le dossier <strong>[&lt;laragon&gt;/www/vendor]</strong> fait partie de la branche <strong>[Include Path]</strong> de votre projet (cf paragraphe <a href="#_Installation_de_l'IDE"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/1000000000000241000003B419FB8983.png" style="width:5.34cm;height:8.781cm;" alt="Image" /></p>
+<p><img src="images/1000000000000241000003B419FB8983.png" style="width:5.34cm;height:8.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000241000003B419FB8983.png" /></p>
 <p>Ceci fait, nous pouvons écrire le script console <strong>[date-time-client.php]</strong> :</p>
-<p><img src="images/10000000000002070000017829E64A4A.png" style="width:4.811cm;height:3.481cm;" alt="Image" /></p>
+<p><img src="images/10000000000002070000017829E64A4A.png" style="width:4.811cm;height:3.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002070000017829E64A4A.png" /></p>
 <p>Le script console <strong>[date-time-client.php]</strong> exploitera le fichier jSON <strong>[config-date-time-client.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
@@ -2095,7 +2095,7 @@
 
 <p>On récupère bien la date et l’heure du moment présent en ligne 8.</p>
 <p>On peut avoir la curiosité de savoir ce qu’à envoyé le script client au serveur. Pour cela nous allons utiliser notre serveur TCP générique (cf paragraphe <a href="#_Utilitaires_TCP"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/1000000000000454000000F053955BDB.png" style="width:10.261cm;height:2.222cm;" alt="Image" /></p>
+<p><img src="images/1000000000000454000000F053955BDB.png" style="width:10.261cm;height:2.222cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000454000000F053955BDB.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le dossier des utilitaires ;</li>
 <li>en <strong>[2]</strong>, le serveur TCP est lancé sur le port 100 ;</li>
@@ -2109,7 +2109,7 @@
 </code></pre></div>
 
 <p>Cette fois-ci, le client contacte le serveur <strong>[localhost]</strong> sur le port 100. C’est donc notre serveur TCP générique qui va être sollicité. Lorsque nous exécutons le script console <strong>[date-time-client.php]</strong>, la console du serveur TCP générique évolue de la façon suivante :</p>
-<p><img src="images/100000000000045B00000218272CD577.png" style="width:10.33cm;height:4.961cm;" alt="Image" /></p>
+<p><img src="images/100000000000045B00000218272CD577.png" style="width:10.33cm;height:4.961cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000045B00000218272CD577.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, la commande HTTP GET construite par le script client ;</li>
 <li>en <strong>[4]</strong>, la signature du script console ;</li>
@@ -2122,7 +2122,7 @@
 <li>en <strong>[6]</strong>, on ferme la communication avec le script client pour que celui-ci détecte qu’il a eu la totalité de la réponse ;</li>
 </ul>
 <p>Côté script client, on a l’affichage console suivant :</p>
-<p><img src="images/10000000000002730000010BBD361D4C.png" style="width:5.811cm;height:2.47cm;" alt="Image" /></p>
+<p><img src="images/10000000000002730000010BBD361D4C.png" style="width:5.811cm;height:2.47cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002730000010BBD361D4C.png" /></p>
 <ul>
 <li>en <strong>[7]</strong>, ce qu’a reçu le client Symfony ;</li>
 </ul>
@@ -2133,7 +2133,7 @@
 <h3 id="1763-le-script-serveur-version-2">17.6.3. Le script serveur – version 2</h3>
 <p>De base,  les fonctions PHP pour écrire un script web ne sont pas orientées objet. Côté serveur, on est alors amenés à mélanger classes et fonctions PHP classiques. Pour avoir une écriture plus homogène, nous allons utiliser la bibliothèque <strong>[HttpFoundation]</strong> du framework Symfony. Elle a encapsulé toutes les fonctions PHP classiques pour un service web dans un système de classes et interfaces. La documentation de la bibliothèque est disponible à l’URL <strong>[https://symfony.com/doc/current/components/http_foundation.html]</strong>  (mai 2019).</p>
 <p>Pour installer la bibliothèque, nous procédons de la façon suivante dans un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/100000000000036D0000019AF1F19479.png" style="width:8.12cm;height:3.8cm;" alt="Image" /></p>
+<p><img src="images/100000000000036D0000019AF1F19479.png" style="width:8.12cm;height:3.8cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000036D0000019AF1F19479.png" /></p>
 <ul>
 <li><strong>[2-3]</strong> : assurez-vous d’être positionné dans le dossier <strong>[&lt;laragon&gt;/www]</strong> ;</li>
 <li><strong>[4]</strong> : la commande <strong>[composer]</strong> qui va installer la bibliothèque <strong>[HttpFoundation]</strong> ;</li>
@@ -2214,7 +2214,7 @@
 <a id="refheadingtoc1357522222329424"></a></p>
 <h2 id="177-un-serveur-de-donnees-json">17.7. Un serveur de données jSON</h2>
 <p>La réponse d’un script web peut être composée de plusieurs données qu’on peut rassembler dans des tableaux et des objets. Le script peut alors envoyer ces divers éléments au sein d’une chaîne jSON que le client décodera.</p>
-<p><img src="images/100000000000048C000001DABB116411.png" style="width:10.782cm;height:4.391cm;" alt="Image" /></p>
+<p><img src="images/100000000000048C000001DABB116411.png" style="width:10.782cm;height:4.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048C000001DABB116411.png" /></p>
 <p><a id="toc42690026"></a>
 <a id="toc42690412"></a>
 <a id="toc42690798"></a>
@@ -2345,8 +2345,8 @@
 </li>
 </ul>
 <p>Si on exécute ce script serveur (Laragon doit être lancé), on obtient la réponse suivante dans un navigateur :</p>
-<p><img src="images/100000000000070A0000029FDB7E7227.png" style="width:14.301cm;height:5.331cm;" alt="Image" /></p>
-<p><img src="images/1000000000000391000003FEEAC59489.png" style="width:7.25cm;height:8.111cm;" alt="Image" /></p>
+<p><img src="images/100000000000070A0000029FDB7E7227.png" style="width:14.301cm;height:5.331cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000070A0000029FDB7E7227.png" /></p>
+<p><img src="images/1000000000000391000003FEEAC59489.png" style="width:7.25cm;height:8.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000391000003FEEAC59489.png" /></p>
 <p><strong>Commentaires</strong></p>
 <ul>
 <li>en <strong>[2]</strong>, la réponse jSON mise en forme ;</li>
@@ -2358,7 +2358,7 @@
 <a id="toc42690799"></a>
 <a id="refheadingtoc1357562222329424"></a></p>
 <h3 id="1772-le-client">17.7.2. Le client</h3>
-<p><img src="images/10000000000001D60000021C547535B7.png" style="width:4.351cm;height:5.001cm;" alt="Image" /></p>
+<p><img src="images/10000000000001D60000021C547535B7.png" style="width:4.351cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D60000021C547535B7.png" /></p>
 <p>Le client <strong>[json-client.php]</strong> est configuré par le fichier jSON <strong>[config-json-client.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
@@ -2463,7 +2463,7 @@
 <a id="refheadingtoc1357582222329424"></a></p>
 <h3 id="1781-le-script-serveur">17.8.1. Le script serveur</h3>
 <p>Nous écrivons une application serveur qui envoie à ses clients son environnement d’exécution.</p>
-<p><img src="images/10000000000001760000012993C0312C.png" style="width:3.462cm;height:2.751cm;" alt="Image" /></p>
+<p><img src="images/10000000000001760000012993C0312C.png" style="width:3.462cm;height:2.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001760000012993C0312C.png" /></p>
 <p>Le script web <strong>[env-server.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2493,7 +2493,7 @@
 <li>ligne 18 : on envoie l’information ;</li>
 </ul>
 <p>Si on exécute ce script à partir de Netbeans, le navigateur affiche la page suivante :</p>
-<p><img src="images/10000000000004CD00000408687390AC.png" style="width:9.752cm;height:8.191cm;" alt="Image" /></p>
+<p><img src="images/10000000000004CD00000408687390AC.png" style="width:9.752cm;height:8.191cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004CD00000408687390AC.png" /></p>
 <ul>
 <li>en <strong>[2]</strong>, les différentes clés du dictionnaire de l’environnement ;</li>
 <li>en <strong>[3]</strong>, les valeurs de ces clés ;</li>
@@ -2503,7 +2503,7 @@
 <a id="toc42690802"></a>
 <a id="refheadingtoc1357602222329424"></a></p>
 <h3 id="1782-le-script-client">17.8.2. Le script client</h3>
-<p><img src="images/10000000000001CD00000193E568E604.png" style="width:4.271cm;height:3.731cm;" alt="Image" /></p>
+<p><img src="images/10000000000001CD00000193E568E604.png" style="width:4.271cm;height:3.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000193E568E604.png" /></p>
 <p>Le script client <strong>[env-client.php]</strong> est configuré par le fichier jSON <strong>[config-env-client.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
@@ -2745,7 +2745,7 @@
 <a id="toc42690805"></a>
 <a id="refheading399541881943603"></a></p>
 <h3 id="1792-le-client-get-version-1">17.9.2. Le client GET – version 1</h3>
-<p><img src="images/10000000000002270000024AA090954E.png" style="width:5.1cm;height:5.43cm;" alt="Image" /></p>
+<p><img src="images/10000000000002270000024AA090954E.png" style="width:5.1cm;height:5.43cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002270000024AA090954E.png" /></p>
 <p>Les scripts clients sont configurés par le fichier jSON <strong>[config-parameters-client.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
 <span class="normal"><a href="#__codelineno-35-2">2</a></span>
@@ -2822,7 +2822,7 @@
 <li><span style="color: #000000">ligne 48 : le client se contentera d’afficher a réponse du client ;</span></li>
 </ul>
 <p>On peut avoir la curiosité de voir ce que reçoit le serveur lors d’une requête GET paramétrée. Pour cela, nous lançons notre serveur générique <strong>[RawTcpServer]</strong> sur le port 100 de la machine locale à partir d’un terminal Laragon (cf paragraphe <a href="#_Utilitaires_TCP"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/1000000000000469000001D260626DFF.png" style="width:8.961cm;height:3.701cm;" alt="Image" /></p>
+<p><img src="images/1000000000000469000001D260626DFF.png" style="width:8.961cm;height:3.701cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000469000001D260626DFF.png" /></p>
 <p>Vérifiez qu’en <strong>[4]</strong>, vous êtes bien dans le dossier des utilitaires.</p>
 <p>Nous modifions le fichier jSON <strong>[parameters-get-client.json]</strong> qui configure les clients GET et POST :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2836,7 +2836,7 @@
 <li>ligne 2 : nous avons changé le port du serveur web. Ce sera donc <strong>[RawTcpServer]</strong> qui sera contacté ;</li>
 </ul>
 <p><span style="color: #000000">Nous exécutons le client. Dans la fenêtre de </span><strong><span style="color: #000000">[RawTcpServer]</span></strong><span style="color: #000000"> nous obtenons les informations suivantes :</span></p>
-<p><img src="images/100000000000070B000001C8E83CC520.png" style="width:16.701cm;height:4.22cm;" alt="Image" /></p>
+<p><img src="images/100000000000070B000001C8E83CC520.png" style="width:16.701cm;height:4.22cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000070B000001C8E83CC520.png" /></p>
 <ul>
 <li><span style="color: #000000">en </span><strong><span style="color: #000000">[1]</span></strong><span style="color: #000000">, la commande GET paramétrée envoyée par le client. On voit clairement l’encodage de certains caractères ;</span></li>
 </ul>
@@ -2845,7 +2845,7 @@
 <a id="toc42690806"></a>
 <a id="refheading399561881943603"></a></p>
 <h3 id="1793-le-serveur-get-post">17.9.3. Le serveur GET / POST</h3>
-<p><img src="images/10000000000001CF000001421CB68C87.png" style="width:4.291cm;height:2.98cm;" alt="Image" /></p>
+<p><img src="images/10000000000001CF000001421CB68C87.png" style="width:4.291cm;height:2.98cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CF000001421CB68C87.png" /></p>
 <p>Le script serveur <strong>[parameters-server.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -3082,7 +3082,7 @@
 <li>ligne 10 : la méthode est <strong>[Post]</strong> et les paramètres sont de type <strong>[bodyParameters]</strong>. Il n’y a pas de paramètres <strong>[getParameters]</strong> comme le montre l’<strong>[uri]</strong> ;</li>
 </ul>
 <p>On peut avoir la curiosité de voir ce que reçoit le serveur lors d’une requête POST. Pour cela, nous lançons notre serveur générique <strong>[RawTcpServer]</strong> sur le port 100 de la machine locale à partir d’un terminal Laragon (cf paragraphe <a href="#_Utilitaires_TCP"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/1000000000000469000001D260626DFF.png" style="width:10.45cm;height:4.31cm;" alt="Image" /></p>
+<p><img src="images/1000000000000469000001D260626DFF.png" style="width:10.45cm;height:4.31cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000469000001D260626DFF.png" /></p>
 <p>Vérifiez qu’en <strong>[4]</strong>, vous êtes bien dans le dossier des utilitaires.</p>
 <p>Nous modifions le fichier jSON <strong>[config-parameters-client.json]</strong> qui configure le client POST :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -3096,7 +3096,7 @@
 <li>ligne 3 : nous avons changé le port du serveur web. Ce sera donc <strong>[RawTcpServer]</strong> qui sera contacté ;</li>
 </ul>
 <p>Nous exécutons le client. Dans la fenêtre de <strong>[RawTcpServer]</strong> nous obtenons les informations suivantes :</p>
-<p><img src="images/1000000000000455000001D1E6381BAA.png" style="width:10.27cm;height:4.31cm;" alt="Image" /></p>
+<p><img src="images/1000000000000455000001D1E6381BAA.png" style="width:10.27cm;height:4.31cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000455000001D1E6381BAA.png" /></p>
 <ul>
 <li>en <strong>[6]</strong>, la commande POST ;</li>
 <li>en <strong>[7]</strong> : l’entête HTTP <strong>[Content-Length]</strong> donne le nombre d’octets du document que va envoyer le client au serveur. L’entête HTTP <strong>[Content-Type]</strong> donne la nature de ce document. Le type <strong>[application/x-www-form-urlencoded]</strong> désigne  un texte url-encodé ;</li>
@@ -3343,7 +3343,7 @@
 </code></pre></div></td></tr></table></div>
 <p>Ligne 4, la fonction <em>phpinfo</em> donne des informations sur l&#x27;interpréteur PHP qui exécute le script. Elle donne notamment le chemin du  fichier de configuration <strong>[php.ini]</strong> utilisé.</p>
 <p>Nous avons déjà utilisé ce script dans un environnement console (cf paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a>). Dans un environnement web, on obtient le résultat suivant :</p>
-<p><img src="images/1000000000000804000003FC53754E68.png" style="width:16.29cm;height:8.101cm;" alt="Image" /></p>
+<p><img src="images/1000000000000804000003FC53754E68.png" style="width:16.29cm;height:8.101cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000804000003FC53754E68.png" /></p>
 <ul>
 <li>en <strong>[1-2]</strong>, le fichier <strong>[php.ini]</strong> qui configure l’interpréteur des scripts web. On trouve dans ce fichier une section <strong>session</strong> :</li>
 </ul>
@@ -3413,7 +3413,7 @@
 <a id="toc42690814"></a>
 <a id="refheadingtoc1357682222329424"></a></p>
 <h4 id="171021-le-serveur">17.10.2.1. Le serveur</h4>
-<p><img src="images/10000000000001A40000019C91412345.png" style="width:3.89cm;height:3.821cm;" alt="Image" /></p>
+<p><img src="images/10000000000001A40000019C91412345.png" style="width:3.89cm;height:3.821cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A40000019C91412345.png" /></p>
 <p>La gestion de l&#x27;identifiant de session est transparent pour un service web. Cet identifiant est géré par le serveur web. Un service web a accès à la session du client via l&#x27;instruction <em>session_start()</em>. A partir de ce moment, le service web peut lire / écrire des données dans la session du client via le dictionnaire $_SESSION. Si on utilise la bibliothèque <strong>[HttpFoundation]</strong>, la session est disponible via l’expression <strong>[Request→getSession]</strong>.</p>
 <p>Le code suivant <strong>[session-server.php]</strong> montre la gestion en session de trois compteurs. A chaque nouvelle requête, le script web incrémente ces compteurs et les met en session pour qu’ils puissent être récupérés lors de la requête suivante.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3488,16 +3488,16 @@
 </ul>
 <p><strong>Résultats</strong></p>
 <p>Nous utilisons comme client, un navigateur web. Par défaut (par configuration en fait), celui-ci renvoie bien au serveur les identifiants de session que celui-ci lui envoie. Au fil des requêtes, le navigateur va recevoir les trois compteurs envoyés par le serveur et va voir leurs valeurs s&#x27;incrémenter.</p>
-<p><img src="images/10000000000004E0000002112C90C28B.png" style="width:11.561cm;height:4.901cm;" alt="Image" /></p>
+<p><img src="images/10000000000004E0000002112C90C28B.png" style="width:11.561cm;height:4.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004E0000002112C90C28B.png" /></p>
 <ul>
 <li>En <strong>[2]</strong>, la 1re demande au service web ;</li>
 <li>en <strong>[4]</strong>, la 4e demande montre que les compteurs sont bien incrémentés. Il y a bien mémorisation des valeurs des compteurs au fil des demandes ;</li>
 </ul>
 <p>Utilisons le mode développement pour voir les en-têtes HTTP échangés entre le serveur et le client. Nous fermons Firefox pour terminer la session courante avec le serveur, le rouvrons et activons le mode développement (F12). Ceci va supprimer la session courante du navigateur qui va donc en recommencer une nouvelle. Nous demandons le service <strong>[session-server.php]</strong> :</p>
-<p><img src="images/10000000000007640000036B9FC73FBD.png" style="width:15.02cm;height:6.94cm;" alt="Image" /></p>
+<p><img src="images/10000000000007640000036B9FC73FBD.png" style="width:15.02cm;height:6.94cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007640000036B9FC73FBD.png" /></p>
 <p>En <strong>[5]</strong>, on voit l&#x27;identifiant de session envoyé par le serveur dans sa réponse à la 1re demande du client. Il utilise l&#x27;en-tête HTTP <em>Set-Cookie</em>.</p>
 <p>Faisons une nouvelle demande en rafraîchissant (F5) la page dans le navigateur web :</p>
-<p><img src="images/10000000000007C3000004C19E5084E2.png" style="width:15.77cm;height:9.662cm;" alt="Image" /></p>
+<p><img src="images/10000000000007C3000004C19E5084E2.png" style="width:15.77cm;height:9.662cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007C3000004C19E5084E2.png" /></p>
 <p>Ci-dessus on remarquera deux choses :</p>
 <ul>
 <li>en <strong>[11]</strong>, le navigateur web renvoie l&#x27;identifiant de session avec l&#x27;en-tête HTTP <em>Cookie</em>.</li>
@@ -3514,7 +3514,7 @@
 <li>dans la réponse du serveur à sa première demande, il doit trouver l&#x27;identifiant de session que le serveur lui envoie. Il sait qu&#x27;il le trouvera dans l&#x27;en-tête HTTP <em>Set-Cookie</em>.</li>
 <li>il doit, à chacune de ses demandes ultérieures, renvoyer au serveur l&#x27;identifiant qu&#x27;il a reçu. Il le fera avec l&#x27;en-tête HTTP <em>Cookie</em>.</li>
 </ul>
-<p><img src="images/1000000000000202000002030D8236F6.png" style="width:4.762cm;height:4.77cm;" alt="Image" /></p>
+<p><img src="images/1000000000000202000002030D8236F6.png" style="width:4.762cm;height:4.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000202000002030D8236F6.png" /></p>
 <p>Le client <strong>[session-client]</strong> est configuré par le fichier jSON <strong>[config-session-client.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1">1</a></span>
 <span class="normal"><a href="#__codelineno-43-2">2</a></span>
@@ -3667,7 +3667,7 @@
 <a id="toc42690817"></a>
 <a id="refheading399821881943603"></a></p>
 <h4 id="171031-le-serveur">17.10.3.1. Le serveur</h4>
-<p><img src="images/100000000000019F000001908BBB8EE6.png" style="width:3.841cm;height:3.701cm;" alt="Image" /></p>
+<p><img src="images/100000000000019F000001908BBB8EE6.png" style="width:3.841cm;height:3.701cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019F000001908BBB8EE6.png" /></p>
 <p>Nous allons mettre un objet <strong>[Personne]</strong> dans la session. La définition de cette classe est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -3825,7 +3825,7 @@
 <li>lignes 62-73 : on envoie une réponse jSON au client : la chaîne jSON d’un tableau associatif ;</li>
 </ul>
 <p>Exécutons ce script à partir de Netbeans. Les deux premières requêtes donnent les résultats suivants (F5 dans le navigateur pour la deuxième) :</p>
-<p><img src="images/100000000000067E0000032651494E45.png" style="width:13.191cm;height:6.4cm;" alt="Image" /></p>
+<p><img src="images/100000000000067E0000032651494E45.png" style="width:13.191cm;height:6.4cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000067E0000032651494E45.png" /></p>
 <ul>
 <li>on voit qu’en <strong>[6-8]</strong>, tous les compteurs ont été incrémentés ;</li>
 </ul>
@@ -3834,7 +3834,7 @@
 <a id="toc42690818"></a>
 <a id="refheadingtoc1357722222329424"></a></p>
 <h4 id="171032-le-client">17.10.3.2. Le client</h4>
-<p><img src="images/10000000000002040000022F2B747213.png" style="width:4.781cm;height:5.181cm;" alt="Image" /></p>
+<p><img src="images/10000000000002040000022F2B747213.png" style="width:4.781cm;height:5.181cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002040000022F2B747213.png" /></p>
 <p>Le client est le même que dans l’exemple 1 (paragraphe <a href="#_Le_client"><u><span style="color: #0563c1">lien</span></u></a>). On ne modifie que son fichier de configuration <strong>[config-session-client]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">{</span>
@@ -3882,7 +3882,7 @@
 <a id="toc42690820"></a>
 <a id="refheadingtoc1357762222329424"></a></p>
 <h3 id="17111-le-client">17.11.1. Le client</h3>
-<p><img src="images/1000000000000178000001526A8C2B00.png" style="width:3.481cm;height:3.13cm;" alt="Image" /></p>
+<p><img src="images/1000000000000178000001526A8C2B00.png" style="width:3.481cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000178000001526A8C2B00.png" /></p>
 <p>Le code du client <strong>[auth-client.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -3945,7 +3945,7 @@
 <li>en-dehors de ce code, le client est identique aux précédents ;</li>
 </ul>
 <p>Pour voir les entêtes HTTP envoyés par le client, nous allons le connecter au serveur TCP générique <strong>[RawTcpServer]</strong> comme nous l’avons fait déjà de nombreuses fois :</p>
-<p><img src="images/1000000000000486000001C655A0BDBF.png" style="width:10.72cm;height:4.201cm;" alt="Image" /></p>
+<p><img src="images/1000000000000486000001C655A0BDBF.png" style="width:10.72cm;height:4.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000486000001C655A0BDBF.png" /></p>
 <p>Nous lançons le client avec la configuration <strong>[config-auth-client.json]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">{</span>
@@ -3954,18 +3954,18 @@
 </code></pre></div>
 
 <p>Le serveur <strong>[RawTcpServer]</strong> reçoit alors les lignes suivantes :</p>
-<p><img src="images/10000000000004680000022A2C2A017A.png" style="width:10.45cm;height:5.13cm;" alt="Image" /></p>
+<p><img src="images/10000000000004680000022A2C2A017A.png" style="width:10.45cm;height:5.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004680000022A2C2A017A.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, on voit l’entête <strong>[Autorization : Basic XXX]</strong> envoyé par le client. La chaîne XXX est la chaîne <strong>[user:password]</strong> codé en Base64 ;</li>
 </ul>
 <p>Pour vous en assurer, vous pouvez décoder la chaîne reçue sur le site <strong>[https://www.base64decode.org/]</strong> :</p>
-<p><img src="images/100000000000046100000487436CFBAD.png" style="width:8.901cm;height:9.201cm;" alt="Image" /></p>
+<p><img src="images/100000000000046100000487436CFBAD.png" style="width:8.901cm;height:9.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046100000487436CFBAD.png" /></p>
 <p><a id="toc42690049"></a>
 <a id="toc42690435"></a>
 <a id="toc42690821"></a>
 <a id="refheadingtoc1357782222329424"></a></p>
 <h3 id="17112-le-serveur">17.11.2. Le serveur</h3>
-<p><img src="images/100000000000017B000001B8696A8430.png" style="width:3.511cm;height:4.07cm;" alt="Image" /></p>
+<p><img src="images/100000000000017B000001B8696A8430.png" style="width:3.511cm;height:4.07cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017B000001B8696A8430.png" /></p>
 <p>Le serveur <strong>[auth-server.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -4014,7 +4014,7 @@
 <li>ligne 25 : si l’utilisateur a été reconnu, on envoie au client le code <strong>[200 OK]</strong> ;</li>
 </ul>
 <p>Demandons l’URL <strong>[auth-server.php]</strong> avec un navigateur :</p>
-<p><img src="images/10000000000005B20000027F6C6E39FE.png" style="width:11.57cm;height:5.07cm;" alt="Image" /></p>
+<p><img src="images/10000000000005B20000027F6C6E39FE.png" style="width:11.57cm;height:5.07cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B20000027F6C6E39FE.png" /></p>
 <p>On voit que le navigateur fait afficher une fenêtre d’authentification. En <strong>[2]</strong>, on voit la valeur de l’entête <strong>[WWW-Authenticate]</strong> envoyé par le serveur. Si on regarde les entêtes HTTP reçus par le navigateur, on trouve la chose suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span>
 <span class="normal"><a href="#__codelineno-44-2">2</a></span>
@@ -4101,12 +4101,12 @@
 </code></pre></div>
 <p>Si cette ligne est interceptée par un programme espion, celui-ci pourra aisément retrouver les identifiants <strong>[login, mot de passe]</strong> encodés en base 64 dans la chaîne <strong>[YWRtaW46YWRtaW4=]</strong>. Pour cette raison, il faut que l’authentification ait lieu dans une connexion sécurisée entre le client et le serveur. Les URL sécurisées utilisent le protocole <strong>[HTTPS]</strong> au lieu du protocole HTTP. Le protocole <strong>[HTTPS]</strong> est le protocole HTTP au sein d’une connexion client / serveur sécurisée. Les URL sécurisées sont de la forme <strong>[https://chemin_document]</strong>.</p>
 <p>Tous les serveurs web n’acceptent pas les URL de cette forme. Il faut les modifier pour qu’ils soient sécurisés. Le serveur Apache de Laragon est un serveur sécurisé mais le protocole HTTPS n’est pas actif par défaut. Il faut l’activer dans le menu de Laragon :</p>
-<p><img src="images/10000000000007280000035B98E9E05B.png" style="width:14.541cm;height:6.82cm;" alt="Image" /></p>
+<p><img src="images/10000000000007280000035B98E9E05B.png" style="width:14.541cm;height:6.82cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007280000035B98E9E05B.png" /></p>
 <ul>
 <li>en <strong>[4]</strong>, il faut activer le chiffrement SSL du serveur Apache ;</li>
 </ul>
 <p>Ceci fait, le serveur Apache est automatiquement redémarré :</p>
-<p><img src="images/10000000000004F800000346BC668FB2.png" style="width:10.101cm;height:6.651cm;" alt="Image" /></p>
+<p><img src="images/10000000000004F800000346BC668FB2.png" style="width:10.101cm;height:6.651cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F800000346BC668FB2.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, un cadenas vert apparaît : c’est le signe que le protocole HTTPS a été activé ;</li>
 <li>en <strong>[2]</strong>, un nouveau port de service apparaît, le port 443 ici. C’est le port de service du protocole sécurisé HTTPS ;</li>

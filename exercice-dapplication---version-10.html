@@ -1111,27 +1111,27 @@
 <a id="refheadingtoc185703971629160"></a></p>
 <h2 id="201-redis">20.1. Redis</h2>
 <p>La mémoire de portée <strong>[Application]</strong> sera implémentée par un serveur Redis. Les scripts PHP ayant besoin de cette mémoire d’application seront des clients de ce serveur :</p>
-<p><img src="images/10000000000006E50000016D026275D9.png" style="width:14.011cm;height:2.901cm;" alt="Image" /></p>
+<p><img src="images/10000000000006E50000016D026275D9.png" style="width:14.011cm;height:2.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E50000016D026275D9.png" /></p>
 <p><a id="toc42690089"></a>
 <a id="toc42690475"></a>
 <a id="toc42690861"></a>
 <a id="refheadingtoc185705971629160"></a></p>
 <h2 id="202-installation-de-redis">20.2. Installation de Redis</h2>
 <p>Laragon vient avec un serveur Redis non activé par défaut. Il faut donc commencer par l’activer :</p>
-<p><img src="images/100000000000073600000303CE510638.png" style="width:14.652cm;height:6.121cm;" alt="Image" /></p>
+<p><img src="images/100000000000073600000303CE510638.png" style="width:14.652cm;height:6.121cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000073600000303CE510638.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, activer le serveur <strong>[Redis]</strong> ;</li>
 <li>en <strong>[4]</strong>, laisser le port <strong>[6379]</strong> que les clients Redis utilisent par défaut ;</li>
 </ul>
 <p>Les services Laragon sont automatiquement relancés après activation de Redis :</p>
-<p><img src="images/10000000000004F6000001F85B242593.png" style="width:10.081cm;height:4.001cm;" alt="Image" /></p>
+<p><img src="images/10000000000004F6000001F85B242593.png" style="width:10.081cm;height:4.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F6000001F85B242593.png" /></p>
 <p><a id="toc42690090"></a>
 <a id="toc42690476"></a>
 <a id="toc42690862"></a>
 <a id="refheadingtoc185707971629160"></a></p>
 <h2 id="203-le-client-redis-en-mode-commande">20.3. Le client Redis en mode commande</h2>
 <p>Le serveur Redis peut être interrogé en mode commande. On ouvre un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/100000000000079C00000250F06351A7.png" style="width:18.04cm;height:5.481cm;" alt="Image" /></p>
+<p><img src="images/100000000000079C00000250F06351A7.png" style="width:18.04cm;height:5.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000079C00000250F06351A7.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, la commande <strong>[redis-cli]</strong> lance le client en mode commande du serveur Redis ;</li>
 </ul>
@@ -1145,16 +1145,16 @@
 <a id="refheadingtoc185709971629160"></a></p>
 <h2 id="204-installation-dun-client-redis-pour-php">20.4. Installation d’un client Redis pour PHP</h2>
 <p>Il nous faut maintenant installer un client Redis pour PHP :</p>
-<p><img src="images/10000000000006C1000001661065C383.png" style="width:13.72cm;height:2.841cm;" alt="Image" /></p>
+<p><img src="images/10000000000006C1000001661065C383.png" style="width:13.72cm;height:2.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006C1000001661065C383.png" /></p>
 <p>Il existe plusieurs bibliothèques implémentant un client Redis. Nous utiliserons la bibliothèque <strong>[Predis]</strong> <strong>[https://github.com/nrk/predis]</strong> (juillet 2019). Celle-ci comme les précédentes s’installe avec <strong>[composer]</strong> dans un terminal Laragon :</p>
-<p><img src="images/1000000000000748000002925C134594.png" style="width:17.26cm;height:6.091cm;" alt="Image" /></p>
+<p><img src="images/1000000000000748000002925C134594.png" style="width:17.26cm;height:6.091cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000748000002925C134594.png" /></p>
 <p><a id="codeduserveur"></a>
 <a id="refheadingtoc1906941531191796"></a>
 <a id="toc42690092"></a>
 <a id="toc42690478"></a>
 <a id="toc42690864"></a></p>
 <h2 id="205-code-du-serveur">20.5. Code du serveur</h2>
-<p><img src="images/100000000000017A000001060D4D315E.png" style="width:3.5cm;height:2.431cm;" alt="Image" /></p>
+<p><img src="images/100000000000017A000001060D4D315E.png" style="width:3.5cm;height:2.431cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017A000001060D4D315E.png" /></p>
 <p>Le fichier de configuration <strong>[config-server.json]</strong> évolue de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">{</span>
@@ -1374,7 +1374,7 @@
 <a id="toc42690865"></a>
 <a id="refheadingtoc185711971629160"></a></p>
 <h2 id="206-code-du-client">20.6. Code du client</h2>
-<p><img src="images/10000000000001C60000012B855C7CB0.png" style="width:4.201cm;height:2.77cm;" alt="Image" /></p>
+<p><img src="images/10000000000001C60000012B855C7CB0.png" style="width:4.201cm;height:2.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C60000012B855C7CB0.png" /></p>
 <p>La version 10 du client est identique à la version 9. Seul change le fichier de configuration <strong>[config-client.json]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">{</span>
@@ -1406,7 +1406,7 @@
 
 <p>Seule change, ligne 24, l’URL du serveur.</p>
 <p>Les résultats sont les mêmes que dans la version 09. Testons simplement un nouveau cas d’erreur :</p>
-<p><img src="images/1000000000000722000002C9845AE03A.png" style="width:14.491cm;height:5.661cm;" alt="Image" /></p>
+<p><img src="images/1000000000000722000002C9845AE03A.png" style="width:14.491cm;height:5.661cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000722000002C9845AE03A.png" /></p>
 <p>Le résultat dans la console est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">L&#x27;erreur suivante s&#x27;est produite : {&quot;statut HTTP&quot;:<span style="background-color:#ffb66c">500</span>,&quot;erreur&quot;:&quot;<span style="font-weight:bold;background-color:#ffff00">[redis]</span><span style="background-color:#ffff00">, Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée. </span><span style="font-weight:bold;background-color:#ffff00">[tcp:\/\/127.0.0.1:6379]</span>&quot;}</span>
@@ -1418,7 +1418,7 @@
 <a id="toc42690866"></a>
 <a id="refheadingtoc185713971629160"></a></p>
 <h2 id="207-tests-codeception-du-client">20.7. Tests [Codeception] du client</h2>
-<p><img src="images/10000000000001CB000001AE771AA7CC.png" style="width:4.25cm;height:3.98cm;" alt="Image" /></p>
+<p><img src="images/10000000000001CB000001AE771AA7CC.png" style="width:4.25cm;height:3.98cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CB000001AE771AA7CC.png" /></p>
 <p>La classe de test <strong>[ClientMetierTest]</strong> de la version 10 est identique à celle de la version 09 à une exception près :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1441,9 +1441,9 @@
 <li>ligne 10 : l’environnement du test est celui du client de la version 10 ;</li>
 </ul>
 <p>Avant de commencer les tests, supprimons à l’aide du client <strong>[redis-cli]</strong> la clé <strong>[taxAdminData]</strong> de la mémoire du serveur <strong>[redis]</strong> :</p>
-<p><img src="images/10000000000002A90000016365250EAD.png" style="width:6.31cm;height:3.29cm;" alt="Image" /></p>
+<p><img src="images/10000000000002A90000016365250EAD.png" style="width:6.31cm;height:3.29cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A90000016365250EAD.png" /></p>
 <p>Maintenant, exécutons le test :</p>
-<p><img src="images/100000000000067400000231D9299178.png" style="width:13.11cm;height:4.451cm;" alt="Image" /></p>
+<p><img src="images/100000000000067400000231D9299178.png" style="width:13.11cm;height:4.451cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000067400000231D9299178.png" /></p>
 <p>Maintenant examinons les logs <strong>[logs.txt]</strong> du serveur :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">05/07/19 08:52:16:396 :</span>
@@ -1483,14 +1483,14 @@
 <a id="refheadingtoc185715971629160"></a></p>
 <h2 id="208-interface-web-du-serveur-redis">20.8. Interface web du serveur [Redis]</h2>
 <p>Nous avons vu que le serveur <strong>[Redis]</strong> pouvait être géré en mode commande. Il peut également être géré grâce à une interface web :</p>
-<p><img src="images/100000000000078C000002E3B41FA763.png" style="width:15.341cm;height:5.86cm;" alt="Image" /></p>
+<p><img src="images/100000000000078C000002E3B41FA763.png" style="width:15.341cm;height:5.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078C000002E3B41FA763.png" /></p>
 <ul>
 <li>en <strong>[4]</strong>, l’URL d’aministration ;</li>
 <li>en <strong>[5]</strong>, les clés mémorisées par le serveur ;</li>
 <li>en <strong>[6]</strong>, l’état actuel du serveur ;</li>
 </ul>
 <p>En cliquant sur <strong>[5]</strong>, on obtient des informations sur la clé <strong>[taxAdminData]</strong> :</p>
-<p><img src="images/10000000000006AD000002EEF7B4330F.png" style="width:13.562cm;height:5.95cm;" alt="Image" /></p>
+<p><img src="images/10000000000006AD000002EEF7B4330F.png" style="width:13.562cm;height:5.95cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006AD000002EEF7B4330F.png" /></p>
 <ul>
 <li>en <strong>[7]</strong>, l’URL qui donne accès aux informations de la clé <strong>[taxAdminData]</strong> <strong>[8]</strong> ;</li>
 <li>en <strong>[9]</strong>, le statut de la clé ;</li>

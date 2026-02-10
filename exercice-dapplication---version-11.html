@@ -1100,15 +1100,15 @@
 <li>le flux XML est plus verbeux mais il est autodocumenté. Sa compréhension est immédiate ;</li>
 </ul>
 <p>Nous modifions la version 11 client / serveur pour que le serveur envoie désormais un flux XML comme réponse à ses clients :</p>
-<p><img src="images/100000000000067C0000022074E2D2BD.png" style="width:13.181cm;height:4.321cm;" alt="Image" /></p>
+<p><img src="images/100000000000067C0000022074E2D2BD.png" style="width:13.181cm;height:4.321cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000067C0000022074E2D2BD.png" /></p>
 <p><a id="toc42690098"></a>
 <a id="toc42690484"></a>
 <a id="toc42690870"></a>
 <a id="refheading400061881943603"></a></p>
 <h2 id="221-le-serveur">22.1. Le serveur</h2>
-<p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" /></p>
+<p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
 <p>Cette architecture sera implémentée par les scripts suivants :</p>
-<p><img src="images/10000000000001CE00000370D4F9069B.png" style="width:4.28cm;height:8.15cm;" alt="Image" /></p>
+<p><img src="images/10000000000001CE00000370D4F9069B.png" style="width:4.28cm;height:8.15cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE00000370D4F9069B.png" /></p>
 <p><a id="toc42690099"></a>
 <a id="toc42690485"></a>
 <a id="toc42690871"></a>
@@ -1160,7 +1160,7 @@
 <li>lignes 14-36 : nous introduisons la méthode statique <strong>[getXmlForArrayOfAttributes]</strong> qui rend la chaîne XML d’un tableau <strong>[arrayOfAttributes]</strong> passé en paramètre. Le second paramètre est la référence d’un nœud d’un graphe XML, de type <strong>[SimpleXmlElement]</strong>. Après exécution, ce nœud contient le graphe XML du tableau <strong>[arrayOfAttributes]</strong> ;</li>
 </ul>
 <p>Nous écrivons le test <strong>[testXml.php]</strong> suivant :</p>
-<p><img src="images/1000000000000499000001A3DCD3B111.png" style="width:10.902cm;height:3.881cm;" alt="Image" /></p>
+<p><img src="images/1000000000000499000001A3DCD3B111.png" style="width:10.902cm;height:3.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000499000001A3DCD3B111.png" /></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
 <span class="odt-code-line"></span>
@@ -1178,7 +1178,7 @@
 </code></pre></div>
 
 <p>Lorsqu’on exécute ce script <strong>[2]</strong>, nous obtenons la chose suivante dans un navigateur Chrome :</p>
-<p><img src="images/10000000000004B400000357F7BE40DE.png" style="width:9.561cm;height:6.79cm;" alt="Image" /></p>
+<p><img src="images/10000000000004B400000357F7BE40DE.png" style="width:9.561cm;height:6.79cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004B400000357F7BE40DE.png" /></p>
 <p><a id="toc42690100"></a>
 <a id="toc42690486"></a>
 <a id="toc42690872"></a>
@@ -1304,16 +1304,16 @@
 </ul>
 <p><strong>Test</strong></p>
 <p>Directement dans un navigateur Chrome, on tape l’URL <strong>[http://localhost/php7/scripts-web/impots/version-11/impots-server.php?mari%C3%A9=oui&amp;enfants=2&amp;salaire=60000]</strong>. On obtient le résultat suivant <strong>[1]</strong> dans un navigateur Chrome :</p>
-<p><img src="images/100000000000067F0000020EF639D2C6.png" style="width:13.2cm;height:4.181cm;" alt="Image" /></p>
+<p><img src="images/100000000000067F0000020EF639D2C6.png" style="width:13.2cm;height:4.181cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000067F0000020EF639D2C6.png" /></p>
 <p><a id="toc42690101"></a>
 <a id="toc42690487"></a>
 <a id="toc42690873"></a>
 <a id="refheading400081881943603"></a></p>
 <h2 id="222-le-client">22.2. Le client</h2>
 <p>Nous nous intéressons maintenant à la partie client de l’application.</p>
-<p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" /></p>
+<p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
 <p>Cette architecture sera implémentée par les scripts suivants :</p>
-<p><img src="images/10000000000001C700000179EBD6DE5A.png" style="width:4.211cm;height:3.492cm;" alt="Image" /></p>
+<p><img src="images/10000000000001C700000179EBD6DE5A.png" style="width:4.211cm;height:3.492cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C700000179EBD6DE5A.png" /></p>
 <p>Dans la nouvelle version, seuls changent :</p>
 <ul>
 <li>le fichier de configuration <strong>[config-client.json]</strong> ;</li>
@@ -1454,7 +1454,7 @@
 <a id="toc42690875"></a>
 <a id="refheadingtoc185723971629160"></a></p>
 <h3 id="2222-tests-codeception">22.2.2. Tests [Codeception]</h3>
-<p><img src="images/10000000000001F40000028EBFB4C61C.png" style="width:4.631cm;height:6.061cm;" alt="Image" /></p>
+<p><img src="images/10000000000001F40000028EBFB4C61C.png" style="width:4.631cm;height:6.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F40000028EBFB4C61C.png" /></p>
 <p>Le test <strong>[ClientMetierTest]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1496,7 +1496,7 @@
 </code></pre></div>
 
 <p>Les résultats du test sont les suivants :</p>
-<p><img src="images/10000000000006760000028BE01C1FE5.png" style="width:15.32cm;height:6.032cm;" alt="Image" /></p>
+<p><img src="images/10000000000006760000028BE01C1FE5.png" style="width:15.32cm;height:6.032cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006760000028BE01C1FE5.png" /></p>
 
 
 

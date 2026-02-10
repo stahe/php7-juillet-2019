@@ -1278,9 +1278,9 @@
 <a id="toc42690329"></a>
 <a id="toc42690715"></a></p>
 <h1 id="13-exercice-dapplication-version-5">13. Exercice d’application – version 5</h1>
-<p><img src="images/10000000000000ED000000FF746725B4.png" style="width:2.192cm;height:2.361cm;" alt="Image" /></p>
+<p><img src="images/10000000000000ED000000FF746725B4.png" style="width:2.192cm;height:2.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000FF746725B4.png" /></p>
 <p>Nous avons déjà écrit plusieurs versions de cet exercice. La dernière version utilisait une architecture en couches :</p>
-<p><img src="images/1000000000000539000001032BF5D263.png" style="width:10.611cm;height:2.05cm;" alt="Image" /></p>
+<p><img src="images/1000000000000539000001032BF5D263.png" style="width:10.611cm;height:2.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000539000001032BF5D263.png" /></p>
 <p><span style="color: #000000">La couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> implémente une interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">. Nous avons construit une classe implémentant de cette interface :</span></p>
 <ul>
 <li><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInJsonFile]</span></strong><span style="color: #000000"> qui allait chercher les données fiscales dans un fichier jSON ;</span></li>
@@ -1292,25 +1292,25 @@
 <a id="refheadingtoc822303439697744"></a></p>
 <h2 id="131-creation-de-la-base-de-donnees-dbimpots-2019">13.1. Création de la base de données [dbimpots-2019]</h2>
 <p>En suivant l’exemple du paragraphe <a href="#_Création_d’une_base"><u><span style="color: #0563c1">lien</span></u></a>, nous construisons une base de données MySQL nommée <strong>[dbimpots-2019]</strong> dont le propriétaire sera <strong>[admimpots]</strong> avec le mot de passe <strong>[mdpimpots]</strong> :</p>
-<p><img src="images/10000000000004C800000247CE804F2A.png" style="width:9.722cm;height:4.631cm;" alt="Image" /></p>
+<p><img src="images/10000000000004C800000247CE804F2A.png" style="width:9.722cm;height:4.631cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C800000247CE804F2A.png" /></p>
 <ul>
 <li>en <strong>[1-4]</strong> ci-dessus, nous voyons la base <strong>[dbimpots-2019]</strong> qui pour l’instant n’a pas de tables ;</li>
 </ul>
-<p><img src="images/10000000000007EA00000265B3FC96D0.png" style="width:16.08cm;height:4.86cm;" alt="Image" /></p>
+<p><img src="images/10000000000007EA00000265B3FC96D0.png" style="width:16.08cm;height:4.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007EA00000265B3FC96D0.png" /></p>
 <ul>
 <li>en <strong>[1-5]</strong> ci-dessus, nous voyons que l’utilisateur <strong>[admimpots]</strong> a tous les droits sur la base <strong>[dbimpots-2019]</strong>. Ce que nous ne voyons pas ici c’est que cet utilisateur a le mot de passe <strong>[admimpots]</strong> ;</li>
 </ul>
 <p>Nous créons maintenant la table <strong>[tbtranches]</strong>qui contiendra les tranches d’imposition :</p>
-<p><img src="images/10000000000004EC00000254D3B474F7.png" style="width:10cm;height:4.732cm;" alt="Image" /></p>
+<p><img src="images/10000000000004EC00000254D3B474F7.png" style="width:10cm;height:4.732cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004EC00000254D3B474F7.png" /></p>
 <ul>
 <li>en <strong>[1-7]</strong>, nous créons une table nommée <strong>[tbtranches]</strong> ayant 4 colonnes ;</li>
 </ul>
-<p><img src="images/10000000000008D0000004606D93747C.png" style="width:17.911cm;height:8.891cm;" alt="Image" /></p>
+<p><img src="images/10000000000008D0000004606D93747C.png" style="width:17.911cm;height:8.891cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008D0000004606D93747C.png" /></p>
 <ul>
 <li>en <strong>[3-6]</strong> nous définissons une colonne nommée <strong>[id]</strong> (3), de type entier <strong>[int]</strong> (4), qui sera clé primaire <strong>[6]</strong> de la table et sera autoincrémentée <strong>[5]</strong> par le SGBD. Cela signifie que MySQL va gérer lui-même les valeurs de la clé primaire au moment des insertions. Il affectera la valeur 1 à la clé primaire de la 1ière insertion, puis 2 à la suivante, etc … ;</li>
 <li>en <strong>[7]</strong>, l’assistant nous propose d’autres options de configuration de la clé primaire. Ici on se contente de valider <strong>[7]</strong> les valeurs par défaut ;</li>
 </ul>
-<p><img src="images/100000000000072300000268AC43A360.png" style="width:14.5cm;height:4.89cm;" alt="Image" /></p>
+<p><img src="images/100000000000072300000268AC43A360.png" style="width:14.5cm;height:4.89cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000072300000268AC43A360.png" /></p>
 <ul>
 <li>en <strong>[8-16]</strong>, on définit les trois autres colonnes de la table :<ul>
 <li><strong>[limites]</strong> (8) de type nombre décimal (9) à 10 chiffres dont 2 décimales (10) contiendra les éléments de la colonne 17 des tranches d’impôts ;</li>
@@ -1320,18 +1320,18 @@
 </li>
 </ul>
 <p>Après avoir validé cette structure, nous obtenons le résultat suivant :</p>
-<p><img src="images/10000000000006D8000001F9A0DA3139.png" style="width:13.911cm;height:4.01cm;" alt="Image" /></p>
+<p><img src="images/10000000000006D8000001F9A0DA3139.png" style="width:13.911cm;height:4.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006D8000001F9A0DA3139.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, l’icône de la clé indique que la colonne <strong>[id]</strong> est clé primaire. On voit également que cette clé primaire a des valeurs entières (6) et qu’elle est gérée (autoincrémentée) par MySQL ;</li>
 </ul>
 <p>De la même façon que nous avons créé la table <strong>[tbtranches]</strong> nous construisons la table <strong>[tbconstantes]</strong> qui contiendra les constantes du calcul de l’impôt :</p>
-<p><img src="images/10000000000006050000038306A0940B.png" style="width:12.232cm;height:7.13cm;" alt="Image" /></p>
+<p><img src="images/10000000000006050000038306A0940B.png" style="width:12.232cm;height:7.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006050000038306A0940B.png" /></p>
 <p>Il est possible d’exporter la structure de la base de données dans un fichier texte sous forme d’une suite d’ordres SQL :</p>
-<p><img src="images/10000000000004AE0000040112386749.png" style="width:9.512cm;height:8.141cm;" alt="Image" /></p>
+<p><img src="images/10000000000004AE0000040112386749.png" style="width:9.512cm;height:8.141cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004AE0000040112386749.png" /></p>
 <p>L’option <strong>[5]</strong> n’exporte ici que la structure de la base de données et pas son contenu. Dans notre cas, la base n’a pas encore de contenu.</p>
-<p><img src="images/100000000000052E000002F19A1B741C.png" style="width:10.531cm;height:5.98cm;" alt="Image" /></p>
-<p><img src="images/100000000000059F000002BD2F560C27.png" style="width:11.42cm;height:5.561cm;" alt="Image" /></p>
-<p><img src="images/100000000000059E000003A68D16D8EA.png" style="width:11.411cm;height:7.411cm;" alt="Image" /></p>
+<p><img src="images/100000000000052E000002F19A1B741C.png" style="width:10.531cm;height:5.98cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052E000002F19A1B741C.png" /></p>
+<p><img src="images/100000000000059F000002BD2F560C27.png" style="width:11.42cm;height:5.561cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000059F000002BD2F560C27.png" /></p>
+<p><img src="images/100000000000059E000003A68D16D8EA.png" style="width:11.411cm;height:7.411cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000059E000003A68D16D8EA.png" /></p>
 <p>L’option <strong>[11]</strong> produit le fichier SQL <strong>[dbimpots-2019.sql]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line">-- phpMyAdmin SQL Dump</span>
@@ -1434,15 +1434,15 @@
 </code></pre></div>
 
 <p>Vous pouvez utiliser ce fichier SQL pour régénérer la base <strong>[dbimpots-2019]</strong> si elle a été détruite ou altérée. Il n’y a pas lieu ici de supprimer la base avant de la régénérer puisque le script SQL prend soin de le faire lui-même :</p>
-<p><img src="images/10000000000004AE000002A399F8210F.png" style="width:9.512cm;height:5.361cm;" alt="Image" /></p>
-<p><img src="images/100000000000048B0000031074337D0E.png" style="width:9.231cm;height:6.22cm;" alt="Image" /></p>
+<p><img src="images/10000000000004AE000002A399F8210F.png" style="width:9.512cm;height:5.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004AE000002A399F8210F.png" /></p>
+<p><img src="images/100000000000048B0000031074337D0E.png" style="width:9.231cm;height:6.22cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048B0000031074337D0E.png" /></p>
 <p><a id="toc42689945"></a>
 <a id="toc42690331"></a>
 <a id="toc42690717"></a>
 <a id="refheadingtoc185655971629160"></a></p>
 <h2 id="132-organisation-du-code">13.2. Organisation du code</h2>
 <p>Pour mieux montrer le rôle des différents scripts PHP que nous écrivons, nous allons organiser notre code en dossiers :</p>
-<p><img src="images/10000000000007570000021284DA5294.png" style="width:14.911cm;height:4.211cm;" alt="Image" /></p>
+<p><img src="images/10000000000007570000021284DA5294.png" style="width:14.911cm;height:4.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007570000021284DA5294.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, vue d’ensemble de la version 05 ;</li>
 <li>en <strong>[2]</strong>, les entités de l’application, entités échangées entre couches ;</li>
@@ -1455,10 +1455,10 @@
 </ul>
 <p><span style="color: #7f007f"><mark style="background-color: #e8f2fe">&quot;plafondRevenusCouplePourReduction&quot;</mark></span><span style="color: #000000"><mark style="background-color: #e8f2fe">:</mark></span><mark style="background-color: #e8f2fe"> </mark><span style="color: #ff0000"><mark style="background-color: #e8f2fe">42O74</mark></span></p>
 <p>où on a mis par inadvertance un O majuscule à la place du zéro dans <strong>[42074]</strong>, Netbeans signale la faute :</p>
-<p><img src="images/10000000000007BE0000015A3EBB4F57.png" style="width:15.731cm;height:2.751cm;" alt="Image" /></p>
+<p><img src="images/10000000000007BE0000015A3EBB4F57.png" style="width:15.731cm;height:2.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007BE0000015A3EBB4F57.png" /></p>
 <p>En effet, Netbeans reconnaît le O majuscule qui fait de <strong>[49O74]</strong> une chaîne de caractères. Il en conclut que la syntaxe devrait être <strong>[4-5]</strong> : la chaîne <strong>[47O74]</strong> devrait être entourée de guillemets. L’attention du développeur est donc attirée par la faute et peut la corriger : soit mettre les guillemets, soit remplacer le O par un zéro ;</p>
 <p>Les autres éléments de la version 05 sont les suivants :</p>
-<p><img src="images/1000000000000785000001504D6DC72E.png" style="width:17.83cm;height:3.111cm;" alt="Image" /></p>
+<p><img src="images/1000000000000785000001504D6DC72E.png" style="width:17.83cm;height:3.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000785000001504D6DC72E.png" /></p>
 <ul>
 <li>en <strong>[6]</strong>, les interfaces et classes de la couche <strong>[Dao]</strong> ;</li>
 <li>en <strong>[7]</strong>, les interfaces et classes de la couche <strong>[métier]</strong> ;</li>
@@ -1525,7 +1525,7 @@
 <a id="toc42690334"></a>
 <a id="toc42690720"></a></p>
 <h3 id="1332-les-entites">13.3.2. Les entités</h3>
-<p><img src="images/10000000000003ED0000021E69AFDE53.png" style="width:9.311cm;height:5.001cm;" alt="Image" /></p>
+<p><img src="images/10000000000003ED0000021E69AFDE53.png" style="width:9.311cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003ED0000021E69AFDE53.png" /></p>
 <p>L’entité <strong>[Database]</strong> servira à encapsuler les données du fichier jSON <strong>[database.json]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">{</span>
@@ -2050,8 +2050,8 @@
 <a id="refheadingtoc900683955410047"></a></p>
 <h3 id="1333-la-couche-dao">13.3.3. La couche [dao]</h3>
 <p>Maintenant nous pouvons écrire le code qui va transférer les données du fichier texte <strong>[taxadmindata.json]</strong> dans les tables <strong>[tbtranches, tbconstantes]</strong> de la base MySQL <strong>[dbimpots-2019]</strong>. Nous adopterons l’architecture suivante :</p>
-<p><img src="images/10000000000005720000019D40CA363B.png" style="width:11.06cm;height:3.282cm;" alt="Image" /></p>
-<p><img src="images/10000000000002AD000000FEC24ED249.png" style="width:6.34cm;height:2.35cm;" alt="Image" /></p>
+<p><img src="images/10000000000005720000019D40CA363B.png" style="width:11.06cm;height:3.282cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005720000019D40CA363B.png" /></p>
+<p><img src="images/10000000000002AD000000FEC24ED249.png" style="width:6.34cm;height:2.35cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AD000000FEC24ED249.png" /></p>
 <p><span style="color: #000000">La couche <strong>[dao]</strong> implémentera l’interface <strong>[InterfaceDao4TransferAdminDataFromFile2Database]</strong> suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2253,8 +2253,8 @@
 <a id="toc42690725"></a>
 <a id="refheadingtoc900703955410047"></a></p>
 <h3 id="1334-le-script-principal">13.3.4. Le script principal</h3>
-<p><img src="images/1000000000000555000001880BB7E59F.png" style="width:10.831cm;height:3.111cm;" alt="Image" /></p>
-<p><img src="images/10000000000003380000014ACA8CBABD.png" style="width:7.631cm;height:3.061cm;" alt="Image" /></p>
+<p><img src="images/1000000000000555000001880BB7E59F.png" style="width:10.831cm;height:3.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000555000001880BB7E59F.png" /></p>
+<p><img src="images/10000000000003380000014ACA8CBABD.png" style="width:7.631cm;height:3.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003380000014ACA8CBABD.png" /></p>
 <p>Le script principal s’appuie sur la couche <strong>[dao]</strong> pour opérer le transfert de données :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2306,17 +2306,17 @@
 <li>ligne 32 : on opère le transfert de données ;</li>
 </ul>
 <p>Lorsque nous exécutons ce code, nous obtenons le résultat suivant dans la base de données :</p>
-<p><img src="images/10000000000003FB0000032EFA4546A4.png" style="width:8.09cm;height:6.46cm;" alt="Image" /></p>
+<p><img src="images/10000000000003FB0000032EFA4546A4.png" style="width:8.09cm;height:6.46cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003FB0000032EFA4546A4.png" /></p>
 <p>Colonne <strong>[3]</strong>, on voit les valeurs attribuées par MySQL à la clé primaire <strong>[id]</strong>. La numérotation démarre à 1. La copie d’écran ci-dessus a été obtenue après plusieurs exécutions du script.</p>
-<p><img src="images/100000000000086100000260B490BAA4.png" style="width:17.031cm;height:4.83cm;" alt="Image" /></p>
-<p><img src="images/10000000000008660000025EBE57E56F.png" style="width:17.07cm;height:4.811cm;" alt="Image" /></p>
+<p><img src="images/100000000000086100000260B490BAA4.png" style="width:17.031cm;height:4.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000086100000260B490BAA4.png" /></p>
+<p><img src="images/10000000000008660000025EBE57E56F.png" style="width:17.07cm;height:4.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008660000025EBE57E56F.png" /></p>
 <p><a id="calculdelimpot"></a>
 <a id="refheadingtoc900723955410047"></a>
 <a id="toc42689954"></a>
 <a id="toc42690340"></a>
 <a id="toc42690726"></a></p>
 <h2 id="134-calcul-de-limpot">13.4. Calcul de l’impôt</h2>
-<p><img src="images/10000000000002AC000001B237376769.png" style="width:5.43cm;height:3.44cm;" alt="Image" /></p>
+<p><img src="images/10000000000002AC000001B237376769.png" style="width:5.43cm;height:3.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AC000001B237376769.png" /></p>
 <p><a id="architecture"></a>
 <a id="refheading399281881943603"></a>
 <a id="toc42689955"></a>
@@ -2324,20 +2324,20 @@
 <a id="toc42690727"></a></p>
 <h3 id="1341-architecture">13.4.1. Architecture</h3>
 <p>La version 04 de l’application de calcul d’impôt utilisait une architecture en couches :</p>
-<p><img src="images/1000000000000550000001085618D9E1.png" style="width:10.801cm;height:2.102cm;" alt="Image" /></p>
+<p><img src="images/1000000000000550000001085618D9E1.png" style="width:10.801cm;height:2.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000550000001085618D9E1.png" /></p>
 <p><span style="color: #000000">La couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> implémente une interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">. Nous avons construit une classe implémentant cette interface :</span></p>
 <ul>
 <li><strong><span style="color: #000000">[</span></strong><strong><span style="color: #000000">DaoImpotsWithTaxAdminDataInJsonFile</span></strong><strong><span style="color: #000000">]</span></strong><span style="color: #000000"> qui allait chercher les données fiscales dans un fichier jSON. C’était la version 04 ;</span></li>
 </ul>
 <p><span style="color: #000000">Nous allons implémenter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> par une nouvelle classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> qui ira chercher les données de l’administration fiscale dans une base de données MySQL. La couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">, comme précédemment, écrira les résultats et les erreurs dans des fichiers texte et trouvera les données des contribuables également dans un fichier texte. Seulement cette fois-ci, ces fichiers texte seront des fichiers jSON. Par ailleurs, nous savons que si nous continuons à respecter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">, la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> n’aura pas à être modifiée.</span></p>
-<p><img src="images/1000000000000695000001A3EDBCE526.png" style="width:13.371cm;height:3.32cm;" alt="Image" /></p>
+<p><img src="images/1000000000000695000001A3EDBCE526.png" style="width:13.371cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000695000001A3EDBCE526.png" /></p>
 <p><a id="lentitetaxpayerdata"></a>
 <a id="refheadingtoc1911673931965946"></a>
 <a id="toc42689956"></a>
 <a id="toc42690342"></a>
 <a id="toc42690728"></a></p>
 <h3 id="1342-lentite-taxpayerdata">13.4.2. L’entité [TaxPayerData]</h3>
-<p><img src="images/10000000000005650000022681C57D11.png" style="width:10.962cm;height:4.37cm;" alt="Image" /></p>
+<p><img src="images/10000000000005650000022681C57D11.png" style="width:10.962cm;height:4.37cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005650000022681C57D11.png" /></p>
 <p>La classe <strong>[TaxPayerData]</strong> sert à encapsuler dans une classe les données du fichier jSON <strong>[taxpayersdata.json]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">[</span>
@@ -2788,7 +2788,7 @@
 <a id="toc42690346"></a>
 <a id="toc42690732"></a></p>
 <h3 id="1344-la-couche-metier">13.4.4. La couche [métier]</h3>
-<p><img src="images/10000000000006B00000018B31BDA50D.png" style="width:13.592cm;height:3.13cm;" alt="Image" /></p>
+<p><img src="images/10000000000006B00000018B31BDA50D.png" style="width:13.592cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B00000018B31BDA50D.png" /></p>
 <ul>
 <li><span style="color: #000000">nous venons d’implémenter la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> (3) ;</span></li>
 <li><span style="color: #000000">parce que nous avons respecté l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">, la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> (2) peut en théorie rester inchangée. Cependant, nous n’avons pas seulement modifié la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">. Nous avons également modifié les entités qui elles sont partagées par toutes les couches ;</span></li>
@@ -2881,7 +2881,7 @@
 <a id="toc42690347"></a>
 <a id="toc42690733"></a></p>
 <h3 id="1345-le-script-principal">13.4.5. Le script principal</h3>
-<p><img src="images/10000000000006910000018BC715A4E0.png" style="width:13.341cm;height:3.13cm;" alt="Image" /></p>
+<p><img src="images/10000000000006910000018BC715A4E0.png" style="width:13.341cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006910000018BC715A4E0.png" /></p>
 <ul>
 <li><span style="color: #000000">nous venons d’implémenter les couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> (3) et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> (2) ;</span></li>
 <li><span style="color: #000000">il nous reste à écrire le script principal (1) ;</span></li>
@@ -3157,7 +3157,7 @@
 <a id="refheadingtoc1787302861440889"></a></p>
 <h2 id="135-tests-codeception">13.5. Tests [Codeception]</h2>
 <p><span style="color: #000000">Comme il a été fait au paragraphe </span><a href="#_Tests_[Codeception]"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> pour la version 04, nous allons écrire des tests </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> pour la version 05.</span></p>
-<p><img src="images/10000000000001E2000001DC4E27D094.png" style="width:3.83cm;height:3.781cm;" alt="Image" /></p>
+<p><img src="images/10000000000001E2000001DC4E27D094.png" style="width:3.83cm;height:3.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000001DC4E27D094.png" /></p>
 <p><a id="toc42689963"></a>
 <a id="toc42690349"></a>
 <a id="toc42690735"></a>
@@ -3228,7 +3228,7 @@
 <li><span style="color: #000000">lignes 47-51 : la méthode </span><strong><span style="color: #000000">[testTaxAdminData]</span></strong><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
 </ul>
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
-<p><img src="images/100000000000066B000001BF003361FE.png" style="width:13.04cm;height:3.551cm;" alt="Image" /></p>
+<p><img src="images/100000000000066B000001BF003361FE.png" style="width:13.04cm;height:3.551cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066B000001BF003361FE.png" /></p>
 <p><a id="toc42689964"></a>
 <a id="toc42690350"></a>
 <a id="toc42690736"></a>
@@ -3312,7 +3312,7 @@
 <li><span style="color: #000000">lignes 47-64 : les méthodes </span><strong><span style="color: #000000">[test1, test2…, test11]</span></strong><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
 </ul>
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
-<p><img src="images/1000000000000680000001A8D691E807.png" style="width:13.211cm;height:3.372cm;" alt="Image" /></p>
+<p><img src="images/1000000000000680000001A8D691E807.png" style="width:13.211cm;height:3.372cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000680000001A8D691E807.png" /></p>
 
 
 

@@ -1427,7 +1427,7 @@
 <a id="refheading399301881943603"></a></p>
 <h1 id="16-fonctions-reseau">16. Fonctions réseau</h1>
 <p>Nous abordons maintenant les fonctions réseau de PHP qui nous permettent de faire de la programmation TCP / IP (<strong>T</strong>ransfer <strong>C</strong>ontrol <strong>P</strong>rotocol / <strong>I</strong>nternet <strong>P</strong>rotocol).</p>
-<p><img src="images/1000000000000150000000D686E2984D.png" style="width:3.111cm;height:1.982cm;" alt="Image" /></p>
+<p><img src="images/1000000000000150000000D686E2984D.png" style="width:3.111cm;height:1.982cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000150000000D686E2984D.png" /></p>
 <p><a id="toc42689980"></a>
 <a id="toc42690366"></a>
 <a id="toc42690752"></a>
@@ -1439,7 +1439,7 @@
 <a id="refheading10403071168783983"></a></p>
 <h3 id="1611-generalites">16.1.1. Généralités</h3>
 <p>Considérons la communication entre deux machines distantes A et B :</p>
-<p><img src="images/10000000000003A90000019B65B9FC4D.png" style="width:7.441cm;height:3.26cm;" alt="Image" /></p>
+<p><img src="images/10000000000003A90000019B65B9FC4D.png" style="width:7.441cm;height:3.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003A90000019B65B9FC4D.png" /></p>
 <p>Lorsque une application <em>AppA</em> d&#x27;une machine A veut  communiquer avec une application <em>AppB</em> d&#x27;une machine B de l&#x27;Internet, elle doit connaître plusieurs choses :</p>
 <ul>
 <li>l&#x27;adresse IP (<strong>I</strong>nternet <strong>P</strong>rotocol) ou le nom de la machine B ;</li>
@@ -1538,7 +1538,7 @@
 <a id="toc42690374"></a>
 <a id="toc42690760"></a></p>
 <h3 id="1622-utilitaires-tcp">16.2.2. Utilitaires TCP</h3>
-<p><img src="images/10000000000001E200000177C0F50C08.png" style="width:4.462cm;height:3.47cm;" alt="Image" /></p>
+<p><img src="images/10000000000001E200000177C0F50C08.png" style="width:4.462cm;height:3.47cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E200000177C0F50C08.png" /></p>
 <p>Dans les codes associés à ce document, on trouve deux utilitaires de communication TCP :</p>
 <ul>
 <li><strong>[RawTcpClient]</strong> permet de se connecter sur le port P d’un serveur S ;</li>
@@ -1568,7 +1568,7 @@
 <li>l’ensemble des échanges est logué dans un fichier texte portant le nom <strong>[serveur-port.txt]</strong> ;</li>
 </ul>
 <p>Voyons un exemple. On ouvre deux fenêtres de commandes Windows et on se positionne dans chacune d’elles sur le dossier des utilitaires. Dans l’une des fenêtres on lance le serveur <strong>[RawTcpServer]</strong> sur le port 100 :</p>
-<p><img src="images/10000000000004FA000000A04D82BE86.png" style="width:11.801cm;height:1.481cm;" alt="Image" /></p>
+<p><img src="images/10000000000004FA000000A04D82BE86.png" style="width:11.801cm;height:1.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004FA000000A04D82BE86.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, nous sommes placés dans le dossier des utilitaires ;</li>
 <li>en <strong>[2]</strong>, nous lançons le serveur TCP sur le port 100 ;</li>
@@ -1576,7 +1576,7 @@
 <li>en <strong>[4]</strong>, le serveur attend une commande tapée par l’utilisateur au clavier ;</li>
 </ul>
 <p>Dans l’autre fenêtre de commandes, on lance le client TCP :</p>
-<p><img src="images/1000000000000569000000A3785D1DE5.png" style="width:12.831cm;height:1.511cm;" alt="Image" /></p>
+<p><img src="images/1000000000000569000000A3785D1DE5.png" style="width:12.831cm;height:1.511cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000569000000A3785D1DE5.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, nous sommes placés dans le dossier des utilitaires ;</li>
 <li>en <strong>[6]</strong>, nous lançons le client TCP : nous lui disons de se connecter au port 100 de la machine locale (celle avec laquelle vous travaillez) ;</li>
@@ -1584,33 +1584,33 @@
 <li>en <strong>[8]</strong>, le client attend une commande tapée par l’utilisateur au clavier ;</li>
 </ul>
 <p>Revenons sur la fenêtre du serveur. Son contenu a évolué :</p>
-<p><img src="images/100000000000052E000000E2314709D7.png" style="width:12.281cm;height:2.091cm;" alt="Image" /></p>
+<p><img src="images/100000000000052E000000E2314709D7.png" style="width:12.281cm;height:2.091cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052E000000E2314709D7.png" /></p>
 <ul>
 <li>en <strong>[9]</strong>, un client a été détecté. Le serveur lui a donné le n° 1. Le serveur a correctement identifié le client distant (machine et port) ;</li>
 <li>en <strong>[10]</strong>, le serveur se remet en attente d’un nouveau client ;</li>
 </ul>
 <p>Revenons sur la fenêtre du client et envoyons une commande au serveur :</p>
-<p><img src="images/100000000000055F000000A369284931.png" style="width:12.731cm;height:1.511cm;" alt="Image" /></p>
+<p><img src="images/100000000000055F000000A369284931.png" style="width:12.731cm;height:1.511cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000055F000000A369284931.png" /></p>
 <ul>
 <li>en <strong>[11]</strong>, la commande envoyée au serveur ;</li>
 </ul>
 <p>Revenons sur la fenêtre du serveur. Son contenu a évolué :</p>
-<p><img src="images/1000000000000485000000FD4BC6DCC8.png" style="width:10.711cm;height:2.341cm;" alt="Image" /></p>
+<p><img src="images/1000000000000485000000FD4BC6DCC8.png" style="width:10.711cm;height:2.341cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000485000000FD4BC6DCC8.png" /></p>
 <ul>
 <li>en <strong>[12]</strong>, entre cochets, le message reçu par le serveur ;</li>
 </ul>
 <p>Envoyons une réponse au client :</p>
-<p><img src="images/10000000000004330000012906DCCA1F.png" style="width:9.961cm;height:2.751cm;" alt="Image" /></p>
+<p><img src="images/10000000000004330000012906DCCA1F.png" style="width:9.961cm;height:2.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004330000012906DCCA1F.png" /></p>
 <ul>
 <li>en <strong>[13]</strong>, la réponse envoyée au client 1. Seul le texte entre les crochets est envoyé, pas les crochets eux-mêmes ;</li>
 </ul>
 <p>Revenons à la fenêtre du client :</p>
-<p><img src="images/100000000000040F000000B3CA8BB531.png" style="width:9.621cm;height:1.661cm;" alt="Image" /></p>
+<p><img src="images/100000000000040F000000B3CA8BB531.png" style="width:9.621cm;height:1.661cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000040F000000B3CA8BB531.png" /></p>
 <ul>
 <li>en <strong>[14]</strong>, la réponse reçue par le client. Le texte reçu est celui entre crochets ;</li>
 </ul>
 <p>Revenons à la fenêtre du serveur pour voir d’autres commandes :</p>
-<p><img src="images/1000000000000361000001DA1A9B1CF7.png" style="width:8.011cm;height:4.391cm;" alt="Image" /></p>
+<p><img src="images/1000000000000361000001DA1A9B1CF7.png" style="width:8.011cm;height:4.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000361000001DA1A9B1CF7.png" /></p>
 <ul>
 <li>en <strong>[15]</strong>, nous demandons la liste des clients ;</li>
 <li>en <strong>[16]</strong>, la réponse ;</li>
@@ -1620,12 +1620,12 @@
 <li>en <strong>[20]</strong>, la confirmation du serveur ;</li>
 </ul>
 <p>Revenons à la fenêtre du client :</p>
-<p><img src="images/10000000000003EE000000D2D983DF00.png" style="width:9.321cm;height:1.941cm;" alt="Image" /></p>
+<p><img src="images/10000000000003EE000000D2D983DF00.png" style="width:9.321cm;height:1.941cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003EE000000D2D983DF00.png" /></p>
 <ul>
 <li>en <strong>[21]</strong>, le client a détecté la fin du service ;</li>
 </ul>
 <p>Deux fichiers de logs ont été créés, un pour le serveur, un autre pour le client :</p>
-<p><img src="images/10000000000004C100000193340D9180.png" style="width:11.27cm;height:3.731cm;" alt="Image" /></p>
+<p><img src="images/10000000000004C100000193340D9180.png" style="width:11.27cm;height:3.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C100000193340D9180.png" /></p>
 <ul>
 <li>en <strong>[25]</strong>, les logs du serveur : le nom du fichier est le nom du client <strong>[machine-port]</strong> ;</li>
 <li>en <strong>[26]</strong>, les logs du client : le nom du fichier est le nom du serveur <strong>[machine-port]</strong> ;</li>
@@ -1646,7 +1646,7 @@
 <a id="toc42690375"></a>
 <a id="toc42690761"></a></p>
 <h2 id="163-obtenir-le-nom-ou-ladresse-ip-dune-machine-de-linternet">16.3. Obtenir le nom ou l&#x27;adresse IP d&#x27;une machine de l&#x27;Internet</h2>
-<p><img src="images/1000000000000143000000F1C1E832BE.png" style="width:3.421cm;height:2.551cm;" alt="Image" /></p>
+<p><img src="images/1000000000000143000000F1C1E832BE.png" style="width:3.421cm;height:2.551cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000143000000F1C1E832BE.png" /></p>
 <p>Les machines de l’internet sont identifiées par une adresse IP (IPv4 ou IPv6) et le plus souvent par un nom. Mais finalement seule l’adresse IP est utilisée. Il faut donc parfois connaître l’adresse IP d’une machine identifiée par son nom.</p>
 <p>Le script <strong>[ip-01.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1734,18 +1734,18 @@
 <a id="toc42690763"></a>
 <a id="refheadingtoc1356962222329424"></a></p>
 <h3 id="1641-exemple-1">16.4.1. Exemple 1</h3>
-<p><img src="images/1000000000000399000001ABE27063AD.png" style="width:7.31cm;height:3.391cm;" alt="Image" /></p>
+<p><img src="images/1000000000000399000001ABE27063AD.png" style="width:7.31cm;height:3.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000399000001ABE27063AD.png" /></p>
 <p>Lorsqu’un navigateur affiche une URL, il est le client d’un serveur web ou dit autrement d’un serveur HTTP. C’est lui qui prend l’initiative et il commence par envoyer un certain nombre de commandes au serveur. Pour ce premier exemple :</p>
 <ul>
 <li>le serveur sera l’utilitaire <strong>[RawTcpServer]</strong> ;</li>
 <li>le client sera un navigateur ;</li>
 </ul>
 <p>Nous lançons d’abord le serveur sur le port 100 :</p>
-<p><img src="images/1000000000000513000000A5E92C8214.png" style="width:12.03cm;height:1.53cm;" alt="Image" /></p>
+<p><img src="images/1000000000000513000000A5E92C8214.png" style="width:12.03cm;height:1.53cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000513000000A5E92C8214.png" /></p>
 <p>Puis avec un navigateur, nous demandons l’URL <strong>[localhost:100]</strong>, ç-a-d que nous disons que le serveur HTTP interrogé travaille sur le port 100 de la machine locale :</p>
-<p><img src="images/10000000000003E100000130DF15FEEF.png" style="width:9.201cm;height:2.821cm;" alt="Image" /></p>
+<p><img src="images/10000000000003E100000130DF15FEEF.png" style="width:9.201cm;height:2.821cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E100000130DF15FEEF.png" /></p>
 <p>Revenons sur la fenêtre du serveur :</p>
-<p><img src="images/100000000000062700000205E4A8BDFF.png" style="width:14.592cm;height:4.791cm;" alt="Image" /></p>
+<p><img src="images/100000000000062700000205E4A8BDFF.png" style="width:14.592cm;height:4.791cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000062700000205E4A8BDFF.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, le client qui s’est connecté ;</li>
 <li>en <strong>[4-7]</strong>, la série de lignes de texte qu’il a envoyées :<ul>
@@ -1760,7 +1760,7 @@
 </li>
 </ul>
 <p>Nous terminons la connexion en terminant le serveur :</p>
-<p><img src="images/100000000000032800000298E1226360.png" style="width:7.481cm;height:6.151cm;" alt="Image" /></p>
+<p><img src="images/100000000000032800000298E1226360.png" style="width:7.481cm;height:6.151cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000032800000298E1226360.png" /></p>
 <p><a id="toc42689992"></a>
 <a id="toc42690378"></a>
 <a id="toc42690764"></a>
@@ -1768,16 +1768,16 @@
 <h3 id="1642-exemple-2">16.4.2. Exemple 2</h3>
 <p>Maintenant que nous connaissons les commandes envoyées par un navigateur pour réclamer une URL, nous allons réclamer cette URL avec notre client TCP <strong>[RawTcpClient]</strong>. Le serveur Apache de Laragon sera notre serveur web.</p>
 <p>Lançons Laragon puis le serveur web Apache :</p>
-<p><img src="images/10000000000004BC00000270D9D2E561.png" style="width:11.221cm;height:5.781cm;" alt="Image" /></p>
-<p><img src="images/10000000000004F60000012644EDCDC1.png" style="width:11.761cm;height:2.721cm;" alt="Image" /></p>
+<p><img src="images/10000000000004BC00000270D9D2E561.png" style="width:11.221cm;height:5.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004BC00000270D9D2E561.png" /></p>
+<p><img src="images/10000000000004F60000012644EDCDC1.png" style="width:11.761cm;height:2.721cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F60000012644EDCDC1.png" /></p>
 <p>Maintenant avec un navigateur, demandons l’URL <strong>[http://localhost:80]</strong>. Ici nous ne précisons que le serveur <strong>[localhost:80]</strong> et pas d’URL de document. Dans ce cas c’est l’URL / qui est demandée, ç-à-d la racine du serveur web :</p>
-<p><img src="images/1000000000000711000004D11681039E.png" style="width:11.971cm;height:8.161cm;" alt="Image" /></p>
+<p><img src="images/1000000000000711000004D11681039E.png" style="width:11.971cm;height:8.161cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000711000004D11681039E.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, l’URL demandée. On a tapé initialement <strong>[http://localhost:80]</strong> et le navigateur (Firefox ici) l’a transformée simplement en <strong>[localhost]</strong> car le protocole <strong>[http]</strong> est implicite lorsqu’aucun protocole n’est mentionné et le port <strong>[80]</strong> est implicite lorsque le port n’est pas précisé ;</li>
 <li>en <strong>[2]</strong>, la page racine / du serveur web interrogé ;</li>
 </ul>
 <p>Maintenant, visualisons le texte reçu par le navigateur :</p>
-<p><img src="images/10000000000002CA00000295E9F51841.png" style="width:6.61cm;height:6.121cm;" alt="Image" /></p>
+<p><img src="images/10000000000002CA00000295E9F51841.png" style="width:6.61cm;height:6.121cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002CA00000295E9F51841.png" /></p>
 <ul>
 <li>on clique droit sur la page reçue et on choisit l’option <strong>[2]</strong>. on obtient le code source suivant :</li>
 </ul>
@@ -1920,12 +1920,12 @@
 <a id="__codelineno-5-69" name="__codelineno-5-69"></a><span class="p">&lt;/</span><span class="nt">HTML</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>Maintenant demandons l’URL <strong>[http://localhost:80]</strong> avec notre client TCP :</p>
-<p><img src="images/10000000000005500000006C63EE1B34.png" style="width:12.591cm;height:1.001cm;" alt="Image" /></p>
+<p><img src="images/10000000000005500000006C63EE1B34.png" style="width:12.591cm;height:1.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005500000006C63EE1B34.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, nous nous connectons au port 80 du serveur <em>localhost</em>. C’est là qu’opère le serveur web de Laragon ;</li>
 </ul>
 <p>Nous tapons maintenant les commandes que nous avons découvertes dans le paragraphe précédent :</p>
-<p><img src="images/1000000000000558000002E7AF3DC3A6.png" style="width:12.671cm;height:6.88cm;" alt="Image" /></p>
+<p><img src="images/1000000000000558000002E7AF3DC3A6.png" style="width:12.671cm;height:6.88cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000558000002E7AF3DC3A6.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, la commande <strong>[GET]</strong>. On demande la racine / du serveur web ;</li>
 <li>en <strong>[2]</strong>, la commande <strong>[Host]</strong> ;</li>
@@ -2103,7 +2103,7 @@
 <a id="toc42690765"></a>
 <a id="refheadingtoc1357002222329424"></a></p>
 <h3 id="1643-exemple-3">16.4.3. Exemple 3</h3>
-<p><img src="images/10000000000001AA000001747EB3C32C.png" style="width:3.941cm;height:3.44cm;" alt="Image" /></p>
+<p><img src="images/10000000000001AA000001747EB3C32C.png" style="width:3.941cm;height:3.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AA000001747EB3C32C.png" /></p>
 <p>Le script <strong>[http-01.php]</strong> est un client HTTP configuré par le fichier jSON <strong>[config-http-01.json]</strong>. Le contenu de celui-ci est le suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
@@ -2490,7 +2490,7 @@
 <li>la ligne 11 indique que le serveur envoie le document par morceaux ;</li>
 </ul>
 <p>Cela se traduit par la présence de nombres dans le flux envoyé au client : chaque nombre indique au client le nombre de caractères du prochain morceau envoyé par le serveur. Voici ce que ça donne dans le fichier <strong>[output/sergetahe.com.HTML]</strong> :</p>
-<p><img src="images/1000000000000789000002283035C965.png" style="width:15.311cm;height:4.381cm;" alt="Image" /></p>
+<p><img src="images/1000000000000789000002283035C965.png" style="width:15.311cm;height:4.381cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000789000002283035C965.png" /></p>
 <ul>
 <li>en <strong>[1]</strong> et <strong>[2]</strong>, la taille en hexadécimal des morceaux 1 et 2 du document ;</li>
 </ul>
@@ -2560,11 +2560,11 @@
 <a id="refheadingtoc1357042222329424"></a></p>
 <h3 id="1645-exemple-5">16.4.5. Exemple 5</h3>
 <p>Les exemples précédents nous ont montré que notre client HTTP était insuffisant. Nous allons maintenant présenter un outil appelé <strong>[curl]</strong> qui permet de récupérer des documents web en gérant les difficultés mentionnées : protocole https, document envoyé par morceaux, redirections… L’outil <strong>[curl]</strong> a été installé avec Laragon :</p>
-<p><img src="images/10000000000003410000021BC18A07B5.png" style="width:7.711cm;height:5.001cm;" alt="Image" /></p>
+<p><img src="images/10000000000003410000021BC18A07B5.png" style="width:7.711cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003410000021BC18A07B5.png" /></p>
 <p>Ouvrons un terminal Laragon <strong>[1]</strong> :</p>
-<p><img src="images/10000000000004F800000346A2F548F8.png" style="width:11.78cm;height:7.76cm;" alt="Image" /></p>
+<p><img src="images/10000000000004F800000346A2F548F8.png" style="width:11.78cm;height:7.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F800000346A2F548F8.png" /></p>
 <p>Dans le terminal nous tapons la commande suivante :</p>
-<p><img src="images/100000000000079C000001D3AC847B81.png" style="width:18.04cm;height:4.331cm;" alt="Image" /></p>
+<p><img src="images/100000000000079C000001D3AC847B81.png" style="width:18.04cm;height:4.331cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000079C000001D3AC847B81.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le type de la console ;</li>
 <li>en <strong>[2]</strong>, le dossier courant. Ce dossier est particulier : c’est là où le serveur Apache de Laragon vient chercher les documents qu’on lui demande. On évitera donc de polluer ce dossier ;</li>
@@ -2573,7 +2573,7 @@
 <p>Il est possible que la commande <strong>[curl --help]</strong> produise une erreur. La cause la plus probable est que vous n’avez pas le bon type de terminal. Dans ce cas, ouvrez un autre terminal avec les commandes <strong>[4-6]</strong> ;</p>
 <p>La commande <strong>[curl --help]</strong> fait afficher toutes les options de configuration de <strong>[curl]</strong>. Il y en a plusieurs dizaines. Nous en utiliserons très peu. Pour demander une URL il suffit de taper la commande <strong>[curl URL]</strong>. Cette commande affichera sur la console le document demandé. Si on veut de plus les échanges HTTP entre le client et le serveur on écrira <strong>[curl --verbose URL]</strong>. Enfin pour enregistrer le document HTML demandé dans un fichier on écrira <strong>[curl --verbose --output fichier URL]</strong>.</p>
 <p>Pour éviter de polluer le dossier <strong>[www]</strong> de Laragon, déplaçons-nous à un autre endroit du système de fichiers :</p>
-<p><img src="images/10000000000003450000037C99C9E7D1.png" style="width:7.751cm;height:8.261cm;" alt="Image" /></p>
+<p><img src="images/10000000000003450000037C99C9E7D1.png" style="width:7.751cm;height:8.261cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003450000037C99C9E7D1.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, on se déplace dans le dossier <strong>[c:\temp]</strong>. Si ce dossier n’existe pas, vous pouvez le créer ou en choisir un autre ;</li>
 <li>en <strong>[2]</strong>, on crée un dossier appelé <strong>[curl]</strong> ;</li>
@@ -2755,7 +2755,7 @@
 <a id="toc42690768"></a></p>
 <h3 id="1646-exemple-6">16.4.6. Exemple 6</h3>
 <p>PHP possède une extension appelée <strong>[libcurl]</strong> qui permet d’utiliser les capacités de l’outil <strong>[curl]</strong> dans un programme PHP. Il faut tout d’abord s’assurer que cette extension est activée dans le fichier <strong>[php.ini]</strong> décrit au paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a> :</p>
-<p><img src="images/10000000000004D700000133CAA0406B.png" style="width:11.471cm;height:2.841cm;" alt="Image" /></p>
+<p><img src="images/10000000000004D700000133CAA0406B.png" style="width:11.471cm;height:2.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004D700000133CAA0406B.png" /></p>
 <p>Assurez-vous que la ligne 889 ci-dessus est décommentée.</p>
 <p>Nous allons écrire un script <strong>[http-02.php]</strong> qui exploitera le fichier de configuration jSON suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
@@ -3083,7 +3083,7 @@
 <a id="toc42690771"></a>
 <a id="refheadingtoc1357102222329424"></a></p>
 <h3 id="1651-introduction">16.5.1. Introduction</h3>
-<p><img src="images/10000000000003B6000001BFCC81ADDE.png" style="width:8.801cm;height:4.141cm;" alt="Image" /></p>
+<p><img src="images/10000000000003B6000001BFCC81ADDE.png" style="width:8.801cm;height:4.141cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B6000001BFCC81ADDE.png" /></p>
 <p>Dans ce chapitre :</p>
 <ul>
 <li><strong>[Serveur B]</strong> sera un serveur SMTP local que nous installerons ;</li>
@@ -3101,28 +3101,28 @@
 <a id="toc42690772"></a></p>
 <h3 id="1652-creation-dune-adresse-gmail">16.5.2. Création d’une adresse [gmail]</h3>
 <p>Pour faire nos tests SMTP, nous aurons besoin d’une adresse mail à qui écrire. Nous allons créer pour cela une adresse sur Gmail :</p>
-<p><img src="images/10000000000007A30000041BE0D0F52F.png" style="width:15.521cm;height:8.34cm;" alt="Image" /></p>
+<p><img src="images/10000000000007A30000041BE0D0F52F.png" style="width:15.521cm;height:8.34cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007A30000041BE0D0F52F.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, nous créons l’utilisateur <strong>[php7parlexemple]</strong> (choisissez autre chose) ;</li>
 <li>en <strong>[6]</strong>, le mot de passe sera lui <strong>[PHP7parlexemple]</strong> (choisissez autre chose) ;</li>
 <li>en <strong>[7]</strong>, nous validons ces informations ;</li>
 </ul>
-<p><img src="images/10000000000006E8000004A962F68690.png" style="width:14.031cm;height:9.471cm;" alt="Image" /></p>
+<p><img src="images/10000000000006E8000004A962F68690.png" style="width:14.031cm;height:9.471cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E8000004A962F68690.png" /></p>
 <ul>
 <li>remplir les cases <strong>[9-10]</strong> puis valider (11) ;</li>
 <li>accepter les conditions d’utilisation de Google (12-13) puis valider (14) ;</li>
 </ul>
-<p><img src="images/1000000000000745000003A93510957B.png" style="width:14.772cm;height:7.441cm;" alt="Image" /></p>
+<p><img src="images/1000000000000745000003A93510957B.png" style="width:14.772cm;height:7.441cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000745000003A93510957B.png" /></p>
 <ul>
 <li>en <strong>[15]</strong>, la boîte de réception (Inbox) de l’utilisateur <strong>[PHP7]</strong> (16) ;</li>
 <li>en <strong>[17]</strong>, cet utilisateur a une  boîte de réception vide ;</li>
 <li>en <strong>[18-19]</strong>, connectez-vous au compte Google de l’utilisateur <strong>[php7parlexemple@gmail.com]</strong>. Nous allons configurer la sécurité du compte ;</li>
 </ul>
-<p><img src="images/100000000000078D00000306CB150280.png" style="width:15.341cm;height:6.141cm;" alt="Image" /></p>
+<p><img src="images/100000000000078D00000306CB150280.png" style="width:15.341cm;height:6.141cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078D00000306CB150280.png" /></p>
 <ul>
 <li>en <strong>[21]</strong>, autorisez d’autres applications que celles de Google à exploiter le compte <strong>[php7parlexemple]</strong>. Si on ne fait pas ça, notre serveur local de mails <strong>[hMailServer]</strong> ne pourra pas communiquer avec le serveur SMTP de Gmail ;</li>
 </ul>
-<p><img src="images/10000000000005960000021926231AB7.png" style="width:11.351cm;height:4.261cm;" alt="Image" /></p>
+<p><img src="images/10000000000005960000021926231AB7.png" style="width:11.351cm;height:4.261cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005960000021926231AB7.png" /></p>
 <p><a id="toc42690001"></a>
 <a id="toc42690387"></a>
 <a id="toc42690773"></a>
@@ -3130,9 +3130,9 @@
 <h3 id="1653-installation-dun-serveur-smtp">16.5.3. Installation d’un serveur SMTP</h3>
 <p>Pour nos tests, nous installerons le serveur de mail <strong>[hMailServer]</strong> qui est à la fois un serveur SMTP permettant d’envoyer des mails, un serveur POP3 (Post Office Protocol) permettant de lire les mails stockés sur le serveur, un serveur IMAP (Internet Message Access Protocol) qui lui aussi permet de  lire les mails stockés sur le serveur mais va au-delà. Il permet notamment de gérer le stockage des mails sur le serveur.</p>
 <p>Le serveur de mail <strong>[hMailServer]</strong> est disponible à l’URL <strong>[https://www.hmailserver.com/]</strong> (mai 2019).</p>
-<p><img src="images/10000000000006F0000002653C2E8BC3.png" style="width:14.101cm;height:4.86cm;" alt="Image" /></p>
+<p><img src="images/10000000000006F0000002653C2E8BC3.png" style="width:14.101cm;height:4.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F0000002653C2E8BC3.png" /></p>
 <p>Au cours de l’installation, certains renseignements vous seront demandés :</p>
-<p><img src="images/10000000000003E6000002E6663127B9.png" style="width:9.24cm;height:6.871cm;" alt="Image" /></p>
+<p><img src="images/10000000000003E6000002E6663127B9.png" style="width:9.24cm;height:6.871cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E6000002E6663127B9.png" /></p>
 <ul>
 <li>en <strong>[1-2]</strong>, sélectionnez à la fois le serveur de mails et les outils pour l’administrer ;</li>
 <li>durant l’installation le mot de l’administrateur vous sera demandé : <strong>notez l</strong>e, car il vous sera nécessaire ;</li>
@@ -3141,27 +3141,27 @@
 <ul>
 <li>en <strong>[3]</strong>, on tape <strong>[services]</strong> dans la zone de saisie de la barre d’état ;</li>
 </ul>
-<p><img src="images/1000000000000688000004384C7323BD.png" style="width:13.271cm;height:8.572cm;" alt="Image" /></p>
+<p><img src="images/1000000000000688000004384C7323BD.png" style="width:13.271cm;height:8.572cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000688000004384C7323BD.png" /></p>
 <ul>
 <li>en <strong>[4-8]</strong>, on met le service en mode <strong>[manuel]</strong> (6), on le lance (7) ;</li>
 </ul>
 <p>Une fois démarré, le serveur <strong>[hMailServer]</strong> doit être configuré. Le serveur a été installé avec un programme d’administration <strong>[hMailServer Administrator]</strong> :</p>
-<p><img src="images/10000000000007730000040FF9852599.png" style="width:15.14cm;height:8.25cm;" alt="Image" /></p>
+<p><img src="images/10000000000007730000040FF9852599.png" style="width:15.14cm;height:8.25cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007730000040FF9852599.png" /></p>
 <ul>
 <li>en <strong>[2]</strong>, dans la zone de saisie de la barre d’état, taper <strong>[hmailserver]</strong> ;</li>
 <li>en <strong>[3]</strong>, lancer l’administrateur ;</li>
 <li>en <strong>[4]</strong>, connecter l’administrateur au serveur <strong>[hMailServer]</strong> ;</li>
 <li>en <strong>[5]</strong>, taper le mot de passe saisi lors de l’installation de <strong>[hMailServer]</strong> ;</li>
 </ul>
-<p><img src="images/10000000000005E2000002E3985EB662.png" style="width:11.951cm;height:5.86cm;" alt="Image" /></p>
+<p><img src="images/10000000000005E2000002E3985EB662.png" style="width:11.951cm;height:5.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005E2000002E3985EB662.png" /></p>
 <p>Nous allons créer un compte utilisateur :</p>
 <ul>
 <li>cliquer droit sur <strong>[Accounts]</strong> (7) puis (8) pour ajouter un nouvel utilisateur ;</li>
 <li>dans l’onglet <strong>[General]</strong> (9), nous définissons un utilisateur <strong>[guest]</strong> (10) avec le mot de passe <strong>[guest]</strong> (11). Il aura l’adresse mail <strong>[guest@localhost]</strong> (10) ;</li>
 <li>en <strong>[12]</strong>, l’utilisateur <strong>[guest]</strong> est activé ;</li>
 </ul>
-<p><img src="images/100000000000041E00000173E16D048B.png" style="width:8.37cm;height:2.941cm;" alt="Image" /></p>
-<p><img src="images/10000000000004D2000003C31B81C9A6.png" style="width:11.431cm;height:8.921cm;" alt="Image" /></p>
+<p><img src="images/100000000000041E00000173E16D048B.png" style="width:8.37cm;height:2.941cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000041E00000173E16D048B.png" /></p>
+<p><img src="images/10000000000004D2000003C31B81C9A6.png" style="width:11.431cm;height:8.921cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004D2000003C31B81C9A6.png" /></p>
 <ul>
 <li>en <strong>[15]</strong>, on configure le protocole SMTP du serveur de mail ;</li>
 <li>en <strong>[16]</strong>, on configure la distribution des mails ;</li>
@@ -3175,7 +3175,7 @@
 <li>en <strong>[24]</strong>, le mot de passe de cet utilisateur : <strong>[PHP7parlexemple]</strong> créé au paragraphe <a href="#_Création_d’une_adresse"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
 <li>en <strong>[25]</strong>, on indique le type de protocole de sécurité utilisé par Gmail ;</li>
 </ul>
-<p><img src="images/100000000000077900000359CDA63D2A.png" style="width:15.181cm;height:6.801cm;" alt="Image" /></p>
+<p><img src="images/100000000000077900000359CDA63D2A.png" style="width:15.181cm;height:6.801cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077900000359CDA63D2A.png" /></p>
 <ul>
 <li>en <strong>[27]</strong> le port du service SMTP ;</li>
 <li>en <strong>[28]</strong>, ce service ne nécessite pas d’authentification ;</li>
@@ -3186,7 +3186,7 @@
 <a id="toc42690774"></a>
 <a id="refheadingtoc1357142222329424"></a></p>
 <h3 id="1654-le-protocole-smtp">16.5.4. Le protocole SMTP</h3>
-<p><img src="images/1000000000000398000001A1227FD047.png" style="width:7.302cm;height:3.312cm;" alt="Image" /></p>
+<p><img src="images/1000000000000398000001A1227FD047.png" style="width:7.302cm;height:3.312cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000398000001A1227FD047.png" /></p>
 <p>Nous allons découvrir le protocole SMTP avec l’environnement suivant :</p>
 <ul>
 <li>le client A sera le client TCP générique <strong>[RawTcpClient]</strong> ;</li>
@@ -3195,14 +3195,14 @@
 <li>nous vérifierons que cet utilisateur a bien reçu le mail envoyé ;</li>
 </ul>
 <p>Nous lançons le client de la façon suivante :</p>
-<p><img src="images/1000000000000634000000832F27AD42.png" style="width:14.712cm;height:1.211cm;" alt="Image" /></p>
+<p><img src="images/1000000000000634000000832F27AD42.png" style="width:14.712cm;height:1.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000634000000832F27AD42.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, on se connecte sur le port 25 de la machine locale, là où opère le service SMTP de <strong>[hMailServer]</strong>. l’argument <strong>[--quit bye]</strong> indique que l’utilisateur quittera le programme en tapant la commande <strong>[bye]</strong>. Sans cet argument, la commande de fin du programme est <strong>[quit]</strong>. Or <strong>[quit]</strong> est également une commande du protocole SMTP. Il nous faut donc éviter cette ambiguïté ;</li>
 <li>en <strong>[2]</strong>, le client est bien connecté ;</li>
 <li>en <strong>[3]</strong>, le client attend des commandes tapées au clavier ;</li>
 <li>en <strong>[4]</strong>, le serveur lui envoie son message de bienvenue ;</li>
 </ul>
-<p><img src="images/1000000000000632000003630F519969.png" style="width:14.69cm;height:8.03cm;" alt="Image" /></p>
+<p><img src="images/1000000000000632000003630F519969.png" style="width:14.69cm;height:8.03cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000632000003630F519969.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, le client envoie la commande <strong>[EHLO nom-de-la-machine-client]</strong>. Le serveur lui répond par une suite de messages de la forme <strong>[250-xx]</strong> (6). Le code <strong>[250]</strong> indique le succès de la commande envoyée par le client ;</li>
 <li>en <strong>[7]</strong>, le client indique l’expéditeur du message, ici <strong>[guest@localhost]</strong>. Cet utilisateur doit exister sur le serveur de mails <strong>[hMailServer]</strong>. C’est le cas ici car nous avons créé cet utilisateur précédemment ;</li>
@@ -3221,13 +3221,13 @@
 <li>en <strong>[20]</strong>, on constate que le serveur a fermé la connexion qui le liait au client ;</li>
 </ul>
 <p>Maintenant vérifions que l’utilisateur <strong>[php7parlexemple@gmail.com]</strong> a bien reçu le message :</p>
-<p><img src="images/100000000000057E000001C0C1F01A28.png" style="width:11.161cm;height:3.56cm;" alt="Image" /></p>
+<p><img src="images/100000000000057E000001C0C1F01A28.png" style="width:11.161cm;height:3.56cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000057E000001C0C1F01A28.png" /></p>
 <ul>
 <li>en <strong>[2]</strong>, on voit  que l’utilisateur <strong>[php7parlexemple@gmail.com]</strong> a bien reçu le message ;</li>
 </ul>
-<p><img src="images/100000000000081500000223EA36FD5C.png" style="width:16.421cm;height:4.34cm;" alt="Image" /></p>
-<p><img src="images/10000000000002DA00000364F5C347FC.png" style="width:6.76cm;height:8.041cm;" alt="Image" /></p>
-<p><img src="images/100000000000078B0000023E7FE54788.png" style="width:17.881cm;height:5.31cm;" alt="Image" /></p>
+<p><img src="images/100000000000081500000223EA36FD5C.png" style="width:16.421cm;height:4.34cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000081500000223EA36FD5C.png" /></p>
+<p><img src="images/10000000000002DA00000364F5C347FC.png" style="width:6.76cm;height:8.041cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002DA00000364F5C347FC.png" /></p>
+<p><img src="images/100000000000078B0000023E7FE54788.png" style="width:17.881cm;height:5.31cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078B0000023E7FE54788.png" /></p>
 <ul>
 <li>en <strong>[7]</strong>, l’expéditeur du mail. On voit que ce n’est pas <strong>[guest@localhost]</strong>. Cela est dû au fait que c’est le serveur relais défini dans la configuration de <strong>[hmailServer]</strong> qui a délivré le message. Or ce serveur relais est <strong>[smtp.gmail.com]</strong> associé aux identifiants de l’utilisateur Gmail <strong>[php7parlexemple@gmail.com]</strong>. Tout mail provenant de <strong>[hMailServer]</strong> semblera provenir de l’utilisateur <strong>[php7parlexemple@gmail.com]</strong>. Ce n’est pas ce qu’on voulait ici mais si on n’utilise pas ce serveur relais, le service SMTP de Gmail refuse les mails envoyés par <strong>[hMailServer]</strong> car le SMTP de Gmail réclame une authentification que <strong>[hMailServer]</strong> n’envoie pas. Il y a sans doute moyen de contourner ce problème mais je ne l’ai pas trouvé ;</li>
 <li>en <strong>[8]</strong>, on voit que le mail a été reçu de la machine <strong>[DESKTOP-528I5CU]</strong> qui héberge le serveur de mails <strong>[hMailServer]</strong> ;</li>
@@ -3244,7 +3244,7 @@
 <a id="refheadingtoc1357162222329424"></a></p>
 <h3 id="1655-un-client-smtp-basique-ecrit-en-php">16.5.5. Un client SMTP basique écrit en PHP</h3>
 <p>Nous allons reproduire en PHP ce que nous avons appris précédemment du protocole SMTP.</p>
-<p><img src="images/1000000000000255000001D3259CEEE9.png" style="width:5.531cm;height:4.331cm;" alt="Image" /></p>
+<p><img src="images/1000000000000255000001D3259CEEE9.png" style="width:5.531cm;height:4.331cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000255000001D3259CEEE9.png" /></p>
 <p>Le script <strong>[smtp-01.php]</strong> est configuré par le fichier jSON <strong>[config-smtp-01.json]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">{</span>
@@ -3616,11 +3616,11 @@
 </ul>
 <p>Dans notre nouveau script nous allons utiliser la bibliothèque <strong>[SwiftMailer]</strong> <strong>[https://swiftmailer.symfony.com/]</strong> (mai 2019). Le mode d’installation de <strong>[SwiftMailer]</strong> est décrit à l’URL <strong>[https://swiftmailer.symfony.com/docs/introduction.HTML]</strong> (mai 2019).</p>
 <p>Lancez tout d’abord Laragon :</p>
-<p><img src="images/10000000000004F800000346983E36A9.png" style="width:10.101cm;height:6.651cm;" alt="Image" /></p>
+<p><img src="images/10000000000004F800000346983E36A9.png" style="width:10.101cm;height:6.651cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F800000346983E36A9.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, ouvrez un terminal ;</li>
 </ul>
-<p><img src="images/100000000000077A000002443547AF0E.png" style="width:15.191cm;height:4.601cm;" alt="Image" /></p>
+<p><img src="images/100000000000077A000002443547AF0E.png" style="width:15.191cm;height:4.601cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077A000002443547AF0E.png" /></p>
 <ul>
 <li>en <strong>[3]</strong>, vérifiez que vous êtes dans le dossier <strong>[&lt;laragon&gt;/www]</strong> où &lt;laragon&gt; est le dossier d’installation de Laragon ;</li>
 <li>en <strong>[3]</strong>, tapez la commande indiquée (mai 2019). Vérifiez à l’URL <strong>[https://swiftmailer.symfony.com/docs/introduction.HTML]</strong> la commande exacte ;</li>
@@ -3630,7 +3630,7 @@
 </ul>
 <p>Ceci fait, vérifiez que le dossier <strong>[&lt;laragon&gt;/www/vendor]</strong> <strong>[5]</strong> est bien dans la branche <strong>[Include Path]</strong> de Netbeans (cf paragraphe <a href="#_Installation_de_l'IDE"><u><span style="color: #0563c1">lien</span></u></a>).</p>
 <p>Enfin la bibliothèque <strong>[SwiftMailer]</strong> nécessite que l’extension PHP <strong>[mbstring]</strong> soit active. Pour cela, on vérifie le fichier <strong>[php.ini]</strong> (cf paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/10000000000002940000021E42DAEEED.png" style="width:6.111cm;height:5.001cm;" alt="Image" /></p>
+<p><img src="images/10000000000002940000021E42DAEEED.png" style="width:6.111cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002940000021E42DAEEED.png" /></p>
 <p>Le script <strong>[smtp-02.php]</strong> utilisera le fichier de configuration jSON <strong>[config-smtp-02.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
@@ -3875,7 +3875,7 @@
 <a id="__codelineno-13-6" name="__codelineno-13-6"></a>Message [mail to gmail via localhost] envoyé
 </code></pre></div></td></tr></table></div>
 <p>Si on consulte le compte Gmail de l’utilisateur <strong>[php7parlexemple]</strong> on a la chose suivante :</p>
-<p><img src="images/10000000000006C300000489FA179C04.png" style="width:13.741cm;height:9.21cm;" alt="Image" /></p>
+<p><img src="images/10000000000006C300000489FA179C04.png" style="width:13.741cm;height:9.21cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006C300000489FA179C04.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, le sujet ;</li>
 <li>en <strong>[2]</strong>, l’expéditeur ;</li>
@@ -4032,7 +4032,7 @@
 <li>le protocole IMAP (Internet Message Access Protocol) protocole plus récent que POP3 et le plus utilisé actuellement ;</li>
 </ul>
 <p>Pour découvrir le protocole POP3, nous allons utiliser l’architecture suivante :</p>
-<p><img src="images/10000000000003A2000001AB185E2434.png" style="width:7.381cm;height:3.391cm;" alt="Image" /></p>
+<p><img src="images/10000000000003A2000001AB185E2434.png" style="width:7.381cm;height:3.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003A2000001AB185E2434.png" /></p>
 <ul>
 <li><strong>[Serveur B]</strong> sera un serveur POP3 / IMAP local, implémenté par le serveur de mail <strong>[hMailServer]</strong> ;</li>
 <li><strong>[Client A]</strong> sera un client POP3 / IMAP de diverses formes :<ul>
@@ -4138,7 +4138,7 @@
 <a id="toc42690780"></a>
 <a id="refheadingtoc1357262222329424"></a></p>
 <h3 id="1663-un-script-basique-implementant-le-protocole-pop3">16.6.3. Un script basique implémentant le protocole POP3</h3>
-<p><img src="images/10000000000001C6000001DADAEE54BB.png" style="width:4.201cm;height:4.391cm;" alt="Image" /></p>
+<p><img src="images/10000000000001C6000001DADAEE54BB.png" style="width:4.201cm;height:4.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C6000001DADAEE54BB.png" /></p>
 <p>Comme le procole POP3 a la même structure que le protocole SMTP, le script <strong>[pop3-01.php]</strong> est un portage du script <strong>[smtp-01.php]</strong>. Il aura le fichier de configuration <strong>[config-pop3-01.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
@@ -4449,7 +4449,7 @@
 <a id="refheadingtoc1357282222329424"></a></p>
 <h3 id="1664-client-pop3-imap-implemente-avec-les-fonctions-imap-de-php">16.6.4. Client POP3 / IMAP implémenté avec les fonctions [imap] de PHP</h3>
 <p>Il nous faut tout d’abord vérifier que les fonctions <strong>[imap]</strong> sont disponibles dans la version de PHP que nous utilisons. Nous ouvrons le fichier <strong>[php.ini]</strong> décrit au paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a> et nous cherchons les lignes qui parlent de <strong>[imap]</strong> :</p>
-<p><img src="images/10000000000001E2000003376D25BCB1.png" style="width:4.462cm;height:7.621cm;" alt="Image" /></p>
+<p><img src="images/10000000000001E2000003376D25BCB1.png" style="width:4.462cm;height:7.621cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000003376D25BCB1.png" /></p>
 <p>Ligne 895, vérifiez que l’extension <strong>[imap]</strong> est bien activée.</p>
 <p>Le script <strong>[imap-01.php]</strong> exploitera le fichier jSON <strong>[config-imap-01.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
@@ -4751,7 +4751,7 @@
 <li>ligne 9 : il n’y a plus de messages dans la boîte à lettres de l’utilisateur <strong>[guest@localhost]</strong>. Cela vient du fait que dans l’exécution précédente, les messages lus sur <strong>[localhost]</strong> étaient ensuite supprimés ;</li>
 </ul>
 <p>Les messages ont été enregistrés localement :</p>
-<p><img src="images/1000000000000168000001B9A8D3EB81.png" style="width:3.331cm;height:4.081cm;" alt="Image" /></p>
+<p><img src="images/1000000000000168000001B9A8D3EB81.png" style="width:3.331cm;height:4.081cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000168000001B9A8D3EB81.png" /></p>
 <p>Si on regarde par-exemple le contenu du message n° 26 de Gmail, on a la chose suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"></span>
@@ -5110,11 +5110,11 @@
 <ul>
 <li>la documentation PHP de la fonction <strong>[imap_fetchstructure]</strong> donne la signification des différents champs de l’objet retourné par la fonction :</li>
 </ul>
-<p><img src="images/100000000000061F00000505F6E2334A.png" style="width:12.441cm;height:10.201cm;" alt="Image" /></p>
+<p><img src="images/100000000000061F00000505F6E2334A.png" style="width:12.441cm;height:10.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000061F00000505F6E2334A.png" /></p>
 <p>Les valeurs numériques du champ <strong>[type]</strong> ont la signification suivante :</p>
-<p><img src="images/1000000000000560000002E007468E37.png" style="width:10.921cm;height:5.841cm;" alt="Image" /></p>
+<p><img src="images/1000000000000560000002E007468E37.png" style="width:10.921cm;height:5.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000560000002E007468E37.png" /></p>
 <p>Les valeurs numériques du champ <strong>[encoding]</strong> ont la signification suivante :</p>
-<p><img src="images/10000000000005480000022CAFF55B33.png" style="width:10.731cm;height:4.41cm;" alt="Image" /></p>
+<p><img src="images/10000000000005480000022CAFF55B33.png" style="width:10.731cm;height:4.41cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005480000022CAFF55B33.png" /></p>
 <p>Le message enregistré par <strong>[imap-01.php]</strong> commençait par le texte suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">Return-Path: &lt;php7parlexemple@gmail.com&gt;</span>
@@ -6006,7 +6006,7 @@
 </code></pre></div>
 
 <p>On retrouve les fichiers sauvegardés dans le dossier <strong>[output/localhost-pop3/message-N]</strong> :</p>
-<p><img src="images/10000000000002D0000002B9C084CE77.png" style="width:6.67cm;height:6.451cm;" alt="Image" /></p>
+<p><img src="images/10000000000002D0000002B9C084CE77.png" style="width:6.67cm;height:6.451cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D0000002B9C084CE77.png" /></p>
 <p><a id="clientpop3"></a>
 <a id="refheadingtoc1357322222329424"></a>
 <a id="toc42690011"></a>
@@ -6033,7 +6033,7 @@
 <a id="refheadingtoc1357342222329424"></a></p>
 <h4 id="16661-installation-de-la-bibliotheque-php-mime-mail-parser">16.6.6.1. Installation de la bibliothèque [php-mime-mail-parser]</h4>
 <p>La page de présentation de la bibliothèque indique comment l’installer sous Windows :</p>
-<p><img src="images/1000000000000622000000EEC14868A3.png" style="width:12.461cm;height:1.892cm;" alt="Image" /></p>
+<p><img src="images/1000000000000622000000EEC14868A3.png" style="width:12.461cm;height:1.892cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000622000000EEC14868A3.png" /></p>
 <p>Il y a deux étapes pour l’OS Windows :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">télécharger une DLL ;</span>
@@ -6041,11 +6041,11 @@
 </code></pre></div>
 
 <p>LA DLL de la bibliothèque <strong>[mailparse]</strong> est disponible à l’URL <strong>[http://pecl.php.net/package/mailparse]</strong> (mai 2019) ;</p>
-<p><img src="images/10000000000005A5000001C4E76ED70C.png" style="width:11.471cm;height:3.59cm;" alt="Image" /></p>
+<p><img src="images/10000000000005A5000001C4E76ED70C.png" style="width:11.471cm;height:3.59cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005A5000001C4E76ED70C.png" /></p>
 <ul>
 <li>en <strong>[2]</strong>, choisir la version la plus récente et stable de la bibliothèque ;</li>
 </ul>
-<p><img src="images/10000000000004F5000002204E5011A6.png" style="width:10.071cm;height:4.321cm;" alt="Image" /></p>
+<p><img src="images/10000000000004F5000002204E5011A6.png" style="width:10.071cm;height:4.321cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F5000002204E5011A6.png" /></p>
 <ul>
 <li>en <strong>[3]</strong> choisir la version du PHP que vous utilisez (dans ce document c’est PHP 7.2) ;</li>
 <li>en <strong>[4]</strong>, choisir la version de votre OS Windows (ici c’est un Windows 64 bits). On prend la version <strong>[Thread Safe]</strong> ;</li>
@@ -6061,9 +6061,9 @@
 
 <p>La version de PHP 7.2.11 est donnée ligne 3. La même ligne donne la version de Windows utilisée pour la compilation (32 ou 74 bits).</p>
 <p>Une fois la DLL obtenue, il faut la copier dans le dossier <strong>[&lt;laragon&gt;/bin/php/&lt;version-php&gt;/ext]</strong> <strong>[5]</strong> :</p>
-<p><img src="images/10000000000004C500000239861296A6.png" style="width:9.692cm;height:4.522cm;" alt="Image" /></p>
+<p><img src="images/10000000000004C500000239861296A6.png" style="width:9.692cm;height:4.522cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C500000239861296A6.png" /></p>
 <p>Ceci fait, il faut activer cette extension dans le fichier <strong>[php.ini]</strong> qui configure PHP (cf paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/10000000000002920000010128F6AAD4.png" style="width:6.091cm;height:2.38cm;" alt="Image" /></p>
+<p><img src="images/10000000000002920000010128F6AAD4.png" style="width:6.091cm;height:2.38cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002920000010128F6AAD4.png" /></p>
 <p>Il est probable que la ligne <strong>[7]</strong> n’existera pas et qu’il faudra l’ajouter par vous-même.</p>
 <p>Une fois l’extension activée on peut vérifier sa validité en tapant la commande suivante dans un terminal de Laragon :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -6081,17 +6081,17 @@
 <li>vous avez téléchargé une DLL 32 bits alors que vous avez un PHP 64 bits ou vice-versa ;</li>
 </ul>
 <p>Une fois l’extension activée et vérifiée, on peut passer à l’installation de la bibliothèque <strong>[php-mime-mail-parser]</strong> :</p>
-<p><img src="images/100000000000048A000001941865FE91.png" style="width:10.76cm;height:3.74cm;" alt="Image" /></p>
+<p><img src="images/100000000000048A000001941865FE91.png" style="width:10.76cm;height:3.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048A000001941865FE91.png" /></p>
 <p>La commande <strong>[8]</strong> est à taper dans un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
-<p><img src="images/10000000000003E9000001FA4D18EEB7.png" style="width:9.27cm;height:4.68cm;" alt="Image" /></p>
+<p><img src="images/10000000000003E9000001FA4D18EEB7.png" style="width:9.27cm;height:4.68cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E9000001FA4D18EEB7.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, vérifiez que vous êtes positionné sur le dossier <strong>[&lt;laragon&gt;/www]</strong> ;</li>
 <li>en <strong>[2]</strong>, la commande d’installation de la bibliothèque <strong>[php-mime-mail-parser]</strong> ;</li>
 <li>en <strong>[3]</strong>, rien n’a été installé ici car la bibliothèque <strong>[php-mime-mail-parser]</strong> était déjà installée ;</li>
 </ul>
 <p>L’installation de bibliothèque <strong>[php-mime-mail-parser]</strong> se fait dans le dossier <strong>[&lt;laragon&gt;/www/vendor]</strong> :</p>
-<p><img src="images/100000000000034F000001F0F63DBE45.png" style="width:7.841cm;height:4.59cm;" alt="Image" /></p>
-<p><img src="images/100000000000054C000002065F04BBFF.png" style="width:12.561cm;height:4.8cm;" alt="Image" /></p>
+<p><img src="images/100000000000034F000001F0F63DBE45.png" style="width:7.841cm;height:4.59cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000034F000001F0F63DBE45.png" /></p>
+<p><img src="images/100000000000054C000002065F04BBFF.png" style="width:12.561cm;height:4.8cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000054C000002065F04BBFF.png" /></p>
 <ul>
 <li>en <strong>[2-3]</strong>, les sources de la bibliothèque <strong>[php-mime-mail-parser]</strong> ;</li>
 </ul>
@@ -6450,7 +6450,7 @@
 <a id="__codelineno-25-10" name="__codelineno-25-10"></a>}
 </code></pre></div></td></tr></table></div>
 <p>Après exécution, l’arborescence du dossier <strong>[output/localhost-pop3]</strong> est devenue la suivante :</p>
-<p><img src="images/10000000000002C0000003A4C797C448.png" style="width:6.52cm;height:8.631cm;" alt="Image" /></p>
+<p><img src="images/10000000000002C0000003A4C797C448.png" style="width:6.52cm;height:8.631cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C0000003A4C797C448.png" /></p>
 <ul>
 <li>en <strong>[1]</strong>, les 5 attachements du mail reçu par <strong>[guest@localhost]</strong> ;</li>
 <li>en <strong>[2]</strong>,  les 5 attachements du mail <strong>[test-localhost-2.eml]</strong> de <strong>[1]</strong> ;</li>
@@ -6493,7 +6493,7 @@
 </code></pre></div>
 
 <p>Si on visualise <strong>[message_1.HTML]</strong> de <strong>[3]</strong> dans un navigateur, on obtient la chose suivante :</p>
-<p><img src="images/100000000000064C0000021837720A7C.png" style="width:14.93cm;height:4.961cm;" alt="Image" /></p>
+<p><img src="images/100000000000064C0000021837720A7C.png" style="width:14.93cm;height:4.961cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000064C0000021837720A7C.png" /></p>
 
 
 

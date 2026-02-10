@@ -1111,7 +1111,7 @@
 <a id="toc42690663"></a>
 <a id="refheadingtoc788112244347140"></a></p>
 <h2 id="81-larborescence-des-scripts">8.1. L’arborescence des scripts</h2>
-<p><img src="images/10000000000002490000021FB053AF72.png" style="width:5.421cm;height:5.001cm;" alt="Image" /></p>
+<p><img src="images/10000000000002490000021FB053AF72.png" style="width:5.421cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002490000021FB053AF72.png" /></p>
 <p><a id="lexceptionexceptionimpots"></a>
 <a id="refheadingtoc55583710956990"></a>
 <a id="toc42689892"></a>
@@ -1417,11 +1417,11 @@
 <p>La fonction <strong>[__toString]</strong> des lignes 82-85 rend la chaîne jSON des attributs et valeurs de l’objet <strong>[$this]</strong>.</p>
 <p>Lignes 87-110 : les getters et setters de la classe ;</p>
 <p><strong>Note</strong> : il peut être parfois un peu pénible d’avoir à écrire tous les get / set d’une classe surtout lorsqu’il y a beaucoup d’attributs. Netbeans peut générer automatiquement ceux-ci ainsi que le constructeur. Pour ce faire, mettez simplement les attributs <strong>[1]</strong> :</p>
-<p><img src="images/10000000000007BA00000243E50398B4.png" style="width:15.701cm;height:4.59cm;" alt="Image" /></p>
+<p><img src="images/10000000000007BA00000243E50398B4.png" style="width:15.701cm;height:4.59cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007BA00000243E50398B4.png" /></p>
 <ul>
 <li>en <strong>[2]</strong>, cliquez droit là ou voulez insérer du code puis choisissez l’option <strong>[Insert Code]</strong> ;</li>
 </ul>
-<p><img src="images/10000000000006930000031804EDF215.png" style="width:13.36cm;height:6.291cm;" alt="Image" /></p>
+<p><img src="images/10000000000006930000031804EDF215.png" style="width:13.36cm;height:6.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006930000031804EDF215.png" /></p>
 <ul>
 <li>en <strong>[4]</strong>, indiquez que vous voulez générer le constructeur ;</li>
 <li>en <strong>[5]</strong>, cochez tous les attributs : cela veut dire que vous voulez que le constructeur ait un paramètre pour chacun des attributs ;</li>
@@ -1429,19 +1429,19 @@
 <li>en <strong>[7]</strong>, indiquez que vous voulez explicitement le mot clé <strong>[public]</strong> devant le constructeur ;</li>
 <li>en <strong>[8]</strong>, validez ;</li>
 </ul>
-<p><img src="images/10000000000007AF000001DE4E4FF9EE.png" style="width:15.611cm;height:3.791cm;" alt="Image" /></p>
+<p><img src="images/10000000000007AF000001DE4E4FF9EE.png" style="width:15.611cm;height:3.791cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007AF000001DE4E4FF9EE.png" /></p>
 <ul>
 <li>en <strong>[9]</strong>, Netbeans a généré le constructeur. Cependant il n’a pas pu mettre le type des paramètres parce qu’il ne les connaît pas. Ajoutez-les vous-même <strong>[10]</strong> ;</li>
 </ul>
 <p>Pour générer les getters et setters, recommencez les étapes 2-4, et à l’étape 4, choissez <strong>[Getter and Setter]</strong> :</p>
-<p><img src="images/100000000000066C000003539DFC9D5F.png" style="width:13.05cm;height:6.751cm;" alt="Image" /></p>
+<p><img src="images/100000000000066C000003539DFC9D5F.png" style="width:13.05cm;height:6.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066C000003539DFC9D5F.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, indiquez que vous voulez les getters et setters pour chacun des attributs ;</li>
 <li>en <strong>[6]</strong>,  indiquez que vous voulez les getters et setters dans le style utilisé par Java : setAttribut, getAttribut ;</li>
 <li>en <strong>[7]</strong>, indiquez que vous que ces getters et setters soient publics ;</li>
 <li>en <strong>[8]</strong>, validez ;</li>
 </ul>
-<p><img src="images/1000000000000723000003565E698006.png" style="width:14.5cm;height:6.781cm;" alt="Image" /></p>
+<p><img src="images/1000000000000723000003565E698006.png" style="width:14.5cm;height:6.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000723000003565E698006.png" /></p>
 <ul>
 <li>en <strong>[9]</strong>, les getters et setters générés par Netbeans ;</li>
 </ul>
@@ -1450,7 +1450,7 @@
 <li>en <strong>[8]</strong>, cochez l’option <strong>[Fluent Setter]</strong> que nous n’avions pas cochée précédemment ;</li>
 </ul>
 <p>Le résultat obtenu est le suivant :</p>
-<p><img src="images/10000000000002F700000225008C90F4.png" style="width:6.021cm;height:4.361cm;" alt="Image" /></p>
+<p><img src="images/10000000000002F700000225008C90F4.png" style="width:6.021cm;height:4.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002F700000225008C90F4.png" /></p>
 <p>Chaque setter se termine par une opération <strong>[return $this]</strong>. Ceci permet d’initialiser les attributs de la façon suivante :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$data→setLimites($limites)→setCoeffR($coeffR)→setCoeffN($coeffN) ;
 </code></pre></div>

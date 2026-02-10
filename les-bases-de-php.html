@@ -1304,7 +1304,7 @@
 <a id="toc42690583"></a>
 <a id="refheadingtoc787872244347140"></a></p>
 <h2 id="31-larborescence-des-scripts">3.1. L’arborescence des scripts</h2>
-<p><img src="images/1000000000000187000002F720EB73C0.png" style="width:3.62cm;height:7.032cm;" alt="Image" /></p>
+<p><img src="images/1000000000000187000002F720EB73C0.png" style="width:3.62cm;height:7.032cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000187000002F720EB73C0.png" /></p>
 <p><a id="configurationdephp"></a>
 <a id="refheadingtoc900623955410047"></a>
 <a id="toc42689812"></a>
@@ -1532,14 +1532,14 @@
 <a id="refheadingtoc787892244347140"></a></p>
 <h3 id="332-usage-de-netbeans">3.3.2. Usage de Netbeans</h3>
 <p>Netbeans émet divers avertissements qu’il est utile de vérifier. Prenons l’exemple du script <strong>[bases-01.php]</strong> :</p>
-<p><img src="images/100000000000068E0000015946944AA2.png" style="width:15.541cm;height:3.192cm;" alt="Image" /></p>
+<p><img src="images/100000000000068E0000015946944AA2.png" style="width:15.541cm;height:3.192cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000068E0000015946944AA2.png" /></p>
 <p>A la ligne 5, Netbeans émet un avertissement comme quoi le fichier ne respecte pas la recommandation PSR-1 (PHP Standard Recommendations n° 1). Les PSR sont des recommandations pour produire un code standard et ainsi faciliter l’interopérabilité et la maintenance de codes écrits par différentes personnes. Il peut être ennuyeux d’avoir des avertissements si on veut transgresser délibérément les standards, parce que par exemple l’équipe du projet en a d’autres. Ce que l’on souhaite vérifier ou pas avec Netbeans est configurable :</p>
-<p><img src="images/100000000000070C0000035D3FFB1A63.png" style="width:16.71cm;height:7.97cm;" alt="Image" /></p>
+<p><img src="images/100000000000070C0000035D3FFB1A63.png" style="width:16.71cm;height:7.97cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000070C0000035D3FFB1A63.png" /></p>
 <ul>
 <li>en <strong>[5]</strong>, on trouve les éléments que l’on veut contrôler avec Netbeans ;</li>
 <li>en <strong>[6]</strong>, le niveau de sévérité assigné à l’erreur signalée par Netbeans ;</li>
 </ul>
-<p><img src="images/100000000000077000000192B350B3AA.png" style="width:17.631cm;height:3.721cm;" alt="Image" /></p>
+<p><img src="images/100000000000077000000192B350B3AA.png" style="width:17.631cm;height:3.721cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077000000192B350B3AA.png" /></p>
 <p>On voit en <strong>[7]</strong> qu’on a demandé à contrôler que le code suit bien les recommandations PSR-0 et PSR-1. Il n’y a rien d’obligatoire. En phase d’apprentissage du langage, ll est conseillé de contrôler le maximum d’options proposées par Netbeans. On apprend ainsi beaucoup de choses. On adaptera ensuite ce contrôle de Netbeans aux normes de codage de l’équipe d’un projet.</p>
 <p>Voyons les normes de codage PSR-1 <strong>[8, 9]</strong> :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Option</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Contrôle</b></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Class Constant Declaration</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Class constants MUST be declared in all upper case with underscore separators.</p><p style="margin:0;">Ex : <i>const TAUX_TVA</i></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Method Declaration</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Method names MUST be declared in camelCase().</p><p style="margin:0;">Ex : <i>public function executeBatchImpots{}</i></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Property Name</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Property names SHOULD be declared in $StudlyCaps, $camelCase, or $under_score format (consistently in a scope)</p><p style="margin:0;">Ex : <i>public SalaireAnnuel </i>(StudlyCaps), <i>public salaireAnnuel</i> (camelCase), <i>public salaire_annuel</i> (under_score)</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Side Effects</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">A file SHOULD declare new symbols and cause no other side effects, or it SHOULD execute logic with side effects, but SHOULD NOT do both.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Type Declaration</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Type names MUST be declared in StudlyCaps (Code written for 5.2.x and before SHOULD use the pseudonamespacing convention of Vendor_ prefixes on type names). Each type is in a file by itself, and is in a namespace of at least one level: a top-level vendor name.</p><p style="margin:0;">Ex : <i>class EtudiantBoursier {}</i></p></td></tr></table>
@@ -1552,11 +1552,11 @@
 <p>Il existe d’autres recommandations PHP non contrôlées par Netbeans : PSR-3, PSR-4, PSR-6, PSR-7 et PSR-13.</p>
 <p>Par facilité, les exemples du document ne vérifient pas tous la recommandation PSR-1 car cela oblige à dispatcher le code des classes et interfaces dans des fichiers séparés, ce qui est trop lourd pour des exemples basiques. Il est alors plus facile de tout mettre dans un fichier. Pour l’exemple de l’application présentée comme fil rouge de ce document, on a cherché à observer au mieux la recommandation PSR-1.</p>
 <p>Certains avertissements de Netbeans signalent une erreur potentielle :</p>
-<p><img src="images/10000000000004F1000000FB036536BE.png" style="width:11.711cm;height:2.32cm;" alt="Image" /></p>
+<p><img src="images/10000000000004F1000000FB036536BE.png" style="width:11.711cm;height:2.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F1000000FB036536BE.png" /></p>
 <p>L’avertissement <strong>[Unitialized Variables]</strong> signale une erreur probable, souvent une erreur de frappe sur le nom d’une variable. Il en est de même pour l’avertissement <strong>[Unused Variables]</strong>.</p>
 <p>Finalement, il est conseillé de vérifier tous les avertissements de Netbeans signalés par un panneau dans la marge gauche du code et un tiret jaune dans la marge droite :</p>
-<p><img src="images/1000000000000762000001273191D1D4.png" style="width:17.5cm;height:2.731cm;" alt="Image" /></p>
-<p><img src="images/10000000000003AA000001769A5DDA88.png" style="width:8.691cm;height:3.462cm;" alt="Image" /></p>
+<p><img src="images/1000000000000762000001273191D1D4.png" style="width:17.5cm;height:2.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000762000001273191D1D4.png" /></p>
+<p><img src="images/10000000000003AA000001769A5DDA88.png" style="width:8.691cm;height:3.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003AA000001769A5DDA88.png" /></p>
 <p><a id="toc42689816"></a>
 <a id="toc42690202"></a>
 <a id="toc42690588"></a>
@@ -2963,7 +2963,7 @@
 <a id="toc42690605"></a>
 <a id="refheadingtoc185623971629160"></a></p>
 <h2 id="310-encodage-decodage-json">3.10. Encodage / décodage jSON</h2>
-<p><img src="images/100000000000010A000000C2B964F140.png" style="width:3.521cm;height:2.571cm;" alt="Image" /></p>
+<p><img src="images/100000000000010A000000C2B964F140.png" style="width:3.521cm;height:2.571cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010A000000C2B964F140.png" /></p>
 <p>L’encodage / décodage jSON <span style="color: #000000"> (</span><strong><span style="color: #000000">J</span></strong><span style="color: #000000">avaScript </span><strong><span style="color: #000000">O</span></strong><span style="color: #000000">bject </span><strong><span style="color: #000000">N</span></strong><span style="color: #000000">otation) </span>est quelque chose que nous allons utiliser intensivement dans l’exercice qui sert de fil rouge au document. Les scripts <strong>[json-01.php, json-02.php, json-03.php]</strong> expliquent ce qui est à savoir pour la suite.</p>
 <p>Le script <strong>[json-01.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
