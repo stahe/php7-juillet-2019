@@ -1421,22 +1421,22 @@
   
 
 
-<p><a id="toc42689979"></a>
-<a id="toc42690365"></a>
+<p><a id="refheading399301881943603"></a>
 <a id="toc42690751"></a>
-<a id="refheading399301881943603"></a></p>
+<a id="toc42690365"></a>
+<a id="toc42689979"></a></p>
 <h1 id="16-fonctions-reseau">16. Fonctions réseau</h1>
 <p>Nous abordons maintenant les fonctions réseau de PHP qui nous permettent de faire de la programmation TCP / IP (<strong>T</strong>ransfer <strong>C</strong>ontrol <strong>P</strong>rotocol / <strong>I</strong>nternet <strong>P</strong>rotocol).</p>
 <p><img src="images/1000000000000150000000D686E2984D.png" style="width:3.111cm;height:1.982cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000150000000D686E2984D.png" /></p>
-<p><a id="toc42689980"></a>
-<a id="toc42690366"></a>
+<p><a id="refheading10403051168783983"></a>
 <a id="toc42690752"></a>
-<a id="refheading10403051168783983"></a></p>
+<a id="toc42690366"></a>
+<a id="toc42689980"></a></p>
 <h2 id="161-les-bases-de-la-programmation-internet">16.1. Les bases de la programmation internet</h2>
-<p><a id="toc42689981"></a>
-<a id="toc42690367"></a>
+<p><a id="refheading10403071168783983"></a>
 <a id="toc42690753"></a>
-<a id="refheading10403071168783983"></a></p>
+<a id="toc42690367"></a>
+<a id="toc42689981"></a></p>
 <h3 id="1611-generalites">16.1.1. Généralités</h3>
 <p>Considérons la communication entre deux machines distantes A et B :</p>
 <p><img src="images/10000000000003A90000019B65B9FC4D.png" style="width:7.441cm;height:3.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003A90000019B65B9FC4D.png" /></p>
@@ -1448,10 +1448,10 @@
 <li>le protocole de dialogue accepté par l&#x27;application <em>AppB</em>. En effet, les machines A et B vont se &quot;parler&quot;. Ce qu&#x27;elles vont dire va être encapsulé dans les protocoles TCP-IP. Néanmoins, lorsqu&#x27;au bout de la chaîne, l&#x27;application <em>AppB</em> va recevoir l&#x27;information envoyée par l&#x27;applicaton <em>AppA</em>, il faut qu&#x27;elle soit capable de l&#x27;interpréter. Ceci est analogue à la situation où deux personnes A et B communiquent par téléphone : leur dialogue est transporté par le téléphone. La parole va être codée sous forme de signaux par le téléphone A, transportée par des lignes téléphoniques, arriver au téléphone B pour y être décodée. La personne B entend alors des paroles. C&#x27;est là qu&#x27;intervient la notion de protocole de dialogue : si A parle français et que B ne comprend pas cette langue, A et B ne pourront dialoguer utilement ;</li>
 </ul>
 <p>Aussi les deux applications communicantes doivent-elles être d&#x27;accord sur le type de dialogue qu&#x27;elles vont adopter. Par exemple, le dialogue avec un service <em>ftp</em> n&#x27;est pas le même qu&#x27;avec un service <em>pop</em> : ces deux services n&#x27;acceptent pas les mêmes commandes.  Elles ont un protocole de dialogue différent ;</p>
-<p><a id="toc42689982"></a>
-<a id="toc42690368"></a>
+<p><a id="refheading10403091168783983"></a>
 <a id="toc42690754"></a>
-<a id="refheading10403091168783983"></a></p>
+<a id="toc42690368"></a>
+<a id="toc42689982"></a></p>
 <h3 id="1612-les-caracteristiques-du-protocole-tcp">16.1.2. Les caractéristiques du protocole TCP</h3>
 <p>Nous n&#x27;étudierons ici que des communications réseau utilisant le protocole de transport TCP dont voici les principales caractéristiques :</p>
 <ul>
@@ -1463,16 +1463,16 @@
 <li>si au bout d&#x27;un certain temps, le protocole TCP ayant émis un segment ne reçoit pas d&#x27;accusé de réception, il retransmet le segment en question, garantissant ainsi la qualité du service d&#x27;acheminement de l&#x27;information ;</li>
 <li>le circuit virtuel établi entre les deux processus qui communiquent est <em>full-duplex</em> : cela signifie que l&#x27;information peut transiter dans les deux sens. Ainsi le processus destination peut envoyer des accusés de réception alors même que le processus source continue d&#x27;envoyer des informations. Cela permet par exemple au protocole TCP source d&#x27;envoyer plusieurs segments sans attendre d&#x27;accusé de réception. S&#x27;il réalise au bout d&#x27;un certain temps qu&#x27;il n&#x27;a pas reçu l&#x27;accusé de réception d&#x27;un certain segment n° <em>n</em>, il reprendra l&#x27;émission des segments à ce point ;</li>
 </ul>
-<p><a id="toc42689983"></a>
-<a id="toc42690369"></a>
+<p><a id="refheading10403111168783983"></a>
 <a id="toc42690755"></a>
-<a id="refheading10403111168783983"></a></p>
+<a id="toc42690369"></a>
+<a id="toc42689983"></a></p>
 <h3 id="1613-la-relation-client-serveur">16.1.3. La relation client-serveur</h3>
 <p>Souvent, la communication sur Internet est dissymétrique : la machine A initie une connexion pour demander un service à la machine B : il précise qu&#x27;il veut ouvrir une connexion avec le service SB1 de la machine B. Celle-ci accepte ou refuse. Si elle accepte, la machine A peut envoyer ses demandes au service SB1. Celles-ci doivent se conformer au protocole de dialogue compris par le service SB1. Un dialogue demande-réponse s&#x27;instaure ainsi entre la machine A qu&#x27;on appelle machine <strong>cliente</strong> et la machine B qu&#x27;on appelle machine <strong>serveur</strong>. L&#x27;un des deux partenaires fermera la connexion.</p>
-<p><a id="toc42689984"></a>
-<a id="toc42690370"></a>
+<p><a id="refheading10403131168783983"></a>
 <a id="toc42690756"></a>
-<a id="refheading10403131168783983"></a></p>
+<a id="toc42690370"></a>
+<a id="toc42689984"></a></p>
 <h3 id="1614-architecture-dun-client">16.1.4. Architecture d&#x27;un client</h3>
 <p>L&#x27;architecture d&#x27;un programme réseau demandant les services d&#x27;une application serveur sera la suivante :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ouvrir la connexion avec le service SB1 de la machine B
@@ -1486,10 +1486,10 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>finsi
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>fermer la connexion
 </code></pre></div>
-<p><a id="toc42689985"></a>
-<a id="toc42690371"></a>
+<p><a id="refheading10403151168783983"></a>
 <a id="toc42690757"></a>
-<a id="refheading10403151168783983"></a></p>
+<a id="toc42690371"></a>
+<a id="toc42689985"></a></p>
 <h3 id="1615-architecture-dun-serveur">16.1.5. Architecture d&#x27;un serveur</h3>
 <p>L&#x27;architecture d&#x27;un programme offrant des services sera la suivante :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ouvrir le service sur la machine locale
@@ -1507,15 +1507,15 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>fin tant que
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>libérer le port de service
 </code></pre></div>
-<p><a id="toc42689986"></a>
-<a id="toc42690372"></a>
+<p><a id="refheading10403171168783983"></a>
 <a id="toc42690758"></a>
-<a id="refheading10403171168783983"></a></p>
+<a id="toc42690372"></a>
+<a id="toc42689986"></a></p>
 <h2 id="162-decouvrir-les-protocoles-de-communication-de-linternet">16.2. Découvrir les protocoles de communication de l&#x27;internet</h2>
-<p><a id="toc42689987"></a>
-<a id="toc42690373"></a>
+<p><a id="refheading10403191168783983"></a>
 <a id="toc42690759"></a>
-<a id="refheading10403191168783983"></a></p>
+<a id="toc42690373"></a>
+<a id="toc42689987"></a></p>
 <h3 id="1621-introduction">16.2.1. Introduction</h3>
 <p>Lorsqu&#x27;un client s&#x27;est connecté à un serveur, s&#x27;établit ensuite un dialogue entre-eux. La nature de celui-ci forme ce qu&#x27;on appelle le protocole de communication du serveur. Parmi les protocoles les plus courants de l&#x27;internet on trouve les suivants :</p>
 <ul>
@@ -1533,10 +1533,10 @@
 </ul>
 <p>alors on est capable de dialoguer avec un serveur TCP ayant un protocole à lignes de texte pour peu qu&#x27;on connaisse les règles de ce protocole.</p>
 <p><a id="utilitairestcp"></a>
-<a id="refheadingtoc116171425309931"></a>
-<a id="toc42689988"></a>
+<a id="toc42690760"></a>
 <a id="toc42690374"></a>
-<a id="toc42690760"></a></p>
+<a id="toc42689988"></a>
+<a id="refheadingtoc116171425309931"></a></p>
 <h3 id="1622-utilitaires-tcp">16.2.2. Utilitaires TCP</h3>
 <p><img src="images/10000000000001E200000177C0F50C08.png" style="width:4.462cm;height:3.47cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E200000177C0F50C08.png" /></p>
 <p>Dans les codes associés à ce document, on trouve deux utilitaires de communication TCP :</p>
@@ -1641,10 +1641,10 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="o">&lt;--</span> <span class="p">[</span><span class="n">hello</span> <span class="kn">from</span><span class="w"> </span><span class="nn">server</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <p><a id="obtenirlenom"></a>
-<a id="refheading399321881943603"></a>
-<a id="toc42689989"></a>
+<a id="toc42690761"></a>
 <a id="toc42690375"></a>
-<a id="toc42690761"></a></p>
+<a id="toc42689989"></a>
+<a id="refheading399321881943603"></a></p>
 <h2 id="163-obtenir-le-nom-ou-ladresse-ip-dune-machine-de-linternet">16.3. Obtenir le nom ou l&#x27;adresse IP d&#x27;une machine de l&#x27;Internet</h2>
 <p><img src="images/1000000000000143000000F1C1E832BE.png" style="width:3.421cm;height:2.551cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000143000000F1C1E832BE.png" /></p>
 <p>Les machines de l’internet sont identifiées par une adresse IP (IPv4 ou IPv6) et le plus souvent par un nom. Mais finalement seule l’adresse IP est utilisée. Il faut donc parfois connaître l’adresse IP d’une machine identifiée par son nom.</p>
@@ -1724,15 +1724,15 @@
 </code></pre></div>
 
 <p><a id="leprotocolehttp"></a>
-<a id="refheadingtoc113039843107739"></a>
-<a id="toc42689990"></a>
+<a id="toc42690762"></a>
 <a id="toc42690376"></a>
-<a id="toc42690762"></a></p>
+<a id="toc42689990"></a>
+<a id="refheadingtoc113039843107739"></a></p>
 <h2 id="164-le-protocole-http-hypertext-transfer-protocol">16.4. Le protocole HTTP (HyperText Transfer Protocol)</h2>
-<p><a id="toc42689991"></a>
-<a id="toc42690377"></a>
+<p><a id="refheadingtoc1356962222329424"></a>
 <a id="toc42690763"></a>
-<a id="refheadingtoc1356962222329424"></a></p>
+<a id="toc42690377"></a>
+<a id="toc42689991"></a></p>
 <h3 id="1641-exemple-1">16.4.1. Exemple 1</h3>
 <p><img src="images/1000000000000399000001ABE27063AD.png" style="width:7.31cm;height:3.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000399000001ABE27063AD.png" /></p>
 <p>Lorsqu’un navigateur affiche une URL, il est le client d’un serveur web ou dit autrement d’un serveur HTTP. C’est lui qui prend l’initiative et il commence par envoyer un certain nombre de commandes au serveur. Pour ce premier exemple :</p>
@@ -1761,10 +1761,10 @@
 </ul>
 <p>Nous terminons la connexion en terminant le serveur :</p>
 <p><img src="images/100000000000032800000298E1226360.png" style="width:7.481cm;height:6.151cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000032800000298E1226360.png" /></p>
-<p><a id="toc42689992"></a>
-<a id="toc42690378"></a>
+<p><a id="refheadingtoc1356982222329424"></a>
 <a id="toc42690764"></a>
-<a id="refheadingtoc1356982222329424"></a></p>
+<a id="toc42690378"></a>
+<a id="toc42689992"></a></p>
 <h3 id="1642-exemple-2">16.4.2. Exemple 2</h3>
 <p>Maintenant que nous connaissons les commandes envoyées par un navigateur pour réclamer une URL, nous allons réclamer cette URL avec notre client TCP <strong>[RawTcpClient]</strong>. Le serveur Apache de Laragon sera notre serveur web.</p>
 <p>Lançons Laragon puis le serveur web Apache :</p>
@@ -2098,10 +2098,10 @@
 <li>lignes 11-79 : le document HTML reçu. Dans l’exemple précédent, Firefox avait reçu le même ;</li>
 </ul>
 <p>Nous avons désormais les bases pour programmer un client TCP qui demanderait une URL.</p>
-<p><a id="toc42689993"></a>
-<a id="toc42690379"></a>
+<p><a id="refheadingtoc1357002222329424"></a>
 <a id="toc42690765"></a>
-<a id="refheadingtoc1357002222329424"></a></p>
+<a id="toc42690379"></a>
+<a id="toc42689993"></a></p>
 <h3 id="1643-exemple-3">16.4.3. Exemple 3</h3>
 <p><img src="images/10000000000001AA000001747EB3C32C.png" style="width:3.941cm;height:3.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AA000001747EB3C32C.png" /></p>
 <p>Le script <strong>[http-01.php]</strong> est un client HTTP configuré par le fichier jSON <strong>[config-http-01.json]</strong>. Le contenu de celui-ci est le suivant :</p>
@@ -2374,10 +2374,10 @@
 </code></pre></div>
 
 <p>Nous avons bien obtenu le même document qu’avec le navigateur Firefox.</p>
-<p><a id="toc42689994"></a>
-<a id="toc42690380"></a>
+<p><a id="refheadingtoc1357022222329424"></a>
 <a id="toc42690766"></a>
-<a id="refheadingtoc1357022222329424"></a></p>
+<a id="toc42690380"></a>
+<a id="toc42689994"></a></p>
 <h3 id="1644-exemple-4">16.4.4. Exemple 4</h3>
 <p>Dans cet exemple, nous allons montrer que le client HTTP que nous avons écrit est insuffisant. Faison évoluer le fichier de configuration <strong>[config-http-01.json]</strong> de la façon suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -2554,10 +2554,10 @@
 </code></pre></div>
 
 <p>Un client HTTP devrait pouvoir suivre les redirections. Ici il devrait redemander automatiquement la nouvelle URL <strong>[http://sergetahe.com/cours-tutoriels-de-programmation/]</strong>.</p>
-<p><a id="toc42689995"></a>
-<a id="toc42690381"></a>
+<p><a id="refheadingtoc1357042222329424"></a>
 <a id="toc42690767"></a>
-<a id="refheadingtoc1357042222329424"></a></p>
+<a id="toc42690381"></a>
+<a id="toc42689995"></a></p>
 <h3 id="1645-exemple-5">16.4.5. Exemple 5</h3>
 <p>Les exemples précédents nous ont montré que notre client HTTP était insuffisant. Nous allons maintenant présenter un outil appelé <strong>[curl]</strong> qui permet de récupérer des documents web en gérant les difficultés mentionnées : protocole https, document envoyé par morceaux, redirections… L’outil <strong>[curl]</strong> a été installé avec Laragon :</p>
 <p><img src="images/10000000000003410000021BC18A07B5.png" style="width:7.711cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003410000021BC18A07B5.png" /></p>
@@ -2749,10 +2749,10 @@
 </ul>
 <p>Le document demandé sera trouvé dans le fichier <strong>[sergetahe.com.HTML]</strong>.</p>
 <p><a id="exemple6"></a>
-<a id="refheadingtoc112763843107739"></a>
-<a id="toc42689996"></a>
+<a id="toc42690768"></a>
 <a id="toc42690382"></a>
-<a id="toc42690768"></a></p>
+<a id="toc42689996"></a>
+<a id="refheadingtoc112763843107739"></a></p>
 <h3 id="1646-exemple-6">16.4.6. Exemple 6</h3>
 <p>PHP possède une extension appelée <strong>[libcurl]</strong> qui permet d’utiliser les capacités de l’outil <strong>[curl]</strong> dans un programme PHP. Il faut tout d’abord s’assurer que cette extension est activée dans le fichier <strong>[php.ini]</strong> décrit au paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a> :</p>
 <p><img src="images/10000000000004D700000133CAA0406B.png" style="width:11.471cm;height:2.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004D700000133CAA0406B.png" /></p>
@@ -3067,21 +3067,21 @@
 <li>en <mark style="background-color: #b4c7dc">bleu</mark>, les commandes envoyées au serveur ;</li>
 <li>en <mark style="background-color: #ffff00">jaune</mark>, les commandes reçues en réponse par le client ;</li>
 </ul>
-<p><a id="toc42689997"></a>
-<a id="toc42690383"></a>
+<p><a id="refheadingtoc1357062222329424"></a>
 <a id="toc42690769"></a>
-<a id="refheadingtoc1357062222329424"></a></p>
+<a id="toc42690383"></a>
+<a id="toc42689997"></a></p>
 <h3 id="1647-conclusion">16.4.7. Conclusion</h3>
 <p>Nous avons, dans ce paragraphe, découvert le protocole HTTP et avons écrit un script <strong>[http-02.php]</strong> capable de télécharger une URL du web.</p>
-<p><a id="toc42689998"></a>
-<a id="toc42690384"></a>
+<p><a id="refheadingtoc1357082222329424"></a>
 <a id="toc42690770"></a>
-<a id="refheadingtoc1357082222329424"></a></p>
+<a id="toc42690384"></a>
+<a id="toc42689998"></a></p>
 <h2 id="165-le-protocole-smtp-simple-mail-transfer-protocol">16.5. Le protocole SMTP (Simple Mail Transfer Protocol)</h2>
-<p><a id="toc42689999"></a>
-<a id="toc42690385"></a>
+<p><a id="refheadingtoc1357102222329424"></a>
 <a id="toc42690771"></a>
-<a id="refheadingtoc1357102222329424"></a></p>
+<a id="toc42690385"></a>
+<a id="toc42689999"></a></p>
 <h3 id="1651-introduction">16.5.1. Introduction</h3>
 <p><img src="images/10000000000003B6000001BFCC81ADDE.png" style="width:8.801cm;height:4.141cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B6000001BFCC81ADDE.png" /></p>
 <p>Dans ce chapitre :</p>
@@ -3095,10 +3095,10 @@
 </li>
 </ul>
 <p><a id="creationduneadresse"></a>
-<a id="refheadingtoc95375381407536"></a>
-<a id="toc42690000"></a>
+<a id="toc42690772"></a>
 <a id="toc42690386"></a>
-<a id="toc42690772"></a></p>
+<a id="toc42690000"></a>
+<a id="refheadingtoc95375381407536"></a></p>
 <h3 id="1652-creation-dune-adresse-gmail">16.5.2. Création d’une adresse [gmail]</h3>
 <p>Pour faire nos tests SMTP, nous aurons besoin d’une adresse mail à qui écrire. Nous allons créer pour cela une adresse sur Gmail :</p>
 <p><img src="images/10000000000007A30000041BE0D0F52F.png" style="width:15.521cm;height:8.34cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007A30000041BE0D0F52F.png" /></p>
@@ -3123,10 +3123,10 @@
 <li>en <strong>[21]</strong>, autorisez d’autres applications que celles de Google à exploiter le compte <strong>[php7parlexemple]</strong>. Si on ne fait pas ça, notre serveur local de mails <strong>[hMailServer]</strong> ne pourra pas communiquer avec le serveur SMTP de Gmail ;</li>
 </ul>
 <p><img src="images/10000000000005960000021926231AB7.png" style="width:11.351cm;height:4.261cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005960000021926231AB7.png" /></p>
-<p><a id="toc42690001"></a>
-<a id="toc42690387"></a>
+<p><a id="refheadingtoc1357122222329424"></a>
 <a id="toc42690773"></a>
-<a id="refheadingtoc1357122222329424"></a></p>
+<a id="toc42690387"></a>
+<a id="toc42690001"></a></p>
 <h3 id="1653-installation-dun-serveur-smtp">16.5.3. Installation d’un serveur SMTP</h3>
 <p>Pour nos tests, nous installerons le serveur de mail <strong>[hMailServer]</strong> qui est à la fois un serveur SMTP permettant d’envoyer des mails, un serveur POP3 (Post Office Protocol) permettant de lire les mails stockés sur le serveur, un serveur IMAP (Internet Message Access Protocol) qui lui aussi permet de  lire les mails stockés sur le serveur mais va au-delà. Il permet notamment de gérer le stockage des mails sur le serveur.</p>
 <p>Le serveur de mail <strong>[hMailServer]</strong> est disponible à l’URL <strong>[https://www.hmailserver.com/]</strong> (mai 2019).</p>
@@ -3181,10 +3181,10 @@
 <li>en <strong>[28]</strong>, ce service ne nécessite pas d’authentification ;</li>
 <li>en <strong>[30]</strong>, mettez le message de bienvenue que le serveur SMTP enverra à ses clients ;</li>
 </ul>
-<p><a id="toc42690002"></a>
-<a id="toc42690388"></a>
+<p><a id="refheadingtoc1357142222329424"></a>
 <a id="toc42690774"></a>
-<a id="refheadingtoc1357142222329424"></a></p>
+<a id="toc42690388"></a>
+<a id="toc42690002"></a></p>
 <h3 id="1654-le-protocole-smtp">16.5.4. Le protocole SMTP</h3>
 <p><img src="images/1000000000000398000001A1227FD047.png" style="width:7.302cm;height:3.312cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000398000001A1227FD047.png" /></p>
 <p>Nous allons découvrir le protocole SMTP avec l’environnement suivant :</p>
@@ -3238,10 +3238,10 @@
 <li>en <strong>[13]</strong>, le message ;</li>
 </ul>
 <p>Finalement, notre client <strong>[RawTcpClient]</strong> a réussi à envoyer le message même si on a rencontré un problème pour l’expéditeur. Nous avons les bases pour créer un client SMTP écrit en PHP.</p>
-<p><a id="toc42690003"></a>
-<a id="toc42690389"></a>
+<p><a id="refheadingtoc1357162222329424"></a>
 <a id="toc42690775"></a>
-<a id="refheadingtoc1357162222329424"></a></p>
+<a id="toc42690389"></a>
+<a id="toc42690003"></a></p>
 <h3 id="1655-un-client-smtp-basique-ecrit-en-php">16.5.5. Un client SMTP basique écrit en PHP</h3>
 <p>Nous allons reproduire en PHP ce que nous avons appris précédemment du protocole SMTP.</p>
 <p><img src="images/1000000000000255000001D3259CEEE9.png" style="width:5.531cm;height:4.331cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000255000001D3259CEEE9.png" /></p>
@@ -3604,10 +3604,10 @@
 <li>lignes 27-52 : l’utilisation du serveur SMTP <strong>[hMailServer]</strong> pour envoyer un mail à <strong>[php7parlexemple@gmail.com]</strong> se passe bien ;</li>
 <li>lignes 53-65 : l’utilisation du serveur SMTP <strong>[Gmail]</strong> pour envoyer un mail à <strong>[php7parlexemple@gmail.com]</strong> ne se passe pas bien : en ligne 65, le serveur SMTP envoie un code d’erreur 530 avec le message d’erreur. Celui-ci indique que le client SMTP doit au préalable s’authentifier via une connexion sécurisée. Notre client ne l’a pas fait et est donc refusé ;</li>
 </ul>
-<p><a id="toc42690004"></a>
-<a id="toc42690390"></a>
+<p><a id="refheadingtoc1357182222329424"></a>
 <a id="toc42690776"></a>
-<a id="refheadingtoc1357182222329424"></a></p>
+<a id="toc42690390"></a>
+<a id="toc42690004"></a></p>
 <h3 id="1656-un-second-client-smtp-ecrit-avec-la-bibliotheque-swiftmailer">16.5.6. Un second client SMTP écrit avec la bibliothèque [SwiftMailer]</h3>
 <p>Le client précédent offre au moins deux insuffisances :</p>
 <ul>
@@ -4016,15 +4016,15 @@
 <li>lignes 58-60 : le fichier attaché <strong>[test-localhost.eml]</strong> ;</li>
 <li>lignes 62-114 : le fichier attaché <strong>[test-localhost.eml]</strong> est lui-même un message dont le contenu est affiché aux lignes 62-114. On peut constater que ce message contient lui-même des attachements ;</li>
 </ul>
-<p><a id="toc42690005"></a>
-<a id="toc42690391"></a>
+<p><a id="refheadingtoc1357202222329424"></a>
 <a id="toc42690777"></a>
-<a id="refheadingtoc1357202222329424"></a></p>
+<a id="toc42690391"></a>
+<a id="toc42690005"></a></p>
 <h2 id="166-les-protocoles-pop3-post-office-protocol-et-imap-internet-message-access-protocol">16.6. Les protocoles POP3 (Post Office Protocol) et IMAP (Internet Message Access Protocol)</h2>
-<p><a id="toc42690006"></a>
-<a id="toc42690392"></a>
+<p><a id="refheadingtoc1357222222329424"></a>
 <a id="toc42690778"></a>
-<a id="refheadingtoc1357222222329424"></a></p>
+<a id="toc42690392"></a>
+<a id="toc42690006"></a></p>
 <h3 id="1661-introduction">16.6.1. Introduction</h3>
 <p>Pour lire les mails entreposés dans un serveur de mails, deux protocles existent :</p>
 <ul>
@@ -4042,10 +4042,10 @@
 </ul>
 </li>
 </ul>
-<p><a id="toc42690007"></a>
-<a id="toc42690393"></a>
+<p><a id="refheadingtoc1357242222329424"></a>
 <a id="toc42690779"></a>
-<a id="refheadingtoc1357242222329424"></a></p>
+<a id="toc42690393"></a>
+<a id="toc42690007"></a></p>
 <h3 id="1662-decouverte-du-protocole-pop3">16.6.2. Découverte du protocole POP3</h3>
 <p>Tout d’abord, nous utilisons le script <strong>[smtp-01.php]</strong> pour envoyer un mail à l’utilisateur <strong>[guest@localhost]</strong>. Si vous avez fait les tests associés au script, cet utilisateur a normalement reçu des mails mais on n’a pas pu le vérifier. Pour lui envoyer un nouveau mail, utilisez par exemple le fichier de configuration <strong>[config-smtp-01.json]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
@@ -4133,10 +4133,10 @@
 </ul>
 </li>
 </ul>
-<p><a id="toc42690008"></a>
-<a id="toc42690394"></a>
+<p><a id="refheadingtoc1357262222329424"></a>
 <a id="toc42690780"></a>
-<a id="refheadingtoc1357262222329424"></a></p>
+<a id="toc42690394"></a>
+<a id="toc42690008"></a></p>
 <h3 id="1663-un-script-basique-implementant-le-protocole-pop3">16.6.3. Un script basique implémentant le protocole POP3</h3>
 <p><img src="images/10000000000001C6000001DADAEE54BB.png" style="width:4.201cm;height:4.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C6000001DADAEE54BB.png" /></p>
 <p>Comme le procole POP3 a la même structure que le protocole SMTP, le script <strong>[pop3-01.php]</strong> est un portage du script <strong>[smtp-01.php]</strong>. Il aura le fichier de configuration <strong>[config-pop3-01.json]</strong> suivant :</p>
@@ -4443,10 +4443,10 @@
 <li>la possibilité de lire les pièces attachées à un message ;</li>
 </ol>
 <p>Nous allons implémenter la 1re possibilité avec les fonctions <strong>[imap]</strong> de PHP.</p>
-<p><a id="toc42690009"></a>
-<a id="toc42690395"></a>
+<p><a id="refheadingtoc1357282222329424"></a>
 <a id="toc42690781"></a>
-<a id="refheadingtoc1357282222329424"></a></p>
+<a id="toc42690395"></a>
+<a id="toc42690009"></a></p>
 <h3 id="1664-client-pop3-imap-implemente-avec-les-fonctions-imap-de-php">16.6.4. Client POP3 / IMAP implémenté avec les fonctions [imap] de PHP</h3>
 <p>Il nous faut tout d’abord vérifier que les fonctions <strong>[imap]</strong> sont disponibles dans la version de PHP que nous utilisons. Nous ouvrons le fichier <strong>[php.ini]</strong> décrit au paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a> et nous cherchons les lignes qui parlent de <strong>[imap]</strong> :</p>
 <p><img src="images/10000000000001E2000003376D25BCB1.png" style="width:4.462cm;height:7.621cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000003376D25BCB1.png" /></p>
@@ -4798,10 +4798,10 @@
 <li>ligne 25 : la pièce attachée ;</li>
 </ul>
 <p>Essayons d’améliorer ce script pour avoir dans des fichiers séparés, les différents types de messages ainsi que les pièce attachées.</p>
-<p><a id="toc42690010"></a>
-<a id="toc42690396"></a>
+<p><a id="refheadingtoc1357302222329424"></a>
 <a id="toc42690782"></a>
-<a id="refheadingtoc1357302222329424"></a></p>
+<a id="toc42690396"></a>
+<a id="toc42690010"></a></p>
 <h3 id="1665-client-pop3-imap-ameliore">16.6.5. Client POP3 / IMAP amélioré</h3>
 <p>Dans le script <strong>[imap-01.php]</strong>, on affiche le corps du message n° i comme un fichier texte contenant à la fois les différents types de messages ainsi que le contenu codé des différentes pièce attachées. Il est possible d’obtenir la structure du message pour en connaître ces différentes parties. Dans le script <strong>[imap-02.php]</strong>, nous modifions la fonction <strong>[getMailBody]</strong> de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
@@ -6008,10 +6008,10 @@
 <p>On retrouve les fichiers sauvegardés dans le dossier <strong>[output/localhost-pop3/message-N]</strong> :</p>
 <p><img src="images/10000000000002D0000002B9C084CE77.png" style="width:6.67cm;height:6.451cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D0000002B9C084CE77.png" /></p>
 <p><a id="clientpop3"></a>
-<a id="refheadingtoc1357322222329424"></a>
-<a id="toc42690011"></a>
+<a id="toc42690783"></a>
 <a id="toc42690397"></a>
-<a id="toc42690783"></a></p>
+<a id="toc42690011"></a>
+<a id="refheadingtoc1357322222329424"></a></p>
 <h3 id="1666-client-pop3-imap-avec-la-bibliotheque-php-mime-mail-parser">16.6.6. Client POP3 / IMAP avec la bibliothèque [php-mime-mail-parser]</h3>
 <p>Dans le script précédent <strong>[imap-02.php]</strong>, nous avons pu sauvegarder :</p>
 <ul>
@@ -6027,10 +6027,10 @@
 </ul>
 <p>Le script <strong>[imap-02.php]</strong> sauvegarde le contenu de <strong>[mail 1]</strong> (textes et attachements). Il sauvegarde <strong>[mail 2]</strong> comme document attaché mais s’arrête là. Il n’essaie pas d’analyser <strong>[mail 2]</strong> pour en extraire les textes et attachements. On pourrait penser qu’il suffit d’appliquer à <strong>[mail 2]</strong> ce qui a été fait pour <strong>[mail 1]</strong>. Un appel récursif à la méthode qui traitait <strong>[mail 1]</strong> pourrait alors suffire pour avoir le contenu de tous les mails imbriqués les uns dans les autres. Malheureusement les parties de <strong>[mail 2]</strong> sont numérotées avec une logique différente de celle utilisée pour <strong>[mail 1]</strong>, ce qui empêche d’utiliser le même algorithme dans les deux cas à moins d’utiliser une logique assez complexe pour calculer les n°s des parties d’un mail, quelque soit la position de celui-ci dans l’ensemble des mails imbriqués.</p>
 <p>Le script <strong>[imap-02.php]</strong> était déjà complexe. Pour éviter de le complexifier encore davantage pour gérer les contenus des mails imbriqués, nous allons utiliser la bibliothèque <strong>[php-mime-mail-parser]</strong> disponible sur Github (mai 2019) à l’URL <strong>[https://github.com/php-mime-mail-parser/php-mime-mail-parser]</strong> et écrite par Vincent Dauce.</p>
-<p><a id="toc42690012"></a>
-<a id="toc42690398"></a>
+<p><a id="refheadingtoc1357342222329424"></a>
 <a id="toc42690784"></a>
-<a id="refheadingtoc1357342222329424"></a></p>
+<a id="toc42690398"></a>
+<a id="toc42690012"></a></p>
 <h4 id="16661-installation-de-la-bibliotheque-php-mime-mail-parser">16.6.6.1. Installation de la bibliothèque [php-mime-mail-parser]</h4>
 <p>La page de présentation de la bibliothèque indique comment l’installer sous Windows :</p>
 <p><img src="images/1000000000000622000000EEC14868A3.png" style="width:12.461cm;height:1.892cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000622000000EEC14868A3.png" /></p>
@@ -6097,10 +6097,10 @@
 </ul>
 <p>Maintenant que l’environnement de travail a été installé, on peut passer à l’écriture du script <strong>[imap-03.php]</strong>.</p>
 <p><a id="lescriptimap-03php"></a>
-<a id="refheadingtoc1324981099569906"></a>
-<a id="toc42690013"></a>
+<a id="toc42690785"></a>
 <a id="toc42690399"></a>
-<a id="toc42690785"></a></p>
+<a id="toc42690013"></a>
+<a id="refheadingtoc1324981099569906"></a></p>
 <h4 id="16662-le-script-imap-03php">16.6.6.2. Le script [imap-03.php]</h4>
 <p>Le script <strong>[imap-03.php]</strong> utilise le même fichier de configuration <strong>[config-imap-01.json]</strong> que les précédents scripts :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>

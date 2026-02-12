@@ -1211,16 +1211,16 @@
   
 
 
-<p><a id="toc42690051"></a>
-<a id="toc42690437"></a>
+<p><a id="refheading399941881943603"></a>
 <a id="toc42690823"></a>
-<a id="refheading399941881943603"></a></p>
+<a id="toc42690437"></a>
+<a id="toc42690051"></a></p>
 <h1 id="18-exercice-dapplication-version-8">18. Exercice d’application – version 8</h1>
 <p>Nous allons reprendre l’application exemple – version 5 (paragraphe <a href="#_Exercice_d’application_–_1"><u><span style="color: #0563c1">lien</span></u></a>) et allons en faire une application client / serveur.</p>
-<p><a id="toc42690052"></a>
-<a id="toc42690438"></a>
+<p><a id="refheadingtoc1357822222329424"></a>
 <a id="toc42690824"></a>
-<a id="refheadingtoc1357822222329424"></a></p>
+<a id="toc42690438"></a>
+<a id="toc42690052"></a></p>
 <h2 id="181-introduction">18.1. Introduction</h2>
 <p>L’architecture de la version 5 était la suivante :</p>
 <p><img src="images/100000000000069B00000199BF9F7122.png" style="width:13.42cm;height:3.252cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000069B00000199BF9F7122.png" /></p>
@@ -1247,27 +1247,27 @@
 <li>en <strong>[8]</strong>, la couche <strong>[métier]</strong> du client respectera l’interface <strong>[InterfaceMetier]</strong> de la version 5. Son implémentation sera cependant différente. Dans la version 5, la couche <strong>[métier]</strong> faisait le calcul de l’impôt. Ici, c’est la couche <strong>[métier]</strong> du serveur qui fait ce calcul. La couche <strong>[métier]</strong> fera donc appel à la couche <strong>[dao]</strong> <strong>[7]</strong>, pour dialoguer avec le serveur et lui demander de calculer l’impôt ;</li>
 <li>en <strong>[9]</strong>, le script console aura à instancier les couches <strong>[dao, métier]</strong> du client et à lancer l’exécution de celui-ci ;</li>
 </ul>
-<p><a id="toc42690053"></a>
-<a id="toc42690439"></a>
+<p><a id="refheadingtoc1357842222329424"></a>
 <a id="toc42690825"></a>
-<a id="refheadingtoc1357842222329424"></a></p>
+<a id="toc42690439"></a>
+<a id="toc42690053"></a></p>
 <h2 id="182-le-serveur">18.2. Le serveur</h2>
 <p>Nous nous intéressons à la partie serveur de l’application.</p>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
 <p>Cette architecture sera implémentée par les scripts suivants :</p>
 <p><img src="images/1000000000000743000002C83ED6ADB0.png" style="width:14.75cm;height:5.651cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000743000002C83ED6ADB0.png" /></p>
-<p><a id="toc42690054"></a>
-<a id="toc42690440"></a>
+<p><a id="refheadingtoc185679971629160"></a>
 <a id="toc42690826"></a>
-<a id="refheadingtoc185679971629160"></a></p>
+<a id="toc42690440"></a>
+<a id="toc42690054"></a></p>
 <h3 id="1821-les-entites-echangees-entre-les-couches">18.2.1. Les entités échangées entre les couches</h3>
 <p><img src="images/10000000000001CF00000143523496AE.png" style="width:4.291cm;height:2.991cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CF00000143523496AE.png" /></p>
 <p>Les entités échangées entre les couches sont celles de la version 5 décrites au paragraphe <a href="#_Les_entités"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p><a id="lacouchedao"></a>
-<a id="refheadingtoc1357862222329424"></a>
-<a id="toc42690055"></a>
+<a id="toc42690827"></a>
 <a id="toc42690441"></a>
-<a id="toc42690827"></a></p>
+<a id="toc42690055"></a>
+<a id="refheadingtoc1357862222329424"></a></p>
 <h3 id="1822-la-couche-dao">18.2.2. La couche [dao]</h3>
 <p><img src="images/100000000000046500000171C51E6343.png" style="width:10.42cm;height:3.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046500000171C51E6343.png" /></p>
 <p>La couche <strong>[dao]</strong> implémente l’interface <strong>[InterfaceServerDao]</strong> suivante :</p>
@@ -1354,10 +1354,10 @@
 
 <p>Ce code a été présenté au paragraphe <a href="#_La_classe_[ImpotsWithTaxAdminDataIn"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p><a id="lacouchemetier1"></a>
-<a id="refheadingtoc1357882222329424"></a>
-<a id="toc42690056"></a>
+<a id="toc42690828"></a>
 <a id="toc42690442"></a>
-<a id="toc42690828"></a></p>
+<a id="toc42690056"></a>
+<a id="refheadingtoc1357882222329424"></a></p>
 <h3 id="1823-la-couche-metier">18.2.3. La couche [métier]</h3>
 <p><img src="images/100000000000046500000171C51E6343.png" style="width:10.42cm;height:3.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046500000171C51E6343.png" /></p>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
@@ -1444,10 +1444,10 @@
 </code></pre></div>
 
 <p>Ce code a déjà été vu et commenté dès la version 1 au paragraphe <a href="#_L’algorithme"><u><span style="color: #0563c1">lien</span></u></a>. Sa version objet avec une base de données a été présentée au paragraphe <a href="#_La_couche_[métier]"><u><span style="color: #0563c1">lien</span></u></a>.</p>
-<p><a id="toc42690057"></a>
-<a id="toc42690443"></a>
+<p><a id="refheadingtoc1357902222329424"></a>
 <a id="toc42690829"></a>
-<a id="refheadingtoc1357902222329424"></a></p>
+<a id="toc42690443"></a>
+<a id="toc42690057"></a></p>
 <h3 id="1824-le-script-serveur">18.2.4. Le script serveur</h3>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
 <p><img src="images/10000000000006F40000019EB9BDDE9E.png" style="width:16.481cm;height:3.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F40000019EB9BDDE9E.png" /></p>
@@ -1695,19 +1695,19 @@
 <p><img src="images/100000000000045F000001B4611160BD.png" style="width:8.88cm;height:3.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000045F000001B4611160BD.png" /></p>
 <p>On coupe le SGBD MySQL et on demande l’URL <strong>[https://localhost/php7/scripts-web/impots/version-08/impots-server.php?marié=oui&amp;enfants=3&amp;salaire=60000]</strong> :</p>
 <p><img src="images/1000000000000716000000F6B67E3A94.png" style="width:14.401cm;height:1.952cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000716000000F6B67E3A94.png" /></p>
-<p><a id="toc42690058"></a>
-<a id="toc42690444"></a>
+<p><a id="refheadingtoc185681971629160"></a>
 <a id="toc42690830"></a>
-<a id="refheadingtoc185681971629160"></a></p>
+<a id="toc42690444"></a>
+<a id="toc42690058"></a></p>
 <h3 id="1825-tests-codeception">18.2.5. Tests [Codeception]</h3>
 <p>A chaque fois que nous construirons une nouvelle version du serveur, nous testerons les couches <strong>[métier]</strong> et <strong>[dao]</strong> comme il a été fait depuis la version 04 (cf paragraphes <a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a> et <a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a>).</p>
 <p>Tout d’abord, nous associons le projet <strong>[scripts-web]</strong> aux tests <strong>[Codeception]</strong>. Pour cela, suivez la même procédure suivie pour le projet <strong>[scripts-console]</strong> au paragraphe <a href="#_Installation_du_framework"><u><span style="color: #0563c1">lien</span></u></a>. Nous obtenons un projet <strong>[scripts-web]</strong> avec un dossier <strong>[Test Files]</strong> :</p>
 <p><img src="images/100000000000064F0000032F7331FD7A.png" style="width:14.96cm;height:7.55cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000064F0000032F7331FD7A.png" /></p>
 <p>Nous allons créer un test pour la couche <strong>[dao]</strong> et un pour la couche <strong>[métier]</strong>.</p>
-<p><a id="toc42690059"></a>
-<a id="toc42690445"></a>
+<p><a id="refheadingtoc185683971629160"></a>
 <a id="toc42690831"></a>
-<a id="refheadingtoc185683971629160"></a></p>
+<a id="toc42690445"></a>
+<a id="toc42690059"></a></p>
 <h4 id="18251-tests-de-la-couche-dao">18.2.5.1. Tests de la couche [dao]</h4>
 <p><img src="images/10000000000001CE000000D11D7782DA.png" style="width:4.28cm;height:1.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000D11D7782DA.png" /></p>
 <p>Le test <strong>[ServerDaoTest]</strong> sera le suivant :</p>
@@ -1770,10 +1770,10 @@
 </ul>
 <p>Les résultats du test sont les suivants :</p>
 <p><img src="images/100000000000063C00000266401EA3F3.png" style="width:14.78cm;height:5.691cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000063C00000266401EA3F3.png" /></p>
-<p><a id="toc42690060"></a>
-<a id="toc42690446"></a>
+<p><a id="refheadingtoc185685971629160"></a>
 <a id="toc42690832"></a>
-<a id="refheadingtoc185685971629160"></a></p>
+<a id="toc42690446"></a>
+<a id="toc42690060"></a></p>
 <h4 id="18252-tests-de-la-couche-metier">18.2.5.2. Tests de la couche [métier]</h4>
 <p><img src="images/10000000000001CE000000D13AEA648A.png" style="width:4.28cm;height:1.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000D13AEA648A.png" /></p>
 <p>Le test <strong>[ServerMetierTest]</strong> sera le suivant :</p>
@@ -1844,19 +1844,19 @@
 </ul>
 <p>Les résultats du test sont les suivants :</p>
 <p><img src="images/10000000000006B400000270BC6919D9.png" style="width:15.892cm;height:5.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B400000270BC6919D9.png" /></p>
-<p><a id="toc42690061"></a>
-<a id="toc42690447"></a>
+<p><a id="refheadingtoc1357922222329424"></a>
 <a id="toc42690833"></a>
-<a id="refheadingtoc1357922222329424"></a></p>
+<a id="toc42690447"></a>
+<a id="toc42690061"></a></p>
 <h2 id="183-le-client">18.3. Le client</h2>
 <p>Nous nous intéressons à la partie cliente de l’application.</p>
 <p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
 <p>Cette architecture sera implémentée par les scripts suivants :</p>
 <p><img src="images/100000000000071500000252DCD19DBF.png" style="width:16.791cm;height:5.501cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000071500000252DCD19DBF.png" /></p>
-<p><a id="toc42690062"></a>
-<a id="toc42690448"></a>
+<p><a id="refheadingtoc185687971629160"></a>
 <a id="toc42690834"></a>
-<a id="refheadingtoc185687971629160"></a></p>
+<a id="toc42690448"></a>
+<a id="toc42690062"></a></p>
 <h3 id="1831-les-entites-echangees-entre-couches">18.3.1. Les entités échangées entre couches</h3>
 <p><img src="images/10000000000001950000016F5B5D8CDB.png" style="width:3.751cm;height:3.402cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001950000016F5B5D8CDB.png" /></p>
 <p>Les entités ci-dessus ont toutes été décrites et déjà utilisées :</p>
@@ -1865,10 +1865,10 @@
 <li><strong>[ExceptionImpots]</strong> au paragraphe <a href="#_L’exception_[ExceptionImpots]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
 <li><strong>[TaxPayerData]</strong> au paragraphe <a href="#_L’entité_[TaxPayerData]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
 </ul>
-<p><a id="toc42690063"></a>
-<a id="toc42690449"></a>
+<p><a id="refheadingtoc1357942222329424"></a>
 <a id="toc42690835"></a>
-<a id="refheadingtoc1357942222329424"></a></p>
+<a id="toc42690449"></a>
+<a id="toc42690063"></a></p>
 <h3 id="1832-la-couche-dao">18.3.2. La couche [dao]</h3>
 <p><img src="images/100000000000043E000001BCD159FE32.png" style="width:10.06cm;height:4.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000043E000001BCD159FE32.png" /></p>
 <p>La couche <strong>[dao]</strong> implémente l’interface <strong>[InterfaceClientDao]</strong> suivante :</p>
@@ -1977,10 +1977,10 @@
 <li>ligne 51 : on rend le résultat qui est un tableau associatif avec les clés <strong>[impôt, surcôte, décôte, réduction, taux]</strong> ;</li>
 </ul>
 <p><a id="lacouchemetier2"></a>
-<a id="refheadingtoc1357962222329424"></a>
-<a id="toc42690064"></a>
+<a id="toc42690836"></a>
 <a id="toc42690450"></a>
-<a id="toc42690836"></a></p>
+<a id="toc42690064"></a>
+<a id="refheadingtoc1357962222329424"></a></p>
 <h3 id="1833-la-couche-metier">18.3.3. La couche [métier]</h3>
 <p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
 <p><img src="images/10000000000001F0000001B1C3AAED6A.png" style="width:4.59cm;height:4.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F0000001B1C3AAED6A.png" /></p>
@@ -2060,10 +2060,10 @@
 <li>lignes 20-38 : la fonction <strong>[executeBatchImpots]</strong> a été décrite au paragraphe <a href="#_La_classe_[Metier]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
 </ul>
 <p><a id="lescriptprincipal1"></a>
-<a id="refheadingtoc1357982222329424"></a>
-<a id="toc42690065"></a>
+<a id="toc42690837"></a>
 <a id="toc42690451"></a>
-<a id="toc42690837"></a></p>
+<a id="toc42690065"></a>
+<a id="refheadingtoc1357982222329424"></a></p>
 <h3 id="1834-le-script-principal">18.3.4. Le script principal</h3>
 <p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
 <p><img src="images/100000000000019D0000016661496F02.png" style="width:3.821cm;height:3.312cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019D0000016661496F02.png" /></p>
@@ -2214,17 +2214,17 @@
 <span class="odt-code-line">Terminé</span>
 </code></pre></div>
 
-<p><a id="toc42690066"></a>
-<a id="toc42690452"></a>
+<p><a id="refheadingtoc185689971629160"></a>
 <a id="toc42690838"></a>
-<a id="refheadingtoc185689971629160"></a></p>
+<a id="toc42690452"></a>
+<a id="toc42690066"></a></p>
 <h3 id="1835-tests-codeception">18.3.5. Tests [Codeception]</h3>
 <p><span style="color: #000000">Comme il a été fait pour les version précédentes, nous allons écrire des tests </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> pour la version 08.</span></p>
 <p><img src="images/10000000000001CD00000170F10743BE.png" style="width:4.271cm;height:3.41cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000170F10743BE.png" /></p>
-<p><a id="toc42690067"></a>
-<a id="toc42690453"></a>
+<p><a id="refheadingtoc185691971629160"></a>
 <a id="toc42690839"></a>
-<a id="refheadingtoc185691971629160"></a></p>
+<a id="toc42690453"></a>
+<a id="toc42690067"></a></p>
 <h4 id="18351-test-de-la-couche-metier">18.3.5.1. Test de la couche [métier]</h4>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[ClientMetierTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">

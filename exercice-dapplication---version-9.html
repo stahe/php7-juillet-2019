@@ -1239,10 +1239,10 @@
   
 
 
-<p><a id="toc42690068"></a>
-<a id="toc42690454"></a>
+<p><a id="refheadingtoc1358002222329424"></a>
 <a id="toc42690840"></a>
-<a id="refheadingtoc1358002222329424"></a></p>
+<a id="toc42690454"></a>
+<a id="toc42690068"></a></p>
 <h1 id="19-exercice-dapplication-version-9">19. Exercice d’application – version 9</h1>
 <p>Dans cette version, nous allons améliorer le serveur de la façon suivante :</p>
 <ul>
@@ -1261,26 +1261,26 @@
 <li>en cas d’erreur fatale, un mail sera envoyé à l’administrateur de l’application ;</li>
 </ul>
 <p>Le client devra lui aussi être modifié pour gérer le cookie de session qu’on va lui envoyer.</p>
-<p><a id="toc42690069"></a>
-<a id="toc42690455"></a>
+<p><a id="refheadingtoc1358022222329424"></a>
 <a id="toc42690841"></a>
-<a id="refheadingtoc1358022222329424"></a></p>
+<a id="toc42690455"></a>
+<a id="toc42690069"></a></p>
 <h2 id="191-le-serveur">19.1. Le serveur</h2>
 <p>Nous nous intéressons à la partie serveur de l’application.</p>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
 <p>Cette architecture sera implémentée par les scripts suivants :</p>
 <p><img src="images/10000000000001D5000001BBAF4FD8BF.png" style="width:4.34cm;height:4.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D5000001BBAF4FD8BF.png" /></p>
-<p><a id="toc42690070"></a>
-<a id="toc42690456"></a>
+<p><a id="refheadingtoc185693971629160"></a>
 <a id="toc42690842"></a>
-<a id="refheadingtoc185693971629160"></a></p>
+<a id="toc42690456"></a>
+<a id="toc42690070"></a></p>
 <h3 id="1911-utilitaires">19.1.1. Utilitaires</h3>
 <p><img src="images/1000000000000180000000FC6ADBAB2B.png" style="width:3.56cm;height:2.331cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000180000000FC6ADBAB2B.png" /></p>
 <p><a id="laclasselogger"></a>
-<a id="refheadingtoc1358062222329424"></a>
-<a id="toc42690071"></a>
+<a id="toc42690843"></a>
 <a id="toc42690457"></a>
-<a id="toc42690843"></a></p>
+<a id="toc42690071"></a>
+<a id="refheadingtoc1358062222329424"></a></p>
 <h4 id="19111-la-classe-logger">19.1.1.1. La classe [Logger]</h4>
 <p>La classe <strong>[Logger]</strong> sera utilisée pour écrire des logs dans un fichier texte :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1325,10 +1325,10 @@
 </ul>
 <p><strong>Note</strong> : l’application serveur est susceptible de servir plusieurs clients simultanément. Or on a un seul fichier de logs pour tous. Il y a donc un risque d’accès concurrents pour écrire dans le fichier. Il faudrait donc synchroniser les écritures pour éviter que celles-ci ne se mélangent. Pour cela PHP dispose de sémaphores <strong>[https://www.php.net/manual/fr/book.sem.php]</strong>. Nous ignorerons la synchronisation des écritures ici mais il faut rester conscient du problème.</p>
 <p><a id="laclassesendadminmail"></a>
-<a id="refheadingtoc1358082222329424"></a>
-<a id="toc42690072"></a>
+<a id="toc42690844"></a>
 <a id="toc42690458"></a>
-<a id="toc42690844"></a></p>
+<a id="toc42690072"></a>
+<a id="refheadingtoc1358082222329424"></a></p>
 <h4 id="19112-la-classe-sendadminmail">19.1.1.2. La classe [SendAdminMail]</h4>
 <p>La classe <strong>[SendAdminMail]</strong> permet d’envoyer un mail à l’administrateur de l’application en cas de plantage de celle-ci :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1442,10 +1442,10 @@
 <li>lignes 16-76 : la méthode <strong>[send]</strong> permet d’envoyer le mail. Ce code a été présenté et décrit au paragraphe <a href="#_Client_POP3_/"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
 </ul>
 <p><a id="lacouchedao2"></a>
-<a id="refheadingtoc1358102222329424"></a>
-<a id="toc42690073"></a>
+<a id="toc42690845"></a>
 <a id="toc42690459"></a>
-<a id="toc42690845"></a></p>
+<a id="toc42690073"></a>
+<a id="refheadingtoc1358102222329424"></a></p>
 <h3 id="1912-la-couche-dao">19.1.2. La couche [dao]</h3>
 <p><img src="images/10000000000001D3000000DFA9C42B19.png" style="width:4.331cm;height:2.072cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D3000000DFA9C42B19.png" /></p>
 <p>Le script <strong>[ServeurDaoWithSession.php]</strong> est le suivant :</p>
@@ -1482,10 +1482,10 @@
 </li>
 </ul>
 <p>Lors du démarrage d’une session web, la couche <strong>[dao]</strong> sera construite avec un objet <strong>[$databaseFilename]</strong> non NULL et un objet <strong>[taxAdminData]</strong> NULL. Les données de l’administration fiscale seront alors recherchées en base et mémorisées dans la session. Lors des requêtes ultérieures de la même session, la couche <strong>[dao]</strong> sera construite avec un objet <strong>[databaseFilename]</strong> NULL et un objet <strong>[taxAdminData]</strong> provenant de la session et non NULL. Il n’y aura donc pas de recherche en base.</p>
-<p><a id="toc42690074"></a>
-<a id="toc42690460"></a>
+<p><a id="refheadingtoc1358122222329424"></a>
 <a id="toc42690846"></a>
-<a id="refheadingtoc1358122222329424"></a></p>
+<a id="toc42690460"></a>
+<a id="toc42690074"></a></p>
 <h3 id="1913-le-script-serveur">19.1.3. Le script serveur</h3>
 <p>Le script serveur <strong>[impots-server.php]</strong> est configuré par le fichier jSON <strong>[config-server.json]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1734,10 +1734,10 @@
 <li>ligne 158 : la réponse est envoyée ;</li>
 <li>lignes 160-163 : la réponse est loguée et le logueur fermé ;</li>
 </ul>
-<p><a id="toc42690075"></a>
-<a id="toc42690461"></a>
+<p><a id="refheadingtoc185695971629160"></a>
 <a id="toc42690847"></a>
-<a id="refheadingtoc185695971629160"></a></p>
+<a id="toc42690461"></a>
+<a id="toc42690075"></a></p>
 <h3 id="1914-tests-codeception">19.1.4. Tests [Codeception]</h3>
 <p><img src="images/100000000000020D0000020B500994C0.png" style="width:4.86cm;height:4.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020D0000020B500994C0.png" /></p>
 <p>Nous n’allons tester que la couche <strong>[dao]</strong> qui est la seule à avoir changé.</p>
@@ -1798,10 +1798,10 @@
 </ul>
 <p>Le résultat des tests est le suivant :</p>
 <p><img src="images/1000000000000666000002BBA0A84FDD.png" style="width:15.17cm;height:6.471cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000666000002BBA0A84FDD.png" /></p>
-<p><a id="toc42690076"></a>
-<a id="toc42690462"></a>
+<p><a id="refheadingtoc1358142222329424"></a>
 <a id="toc42690848"></a>
-<a id="refheadingtoc1358142222329424"></a></p>
+<a id="toc42690462"></a>
+<a id="toc42690076"></a></p>
 <h2 id="192-le-client">19.2. Le client</h2>
 <p>Nous nous intéressons à la partie cliente de l’application.</p>
 <p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
@@ -1813,10 +1813,10 @@
 <li>la couche <strong>[dao]</strong> du client ;</li>
 </ul>
 <p><a id="lacouchedao1"></a>
-<a id="refheadingtoc1358162222329424"></a>
-<a id="toc42690077"></a>
+<a id="toc42690849"></a>
 <a id="toc42690463"></a>
-<a id="toc42690849"></a></p>
+<a id="toc42690077"></a>
+<a id="refheadingtoc1358162222329424"></a></p>
 <h3 id="1921-la-couche-dao">19.2.1. La couche [dao]</h3>
 <p>La couche <strong>[Dao]</strong> évolue de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1919,10 +1919,10 @@
 <li>ligne 78 : le cookie de session récupéré est mémorisé dans l’attribut de classe <strong>[$sessionCookie]</strong> ;</li>
 </ul>
 <p><strong>Note</strong> : on aurait pu garder l’ancienne version de la couche <strong>[dao]</strong> et faire l’authentification à chaque requête car celle-ci a un coût négligeable. Par souci pédagogique, on a voulu rappeler comment un client HTTP pouvait gérer une session.</p>
-<p><a id="toc42690078"></a>
-<a id="toc42690464"></a>
+<p><a id="refheadingtoc1358182222329424"></a>
 <a id="toc42690850"></a>
-<a id="refheadingtoc1358182222329424"></a></p>
+<a id="toc42690464"></a>
+<a id="toc42690078"></a></p>
 <h3 id="1922-le-fichier-de-configuration">19.2.2. Le fichier de configuration</h3>
 <p>Le fichier de configuration jSON évolue de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1954,15 +1954,15 @@
 </code></pre></div>
 
 <p>Seule l’URL de la ligne 24 change.</p>
-<p><a id="toc42690079"></a>
-<a id="toc42690465"></a>
+<p><a id="refheadingtoc1358202222329424"></a>
 <a id="toc42690851"></a>
-<a id="refheadingtoc1358202222329424"></a></p>
+<a id="toc42690465"></a>
+<a id="toc42690079"></a></p>
 <h2 id="193-quelques-tests">19.3. Quelques tests</h2>
-<p><a id="toc42690080"></a>
-<a id="toc42690466"></a>
+<p><a id="refheadingtoc1358222222329424"></a>
 <a id="toc42690852"></a>
-<a id="refheadingtoc1358222222329424"></a></p>
+<a id="toc42690466"></a>
+<a id="toc42690080"></a></p>
 <h3 id="1931-test-1">19.3.1. Test 1</h3>
 <p>Tout d’abord nous exécutons le client dans un environnement sans erreurs. Les résultats sont toujours ceux des versions précédentes. Mais maintenant côté serveur, on a un fichier de logs <strong>[logs.txt]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1994,10 +1994,10 @@
 <li>lignes 3-7 : lors de la 1re requête, il y a authentification et recherche des données en base ;</li>
 <li>lignes 9-14 : lors de la requête suivante, il n’y a plus d’authentification et les données sont prises en session. Cela se répète lors des requêtes suivantes (lignes 15 et au-delà) ;</li>
 </ul>
-<p><a id="toc42690081"></a>
-<a id="toc42690467"></a>
+<p><a id="refheadingtoc1358242222329424"></a>
 <a id="toc42690853"></a>
-<a id="refheadingtoc1358242222329424"></a></p>
+<a id="toc42690467"></a>
+<a id="toc42690081"></a></p>
 <h3 id="1932-test-2">19.3.2. Test 2</h3>
 <p>Maintenant coupons la base de données MySQL. Côté client, on a le résultat console suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2060,10 +2060,10 @@
 <span class="odt-code-line">SQLSTATE<span style="font-weight:bold">[HY000]</span> <span style="font-weight:bold">[2002]</span> Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.</span>
 </code></pre></div>
 
-<p><a id="toc42690082"></a>
-<a id="toc42690468"></a>
+<p><a id="refheadingtoc1358262222329424"></a>
 <a id="toc42690854"></a>
-<a id="refheadingtoc1358262222329424"></a></p>
+<a id="toc42690468"></a>
+<a id="toc42690082"></a></p>
 <h3 id="1933-test-3">19.3.3. Test 3</h3>
 <p>Maintenant faison en sorte que le fichier <strong>[logs.txt]</strong> ne puisse être créé. Pour cela, il suffit de créer un dossier <strong>[logs.txt]</strong> :</p>
 <p><img src="images/10000000000001C3000001982F08056B.png" style="width:4.181cm;height:3.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C3000001982F08056B.png" /></p>
@@ -2090,10 +2090,10 @@
 <span class="odt-code-line"><span style="background-color:#ffff00">Echec lors de la création du fichier de logs </span><span style="font-weight:bold;background-color:#ffff00">[Data/logs.txt]</span></span>
 </code></pre></div>
 
-<p><a id="toc42690083"></a>
-<a id="toc42690469"></a>
+<p><a id="refheadingtoc1358282222329424"></a>
 <a id="toc42690855"></a>
-<a id="refheadingtoc1358282222329424"></a></p>
+<a id="toc42690469"></a>
+<a id="toc42690083"></a></p>
 <h3 id="1934-test-4">19.3.4. Test 4</h3>
 <p>Cette fois-ci, donnons, dans le fichier de configuration du client, des identifiants erronés au client qui se connecte.</p>
 <p>Le client affiche les résultats console suivants :</p>
@@ -2109,10 +2109,10 @@
 <span class="odt-code-line">04/07/19 13:36:05:789 : {&quot;réponse&quot;:{&quot;erreur&quot;:&quot;<span style="background-color:#ffff00">Echec de l&#x27;authentification</span> <span style="font-weight:bold">[x, x]</span>&quot;}}</span>
 </code></pre></div>
 
-<p><a id="toc42690084"></a>
-<a id="toc42690470"></a>
+<p><a id="refheadingtoc1358302222329424"></a>
 <a id="toc42690856"></a>
-<a id="refheadingtoc1358302222329424"></a></p>
+<a id="toc42690470"></a>
+<a id="toc42690084"></a></p>
 <h3 id="1935-test-5">19.3.5. Test 5</h3>
 <p>Remettons le bon utilisateur <strong>[admin, admin]</strong> dans le fichier de configuration du client.</p>
 <p>Maintenant demandons l’URL <strong>[http://localhost/php7/scripts-web/impots/version-08/impots-server.php]</strong> du serveur directement dans un navigateur sans passer de paramètres :</p>
@@ -2124,17 +2124,17 @@
 <span class="odt-code-line">04/07/19 13:37:33:711 : {&quot;réponse&quot;:{&quot;erreurs&quot;:<span style="font-weight:bold">[&quot;Méthode GET requise avec les seuls paramètres [marié, enfants, salaire]</span>&quot;,&quot;paramètre marié manquant&quot;,&quot;paramètre enfants manquant&quot;,&quot;paramètre salaire manquant&quot;]}}</span>
 </code></pre></div>
 
-<p><a id="toc42690085"></a>
-<a id="toc42690471"></a>
+<p><a id="refheadingtoc185697971629160"></a>
 <a id="toc42690857"></a>
-<a id="refheadingtoc185697971629160"></a></p>
+<a id="toc42690471"></a>
+<a id="toc42690085"></a></p>
 <h2 id="194-tests-codeception">19.4. Tests [Codeception]</h2>
 <p><span style="color: #000000">Comme il a été fait pour les version précédentes, nous allons écrire des tests </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> pour la version 09.</span></p>
 <p><img src="images/10000000000001BE000001FDF014D89F.png" style="width:4.13cm;height:4.71cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BE000001FDF014D89F.png" /></p>
-<p><a id="toc42690086"></a>
-<a id="toc42690472"></a>
+<p><a id="refheadingtoc185699971629160"></a>
 <a id="toc42690858"></a>
-<a id="refheadingtoc185699971629160"></a></p>
+<a id="toc42690472"></a>
+<a id="toc42690086"></a></p>
 <h4 id="19401-test-de-la-couche-metier">19.4.0.1. Test de la couche [métier]</h4>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[ClientMetierTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
