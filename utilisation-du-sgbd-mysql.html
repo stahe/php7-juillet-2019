@@ -1116,10 +1116,10 @@
   
 
 
-<p><a id="toc42689933"></a>
-<a id="toc42690319"></a>
+<p><a id="refheading399121881943603"></a>
 <a id="toc42690705"></a>
-<a id="refheading399121881943603"></a></p>
+<a id="toc42690319"></a>
+<a id="toc42689933"></a></p>
 <h1 id="12-utilisation-du-sgbd-mysql">12. Utilisation du SGBD MySQL</h1>
 <p><img src="images/10000000000001C9000002DA767154B2.png" style="width:4.231cm;height:6.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C9000002DA767154B2.png" /></p>
 <p>Nous allons maintenant écrire des scripts PHP utilisant une base de données MySQL :</p>
@@ -1131,10 +1131,10 @@
 <p>Nous allons maintenant utiliser le SGBD MySQL. Celui-ci est inclus dans le paquetage Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>).</p>
 <p>Si le lecteur est novice avec la notion de base de données et de langage SQL, il pourra lire le document <strong>[http://sergetahe.com/cours-tutoriels-de-programmation/cours-tutoriel-sql-avec-le-sgbd-firebird/]</strong>. Ce document utilise le SGBD Firebird et non pas MySQL mais donne les fondamentaux des bases de données et du langage SQL. Comme MySQL, Firebird dispose d’une version librement utilisable et de faible empreinte mémoire.</p>
 <p><a id="creationdunebase"></a>
-<a id="refheadingtoc837491549297239"></a>
-<a id="toc42689934"></a>
+<a id="toc42690706"></a>
 <a id="toc42690320"></a>
-<a id="toc42690706"></a></p>
+<a id="toc42689934"></a>
+<a id="refheadingtoc837491549297239"></a></p>
 <h2 id="121-creation-dune-base-de-donnees">12.1. Création d’une base de données</h2>
 <p>Nous montrons maintenant comment créer une base de données ainsi qu&#x27;un utilisateur MySQL avec l’outil Laragon.</p>
 <p><img src="images/1000000000000553000004751CF0B2F5.png" style="width:10.82cm;height:9.06cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000553000004751CF0B2F5.png" /></p>
@@ -1211,10 +1211,10 @@
 <li>en <strong>[2]</strong>, l’extension PDO de Firebird est désactivée ;</li>
 </ul>
 <p>Après avoir modifié le fichier <strong>[php.ini]</strong>, il faut <strong>relancer</strong> le PHP de Laragon pour que les modifications soient prises en compte.</p>
-<p><a id="toc42689935"></a>
-<a id="toc42690321"></a>
+<p><a id="refheading399141881943603"></a>
 <a id="toc42690707"></a>
-<a id="refheading399141881943603"></a></p>
+<a id="toc42690321"></a>
+<a id="toc42689935"></a></p>
 <h2 id="122-connexion-a-une-base-de-donnees-mysql">12.2. Connexion à une base de données MySQL</h2>
 <p>La connexion à un SGBD se fait par la construction d&#x27;un objet PDO. Le constructeur admet différents paramètres :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$dbh=new PDO(string $dsn,string $user,string $passwd,array $driver_options)
@@ -1265,10 +1265,10 @@
 <span class="odt-code-line">Erreur : SQLSTATE<span style="font-weight:bold">[HY000]</span> <span style="font-weight:bold">[1045]</span> Access denied for user &#x27;admpersonnes&#x27;@&#x27;localhost&#x27; (using password: YES)</span>
 </code></pre></div>
 
-<p><a id="toc42689936"></a>
-<a id="toc42690322"></a>
+<p><a id="refheading399161881943603"></a>
 <a id="toc42690708"></a>
-<a id="refheading399161881943603"></a></p>
+<a id="toc42690322"></a>
+<a id="toc42689936"></a></p>
 <h2 id="123-creation-dune-table">12.3. Création d&#x27;une table</h2>
 <p>Le script <strong>[mysql-02.php]</strong> montre la création d’une table dans une base de données :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1351,10 +1351,10 @@
 <span class="odt-code-line">Erreur : SQLSTATE<span style="font-weight:bold">[HY000]</span> <span style="font-weight:bold">[1045]</span> Access denied for user &#x27;admpersonnes&#x27;@&#x27;localhost&#x27; (using password: YES)</span>
 </code></pre></div>
 
-<p><a id="toc42689937"></a>
-<a id="toc42690323"></a>
+<p><a id="refheading399201881943603"></a>
 <a id="toc42690709"></a>
-<a id="refheading399201881943603"></a></p>
+<a id="toc42690323"></a>
+<a id="toc42689937"></a></p>
 <h2 id="124-remplissage-dune-table">12.4. Remplissage d’une table</h2>
 <p>Nous allons écrire un script PHP qui exécute des ordres SQL trouvés dans le fichier texte <strong>[creation.txt]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -1554,10 +1554,10 @@
 <p>Les insertions faites sont visibles avec phpMyAdmin :</p>
 <p><img src="images/100000000000031400000168D6F29E0B.png" style="width:6.25cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000031400000168D6F29E0B.png" /></p>
 <p><a id="executiondordressql"></a>
-<a id="refheading399221881943603"></a>
-<a id="toc42689938"></a>
+<a id="toc42690710"></a>
 <a id="toc42690324"></a>
-<a id="toc42690710"></a></p>
+<a id="toc42689938"></a>
+<a id="refheading399221881943603"></a></p>
 <h2 id="125-execution-dordres-sql-quelconques">12.5. Exécution d’ordres SQL quelconques</h2>
 <p>Le script suivant montre l&#x27;exécution des ordres SQL du fichier texte <strong>[sql.txt]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -1772,15 +1772,15 @@
 <span class="odt-code-line">Terminé</span>
 </code></pre></div>
 
-<p><a id="toc42689939"></a>
-<a id="toc42690325"></a>
+<p><a id="refheadingtoc822223439697744"></a>
 <a id="toc42690711"></a>
-<a id="refheadingtoc822223439697744"></a></p>
+<a id="toc42690325"></a>
+<a id="toc42689939"></a></p>
 <h2 id="126-utilisation-dordres-sql-prepares">12.6. Utilisation d’ordres SQL préparés</h2>
-<p><a id="toc42689940"></a>
-<a id="toc42690326"></a>
+<p><a id="refheadingtoc822243439697744"></a>
 <a id="toc42690712"></a>
-<a id="refheadingtoc822243439697744"></a></p>
+<a id="toc42690326"></a>
+<a id="toc42689940"></a></p>
 <h3 id="1261-exemple-1">12.6.1. Exemple 1</h3>
 <p>Examinons le script suivant <strong>[mysql-05.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1843,10 +1843,10 @@
 </li>
 </ul>
 <p>est plus économique en temps d’exécution que d’exécuter <strong>n</strong> ordres SQL <strong>différents</strong>. Cette méthode est donc à privilégier. Elle est utilisable pour les ordres SQL <em>select, update, delete, insert</em>. Dans le cas de l’ordre SQL <em>select</em>, après son exécution avec <strong>[PDOStatement::execute]</strong>, on récupère les lignes du résultat avec la méthode <strong>[PDOStatement::fetchAll]</strong> ;</p>
-<p><a id="toc42689941"></a>
-<a id="toc42690327"></a>
+<p><a id="refheadingtoc822263439697744"></a>
 <a id="toc42690713"></a>
-<a id="refheadingtoc822263439697744"></a></p>
+<a id="toc42690327"></a>
+<a id="toc42689941"></a></p>
 <h3 id="1262-exemple-2">12.6.2. Exemple 2</h3>
 <p>Le script suivant <strong>[mysql-06.php]</strong> montre l’utilisation d’un ordre préparé pour l’opération SQL <strong>select</strong>, ainsi que diverses façons de récupérer les lignes ramenées par cette opération :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2006,10 +2006,10 @@
 <li>lignes 38-43 : montrent comment exploiter séquentiellement les résultats du <strong>[select]</strong> ;</li>
 <li>ligne 42 : l’affichage de <strong>[$personne]</strong> va utiliser la méthode <strong>[__toString]</strong> de la classe <strong>[Person]</strong> ;</li>
 </ul>
-<p><a id="toc42689942"></a>
-<a id="toc42690328"></a>
+<p><a id="refheadingtoc822283439697744"></a>
 <a id="toc42690714"></a>
-<a id="refheadingtoc822283439697744"></a></p>
+<a id="toc42690328"></a>
+<a id="toc42689942"></a></p>
 <h2 id="127-utilisation-de-transactions">12.7. Utilisation de transactions</h2>
 <p>Une transaction permet de regrouper une séquence d’ordres SQL en une unité d’exécution : soit tous les ordres réussissent soit l’un d’eux échoue et alors tous les ordres SQL qui ont précédé celui-ci sont annulés. Dit autrement, lorsqu’on utilise une transaction pour exécuter des ordres SQL, après l’exécution de celle-ci la base de données est dans un état <strong>stable</strong> :</p>
 <ul>

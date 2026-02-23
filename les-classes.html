@@ -1220,22 +1220,22 @@
   
 
 
-<p><a id="toc42689853"></a>
-<a id="toc42690239"></a>
+<p><a id="refheading398901881943603"></a>
 <a id="toc42690625"></a>
-<a id="refheading398901881943603"></a></p>
+<a id="toc42690239"></a>
+<a id="toc42689853"></a></p>
 <h1 id="5-les-classes">5. Les classes</h1>
 <p><strong>Vocabulaire : </strong>Une classe <strong>class</strong> est un type PHP. Une variable de ce type est appelée <strong>objet</strong>. Un objet est une <strong>instance</strong> (exemplaire) de classe.</p>
-<p><a id="toc42689854"></a>
-<a id="toc42690240"></a>
+<p><a id="refheadingtoc787932244347140"></a>
 <a id="toc42690626"></a>
-<a id="refheadingtoc787932244347140"></a></p>
+<a id="toc42690240"></a>
+<a id="toc42689854"></a></p>
 <h2 id="51-larborescence-des-scripts">5.1. L’arborescence des scripts</h2>
 <p><img src="images/1000000000000179000003402C9077BE.png" style="width:3.492cm;height:7.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000179000003402C9077BE.png" /></p>
-<p><a id="toc42689855"></a>
-<a id="toc42690241"></a>
+<p><a id="refheading398921881943603"></a>
 <a id="toc42690627"></a>
-<a id="refheading398921881943603"></a></p>
+<a id="toc42690241"></a>
+<a id="toc42689855"></a></p>
 <h2 id="52-toute-variable-peut-devenir-un-objet-dote-dattributs">5.2. Toute variable peut devenir un objet doté d&#x27;attributs</h2>
 <p>Le script <strong>[classes-01.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1370,10 +1370,10 @@
 <li>lignes 52-54 : montrent qu&#x27;un objet peut être parcouru comme un dictionnaire. Les clés du dictionnaire sont les noms des attributs et les valeurs du dictionnaire, les valeurs de ces mêmes attributs ;</li>
 <li>ligne 51 : la fonction <em>count</em> peut être appliquée à un objet (moyennant un warning) mais ne donne pas, comme on aurait pu s&#x27;y attendre, le nombre d&#x27;attributs. Donc un objet présente des similitudes avec un dictionnaire mais n&#x27;en est pas un ;</li>
 </ul>
-<p><a id="toc42689856"></a>
-<a id="toc42690242"></a>
+<p><a id="refheading398941881943603"></a>
 <a id="toc42690628"></a>
-<a id="refheading398941881943603"></a></p>
+<a id="toc42690242"></a>
+<a id="toc42689856"></a></p>
 <h2 id="53-une-classe-personne-sans-attributs-declares">5.3. Une classe Personne sans attributs déclarés</h2>
 <p>Le script <strong>[classes-02.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1414,10 +1414,10 @@
 <li>lignes 18-20 : les trois attributs nécessaires à la méthode <em>identité</em> sont créés dans l&#x27;objet $p ;</li>
 <li>ligne 22 : la méthode <em>identité</em> de la classe <em>Personne</em> est appliquée sur l&#x27;objet $<em>p</em>. Dans le code (lignes 8-11) de la méthode <em>identité</em>, $<em>this</em> référence le même objet que $<em>p ;</em></li>
 </ul>
-<p><a id="toc42689857"></a>
-<a id="toc42690243"></a>
+<p><a id="refheading398961881943603"></a>
 <a id="toc42690629"></a>
-<a id="refheading398961881943603"></a></p>
+<a id="toc42690243"></a>
+<a id="toc42689857"></a></p>
 <h2 id="54-la-classe-personne-avec-attributs-declares">5.4. La classe Personne avec attributs déclarés</h2>
 <p>Le script <strong>[classes-03.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1458,10 +1458,10 @@
 <ul>
 <li>lignes 6-8 : les attributs de la classe sont explicitement déclarés avec le mot clé <strong>var ;</strong></li>
 </ul>
-<p><a id="toc42689858"></a>
-<a id="toc42690244"></a>
+<p><a id="refheading398981881943603"></a>
 <a id="toc42690630"></a>
-<a id="refheading398981881943603"></a></p>
+<a id="toc42690244"></a>
+<a id="toc42689858"></a></p>
 <h2 id="55-la-classe-personne-avec-un-constructeur">5.5. La classe Personne avec un constructeur</h2>
 <p>Les exemples précédents montraient des classes <em>Personne</em> exotiques telles qu&#x27;on pouvait les trouver dans PHP 4. Il n&#x27;est pas conseillé de suivre ces exemples. Nous présentons maintenant une classe <em>Personne</em> <strong>[classes-04.php]</strong> correspondant aux bonnes pratiques de PHP 7 :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1564,10 +1564,10 @@
 <li>toutes les méthodes de la classe (fonctions) ont été préfixées par le mot clé <strong>public</strong> qui indique que la fonction est visible en-dehors de la classe. Les autres mots clés utilisables sont, comme pour les attributs et avec la même signification, <strong>private</strong> et <strong>protected.</strong> Sans attribut explicite de visibilité, la fonction est de visibilité implicite <strong>public</strong> ;</li>
 </ul>
 <p><a id="laclassepersonne"></a>
-<a id="refheading399001881943603"></a>
-<a id="toc42689859"></a>
+<a id="toc42690631"></a>
 <a id="toc42690245"></a>
-<a id="toc42690631"></a></p>
+<a id="toc42689859"></a>
+<a id="refheading399001881943603"></a></p>
 <h2 id="56-la-classe-personne-avec-controles-de-validite-dans-le-constructeur">5.6. La classe Personne avec contrôles de validité dans le constructeur</h2>
 <p>Le constructeur d&#x27;une classe est le bon endroit pour vérifier que les valeurs d&#x27;initialisation de l&#x27;objet sont corrects. Mais un objet peut être également initialisé par ses méthodes <em>set</em> ou équivalentes. Pour éviter de mettre à deux endroits différents les mêmes vérifications, on pourra mettre ces dernières dans les méthodes <em>set</em>. Si une valeur d&#x27;initialisation d&#x27;un objet se révèle incorrecte, on lancera une <strong>exception</strong>. Voici un exemple.</p>
 <p>On déplace tout d’abord la définition de la classe <em>Personne</em> dans son propre fichier <strong>[Personne.php]</strong> :</p>
@@ -1768,10 +1768,10 @@
 <span class="odt-code-line">Exemple3, erreur : Le prénom doit être non vide</span>
 </code></pre></div>
 
-<p><a id="toc42689860"></a>
-<a id="toc42690246"></a>
+<p><a id="refheading399021881943603"></a>
 <a id="toc42690632"></a>
-<a id="refheading399021881943603"></a></p>
+<a id="toc42690246"></a>
+<a id="toc42689860"></a></p>
 <h2 id="57-ajout-dune-methode-faisant-office-de-second-constructeur">5.7. Ajout d&#x27;une méthode faisant office de second constructeur</h2>
 <p>En PHP 7, il n&#x27;est pas possible d&#x27;avoir plusieurs constructeurs avec des paramètres différents qui permettraient de construire un objet de diverses façons. On peut alors utiliser des méthodes faisant office de constructeur :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
@@ -1834,10 +1834,10 @@
 <span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>personne=[Paul,Langevin,48]
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>personne=[Laure,Adeline,67]
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689861"></a>
-<a id="toc42690247"></a>
+<p><a id="refheading399041881943603"></a>
 <a id="toc42690633"></a>
-<a id="refheading399041881943603"></a></p>
+<a id="toc42690247"></a>
+<a id="toc42689861"></a></p>
 <h2 id="58-un-tableau-dobjets-personne">5.8. Un tableau d&#x27;objets [Personne]</h2>
 <p>L&#x27;exemple suivant <strong>[classes-07.php]</strong> montre qu&#x27;on peut avoir des tableaux d&#x27;objets.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1872,10 +1872,10 @@
 <li>ligne 13 : <em>$groupe</em><strong><em>[$i]</em></strong> est un objet de type <em>Personne</em>. La méthode <strong>[Personne.__toString]</strong> est utilisée pour l&#x27;afficher ;</li>
 </ul>
 <p><a id="creationduneclasse"></a>
-<a id="refheading399061881943603"></a>
-<a id="toc42689862"></a>
+<a id="toc42690634"></a>
 <a id="toc42690248"></a>
-<a id="toc42690634"></a></p>
+<a id="toc42689862"></a>
+<a id="refheading399061881943603"></a></p>
 <h2 id="59-creation-dune-classe-derivee-de-la-classe-personne">5.9. Création d&#x27;une classe dérivée de la classe Personne</h2>
 <p>On crée dans un fichier <strong>[Enseignant.php]</strong> la classe <strong>[Enseignant]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1969,10 +1969,10 @@
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a>groupe[1]=[Sylvie,Lefur,70]
 </code></pre></div></td></tr></table></div>
 <p><a id="creationduneseconde"></a>
-<a id="refheading399081881943603"></a>
-<a id="toc42689863"></a>
+<a id="toc42690635"></a>
 <a id="toc42690249"></a>
-<a id="toc42690635"></a></p>
+<a id="toc42689863"></a>
+<a id="refheading399081881943603"></a></p>
 <h2 id="510-creation-dune-seconde-classe-derivee-de-la-classe-personne">5.10. Création d&#x27;une seconde classe dérivée de la classe Personne</h2>
 <p>L&#x27;exemple suivant crée une classe <em>Etudiant</em> dérivée de la classe <em>Personne</em>, dans le fichier <strong>[Etudiant.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2045,10 +2045,10 @@
 <span class="odt-code-line">groupe<span style="font-weight:bold">[2]</span>=<span style="font-weight:bold">[[Steve,Boer,23]</span>,iup2 qualité]</span>
 </code></pre></div>
 
-<p><a id="toc42689864"></a>
-<a id="toc42690250"></a>
+<p><a id="refheadingtoc55551710956990"></a>
 <a id="toc42690636"></a>
-<a id="refheadingtoc55551710956990"></a></p>
+<a id="toc42690250"></a>
+<a id="toc42689864"></a></p>
 <h2 id="511-relation-du-constructeur-dune-classe-derivee-avec-celui-de-la-classe-parent">5.11. Relation du constructeur d’une classe dérivée avec celui de la classe parent</h2>
 <p>Dans certains langages orientés objet, le constructeur d’une classe dérivée appelle automatiquement celui de sa classe parent. Le code suivant <strong>[classes-16.php]</strong> montre qu’avec PHP 7 ce n’est pas le cas :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2103,10 +2103,10 @@
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a>constructeur de la classe Classe1
 <a id="__codelineno-9-5" name="__codelineno-9-5"></a>constructeur de la classe Classe3
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689865"></a>
-<a id="toc42690251"></a>
+<p><a id="refheadingtoc55553710956990"></a>
 <a id="toc42690637"></a>
-<a id="refheadingtoc55553710956990"></a></p>
+<a id="toc42690251"></a>
+<a id="toc42689865"></a></p>
 <h2 id="512-redefinition-dune-methode-de-la-classe-parent">5.12. Redéfinition d’une méthode de la classe parent</h2>
 <p>Nous avons déjà vu qu’une méthode de la classe parent pouvait être redéfinie dans une classe fille. Ainsi la méthode <strong>[__toString]</strong> de la classe <strong>[Personne]</strong> (cf <a href="#_La_classe_Personne"><u><span style="color: #0563c1">lien</span></u></a>) a été redéfinie dans les classes filles <strong>[Enseignant]</strong> (cf. <a href="#_Création_d'une_classe"><u><span style="color: #0563c1">lien</span></u></a>) et <strong>[Etudiant]</strong> (cf. <a href="#_Création_d'une_seconde"><u><span style="color: #0563c1">lien</span></u></a>). Le script <strong>[classes-13.php]</strong> illustre de nouveau le concept :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2167,10 +2167,10 @@
 <li>la ligne 34 du code appelle la méthode <strong>f</strong> de l’objet $<strong>c1</strong>. Comme celle-ci existe, elle est exécutée ;</li>
 </ul>
 <p><a id="passagedunobjet"></a>
-<a id="refheadingtoc534922660406439"></a>
-<a id="toc42689866"></a>
+<a id="toc42690638"></a>
 <a id="toc42690252"></a>
-<a id="toc42690638"></a></p>
+<a id="toc42689866"></a>
+<a id="refheadingtoc534922660406439"></a></p>
 <h2 id="513-passage-dun-objet-en-parametre-dune-fonction">5.13. Passage d’un objet en paramètre d’une fonction</h2>
 <p>Considérons le script <strong>[classes-14.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2224,10 +2224,10 @@
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>13
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689867"></a>
-<a id="toc42690253"></a>
+<p><a id="refheadingtoc55555710956990"></a>
 <a id="toc42690639"></a>
-<a id="refheadingtoc55555710956990"></a></p>
+<a id="toc42690253"></a>
+<a id="toc42689867"></a></p>
 <h2 id="514-classes-abstraites">5.14. Classes abstraites</h2>
 <p>Une classe <strong>abstraite</strong> est une classe incomplète qui ne peut être instanciée. Elle doit obligatoirement être dérivée pour être utilisable.</p>
 <p>A quoi sert une classe abstraite ? On a parfois des classes qui partagent une ou des méthodes mais qui se différencient par d’autres méthodes ou d’autres attributs. Il est alors souhaitable de rassembler tout ce qui est commun dans une classe parent. Pour l’instant on n’a pas besoin de classe abstraite. Mais supposons que les classes filles ne diffèrent que par une méthode <strong>M</strong> : la signature de la méthode serait la même dans toutes les classes filles mais son implémentation diffèrerait. Pour imposer aux classes filles d’implémenter la méthode M :</p>
@@ -2305,10 +2305,10 @@
 <a id="__codelineno-12-3" name="__codelineno-12-3"></a>2
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a>21
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689868"></a>
-<a id="toc42690254"></a>
+<p><a id="refheadingtoc55557710956990"></a>
 <a id="toc42690640"></a>
-<a id="refheadingtoc55557710956990"></a></p>
+<a id="toc42690254"></a>
+<a id="toc42689868"></a></p>
 <h2 id="515-classes-finales">5.15. Classes finales</h2>
 <p>Une classe finale est une classe qu’on ne peut dériver. Considérons le script <strong>[classes-11.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2340,10 +2340,10 @@
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">Fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">Class</span> <span class="n">Exemples</span>\<span class="n">Classe2</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">inherit</span> <span class="kn">from</span><span class="w"> </span><span class="nn">final</span> <span class="k">class</span><span class="w"> </span><span class="err">(</span><span class="nc">Exemples</span>\<span class="n">Classe1</span><span class="p">)</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">php7</span>\<span class="n">php5</span><span class="o">-</span><span class="n">exemples</span>\<span class="n">exemples</span>\<span class="n">classes</span>\<span class="n">classes</span><span class="o">-</span><span class="mf">11.</span><span class="n">php</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">14</span>
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689869"></a>
-<a id="toc42690255"></a>
+<p><a id="refheadingtoc55559710956990"></a>
 <a id="toc42690641"></a>
-<a id="refheadingtoc55559710956990"></a></p>
+<a id="toc42690255"></a>
+<a id="toc42689869"></a></p>
 <h2 id="516-methodes-finales">5.16. Méthodes finales</h2>
 <p>Une méthode finale est une méthode qu’on ne peut redéfinir par dérivation. Voici un exemple <strong>[classes-12.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2388,10 +2388,10 @@
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>Fatal error: Cannot override final method Exemples\Classe1::f() in C:\Data\st-2019\dev\php7\php5-exemples\exemples\classes\classes-12.php on line 26
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689870"></a>
-<a id="toc42690256"></a>
+<p><a id="refheadingtoc55561710956990"></a>
 <a id="toc42690642"></a>
-<a id="refheadingtoc55561710956990"></a></p>
+<a id="toc42690256"></a>
+<a id="toc42689870"></a></p>
 <h2 id="517-methodes-et-attributs-statiques">5.17. Méthodes et attributs statiques</h2>
 <p>Une méthode <strong>statique</strong> est une méthode liée à la <strong>classe</strong> dans laquelle elle est définie et non aux objets instances de la classe. Ainsi si la classe <strong>C</strong> déclare une méthode statique <strong>M</strong>, pour utiliser cette dernière on écrira :</p>
 <ul>
@@ -2465,10 +2465,10 @@
 </code></pre></div>
 
 <p><a id="visibiliteentreclasse"></a>
-<a id="refheadingtoc171229488830776"></a>
-<a id="toc42689871"></a>
+<a id="toc42690643"></a>
 <a id="toc42690257"></a>
-<a id="toc42690643"></a></p>
+<a id="toc42689871"></a>
+<a id="refheadingtoc171229488830776"></a></p>
 <h2 id="518-visibilite-entre-classe-parent-et-classe-fille">5.18. Visibilité entre classe Parent et classe Fille</h2>
 <p>Examinons le script <strong>[classes-19.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2838,10 +2838,10 @@
 </li>
 </ul>
 <p>C’est un comportement inattendu.</p>
-<p><a id="toc42689872"></a>
-<a id="toc42690258"></a>
+<p><a id="refheadingtoc185649971629160"></a>
 <a id="toc42690644"></a>
-<a id="refheadingtoc185649971629160"></a></p>
+<a id="toc42690258"></a>
+<a id="toc42689872"></a></p>
 <h2 id="519-encodage-json-dune-classe">5.19. Encodage jSON d’une classe</h2>
 <p>Dans une classe la méthode <strong>[__toString]</strong> est souvent présente : elle est censée rendre une chaîne de caractères représentant l’objet qui l’appelle. Il peut être tentant que cette chaîne soit une chaîne jSON. Nous explorons cette voie maintenant.</p>
 <p><img src="images/100000000000016F0000011F619267FA.png" style="width:3.402cm;height:2.661cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016F0000011F619267FA.png" /></p>

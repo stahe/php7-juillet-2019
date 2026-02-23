@@ -1455,16 +1455,16 @@
   
 
 
-<p><a id="toc42690014"></a>
-<a id="toc42690400"></a>
+<p><a id="refheading399381881943603"></a>
 <a id="toc42690786"></a>
-<a id="refheading399381881943603"></a></p>
+<a id="toc42690400"></a>
+<a id="toc42690014"></a></p>
 <h1 id="17-services-web">17. Services web</h1>
 <p><strong>Note</strong> : par <em>service web</em>, on entend ici tout application web délivrant des données brutes consommées par un client, un script console dans les exemples qui vont suivre. On ne s’intéresse pas à une technologie particulière, REST (<strong>RE</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer) ou SOAP (<strong>S</strong>imple <strong>O</strong>bject <strong>A</strong>ccess <strong>P</strong>rotocol) par exemple, qui délivrent des données plus ou moins brutes dans un format bien défini. REST délivre du jSON alors que pour SOAP c’est du XML. Chacune de ces technologies décrit précisément la façon dont le client doit interroger le serveur et la forme que doit prendre la réponse de celui-ci. Dans ce cours, on sera beaucoup plus souple quant à la nature de la requête client et celle de la réponse du serveur.  Cependant, les scripts écrits et les outils utilisés sont proches de ceux de la technologie REST.</p>
-<p><a id="toc42690015"></a>
-<a id="toc42690401"></a>
+<p><a id="refheadingtoc1357362222329424"></a>
 <a id="toc42690787"></a>
-<a id="refheadingtoc1357362222329424"></a></p>
+<a id="toc42690401"></a>
+<a id="toc42690015"></a></p>
 <h2 id="171-introduction">17.1. Introduction</h2>
 <p>Les programmes PHP pouvant être exécutés par un serveur WEB, un tel programme devient un programme serveur pouvant servir plusieurs clients. Du point de vue du client, appeler un service web revient à demander l&#x27;URL de ce service. Le client peut être écrit avec n&#x27;importe quel langage, notamment en PHP. Dans ce dernier cas, on utilise alors les fonctions réseau que nous venons de voir. Il nous faut par ailleurs savoir &quot;converser&quot; avec un service web, c&#x27;est-à-dire comprendre le protocole <em>http</em> de communication entre un serveur WEB et ses clients. C&#x27;était le but du paragraphe <a href="#_Le_protocole_HTTP"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p>Le client web décrit au paragraphe <a href="#_Exemple_6"><u><span style="color: #0563c1">lien</span></u></a> nous a permis de découvrir une partie du protocole HTTP.</p>
@@ -1527,10 +1527,10 @@
 </li>
 <li>en <strong>[13]</strong>, une fois l’assistant de création du projet validé, celui-ci apparaît en <strong>[13]</strong> dans l’onglet des projets ;</li>
 </ul>
-<p><a id="toc42690016"></a>
-<a id="toc42690402"></a>
+<p><a id="refheadingtoc1357382222329424"></a>
 <a id="toc42690788"></a>
-<a id="refheadingtoc1357382222329424"></a></p>
+<a id="toc42690402"></a>
+<a id="toc42690016"></a></p>
 <h2 id="172-ecriture-dune-page-statique">17.2. Ecriture d’une page statique</h2>
 <p><strong>Note </strong>: Pour la suite, il faut que <strong>[Laragon]</strong> soit lancé.</p>
 <p>Nous allons montrer comment créer une page statique HTML (HyperText Markup Language) à l’aide de Netbeans :</p>
@@ -1616,10 +1616,10 @@
 </ul>
 <p><img src="images/10000000000002F600000152EBA38675.png" style="width:6.021cm;height:2.68cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002F600000152EBA38675.png" /></p>
 <p><a id="creationdunepage"></a>
-<a id="refheadingtoc114634425309931"></a>
-<a id="toc42690017"></a>
+<a id="toc42690789"></a>
 <a id="toc42690403"></a>
-<a id="toc42690789"></a></p>
+<a id="toc42690017"></a>
+<a id="refheadingtoc114634425309931"></a></p>
 <h2 id="173-creation-dune-page-dynamique-en-php">17.3. Création d’une page dynamique en PHP</h2>
 <p>Nous écrivons maintenant une page dynamique en PHP :</p>
 <p><img src="images/100000000000075C000001B7E049F65C.png" style="width:14.951cm;height:3.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000075C000001B7E049F65C.png" /></p>
@@ -1700,10 +1700,10 @@
 <li>en <strong>[3]</strong>, un entête HTTP qui n’était pas présent lorsqu’on a demandé la page statique. Cet entête montre que la réponse du serveur a été générée par un script PHP ;</li>
 </ul>
 <p>Nous avons vu que la réponse (le flux HTML ici) du serveur pouvait être générée par un script PHP. Le script peut également générer les entêtes HTTP et à peu près tous les éléments de la réponse du serveur.</p>
-<p><a id="toc42690018"></a>
-<a id="toc42690404"></a>
+<p><a id="refheadingtoc1357402222329424"></a>
 <a id="toc42690790"></a>
-<a id="refheadingtoc1357402222329424"></a></p>
+<a id="toc42690404"></a>
+<a id="toc42690018"></a></p>
 <h2 id="174-rudiments-du-langage-html">17.4. Rudiments du langage HTML</h2>
 <p>Ce chapitre ne va pas s’appesantir sur la programmation WEB en PHP. Une application web MVC est développée au paragraphe <a href="#_Exercice_d’application_–"><u><span style="color: #0563c1">lien</span></u></a>. Ce chapitre s’intéresse plutôt aux <strong>services web</strong> : des pages PHP qui délivrent, via un serveur web, des données à destination d’autres clients PHP. Néanmoins il nous a semblé utile de donner quelques rudiments de HTML au lecteur.</p>
 <p>Un navigateur web peut afficher divers documents, le plus courant étant le document HTML (HyperText Markup Language). Celui-ci est un texte formaté avec des balises de la forme <em>&lt;balise&gt;texte&lt;/balise&gt;</em>. Ainsi le texte <em>&lt;b&gt;important&lt;/b&gt;</em> affichera le texte <em>important</em> en gras. Il existe des balises seules, telles que la balise <em>&lt;hr/&gt;</em> qui affiche une ligne horizontale. Nous ne passerons pas en revue les balises que l&#x27;on peut trouver dans un texte HTML. Il existe de nombreux logiciels WYSIWYG permettant de construire une page WEB sans écrire une ligne de code HTML. Ces outils génèrent automatiquement le code HTML d&#x27;une mise en page faite à l&#x27;aide de la souris et de contrôles prédéfinis. On peut ainsi insérer (avec la souris) dans la page un tableau puis consulter le code HTML généré par le logiciel pour découvrir les balises à utiliser pour définir un tableau dans une page WEB. Ce n&#x27;est pas plus compliqué que cela. Par ailleurs, la connaissance du langage HTML est indispensable puisque les applications web dynamiques doivent générer elles-mêmes le code HTML à envoyer aux clients WEB. Ce code est généré par programme et il faut bien sûr savoir ce qu&#x27;il faut générer pour que le client ait la page web qu&#x27;il désire.</p>
@@ -1811,10 +1811,10 @@
 <ul>
 <li>en <strong>[3-5]</strong>, on voit les trois requêtes faites par le navigateur ;</li>
 </ul>
-<p><a id="toc42690019"></a>
-<a id="toc42690405"></a>
+<p><a id="refheadingtoc1357422222329424"></a>
 <a id="toc42690791"></a>
-<a id="refheadingtoc1357422222329424"></a></p>
+<a id="toc42690405"></a>
+<a id="toc42690019"></a></p>
 <h2 id="175-rendre-dynamique-une-page-statique">17.5. Rendre dynamique une page statique</h2>
 <p>Montrons comment nous pouvons dynamiser la page HTML <strong>[exemple-01.html]</strong>. Copions le contenu</p>
 <p><img src="images/10000000000005880000024969686C7D.png" style="width:13.11cm;height:5.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005880000024969686C7D.png" /></p>
@@ -1899,10 +1899,10 @@
 <li>ils n’enverront que des données au client et aucune décoration (HTML, CSS, Javascript). Ce seront donc des serveurs de données plutôt que des page web ;</li>
 <li>les clients de ces scripts web seront des scripts console qui se chargeront de récupérer les données envoyées par le serveur et d’en faire quelque chose ;</li>
 </ul>
-<p><a id="toc42690020"></a>
-<a id="toc42690406"></a>
+<p><a id="refheading399401881943603"></a>
 <a id="toc42690792"></a>
-<a id="refheading399401881943603"></a></p>
+<a id="toc42690406"></a>
+<a id="toc42690020"></a></p>
 <h2 id="176-application-client-serveur-de-dateheure">17.6. Application client/ serveur de date/heure</h2>
 <p>Nous nous plaçons maintenant dans la configuration suivante :</p>
 <p><img src="images/100000000000073D0000026950637B57.png" style="width:14.712cm;height:4.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000073D0000026950637B57.png" /></p>
@@ -1916,10 +1916,10 @@
 <li>en <strong>[1]</strong>, le script web <strong>[date-time-server.php]</strong> ;</li>
 <li>en <strong>[2]</strong>, le script console <strong>[date-time-client]</strong> client du script web ;</li>
 </ul>
-<p><a id="toc42690021"></a>
-<a id="toc42690407"></a>
+<p><a id="refheadingtoc1357442222329424"></a>
 <a id="toc42690793"></a>
-<a id="refheadingtoc1357442222329424"></a></p>
+<a id="toc42690407"></a>
+<a id="toc42690021"></a></p>
 <h3 id="1761-le-script-serveur">17.6.1. Le script serveur</h3>
 <p>Nous avons déjà écrit un script web générant la date et l’heure du moment présent au paragraphe <a href="#_Création_d’une_page"><u><span style="color: #0563c1">lien</span></u></a>. C’était le script <strong>[exemple-01.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1971,10 +1971,10 @@
 <p><img src="images/1000000000000796000003261DA13080.png" style="width:15.41cm;height:6.4cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000796000003261DA13080.png" /></p>
 <p>Si nous examinons dans le navigateur la réponse du serveur (F12), nous voyons en <strong>[5]</strong> l’entête HTTP que le script serveur a fixé et en <strong>[8]</strong>, le document texte reçu ;</p>
 <p><img src="images/10000000000002CC0000014ADBD699FB.png" style="width:6.631cm;height:3.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002CC0000014ADBD699FB.png" /></p>
-<p><a id="toc42690022"></a>
-<a id="toc42690408"></a>
+<p><a id="refheadingtoc1357462222329424"></a>
 <a id="toc42690794"></a>
-<a id="refheadingtoc1357462222329424"></a></p>
+<a id="toc42690408"></a>
+<a id="toc42690022"></a></p>
 <h3 id="1762-le-script-client">17.6.2. Le script client</h3>
 <p>Au paragraphe <a href="#_Le_protocole_HTTP"><u><span style="color: #0563c1">lien</span></u></a> nous avons développé plusieurs clients HTTP. Nous pourrions les utiliser pour récupérer le document texte envoyé par le script serveur <strong>[date-time-server.php]</strong>. Nous n’allons pas le faire. Comme nous l’avons fait pour les protocole SMTP et IMAP, nous allons utiliser une bibliothèque tierce, à savoir le composant <strong>[HttpClient]</strong> du framework Symfony <strong>[https://symfony.com/doc/master/components/http_client.html]</strong>.</p>
 <p>Comme pour les deux précédentes bibliothèques, on utilise l’outil <strong>[Composer]</strong> pour installer le  composant <strong>[HttpClient]</strong> de Symfony. Dans une fenêtre <strong>[Terminal]</strong> de Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>), on tape la commande suivante :</p>
@@ -2126,10 +2126,10 @@
 <ul>
 <li>en <strong>[7]</strong>, ce qu’a reçu le client Symfony ;</li>
 </ul>
-<p><a id="toc42690023"></a>
-<a id="toc42690409"></a>
+<p><a id="refheadingtoc1357482222329424"></a>
 <a id="toc42690795"></a>
-<a id="refheadingtoc1357482222329424"></a></p>
+<a id="toc42690409"></a>
+<a id="toc42690023"></a></p>
 <h3 id="1763-le-script-serveur-version-2">17.6.3. Le script serveur – version 2</h3>
 <p>De base,  les fonctions PHP pour écrire un script web ne sont pas orientées objet. Côté serveur, on est alors amenés à mélanger classes et fonctions PHP classiques. Pour avoir une écriture plus homogène, nous allons utiliser la bibliothèque <strong>[HttpFoundation]</strong> du framework Symfony. Elle a encapsulé toutes les fonctions PHP classiques pour un service web dans un système de classes et interfaces. La documentation de la bibliothèque est disponible à l’URL <strong>[https://symfony.com/doc/current/components/http_foundation.html]</strong>  (mai 2019).</p>
 <p>Pour installer la bibliothèque, nous procédons de la façon suivante dans un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
@@ -2195,10 +2195,10 @@
 <li>ligne 25 : on fixe le document de la réponse, ce qu’a demandé le client ;</li>
 <li>ligne 28 : on envoie la réponse au client ;</li>
 </ul>
-<p><a id="toc42690024"></a>
-<a id="toc42690410"></a>
+<p><a id="refheadingtoc1357502222329424"></a>
 <a id="toc42690796"></a>
-<a id="refheadingtoc1357502222329424"></a></p>
+<a id="toc42690410"></a>
+<a id="toc42690024"></a></p>
 <h3 id="1764-le-script-client-version-2">17.6.4. Le script client – version 2</h3>
 <p>Le script client ne change pas. On change seulement son fichier de configuration <strong>[config-date-time-client.json]</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
@@ -2208,17 +2208,17 @@
 <a id="__codelineno-8-3" name="__codelineno-8-3"></a>}
 </code></pre></div></td></tr></table></div>
 <p>Les résultats sont les mêmes que dans la version 1.</p>
-<p><a id="toc42690025"></a>
-<a id="toc42690411"></a>
+<p><a id="refheadingtoc1357522222329424"></a>
 <a id="toc42690797"></a>
-<a id="refheadingtoc1357522222329424"></a></p>
+<a id="toc42690411"></a>
+<a id="toc42690025"></a></p>
 <h2 id="177-un-serveur-de-donnees-json">17.7. Un serveur de données jSON</h2>
 <p>La réponse d’un script web peut être composée de plusieurs données qu’on peut rassembler dans des tableaux et des objets. Le script peut alors envoyer ces divers éléments au sein d’une chaîne jSON que le client décodera.</p>
 <p><img src="images/100000000000048C000001DABB116411.png" style="width:10.782cm;height:4.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048C000001DABB116411.png" /></p>
-<p><a id="toc42690026"></a>
-<a id="toc42690412"></a>
+<p><a id="refheadingtoc1357542222329424"></a>
 <a id="toc42690798"></a>
-<a id="refheadingtoc1357542222329424"></a></p>
+<a id="toc42690412"></a>
+<a id="toc42690026"></a></p>
 <h3 id="1771-le-script-serveur">17.7.1. Le script serveur</h3>
 <p>Le script <strong>[json-server.php]</strong> utilise la classe <strong>[Personne]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2353,10 +2353,10 @@
 <li>en <strong>[4]</strong>, la réponse jSON brute. On remarquera l’encodage des caractères accentués ;</li>
 <li>en <strong>[6]</strong>, c’est le type de contenu <strong>[application/json]</strong> envoyé par le serveur qui a conduit le navigateur à faire cette mise en forme ;</li>
 </ul>
-<p><a id="toc42690027"></a>
-<a id="toc42690413"></a>
+<p><a id="refheadingtoc1357562222329424"></a>
 <a id="toc42690799"></a>
-<a id="refheadingtoc1357562222329424"></a></p>
+<a id="toc42690413"></a>
+<a id="toc42690027"></a></p>
 <h3 id="1772-le-client">17.7.2. Le client</h3>
 <p><img src="images/10000000000001D60000021C547535B7.png" style="width:4.351cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D60000021C547535B7.png" /></p>
 <p>Le client <strong>[json-client.php]</strong> est configuré par le fichier jSON <strong>[config-json-client.json]</strong> suivant :</p>
@@ -2451,16 +2451,16 @@
 </code></pre></div>
 
 <p>Lignes 11 et 12, on a récupéré correctement les caractères accentués.</p>
-<p><a id="toc42690028"></a>
-<a id="toc42690414"></a>
+<p><a id="refheading399641881943603"></a>
 <a id="toc42690800"></a>
-<a id="refheading399641881943603"></a></p>
+<a id="toc42690414"></a>
+<a id="toc42690028"></a></p>
 <h2 id="178-recuperation-des-variables-denvironnement-du-service-web">17.8. Récupération des variables d&#x27;environnement du service web</h2>
 <p>Un script serveur s&#x27;exécute dans un environnement web qu&#x27;il peut connaître. Cet environnement est stocké dans le dictionnaire $_SERVER, une variable globale de PHP. Si nous utilisons la bibliothèque <strong>[HttpFoundation]</strong>, cet environnement sera trouvé dans le champ <strong>[Request→server]</strong> où <strong>[Request]</strong> est la requête HTTP traitée par le script web.</p>
-<p><a id="toc42690029"></a>
-<a id="toc42690415"></a>
+<p><a id="refheadingtoc1357582222329424"></a>
 <a id="toc42690801"></a>
-<a id="refheadingtoc1357582222329424"></a></p>
+<a id="toc42690415"></a>
+<a id="toc42690029"></a></p>
 <h3 id="1781-le-script-serveur">17.8.1. Le script serveur</h3>
 <p>Nous écrivons une application serveur qui envoie à ses clients son environnement d’exécution.</p>
 <p><img src="images/10000000000001760000012993C0312C.png" style="width:3.462cm;height:2.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001760000012993C0312C.png" /></p>
@@ -2498,10 +2498,10 @@
 <li>en <strong>[2]</strong>, les différentes clés du dictionnaire de l’environnement ;</li>
 <li>en <strong>[3]</strong>, les valeurs de ces clés ;</li>
 </ul>
-<p><a id="toc42690030"></a>
-<a id="toc42690416"></a>
+<p><a id="refheadingtoc1357602222329424"></a>
 <a id="toc42690802"></a>
-<a id="refheadingtoc1357602222329424"></a></p>
+<a id="toc42690416"></a>
+<a id="toc42690030"></a></p>
 <h3 id="1782-le-script-client">17.8.2. Le script client</h3>
 <p><img src="images/10000000000001CD00000193E568E604.png" style="width:4.271cm;height:3.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000193E568E604.png" /></p>
 <p>Le script client <strong>[env-client.php]</strong> est configuré par le fichier jSON <strong>[config-env-client.json]</strong> suivant :</p>
@@ -2688,15 +2688,15 @@
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">$_SERVER<b>[&#x27;SCRIPT_FILENAME&#x27;]</b>=$_SERVER<b>[&#x27;DOCUMENT_ROOT&#x27;]</b>.$_SERVER<b>[&#x27;SCRIPT_NAME&#x27;]</b></p></td></tr></table>
 
-<p><a id="toc42690031"></a>
-<a id="toc42690417"></a>
+<p><a id="refheading399521881943603"></a>
 <a id="toc42690803"></a>
-<a id="refheading399521881943603"></a></p>
+<a id="toc42690417"></a>
+<a id="toc42690031"></a></p>
 <h2 id="179-recuperation-par-le-serveur-de-parametres-envoyes-par-un-client">17.9. Récupération par le serveur de paramètres envoyés par un client</h2>
-<p><a id="toc42690032"></a>
-<a id="toc42690418"></a>
+<p><a id="refheadingtoc1357622222329424"></a>
 <a id="toc42690804"></a>
-<a id="refheadingtoc1357622222329424"></a></p>
+<a id="toc42690418"></a>
+<a id="toc42690032"></a></p>
 <h3 id="1791-introduction">17.9.1. Introduction</h3>
 <p>Dans le protocole HTTP, un client a deux méthodes pour passer des paramètres au serveur WEB :</p>
 <ul>
@@ -2740,10 +2740,10 @@
 <li><strong>[Request]</strong><strong>-&gt;request-&gt;get</strong>(‘parami’) pour une commande POST ;</li>
 </ul>
 <p>où <strong>[Request]</strong> représente la totalité des informations sur la requête reçue par le script web ;</p>
-<p><a id="toc42690033"></a>
-<a id="toc42690419"></a>
+<p><a id="refheading399541881943603"></a>
 <a id="toc42690805"></a>
-<a id="refheading399541881943603"></a></p>
+<a id="toc42690419"></a>
+<a id="toc42690033"></a></p>
 <h3 id="1792-le-client-get-version-1">17.9.2. Le client GET – version 1</h3>
 <p><img src="images/10000000000002270000024AA090954E.png" style="width:5.1cm;height:5.43cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002270000024AA090954E.png" /></p>
 <p>Les scripts clients sont configurés par le fichier jSON <strong>[config-parameters-client.json]</strong> suivant :</p>
@@ -2840,10 +2840,10 @@
 <ul>
 <li><span style="color: #000000">en </span><strong><span style="color: #000000">[1]</span></strong><span style="color: #000000">, la commande GET paramétrée envoyée par le client. On voit clairement l’encodage de certains caractères ;</span></li>
 </ul>
-<p><a id="toc42690034"></a>
-<a id="toc42690420"></a>
+<p><a id="refheading399561881943603"></a>
 <a id="toc42690806"></a>
-<a id="refheading399561881943603"></a></p>
+<a id="toc42690420"></a>
+<a id="toc42690034"></a></p>
 <h3 id="1793-le-serveur-get-post">17.9.3. Le serveur GET / POST</h3>
 <p><img src="images/10000000000001CF000001421CB68C87.png" style="width:4.291cm;height:2.98cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CF000001421CB68C87.png" /></p>
 <p>Le script serveur <strong>[parameters-server.php]</strong> est le suivant :</p>
@@ -2916,10 +2916,10 @@
 </ul>
 </li>
 </ul>
-<p><a id="toc42690035"></a>
-<a id="toc42690421"></a>
+<p><a id="refheadingtoc1357642222329424"></a>
 <a id="toc42690807"></a>
-<a id="refheadingtoc1357642222329424"></a></p>
+<a id="toc42690421"></a>
+<a id="toc42690035"></a></p>
 <h3 id="1794-le-client-get-version-2">17.9.4. Le client GET – version 2</h3>
 <p>Dans la version précédente du script client, nous avons url-encodé nous-mêmes les paramètres envoyés au serveur, dans un but pédagogique. L’objet <strong>[HttpClient]</strong> sait faire ce travail lui-même. C’est le script <strong>[parameters-get-client-2.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2981,10 +2981,10 @@
 <ul>
 <li>lignes 33-37 : l’ajout de paramètres à la requête GET de la ligne 32. L’objet <strong>[HttpClient]</strong> s’occupera lui-même de l’encodage de l’URL ;</li>
 </ul>
-<p><a id="toc42690036"></a>
-<a id="toc42690422"></a>
+<p><a id="refheading399601881943603"></a>
 <a id="toc42690808"></a>
-<a id="refheading399601881943603"></a></p>
+<a id="toc42690422"></a>
+<a id="toc42690036"></a></p>
 <h3 id="1795-le-client-post">17.9.5. Le client POST</h3>
 <p>Un client HTTP envoie au serveur web la séquence de texte suivante : <em>entêtes HTTP, ligne vide, document</em>. Dans le client précédent, cette séquence était la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
@@ -3102,10 +3102,10 @@
 <li>en <strong>[7]</strong> : l’entête HTTP <strong>[Content-Length]</strong> donne le nombre d’octets du document que va envoyer le client au serveur. L’entête HTTP <strong>[Content-Type]</strong> donne la nature de ce document. Le type <strong>[application/x-www-form-urlencoded]</strong> désigne  un texte url-encodé ;</li>
 <li>en <strong>[8]</strong>, la ligne vide qui annonce la fin des entêtes HTTP et le début du document de 44 octets. Ce que ne montre pas la copie d’écran c’est le document lui-même. C’est la chaîne url-encodée des paramètres : <strong>[prenom=jean-paul&amp;nom=de+la+h%C3%BBche&amp;age=45]</strong>. Le lecteur pourra vérifier qu’elle a bien 44 caractères ;</li>
 </ul>
-<p><a id="toc42690037"></a>
-<a id="toc42690423"></a>
+<p><a id="refheadingtoc45849531951845"></a>
 <a id="toc42690809"></a>
-<a id="refheadingtoc45849531951845"></a></p>
+<a id="toc42690423"></a>
+<a id="toc42690037"></a></p>
 <h3 id="1796-un-client-post-mixte">17.9.6. Un client POST mixte</h3>
 <p>Dans un POST, on peut mixer les paramètres encodés dans l’URL et ceux encodés dans le document envoyé par le client après les entêtes HTTP. Voici un exemple <strong>[parameters-mixte-postclient.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3201,10 +3201,10 @@
 <ul>
 <li>ligne 10 : on voit que le serveur a été capable de récupérer les deux types de paramètres ;</li>
 </ul>
-<p><a id="toc42690038"></a>
-<a id="toc42690424"></a>
+<p><a id="refheadingtoc1357662222329424"></a>
 <a id="toc42690810"></a>
-<a id="refheadingtoc1357662222329424"></a></p>
+<a id="toc42690424"></a>
+<a id="toc42690038"></a></p>
 <h3 id="1797-un-client-get-mixte">17.9.7. Un client GET mixte</h3>
 <p>On essaie de faire la même chose que précédemment avec une requête GET. Le script <strong>[parameters-mixte-get-client.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3305,10 +3305,10 @@
 <li>la méthode <strong>[GET URL?param1=val1&amp;param2=val2&amp;…]</strong> utilise une URL paramétrée qui peut servir de lien. C’est son principal avantage : l’utilisateur peut mettre dans son marque-pages de tels liens ;</li>
 <li>dans d’autres applications, on peut ne pas souhaiter afficher dans une URL les paramètres envoyés au serveur. Pour des raisons de sécurité par exemple. Alors on utilisera une méthode <strong>[POST]</strong> et on mettra les paramètres url-encodés dans un document envoyé au serveur ;</li>
 </ul>
-<p><a id="toc42690039"></a>
-<a id="toc42690425"></a>
+<p><a id="refheading399721881943603"></a>
 <a id="toc42690811"></a>
-<a id="refheading399721881943603"></a></p>
+<a id="toc42690425"></a>
+<a id="toc42690039"></a></p>
 <h2 id="1710-gestion-des-sessions-web">17.10. Gestion des sessions web</h2>
 <p>Dans les exemples client / serveur précédents on avait le fonctionnement suivant :</p>
 <ul>
@@ -3327,10 +3327,10 @@
 </ul>
 <p>On peut se demander comment le serveur fait pour savoir qu&#x27;il a affaire à un nouveau client plutôt qu&#x27;à un client déjà venu. C&#x27;est la présence de l&#x27;en-tête HTTP <em>Cookie</em> dans les en-têtes HTTP du client qui le lui indique. Pour un nouveau client, cet en-tête est absent.</p>
 <p>L&#x27;ensemble des connexions d&#x27;un client donné est appelé une session.</p>
-<p><a id="toc42690040"></a>
-<a id="toc42690426"></a>
+<p><a id="refheading399741881943603"></a>
 <a id="toc42690812"></a>
-<a id="refheading399741881943603"></a></p>
+<a id="toc42690426"></a>
+<a id="toc42690040"></a></p>
 <h3 id="17101-le-fichier-de-configuration-phpini">17.10.1. Le fichier de configuration [php.ini]</h3>
 <p>Pour que la gestion des sessions fonctionne correctement avec PHP, il faut vérifier que celui-ci est correctement configuré. Sous windows, son fichier de configuration est <em>php.ini</em>. Selon le contexte d&#x27;exécution (console, web), le fichier de configuration <strong>[php.ini]</strong> doit être recherché dans des dossiers différents. Pour découvrir ceux-ci, on utilisera le script suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span>
@@ -3403,15 +3403,15 @@
 <li>ligne 16 : durée de vie au-delà de laquelle les objets de session stockés dans le fichier de sauvegarde sont considérés comme obsolètes ;</li>
 <li>ligne 19 : durée de vie d’une session. Au-delà de cette durée, une nouvelle session est créée et les objets sauvegardés dans la précédente session sont perdus ;</li>
 </ul>
-<p><a id="toc42690041"></a>
-<a id="toc42690427"></a>
+<p><a id="refheading399761881943603"></a>
 <a id="toc42690813"></a>
-<a id="refheading399761881943603"></a></p>
+<a id="toc42690427"></a>
+<a id="toc42690041"></a></p>
 <h3 id="17102-exemple-1">17.10.2. Exemple 1</h3>
-<p><a id="toc42690042"></a>
-<a id="toc42690428"></a>
+<p><a id="refheadingtoc1357682222329424"></a>
 <a id="toc42690814"></a>
-<a id="refheadingtoc1357682222329424"></a></p>
+<a id="toc42690428"></a>
+<a id="toc42690042"></a></p>
 <h4 id="171021-le-serveur">17.10.2.1. Le serveur</h4>
 <p><img src="images/10000000000001A40000019C91412345.png" style="width:3.89cm;height:3.821cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A40000019C91412345.png" /></p>
 <p>La gestion de l&#x27;identifiant de session est transparent pour un service web. Cet identifiant est géré par le serveur web. Un service web a accès à la session du client via l&#x27;instruction <em>session_start()</em>. A partir de ce moment, le service web peut lire / écrire des données dans la session du client via le dictionnaire $_SESSION. Si on utilise la bibliothèque <strong>[HttpFoundation]</strong>, la session est disponible via l’expression <strong>[Request→getSession]</strong>.</p>
@@ -3504,10 +3504,10 @@
 <li>En <strong>[12]</strong>, dans sa réponse, le service web n&#x27;inclut plus cet identifiant. C&#x27;est désormais le client qui a la charge de l&#x27;envoyer à chacune de ses demandes.</li>
 </ul>
 <p><a id="leclient"></a>
-<a id="refheading399781881943603"></a>
-<a id="toc42690043"></a>
+<a id="toc42690815"></a>
 <a id="toc42690429"></a>
-<a id="toc42690815"></a></p>
+<a id="toc42690043"></a>
+<a id="refheading399781881943603"></a></p>
 <h4 id="171022-le-client">17.10.2.2. Le client</h4>
 <p>Nous écrivons maintenant un script client du script serveur précédent. Dans sa gestion de la session, il doit se comporter comme le navigateur web :</p>
 <ul>
@@ -3657,15 +3657,15 @@
 <li>ligne 41 : les trois compteurs <strong>[N1, N2, N3]</strong> ont bien été incrémentés 9 fois. Lors de la requête n° 1, ils ont été mis à zéro ;</li>
 </ul>
 <p>L’exemple suivant montre qu&#x27;on peut aussi sauvegarder les valeurs d&#x27;un tableau ou d&#x27;un objet dans la session.</p>
-<p><a id="toc42690044"></a>
-<a id="toc42690430"></a>
+<p><a id="refheadingtoc1357702222329424"></a>
 <a id="toc42690816"></a>
-<a id="refheadingtoc1357702222329424"></a></p>
+<a id="toc42690430"></a>
+<a id="toc42690044"></a></p>
 <h3 id="17103-exemple-2">17.10.3. Exemple 2</h3>
-<p><a id="toc42690045"></a>
-<a id="toc42690431"></a>
+<p><a id="refheading399821881943603"></a>
 <a id="toc42690817"></a>
-<a id="refheading399821881943603"></a></p>
+<a id="toc42690431"></a>
+<a id="toc42690045"></a></p>
 <h4 id="171031-le-serveur">17.10.3.1. Le serveur</h4>
 <p><img src="images/100000000000019F000001908BBB8EE6.png" style="width:3.841cm;height:3.701cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019F000001908BBB8EE6.png" /></p>
 <p>Nous allons mettre un objet <strong>[Personne]</strong> dans la session. La définition de cette classe est la suivante :</p>
@@ -3829,10 +3829,10 @@
 <ul>
 <li>on voit qu’en <strong>[6-8]</strong>, tous les compteurs ont été incrémentés ;</li>
 </ul>
-<p><a id="toc42690046"></a>
-<a id="toc42690432"></a>
+<p><a id="refheadingtoc1357722222329424"></a>
 <a id="toc42690818"></a>
-<a id="refheadingtoc1357722222329424"></a></p>
+<a id="toc42690432"></a>
+<a id="toc42690046"></a></p>
 <h4 id="171032-le-client">17.10.3.2. Le client</h4>
 <p><img src="images/10000000000002040000022F2B747213.png" style="width:4.781cm;height:5.181cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002040000022F2B747213.png" /></p>
 <p>Le client est le même que dans l’exemple 1 (paragraphe <a href="#_Le_client"><u><span style="color: #0563c1">lien</span></u></a>). On ne modifie que son fichier de configuration <strong>[config-session-client]</strong> :</p>
@@ -3871,16 +3871,16 @@
 <ul>
 <li>en ligne <strong>[22]</strong>, on voit que tous les compteurs ont été incrémentés ;</li>
 </ul>
-<p><a id="toc42690047"></a>
-<a id="toc42690433"></a>
+<p><a id="refheadingtoc1357742222329424"></a>
 <a id="toc42690819"></a>
-<a id="refheadingtoc1357742222329424"></a></p>
+<a id="toc42690433"></a>
+<a id="toc42690047"></a></p>
 <h2 id="1711-authentification">17.11. Authentification</h2>
 <p>Nous nous intéressons maintenant aux services web destinés à certains utilisateurs seulement. Le client doit alors s’identifier auprès du service web avant d’avoir sa réponse.</p>
-<p><a id="toc42690048"></a>
-<a id="toc42690434"></a>
+<p><a id="refheadingtoc1357762222329424"></a>
 <a id="toc42690820"></a>
-<a id="refheadingtoc1357762222329424"></a></p>
+<a id="toc42690434"></a>
+<a id="toc42690048"></a></p>
 <h3 id="17111-le-client">17.11.1. Le client</h3>
 <p><img src="images/1000000000000178000001526A8C2B00.png" style="width:3.481cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000178000001526A8C2B00.png" /></p>
 <p>Le code du client <strong>[auth-client.php]</strong> est le suivant :</p>
@@ -3960,10 +3960,10 @@
 </ul>
 <p>Pour vous en assurer, vous pouvez décoder la chaîne reçue sur le site <strong>[https://www.base64decode.org/]</strong> :</p>
 <p><img src="images/100000000000046100000487436CFBAD.png" style="width:8.901cm;height:9.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046100000487436CFBAD.png" /></p>
-<p><a id="toc42690049"></a>
-<a id="toc42690435"></a>
+<p><a id="refheadingtoc1357782222329424"></a>
 <a id="toc42690821"></a>
-<a id="refheadingtoc1357782222329424"></a></p>
+<a id="toc42690435"></a>
+<a id="toc42690049"></a></p>
 <h3 id="17112-le-serveur">17.11.2. Le serveur</h3>
 <p><img src="images/100000000000017B000001B8696A8430.png" style="width:3.511cm;height:4.07cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017B000001B8696A8430.png" /></p>
 <p>Le serveur <strong>[auth-server.php]</strong> est le suivant :</p>
@@ -4091,10 +4091,10 @@
 <li>ligne 1 : le serveur a répondu <strong>[HTTP/1. 200 OK]</strong> ;</li>
 <li>ligne 7 : la réponse n’a pas de contenu (0 octet) ;</li>
 </ul>
-<p><a id="toc42690050"></a>
-<a id="toc42690436"></a>
+<p><a id="refheadingtoc1357802222329424"></a>
 <a id="toc42690822"></a>
-<a id="refheadingtoc1357802222329424"></a></p>
+<a id="toc42690436"></a>
+<a id="toc42690050"></a></p>
 <h3 id="17113-securiser-la-connexion-client-serveur">17.11.3. Sécuriser la connexion client / serveur</h3>
 <p>Nous avons vu que pour s’authentifier auprès du serveur, le client envoyait l’entête :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>authorization: Basic YWRtaW46YWRtaW4=

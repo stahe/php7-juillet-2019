@@ -1273,10 +1273,10 @@
 
 
 <p><a id="exercicedapplication-1"></a>
-<a id="refheading399241881943603"></a>
-<a id="toc42689943"></a>
+<a id="toc42690715"></a>
 <a id="toc42690329"></a>
-<a id="toc42690715"></a></p>
+<a id="toc42689943"></a>
+<a id="refheading399241881943603"></a></p>
 <h1 id="13-exercice-dapplication-version-5">13. Exercice d’application – version 5</h1>
 <p><img src="images/10000000000000ED000000FF746725B4.png" style="width:2.192cm;height:2.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000FF746725B4.png" /></p>
 <p>Nous avons déjà écrit plusieurs versions de cet exercice. La dernière version utilisait une architecture en couches :</p>
@@ -1286,10 +1286,10 @@
 <li><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInJsonFile]</span></strong><span style="color: #000000"> qui allait chercher les données fiscales dans un fichier jSON ;</span></li>
 </ul>
 <p><span style="color: #000000">Nous allons implémenter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> par une nouvelle classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> qui ira chercher les données de l’administration fiscale dans une base de données MySQL.</span></p>
-<p><a id="toc42689944"></a>
-<a id="toc42690330"></a>
+<p><a id="refheadingtoc822303439697744"></a>
 <a id="toc42690716"></a>
-<a id="refheadingtoc822303439697744"></a></p>
+<a id="toc42690330"></a>
+<a id="toc42689944"></a></p>
 <h2 id="131-creation-de-la-base-de-donnees-dbimpots-2019">13.1. Création de la base de données [dbimpots-2019]</h2>
 <p>En suivant l’exemple du paragraphe <a href="#_Création_d’une_base"><u><span style="color: #0563c1">lien</span></u></a>, nous construisons une base de données MySQL nommée <strong>[dbimpots-2019]</strong> dont le propriétaire sera <strong>[admimpots]</strong> avec le mot de passe <strong>[mdpimpots]</strong> :</p>
 <p><img src="images/10000000000004C800000247CE804F2A.png" style="width:9.722cm;height:4.631cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C800000247CE804F2A.png" /></p>
@@ -1436,10 +1436,10 @@
 <p>Vous pouvez utiliser ce fichier SQL pour régénérer la base <strong>[dbimpots-2019]</strong> si elle a été détruite ou altérée. Il n’y a pas lieu ici de supprimer la base avant de la régénérer puisque le script SQL prend soin de le faire lui-même :</p>
 <p><img src="images/10000000000004AE000002A399F8210F.png" style="width:9.512cm;height:5.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004AE000002A399F8210F.png" /></p>
 <p><img src="images/100000000000048B0000031074337D0E.png" style="width:9.231cm;height:6.22cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048B0000031074337D0E.png" /></p>
-<p><a id="toc42689945"></a>
-<a id="toc42690331"></a>
+<p><a id="refheadingtoc185655971629160"></a>
 <a id="toc42690717"></a>
-<a id="refheadingtoc185655971629160"></a></p>
+<a id="toc42690331"></a>
+<a id="toc42689945"></a></p>
 <h2 id="132-organisation-du-code">13.2. Organisation du code</h2>
 <p>Pour mieux montrer le rôle des différents scripts PHP que nous écrivons, nous allons organiser notre code en dossiers :</p>
 <p><img src="images/10000000000007570000021284DA5294.png" style="width:14.911cm;height:4.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007570000021284DA5294.png" /></p>
@@ -1471,15 +1471,15 @@
 </ul>
 <p>Nous allons traiter ces deux objectifs séparément.</p>
 <p><a id="remplissagedebase"></a>
-<a id="refheadingtoc822323439697744"></a>
-<a id="toc42689946"></a>
+<a id="toc42690718"></a>
 <a id="toc42690332"></a>
-<a id="toc42690718"></a></p>
+<a id="toc42689946"></a>
+<a id="refheadingtoc822323439697744"></a></p>
 <h2 id="133-remplissage-de-base-de-donnees-dbimpots-2019">13.3. Remplissage de base de données [dbimpots-2019]</h2>
-<p><a id="toc42689947"></a>
-<a id="toc42690333"></a>
+<p><a id="refheadingtoc900663955410047"></a>
 <a id="toc42690719"></a>
-<a id="refheadingtoc900663955410047"></a></p>
+<a id="toc42690333"></a>
+<a id="toc42689947"></a></p>
 <h3 id="1331-objectif">13.3.1. Objectif</h3>
 <p>Le fichier texte <em>taxadmindata.json</em> contient les données de l’administration fiscale :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1520,10 +1520,10 @@
 
 <p>Notre objectif est de transférer ces données dans la base MySQL <strong>[dbimpots-2019]</strong> créée précédemment.</p>
 <p><a id="lesentites"></a>
-<a id="refheadingtoc1888263931965946"></a>
-<a id="toc42689948"></a>
+<a id="toc42690720"></a>
 <a id="toc42690334"></a>
-<a id="toc42690720"></a></p>
+<a id="toc42689948"></a>
+<a id="refheadingtoc1888263931965946"></a></p>
 <h3 id="1332-les-entites">13.3.2. Les entités</h3>
 <p><img src="images/10000000000003ED0000021E69AFDE53.png" style="width:9.311cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003ED0000021E69AFDE53.png" /></p>
 <p>L’entité <strong>[Database]</strong> servira à encapsuler les données du fichier jSON <strong>[database.json]</strong> suivant :</p>
@@ -1654,10 +1654,10 @@
 </code></pre></div>
 
 <p><a id="laclassede"></a>
-<a id="refheadingtoc1911633931965946"></a>
-<a id="toc42689949"></a>
+<a id="toc42690721"></a>
 <a id="toc42690335"></a>
-<a id="toc42690721"></a></p>
+<a id="toc42689949"></a>
+<a id="refheadingtoc1911633931965946"></a></p>
 <h4 id="13321-la-classe-de-base-baseentity">13.3.2.1. La classe de base [BaseEntity]</h4>
 <p>Pour simplifier le code des entités, nous adopterons la règle suivante : <strong>les attributs d’une entité ont les mêmes noms que les attributs du fichier jSON que l’entité doit encapsuler</strong>. Moyennant cette règle, les entités <strong>[Database, TaxAdminData, TaxPayerData]</strong> ont des points communs qui peuvent être factorisés dans une classe parent. Ce sera la classe <strong>[BaseEntity]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1751,10 +1751,10 @@
 <li>lignes 53-60 : la méthode <strong>[setFromArrayOfAttributes]</strong> permet à une classe fille d’initialiser tout ou partie de ses attributs à partir d’un tableau associatif dont les clés ont les mêmes noms que les attributs de la classe fille à initialiser ;</li>
 <li>lignes 63-70 : la méthode <strong>[__toString]</strong> permet d’avoir la représentation jSON d’une classe fille ;</li>
 </ul>
-<p><a id="toc42689950"></a>
-<a id="toc42690336"></a>
+<p><a id="refheadingtoc185657971629160"></a>
 <a id="toc42690722"></a>
-<a id="refheadingtoc185657971629160"></a></p>
+<a id="toc42690336"></a>
+<a id="toc42689950"></a></p>
 <h4 id="13322-lentite-database">13.3.2.2. L’entité [Database]</h4>
 <p>L’entité <strong>[Database]</strong> est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1880,10 +1880,10 @@
 <li>ligne 34 : on rend l’instance <strong>[Database]</strong> qui vient d’être initialisée ;</li>
 <li>lignes 37 et au-delà : les getters et setters des attributs de la classe ;</li>
 </ul>
-<p><a id="toc42689951"></a>
-<a id="toc42690337"></a>
+<p><a id="refheadingtoc185659971629160"></a>
 <a id="toc42690723"></a>
-<a id="refheadingtoc185659971629160"></a></p>
+<a id="toc42690337"></a>
+<a id="toc42689951"></a></p>
 <h4 id="13323-lentite-taxadmindata">13.3.2.3. L’entité [TaxAdminData]</h4>
 <p>L’entité <strong>[TaxAdminData]</strong> est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2044,10 +2044,10 @@
 <li>ligne 27 : on demande à la classe parent de vérifier que tous les attributs de la classe fille ont été initialisés ;</li>
 <li>lignes 29-42 : on vérifie localement que tous les attributs ont eu une valeur réelle positive ou nulle. Cette vérification a déjà été discutée au paragraphe <a href="#_La_classe_[TaxAdminData]"><u><span style="color: #0563c1">lien</span></u></a> de la version 03 ;</li>
 </ul>
-<p><a id="toc42689952"></a>
-<a id="toc42690338"></a>
+<p><a id="refheadingtoc900683955410047"></a>
 <a id="toc42690724"></a>
-<a id="refheadingtoc900683955410047"></a></p>
+<a id="toc42690338"></a>
+<a id="toc42689952"></a></p>
 <h3 id="1333-la-couche-dao">13.3.3. La couche [dao]</h3>
 <p>Maintenant nous pouvons écrire le code qui va transférer les données du fichier texte <strong>[taxadmindata.json]</strong> dans les tables <strong>[tbtranches, tbconstantes]</strong> de la base MySQL <strong>[dbimpots-2019]</strong>. Nous adopterons l’architecture suivante :</p>
 <p><img src="images/10000000000005720000019D40CA363B.png" style="width:11.06cm;height:3.282cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005720000019D40CA363B.png" /></p>
@@ -2248,10 +2248,10 @@
 <li>lignes 9-31 : préparation de l’ordre SQL d’insertion. Il est complexe du fait qu’il y a 10 colonnes à initialiser dans cette opération d’insertion et qu’il faut aller chercher les noms des colonnes dans l’attribut <strong>[$database]</strong> ;</li>
 <li>ligne 33-44 : exécution de l’ordre d’insertion. Il n’y a qu’une ligne à insérer. Là encore, le code est rendu complexe du fait qu’il faille chercher les valeurs à insérer dans l’attribut <strong>[$taxAdminData]</strong> ;</li>
 </ul>
-<p><a id="toc42689953"></a>
-<a id="toc42690339"></a>
+<p><a id="refheadingtoc900703955410047"></a>
 <a id="toc42690725"></a>
-<a id="refheadingtoc900703955410047"></a></p>
+<a id="toc42690339"></a>
+<a id="toc42689953"></a></p>
 <h3 id="1334-le-script-principal">13.3.4. Le script principal</h3>
 <p><img src="images/1000000000000555000001880BB7E59F.png" style="width:10.831cm;height:3.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000555000001880BB7E59F.png" /></p>
 <p><img src="images/10000000000003380000014ACA8CBABD.png" style="width:7.631cm;height:3.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003380000014ACA8CBABD.png" /></p>
@@ -2311,17 +2311,17 @@
 <p><img src="images/100000000000086100000260B490BAA4.png" style="width:17.031cm;height:4.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000086100000260B490BAA4.png" /></p>
 <p><img src="images/10000000000008660000025EBE57E56F.png" style="width:17.07cm;height:4.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008660000025EBE57E56F.png" /></p>
 <p><a id="calculdelimpot"></a>
-<a id="refheadingtoc900723955410047"></a>
-<a id="toc42689954"></a>
+<a id="toc42690726"></a>
 <a id="toc42690340"></a>
-<a id="toc42690726"></a></p>
+<a id="toc42689954"></a>
+<a id="refheadingtoc900723955410047"></a></p>
 <h2 id="134-calcul-de-limpot">13.4. Calcul de l’impôt</h2>
 <p><img src="images/10000000000002AC000001B237376769.png" style="width:5.43cm;height:3.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AC000001B237376769.png" /></p>
 <p><a id="architecture"></a>
-<a id="refheading399281881943603"></a>
-<a id="toc42689955"></a>
+<a id="toc42690727"></a>
 <a id="toc42690341"></a>
-<a id="toc42690727"></a></p>
+<a id="toc42689955"></a>
+<a id="refheading399281881943603"></a></p>
 <h3 id="1341-architecture">13.4.1. Architecture</h3>
 <p>La version 04 de l’application de calcul d’impôt utilisait une architecture en couches :</p>
 <p><img src="images/1000000000000550000001085618D9E1.png" style="width:10.801cm;height:2.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000550000001085618D9E1.png" /></p>
@@ -2332,10 +2332,10 @@
 <p><span style="color: #000000">Nous allons implémenter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> par une nouvelle classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> qui ira chercher les données de l’administration fiscale dans une base de données MySQL. La couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">, comme précédemment, écrira les résultats et les erreurs dans des fichiers texte et trouvera les données des contribuables également dans un fichier texte. Seulement cette fois-ci, ces fichiers texte seront des fichiers jSON. Par ailleurs, nous savons que si nous continuons à respecter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">, la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> n’aura pas à être modifiée.</span></p>
 <p><img src="images/1000000000000695000001A3EDBCE526.png" style="width:13.371cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000695000001A3EDBCE526.png" /></p>
 <p><a id="lentitetaxpayerdata"></a>
-<a id="refheadingtoc1911673931965946"></a>
-<a id="toc42689956"></a>
+<a id="toc42690728"></a>
 <a id="toc42690342"></a>
-<a id="toc42690728"></a></p>
+<a id="toc42689956"></a>
+<a id="refheadingtoc1911673931965946"></a></p>
 <h3 id="1342-lentite-taxpayerdata">13.4.2. L’entité [TaxPayerData]</h3>
 <p><img src="images/10000000000005650000022681C57D11.png" style="width:10.962cm;height:4.37cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005650000022681C57D11.png" /></p>
 <p>La classe <strong>[TaxPayerData]</strong> sert à encapsuler dans une classe les données du fichier jSON <strong>[taxpayersdata.json]</strong> suivant :</p>
@@ -2433,16 +2433,16 @@
 <ul>
 <li>ligne 7 : la classe <strong>[TaxPayerData]</strong> étend la classe <strong>[BaseEntity]</strong>. Les méthodes de sa classe parent étant suffisantes, la classe <strong>[TaxPayerData]</strong> n’en définit pas elle-même. On rappelle que les attributs de la classe <strong>[TaxPayerData]</strong> sont identiques à ceux du fichier jSON <strong>[taxpayersdata.json]</strong> ;</li>
 </ul>
-<p><a id="toc42689957"></a>
-<a id="toc42690343"></a>
+<p><a id="refheadingtoc900743955410047"></a>
 <a id="toc42690729"></a>
-<a id="refheadingtoc900743955410047"></a></p>
+<a id="toc42690343"></a>
+<a id="toc42689957"></a></p>
 <h3 id="1343-la-couche-dao">13.4.3. La couche [dao]</h3>
 <p><a id="letraittraitdao"></a>
-<a id="refheadingtoc1932293931965946"></a>
-<a id="toc42689958"></a>
+<a id="toc42690730"></a>
 <a id="toc42690344"></a>
-<a id="toc42690730"></a></p>
+<a id="toc42689958"></a>
+<a id="refheadingtoc1932293931965946"></a></p>
 <h4 id="13431-le-trait-traitdao">13.4.3.1. Le trait [TraitDao]</h4>
 <p>Le trait <strong>[TraitDao]</strong> implémente une partie de l’interface <strong>[InterfaceDao]</strong>. Rappelons celle-ci :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2606,10 +2606,10 @@
 </li>
 <li><span style="color: #000000">ligne 92 : la chaîne jSON est enregistrée dans le fichier jSON </span><strong><span style="color: #000000">[$resultsFilename]</span></strong><span style="color: #000000"> ;</span></li>
 </ul>
-<p><a id="toc42689959"></a>
-<a id="toc42690345"></a>
+<p><a id="refheadingtoc185661971629160"></a>
 <a id="toc42690731"></a>
-<a id="refheadingtoc185661971629160"></a></p>
+<a id="toc42690345"></a>
+<a id="toc42689959"></a></p>
 <h4 id="13432-la-classe-daoimpotswithtaxadmindataindatabase">13.4.3.2. La classe [DaoImpotsWithTaxAdminDataInDatabase]</h4>
 <p><span style="color: #000000">La classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> implémente l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> de la façon suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2783,10 +2783,10 @@
 </ul>
 <p><strong><span style="color: #000000">Note</span></strong><span style="color: #000000"> : on remarquera que la classe ne dépend pas du SGBD MySQL. C’est le code appelant qui fixe le SGBD utilisé via le DSN de la base de données.</span></p>
 <p><a id="lacouchemetier"></a>
-<a id="refheadingtoc1882293931965946"></a>
-<a id="toc42689960"></a>
+<a id="toc42690732"></a>
 <a id="toc42690346"></a>
-<a id="toc42690732"></a></p>
+<a id="toc42689960"></a>
+<a id="refheadingtoc1882293931965946"></a></p>
 <h3 id="1344-la-couche-metier">13.4.4. La couche [métier]</h3>
 <p><img src="images/10000000000006B00000018B31BDA50D.png" style="width:13.592cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B00000018B31BDA50D.png" /></p>
 <ul>
@@ -2876,10 +2876,10 @@
 <li><span style="color: #000000">le reste du code n’a pas à être modifié ;</span></li>
 </ul>
 <p><a id="lescriptprincipal"></a>
-<a id="refheadingtoc822343439697744"></a>
-<a id="toc42689961"></a>
+<a id="toc42690733"></a>
 <a id="toc42690347"></a>
-<a id="toc42690733"></a></p>
+<a id="toc42689961"></a>
+<a id="refheadingtoc822343439697744"></a></p>
 <h3 id="1345-le-script-principal">13.4.5. Le script principal</h3>
 <p><img src="images/10000000000006910000018BC715A4E0.png" style="width:13.341cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006910000018BC715A4E0.png" /></p>
 <ul>
@@ -3151,17 +3151,17 @@
 </code></pre></div>
 
 <p><span style="color: #000000">Ces résultats sont conformes à ceux de la version 04.</span></p>
-<p><a id="toc42689962"></a>
-<a id="toc42690348"></a>
+<p><a id="refheadingtoc1787302861440889"></a>
 <a id="toc42690734"></a>
-<a id="refheadingtoc1787302861440889"></a></p>
+<a id="toc42690348"></a>
+<a id="toc42689962"></a></p>
 <h2 id="135-tests-codeception">13.5. Tests [Codeception]</h2>
 <p><span style="color: #000000">Comme il a été fait au paragraphe </span><a href="#_Tests_[Codeception]"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> pour la version 04, nous allons écrire des tests </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> pour la version 05.</span></p>
 <p><img src="images/10000000000001E2000001DC4E27D094.png" style="width:3.83cm;height:3.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000001DC4E27D094.png" /></p>
-<p><a id="toc42689963"></a>
-<a id="toc42690349"></a>
+<p><a id="refheadingtoc185663971629160"></a>
 <a id="toc42690735"></a>
-<a id="refheadingtoc185663971629160"></a></p>
+<a id="toc42690349"></a>
+<a id="toc42689963"></a></p>
 <h3 id="1351-test-de-la-couche-dao">13.5.1. Test de la couche [dao]</h3>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[DaoTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3229,10 +3229,10 @@
 </ul>
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/100000000000066B000001BF003361FE.png" style="width:13.04cm;height:3.551cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066B000001BF003361FE.png" /></p>
-<p><a id="toc42689964"></a>
-<a id="toc42690350"></a>
+<p><a id="refheadingtoc185665971629160"></a>
 <a id="toc42690736"></a>
-<a id="refheadingtoc185665971629160"></a></p>
+<a id="toc42690350"></a>
+<a id="toc42689964"></a></p>
 <h3 id="1352-test-de-la-couche-metier">13.5.2. Test de la couche [métier]</h3>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[MetierTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
