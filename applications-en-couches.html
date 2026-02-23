@@ -1066,15 +1066,15 @@
   
 
 
-<p><a id="refheadingtoc788352244347140"></a>
-<a id="toc42690679"></a>
+<p><a id="toc42689907"></a>
 <a id="toc42690293"></a>
-<a id="toc42689907"></a></p>
+<a id="toc42690679"></a>
+<a id="refheadingtoc788352244347140"></a></p>
 <h1 id="10-applications-en-couches">10. Applications en couches</h1>
-<p><a id="refheadingtoc788372244347140"></a>
-<a id="toc42690680"></a>
+<p><a id="toc42689908"></a>
 <a id="toc42690294"></a>
-<a id="toc42689908"></a></p>
+<a id="toc42690680"></a>
+<a id="refheadingtoc788372244347140"></a></p>
 <h2 id="101-introduction">10.1. Introduction</h2>
 <p><img src="images/1000000000000183000001D944836178.png" style="width:3.581cm;height:4.381cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000183000001D944836178.png" /></p>
 <p>Nous allons découvrir maintenant comment structurer une application PHP en couches :</p>
@@ -1105,10 +1105,10 @@
 <p><img src="images/100000000000012A00000145FDB3E370.png" style="width:2.761cm;height:3.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012A00000145FDB3E370.png" /></p>
 <p>L’application va implémenter la structure en couches suivante :</p>
 <p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000338000000EDAD236403.png" /></p>
-<p><a id="refheadingtoc788392244347140"></a>
-<a id="toc42690681"></a>
+<p><a id="toc42689909"></a>
 <a id="toc42690295"></a>
-<a id="toc42689909"></a></p>
+<a id="toc42690681"></a>
+<a id="refheadingtoc788392244347140"></a></p>
 <h2 id="102-objets-echanges-entre-couches">10.2. Objets échangés entre couches</h2>
 <p>En temps normal, les couches échangent divers objets. Ici elles échangeront la classe suivante <strong>[Personne.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1138,10 +1138,10 @@
 <li>lignes 9-11 : le constructeur qui permet de construire un type <strong>[Personne]</strong> avec son identifiant ;</li>
 <li>lignes 14-16 : la méthode <strong>[__toString]</strong> qui affiche l’identifiant de la personne ;</li>
 </ul>
-<p><a id="refheadingtoc788412244347140"></a>
-<a id="toc42690682"></a>
+<p><a id="toc42689910"></a>
 <a id="toc42690296"></a>
-<a id="toc42689910"></a></p>
+<a id="toc42690682"></a>
+<a id="refheadingtoc788412244347140"></a></p>
 <h2 id="103-couche-dao">10.3. Couche [dao]</h2>
 <p>L’interface <strong>[IDao]</strong> implémentée par la couche <strong>[dao, 1]</strong> est la suivante <strong>[IDao.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1206,10 +1206,10 @@
 </code></pre></div>
 
 <p>La classe <strong>[Dao2]</strong> est similaire à la classe <strong>[Dao1]</strong> si ce n’est que nous avons modifié les messages affichés.</p>
-<p><a id="refheadingtoc788432244347140"></a>
-<a id="toc42690683"></a>
+<p><a id="toc42689911"></a>
 <a id="toc42690297"></a>
-<a id="toc42689911"></a></p>
+<a id="toc42690683"></a>
+<a id="refheadingtoc788432244347140"></a></p>
 <h2 id="104-couche-metier">10.4. Couche [métier]</h2>
 <p>La couche <strong>[métier, 2]</strong> offre l’interface <strong>[IMétier]</strong> suivante <strong>[IMetier.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1278,10 +1278,10 @@
 </ul>
 <p><strong>Conclusion</strong></p>
 <p>Dès que la couche <strong>[métier]</strong> a besoin d’accéder aux données stockées dans l’entrepôt de données, elle doit passer par la couche <strong>[dao]</strong> qui a été créée pour accéder à ces données.</p>
-<p><a id="refheadingtoc788452244347140"></a>
-<a id="toc42690684"></a>
+<p><a id="toc42689912"></a>
 <a id="toc42690298"></a>
-<a id="toc42689912"></a></p>
+<a id="toc42690684"></a>
+<a id="refheadingtoc788452244347140"></a></p>
 <h2 id="105-script-principal">10.5. Script principal</h2>
 <p>Nous allons écrire deux scripts, chefs d’orchestre pour cette application. Le 1er <strong>[main1.php]</strong> utilisera la couche <strong>[Dao1]</strong> alors que le second <strong>[main2.php]</strong> utilisera la couche <strong>[Dao2]</strong>. Nous voulons montrer que cela n’a aucune incidence sur le code de la couche <strong>[Métier]</strong>.</p>
 <p>Le script <strong>[main1.php]</strong> est le suivant :</p>

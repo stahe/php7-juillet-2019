@@ -2036,16 +2036,16 @@
 
 
 <p><a id="exercicedapplication-"></a>
-<a id="toc42690876"></a>
-<a id="toc42690490"></a>
+<a id="refheadingtoc1446173519745392"></a>
 <a id="toc42690104"></a>
-<a id="refheadingtoc1446173519745392"></a></p>
+<a id="toc42690490"></a>
+<a id="toc42690876"></a></p>
 <h1 id="23-exercice-dapplication-version-12">23. Exercice d’application – version 12</h1>
 <p>Nous allons dans ce chapitre écrire une application web respectant l’architecture MVC (Modèle-Vue-Contrôleur). L’application pourra délivrer ses réponses dans trois formats : jSON, XML, HTML. Il y a un saut de complexité entre ce que nous allons faire maintenant et ce qui a été fait précédemment. Nous allons réutiliser la plupart des concepts vus jusqu’à maintenant et nous allons détailler toutes les étapes menant à l’application finale.</p>
-<p><a id="refheadingtoc1446193519745392"></a>
-<a id="toc42690877"></a>
+<p><a id="toc42690105"></a>
 <a id="toc42690491"></a>
-<a id="toc42690105"></a></p>
+<a id="toc42690877"></a>
+<a id="refheadingtoc1446193519745392"></a></p>
 <h2 id="231-architecture-mvc">23.1. Architecture MVC</h2>
 <p>Nous allons implémenter le modèle d&#x27;architecture dit MVC (Modèle – Vue – Contrôleur) de la façon suivante :</p>
 <p><img src="images/10000000000006B80000020C2BD41C87.png" style="width:13.652cm;height:4.16cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B80000020C2BD41C87.png" /></p>
@@ -2091,10 +2091,10 @@
 <li>du <strong>modèle du domaine</strong> lorsqu&#x27;on désigne tout ce qui est à droite de la couche <strong>[web]</strong> ;</li>
 <li>du <strong>modèle de la vue</strong> lorsqu&#x27;on désigne les données affichées par une vue V ;</li>
 </ul>
-<p><a id="refheadingtoc1446213519745392"></a>
-<a id="toc42690878"></a>
+<p><a id="toc42690106"></a>
 <a id="toc42690492"></a>
-<a id="toc42690106"></a></p>
+<a id="toc42690878"></a>
+<a id="refheadingtoc1446213519745392"></a></p>
 <h2 id="232-arborescence-du-projet-netbeans">23.2. Arborescence du projet Netbeans</h2>
 <p>Nous adopterons pour le projet Netbeans une architecture reflétant le modèle MVC :</p>
 <p><img src="images/10000000000006D3000003F8C7F1D4F3.png" style="width:16.181cm;height:9.411cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006D3000003F8C7F1D4F3.png" /></p>
@@ -2132,10 +2132,10 @@
 </li>
 <li>lors d’une erreur fatale (HTTP_INTERNAL_SERVER_ERROR), le contrôleur principal <strong>[main.php]</strong> envoie un mail à l’administrateur à l’aide de la classe <strong>[SendMail]</strong> du dossier <strong>[8]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc1446233519745392"></a>
-<a id="toc42690879"></a>
+<p><a id="toc42690107"></a>
 <a id="toc42690493"></a>
-<a id="toc42690107"></a></p>
+<a id="toc42690879"></a>
+<a id="refheadingtoc1446233519745392"></a></p>
 <h2 id="233-les-actions-de-lapplication">23.3. Les actions de l’application</h2>
 <p>Le client transmet au serveur web l’action à exécuter sous la forme d’un paramètre <strong>[action]</strong> dans l’URL <strong>[/main.php?action=xxx]</strong>. Les actions autorisées sont listées dans le fichier <strong>[config.json]</strong> qui configure le contrôleur principal <strong>[main.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2162,10 +2162,10 @@
 <li>ligne 8 : le client termine sa session de simulations avec l’action <strong>[fin-session]</strong>. A partir de ce moment, il devra s’authentifier de nouveau s’il veut utiliser l’application ;</li>
 <li>ligne 9 : dans l’application HTML, l’action <strong>[afficher-calcul-impot]</strong> demande l’affichage du formulaire permettant le calcul de l’impôt ;</li>
 </ul>
-<p><a id="refheadingtoc1446253519745392"></a>
-<a id="toc42690880"></a>
+<p><a id="toc42690108"></a>
 <a id="toc42690494"></a>
-<a id="toc42690108"></a></p>
+<a id="toc42690880"></a>
+<a id="refheadingtoc1446253519745392"></a></p>
 <h2 id="234-configuration-de-lapplication-web">23.4. Configuration de l’application web</h2>
 <p>L’application est configurée par le fichier jSON <strong>[config.json]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2269,15 +2269,15 @@
 </ul>
 </li>
 </ul>
-<p><a id="refheadingtoc1446273519745392"></a>
-<a id="toc42690881"></a>
+<p><a id="toc42690109"></a>
 <a id="toc42690495"></a>
-<a id="toc42690109"></a></p>
+<a id="toc42690881"></a>
+<a id="refheadingtoc1446273519745392"></a></p>
 <h2 id="235-installation-doutils-et-de-bibliotheques">23.5. Installation d’outils et de bibliothèques</h2>
-<p><a id="refheadingtoc1446293519745392"></a>
-<a id="toc42690882"></a>
+<p><a id="toc42690110"></a>
 <a id="toc42690496"></a>
-<a id="toc42690110"></a></p>
+<a id="toc42690882"></a>
+<a id="refheadingtoc1446293519745392"></a></p>
 <h3 id="2351-postman">23.5.1. Postman</h3>
 <p><strong>[Postman]</strong> est l’outil qui va nous permettre d’interroger les différentes URL de notre application web. Il nous permet :</p>
 <ul>
@@ -2301,10 +2301,10 @@
 <li>en <strong>[6]</strong>, la version utilisée dans ce document ;</li>
 <li>si vous avez créé un compte, une synchronisation se fait entre votre poste et un serveur <strong>[Postman]</strong> distant. Cela est symbolisé par la roue <strong>[7]</strong> qui tourne à chaque fois que vous faites des modifications dans le projet <strong>[Postman]</strong>. Pour arrêter cette synchronisation inutile, déconnectez-vous en <strong>[8-9]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc1446313519745392"></a>
-<a id="toc42690883"></a>
+<p><a id="toc42690111"></a>
 <a id="toc42690497"></a>
-<a id="toc42690111"></a></p>
+<a id="toc42690883"></a>
+<a id="refheadingtoc1446313519745392"></a></p>
 <h3 id="2352-la-bibliotheque-symfony-serializer">23.5.2. La bibliothèque Symfony / Serializer</h3>
 <p>Pour sérialiser des objets en jSON et XML, nous allons utiliser la bibliothèque <strong>[Symfony / Serializer]</strong>. Elle présente ici deux avantages :</p>
 <ul>
@@ -2320,10 +2320,10 @@
 </ul>
 <p><img src="images/1000000000000403000001FAC0063F08.png" style="width:9.512cm;height:4.68cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000403000001FAC0063F08.png" /></p>
 <p><a id="lesentitesde"></a>
-<a id="toc42690884"></a>
-<a id="toc42690498"></a>
+<a id="refheadingtoc145343968800088"></a>
 <a id="toc42690112"></a>
-<a id="refheadingtoc145343968800088"></a></p>
+<a id="toc42690498"></a>
+<a id="toc42690884"></a></p>
 <h2 id="236-les-entites-de-lapplication">23.6. Les entités de l’application</h2>
 <p><img src="images/10000000000001850000028EAA2B96AB.png" style="width:3.601cm;height:6.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001850000028EAA2B96AB.png" /></p>
 <p>Les entités <strong>[BaseEntity, Database, ExceptionImpots, TaxAdminData]</strong> ont été utilisées dès la version 08 du service web (cf paragraphe <a href="#_Le_code"><u><span style="color: #0563c1">lien</span></u></a>).</p>
@@ -2390,18 +2390,18 @@
 <li>lignes 7-14 : les attributs de la simulation ;</li>
 <li>lignes 16-47 : les getters de la classe ;</li>
 </ul>
-<p><a id="refheadingtoc1446333519745392"></a>
-<a id="toc42690885"></a>
+<p><a id="toc42690113"></a>
 <a id="toc42690499"></a>
-<a id="toc42690113"></a></p>
+<a id="toc42690885"></a>
+<a id="refheadingtoc1446333519745392"></a></p>
 <h2 id="237-les-utilitaires-de-lapplication">23.7. Les Utilitaires de l’application</h2>
 <p><img src="images/100000000000015E00000077C6FB35CE.png" style="width:3.241cm;height:1.101cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015E00000077C6FB35CE.png" /></p>
 <p>La classe <strong>[Logger]</strong> permet de loguer des événements dans un fichier texte. Cette classe a été décrite au paragraphe <a href="#_La_classe_[Logger]"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p>La classe <strong>[SendAdminMail]</strong> permet d’envoyer un mail à l’administrateur de l’application. Cette classe a été décrite au paragraphe <a href="#_La_classe_[SendAdminMail]"><u><span style="color: #0563c1">lien</span></u></a>.</p>
-<p><a id="refheadingtoc1446353519745392"></a>
-<a id="toc42690886"></a>
+<p><a id="toc42690114"></a>
 <a id="toc42690500"></a>
-<a id="toc42690114"></a></p>
+<a id="toc42690886"></a>
+<a id="refheadingtoc1446353519745392"></a></p>
 <h2 id="238-les-couches-metier-et-dao">23.8. Les couches [métier] et [dao]</h2>
 <p><img src="images/10000000000007D300000260F8FE6911.png" style="width:15.9cm;height:4.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D300000260F8FE6911.png" /></p>
 <p><img src="images/10000000000001AD000000E3C56E9C59.png" style="width:3.971cm;height:2.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AD000000E3C56E9C59.png" /></p>
@@ -2416,15 +2416,15 @@
 </ul>
 <p>Nous allons nous concentrer sur la couche <strong>[web]</strong> de l’application :</p>
 <p><img src="images/10000000000007D50000026742489648.png" style="width:15.911cm;height:4.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D50000026742489648.png" /></p>
-<p><a id="refheadingtoc1446373519745392"></a>
-<a id="toc42690887"></a>
+<p><a id="toc42690115"></a>
 <a id="toc42690501"></a>
-<a id="toc42690115"></a></p>
+<a id="toc42690887"></a>
+<a id="refheadingtoc1446373519745392"></a></p>
 <h2 id="239-le-controleur-principal-mainphp">23.9. Le contrôleur principal [main.php]</h2>
-<p><a id="refheadingtoc1446393519745392"></a>
-<a id="toc42690888"></a>
+<p><a id="toc42690116"></a>
 <a id="toc42690502"></a>
-<a id="toc42690116"></a></p>
+<a id="toc42690888"></a>
+<a id="refheadingtoc1446393519745392"></a></p>
 <h3 id="2391-introduction">23.9.1. Introduction</h3>
 <p><img src="images/1000000000000148000001E2B41A3642.png" style="width:3.04cm;height:4.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000148000001E2B41A3642.png" /></p>
 <ul>
@@ -2444,10 +2444,10 @@
 </ul>
 </li>
 </ul>
-<p><a id="refheadingtoc1446413519745392"></a>
-<a id="toc42690889"></a>
+<p><a id="toc42690117"></a>
 <a id="toc42690503"></a>
-<a id="toc42690117"></a></p>
+<a id="toc42690889"></a>
+<a id="refheadingtoc1446413519745392"></a></p>
 <h3 id="2392-mainphp-1">23.9.2. [main.php] - 1</h3>
 <p>Le code du contrôleur principal <strong>[main.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2535,10 +2535,10 @@
         - <strong>[réponse]</strong> : la réponse du serveur web ;</li>
 <li>ligne 54 : la réponse jSON est envoyée au client ;</li>
 </ul>
-<p><a id="refheadingtoc1446433519745392"></a>
-<a id="toc42690890"></a>
+<p><a id="toc42690118"></a>
 <a id="toc42690504"></a>
-<a id="toc42690118"></a></p>
+<a id="toc42690890"></a>
+<a id="refheadingtoc1446433519745392"></a></p>
 <h3 id="2393-tests-postman-1">23.9.3. Tests [Postman] - 1</h3>
 <p>Nous allons vérifier le comportement du serveur lorsque fichier de configuration est absent ou incorrect :</p>
 <p><img src="images/1000000000000695000003D6416CFD6C.png" style="width:13.371cm;height:7.79cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000695000003D6416CFD6C.png" /></p>
@@ -2624,10 +2624,10 @@
 </ul>
 <p>Nous avons montré ici comment allaient être testées les différentes actions du service web du calcul de l’impôt.</p>
 <p><a id="mainphp-2"></a>
-<a id="toc42690891"></a>
-<a id="toc42690505"></a>
+<a id="refheadingtoc1363603243612768"></a>
 <a id="toc42690119"></a>
-<a id="refheadingtoc1363603243612768"></a></p>
+<a id="toc42690505"></a>
+<a id="toc42690891"></a></p>
 <h3 id="2394-mainphp-2">23.9.4. [main.php] – 2</h3>
 <p>Nous reprenons l’étude du code du contrôleur principal <strong>[main.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2866,10 +2866,10 @@
 </code></pre></div>
 
 <p>Le contrôleur principal <strong>[main.php]</strong> devra respecter cette signature à chaque fois qu’il demandera l’envoi de la réponse au client.</p>
-<p><a id="refheadingtoc1446453519745392"></a>
-<a id="toc42690892"></a>
+<p><a id="toc42690120"></a>
 <a id="toc42690506"></a>
-<a id="toc42690120"></a></p>
+<a id="toc42690892"></a>
+<a id="refheadingtoc1446453519745392"></a></p>
 <h3 id="2395-tests-postman-2">23.9.5. Tests [Postman] – 2</h3>
 <p>Nous modifions le fichier <strong>[config.json]</strong> de la façon suivante :</p>
 <p><img src="images/10000000000006310000028C6BACDEDD.png" style="width:14.682cm;height:6.04cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006310000028C6BACDEDD.png" /></p>
@@ -2882,10 +2882,10 @@
 <li><strong>[2-4]</strong> : nous définissons la même requête que dans les deux tests précédents ;</li>
 <li><strong>[5-7]</strong> : nous récupérons bien la réponse jSON attendue ;</li>
 </ul>
-<p><a id="refheadingtoc1446473519745392"></a>
-<a id="toc42690893"></a>
+<p><a id="toc42690121"></a>
 <a id="toc42690507"></a>
-<a id="toc42690121"></a></p>
+<a id="toc42690893"></a>
+<a id="refheadingtoc1446473519745392"></a></p>
 <h3 id="2396-mainphp-3">23.9.6. [main.php] – 3</h3>
 <p>Continuons l’étude du contrôleur principal <strong>[main.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3130,10 +3130,10 @@
 <li>ligne 9 : on ferme le fichier de logs ;</li>
 <li>ligne 10 : le contrôleur principal a terminé son travail ;</li>
 </ul>
-<p><a id="refheadingtoc1446493519745392"></a>
-<a id="toc42690894"></a>
+<p><a id="toc42690122"></a>
 <a id="toc42690508"></a>
-<a id="toc42690122"></a></p>
+<a id="toc42690894"></a>
+<a id="refheadingtoc1446493519745392"></a></p>
 <h3 id="2397-tests-postman-3">23.9.7. Tests [Postman] – 3</h3>
 <p>On va tester divers cas d’erreur du paramètre <strong>[action]</strong> de l’URL.</p>
 <p><img src="images/100000000000078200000359044FE9DB.png" style="width:15.26cm;height:6.801cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078200000359044FE9DB.png" /></p>
@@ -3163,10 +3163,10 @@
 <li>en <strong>[14-19]</strong>, une action reconnue mais le type (json, xml, html) n’a pas encore été précisé ;</li>
 <li>en <strong>[20-23]</strong>, la réponse jSON du serveur ;</li>
 </ul>
-<p><a id="refheadingtoc1446513519745392"></a>
-<a id="toc42690895"></a>
+<p><a id="toc42690123"></a>
 <a id="toc42690509"></a>
-<a id="toc42690123"></a></p>
+<a id="toc42690895"></a>
+<a id="refheadingtoc1446513519745392"></a></p>
 <h2 id="2310-les-controleurs-secondaires">23.10. Les contrôleurs secondaires</h2>
 <p>Chaque action est exécutée par un des contrôleurs du dossier <strong>[Controllers]</strong> :</p>
 <p><img src="images/100000000000024300000227EB59B553.png" style="width:5.361cm;height:5.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024300000227EB59B553.png" /></p>
@@ -3223,10 +3223,10 @@
 </code></pre></div>
 
 <p>Ligne 3, on voit que le 4e paramètre <strong>[array $infos=NULL]</strong> de la méthode <strong>[execute]</strong> n’est pas utilisé.</p>
-<p><a id="refheadingtoc1446533519745392"></a>
-<a id="toc42690896"></a>
+<p><a id="toc42690124"></a>
 <a id="toc42690510"></a>
-<a id="toc42690124"></a></p>
+<a id="toc42690896"></a>
+<a id="refheadingtoc1446533519745392"></a></p>
 <h2 id="2311-les-actions">23.11. Les actions</h2>
 <p>Nous passons maintenant en revue les différentes actions possibles du service web :</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Action</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Rôle</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Contexte d’exécution</b></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>init-session</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Sert à fixer le type (json, xml, html) des réponses souhaitées</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Requête <b>GET main.php?action=init-session&amp;type=x</b></p><p style="margin:0;">peut être émise à tout moment</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>authentifier-utilisateur</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Autorise ou non un utilisateur à se connecter</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Requête <b>POST main.php?action=authentifier-utilisateur</b></p><p style="margin:0;">La requête doit avoir deux paramètres postés <b>[user, password]</b></p><p style="margin:0;">Ne peut être émise que si le type de la session (json, xml, html) est connu</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>calculer-impot</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Fait une simulation de calcul d’impôt</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Requête <b>POST main.php?action=calculer-impot</b></p><p style="margin:0;">La requête doit avoir trois paramètres postés <b>[marié, enfants, salaire]</b></p><p style="margin:0;">Ne peut être émise que si le type de la session (json, xml, html) est connu et l’utilisateur authentifié</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>lister-simulations</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Demande à voir la liste des simulations opérées depuis le début de la session</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Requête <b>GET main.php?action=lister-simulations</b></p><p style="margin:0;">La requête n’accepte aucun autre paramètre</p><p style="margin:0;">Ne peut être émise que si le type de la session (json, xml, html) est connu et l’utilisateur authentifié</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>supprimer-simulation</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Supprime une simulation de la liste des simulations</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Requête <b>GET main.php?action=lister-simulations&amp;numéro=x</b></p><p style="margin:0;">La requête n’accepte aucun autre paramètre</p><p style="margin:0;">Ne peut être émise que si le type de la session (json, xml, html) est connu et l’utilisateur authentifié</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>fin-session</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Termine la session de simulations.</p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Techniquement l’ancienne session web est supprimée et une nouvelle session est créée</p><p style="margin:0;">Ne peut être émise que si le type de la session (json, xml, html) est connu et l’utilisateur authentifié</p></td></tr></table>
@@ -3244,10 +3244,10 @@
 </li>
 </ul>
 <p>Nous allons maintenant passer en revue les différents contrôleurs ou ce qui revient au même les différentes actions qui rythment la vie de l’application web.</p>
-<p><a id="refheadingtoc1446553519745392"></a>
-<a id="toc42690897"></a>
+<p><a id="toc42690125"></a>
 <a id="toc42690511"></a>
-<a id="toc42690125"></a></p>
+<a id="toc42690897"></a>
+<a id="refheadingtoc1446553519745392"></a></p>
 <h3 id="23111-laction-init-session">23.11.1. L’action [init-session]</h3>
 <p>L’action <strong>[init-session]</strong> est traitée par le contrôleur <strong>[InitSessionController]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3374,10 +3374,10 @@
 <li>lignes 35-36 : après quelques vérifications, il envoie la réponse en instanciant l’une des classes <strong>[JsonResponse, XmlResponse, HtmlResponse]</strong> selon le type (json, xml, html) de la session en cours ;</li>
 </ul>
 <p>Dans la suite, nous ferons des tests <strong>[Postman]</strong> dans le cadre d’une session de simulations avec le type <strong>[json]</strong>. Le fonctionnement de la classe <strong>[JsonResponse]</strong> a été présenté au paragraphe <a href="#_La_couche_[métier]_1"><u><span style="color: #0563c1">lien</span></u></a>.</p>
-<p><a id="refheadingtoc1446573519745392"></a>
-<a id="toc42690898"></a>
+<p><a id="toc42690126"></a>
 <a id="toc42690512"></a>
-<a id="toc42690126"></a></p>
+<a id="toc42690898"></a>
+<a id="refheadingtoc1446573519745392"></a></p>
 <h3 id="23112-tests-postman">23.11.2. Tests [Postman]</h3>
 <p><img src="images/10000000000007C100000355D84D0F4E.png" style="width:15.761cm;height:6.771cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007C100000355D84D0F4E.png" /></p>
 <p>Ci-dessus :</p>
@@ -3398,10 +3398,10 @@
 <li>en <strong>[1-8]</strong>, l’action <strong>[init-session]</strong> avec le type jSON ;</li>
 <li>en <strong>[9-12]</strong>, la réponse jSON du serveur ;</li>
 </ul>
-<p><a id="refheadingtoc1446593519745392"></a>
-<a id="toc42690899"></a>
+<p><a id="toc42690127"></a>
 <a id="toc42690513"></a>
-<a id="toc42690127"></a></p>
+<a id="toc42690899"></a>
+<a id="refheadingtoc1446593519745392"></a></p>
 <h3 id="23113-laction-authentifier-utilisateur">23.11.3. L’action [authentifier-utilisateur]</h3>
 <p>L’action <strong>[authentifier-utilisateur]</strong> est exécutée par le contrôleur <strong>[AuthentifierUtilisateurController]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3501,10 +3501,10 @@
 <li>ligne 72 : l’authentification a réussi. On le note dans la session en plaçant dans celle-ci la clé <strong>[user]</strong>. C’est la présence de cette clé qui indique une authentification réussie ;</li>
 <li>lignes 73-77 : on rend un résultat <strong>[$statusCode, $état, $content, $headers]</strong> de réussite au contrôleur principal ;</li>
 </ul>
-<p><a id="refheadingtoc1446613519745392"></a>
-<a id="toc42690900"></a>
+<p><a id="toc42690128"></a>
 <a id="toc42690514"></a>
-<a id="toc42690128"></a></p>
+<a id="toc42690900"></a>
+<a id="refheadingtoc1446613519745392"></a></p>
 <h3 id="23114-tests-postman">23.11.4. Tests [Postman]</h3>
 <p>Nous procédons aux tests <strong>[Postman]</strong> du contrôleur <strong>[AuthentifierUtilisateurController]</strong> en mode jSON ;</p>
 <p><img src="images/10000000000007E10000034BD1F82C62.png" style="width:16.012cm;height:6.691cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007E10000034BD1F82C62.png" /></p>
@@ -3548,10 +3548,10 @@
 <li>en <strong>[1-9]</strong>, la requête POST <strong>[2]</strong> avec des identifiants valides <strong>[6-9]</strong> ;</li>
 <li>en <strong>[10-13]</strong>, la réponse jSON du serveur. On remarquera le code de statut HTTP <strong>[200 OK]</strong> en <strong>[10]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc1446633519745392"></a>
-<a id="toc42690901"></a>
+<p><a id="toc42690129"></a>
 <a id="toc42690515"></a>
-<a id="toc42690129"></a></p>
+<a id="toc42690901"></a>
+<a id="refheadingtoc1446633519745392"></a></p>
 <h3 id="23115-laction-calculer-impot">23.11.5. L’action [calculer-impot]</h3>
 <p>L’action <strong>[calculer-impot]</strong> est traitée par le contrôleur <strong>[CalculerImpotController]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3731,10 +3731,10 @@
 <li>ligne 133-136 : la simulation est ajoutée à la liste des simulations et celle-ci est remise en session ;</li>
 <li>lignes 137-139 : on rend le résultat au contrôleur principal ;</li>
 </ul>
-<p><a id="refheadingtoc1446653519745392"></a>
-<a id="toc42690902"></a>
+<p><a id="toc42690130"></a>
 <a id="toc42690516"></a>
-<a id="toc42690130"></a></p>
+<a id="toc42690902"></a>
+<a id="refheadingtoc1446653519745392"></a></p>
 <h3 id="23116-tests-postman">23.11.6. Tests [Postman]</h3>
 <p>Nous procédons aux tests <strong>[Postman]</strong> du contrôleur <strong>[CalculerImpotController]</strong> en mode jSON ;</p>
 <p><img src="images/10000000000007C1000002C3DF00C6CC.png" style="width:15.761cm;height:5.61cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007C1000002C3DF00C6CC.png" /></p>
@@ -3764,10 +3764,10 @@
 <li>en <strong>[1118]</strong>, une demande avec des paramètres valides <strong>[6-8]</strong> ;</li>
 <li>en <strong>[12-14]</strong>, la réponse jSON du serveur ;</li>
 </ul>
-<p><a id="refheadingtoc1446673519745392"></a>
-<a id="toc42690903"></a>
+<p><a id="toc42690131"></a>
 <a id="toc42690517"></a>
-<a id="toc42690131"></a></p>
+<a id="toc42690903"></a>
+<a id="refheadingtoc1446673519745392"></a></p>
 <h3 id="23117-laction-lister-simulations">23.11.7. L’action [lister-simulations]</h3>
 <p>L’action <strong>[lister-simulations]</strong> est traitée par le contrôleur secondaire <strong>[ListerSimulationsController]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3824,10 +3824,10 @@
 <li>lignes 33-37 : on récupère la liste des simulations dans la session si elle s’y trouve (ligne 36), sinon cette liste est vide (ligne 34) ;</li>
 <li>lignes 39-40 : on rend la liste des simulations au contrôleur principal ;</li>
 </ul>
-<p><a id="refheadingtoc1446693519745392"></a>
-<a id="toc42690904"></a>
+<p><a id="toc42690132"></a>
 <a id="toc42690518"></a>
-<a id="toc42690132"></a></p>
+<a id="toc42690904"></a>
+<a id="refheadingtoc1446693519745392"></a></p>
 <h3 id="23118-tests-postman">23.11.8. Tests [Postman]</h3>
 <p>Nous allons créer deux tests, un d’erreur et un réussi.</p>
 <p><img src="images/100000000000076E0000037043B2E11E.png" style="width:15.101cm;height:6.991cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076E0000037043B2E11E.png" /></p>
@@ -3847,10 +3847,10 @@
 <ul>
 <li>en <strong>[3-6]</strong>, la réponse jSON du serveur. Avant ce test, le test <strong>[Postman]</strong> <strong>[calculer-impot-300]</strong> avait été exécuté plusieurs fois pour créer des simulations dans la session web du serveur ;</li>
 </ul>
-<p><a id="refheadingtoc1446713519745392"></a>
-<a id="toc42690905"></a>
+<p><a id="toc42690133"></a>
 <a id="toc42690519"></a>
-<a id="toc42690133"></a></p>
+<a id="toc42690905"></a>
+<a id="refheadingtoc1446713519745392"></a></p>
 <h3 id="23119-laction-supprimer-simulation">23.11.9. L’action [supprimer-simulation]</h3>
 <p>L’action <strong>[supprimer-simulation]</strong> est traitée par le contrôleur secondaire <strong>[SupprimerSessionController]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3950,10 +3950,10 @@
 <li>ligne 71 : on remet le nouveau tableau des simulations dans la session ;</li>
 <li>lignes 73-74 : on rend au contrôleur principal la nouvelle liste des simulations ;</li>
 </ul>
-<p><a id="refheadingtoc1446733519745392"></a>
-<a id="toc42690906"></a>
+<p><a id="toc42690134"></a>
 <a id="toc42690520"></a>
-<a id="toc42690134"></a></p>
+<a id="toc42690906"></a>
+<a id="refheadingtoc1446733519745392"></a></p>
 <h3 id="231110-tests-postman">23.11.10. Tests [Postman]</h3>
 <p>Nous allons faire des tests d’erreur et de succès :</p>
 <p><img src="images/100000000000078700000351867EBC49.png" style="width:15.29cm;height:6.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078700000351867EBC49.png" /></p>
@@ -3994,10 +3994,10 @@
 <ul>
 <li>en <strong>[1]</strong>, il ne reste plus de simulations dans la session web du serveur ;</li>
 </ul>
-<p><a id="refheadingtoc1446753519745392"></a>
-<a id="toc42690907"></a>
+<p><a id="toc42690135"></a>
 <a id="toc42690521"></a>
-<a id="toc42690135"></a></p>
+<a id="toc42690907"></a>
+<a id="refheadingtoc1446753519745392"></a></p>
 <h3 id="231111-laction-fin-session">23.11.11. L’action [fin-session]</h3>
 <p>L’action <strong>[fin-session]</strong> est traitée par le contrôleur secondaire <strong>[FinSessionController]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -4060,10 +4060,10 @@
 <li>ligne 40 : le type de la session précédente est replacé dans la nouvelle session. Finalement on repart avec une nouvelle session ayant l’uniqué clé <strong>[type]</strong> ;</li>
 <li>lignes 44-45 : on rend le résultat au contrôleur principal ;</li>
 </ul>
-<p><a id="refheadingtoc1446773519745392"></a>
-<a id="toc42690908"></a>
+<p><a id="toc42690136"></a>
 <a id="toc42690522"></a>
-<a id="toc42690136"></a></p>
+<a id="toc42690908"></a>
+<a id="refheadingtoc1446773519745392"></a></p>
 <h3 id="231112-tests-postman">23.11.12. Tests [Postman]</h3>
 <p>Nous allons faire un test d’erreur et un test de réussite :</p>
 <p><img src="images/1000000000000773000003335B8441F4.png" style="width:15.14cm;height:6.501cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000773000003335B8441F4.png" /></p>
@@ -4096,15 +4096,15 @@
 <ul>
 <li>en <strong>[3]</strong>, le serveur envoie l’entête <strong>[Set-Cookie]</strong> montrant par là qu’une nouvelle session web démarre ;</li>
 </ul>
-<p><a id="refheadingtoc1446793519745392"></a>
-<a id="toc42690909"></a>
+<p><a id="toc42690137"></a>
 <a id="toc42690523"></a>
-<a id="toc42690137"></a></p>
+<a id="toc42690909"></a>
+<a id="refheadingtoc1446793519745392"></a></p>
 <h2 id="2312-les-types-de-reponse-du-serveur">23.12. Les types de réponse du serveur</h2>
-<p><a id="refheadingtoc1446813519745392"></a>
-<a id="toc42690910"></a>
+<p><a id="toc42690138"></a>
 <a id="toc42690524"></a>
-<a id="toc42690138"></a></p>
+<a id="toc42690910"></a>
+<a id="refheadingtoc1446813519745392"></a></p>
 <h3 id="23121-introduction">23.12.1. Introduction</h3>
 <p>Revenons sur l’architecture générale de l’application :</p>
 <p><img src="images/10000000000007030000020B5C557A6E.png" style="width:14.251cm;height:4.151cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007030000020B5C557A6E.png" /></p>
@@ -4211,10 +4211,10 @@
 <li>ligne 4 : on fixe le nom de la classe <strong>[Response]</strong> à instancier ;</li>
 <li>ligne 5 : on l’instancie et on envoie la réponse au client grâce à la méthode <strong>[send($request, $session, $config, $statusCode, $content, $headers, $logger)]</strong>. Parce qu’elles implémentent la même interface <strong>[InterfaceResponse]</strong>, les méthodes <strong>[send]</strong> des différents types de réponse ont toutes la même signature ;</li>
 </ul>
-<p><a id="refheadingtoc1446833519745392"></a>
-<a id="toc42690911"></a>
+<p><a id="toc42690139"></a>
 <a id="toc42690525"></a>
-<a id="toc42690139"></a></p>
+<a id="toc42690911"></a>
+<a id="refheadingtoc1446833519745392"></a></p>
 <h3 id="23122-la-classe-jsonresponse">23.12.2. La classe [JsonResponse]</h3>
 <p>Elle a déjà présentée au paragraphe <a href="#_[main.php]_–_2"><u><span style="color: #0563c1">lien</span></u></a>. Nous redonnons cependant son code pour mieux souligner l’homogénéité des trois classes de réponse :</p>
 <p>La classe <strong>[JsonResponse]</strong> implémente l’interface <strong>[InterfaceResponse]</strong> de la façon suivante :</p>
@@ -4288,10 +4288,10 @@
 <li>ligne 46 : on demande à la classe parent d’envoyer la réponse au client ;</li>
 <li>lignes 48-50 : on logue la réponse jSON ;</li>
 </ul>
-<p><a id="refheadingtoc1446853519745392"></a>
-<a id="toc42690912"></a>
+<p><a id="toc42690140"></a>
 <a id="toc42690526"></a>
-<a id="toc42690140"></a></p>
+<a id="toc42690912"></a>
+<a id="refheadingtoc1446853519745392"></a></p>
 <h3 id="23123-la-classe-xmlresponse">23.12.3. La classe [XmlResponse]</h3>
 <p>La classe <strong>[XmlResponse]</strong> implémente l’interface <strong>[InterfaceResponse]</strong> de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -4374,10 +4374,10 @@
 <li>ligne 54 : envoi effectif de la réponse au client par la classe parent ;</li>
 <li>lignes 56-60 : log en jSON de la réponse ;</li>
 </ul>
-<p><a id="refheadingtoc1446873519745392"></a>
-<a id="toc42690913"></a>
+<p><a id="toc42690141"></a>
 <a id="toc42690527"></a>
-<a id="toc42690141"></a></p>
+<a id="toc42690913"></a>
+<a id="refheadingtoc1446873519745392"></a></p>
 <h3 id="23124-tests-postman">23.12.4. Tests [Postman]</h3>
 <p>Nous avons déjà fait tous les tests d’erreurs possibles en jSON. Il n’y a rien à faire de plus en XML. Nous montrons deux exemples de réponse XML :</p>
 <p><img src="images/100000000000078000000370AEC40640.png" style="width:15.241cm;height:6.991cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078000000370AEC40640.png" /></p>
@@ -4393,10 +4393,10 @@
 <li>en <strong>[1-3]</strong>, une demande d’authentification valide ;</li>
 <li>en <strong>[4-7]</strong>, la réponse XML du serveur ;</li>
 </ul>
-<p><a id="refheadingtoc185725971629160"></a>
-<a id="toc42690914"></a>
+<p><a id="toc42690142"></a>
 <a id="toc42690528"></a>
-<a id="toc42690142"></a></p>
+<a id="toc42690914"></a>
+<a id="refheadingtoc185725971629160"></a></p>
 <h3 id="23125-la-reponse-htmlresponse">23.12.5. La réponse [HtmlResponse]</h3>
 <p>Lorsque le type de la session est <strong>[html]</strong> un objet de type <strong>[HtmlResponse]</strong> est instancié pour envoyer la réponse au client. Celle-ci va envoyer au client un flux HTML qui dépend du code d’état rendu par le contrôleur secondaire qui a traité l’action. Cette correspondance <strong>[état=&gt;vue]</strong> est inscrite dans le fichier de configuration <strong>[config.json]</strong> de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -4531,10 +4531,10 @@
 <li>ligne 75 : on demande à la classe parent de procéder à l’envoi effectif de la réponse au client ;</li>
 <li>lignes 77-81 : on logue en jSON la réponse <strong>[$content]</strong> fournie par le contrôleur secondaire qui a traité l’action en cours ;</li>
 </ul>
-<p><a id="refheadingtoc185727971629160"></a>
-<a id="toc42690915"></a>
+<p><a id="toc42690143"></a>
 <a id="toc42690529"></a>
-<a id="toc42690143"></a></p>
+<a id="toc42690915"></a>
+<a id="refheadingtoc185727971629160"></a></p>
 <h3 id="23126-tests-postman">23.12.6. Tests [Postman]</h3>
 <p>Pour tester véritablement le mode HTML de la session, il nous faudrait passer en revue toutes les vues. Nous allons le faire ultérieurement. Nous allons faire le test suivant :</p>
 <p>Regardons la liste des vues dans le fichier de configuration :</p>
@@ -4561,15 +4561,15 @@
 <ul>
 <li>en <strong>[8-9]</strong>, un aperçu de la vue HTML ;</li>
 </ul>
-<p><a id="refheadingtoc185729971629160"></a>
-<a id="toc42690916"></a>
+<p><a id="toc42690144"></a>
 <a id="toc42690530"></a>
-<a id="toc42690144"></a></p>
+<a id="toc42690916"></a>
+<a id="refheadingtoc185729971629160"></a></p>
 <h2 id="2313-lapplication-web-html">23.13. L’application web HTML</h2>
-<p><a id="refheadingtoc185731971629160"></a>
-<a id="toc42690917"></a>
+<p><a id="toc42690145"></a>
 <a id="toc42690531"></a>
-<a id="toc42690145"></a></p>
+<a id="toc42690917"></a>
+<a id="refheadingtoc185731971629160"></a></p>
 <h3 id="23131-presentation-des-vues">23.13.1. Présentation des vues</h3>
 <p>L’application web HTML utilisera quatre vues :</p>
 <p>La vue d’authentification :</p>
@@ -4581,15 +4581,15 @@
 <p>La vue des erreurs inattendues :</p>
 <p><img src="images/10000000000009BE0000040BFD1535BD.png" style="width:16.5cm;height:6.85cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009BE0000040BFD1535BD.png" /></p>
 <p>Nous allons décrire ces vues l’une après l’autre.</p>
-<p><a id="refheadingtoc185733971629160"></a>
-<a id="toc42690918"></a>
+<p><a id="toc42690146"></a>
 <a id="toc42690532"></a>
-<a id="toc42690146"></a></p>
+<a id="toc42690918"></a>
+<a id="refheadingtoc185733971629160"></a></p>
 <h3 id="23132-la-vue-dauthentification">23.13.2. La vue d’authentification</h3>
-<p><a id="refheadingtoc185735971629160"></a>
-<a id="toc42690919"></a>
+<p><a id="toc42690147"></a>
 <a id="toc42690533"></a>
-<a id="toc42690147"></a></p>
+<a id="toc42690919"></a>
+<a id="refheadingtoc185735971629160"></a></p>
 <h4 id="231321-presentation-de-la-vue">23.13.2.1. Présentation de la vue</h4>
 <p>La vue d’authentification est la suivante :</p>
 <p><img src="images/1000000000000792000004CBB9C044CF.png" style="width:15.379cm;height:9.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000792000004CBB9C044CF.png" /></p>
@@ -4681,10 +4681,10 @@
 <li><strong>[$modèle→erreurs]</strong> : une liste (au sens HTML du terme) de messages d’erreur ;</li>
 </ul>
 <p><a id="lefragmentv-bandeauphp"></a>
-<a id="toc42690920"></a>
-<a id="toc42690534"></a>
+<a id="refheadingtoc1533303476773583"></a>
 <a id="toc42690148"></a>
-<a id="refheadingtoc1533303476773583"></a></p>
+<a id="toc42690534"></a>
+<a id="toc42690920"></a></p>
 <h4 id="231322-le-fragment-v-bandeauphp">23.13.2.2. Le fragment [v-bandeau.php]</h4>
 <p>Le fragment <strong>[v-bandeau.php]</strong> affiche le bandeau supérieur de toutes les vues de l’application web :</p>
 <p><img src="images/10000000000005FC00000150F972DB23.png" style="width:14.191cm;height:3.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005FC00000150F972DB23.png" /></p>
@@ -4717,10 +4717,10 @@
 <ul>
 <li><strong>[$logo]</strong> : URL de l’image affichée dans le bandeau ;</li>
 </ul>
-<p><a id="refheadingtoc185737971629160"></a>
-<a id="toc42690921"></a>
+<p><a id="toc42690149"></a>
 <a id="toc42690535"></a>
-<a id="toc42690149"></a></p>
+<a id="toc42690921"></a>
+<a id="refheadingtoc185737971629160"></a></p>
 <h4 id="231323-le-fragment-v-authentificationphp">23.13.2.3. Le fragment [v-authentification.php]</h4>
 <p>Le fragment <strong>[v-authentification .php]</strong> affiche le formulaire d’authentification de l’application web :</p>
 <p><img src="images/10000000000003B20000028725DC08B8.png" style="width:7.511cm;height:5.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B20000028725DC08B8.png" /></p>
@@ -4814,10 +4814,10 @@
 <li><strong>[http://localhost/php7/scripts-web/impots/version-12/main.php?action=authentifier-utilisateur]</strong></li>
 </ul>
 <p>Ces URL désignent un document <strong>[main.php]</strong> dans le chemin <strong>[http://localhost/php7/scripts-web/impots/version-12]</strong>. Ce sera le cas de toutes les URL de cette application. Le paramètre <strong>[action=&quot;main.php?action=authentifier-utilisateur&quot;]</strong> sera préfixé par ce chemin au moment de l’envoi des valeurs saisies. Celles-ci seront donc postées à l’URL <strong>[http://localhost/php7/scripts-web/impots/version-12/main.php?action=authentifier-utilisateur]</strong>.</p>
-<p><a id="refheadingtoc185739971629160"></a>
-<a id="toc42690922"></a>
+<p><a id="toc42690150"></a>
 <a id="toc42690536"></a>
-<a id="toc42690150"></a></p>
+<a id="toc42690922"></a>
+<a id="refheadingtoc185739971629160"></a></p>
 <h4 id="231324-tests-visuels">23.13.2.4. Tests visuels</h4>
 <p>On peut procéder aux tests des vues bien avant leur intégration dans l’application. Il s’agit ici de tester leur aspect visuel. Nous rassemblerons toutes les vues de test dans le dossier <strong>[Tests]</strong> du projet :</p>
 <p><img src="images/10000000000001C4000001B982164896.png" style="width:4.19cm;height:4.081cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C4000001B982164896.png" /></p>
@@ -4873,10 +4873,10 @@
 <p>Le test visuel peut se faire à partir de Netbeans :</p>
 <p><img src="images/10000000000007960000050505C416C9.png" style="width:17.98cm;height:11.9cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007960000050505C416C9.png" /></p>
 <p>On poursuit ces tests visuels jusqu’à être satisfait du résultat.</p>
-<p><a id="refheadingtoc185741971629160"></a>
-<a id="toc42690923"></a>
+<p><a id="toc42690151"></a>
 <a id="toc42690537"></a>
-<a id="toc42690151"></a></p>
+<a id="toc42690923"></a>
+<a id="refheadingtoc185741971629160"></a></p>
 <h4 id="231325-calcul-du-modele-de-la-vue">23.13.2.5. Calcul du modèle de la vue</h4>
 <p>Une fois l’aspect visuel de la vue déterminé, on peut procéder au calcul du modèle de la vue en conditions réelles. Rappelons les codes d’état qui mènent à cette vue. On les trouve dans le fichier de configuration :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -4995,10 +4995,10 @@
 <li>la ligne 16 utilise la variable <strong>[$modèle→logo]</strong> qui est l’URL du logo du bandeau. Plutôt que de calculer cette variable quatre fois pour les quatre vues de l’application, ce calcul est factorisé dans le fragment <strong>[v-bandeau.php]</strong> ;</li>
 <li>les lignes 1-11 montrent comment construire l’URL <strong>[http://localhost:80/php7/scripts-web/impots/version-12/Views/logo.jpg]</strong> à partir des informations trouvées dans l’environnement du serveur <strong>[$request→server]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc185743971629160"></a>
-<a id="toc42690924"></a>
+<p><a id="toc42690152"></a>
 <a id="toc42690538"></a>
-<a id="toc42690152"></a></p>
+<a id="toc42690924"></a>
+<a id="refheadingtoc185743971629160"></a></p>
 <h4 id="231326-tests-postman">23.13.2.6. Tests [Postman]</h4>
 <p>Nous avons déjà créé des requêtes produidant les codes <strong>[700, 221, 400]</strong> qui affichent la vue d’authentification. Rappelons-les :</p>
 <ul>
@@ -5021,25 +5021,25 @@
 <li>en <strong>[4]</strong>, un message d’erreur est affiché ;</li>
 <li>en <strong>[3]</strong>, l’utilisateur erroné a été réaffiché ;</li>
 </ul>
-<p><a id="refheadingtoc185745971629160"></a>
-<a id="toc42690925"></a>
+<p><a id="toc42690153"></a>
 <a id="toc42690539"></a>
-<a id="toc42690153"></a></p>
+<a id="toc42690925"></a>
+<a id="refheadingtoc185745971629160"></a></p>
 <h4 id="231327-conclusion">23.13.2.7. Conclusion</h4>
 <p>Nous avons pu tester la vue <strong>[vue-authentification.php]</strong> sans avoir écrit les autres vues. Cela a été possible parce que :</p>
 <ul>
 <li>tous les contrôleurs sont écrits ;</li>
 <li><strong>[Postman]</strong> nous permet d’émettre des requêtes vers le serveur sans avoir besoin des vues. Lorsqu’on écrit les contrôleurs, il faut être conscient que n’importe qui peut faire cela. Il faut donc être prêt à traiter des requêtes qu’aucune vue ne permettrait. Elles sont fabriquées à la main dans <strong>[Postman]</strong>. On ne doit jamais se dire a priori « cette requête est impossible » . Il faut vérifier ;</li>
 </ul>
-<p><a id="refheadingtoc185747971629160"></a>
-<a id="toc42690926"></a>
+<p><a id="toc42690154"></a>
 <a id="toc42690540"></a>
-<a id="toc42690154"></a></p>
+<a id="toc42690926"></a>
+<a id="refheadingtoc185747971629160"></a></p>
 <h3 id="23133-la-vue-de-calcul-de-limpot">23.13.3. La vue de calcul de l’impôt</h3>
-<p><a id="refheadingtoc185749971629160"></a>
-<a id="toc42690927"></a>
+<p><a id="toc42690155"></a>
 <a id="toc42690541"></a>
-<a id="toc42690155"></a></p>
+<a id="toc42690927"></a>
+<a id="refheadingtoc185749971629160"></a></p>
 <h4 id="231331-presentation-de-la-vue">23.13.3.1. Présentation de la vue</h4>
 <p>La vue de calcul de l’impôt est la suivante :</p>
 <p><img src="images/10000000000007AA000004543B6DBF68.png" style="width:15.571cm;height:8.79cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007AA000004543B6DBF68.png" /></p>
@@ -5154,10 +5154,10 @@
 <li>lignes 51-69 : si le calcul de l’impôt réussit <strong>[$modèle→success=TRUE]</strong>, alors le résultat du calcul de l’impôt est affiché dans un cadre vert (lignes 59-65). Ce cadre est dans la troisième ligne Bootstrap de la vue (ligne 54) et occupe neuf colonnes (ligne 58) à droite de trois colonnes vides (lignes 55-57). Ce cadre sera donc immédiatement dessous le formulaire de calcul de l’impôt ;</li>
 <li>lignes 71-87 : si le calcul de l’impôt échoue <strong>[$modèle→error=TRUE]</strong>, alors un message d’erreur est affiché dans un cadre rose (lignes 80-83). Ce cadre est dans la troisième ligne Bootstrap de la vue (ligne 75) et occupe neuf colonnes (ligne 79) à droite de trois colonnes vides (lignes 76-78). Ce cadre sera donc immédiatement dessous le formulaire de calcul de l’impôt ;</li>
 </ul>
-<p><a id="refheadingtoc185751971629160"></a>
-<a id="toc42690928"></a>
+<p><a id="toc42690156"></a>
 <a id="toc42690542"></a>
-<a id="toc42690156"></a></p>
+<a id="toc42690928"></a>
+<a id="refheadingtoc185751971629160"></a></p>
 <h4 id="231332-le-fragment-v-calcul-impotphp">23.13.3.2. Le fragment [v-calcul-impot.php]</h4>
 <p>Le fragment <strong>[v-calcul-impot.php]</strong> affiche le formulaire d’authentification de l’application web :</p>
 <p><img src="images/10000000000005860000027FB589C231.png" style="width:11.221cm;height:5.07cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005860000027FB589C231.png" /></p>
@@ -5263,10 +5263,10 @@
 </ul>
 <p><img src="images/10000000000000C10000007B1BBA01F7.png" style="width:2.551cm;height:1.631cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C10000007B1BBA01F7.png" /></p>
 <p><a id="lefragmentv-menuphp"></a>
-<a id="toc42690929"></a>
-<a id="toc42690543"></a>
+<a id="refheadingtoc1533323476773583"></a>
 <a id="toc42690157"></a>
-<a id="refheadingtoc1533323476773583"></a></p>
+<a id="toc42690543"></a>
+<a id="toc42690929"></a></p>
 <h4 id="231333-le-fragment-v-menuphp">23.13.3.3. Le fragment [v-menu.php]</h4>
 <p>Ce fragment affiche un menu à gauche du formulaire de calcul de l’impôt :</p>
 <p><img src="images/10000000000002890000026FDE289BD9.png" style="width:5.151cm;height:4.941cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002890000026FDE289BD9.png" /></p>
@@ -5304,10 +5304,10 @@
 <ul>
 <li>lignes 2, 7 : les classes CSS <strong>[nav, flex-column, nav-link]</strong> sont des classes Bootstrap qui donnent son apparence au menu ;</li>
 </ul>
-<p><a id="refheadingtoc185753971629160"></a>
-<a id="toc42690930"></a>
+<p><a id="toc42690158"></a>
 <a id="toc42690544"></a>
-<a id="toc42690158"></a></p>
+<a id="toc42690930"></a>
+<a id="refheadingtoc185753971629160"></a></p>
 <h4 id="231334-test-visuel">23.13.3.4. Test visuel</h4>
 <p>Nous rassemblons ces différents éléments dans le dossier <strong>[Tests]</strong> et nous créons un modèle de test pour la vue <strong>[vue-calcul-impot.php]</strong> :</p>
 <p><img src="images/100000000000019F000001B7851A27B3.png" style="width:3.841cm;height:4.07cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019F000001B7851A27B3.png" /></p>
@@ -5375,10 +5375,10 @@
 <p>On obtient le résultat suivant :</p>
 <p><img src="images/10000000000008430000067172482B96.png" style="width:16.791cm;height:13.091cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008430000067172482B96.png" /></p>
 <p>On travaille sur cette vue jusqu’à ce que le résultat obtenu visuellement nous convienne. On peut ensuite passer à l’intégration de la vue dans l’application web en cours d’écriture.</p>
-<p><a id="refheadingtoc185755971629160"></a>
-<a id="toc42690931"></a>
+<p><a id="toc42690159"></a>
 <a id="toc42690545"></a>
-<a id="toc42690159"></a></p>
+<a id="toc42690931"></a>
+<a id="refheadingtoc185755971629160"></a></p>
 <h4 id="231335-calcul-du-modele-de-la-vue">23.13.3.5. Calcul du modèle de la vue</h4>
 <p><img src="images/10000000000001A1000001B40D346B5A.png" style="width:3.86cm;height:4.04cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A1000001B40D346B5A.png" /></p>
 <p>Une fois l’aspect visuel de la vue déterminé, on peut procéder au calcul du modèle de la vue en conditions réelles. Rappelons les codes d’état qui mènent à cette vue. On les trouve dans le fichier de configuration :</p>
@@ -5491,10 +5491,10 @@
 <li>lignes 46-59 : cas de l’échec du calcul d’impôt à cause d’une indisponibilité d’un des serveurs <strong>[Redis]</strong> ou <strong>[MySQL]</strong> ;</li>
 <li>lignes 62-64 : calcul des deux options du menu ;</li>
 </ul>
-<p><a id="refheadingtoc185757971629160"></a>
-<a id="toc42690932"></a>
+<p><a id="toc42690160"></a>
 <a id="toc42690546"></a>
-<a id="toc42690160"></a></p>
+<a id="toc42690932"></a>
+<a id="refheadingtoc185757971629160"></a></p>
 <h4 id="231336-tests-postman">23.13.3.6. Tests [Postman]</h4>
 <p>Le test <strong>[calculer-impot-300]</strong> nous permet d’avoir le code d’état 300. Il correspond à un calcul d’impôt réussi :</p>
 <p><img src="images/100000000000079B00000584614E3621.png" style="width:15.451cm;height:11.21cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000079B00000584614E3621.png" /></p>
@@ -5503,15 +5503,15 @@
 </ul>
 <p>Essayons un cas d’erreur : l’erreur <strong>[350]</strong> dûe à une indisponibilité du serveur <strong>[Redis]</strong> :</p>
 <p><img src="images/100000000000077200000444D310543D.png" style="width:15.131cm;height:8.67cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077200000444D310543D.png" /></p>
-<p><a id="refheadingtoc185759971629160"></a>
-<a id="toc42690933"></a>
+<p><a id="toc42690161"></a>
 <a id="toc42690547"></a>
-<a id="toc42690161"></a></p>
+<a id="toc42690933"></a>
+<a id="refheadingtoc185759971629160"></a></p>
 <h3 id="23134-la-vue-de-la-liste-des-simulations">23.13.4. La vue de la liste des simulations</h3>
-<p><a id="refheadingtoc185761971629160"></a>
-<a id="toc42690934"></a>
+<p><a id="toc42690162"></a>
 <a id="toc42690548"></a>
-<a id="toc42690162"></a></p>
+<a id="toc42690934"></a>
+<a id="refheadingtoc185761971629160"></a></p>
 <h4 id="231341-presentation-de-la-vue">23.13.4.1. Présentation de la vue</h4>
 <p>La vue qui présente la liste des simulations est la suivante :</p>
 <p><img src="images/100000000000076A000003D07938F4CB.png" style="width:15.071cm;height:7.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000076A000003D07938F4CB.png" /></p>
@@ -5652,10 +5652,10 @@
 <li>ligne 27 : la liste des simulations sera trouvée dans le modèle <strong>[$modèle→simulations]</strong> qui est un tableau associatif ;</li>
 <li>ligne 50 : un lien pour supprimer la simulation. L’URL reprend le n° affiché dans la 1re colonne du tableau (ligne 41) ;</li>
 </ul>
-<p><a id="refheadingtoc185763971629160"></a>
-<a id="toc42690935"></a>
+<p><a id="toc42690163"></a>
 <a id="toc42690549"></a>
-<a id="toc42690163"></a></p>
+<a id="toc42690935"></a>
+<a id="refheadingtoc185763971629160"></a></p>
 <h4 id="231342-test-visuel">23.13.4.2. Test visuel</h4>
 <p>Nous rassemblons ces différents éléments dans le dossier <strong>[Tests]</strong> et nous créons un modèle de test pour la vue <strong>[vue-liste-simulations.php]</strong> :</p>
 <p><img src="images/10000000000001CB000001B2A69CEA83.png" style="width:4.25cm;height:4.021cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CB000001B2A69CEA83.png" /></p>
@@ -5723,10 +5723,10 @@
 <p>On obtient le résultat suivant :</p>
 <p><img src="images/10000000000008AB00000399099BD94D.png" style="width:17.611cm;height:7.31cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008AB00000399099BD94D.png" /></p>
 <p>On travaille sur cette vue jusqu’à ce que le résultat obtenu visuellement nous convienne. On peut ensuite passer à l’intégration de la vue dans l’application web en cours d’écriture.</p>
-<p><a id="refheadingtoc185765971629160"></a>
-<a id="toc42690936"></a>
+<p><a id="toc42690164"></a>
 <a id="toc42690550"></a>
-<a id="toc42690164"></a></p>
+<a id="toc42690936"></a>
+<a id="refheadingtoc185765971629160"></a></p>
 <h4 id="231343-calcul-du-modele-de-la-vue">23.13.4.3. Calcul du modèle de la vue</h4>
 <p><img src="images/10000000000001DE000001B6FFFFC5AC.png" style="width:4.432cm;height:4.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DE000001B6FFFFC5AC.png" /></p>
 <p>Une fois l’aspect visuel de la vue déterminé, on peut procéder au calcul du modèle de la vue en conditions réelles. Rappelons les codes d’état qui mènent à cette vue. On les trouve dans le fichier de configuration :</p>
@@ -5808,19 +5808,19 @@
 <li>lignes 26-36 : calcul du modèle <strong>[$modèle→simulations]</strong> utilisé par le fragment <strong>[v-liste-simulations.php]</strong> ;</li>
 <li>lignes 39-41 : calcul du modèle <strong>[$modèle→optionsMenu]</strong> utilisé par le fragment <strong>[v-menu.php]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc185767971629160"></a>
-<a id="toc42690937"></a>
+<p><a id="toc42690165"></a>
 <a id="toc42690551"></a>
-<a id="toc42690165"></a></p>
+<a id="toc42690937"></a>
+<a id="refheadingtoc185767971629160"></a></p>
 <h4 id="231344-tests-postman">23.13.4.4. Tests [Postman]</h4>
 <p>Le test <strong>[lister-simulations-500]</strong> nous permet d’avoir le code d’état 500. Il correspond à une demande pour voir les simulations :</p>
 <p><img src="images/10000000000008000000052286AB3349.png" style="width:16.26cm;height:10.431cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008000000052286AB3349.png" /></p>
 <p>Le test <strong>[supprimer-simulation-600]</strong> nous permet d’avoir le code d’état 600. Il correspond à la suppression réussie de la simulation n° 0. Le résultat renvoyé est une liste de simulations avec une simulation en moins :</p>
 <p><img src="images/10000000000007D6000004CFF84292D9.png" style="width:15.922cm;height:9.771cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D6000004CFF84292D9.png" /></p>
-<p><a id="refheadingtoc185769971629160"></a>
-<a id="toc42690938"></a>
+<p><a id="toc42690166"></a>
 <a id="toc42690552"></a>
-<a id="toc42690166"></a></p>
+<a id="toc42690938"></a>
+<a id="refheadingtoc185769971629160"></a></p>
 <h3 id="23135-la-vue-des-erreurs-inattendues">23.13.5. La vue des erreurs inattendues</h3>
 <p>On appelle ici, erreur inattendue, une erreur qui n’aurait pas dû se produire dans le cadre d’une utilisation normale de l’application web.</p>
 <p>Prenons comme exemple, le test <strong>[Postman]</strong> <strong>[calculer-impot-3xx]</strong> défini comme suit :</p>
@@ -5841,10 +5841,10 @@
 <li>avec un navigateur récent, les attributs &lt;input type=’number’ min=’0’ step=’1’ …&gt; font que les saisies pour les enfants et le salaire sont forcément des nombres entiers &gt;=0 ;</li>
 </ul>
 <p>Cependant, rien n’empêche un utilisateur de prendre <strong>[Postman]</strong> et d’envoyer à notre serveur, le test <strong>[calcul-impot-3xx]</strong> ci-dessus. On a vu que notre application web savait répondre correctement à cette requête. On appellera, <strong>erreur inattendue</strong>, une erreur qui ne devrait pas se produire dans le cadre de l’application HTML. Si elle se produit, c’est que probablement quelqu’un essaie de ‘hacker’ l’application. Par souci de pédagogie, on a décidé d’afficher une vue d’erreurs pour ces cas. Dans la réalité, on pourrait réafficher la dernière page envoyée au client. Il suffit pour cela d’enregistrer en session, la dernière réponse HTML envoyée. En cas d’erreur inattendue, on renvoie cette réponse. Ainsi l’utilisateur aura l’impression que le serveur ne répond pas à ses erreurs puisque la page affichée ne change pas.</p>
-<p><a id="refheadingtoc185771971629160"></a>
-<a id="toc42690939"></a>
+<p><a id="toc42690167"></a>
 <a id="toc42690553"></a>
-<a id="toc42690167"></a></p>
+<a id="toc42690939"></a>
+<a id="refheadingtoc185771971629160"></a></p>
 <h4 id="231351-presentation-de-la-vue">23.13.5.1. Présentation de la vue</h4>
 <p>La vue qui présente les erreurs inattendues est la suivante :</p>
 <p><img src="images/1000000000000756000003517EDDD905.png" style="width:14.911cm;height:6.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000756000003517EDDD905.png" /></p>
@@ -5922,10 +5922,10 @@
 <li><strong>[v-bandeau.php]</strong> : au paragraphe <a href="#_Le_fragment_[v-bandeau.php]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
 <li><strong>[v-menu.php]</strong> : au paragraphe <a href="#_Le_fragment_[v-menu.php]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
 </ul>
-<p><a id="refheadingtoc185773971629160"></a>
-<a id="toc42690940"></a>
+<p><a id="toc42690168"></a>
 <a id="toc42690554"></a>
-<a id="toc42690168"></a></p>
+<a id="toc42690940"></a>
+<a id="refheadingtoc185773971629160"></a></p>
 <h4 id="231352-test-visuel">23.13.5.2. Test visuel</h4>
 <p>Nous rassemblons ces différents éléments dans le dossier <strong>[Tests]</strong> et nous créons un modèle de test pour la vue <strong>[vue-erreurs.php]</strong> :</p>
 <p><img src="images/10000000000001D5000001BD9B290CB7.png" style="width:3.721cm;height:3.53cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D5000001BD9B290CB7.png" /></p>
@@ -5979,10 +5979,10 @@
 <p>On obtient le résultat suivant :</p>
 <p><img src="images/10000000000009C6000003F21BE2157D.png" style="width:16.551cm;height:6.681cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009C6000003F21BE2157D.png" /></p>
 <p>On travaille sur cette vue jusqu’à ce que le résultat obtenu visuellement nous convienne. On peut ensuite passer à l’intégration de la vue dans l’application web en cours d’écriture.</p>
-<p><a id="refheadingtoc185775971629160"></a>
-<a id="toc42690941"></a>
+<p><a id="toc42690169"></a>
 <a id="toc42690555"></a>
-<a id="toc42690169"></a></p>
+<a id="toc42690941"></a>
+<a id="refheadingtoc185775971629160"></a></p>
 <h4 id="231353-calcul-du-modele-de-la-vue">23.13.5.3. Calcul du modèle de la vue</h4>
 <p><img src="images/10000000000001CA000001B17353A969.png" style="width:4.241cm;height:4.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CA000001B17353A969.png" /></p>
 <p>Une fois l’aspect visuel de la vue déterminé, on peut procéder au calcul du modèle de la vue en conditions réelles. Rappelons les codes d’état qui mènent à cette vue. On les trouve dans le fichier de configuration :</p>
@@ -6057,17 +6057,17 @@
 <li>lignes 19-32 : calcul du modèle <strong>[$modèle→erreurs]</strong> utilisé par la vue <strong>[vue-erreurs.php]</strong> ;</li>
 <li>lignes 34-37 : calcul du modèle <strong>[$modèle→optionsMenu]</strong> utilisé par le fragment <strong>[v-menu.php]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc185777971629160"></a>
-<a id="toc42690942"></a>
+<p><a id="toc42690170"></a>
 <a id="toc42690556"></a>
-<a id="toc42690170"></a></p>
+<a id="toc42690942"></a>
+<a id="refheadingtoc185777971629160"></a></p>
 <h4 id="231354-tests-postman">23.13.5.4. Tests [Postman]</h4>
 <p>Le test <strong>[calculer-impot-3xx]</strong> nous permet d’avoir le code d’état 338 qui n’est pas un code d’état attendu. La réponse HTML est alors la suivante :</p>
 <p><img src="images/1000000000000769000004A43D8605C2.png" style="width:15.061cm;height:9.431cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000769000004A43D8605C2.png" /></p>
-<p><a id="refheadingtoc185779971629160"></a>
-<a id="toc42690943"></a>
+<p><a id="toc42690171"></a>
 <a id="toc42690557"></a>
-<a id="toc42690171"></a></p>
+<a id="toc42690943"></a>
+<a id="refheadingtoc185779971629160"></a></p>
 <h3 id="23136-implementation-des-actions-du-menu-de-lapplication">23.13.6. Implémentation des actions du menu de l’application</h3>
 <p>Nous allons ici traiter de l’implémentation des actions du menu. Rappelons la signification des liens que nous avons rencontrés</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Vue</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Lien</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Cible</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Rôle</b></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="2"><p style="margin:0;"><b>Calcul de l’impôt</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[Liste des simulations]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[main.php?action=lister-simulations]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Demander la liste des simulations</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[Fin de session]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[main.php?action=fin-session]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Demander la fin de la session</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="2"><p style="margin:0;"><b>Liste des simulations</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[Calcul de l’impôt]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[main.php?action=afficher-calcul-impot]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Afficher la vue du calcul d’impôt</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[Fin de session]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[main.php?action=fin-session]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Demander la fin de la session</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="3"><p style="margin:0;"><b>Erreurs inattendues</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[Calcul de l’impôt]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[main.php?action=afficher-calcul-impot]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Afficher la vue du calcul d’impôt</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[Liste des simulations]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[main.php?action=lister-simulations]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Demander la liste des simulations</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[Fin de session]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>[main.php?action=fin-session]</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Demander la fin de la session</p></td></tr></table>
@@ -6162,10 +6162,10 @@
 <li>ligne 10 : comme les autres contrôleurs secondaires, le nouveau contrôleur implémente l’interface <strong>[InterfaceController]</strong> ;</li>
 <li>les changements de vue sont simples à implémenter : il suffit de rendre le code d’état associé à la vue cible, ici le code 800 comme il a été vu plus haut ;</li>
 </ul>
-<p><a id="refheadingtoc185781971629160"></a>
-<a id="toc42690944"></a>
+<p><a id="toc42690172"></a>
 <a id="toc42690558"></a>
-<a id="toc42690172"></a></p>
+<a id="toc42690944"></a>
+<a id="refheadingtoc185781971629160"></a></p>
 <h3 id="23137-tests-en-conditions-reelles">23.13.7. Tests en conditions réelles</h3>
 <p>Le code a été écrit et chaque action testée avec <strong>[Postman]</strong>. Il nous reste à tester l’enchaînement des vues en situation réelle. Il nous faut un moyen d’initialiser la session HTML. On sait qu’il faut envoyer au serveur les paramètres <strong>[action=init-session&amp;type=html]</strong>. Pour éviter d’avoir à les taper dans la zone d’adresse du navigateur, on va ajouter le script <strong>[index.php]</strong> à notre application :</p>
 <p><img src="images/1000000000000130000001AFBC79DCD8.png" style="width:2.821cm;height:3.991cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000130000001AFBC79DCD8.png" /></p>
@@ -6209,15 +6209,15 @@
 <p>Terminons la session :</p>
 <p><img src="images/100000000000077A000004D81A855CB8.png" style="width:15.191cm;height:9.842cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077A000004D81A855CB8.png" /></p>
 <p>Le lecteur est invité à faire d’autres tests.</p>
-<p><a id="refheadingtoc3697902017825887"></a>
-<a id="toc42690945"></a>
+<p><a id="toc42690173"></a>
 <a id="toc42690559"></a>
-<a id="toc42690173"></a></p>
+<a id="toc42690945"></a>
+<a id="refheadingtoc3697902017825887"></a></p>
 <h2 id="2314-client-du-service-web-json">23.14. Client du service web jSON</h2>
-<p><a id="refheadingtoc3697922017825887"></a>
-<a id="toc42690946"></a>
+<p><a id="toc42690174"></a>
 <a id="toc42690560"></a>
-<a id="toc42690174"></a></p>
+<a id="toc42690946"></a>
+<a id="refheadingtoc3697922017825887"></a></p>
 <h3 id="23141-architecture-client-serveur">23.14.1. Architecture client / serveur</h3>
 <p><img src="images/10000000000006990000021428EB5947.png" style="width:13.412cm;height:4.22cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006990000021428EB5947.png" /></p>
 <p>Nous nous intéressons maintenant au client jSON <strong>[A]</strong> du service web <strong>[B]</strong>. Le client <strong>[A]</strong>, comme le service web <strong>[B]</strong> a une structure en couches :</p>
@@ -6245,16 +6245,16 @@
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">paragraphe <a href="#_La_classe_[Utilitaires]"><u><span style="color: #0563c1">lien</span></u></a>.</p></td></tr></table>
 
-<p><a id="refheadingtoc3697942017825887"></a>
-<a id="toc42690947"></a>
+<p><a id="toc42690175"></a>
 <a id="toc42690561"></a>
-<a id="toc42690175"></a></p>
+<a id="toc42690947"></a>
+<a id="refheadingtoc3697942017825887"></a></p>
 <h3 id="23142-la-couche-dao">23.14.2. La couche [dao]</h3>
 <p><img src="images/1000000000000727000000F66EEBC555.png" style="width:14.53cm;height:1.952cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000727000000F66EEBC555.png" /></p>
-<p><a id="refheadingtoc3697962017825887"></a>
-<a id="toc42690948"></a>
+<p><a id="toc42690176"></a>
 <a id="toc42690562"></a>
-<a id="toc42690176"></a></p>
+<a id="toc42690948"></a>
+<a id="refheadingtoc3697962017825887"></a></p>
 <h4 id="231421-interface">23.14.2.1. Interface</h4>
 <p>L’interface de la couche <strong>[dao]</strong> sera la suivante <strong>[InterfaceClientDao.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -6297,10 +6297,10 @@
 <li>ligne 15 : la méthode <strong>[saveResults]</strong> permet de sauvegarder les résultats de plusieurs calculs d’impôt dans un fichier jSON. Là également,  cette méthode est implémentée par le trait <strong>[TraitDao]</strong> déjà commenté (paragraphe <a href="#_Le_trait_[TraitDao]"><u><span style="color: #0563c1">lien</span></u></a>) ;</li>
 <li>lignes 12, 18, 21, 27, 30 : on a créé une méthode pour chacune des actions acceptées par le service web ;</li>
 </ul>
-<p><a id="refheadingtoc3697982017825887"></a>
-<a id="toc42690949"></a>
+<p><a id="toc42690177"></a>
 <a id="toc42690563"></a>
-<a id="toc42690177"></a></p>
+<a id="toc42690949"></a>
+<a id="refheadingtoc3697982017825887"></a></p>
 <h4 id="231422-implementation">23.14.2.2. Implémentation</h4>
 <p>L’interface <strong>[InterfaceClientDao]</strong> est implémentée par la classe <strong>[ClientDao]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -6343,10 +6343,10 @@
 </ul>
 </li>
 </ul>
-<p><a id="refheadingtoc3698002017825887"></a>
-<a id="toc42690950"></a>
+<p><a id="toc42690178"></a>
 <a id="toc42690564"></a>
-<a id="toc42690178"></a></p>
+<a id="toc42690950"></a>
+<a id="refheadingtoc3698002017825887"></a></p>
 <h5 id="2314221-methode-initsession">23.14.2.2.1. Méthode [initSession]</h5>
 <p>La méthode <strong>[initSession]</strong> est implémentée de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -6388,10 +6388,10 @@
 <li>ligne 13 : la méthode <strong>[getResponse]</strong> récupère la réponse du serveur. Elle la rend sous forme d’un tableau. Ici, le résultat de la méthode n’est pas exploité. La méthode <strong>[getResponse]</strong> lance une exception si  le code HTTP de la réponse du service web est différent de 200 OK ;</li>
 <li>lignes 14-25 : comme la méthode <strong>[initSession]</strong> est la 1re méthode de la couche <strong>[dao]</strong> à être exécutée, on récupère le cookie de session pour que les méthodes suivantes puissent le renvoyer au service web. Ce code a déjà été commenté dans la version 09 ;</li>
 </ul>
-<p><a id="refheadingtoc3698022017825887"></a>
-<a id="toc42690951"></a>
+<p><a id="toc42690179"></a>
 <a id="toc42690565"></a>
-<a id="toc42690179"></a></p>
+<a id="toc42690951"></a>
+<a id="refheadingtoc3698022017825887"></a></p>
 <h5 id="2314222-la-methode-getresponse">23.14.2.2.2. La méthode [getResponse]</h5>
 <p>La méthode <strong>[getResponse]</strong> est chargée d’exploiter la réponse du service web :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -6425,10 +6425,10 @@
 <li>ligne 16 : la chaîne jSON est décodée dans un tableau ;</li>
 <li>ligne 17 : les informations utiles sont dans <strong>[$array[&quot;réponse&quot;]</strong>] ;</li>
 </ul>
-<p><a id="refheadingtoc3698042017825887"></a>
-<a id="toc42690952"></a>
+<p><a id="toc42690180"></a>
 <a id="toc42690566"></a>
-<a id="toc42690180"></a></p>
+<a id="toc42690952"></a>
+<a id="refheadingtoc3698042017825887"></a></p>
 <h5 id="2314223-la-methode-authentifierutilisateur">23.14.2.2.3. La méthode [authentifierUtilisateur]</h5>
 <p>La méthode <strong>[authentifierUtilisateur]</strong> est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -6460,10 +6460,10 @@
 <li>ligne 14 : le cookie de session ;</li>
 <li>ligne 17 : on lit la réponse. On sait qu’en cas d’erreur (code HTTP différent de 200), la méthode <strong>[getResponse]</strong> lance elle-même une exception ;</li>
 </ul>
-<p><a id="refheadingtoc3698062017825887"></a>
-<a id="toc42690953"></a>
+<p><a id="toc42690181"></a>
 <a id="toc42690567"></a>
-<a id="toc42690181"></a></p>
+<a id="toc42690953"></a>
+<a id="refheadingtoc3698062017825887"></a></p>
 <h5 id="2314224-la-methode-calculerimpot">23.14.2.2.4. La méthode [calculerImpot]</h5>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span> calculerImpot(<span style="font-weight:bold;color:#7f0055">string </span>$marié, <span style="font-weight:bold;color:#7f0055">int </span>$enfants, <span style="font-weight:bold;color:#7f0055">int </span>$salaire): <span style="color:#005032">Simulation</span> {</span>
@@ -6494,10 +6494,10 @@
 <li>ligne 17 : la réponse est exploitée ;</li>
 <li>ligne 18 : si on arrive là c’est que la méthode <strong>[getResponse]</strong> n’a pas lancé d’exception. On rend un objet <strong>[Simulation]</strong> initialisé avec le tableau rendu par <strong>[getResponse]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc3698082017825887"></a>
-<a id="toc42690954"></a>
+<p><a id="toc42690182"></a>
 <a id="toc42690568"></a>
-<a id="toc42690182"></a></p>
+<a id="toc42690954"></a>
+<a id="refheadingtoc3698082017825887"></a></p>
 <h5 id="2314225-la-methode-listersimulations">23.14.2.2.5. La méthode [listerSimulations]</h5>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span> listerSimulations(): <span style="font-weight:bold;color:#7f0055">array </span>{</span>
@@ -6522,10 +6522,10 @@
 <li>lignes 6-8 : l’unique paramètre du GET ;</li>
 <li>ligne 13 : la récupération des simulations est confiée à la méthode privée <strong>[getSimulations]</strong> ;</li>
 </ul>
-<p><a id="refheadingtoc3698102017825887"></a>
-<a id="toc42690955"></a>
+<p><a id="toc42690183"></a>
 <a id="toc42690569"></a>
-<a id="toc42690183"></a></p>
+<a id="toc42690955"></a>
+<a id="refheadingtoc3698102017825887"></a></p>
 <h5 id="2314226-la-methode-getsimulations">23.14.2.2.6. La méthode [getSimulations]</h5>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">private </span><span style="font-weight:bold;color:#7f0055">function</span> getSimulations(<span style="color:#005032">CurlResponse</span> $response): <span style="font-weight:bold;color:#7f0055">array </span>{</span>
@@ -6549,10 +6549,10 @@
 <li>lignes 6-9 : on exploite la réponse pour construire un tableau d’objets <strong>[Simulation]</strong> ;</li>
 <li>ligne 11 : on rend ce tableau ;</li>
 </ul>
-<p><a id="refheadingtoc3698122017825887"></a>
-<a id="toc42690956"></a>
+<p><a id="toc42690184"></a>
 <a id="toc42690570"></a>
-<a id="toc42690184"></a></p>
+<a id="toc42690956"></a>
+<a id="refheadingtoc3698122017825887"></a></p>
 <h5 id="2314227-la-methode-supprimersimulation">23.14.2.2.7. La méthode [SupprimerSimulation]</h5>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span> supprimerSimulation(<span style="font-weight:bold;color:#7f0055">int </span>$numéro): <span style="font-weight:bold;color:#7f0055">array </span>{</span>
@@ -6578,10 +6578,10 @@
 <li>lignes 6-9 : les deux paramètres de l’URL ;</li>
 <li>ligne 14 : après une suppression, le serveur rend le nouveau tableau des simulations. On rend ce tableau ;</li>
 </ul>
-<p><a id="refheadingtoc3698142017825887"></a>
-<a id="toc42690957"></a>
+<p><a id="toc42690185"></a>
 <a id="toc42690571"></a>
-<a id="toc42690185"></a></p>
+<a id="toc42690957"></a>
+<a id="refheadingtoc3698142017825887"></a></p>
 <h5 id="2314228-la-methode-finsession">23.14.2.2.8. La méthode [finSession]</h5>
 <p>Une session de travail avec le service web se termine normalement par l’appel à la méthode <strong>[finSession]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -6607,16 +6607,16 @@
 <li>lignes 6-8 : l’unique paramètre de l’URL ;</li>
 <li>ligne 13 : on lit la réponse. Une exception sera lancée si le code HTTP de la réponse est différent de 200 ;</li>
 </ul>
-<p><a id="refheadingtoc3698162017825887"></a>
-<a id="toc42690958"></a>
+<p><a id="toc42690186"></a>
 <a id="toc42690572"></a>
-<a id="toc42690186"></a></p>
+<a id="toc42690958"></a>
+<a id="refheadingtoc3698162017825887"></a></p>
 <h3 id="23143-la-couche-metier">23.14.3. La couche [métier]</h3>
 <p><img src="images/100000000000070B000000F076D12E8E.png" style="width:14.311cm;height:1.911cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000070B000000F076D12E8E.png" /></p>
-<p><a id="refheadingtoc3698182017825887"></a>
-<a id="toc42690959"></a>
+<p><a id="toc42690187"></a>
 <a id="toc42690573"></a>
-<a id="toc42690187"></a></p>
+<a id="toc42690959"></a>
+<a id="refheadingtoc3698182017825887"></a></p>
 <h4 id="231431-linterface">23.14.3.1. L’interface</h4>
 <p>L’interface de la couche <strong>[métier]</strong> est la suivante <strong>[InterfaceClientMetier.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -6657,10 +6657,10 @@
 <ul>
 <li>seule la méthode <strong>[executeBatchImpots]</strong> de la ligne 12 est spécifique à la couche <strong>[métier]</strong>. Toutes les autres appartiennent à la couche <strong>[dao]</strong> qui les implémente ;</li>
 </ul>
-<p><a id="refheadingtoc3698202017825887"></a>
-<a id="toc42690960"></a>
+<p><a id="toc42690188"></a>
 <a id="toc42690574"></a>
-<a id="toc42690188"></a></p>
+<a id="toc42690960"></a>
+<a id="refheadingtoc3698202017825887"></a></p>
 <h4 id="231432-la-classe-clientmetier">23.14.3.2. La classe [ClientMetier]</h4>
 <p>La classe implémentant la couche <strong>[métier]</strong> est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -6740,10 +6740,10 @@
 <li>lignes 35-37 : les résultats obtenus dans le tableau <strong>[$simulations]</strong> sont sauvegardés dans un fichier jSON ;</li>
 </ul>
 <p><strong>Note</strong> : La couche <strong>[métier]</strong> ne fait quasiment rien. On pourrait décider de la supprimer et de tout rassembler dans la couche <strong>[dao]</strong>.</p>
-<p><a id="refheadingtoc3698222017825887"></a>
-<a id="toc42690961"></a>
+<p><a id="toc42690189"></a>
 <a id="toc42690575"></a>
-<a id="toc42690189"></a></p>
+<a id="toc42690961"></a>
+<a id="refheadingtoc3698222017825887"></a></p>
 <h3 id="23144-le-script-principal">23.14.4. Le script principal</h3>
 <p><img src="images/10000000000006FE000000E41776F385.png" style="width:14.211cm;height:1.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FE000000E41776F385.png" /></p>
 <p>Le script principal est configuré par le fichier <strong>[config.json]</strong> suivant :</p>
@@ -7075,10 +7075,10 @@
 <span class="odt-code-line">Terminé</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc3698242017825887"></a>
-<a id="toc42690962"></a>
+<p><a id="toc42690190"></a>
 <a id="toc42690576"></a>
-<a id="toc42690190"></a></p>
+<a id="toc42690962"></a>
+<a id="refheadingtoc3698242017825887"></a></p>
 <h3 id="23145-tests-codeception">23.14.5. Tests [Codeception]</h3>
 <p>Comme pour les précédents clients, le client de la version 12 peut faire l’objet de tests <strong>[Codeception]</strong> :</p>
 <p><img src="images/10000000000001F3000002BBBEF71EA7.png" style="width:4.62cm;height:6.471cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F3000002BBBEF71EA7.png" /></p>
