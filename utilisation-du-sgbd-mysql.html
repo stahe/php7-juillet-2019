@@ -1116,10 +1116,10 @@
   
 
 
-<p><a id="refheading399121881943603"></a>
-<a id="toc42690705"></a>
+<p><a id="toc42689933"></a>
 <a id="toc42690319"></a>
-<a id="toc42689933"></a></p>
+<a id="toc42690705"></a>
+<a id="refheading399121881943603"></a></p>
 <h1 id="12-utilisation-du-sgbd-mysql">12. Utilisation du SGBD MySQL</h1>
 <p><img src="images/10000000000001C9000002DA767154B2.png" style="width:4.231cm;height:6.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C9000002DA767154B2.png" /></p>
 <p>Nous allons maintenant écrire des scripts PHP utilisant une base de données MySQL :</p>
@@ -1131,96 +1131,138 @@
 <p>Nous allons maintenant utiliser le SGBD MySQL. Celui-ci est inclus dans le paquetage Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>).</p>
 <p>Si le lecteur est novice avec la notion de base de données et de langage SQL, il pourra lire le document <strong>[http://sergetahe.com/cours-tutoriels-de-programmation/cours-tutoriel-sql-avec-le-sgbd-firebird/]</strong>. Ce document utilise le SGBD Firebird et non pas MySQL mais donne les fondamentaux des bases de données et du langage SQL. Comme MySQL, Firebird dispose d’une version librement utilisable et de faible empreinte mémoire.</p>
 <p><a id="creationdunebase"></a>
-<a id="toc42690706"></a>
-<a id="toc42690320"></a>
+<a id="refheadingtoc837491549297239"></a>
 <a id="toc42689934"></a>
-<a id="refheadingtoc837491549297239"></a></p>
+<a id="toc42690320"></a>
+<a id="toc42690706"></a></p>
 <h2 id="121-creation-dune-base-de-donnees">12.1. Création d’une base de données</h2>
 <p>Nous montrons maintenant comment créer une base de données ainsi qu&#x27;un utilisateur MySQL avec l’outil Laragon.</p>
 <p><img src="images/1000000000000553000004751CF0B2F5.png" style="width:10.82cm;height:9.06cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000553000004751CF0B2F5.png" /></p>
 <ul>
-<li>une fois lancé, Laragon <strong>[1]</strong> peut être administré à partir d&#x27;un menu <strong>[2]</strong> ;</li>
-<li>en <strong>[3-5]</strong>, on installe l&#x27;outil <strong>[phpMyAdmin]</strong> d&#x27;administration de MySQL s’il n’a pas déjà été installé ;</li>
+  <li>une fois lancé, Laragon <b>[1]</b> peut être administré à partir d&#x27;un menu <b>[2]</b> ;
+  </li>
+  <li>en <b>[3-5]</b>, on installe l&#x27;outil <b>[phpMyAdmin]</b> d&#x27;administration de MySQL s’il n’a pas déjà été installé ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000006FC0000011798DFFB55.png" style="width:14.191cm;height:2.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FC0000011798DFFB55.png" /></p>
 <ul>
-<li>en <strong>[6]</strong>, on démarre le serveur web Apache ainsi que le SGBD MySQL ;</li>
-<li>en <strong>[7]</strong>, le serveur Apache est lancé ;</li>
-<li>en <strong>[8]</strong>, le SBD MySQL est lancé ;</li>
+  <li>en <b>[6]</b>, on démarre le serveur web Apache ainsi que le SGBD MySQL ;
+  </li>
+  <li>en <b>[7]</b>, le serveur Apache est lancé ;
+  </li>
+  <li>en <b>[8]</b>, le SBD MySQL est lancé ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000007B8000003231C1634CE.png" style="width:15.68cm;height:6.37cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007B8000003231C1634CE.png" /></p>
 <ul>
-<li>en <strong>[8-10]</strong>, on crée une base de données qu’on nomme <strong>[dbpersonnes]</strong> <strong>[11]</strong>. On va construire une base de données de personnes ;</li>
+  <li>en <b>[8-10]</b>, on crée une base de données qu’on nomme <b>[dbpersonnes]</b> <b>[11]</b>. On va construire une base de données de personnes ;
+  </li>
 </ul>
+
 <p><img src="images/1000000000000372000000A9BC1F927F.png" style="width:7.002cm;height:1.341cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000372000000A9BC1F927F.png" /></p>
 <ul>
-<li>en <strong>[11]</strong>, on va gérer la base de données qu’on vient de créer ;</li>
+  <li>en <b>[11]</b>, on va gérer la base de données qu’on vient de créer ;
+  </li>
 </ul>
+
 <p><img src="images/1000000000000517000003778417D691.png" style="width:10.341cm;height:7.04cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000517000003778417D691.png" /></p>
 <ul>
-<li>l’opération <strong>[Bases de données]</strong> émet une requête web vers l’URL <strong>[http://localhost/phpmyadmin]</strong>. C’est le serveur web Apache de Laragon qui répond. L’URL <strong>[http://localhost/phpmyadmin]</strong> est l’URL de l’utilitaire <strong>[phpMyAdmin]</strong> que nous avons installé précédemment <strong>[5]</strong>. Cet utilitaire permet de gérer les bases de données MySQL ;</li>
-<li>par défaut, les identifiants de connexion de l’administrateur de la base sont : <strong>root</strong> <strong>[13]</strong> sans mot de passe <strong>[14]</strong> ;</li>
+  <li>l’opération <b>[Bases de données]</b> émet une requête web vers l’URL <b>[http://localhost/phpmyadmin]</b>. C’est le serveur web Apache de Laragon qui répond. L’URL <b>[http://localhost/phpmyadmin]</b> est l’URL de l’utilitaire <b>[phpMyAdmin]</b> que nous avons installé précédemment <b>[5]</b>. Cet utilitaire permet de gérer les bases de données MySQL ;
+  </li>
+  <li>par défaut, les identifiants de connexion de l’administrateur de la base sont : <b>root</b> <b>[13]</b> sans mot de passe <b>[14]</b> ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000004270000023D24733D5A.png" style="width:8.441cm;height:4.552cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004270000023D24733D5A.png" /></p>
 <ul>
-<li>en <strong>[16]</strong>, la base de données que nous avons créée précédemment ;</li>
+  <li>en <b>[16]</b>, la base de données que nous avons créée précédemment ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000004FE000001A2825F24A3.png" style="width:10.141cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004FE000001A2825F24A3.png" /></p>
 <ul>
-<li>on a pour l’instant une base <strong>[dbpersonnes]</strong> <strong>[17]</strong> qui est vide <strong>[18]</strong> ;</li>
+  <li>on a pour l’instant une base <b>[dbpersonnes]</b> <b>[17]</b> qui est vide <b>[18]</b> ;
+  </li>
 </ul>
+
 <p>On crée un utilisateur <strong>[admpersonnes]</strong> avec le mot de passe <strong>[nobody]</strong> qui va avoir tous les droits sur la base de données <strong>[dbpersonnes]</strong> :</p>
 <p><img src="images/100000000000060A000002558164BA30.png" style="width:12.27cm;height:4.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000060A000002558164BA30.png" /></p>
 <ul>
-<li>en <strong>[19]</strong>, on est positionnés sur la base <strong>[dbpersonnes]</strong> ;</li>
-<li>en <strong>[20]</strong>, on sélectionne l’onglet <strong>[Privileges]</strong> ;</li>
-<li>en <strong>[21-22]</strong>, on voit que l’utilisateur <strong>[root]</strong> a tous les droits sur la base <strong>[dbpersonnes]</strong> ;</li>
-<li>en <strong>[23]</strong>, on crée un nouvel utilisateur ;</li>
+  <li>en <b>[19]</b>, on est positionnés sur la base <b>[dbpersonnes]</b> ;
+  </li>
+  <li>en <b>[20]</b>, on sélectionne l’onglet <b>[Privileges]</b> ;
+  </li>
+  <li>en <b>[21-22]</b>, on voit que l’utilisateur <b>[root]</b> a tous les droits sur la base <b>[dbpersonnes]</b> ;
+  </li>
+  <li>en <b>[23]</b>, on crée un nouvel utilisateur ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000006FD0000045029126D5B.png" style="width:14.2cm;height:8.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006FD0000045029126D5B.png" /></p>
 <ul>
-<li>en <strong>[25-26]</strong>, l’utilisateur aura l’identifiant <strong>[admdbpersonnes]</strong> ;</li>
-<li>en <strong>[27-29]</strong>, son mot de passe sera <strong>[nobody]</strong> ;</li>
-<li>en <strong>[30]</strong>, phpMyAdmin signale que le mot de passe est très faible (facile à craquer). En production, il est préférable de générer un mot de passe fort avec <strong>[31]</strong> ;</li>
-<li>en <strong>[32]</strong>, on indique que l’utilisateur <strong>[admdbpersonnes]</strong> doit avoir tous les droits sur la base <strong>[dbpersonnes]</strong> ;</li>
-<li>en <strong>[33]</strong>, on valide les renseignements donnés ;</li>
+  <li>en <b>[25-26]</b>, l’utilisateur aura l’identifiant <b>[admdbpersonnes]</b> ;
+  </li>
+  <li>en <b>[27-29]</b>, son mot de passe sera <b>[nobody]</b> ;
+  </li>
+  <li>en <b>[30]</b>, phpMyAdmin signale que le mot de passe est très faible (facile à craquer). En production, il est préférable de générer un mot de passe fort avec <b>[31]</b> ;
+  </li>
+  <li>en <b>[32]</b>, on indique que l’utilisateur <b>[admdbpersonnes]</b> doit avoir tous les droits sur la base <b>[dbpersonnes]</b> ;
+  </li>
+  <li>en <b>[33]</b>, on valide les renseignements donnés ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000008B600000156F61E68AF.png" style="width:17.701cm;height:2.71cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008B600000156F61E68AF.png" /></p>
 <ul>
-<li>en <strong>[35]</strong>, phpMyAdmin indique que l’utilisateur a été créé ;</li>
-<li>en <strong>[36]</strong>, l’ordre SQL qui a été émis sur la base ;</li>
-<li>en <strong>[37]</strong>, l’utilisateur <strong>[admpersonnes]</strong> a tous les droits sur la base de données <strong>[dbpersonnes]</strong> ;</li>
+  <li>en <b>[35]</b>, phpMyAdmin indique que l’utilisateur a été créé ;
+  </li>
+  <li>en <b>[36]</b>, l’ordre SQL qui a été émis sur la base ;
+  </li>
+  <li>en <b>[37]</b>, l’utilisateur <b>[admpersonnes]</b> a tous les droits sur la base de données <b>[dbpersonnes]</b> ;
+  </li>
 </ul>
+
 <p>Désormais nous avons :</p>
 <ul>
-<li>une base de données MySQL <strong>[dbpersonnes]</strong> ;</li>
-<li>un utilisateur <strong>[admpersonnes/nobody]</strong> qui a tous les droits sur cette base de données ;</li>
+  <li>une base de données MySQL <b>[dbpersonnes]</b> ;
+  </li>
+  <li>un utilisateur <b>[admpersonnes/nobody]</b> qui a tous les droits sur cette base de données ;
+  </li>
 </ul>
+
 <p>Nous allons écrire des scripts PHP pour exploiter la base de données. PHP dispose de diverses bibliothèques pour gérer les bases de données. Nous utiliserons la bibliothèque PDO (PHP Data Objects) qui s&#x27;intercale entre le code PHP et le SGBD :</p>
 <p><img src="images/10000000000006F200000102F5E4EDD3.png" style="width:14.11cm;height:2.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F200000102F5E4EDD3.png" /></p>
 <p>La bibliothèque PDO permet au script PHP de s&#x27;abstraire de la nature exacte du SGBD utilisé. Ainsi ci-dessus, le SGBD <strong>MySQL</strong> peut être remplacé par le SGBD <strong>PostgreSQL</strong> avec un impact minimum sur le code du script PHP. Cette bibliothèque n&#x27;est pas disponible par défaut. On peut vérifier sa disponibilité de la façon suivante :</p>
 <p><img src="images/10000000000005EF000003B0A69838B8.png" style="width:12.06cm;height:7.49cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EF000003B0A69838B8.png" /></p>
 <ul>
-<li>en <strong>[1-4]</strong>, on vérifie les extensions PDO actives ;</li>
-<li>en <strong>[5]</strong>, on voit que l’extension PDO pour le SGBD MySQL est active. Les autres ne le sont pas. Il suffirait de les cliquer pour les activer ;</li>
+  <li>en <b>[1-4]</b>, on vérifie les extensions PDO actives ;
+  </li>
+  <li>en <b>[5]</b>, on voit que l’extension PDO pour le SGBD MySQL est active. Les autres ne le sont pas. Il suffirait de les cliquer pour les activer ;
+  </li>
 </ul>
+
 <p>Une autre façon d’activer une extension est de modifier directement le fichier <strong>[php.ini]</strong> (paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a>) qui configure PHP :</p>
 <p><img src="images/1000000000000457000003E823FB7DD9.png" style="width:8.82cm;height:7.94cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000457000003E823FB7DD9.png" /></p>
 <ul>
-<li>en <strong>[1]</strong>, l’extension PDO de MySQL est activée ;</li>
-<li>en <strong>[2]</strong>, l’extension PDO de Firebird est désactivée ;</li>
+  <li>en <b>[1]</b>, l’extension PDO de MySQL est activée ;
+  </li>
+  <li>en <b>[2]</b>, l’extension PDO de Firebird est désactivée ;
+  </li>
 </ul>
+
 <p>Après avoir modifié le fichier <strong>[php.ini]</strong>, il faut <strong>relancer</strong> le PHP de Laragon pour que les modifications soient prises en compte.</p>
-<p><a id="refheading399141881943603"></a>
-<a id="toc42690707"></a>
+<p><a id="toc42689935"></a>
 <a id="toc42690321"></a>
-<a id="toc42689935"></a></p>
+<a id="toc42690707"></a>
+<a id="refheading399141881943603"></a></p>
 <h2 id="122-connexion-a-une-base-de-donnees-mysql">12.2. Connexion à une base de données MySQL</h2>
 <p>La connexion à un SGBD se fait par la construction d&#x27;un objet PDO. Le constructeur admet différents paramètres :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$dbh=new PDO(string $dsn,string $user,string $passwd,array $driver_options)
 </code></pre></div>
 <p>La signification des paramètres est la suivante :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">$<b>dsn</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">(Data Source Name) est une chaîne précisant la nature du SGBD et sa localisation sur internet. La chaîne &quot;<i>mysql:host=localhost</i>&quot; indique qu&#x27;on a affaire à un SGBD MySQL opérant sur le serveur local. Cette chaîne peut comprendre d&#x27;autres paramètres, notamment le port d&#x27;écoute du SGBD et le nom de la base à laquelle on veut se connecter : &quot;<i>mysql:host=localhost:port=3306:dbname=dbpersonnes</i>&quot; ;</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">$<b>user</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">identifiant de l&#x27;utilisateur qui se connecte ;</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">$<b>passwd</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">son mot de passe ;</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">$<b>driver_options</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">un tableau d&#x27;options pour le pilote du SGBD ;</p></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">$<b>dsn</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">(Data Source Name) est une chaîne précisant la nature du SGBD et sa localisation sur internet. La chaîne &quot;<i>mysql:host=localhost</i>&quot; indique qu&#x27;on a affaire à un SGBD MySQL opérant sur le serveur local. Cette chaîne peut comprendre d&#x27;autres paramètres, notamment le port d&#x27;écoute du SGBD et le nom de la base à laquelle on veut se connecter : &quot;<i>mysql:host=localhost:port=3306:dbname=dbpersonnes</i>&quot; ;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">$<b>user</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">identifiant de l&#x27;utilisateur qui se connecte ;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">$<b>passwd</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">son mot de passe ;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">$<b>driver_options</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">un tableau d&#x27;options pour le pilote du SGBD ;</div></td></tr></table>
 
 <p>Seul le premier paramètre est obligatoire. L&#x27;objet ainsi construit sera ensuite le support de toutes les opérations faites sur la base de données à laquelle on s&#x27;est connecté. Si l&#x27;objet PDO n&#x27;a pu être construit, une exception de type <strong>PDOException</strong> est lancée.</p>
 <p>Voici un exemple de connexion <strong>[mysql-01.php]</strong> :</p>
@@ -1250,25 +1292,33 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 11 : la connexion à un SGBD se fait par la construction d&#x27;un objet PDO. Le constructeur est ici utilisé avec les paramètres suivants :<ul>
-<li>une chaîne précisant la nature du SGBD et sa localisation sur internet. La chaîne &quot;<em>mysql:host=localhost</em>&quot; indique qu&#x27;on a affaire à un SGBD MySQL opérant sur le serveur local. Le port n&#x27;a pas été précisé. Le port 3306 est alors utilisé par défaut. Le nom de la base de données n&#x27;est pas indiqué non plus. Il y aura alors connexion au SGBD MySQL, la sélection d&#x27;une base précise se faisant plus tard ;</li>
-<li>un identifiant d&#x27;utilisateur ;</li>
-<li>son mot de passe ;</li>
+  <li>ligne 11 : la connexion à un SGBD se fait par la construction d&#x27;un objet PDO. Le constructeur est ici utilisé avec les paramètres suivants :
+    <ul>
+      <li>une chaîne précisant la nature du SGBD et sa localisation sur internet. La chaîne &quot;<i>mysql:host=localhost</i>&quot; indique qu&#x27;on a affaire à un SGBD MySQL opérant sur le serveur local. Le port n&#x27;a pas été précisé. Le port 3306 est alors utilisé par défaut. Le nom de la base de données n&#x27;est pas indiqué non plus. Il y aura alors connexion au SGBD MySQL, la sélection d&#x27;une base précise se faisant plus tard ;
+      </li>
+      <li>un identifiant d&#x27;utilisateur ;
+      </li>
+      <li>son mot de passe ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 14 : la fermeture de la connexion se fait par suppression de l&#x27;objet PDO créé initialement ;
+  </li>
+  <li>ligne 15 : la connexion à un SGBD peut échouer. Dans ce cas, une exception de type PDOException est lancée. Celle-ci dérive de l’exception PHP <b>[RuntimeException]</b> ;
+  </li>
+  <li>ligne 16 : on affiche le message d’erreur de l’exception ;
+  </li>
 </ul>
-</li>
-<li>ligne 14 : la fermeture de la connexion se fait par suppression de l&#x27;objet PDO créé initialement ;</li>
-<li>ligne 15 : la connexion à un SGBD peut échouer. Dans ce cas, une exception de type PDOException est lancée. Celle-ci dérive de l’exception PHP <strong>[RuntimeException]</strong> ;</li>
-<li>ligne 16 : on affiche le message d’erreur de l’exception ;</li>
-</ul>
+
 <p>Réexécutons le script en mettant ligne 6 un mot de passe erroné. Le résultat est alors le suivant :</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line">Erreur : SQLSTATE<span style="font-weight:bold">[HY000]</span> <span style="font-weight:bold">[1045]</span> Access denied for user &#x27;admpersonnes&#x27;@&#x27;localhost&#x27; (using password: YES)</span>
 </code></pre></div>
 
-<p><a id="refheading399161881943603"></a>
-<a id="toc42690708"></a>
+<p><a id="toc42689936"></a>
 <a id="toc42690322"></a>
-<a id="toc42689936"></a></p>
+<a id="toc42690708"></a>
+<a id="refheading399161881943603"></a></p>
 <h2 id="123-creation-dune-table">12.3. Création d&#x27;une table</h2>
 <p>Le script <strong>[mysql-02.php]</strong> montre la création d’une table dans une base de données :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1303,38 +1353,61 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 11 : connexion à la base de données. C’est toujours la 1re chose à faire. Le résultat de la connexion est un objet <strong>[PDO]</strong> au travers duquel vont prendre les opérations sur la base de données ;</li>
-<li>ligne 13 : l’ordre SQL <strong>[drop table personnes]</strong> va supprimer la table <strong>[personnes]</strong> de la base de données <strong>[dbpersonnes]</strong>. Si la table <strong>[personnes]</strong> n’existe pas, cela ne provoque pas d’erreur ;</li>
-<li>ligne 14 : exécution de l’ordre SQL précédent sur la base de données <strong>[dbpersonnes]</strong>. Cet exécution peut lancer une <strong>[PDOException]</strong> qui sera interceptée ligne 18 ;</li>
-<li>ligne 16 : cet ordre SQL crée une table <strong>[personnes]</strong>. Une table contient des lignes et des colonnes. Les colonnes forment ce qu’on appelle la <strong>structure</strong> de la table. Les lignes forment le <strong>contenu</strong> de la table. Une base de données peut contenir une ou plusieurs tables. La table <strong>[personnes]</strong> aura ici trois colonnes :<ul>
-<li><strong>prenom</strong> : le prénom d’une personne sous la forme d’une chaîne d’au plus 30 caractères ;</li>
-<li><strong>nom</strong> : le nom de cette même personne sous la forme d’une chaîne d’au plus 30 caractères ;</li>
-<li><strong>age</strong> : l’âge de la personne sous la forme d’un entier ;</li>
-<li>l’attribut <strong>NOT NULL</strong> sur une colonne impose que la colonne ait une valeur. Ne pas lui en donner provoque une <strong>[PDOException]</strong> ;</li>
-<li><strong>[primary key(nom,prenom)]</strong> fixe une <strong>clé primaire</strong> à la table <strong>[personnes]</strong>. Une clé primaire a une valeur <strong>unique</strong> pour chaque ligne de la table. Ici la clé primaire sera obtenue par concaténation des colonnes <strong>[nom]</strong> et <strong>[prenom]</strong> de la ligne. Cette contrainte fait que dans la table on ne pourra pas avoir deux personnes ayant les mêmes nom et prénom, donc deux homonymes. Créer un homonyme d’une personne dans la table provoque une <strong>[PDOException]</strong> ;</li>
+  <li>ligne 11 : connexion à la base de données. C’est toujours la 1re chose à faire. Le résultat de la connexion est un objet <b>[PDO]</b> au travers duquel vont prendre les opérations sur la base de données ;
+  </li>
+  <li>ligne 13 : l’ordre SQL <b>[drop table personnes]</b> va supprimer la table <b>[personnes]</b> de la base de données <b>[dbpersonnes]</b>. Si la table <b>[personnes]</b> n’existe pas, cela ne provoque pas d’erreur ;
+  </li>
+  <li>ligne 14 : exécution de l’ordre SQL précédent sur la base de données <b>[dbpersonnes]</b>. Cet exécution peut lancer une <b>[PDOException]</b> qui sera interceptée ligne 18 ;
+  </li>
+  <li>ligne 16 : cet ordre SQL crée une table <b>[personnes]</b>. Une table contient des lignes et des colonnes. Les colonnes forment ce qu’on appelle la <b>structure</b> de la table. Les lignes forment le <b>contenu</b> de la table. Une base de données peut contenir une ou plusieurs tables. La table <b>[personnes]</b> aura ici trois colonnes :
+    <ul>
+      <li><b>prenom</b> : le prénom d’une personne sous la forme d’une chaîne d’au plus 30 caractères ;
+      </li>
+      <li><b>nom</b> : le nom de cette même personne sous la forme d’une chaîne d’au plus 30 caractères ;
+      </li>
+      <li><b>age</b> : l’âge de la personne sous la forme d’un entier ;
+      </li>
+      <li>l’attribut <b>NOT NULL</b> sur une colonne impose que la colonne ait une valeur. Ne pas lui en donner provoque une <b>[PDOException]</b> ;
+      </li>
+      <li><b>[primary key(nom,prenom)]</b> fixe une <b>clé primaire</b> à la table <b>[personnes]</b>. Une clé primaire a une valeur <b>unique</b> pour chaque ligne de la table. Ici la clé primaire sera obtenue par concaténation des colonnes <b>[nom]</b> et <b>[prenom]</b> de la ligne. Cette contrainte fait que dans la table on ne pourra pas avoir deux personnes ayant les mêmes nom et prénom, donc deux homonymes. Créer un homonyme d’une personne dans la table provoque une <b>[PDOException]</b> ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 17 : exécution de l’ordre SQL sur la base de données <b>[dbpersonnes]</b> ;
+  </li>
+  <li>ligne 20 : s’il se produit une <b>[PDOException]</b>, on affiche le message d’erreur associé ;
+  </li>
+  <li>lignes 21-24 : on passe dans la clause <b>[finally]</b> dans tous les cas, exception ou pas, pour fermer la connexion à la base de données (ligne 23) ;
+  </li>
 </ul>
-</li>
-<li>ligne 17 : exécution de l’ordre SQL sur la base de données <strong>[dbpersonnes]</strong> ;</li>
-<li>ligne 20 : s’il se produit une <strong>[PDOException]</strong>, on affiche le message d’erreur associé ;</li>
-<li>lignes 21-24 : on passe dans la clause <strong>[finally]</strong> dans tous les cas, exception ou pas, pour fermer la connexion à la base de données (ligne 23) ;</li>
-</ul>
+
 <p><strong>Résultats</strong> :</p>
 <p>Si l’exécution du script se passe sans erreurs, on peut voir la présence de la table dans phpMyAdmin  :</p>
 <p><img src="images/10000000000005B8000002B6E9CD2C8E.png" style="width:11.621cm;height:5.511cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B8000002B6E9CD2C8E.png" /></p>
 <p><img src="images/1000000000000677000001B779F47741.png" style="width:13.14cm;height:3.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000677000001B779F47741.png" /></p>
 <ul>
-<li>en <strong>[3]</strong> la base de données ;</li>
-<li>en <strong>[4]</strong>, la table présentée ;</li>
-<li>en <strong>[5]</strong>, la structure des tables est présentée dans l’onglet <strong>[Structure]</strong> ;</li>
-<li>en <strong>[6-8]</strong>, les trois colonnes de la table ;</li>
-<li>en <strong>[9]</strong>, aucune des trois colonnes ne peut être vide ;</li>
+  <li>en <b>[3]</b> la base de données ;
+  </li>
+  <li>en <b>[4]</b>, la table présentée ;
+  </li>
+  <li>en <b>[5]</b>, la structure des tables est présentée dans l’onglet <b>[Structure]</b> ;
+  </li>
+  <li>en <b>[6-8]</b>, les trois colonnes de la table ;
+  </li>
+  <li>en <b>[9]</b>, aucune des trois colonnes ne peut être vide ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000005210000013C193B2870.png" style="width:10.42cm;height:2.511cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005210000013C193B2870.png" /></p>
 <ul>
-<li>en <strong>[10]</strong>, la liste des index de la table. Un index permet de retrouver dans la table les lignes ayant tel index, plus vite que si on parcourait séquentiellement les lignes de la table. La clé primaire fait toujours partie des index mais un index peut ne pas être une clé primaire ;</li>
-<li>en <strong>[11]</strong>, l’index est ici la clé primaire ;</li>
-<li>en <strong>[12]</strong>, l’index est constitué des colonnes <strong>[nom, prenom]</strong> de chaque ligne ;</li>
+  <li>en <b>[10]</b>, la liste des index de la table. Un index permet de retrouver dans la table les lignes ayant tel index, plus vite que si on parcourait séquentiellement les lignes de la table. La clé primaire fait toujours partie des index mais un index peut ne pas être une clé primaire ;
+  </li>
+  <li>en <b>[11]</b>, l’index est ici la clé primaire ;
+  </li>
+  <li>en <b>[12]</b>, l’index est constitué des colonnes <b>[nom, prenom]</b> de chaque ligne ;
+  </li>
 </ul>
+
 <p>Maintenant, voyons ce qui se passe si on crée des erreurs, respectivement sur le nom de la base, le nom de l’utilisateur, son mot de passe :</p>
 <p>Si on met un nom de base inexistante :</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1351,10 +1424,10 @@
 <span class="odt-code-line">Erreur : SQLSTATE<span style="font-weight:bold">[HY000]</span> <span style="font-weight:bold">[1045]</span> Access denied for user &#x27;admpersonnes&#x27;@&#x27;localhost&#x27; (using password: YES)</span>
 </code></pre></div>
 
-<p><a id="refheading399201881943603"></a>
-<a id="toc42690709"></a>
+<p><a id="toc42689937"></a>
 <a id="toc42690323"></a>
-<a id="toc42689937"></a></p>
+<a id="toc42690709"></a>
+<a id="refheading399201881943603"></a></p>
 <h2 id="124-remplissage-dune-table">12.4. Remplissage d’une table</h2>
 <p>Nous allons écrire un script PHP qui exécute des ordres SQL trouvés dans le fichier texte <strong>[creation.txt]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -1379,17 +1452,26 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>le langage SQL (Structured Query Language) n’est pas sensible à la casse (majuscules, minuscules) des ordre SQL ;</li>
-<li>ligne 1 : on supprime la table <strong>[personnes]</strong> si elle existe ;</li>
-<li>ligne 2 : on indique au serveur MySQL qu’on va lui envoyer des caractères codés en UTF-8. Cet ordre SQL propre à MySQL est nécessaire ici par exemple pour avoir ligne 7, le é de Géraldine dans la base. Si on ne met pas la ligne 2, le é va être traduit en une suite de deux caractères étranges. Le client est le script PHP écrit sous Netbeans. Or celui-ci code les fichiers en UTF-8 <strong>[1-4]</strong> ci-dessous :</li>
+  <li>le langage SQL (Structured Query Language) n’est pas sensible à la casse (majuscules, minuscules) des ordre SQL ;
+  </li>
+  <li>ligne 1 : on supprime la table <b>[personnes]</b> si elle existe ;
+  </li>
+  <li>ligne 2 : on indique au serveur MySQL qu’on va lui envoyer des caractères codés en UTF-8. Cet ordre SQL propre à MySQL est nécessaire ici par exemple pour avoir ligne 7, le é de Géraldine dans la base. Si on ne met pas la ligne 2, le é va être traduit en une suite de deux caractères étranges. Le client est le script PHP écrit sous Netbeans. Or celui-ci code les fichiers en UTF-8 <b>[1-4]</b> ci-dessous :
+  </li>
 </ul>
+
 <p><img src="images/10000000000007B600000446BCEF1139.png" style="width:15.671cm;height:8.681cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007B600000446BCEF1139.png" /></p>
 <ul>
-<li>ligne 3 : création de la table <strong>[personnes]</strong> avec les trois colonnes (prenom, nom, age) et la clé primaire (nom, prenom) ;</li>
-<li>lignes 4-10 : insertion de 7 lignes dans la table <strong>[personnes]</strong> ;</li>
-<li>ligne 6 : cet ordre d’insertion devrait échouer car il tente la même insertion que ligne 5. La contrainte de clé primaire devrait empêcher cette insertion : on ne peut avoir deux personnes ayant mêmes nom et prénom ;</li>
-<li>ligne 10 :  cet ordre d’insertion devrait échouer car il tente la même insertion que ligne 9 ;</li>
+  <li>ligne 3 : création de la table <b>[personnes]</b> avec les trois colonnes (prenom, nom, age) et la clé primaire (nom, prenom) ;
+  </li>
+  <li>lignes 4-10 : insertion de 7 lignes dans la table <b>[personnes]</b> ;
+  </li>
+  <li>ligne 6 : cet ordre d’insertion devrait échouer car il tente la même insertion que ligne 5. La contrainte de clé primaire devrait empêcher cette insertion : on ne peut avoir deux personnes ayant mêmes nom et prénom ;
+  </li>
+  <li>ligne 10 :  cet ordre d’insertion devrait échouer car il tente la même insertion que ligne 9 ;
+  </li>
 </ul>
+
 <p>Le script PHP chargé d’exécuter les ordres SQL de ce fichier texte est le suivant <strong>[mysql-03.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1494,43 +1576,74 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">la fonction </span><strong><span style="color: #000000">[exécuterCommandes]</span></strong><span style="color: #000000"> (lignes 36-89) est chargée d’exécuter les commandes SQL qu’elle trouve dans le fichier texte </span><strong><span style="color: #000000">[$SQLFileName]</span></strong><span style="color: #000000"> (paramètre 2). Pour les exécuter elle utilise la connexion ouverte </span><strong><span style="color: #000000">[$connexion]</span></strong><span style="color: #000000"> (paramètre 1) avec le  serveur MySQL. Le troisième paramètre </span><strong><span style="color: #000000">[$suivi]</span></strong><span style="color: #000000"> est un booléen qui contrôle les affichages écran : à TRUE, l’ordre SQL exécuté est affiché à l’écran avec sa réussite ou son échec, sinon l’exécution de l’ordre SQL est silencieux. Le quatrième paramètre </span><strong><span style="color: #000000">[$arrêt]</span></strong><span style="color: #000000"> contrôle ce qu’il faut faire lorsq’une commande SQL échoue : à TRUE, il indique que l’exécution des commandes SQL doit s’arrêter, sinon celle-ci continue. La fonction </span><strong><span style="color: #000000">[exécuterCommandes]</span></strong><span style="color: #000000"> rend un tableau de messages d’erreurs, vide s’il n’y a pas eu d’erreurs ;</span></li>
-<li><span style="color: #000000">lignes 11-18 : on ouvre la connexion vers la base MySQL </span><strong><span style="color: #000000">[dbpersonnes]</span></strong><span style="color: #000000">. Si l’ouverture échoue, un message d’erreur est affiché et on s’arrête (lignes 14-18) ;</span></li>
-<li><span style="color: #000000">ligne 22 : on passe donc une connexion ouverte à la fonction </span><strong><span style="color: #000000">[exécuterCommandes]</span></strong><span style="color: #000000">. Elle sera fermée au retour de la fonction (ligne 24) ;</span></li>
-<li><span style="color: #000000">ligne 20 : avant de la passer à la fonction </span><strong><span style="color: #000000">[exécuterCommandes]</span></strong><span style="color: #000000">, on configure la connexion. En cas d’erreur, les opérations SQL avec un objet </span><strong><span style="color: #000000">[PDO]</span></strong><span style="color: #000000"> peuvent soit rendre le booléen </span><strong><span style="color: #000000">FALSE</span></strong><span style="color: #000000"> (valeur par défaut), soit lancer une exception. La ligne 20 choisit ce second cas. En effet, il est facile ‘d’oublier’ de vérifier le résultat booléen de l’exécution d’un ordre SQL. Cela produira une erreur ultérieurement mais ailleurs dans le code rendant ainsi plus difficile le lieu originel de celle-ci. Dans le cas d’une exception non gérée (absence de </span><em><span style="color: #000000">catch</span></em><span style="color: #000000">), l’exception va remonter dans le code jusqu’à rencontrer un </span><em><span style="color: #000000">catch</span></em><span style="color: #000000"> ou jusqu’à remonter à l’interpréteur PHP qui lui interceptera l’exception. Dans ce cas, la nature de l’exception et son lieu d’origine dans le code sont affichés ;</span></li>
-<li><span style="color: #000000">ligne 22 : la fonction </span><strong><span style="color: #000000">[exécuterCommandes]</span></strong><span style="color: #000000"> est appelée pour exécuter le fichier d’ordres SQL </span><strong><span style="color: #000000">[$SQLFileName]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 45-47 : on vérifie que le fichier des ordres SQL existe bien. Si ce n’est pas le cas, on note l’erreur et on retourne ce résultat ;</span></li>
-<li><span style="color: #000000">ligne 51 : on met les ordres SQL dans un tableau </span><strong><span style="color: #000000">[$requêtes]</span></strong><span style="color: #000000">. Lignes 53-55, si l’opération échoue, on rend un tableau d’erreurs avec un unique message ;</span></li>
-<li><span style="color: #000000">ligne 57 : on va cumuler les erreurs dans le tableau </span><strong><span style="color: #000000">[$erreurs]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 58 : n° de la requête ;</span></li>
-<li><span style="color: #000000">ligne 59 : le booléen </span><strong><span style="color: #000000">[$fini]</span></strong><span style="color: #000000"> contrôle l’exécution des ordres SQL du tableau </span><strong><span style="color: #000000">[$requêtes]</span></strong><span style="color: #000000">. Lorsqu’il passe à TRUE, l’exécution s’arrête ;</span></li>
-<li><span style="color: #000000">ligne 60 : on boucle sur toutes les requêtes ;</span></li>
-<li><span style="color: #000000">ligne 63 : on extrait le texte de l’ordre SQL n° i. La fonction </span><strong><span style="color: #000000">[trim]</span></strong><span style="color: #000000"> va enlever les espaces qui précèdent et suivent le texte de l’ordre SQL. Par ‘espaces’, il faut entendre le blanc \b, le retour chariot \r, la marque de fin de ligne \n, le saut de page \f, la tabulation \t… Ce qui nous importe ici c’est que la marque de fin de ligne du texte SQL va disparaître ;</span></li>
-<li><span style="color: #000000">lignes 65-69 : si le texte SQL est vide, alors on ignore la requête et on passe à la suivante ;</span></li>
-<li><span style="color: #000000">ligne 72 : on envoie l’ordre SQL au serveur MySQL. La méthode </span><strong><span style="color: #000000">[PDO::exec]</span></strong><span style="color: #000000"> va lancer une exception si l’exécution échoue. On rappelle que ce comportement est dû à la configuration faite à la ligne 20 ;</span></li>
-<li><span style="color: #000000">ligne 79 : le message d’erreur est ajouté au tableau des erreurs ;</span></li>
-<li><span style="color: #000000">ligne 81 : on positionne le booléen </span><strong><span style="color: #000000">[$fini]</span></strong><span style="color: #000000"> qui contrôle la boucle. Si le paramètre </span><strong><span style="color: #000000">[$arrêt]</span></strong><span style="color: #000000"> (ligne 36) vaut TRUE, on doit arrêter la boucle ;</span></li>
-<li><span style="color: #000000">lignes 74-76 : si l’exécution de l’ordre SQL a réussi, on l’affiche à l’écran si le paramètre </span><strong><span style="color: #000000">[$suivi]</span></strong><span style="color: #000000"> (ligne 36) vaut TRUE ;</span></li>
-<li><span style="color: #000000">ligne 87 : une fois toutes les ordres SQL exécutés, on rend le tableau des erreurs </span><strong><span style="color: #000000">[$erreurs]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">la fonction </span><b><span style="color: #000000">[exécuterCommandes]</span></b><span style="color: #000000"> (lignes 36-89) est chargée d’exécuter les commandes SQL qu’elle trouve dans le fichier texte </span><b><span style="color: #000000">[$SQLFileName]</span></b><span style="color: #000000"> (paramètre 2). Pour les exécuter elle utilise la connexion ouverte </span><b><span style="color: #000000">[$connexion]</span></b><span style="color: #000000"> (paramètre 1) avec le  serveur MySQL. Le troisième paramètre </span><b><span style="color: #000000">[$suivi]</span></b><span style="color: #000000"> est un booléen qui contrôle les affichages écran : à TRUE, l’ordre SQL exécuté est affiché à l’écran avec sa réussite ou son échec, sinon l’exécution de l’ordre SQL est silencieux. Le quatrième paramètre </span><b><span style="color: #000000">[$arrêt]</span></b><span style="color: #000000"> contrôle ce qu’il faut faire lorsq’une commande SQL échoue : à TRUE, il indique que l’exécution des commandes SQL doit s’arrêter, sinon celle-ci continue. La fonction </span><b><span style="color: #000000">[exécuterCommandes]</span></b><span style="color: #000000"> rend un tableau de messages d’erreurs, vide s’il n’y a pas eu d’erreurs ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 11-18 : on ouvre la connexion vers la base MySQL </span><b><span style="color: #000000">[dbpersonnes]</span></b><span style="color: #000000">. Si l’ouverture échoue, un message d’erreur est affiché et on s’arrête (lignes 14-18) ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 22 : on passe donc une connexion ouverte à la fonction </span><b><span style="color: #000000">[exécuterCommandes]</span></b><span style="color: #000000">. Elle sera fermée au retour de la fonction (ligne 24) ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 20 : avant de la passer à la fonction </span><b><span style="color: #000000">[exécuterCommandes]</span></b><span style="color: #000000">, on configure la connexion. En cas d’erreur, les opérations SQL avec un objet </span><b><span style="color: #000000">[PDO]</span></b><span style="color: #000000"> peuvent soit rendre le booléen </span><b><span style="color: #000000">FALSE</span></b><span style="color: #000000"> (valeur par défaut), soit lancer une exception. La ligne 20 choisit ce second cas. En effet, il est facile ‘d’oublier’ de vérifier le résultat booléen de l’exécution d’un ordre SQL. Cela produira une erreur ultérieurement mais ailleurs dans le code rendant ainsi plus difficile le lieu originel de celle-ci. Dans le cas d’une exception non gérée (absence de </span><i><span style="color: #000000">catch</span></i><span style="color: #000000">), l’exception va remonter dans le code jusqu’à rencontrer un </span><i><span style="color: #000000">catch</span></i><span style="color: #000000"> ou jusqu’à remonter à l’interpréteur PHP qui lui interceptera l’exception. Dans ce cas, la nature de l’exception et son lieu d’origine dans le code sont affichés ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 22 : la fonction </span><b><span style="color: #000000">[exécuterCommandes]</span></b><span style="color: #000000"> est appelée pour exécuter le fichier d’ordres SQL </span><b><span style="color: #000000">[$SQLFileName]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 45-47 : on vérifie que le fichier des ordres SQL existe bien. Si ce n’est pas le cas, on note l’erreur et on retourne ce résultat ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 51 : on met les ordres SQL dans un tableau </span><b><span style="color: #000000">[$requêtes]</span></b><span style="color: #000000">. Lignes 53-55, si l’opération échoue, on rend un tableau d’erreurs avec un unique message ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 57 : on va cumuler les erreurs dans le tableau </span><b><span style="color: #000000">[$erreurs]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 58 : n° de la requête ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 59 : le booléen </span><b><span style="color: #000000">[$fini]</span></b><span style="color: #000000"> contrôle l’exécution des ordres SQL du tableau </span><b><span style="color: #000000">[$requêtes]</span></b><span style="color: #000000">. Lorsqu’il passe à TRUE, l’exécution s’arrête ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 60 : on boucle sur toutes les requêtes ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 63 : on extrait le texte de l’ordre SQL n° i. La fonction </span><b><span style="color: #000000">[trim]</span></b><span style="color: #000000"> va enlever les espaces qui précèdent et suivent le texte de l’ordre SQL. Par ‘espaces’, il faut entendre le blanc \b, le retour chariot \r, la marque de fin de ligne \n, le saut de page \f, la tabulation \t… Ce qui nous importe ici c’est que la marque de fin de ligne du texte SQL va disparaître ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 65-69 : si le texte SQL est vide, alors on ignore la requête et on passe à la suivante ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 72 : on envoie l’ordre SQL au serveur MySQL. La méthode </span><b><span style="color: #000000">[PDO::exec]</span></b><span style="color: #000000"> va lancer une exception si l’exécution échoue. On rappelle que ce comportement est dû à la configuration faite à la ligne 20 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 79 : le message d’erreur est ajouté au tableau des erreurs ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 81 : on positionne le booléen </span><b><span style="color: #000000">[$fini]</span></b><span style="color: #000000"> qui contrôle la boucle. Si le paramètre </span><b><span style="color: #000000">[$arrêt]</span></b><span style="color: #000000"> (ligne 36) vaut TRUE, on doit arrêter la boucle ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 74-76 : si l’exécution de l’ordre SQL a réussi, on l’affiche à l’écran si le paramètre </span><b><span style="color: #000000">[$suivi]</span></b><span style="color: #000000"> (ligne 36) vaut TRUE ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 87 : une fois toutes les ordres SQL exécutés, on rend le tableau des erreurs </span><b><span style="color: #000000">[$erreurs]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">La fonction </span><strong><span style="color: #000000">[adError]</span></strong><span style="color: #000000"> des lignes 90-97 permet d’ajouter une erreur au tableau des erreurs </span><strong><span style="color: #000000">[$erreurs]</span></strong><span style="color: #000000"> :</span></p>
 <ul>
-<li><span style="color: #000000">ligne 90 : la fonction reçoit 4 paramètres :</span><ul>
-<li><span style="color: #000000">le paramètre </span><strong><span style="color: #000000">[$erreurs]</span></strong><span style="color: #000000"> est passé par référence. En effet on veut agir sur le tableau qui est passé en paramètre et non sur une copie de celui-ci ;</span></li>
-<li><span style="color: #000000">le paramètre </span><strong><span style="color: #000000">[$requête]</span></strong><span style="color: #000000"> est le texte SQL de l’ordre qui a échoué ;</span></li>
-<li><span style="color: #000000">le paramètre </span><strong><span style="color: #000000">[$msg]</span></strong><span style="color: #000000"> est le message d’erreur lié à l’ordre qui a échoué ;</span></li>
-<li><span style="color: #000000">le booléen </span><strong><span style="color: #000000">[$suivi]</span></strong><span style="color: #000000"> indique si le message d’erreur doit être affiché ($suivi=TRUE) ou non ($suivi=FALSE) sur la console ;</span></li>
+  <li><span style="color: #000000">ligne 90 : la fonction reçoit 4 paramètres :</span>
+    <ul>
+      <li><span style="color: #000000">le paramètre </span><b><span style="color: #000000">[$erreurs]</span></b><span style="color: #000000"> est passé par référence. En effet on veut agir sur le tableau qui est passé en paramètre et non sur une copie de celui-ci ;</span>
+      </li>
+      <li><span style="color: #000000">le paramètre </span><b><span style="color: #000000">[$requête]</span></b><span style="color: #000000"> est le texte SQL de l’ordre qui a échoué ;</span>
+      </li>
+      <li><span style="color: #000000">le paramètre </span><b><span style="color: #000000">[$msg]</span></b><span style="color: #000000"> est le message d’erreur lié à l’ordre qui a échoué ;</span>
+      </li>
+      <li><span style="color: #000000">le booléen </span><b><span style="color: #000000">[$suivi]</span></b><span style="color: #000000"> indique si le message d’erreur doit être affiché ($suivi=TRUE) ou non ($suivi=FALSE) sur la console ;</span>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p><span style="color: #000000">La fonction </span><strong><span style="color: #000000">[exécuterCommandes]</span></strong><span style="color: #000000"> est appelé par le script des lignes 3-33 :</span></p>
 <ul>
-<li><span style="color: #000000">lignes 11-18 : une connexion est faite avec la base de données MySQL </span><strong><span style="color: #000000">[dbpersonnes]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 20 : la connexion est configurée ;</span></li>
-<li><span style="color: #000000">ligne 22 : le fichier des ordres SQL est ensuite exécuté ;</span></li>
-<li><span style="color: #000000">ligne 24 : on ferme la connexion ;</span></li>
-<li><span style="color: #000000">lignes 26-29 : on affiche les erreurs rendues par la fonction </span><strong><span style="color: #000000">[exécuterCommandes]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 11-18 : une connexion est faite avec la base de données MySQL </span><b><span style="color: #000000">[dbpersonnes]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 20 : la connexion est configurée ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 22 : le fichier des ordres SQL est ensuite exécuté ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 24 : on ferme la connexion ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 26-29 : on affiche les erreurs rendues par la fonction </span><b><span style="color: #000000">[exécuterCommandes]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p>Les <strong>résultats</strong> écran :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line">drop table if exists personnes : Exécution réussie</span>
@@ -1554,10 +1667,10 @@
 <p>Les insertions faites sont visibles avec phpMyAdmin :</p>
 <p><img src="images/100000000000031400000168D6F29E0B.png" style="width:6.25cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000031400000168D6F29E0B.png" /></p>
 <p><a id="executiondordressql"></a>
-<a id="toc42690710"></a>
-<a id="toc42690324"></a>
+<a id="refheading399221881943603"></a>
 <a id="toc42689938"></a>
-<a id="refheading399221881943603"></a></p>
+<a id="toc42690324"></a>
+<a id="toc42690710"></a></p>
 <h2 id="125-execution-dordres-sql-quelconques">12.5. Exécution d’ordres SQL quelconques</h2>
 <p>Le script suivant montre l&#x27;exécution des ordres SQL du fichier texte <strong>[sql.txt]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -1713,18 +1826,30 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 36-83 : la fonction <strong>[exécuterCommandes]</strong> est légèrement modifiée : l’ordre SQL <strong>[select]</strong> ne s’exécute pas de la même façon que les autres ordres SQL. Cet ordre est le seul à ramener comme résultat une table, ç-à-d un ensemble de lignes et de colonnes de la base de données ;</li>
-<li>lignes 55-57 : on isole le 1er mot de l’ordre SQL à l’aide d’une expression régulière ;</li>
-<li>lignes 60-64 : si la commande SQL est <strong>[select]</strong>, on utilise la méthode <strong>[PDO::query]</strong> sinon la méthode <strong>[PDO::exec]</strong> pour exécuter l’ordre SQL. Dans les deux cas, si l’exécution échoue, une exception sera lancée et interceptée lignes 71-77. Si l’exécution réussit, la ligne 70 affiche son résultat ;</li>
-<li>lignes 90-130 : la fonction <em>afficherInfos</em> affiche des informations sur le résultat de l’exécution d’un ordre SQL ;</li>
-<li>ligne 94 : on traite le cas du <strong>[select]</strong>. Son résultat est un objet de type <strong>[PDOStatement]</strong> ;</li>
-<li>ligne 96 : la méthode <strong>[PDOStatement::getColumnCount()]</strong> rend le nombre de colonnes de la table résultat du <em>select</em> ;</li>
-<li>lignes 98-99 : la méthode <strong>[PDOStatement::getMeta(i)]</strong> rend un dictionnaire d&#x27;informations sur la colonne n° <em>i</em> de la table résultat du <em>select.</em> Dans ce dictionnaire, la valeur associée à la clé &#x27;<em>name</em>&#x27; est le nom de la colonne ;</li>
-<li>lignes 97-102 : les noms des colonnes de la table résultat du <em>select</em> sont concaténées dans une chaîne de caractères ;</li>
-<li>lignes 105-110 : on construit une ligne de séparation ayant la même longueur que la chaîne de caractères construite précédemment ;</li>
-<li>lignes 112-121 : un objet de type <em>PDOStatement</em> peut être parcouru par une boucle <em>foreach</em>. A chaque itération, l&#x27;élément obtenu est une ligne de la table résultat du <em>select</em> sous la forme d&#x27;un tableau de valeurs représentant les valeurs des différentes colonnes de la ligne. On affiche toutes ces valeurs avec une boucle <em>for</em> (lignes 114-116)<em> </em>;</li>
-<li>lignes 123-127 : le résultat de l&#x27;exécution d&#x27;un ordre <em>insert</em>, <em>update</em>, <em>delete</em> est le nombre de lignes modifiées par l&#x27;ordre ;</li>
+  <li>lignes 36-83 : la fonction <b>[exécuterCommandes]</b> est légèrement modifiée : l’ordre SQL <b>[select]</b> ne s’exécute pas de la même façon que les autres ordres SQL. Cet ordre est le seul à ramener comme résultat une table, ç-à-d un ensemble de lignes et de colonnes de la base de données ;
+  </li>
+  <li>lignes 55-57 : on isole le 1er mot de l’ordre SQL à l’aide d’une expression régulière ;
+  </li>
+  <li>lignes 60-64 : si la commande SQL est <b>[select]</b>, on utilise la méthode <b>[PDO::query]</b> sinon la méthode <b>[PDO::exec]</b> pour exécuter l’ordre SQL. Dans les deux cas, si l’exécution échoue, une exception sera lancée et interceptée lignes 71-77. Si l’exécution réussit, la ligne 70 affiche son résultat ;
+  </li>
+  <li>lignes 90-130 : la fonction <i>afficherInfos</i> affiche des informations sur le résultat de l’exécution d’un ordre SQL ;
+  </li>
+  <li>ligne 94 : on traite le cas du <b>[select]</b>. Son résultat est un objet de type <b>[PDOStatement]</b> ;
+  </li>
+  <li>ligne 96 : la méthode <b>[PDOStatement::getColumnCount()]</b> rend le nombre de colonnes de la table résultat du <i>select</i> ;
+  </li>
+  <li>lignes 98-99 : la méthode <b>[PDOStatement::getMeta(i)]</b> rend un dictionnaire d&#x27;informations sur la colonne n° <i>i</i> de la table résultat du <i>select.</i> Dans ce dictionnaire, la valeur associée à la clé &#x27;<i>name</i>&#x27; est le nom de la colonne ;
+  </li>
+  <li>lignes 97-102 : les noms des colonnes de la table résultat du <i>select</i> sont concaténées dans une chaîne de caractères ;
+  </li>
+  <li>lignes 105-110 : on construit une ligne de séparation ayant la même longueur que la chaîne de caractères construite précédemment ;
+  </li>
+  <li>lignes 112-121 : un objet de type <i>PDOStatement</i> peut être parcouru par une boucle <i>foreach</i>. A chaque itération, l&#x27;élément obtenu est une ligne de la table résultat du <i>select</i> sous la forme d&#x27;un tableau de valeurs représentant les valeurs des différentes colonnes de la ligne. On affiche toutes ces valeurs avec une boucle <i>for</i> (lignes 114-116)<i> </i>;
+  </li>
+  <li>lignes 123-127 : le résultat de l&#x27;exécution d&#x27;un ordre <i>insert</i>, <i>update</i>, <i>delete</i> est le nombre de lignes modifiées par l&#x27;ordre ;
+  </li>
 </ul>
+
 <p>Les <strong>résultats</strong> écran :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="font-weight:bold">[set names &#x27;utf8&#x27;]</span> : Exécution réussie</span>
@@ -1772,15 +1897,15 @@
 <span class="odt-code-line">Terminé</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc822223439697744"></a>
-<a id="toc42690711"></a>
+<p><a id="toc42689939"></a>
 <a id="toc42690325"></a>
-<a id="toc42689939"></a></p>
+<a id="toc42690711"></a>
+<a id="refheadingtoc822223439697744"></a></p>
 <h2 id="126-utilisation-dordres-sql-prepares">12.6. Utilisation d’ordres SQL préparés</h2>
-<p><a id="refheadingtoc822243439697744"></a>
-<a id="toc42690712"></a>
+<p><a id="toc42689940"></a>
 <a id="toc42690326"></a>
-<a id="toc42689940"></a></p>
+<a id="toc42690712"></a>
+<a id="refheadingtoc822243439697744"></a></p>
 <h3 id="1261-exemple-1">12.6.1. Exemple 1</h3>
 <p>Examinons le script suivant <strong>[mysql-05.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1824,9 +1949,12 @@
 <p><strong>Commentaires</strong></p>
 <p>Nous nous intéressons ici aux lignes 16-24 qui insèrent deux personnes dans la table des personnes de la base <strong>[dbpersonnes]</strong>.</p>
 <ul>
-<li>ligne 21 : on ‘prépare’ un ordre SQL paramétré. Les paramètres sont précédés du caractère : :<strong>nom</strong>, :<strong>prenom</strong>, :<strong>age</strong>. Pour ‘préparer’ un ordre SQL, on utilise la méthode <strong>[PDO::prepare]</strong>. Le résultat est un type <strong>[PDOStatement]</strong>. La ‘préparation’ n’est pas une exécution : rien n’est exécuté ;</li>
-<li>ligne 23 : exécution de l’ordre ‘préparé’ avec la méthode <strong>[PDOStatement::execute]</strong>. Pour ce faire, il faut donner des valeurs aux paramètres :<strong>nom</strong>, :<strong>prenom</strong> et :<strong>age</strong>. Il y a plusieurs façons de faire cela. On utilise ici un dictionnaire ayant pour clés les paramètres de l’ordre préparé que l’on passe à la méthode <strong>[PDOStatement::execute]</strong>. Une autre façon de faire est de donner aux paramètres une valeur avec la méthode <strong>[PDOStatement::bindValue($paramètre,$valeur)]</strong>. Par exemple ici :</li>
+  <li>ligne 21 : on ‘prépare’ un ordre SQL paramétré. Les paramètres sont précédés du caractère : :<b>nom</b>, :<b>prenom</b>, :<b>age</b>. Pour ‘préparer’ un ordre SQL, on utilise la méthode <b>[PDO::prepare]</b>. Le résultat est un type <b>[PDOStatement]</b>. La ‘préparation’ n’est pas une exécution : rien n’est exécuté ;
+  </li>
+  <li>ligne 23 : exécution de l’ordre ‘préparé’ avec la méthode <b>[PDOStatement::execute]</b>. Pour ce faire, il faut donner des valeurs aux paramètres :<b>nom</b>, :<b>prenom</b> et :<b>age</b>. Il y a plusieurs façons de faire cela. On utilise ici un dictionnaire ayant pour clés les paramètres de l’ordre préparé que l’on passe à la méthode <b>[PDOStatement::execute]</b>. Une autre façon de faire est de donner aux paramètres une valeur avec la méthode <b>[PDOStatement::bindValue($paramètre,$valeur)]</b>. Par exemple ici :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">$statement→bindValue(“nom”<span style="color:#000000">,”Langevin”);</span></span>
 <span class="odt-code-line">$statement→bindValue(“prenom”<span style="color:#000000">,”Paul”);</span></span>
@@ -1836,17 +1964,21 @@
 
 <p>L’inconvénient est qu’il faut réitérer cette instruction pour chaque paramètre. La méthode du dictionnaire peut alors être plus pratique. La méthode <strong>[PDOStatement::execute]</strong> rend FALSE si l’exécution échoue ;</p>
 <ul>
-<li>la méthode utilisée ici pour faire les insertions :<ul>
-<li><strong>une</strong> méthode préparée ;</li>
-<li><strong>n</strong> exécutions de l’ordre préparé ;</li>
+  <li>la méthode utilisée ici pour faire les insertions :
+    <ul>
+      <li><b>une</b> méthode préparée ;
+      </li>
+      <li><b>n</b> exécutions de l’ordre préparé ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>est plus économique en temps d’exécution que d’exécuter <strong>n</strong> ordres SQL <strong>différents</strong>. Cette méthode est donc à privilégier. Elle est utilisable pour les ordres SQL <em>select, update, delete, insert</em>. Dans le cas de l’ordre SQL <em>select</em>, après son exécution avec <strong>[PDOStatement::execute]</strong>, on récupère les lignes du résultat avec la méthode <strong>[PDOStatement::fetchAll]</strong> ;</p>
-<p><a id="refheadingtoc822263439697744"></a>
-<a id="toc42690713"></a>
+<p><a id="toc42689941"></a>
 <a id="toc42690327"></a>
-<a id="toc42689941"></a></p>
+<a id="toc42690713"></a>
+<a id="refheadingtoc822263439697744"></a></p>
 <h3 id="1262-exemple-2">12.6.2. Exemple 2</h3>
 <p>Le script suivant <strong>[mysql-06.php]</strong> montre l’utilisation d’un ordre préparé pour l’opération SQL <strong>select</strong>, ainsi que diverses façons de récupérer les lignes ramenées par cette opération :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1919,14 +2051,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 17-20 : on insère 10 lignes dans la table <strong>[personnes]</strong> de la base <strong>[admpersonnes]</strong> :</li>
+  <li>lignes 17-20 : on insère 10 lignes dans la table <b>[personnes]</b> de la base <b>[admpersonnes]</b> :
+  </li>
 </ul>
+
 <p><img src="images/1000000000000557000003C59FE215B2.png" style="width:10.85cm;height:7.661cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000557000003C59FE215B2.png" /></p>
 <ul>
-<li>ligne 22 : on « prépare » un ordre SQL <strong>[select]</strong> qu’on exécute ligne 23 ;</li>
-<li>ligne 25 : on récupère avec la méthode <strong>[PDOStatement::fetch]</strong> une ligne du résultat de l’opération SQL <strong>[select]</strong> exécutée. La méthode <strong>[PDOStatement::fetch]</strong> peut récupérer de diverses façons les lignes résultats d’une opération SQL <strong>[select]</strong> préparée. Le script en présente quelques unes. La méthode <strong>[PDOStatement::fetch]</strong> sans paramètres ramène la ligne courante du <strong>[select]</strong> sous la forme d’un dictionnaire indexé à la fois sur les n°s de colonnes et leurs noms ;</li>
-<li>ligne 26 : affiche le résultat suivant :</li>
+  <li>ligne 22 : on « prépare » un ordre SQL <b>[select]</b> qu’on exécute ligne 23 ;
+  </li>
+  <li>ligne 25 : on récupère avec la méthode <b>[PDOStatement::fetch]</b> une ligne du résultat de l’opération SQL <b>[select]</b> exécutée. La méthode <b>[PDOStatement::fetch]</b> peut récupérer de diverses façons les lignes résultats d’une opération SQL <b>[select]</b> préparée. Le script en présente quelques unes. La méthode <b>[PDOStatement::fetch]</b> sans paramètres ramène la ligne courante du <b>[select]</b> sous la forme d’un dictionnaire indexé à la fois sur les n°s de colonnes et leurs noms ;
+  </li>
+  <li>ligne 26 : affiche le résultat suivant :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">array(6) {</span>
 <span class="odt-code-line">  [&quot;nom&quot;]=&gt;</span>
@@ -1945,8 +2083,10 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 28-29 : le paramètre <strong>[PDO::FETCH_ASSOC]</strong> fait que la ligne ramenée est un dictionnaire indexé par les noms des colonnes de la table :</li>
+  <li>lignes 28-29 : le paramètre <b>[PDO::FETCH_ASSOC]</b> fait que la ligne ramenée est un dictionnaire indexé par les noms des colonnes de la table :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -1964,8 +2104,10 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a>}
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 31-32 : le paramètre <strong>[PDO::FETCH_OBJ]</strong> fait que la ligne ramenée est un objet de type <strong>[stdclass]</strong> dont les attributs sont les noms des colonnes de la table :</li>
+  <li>lignes 31-32 : le paramètre <b>[PDO::FETCH_OBJ]</b> fait que la ligne ramenée est un objet de type <b>[stdclass]</b> dont les attributs sont les noms des colonnes de la table :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
@@ -1983,9 +2125,12 @@
 <a id="__codelineno-5-8" name="__codelineno-5-8"></a>}
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 34 : on fixe le mode de recherche de la méthode <strong>[fetch]</strong> avec la méthode <strong>[PDOStatement::setFetchMode]</strong>. Ce mode devient alors le mode par défaut tant qu’il n’est pas changé soit par une autre opération <strong>[PDOStatement::setFetchMode]</strong> soit en passant un mode en paramètre à la méthode <strong>[PDOStatement::fetch]</strong> comme il a été fait précédemment. L’opération <strong>[setFetchMode(PDO::FETCH_CLASS, &quot;Person&quot;)]</strong> indique que la ligne lue doit être placée dans un objet de type <strong>[Person]</strong>. Cette classe doit avoir parmi ces attributs, des attributs portant le nom des colonnes de la ligne lue. C’est le cas de la classe <strong>[Person]</strong> définie aux lignes 56-63 ;</li>
-<li>la ligne 36 affiche le résultat suivant :</li>
+  <li>ligne 34 : on fixe le mode de recherche de la méthode <b>[fetch]</b> avec la méthode <b>[PDOStatement::setFetchMode]</b>. Ce mode devient alors le mode par défaut tant qu’il n’est pas changé soit par une autre opération <b>[PDOStatement::setFetchMode]</b> soit en passant un mode en paramètre à la méthode <b>[PDOStatement::fetch]</b> comme il a été fait précédemment. L’opération <b>[setFetchMode(PDO::FETCH_CLASS, &quot;Person&quot;)]</b> indique que la ligne lue doit être placée dans un objet de type <b>[Person]</b>. Cette classe doit avoir parmi ces attributs, des attributs portant le nom des colonnes de la ligne lue. C’est le cas de la classe <b>[Person]</b> définie aux lignes 56-63 ;
+  </li>
+  <li>la ligne 36 affiche le résultat suivant :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
@@ -2003,19 +2148,25 @@
 <a id="__codelineno-6-8" name="__codelineno-6-8"></a>}
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 38-43 : montrent comment exploiter séquentiellement les résultats du <strong>[select]</strong> ;</li>
-<li>ligne 42 : l’affichage de <strong>[$personne]</strong> va utiliser la méthode <strong>[__toString]</strong> de la classe <strong>[Person]</strong> ;</li>
+  <li>lignes 38-43 : montrent comment exploiter séquentiellement les résultats du <b>[select]</b> ;
+  </li>
+  <li>ligne 42 : l’affichage de <b>[$personne]</b> va utiliser la méthode <b>[__toString]</b> de la classe <b>[Person]</b> ;
+  </li>
 </ul>
-<p><a id="refheadingtoc822283439697744"></a>
-<a id="toc42690714"></a>
+
+<p><a id="toc42689942"></a>
 <a id="toc42690328"></a>
-<a id="toc42689942"></a></p>
+<a id="toc42690714"></a>
+<a id="refheadingtoc822283439697744"></a></p>
 <h2 id="127-utilisation-de-transactions">12.7. Utilisation de transactions</h2>
 <p>Une transaction permet de regrouper une séquence d’ordres SQL en une unité d’exécution : soit tous les ordres réussissent soit l’un d’eux échoue et alors tous les ordres SQL qui ont précédé celui-ci sont annulés. Dit autrement, lorsqu’on utilise une transaction pour exécuter des ordres SQL, après l’exécution de celle-ci la base de données est dans un état <strong>stable</strong> :</p>
 <ul>
-<li>soit dans un <strong>état nouveau</strong> créé par l’exécution réussie de tous les ordres SQL de la transaction ;</li>
-<li>soit dans <strong>l’état dans laquelle elle était</strong> avant que la transaction ne commence à être exécutée ;</li>
+  <li>soit dans un <b>état nouveau</b> créé par l’exécution réussie de tous les ordres SQL de la transaction ;
+  </li>
+  <li>soit dans <b>l’état dans laquelle elle était</b> avant que la transaction ne commence à être exécutée ;
+  </li>
 </ul>
+
 <p>Nous allons reprendre l’exemple de l’exécution des ordres SQL contenus dans un fichier texte étudié au paragraphe <a href="#_Exécution_d’ordres_SQL"><u><span style="color: #0563c1">lien</span></u></a>. Nous allons inclure cette exécution dans une transaction. Les ordres SQL seront contenus dans le fichier <strong>[sql2.txt]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">set names &#x27;utf8&#x27;</span>
@@ -2160,11 +2311,16 @@
 <p><strong>Commentaires</strong></p>
 <p>Nous avons surligné les modifications du script original <strong>[mysql-04.php]</strong>.</p>
 <ul>
-<li>lignes 22, 36 : la fonction <strong>[exécuterCommandes]</strong> a perdu son quatrième paramètre <strong>[$arrêt=TRUE]</strong>. En effet, comme les ordres SQL s’exécutent au sein d’une transaction, toute erreur provoquera l’arrêt de la transaction ;</li>
-<li>lignes 40-41 : rappel de la fonction d’une transaction ;</li>
-<li>ligne 57 : on démarre une transaction. A partir de maintenant, tout ordre SQL exécuté dans la boucle des lignes 62-99 l’est au sein de cette transaction ;</li>
-<li>lignes 101-109 : le booléen <strong>[$fini]</strong> est à TRUE s’il y a eu erreur (ligne 95). Lorsqu’il est à FALSE, il n’y a pas eu d’erreurs et on valide alors la transaction (ligne 103). Lorsqu’il est à TRUE, il y a eu des erreurs et on annule alors la transaction (ligne 106) et on rajoute l’erreur de transaction dans la liste des erreurs (ligne 108) ;</li>
+  <li>lignes 22, 36 : la fonction <b>[exécuterCommandes]</b> a perdu son quatrième paramètre <b>[$arrêt=TRUE]</b>. En effet, comme les ordres SQL s’exécutent au sein d’une transaction, toute erreur provoquera l’arrêt de la transaction ;
+  </li>
+  <li>lignes 40-41 : rappel de la fonction d’une transaction ;
+  </li>
+  <li>ligne 57 : on démarre une transaction. A partir de maintenant, tout ordre SQL exécuté dans la boucle des lignes 62-99 l’est au sein de cette transaction ;
+  </li>
+  <li>lignes 101-109 : le booléen <b>[$fini]</b> est à TRUE s’il y a eu erreur (ligne 95). Lorsqu’il est à FALSE, il n’y a pas eu d’erreurs et on valide alors la transaction (ligne 103). Lorsqu’il est à TRUE, il y a eu des erreurs et on annule alors la transaction (ligne 106) et on rajoute l’erreur de transaction dans la liste des erreurs (ligne 108) ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <p>Avant exécution du script, la base <strong>[admpersonnes]</strong> est dans l’état suivant :</p>
 <p><img src="images/10000000000004CA0000035ACA80495C.png" style="width:9.73cm;height:6.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004CA0000035ACA80495C.png" /></p>
@@ -2233,17 +2389,24 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 53 : une erreur se produit sur la commande <strong>[xselect]</strong> ;</li>
-<li>ligne 54 : la transaction est alors annulée ;</li>
+  <li>ligne 53 : une erreur se produit sur la commande <b>[xselect]</b> ;
+  </li>
+  <li>ligne 54 : la transaction est alors annulée ;
+  </li>
 </ul>
+
 <p>Si on vérifie l’état de la base, on la trouve dans le même état qu’avant l’exécution du script. On n’y voit pas notamment la ligne <strong>[Josette, Bruneau, 46]</strong> de la ligne 52 des résultats ci-dessus.</p>
 <p><img src="images/10000000000004CA0000035ACA80495C.png" style="width:9.73cm;height:6.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004CA0000035ACA80495C.png" /></p>
 <p><strong>Résumé</strong></p>
 <ul>
-<li>une transaction commence avec la méthode <strong>[PDO::beginTransaction]</strong> ;</li>
-<li>on la termine sur un succès avec la méthode <strong>[PDO::commit]</strong> ;</li>
-<li>on la termine sur un échec avec la méthode <strong>[PDO::rollback]</strong> ;</li>
+  <li>une transaction commence avec la méthode <b>[PDO::beginTransaction]</b> ;
+  </li>
+  <li>on la termine sur un succès avec la méthode <b>[PDO::commit]</b> ;
+  </li>
+  <li>on la termine sur un échec avec la méthode <b>[PDO::rollback]</b> ;
+  </li>
 </ul>
+
 <p>Lorsqu’on exploite une base de données, c’est une bonne habitude de mettre toute opération SQL dans une transaction pour s’isoler des autres utilisateurs de la base (elle a également ce rôle). Une transaction doit être la plus courte possible. Il ne faut donc pas oublier de la terminer par un <strong>[commit]</strong> ou un <strong>[rollback]</strong> selon les cas.</p>
 
 

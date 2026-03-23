@@ -1244,25 +1244,25 @@
   
 
 
-<p><a id="refheadingtoc788472244347140"></a>
-<a id="toc42690685"></a>
+<p><a id="toc42689913"></a>
 <a id="toc42690299"></a>
-<a id="toc42689913"></a></p>
+<a id="toc42690685"></a>
+<a id="refheadingtoc788472244347140"></a></p>
 <h1 id="11-exercice-dapplication-version-4">11. Exercice d’application – version 4</h1>
 <p>L’application de calcul d’impôts va implémenter la structure en couches suivante :</p>
 <p><img src="images/10000000000005400000010219E9B6A0.png" style="width:10.671cm;height:2.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005400000010219E9B6A0.png" /></p>
 <p>Nous allons reprendre les éléments de la version 3 du paragraphe <a href="#_Exercice_d'application_–"><u><span style="color: #0563c1">lien</span></u></a> en les modifiant pour les adapter à la nouvelle architecture de l’application. On appelle parfois cela du ‘refactoring’. Nous supposons ici que les données nécessaires à l’application sont dans des fichiers texte. C’est la couche <strong>[Dao]</strong> qui va s’occuper des échanges avec ces fichiers.</p>
-<p><a id="refheadingtoc788492244347140"></a>
-<a id="toc42690686"></a>
+<p><a id="toc42689914"></a>
 <a id="toc42690300"></a>
-<a id="toc42689914"></a></p>
+<a id="toc42690686"></a>
+<a id="refheadingtoc788492244347140"></a></p>
 <h2 id="111-arborescence-des-scripts">11.1. Arborescence des scripts</h2>
 <p><img src="images/1000000000000244000001DF217D51D2.png" style="width:5.37cm;height:4.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000244000001DF217D51D2.png" /></p>
 <p><a id="objetsechangesentre"></a>
-<a id="toc42690687"></a>
-<a id="toc42690301"></a>
+<a id="refheadingtoc1503253837603249"></a>
 <a id="toc42689915"></a>
-<a id="refheadingtoc1503253837603249"></a></p>
+<a id="toc42690301"></a>
+<a id="toc42690687"></a></p>
 <h2 id="112-objets-echanges-entre-couches">11.2. Objets échangés entre couches</h2>
 <p><span style="color: #000000">Nous allons garder certains objets de la version 3. Nous les redonnons ici pour rappel.</span></p>
 <p><span style="color: #000000">L’exception </span><strong><span style="color: #000000">[ExceptionImpots]</span></strong><span style="color: #000000"> est l’exception que lancera la couche </span><strong><span style="color: #000000">[Dao]</span></strong><span style="color: #000000"> lorsqu’elle rencontrera un problème soit avec l’accès aux données soit avec la nature des données (données incorrectes).</span></p>
@@ -1420,17 +1420,17 @@
 </code></pre></div>
 
 <p><strong><span style="color: #000000">Note</span></strong><span style="color: #000000"> : utilisez la génération automatique de code pour générer le constructeur, les getters et setters (cf paragraphe </span><a href="#_La_classe_[TaxAdminData]"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">). Remarquez que les setters sont ‘fluents’.</span></p>
-<p><a id="refheadingtoc788512244347140"></a>
-<a id="toc42690688"></a>
+<p><a id="toc42689916"></a>
 <a id="toc42690302"></a>
-<a id="toc42689916"></a></p>
+<a id="toc42690688"></a>
+<a id="refheadingtoc788512244347140"></a></p>
 <h2 id="113-la-couche-dao">11.3. La couche [dao]</h2>
 <p><span style="color: #000000">Nous nous intéressons ici à la couche </span><strong><span style="color: #000000">[1]</span></strong><span style="color: #000000"> de notre application :</span></p>
 <p><img src="images/100000000000052F000000EA070F6D66.png" style="width:10.531cm;height:1.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052F000000EA070F6D66.png" /></p>
-<p><a id="refheadingtoc788532244347140"></a>
-<a id="toc42690689"></a>
+<p><a id="toc42689917"></a>
 <a id="toc42690303"></a>
-<a id="toc42689917"></a></p>
+<a id="toc42690689"></a>
+<a id="refheadingtoc788532244347140"></a></p>
 <h3 id="1131-linterface-interfacedao">11.3.1. L’interface [InterfaceDao]</h3>
 <p><span style="color: #000000">L’interface de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> sera la suivante </span><strong><span style="color: #000000">[InterfaceDao.php]</span></strong><span style="color: #000000"> :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1455,32 +1455,47 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">le cahier des charges est ici le suivant :</span><ul>
-<li><span style="color: #000000">les données des contribuables sont dans un fichier texte ;</span></li>
-<li><span style="color: #000000">on enregistre les résultats du calcul d’impôts dans un fichier texte ;</span></li>
-<li><span style="color: #000000">on enregistre les éventuelles erreurs dans un fichier texte ;</span></li>
-<li><span style="color: #000000">on ne sait pas sous quelle forme sont disponibles les données de l’administration fiscale. Pour chaque nouvelle forme, l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> devra être implémentée par une nouvelle classe ;</span></li>
-<li><span style="color: #000000">les méthodes de l’interface qui rencontrent une erreur irrécupérable lors de l’accès aux données doivent lancer une exception de type </span><strong><span style="color: #000000">[ExceptionImpots]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">le cahier des charges est ici le suivant :</span>
+    <ul>
+      <li><span style="color: #000000">les données des contribuables sont dans un fichier texte ;</span>
+      </li>
+      <li><span style="color: #000000">on enregistre les résultats du calcul d’impôts dans un fichier texte ;</span>
+      </li>
+      <li><span style="color: #000000">on enregistre les éventuelles erreurs dans un fichier texte ;</span>
+      </li>
+      <li><span style="color: #000000">on ne sait pas sous quelle forme sont disponibles les données de l’administration fiscale. Pour chaque nouvelle forme, l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000"> devra être implémentée par une nouvelle classe ;</span>
+      </li>
+      <li><span style="color: #000000">les méthodes de l’interface qui rencontrent une erreur irrécupérable lors de l’accès aux données doivent lancer une exception de type </span><b><span style="color: #000000">[ExceptionImpots]</span></b><span style="color: #000000"> ;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">ligne 9 : la méthode qui permet d’obtenir les données du contribuable </span><b><span style="color: #000000">[statut marital, nombre d’enfants, salaire annuel]</span></b><span style="color: #000000"> ;</span>
+    <ul>
+      <li><span style="color: #000000">le 1er paramètre est le nom du fichier texte dans lequel se trouvent ces données ;</span>
+      </li>
+      <li><span style="color: #000000">le second paramètre est le nom du fichier texte dans lequel enregistrer les éventuelles erreurs rencontrées ;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">ligne 12 : la méthode qui permet d’obtenir les données de l’administration fiscale. On ne lui passe ici aucun paramètre car on ne sait pas comment elles sont stockées ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 15 : la méthode qui permet d’enregistrer les résultats du calcul de l’impôt dans un fichier texte dont on passe le nom en paramètre ;</span>
+  </li>
 </ul>
-</li>
-<li><span style="color: #000000">ligne 9 : la méthode qui permet d’obtenir les données du contribuable </span><strong><span style="color: #000000">[statut marital, nombre d’enfants, salaire annuel]</span></strong><span style="color: #000000"> ;</span><ul>
-<li><span style="color: #000000">le 1er paramètre est le nom du fichier texte dans lequel se trouvent ces données ;</span></li>
-<li><span style="color: #000000">le second paramètre est le nom du fichier texte dans lequel enregistrer les éventuelles erreurs rencontrées ;</span></li>
-</ul>
-</li>
-<li><span style="color: #000000">ligne 12 : la méthode qui permet d’obtenir les données de l’administration fiscale. On ne lui passe ici aucun paramètre car on ne sait pas comment elles sont stockées ;</span></li>
-<li><span style="color: #000000">ligne 15 : la méthode qui permet d’enregistrer les résultats du calcul de l’impôt dans un fichier texte dont on passe le nom en paramètre ;</span></li>
-</ul>
+
 <p><span style="color: #000000">Lorsqu’on écrit l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">, on sait qu’il y aura différentes façons d’écrire la méthode </span><strong><span style="color: #000000">[getTaxAdminData]</span></strong><span style="color: #000000"> selon la façon dont seront stockées les données de l’administration fiscale. L’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> sera donc implémentée par différentes classes, chacune s’occupant d’un stockage particulier de ces données (tableaux, fichiers texte, base de données, service web). Ces classes dérivées auront néanmoins un code commun, celui de l’implémentation des méthodes </span><strong><span style="color: #000000">[getTaxPayersData, saveResults]</span></strong><span style="color: #000000">. On sait que ce cas d’utilisation peut être implémenté de deux façons (cf paragraphe </span><a href="#_Utiliser_un_trait"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">):</span></p>
 <ol>
-<li>on crée une classe <strong>abstraite</strong> <strong>C</strong> qui regroupe le code commun aux classes dérivées. La classe C implémente l’interface I mais certaines méthodes qui doivent être déclarées dans les classes dérivées sont dans la classe C déclarées abstraites et donc la classe C est elle-même abstraite. On crée ensuite des classes C1 et C2 dérivées de C qui implémentent chacune à leur manière les méthodes non définies (abstraites) de leur classe parent C ;</li>
-<li>on crée un <strong>trait</strong> <strong>T</strong> quasi identique à la classe abstraite C de la solution précédente. Ce trait n’implémente pas l’interface I car syntaxiquement elle ne le peut pas.  On crée ensuite des classes C1 et C2 implémentant l’interface I et utilisant le trait T. Il ne reste à ces classes qu’à implémenter les méthodes de l’interface I non implémentées par le trait T qu’elles importent ;</li>
+  <li>on crée une classe <b>abstraite</b> <b>C</b> qui regroupe le code commun aux classes dérivées. La classe C implémente l’interface I mais certaines méthodes qui doivent être déclarées dans les classes dérivées sont dans la classe C déclarées abstraites et donc la classe C est elle-même abstraite. On crée ensuite des classes C1 et C2 dérivées de C qui implémentent chacune à leur manière les méthodes non définies (abstraites) de leur classe parent C ;
+  </li>
+  <li>on crée un <b>trait</b> <b>T</b> quasi identique à la classe abstraite C de la solution précédente. Ce trait n’implémente pas l’interface I car syntaxiquement elle ne le peut pas.  On crée ensuite des classes C1 et C2 implémentant l’interface I et utilisant le trait T. Il ne reste à ces classes qu’à implémenter les méthodes de l’interface I non implémentées par le trait T qu’elles importent ;
+  </li>
 </ol>
+
 <p>Pour l’exemple, nous allons utiliser ici un trait <strong>[TraitDao]</strong>.</p>
-<p><a id="refheadingtoc788552244347140"></a>
-<a id="toc42690690"></a>
+<p><a id="toc42689918"></a>
 <a id="toc42690304"></a>
-<a id="toc42689918"></a></p>
+<a id="toc42690690"></a>
+<a id="refheadingtoc788552244347140"></a></p>
 <h3 id="1132-le-trait-traitdao">11.3.2. Le trait [TraitDao]</h3>
 <p>Le code du trait <strong>[TraitDao]</strong> est le suivant <strong>[TraitDao.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1596,27 +1611,44 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 6 : nous définissons ici un </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> et non une </span><strong><span style="color: #000000">classe</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 9-89 : la méthode </span><strong><span style="color: #000000">[getTaxPayersData]</span></strong><span style="color: #000000"> implémente la méthode de même nom de l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">. Elle récupère dans un fichier texte nommé </span><strong><span style="color: #000000">[$taxPayersFilename]</span></strong><span style="color: #000000"> les données des contribuables </span><strong><span style="color: #000000">[statut marital, nombre d’enfants, salaire annuel]</span></strong><span style="color: #000000">. Elle rend celles-ci sous la forme d’un tableau </span><strong><span style="color: #000000">[$taxPayersData]</span></strong><span style="color: #000000"> d’éléments de type </span><strong><span style="color: #000000">[TaxPayerData]</span></strong><span style="color: #000000"> (lignes 67, 81) ;</span></li>
-<li><span style="color: #000000">la méthode </span><strong><span style="color: #000000">[getTaxPayersData]</span></strong><span style="color: #000000"> est très semblable à la méthode </span><strong><span style="color: #000000">[AbstractBaseImpots::executeBatchImpots]</span></strong><span style="color: #000000"> décrite au paragraphe </span><a href="#_La_classe_abstraite"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> avec les différences suivantes :</span><ul>
-<li><span style="color: #000000">la méthode </span><strong><span style="color: #000000">[getTaxPayersData]</span></strong><span style="color: #000000"> ne fait que récupérer les données des contribuables. </span><strong><span style="color: #000000">Elle ne fait pas de calcul d’impôt</span></strong><span style="color: #000000">. Ici c’est le rôle de la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">comme le faisait la méthode </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> elle signale les erreurs. Ici les erreurs sont d’abord mémorisées dans un tableau </span><strong><span style="color: #000000">[$errors]</span></strong><span style="color: #000000"> (ligne 13), tableau qui est mémorisé dans un fichier texte à la fin du traitement (ligne 79). Selon les cas, il est vide ou non ;</span></li>
-<li><span style="color: #000000">dans le cas d’erreur irrécupérable, une exception de type </span><strong><span style="color: #000000">[ExceptionImpots]</span></strong><span style="color: #000000"> est lancée (lignes 20, 75) ;</span></li>
+  <li><span style="color: #000000">ligne 6 : nous définissons ici un </span><b><span style="color: #000000">trait</span></b><span style="color: #000000"> et non une </span><b><span style="color: #000000">classe</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 9-89 : la méthode </span><b><span style="color: #000000">[getTaxPayersData]</span></b><span style="color: #000000"> implémente la méthode de même nom de l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000">. Elle récupère dans un fichier texte nommé </span><b><span style="color: #000000">[$taxPayersFilename]</span></b><span style="color: #000000"> les données des contribuables </span><b><span style="color: #000000">[statut marital, nombre d’enfants, salaire annuel]</span></b><span style="color: #000000">. Elle rend celles-ci sous la forme d’un tableau </span><b><span style="color: #000000">[$taxPayersData]</span></b><span style="color: #000000"> d’éléments de type </span><b><span style="color: #000000">[TaxPayerData]</span></b><span style="color: #000000"> (lignes 67, 81) ;</span>
+  </li>
+  <li><span style="color: #000000">la méthode </span><b><span style="color: #000000">[getTaxPayersData]</span></b><span style="color: #000000"> est très semblable à la méthode </span><b><span style="color: #000000">[AbstractBaseImpots::executeBatchImpots]</span></b><span style="color: #000000"> décrite au paragraphe </span><a href="#_La_classe_abstraite"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> avec les différences suivantes :</span>
+    <ul>
+      <li><span style="color: #000000">la méthode </span><b><span style="color: #000000">[getTaxPayersData]</span></b><span style="color: #000000"> ne fait que récupérer les données des contribuables. </span><b><span style="color: #000000">Elle ne fait pas de calcul d’impôt</span></b><span style="color: #000000">. Ici c’est le rôle de la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+      </li>
+      <li><span style="color: #000000">comme le faisait la méthode </span><b><span style="color: #000000">[executeBatchImpots]</span></b><span style="color: #000000"> elle signale les erreurs. Ici les erreurs sont d’abord mémorisées dans un tableau </span><b><span style="color: #000000">[$errors]</span></b><span style="color: #000000"> (ligne 13), tableau qui est mémorisé dans un fichier texte à la fin du traitement (ligne 79). Selon les cas, il est vide ou non ;</span>
+      </li>
+      <li><span style="color: #000000">dans le cas d’erreur irrécupérable, une exception de type </span><b><span style="color: #000000">[ExceptionImpots]</span></b><span style="color: #000000"> est lancée (lignes 20, 75) ;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">ligne 73 : on notera le traitement fait à la sortie de la boucle des lignes 26-71. En effet la fonction </span><b><span style="color: #000000">[fgets]</span></b><span style="color: #000000"> a l’inconvénient de rendre le booléen FALSE aussi bien lorsque la lecture des lignes a rencontré la marque de fin de fichier que si cette lecture n’a pu aboutir à cause d’une erreur. Pour différentier les deux cas, on teste si on est rendu à la fin du fichier avec la fonction </span><b><span style="color: #000000">[feof]</span></b><span style="color: #000000">. Si on n’est pas rendu à la fin du fichier, c’est qu’une erreur s’est produite et on lance alors une exception ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 83-88 : le </span><b><span style="color: #000000">[finally]</span></b><span style="color: #000000"> est exécuté qu’il y ait eu exception ou pas lors de l’exploitation du fichier ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 85 : si le fichier a été ouvert, alors le ‘handle’ </span><b><span style="color: #000000">[$taxPayersFile]</span></b><span style="color: #000000"> du fichier a la valeur booléenne TRUE, FALSE sinon ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 99-105 : la méthode privée </span><b><span style="color: #000000">[saveString]</span></b><span style="color: #000000"> utilisée ligne 79 pour enregistrer le tableau des erreurs dans un fichier texte ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 99 : la méthode </span><b><span style="color: #000000">[saveString]</span></b><span style="color: #000000"> reçoit deux paramètres :</span>
+    <ul>
+      <li><b><span style="color: #000000">[string $filename]</span></b><span style="color: #000000"> qui est le nom du fichier texte utilisé pour enregistrer les données ;</span>
+      </li>
+      <li><b><span style="color: #000000">[string $data]</span></b><span style="color: #000000"> qui est la chaîne de caractères à enregistrer dans le fichier texte. Cette chaîne sera un ensemble de lignes terminée par le caractère de fin de ligne \n ;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">ligne 102 : la fonction PHP </span><b><span style="color: #000000">[file_puts_contents]</span></b><span style="color: #000000"> enregistre une chaîne de caractères dans un fichier texte. Elle s’occupe d’ouvrir le fichier, d’écrire la chaîne dedans et de fermer le fichier. Elle rend le booléen FALSE si une erreur s’est produite ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 103 : si une erreur se produit, on lance une exception ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 92-96 : implémentation de la méthode </span><b><span style="color: #000000">[saveResults]</span></b><span style="color: #000000"> de l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000">. On utilise de nouveau la méthode privée </span><b><span style="color: #000000">[saveString]</span></b><span style="color: #000000">. Ici le second paramètre de </span><b><span style="color: #000000">[saveString]</span></b><span style="color: #000000"> est une chaîne construite à partir du tableau </span><b><span style="color: #000000">[$taxPayersData]</span></b><span style="color: #000000"> dont les éléments sont de type </span><b><span style="color: #000000">[TaxPayerData]</span></b><span style="color: #000000">. On peut se demander quel va être le résultat de l’opération :</span>
+  </li>
 </ul>
-</li>
-<li><span style="color: #000000">ligne 73 : on notera le traitement fait à la sortie de la boucle des lignes 26-71. En effet la fonction </span><strong><span style="color: #000000">[fgets]</span></strong><span style="color: #000000"> a l’inconvénient de rendre le booléen FALSE aussi bien lorsque la lecture des lignes a rencontré la marque de fin de fichier que si cette lecture n’a pu aboutir à cause d’une erreur. Pour différentier les deux cas, on teste si on est rendu à la fin du fichier avec la fonction </span><strong><span style="color: #000000">[feof]</span></strong><span style="color: #000000">. Si on n’est pas rendu à la fin du fichier, c’est qu’une erreur s’est produite et on lance alors une exception ;</span></li>
-<li><span style="color: #000000">lignes 83-88 : le </span><strong><span style="color: #000000">[finally]</span></strong><span style="color: #000000"> est exécuté qu’il y ait eu exception ou pas lors de l’exploitation du fichier ;</span></li>
-<li><span style="color: #000000">ligne 85 : si le fichier a été ouvert, alors le ‘handle’ </span><strong><span style="color: #000000">[$taxPayersFile]</span></strong><span style="color: #000000"> du fichier a la valeur booléenne TRUE, FALSE sinon ;</span></li>
-<li><span style="color: #000000">lignes 99-105 : la méthode privée </span><strong><span style="color: #000000">[saveString]</span></strong><span style="color: #000000"> utilisée ligne 79 pour enregistrer le tableau des erreurs dans un fichier texte ;</span></li>
-<li><span style="color: #000000">ligne 99 : la méthode </span><strong><span style="color: #000000">[saveString]</span></strong><span style="color: #000000"> reçoit deux paramètres :</span><ul>
-<li><strong><span style="color: #000000">[string $filename]</span></strong><span style="color: #000000"> qui est le nom du fichier texte utilisé pour enregistrer les données ;</span></li>
-<li><strong><span style="color: #000000">[string $data]</span></strong><span style="color: #000000"> qui est la chaîne de caractères à enregistrer dans le fichier texte. Cette chaîne sera un ensemble de lignes terminée par le caractère de fin de ligne \n ;</span></li>
-</ul>
-</li>
-<li><span style="color: #000000">ligne 102 : la fonction PHP </span><strong><span style="color: #000000">[file_puts_contents]</span></strong><span style="color: #000000"> enregistre une chaîne de caractères dans un fichier texte. Elle s’occupe d’ouvrir le fichier, d’écrire la chaîne dedans et de fermer le fichier. Elle rend le booléen FALSE si une erreur s’est produite ;</span></li>
-<li><span style="color: #000000">ligne 103 : si une erreur se produit, on lance une exception ;</span></li>
-<li><span style="color: #000000">lignes 92-96 : implémentation de la méthode </span><strong><span style="color: #000000">[saveResults]</span></strong><span style="color: #000000"> de l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">. On utilise de nouveau la méthode privée </span><strong><span style="color: #000000">[saveString]</span></strong><span style="color: #000000">. Ici le second paramètre de </span><strong><span style="color: #000000">[saveString]</span></strong><span style="color: #000000"> est une chaîne construite à partir du tableau </span><strong><span style="color: #000000">[$taxPayersData]</span></strong><span style="color: #000000"> dont les éléments sont de type </span><strong><span style="color: #000000">[TaxPayerData]</span></strong><span style="color: #000000">. On peut se demander quel va être le résultat de l’opération :</span></li>
-</ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">implode(<span style="color:#008000">&quot;\n&quot;</span>,<span style="color:#008080"> </span>$taxPayersData)</span>
 </code></pre></div>
@@ -1661,10 +1693,10 @@
 
 <p><span style="color: #000000">Il nous reste à implémenter la méthode </span><strong><span style="color: #000000">[getTaxAdminData]</span></strong><span style="color: #000000"> qui récupère les données de l’administration fiscale.</span></p>
 <p><a id="laclasseimpotswithtaxadmindatain"></a>
-<a id="toc42690691"></a>
-<a id="toc42690305"></a>
+<a id="refheadingtoc788572244347140"></a>
 <a id="toc42689919"></a>
-<a id="refheadingtoc788572244347140"></a></p>
+<a id="toc42690305"></a>
+<a id="toc42690691"></a></p>
 <h3 id="1133-la-classe-impotswithtaxadmindatainjsonfile">11.3.3. La classe [ImpotsWithTaxAdminDataInJsonFile]</h3>
 <p><span style="color: #000000">La classe </span><strong><span style="color: #000000">[ImpotsWithTaxAdminDataInJsonFile]</span></strong><span style="color: #000000"> implémente l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> de la façon suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1696,22 +1728,26 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 7 : la classe </span><strong><span style="color: #000000">[ImpotsWithTaxAdminDataInJsonFile]</span></strong><span style="color: #000000"> implémente l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 9 : la classe </span><strong><span style="color: #000000">[ImpotsWithTaxAdminDataInJsonFile]</span></strong><span style="color: #000000"> utilise le trait </span><strong><span style="color: #000000">[traitDao]</span></strong><span style="color: #000000"> qui on le sait implémente les méthodes </span><strong><span style="color: #000000">[getTaxPayersData]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[saveResults]</span></strong><span style="color: #000000"> de l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">. Il ne reste donc plus, à la classe </span><strong><span style="color: #000000">[ImpotsWithTaxAdminDataInJsonFile]</span></strong><span style="color: #000000"> qu’à implémenter la méthode </span><strong><span style="color: #000000">[getTaxAdminData]</span></strong><span style="color: #000000"> qui récupère les données de l’administration fiscale ;</span></li>
-<li><span style="color: #000000">ligne 11 : l’attribut de type </span><strong><span style="color: #000000">[TaxAdminData]</span></strong><span style="color: #000000"> que rend la méthode </span><strong><span style="color: #000000">[getTaxAdminData]</span></strong><span style="color: #000000"> des lignes 20-22. Cet attribut est initialisé par le constructeur des lignes 14-17 ;</span></li>
+  <li><span style="color: #000000">ligne 7 : la classe </span><b><span style="color: #000000">[ImpotsWithTaxAdminDataInJsonFile]</span></b><span style="color: #000000"> implémente l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 9 : la classe </span><b><span style="color: #000000">[ImpotsWithTaxAdminDataInJsonFile]</span></b><span style="color: #000000"> utilise le trait </span><b><span style="color: #000000">[traitDao]</span></b><span style="color: #000000"> qui on le sait implémente les méthodes </span><b><span style="color: #000000">[getTaxPayersData]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[saveResults]</span></b><span style="color: #000000"> de l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000">. Il ne reste donc plus, à la classe </span><b><span style="color: #000000">[ImpotsWithTaxAdminDataInJsonFile]</span></b><span style="color: #000000"> qu’à implémenter la méthode </span><b><span style="color: #000000">[getTaxAdminData]</span></b><span style="color: #000000"> qui récupère les données de l’administration fiscale ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 11 : l’attribut de type </span><b><span style="color: #000000">[TaxAdminData]</span></b><span style="color: #000000"> que rend la méthode </span><b><span style="color: #000000">[getTaxAdminData]</span></b><span style="color: #000000"> des lignes 20-22. Cet attribut est initialisé par le constructeur des lignes 14-17 ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Nous en avons terminé avec la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> de notre application : nous avons une classe qui implémente totalement l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> que nous nous sommes imposés. Nous pouvons désormais passer à la couche</span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000">.</span></p>
-<p><a id="refheadingtoc788592244347140"></a>
-<a id="toc42690692"></a>
+<p><a id="toc42689920"></a>
 <a id="toc42690306"></a>
-<a id="toc42689920"></a></p>
+<a id="toc42690692"></a>
+<a id="refheadingtoc788592244347140"></a></p>
 <h2 id="114-la-couche-metier">11.4. La couche [métier]</h2>
 <p>Nous allons maintenant implémenter la couche <strong>[2]</strong> de notre architecture :</p>
 <p><img src="images/100000000000053C0000010980051F51.png" style="width:10.641cm;height:2.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053C0000010980051F51.png" /></p>
-<p><a id="refheadingtoc788612244347140"></a>
-<a id="toc42690693"></a>
+<p><a id="toc42689921"></a>
 <a id="toc42690307"></a>
-<a id="toc42689921"></a></p>
+<a id="toc42690693"></a>
+<a id="refheadingtoc788612244347140"></a></p>
 <h3 id="1141-linterface-interfacemetier">11.4.1. L’interface [InterfaceMétier]</h3>
 <p>L’interface de la couche <strong>[métier]</strong> sera la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1733,16 +1769,21 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 9 : l’interface <strong>[InterfaceMétier]</strong> sait calculer le montant de l’impôt d’un contribuable particulier pourvu qu’on lui donne les informations suivantes : statut marital, nombre d’enfants, salaire annuel. La méthode <strong>[calculerImpot]</strong> n’utilise pas la couche <strong>[dao]</strong> aussi ne lance-t-elle pas d’exceptions ;</li>
-<li>ligne 9 : l’interface <strong>[InterfaceMétier]</strong> peut aussi calculer le montant de l’impôt d’un ensemble de contribuables dont les données sont rassemblées dans le fichier texte nommé <strong>[$taxPayersFileName]</strong>. Elle met les résultats dans un fichier texte nommé <strong>[$resultsFileName]</strong>. La méthode <strong>[executeBatchImpots]</strong> doit s’adresser à la couche <strong>[dao]</strong> qui s’occupe des accès au système de fichiers. Des exceptions peuvent alors remonter de la couche <strong>[dao]</strong> que la méthode <strong>[executeBatchImpots]</strong> n’interceptera pas : elle les laissera remonter au script principal. Les erreurs non fatales sont enregistrées dans le fichier texte nommé <strong>[$errorsFileName]</strong> ;</li>
-<li>ligne 9 : la méthode <strong>[calculerImpot]</strong> est une méthode purement <strong>[métier]</strong>. Elle ne se préoccupe pas d’où viennent les données qu’elle utilise ;</li>
-<li>ligne 12 : la méthode <strong>[executeBatchImpots]</strong> va s’adresser à la couche <strong>[dao]</strong> pour lire et écrire des données dans des fichiers texte. Elle va appeler de façon répétée la méthode métier <strong>[calculerImpot]</strong> ;</li>
+  <li>ligne 9 : l’interface <b>[InterfaceMétier]</b> sait calculer le montant de l’impôt d’un contribuable particulier pourvu qu’on lui donne les informations suivantes : statut marital, nombre d’enfants, salaire annuel. La méthode <b>[calculerImpot]</b> n’utilise pas la couche <b>[dao]</b> aussi ne lance-t-elle pas d’exceptions ;
+  </li>
+  <li>ligne 9 : l’interface <b>[InterfaceMétier]</b> peut aussi calculer le montant de l’impôt d’un ensemble de contribuables dont les données sont rassemblées dans le fichier texte nommé <b>[$taxPayersFileName]</b>. Elle met les résultats dans un fichier texte nommé <b>[$resultsFileName]</b>. La méthode <b>[executeBatchImpots]</b> doit s’adresser à la couche <b>[dao]</b> qui s’occupe des accès au système de fichiers. Des exceptions peuvent alors remonter de la couche <b>[dao]</b> que la méthode <b>[executeBatchImpots]</b> n’interceptera pas : elle les laissera remonter au script principal. Les erreurs non fatales sont enregistrées dans le fichier texte nommé <b>[$errorsFileName]</b> ;
+  </li>
+  <li>ligne 9 : la méthode <b>[calculerImpot]</b> est une méthode purement <b>[métier]</b>. Elle ne se préoccupe pas d’où viennent les données qu’elle utilise ;
+  </li>
+  <li>ligne 12 : la méthode <b>[executeBatchImpots]</b> va s’adresser à la couche <b>[dao]</b> pour lire et écrire des données dans des fichiers texte. Elle va appeler de façon répétée la méthode métier <b>[calculerImpot]</b> ;
+  </li>
 </ul>
+
 <p><a id="laclassemetier"></a>
-<a id="toc42690694"></a>
-<a id="toc42690308"></a>
+<a id="refheadingtoc788632244347140"></a>
 <a id="toc42689922"></a>
-<a id="refheadingtoc788632244347140"></a></p>
+<a id="toc42690308"></a>
+<a id="toc42690694"></a></p>
 <h3 id="1142-la-classe-metier">11.4.2. La classe [Metier]</h3>
 <p>La classe <strong>[Metier]</strong> implémente l’interface <strong>[InterfaceMetier]</strong> de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1823,15 +1864,22 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 6 : la classe </span><strong><span style="color: #000000">[Metier]</span></strong><span style="color: #000000"> implémente l’interface </span><strong><span style="color: #000000">[InterfaceMetier]</span></strong><span style="color: #000000">, ç-à-d les méthodes </span><strong><span style="color: #000000">[calculerImpot]</span></strong><span style="color: #000000"> (lignes 30-34) et </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> (lignes 66-70) ;</span></li>
-<li><span style="color: #000000">ligne 8 : une référence sur la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">. Il en faut obligatoirement une pour que la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> sache à qui s’adresser lorsqu’elle veut des données externes. Cet attribut sera initialisé via le setter des lignes 14-17 ou via le constructeur des lignes 19-26 ;</span></li>
-<li><span style="color: #000000">ligne 10 : l’objet de type </span><strong><span style="color: #000000">[TaxAdminData]</span></strong><span style="color: #000000"> qui encapsule les données de l’administration fiscale. Ces données sont nécessaires à la méthode métier </span><strong><span style="color: #000000">[calculerImpot]</span></strong><span style="color: #000000">. Cet attribut est initialisé via le constructeur des lignes 19-26 ;</span></li>
-<li><span style="color: #000000">lignes 19-26 : le constructeur initialise les deux attributs de la classe :</span><ul>
-<li><span style="color: #000000">l’attribut </span><strong><span style="color: #000000">[$dao]</span></strong><span style="color: #000000"> est initialisé avec la référence passée en paramètre au constructeur. On notera que le type de ce paramètre est celui de l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> permettant ainsi à la classe </span><strong><span style="color: #000000">[Metier]</span></strong><span style="color: #000000"> d’être initialisée par n’importe quelle classe implémentant cette interface ;</span></li>
-<li><span style="color: #000000">l’attribut </span><strong><span style="color: #000000">[$taxAdminData]</span></strong><span style="color: #000000"> est initialisé en faisant appel à la méthode </span><strong><span style="color: #000000">[getTaxAdminData]</span></strong><span style="color: #000000"> de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">ligne 6 : la classe </span><b><span style="color: #000000">[Metier]</span></b><span style="color: #000000"> implémente l’interface </span><b><span style="color: #000000">[InterfaceMetier]</span></b><span style="color: #000000">, ç-à-d les méthodes </span><b><span style="color: #000000">[calculerImpot]</span></b><span style="color: #000000"> (lignes 30-34) et </span><b><span style="color: #000000">[executeBatchImpots]</span></b><span style="color: #000000"> (lignes 66-70) ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 8 : une référence sur la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000">. Il en faut obligatoirement une pour que la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> sache à qui s’adresser lorsqu’elle veut des données externes. Cet attribut sera initialisé via le setter des lignes 14-17 ou via le constructeur des lignes 19-26 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 10 : l’objet de type </span><b><span style="color: #000000">[TaxAdminData]</span></b><span style="color: #000000"> qui encapsule les données de l’administration fiscale. Ces données sont nécessaires à la méthode métier </span><b><span style="color: #000000">[calculerImpot]</span></b><span style="color: #000000">. Cet attribut est initialisé via le constructeur des lignes 19-26 ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 19-26 : le constructeur initialise les deux attributs de la classe :</span>
+    <ul>
+      <li><span style="color: #000000">l’attribut </span><b><span style="color: #000000">[$dao]</span></b><span style="color: #000000"> est initialisé avec la référence passée en paramètre au constructeur. On notera que le type de ce paramètre est celui de l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000"> permettant ainsi à la classe </span><b><span style="color: #000000">[Metier]</span></b><span style="color: #000000"> d’être initialisée par n’importe quelle classe implémentant cette interface ;</span>
+      </li>
+      <li><span style="color: #000000">l’attribut </span><b><span style="color: #000000">[$taxAdminData]</span></b><span style="color: #000000"> est initialisé en faisant appel à la méthode </span><b><span style="color: #000000">[getTaxAdminData]</span></b><span style="color: #000000"> de la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p><span style="color: #000000">On en conclut que lorsque les méthodes </span><strong><span style="color: #000000">[calculerImpots]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> s’exécutent, les deux attributs </span><strong><span style="color: #000000">[$dao]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[$taxAdminData]</span></strong><span style="color: #000000"> sont initialisés.</span></p>
 <p><span style="color: #000000">La méthode </span><strong><span style="color: #000000">[calculerImpots]</span></strong><span style="color: #000000"> est la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
@@ -1889,8 +1937,10 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ce code est celui de la méthode </span><strong><span style="color: #000000">[AbstractBaseImpots::calculerImpot]</span></strong><span style="color: #000000"> de la version 3, expliquée au paragraphe </span><a href="#_La_classe_abstraite"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">. Il en est de même pour les méthodes privées </span><strong><span style="color: #000000">[calculerImpot2, getDecôte, getRéduction, getRevenuImposable]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">ce code est celui de la méthode </span><b><span style="color: #000000">[AbstractBaseImpots::calculerImpot]</span></b><span style="color: #000000"> de la version 3, expliquée au paragraphe </span><a href="#_La_classe_abstraite"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">. Il en est de même pour les méthodes privées </span><b><span style="color: #000000">[calculerImpot2, getDecôte, getRéduction, getRevenuImposable]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">La méthode </span><strong><span style="color: #000000">[Metier::executeBatchImpots]</span></strong><span style="color: #000000"> est la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span> executeBatchImpots(<span style="font-weight:bold;color:#7f0055">string </span>$taxPayersFileName, <span style="font-weight:bold;color:#7f0055">string </span>$resultsFileName, <span style="font-weight:bold;color:#7f0055">string </span>$errorsFileName): <span style="font-weight:bold;color:#7f0055">void </span>{</span>
@@ -1923,20 +1973,28 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 1 : la méthode doit appeler de façon répétée la méthode </span><strong><span style="color: #000000">[calculerImpot]</span></strong><span style="color: #000000"> pour chacun des contribuables trouvés dans le fichier texte nommé </span><strong><span style="color: #000000">[$taxPayersFileName]</span></strong><span style="color: #000000">. Elle doit mettre les résultats dans le fichier texte nommé </span><strong><span style="color: #000000">[$resultsFileName]</span></strong><span style="color: #000000">. Les erreurs non fatales rencontrées sont enregistrées dans dans le fichier texte nommé </span><strong><span style="color: #000000">[$errorsFileName]</span></strong><span style="color: #000000">. La méthode ne lance pas d’exceptions elle-même mais laisse remonter celles que la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> lance ;</span></li>
-<li><span style="color: #000000">ligne 4 : les données des contribuables sont demandées à la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">. Celle-ci renvoie un tableau d’élements de type </span><strong><span style="color: #000000">[TaxPayerData]</span></strong><span style="color: #000000"> qui est une classe d’attributs </span><strong><span style="color: #000000">[marié, nbEnfants, salaire, montant, décôte, réduction, surcôte, taux]</span></strong><span style="color: #000000"> (cf paragraphe </span><a href="#_Objets_échangés_entre"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">). S’il se produit une exception ici, comme elle n’est pas interceptée par un </span><em><span style="color: #000000">catch</span></em><span style="color: #000000">, elle remontera automatiquement au code appelant. Cela signifie qu’en cas d’exception, la ligne 6 n’est pas exécutée ;</span></li>
-<li><span style="color: #000000">ligne 6 : le tableau des résultats de type </span><strong><span style="color: #000000">[TaxPayerData]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 8-22 : on calcule l’impôt pour chacun des éléments du tableau des contribuables </span><strong><span style="color: #000000">[$taxPayersData]</span></strong><span style="color: #000000">. Pour cela, on fait appel à la méthode interne </span><strong><span style="color: #000000">[calculerImpot]</span></strong><span style="color: #000000"> (ligne 10) ;</span></li>
-<li><span style="color: #000000">lignes 15-19 : le résultat obtenu est utilisé pour initialiser les attributs de </span><strong><span style="color: #000000">[TaxPayerData]</span></strong><span style="color: #000000"> qui ne l’étaient pas encore ;</span></li>
-<li><span style="color: #000000">ligne 21 : le résultat obtenu est cumulé dans le tableau des résultats </span><strong><span style="color: #000000">[$results]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 24 : une fois l’impôt calculé pour tous les contribuables, les résultats sont mémorisés dans un fichier texte. C’est la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> qui fait ce travail ;</span></li>
+  <li><span style="color: #000000">ligne 1 : la méthode doit appeler de façon répétée la méthode </span><b><span style="color: #000000">[calculerImpot]</span></b><span style="color: #000000"> pour chacun des contribuables trouvés dans le fichier texte nommé </span><b><span style="color: #000000">[$taxPayersFileName]</span></b><span style="color: #000000">. Elle doit mettre les résultats dans le fichier texte nommé </span><b><span style="color: #000000">[$resultsFileName]</span></b><span style="color: #000000">. Les erreurs non fatales rencontrées sont enregistrées dans dans le fichier texte nommé </span><b><span style="color: #000000">[$errorsFileName]</span></b><span style="color: #000000">. La méthode ne lance pas d’exceptions elle-même mais laisse remonter celles que la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> lance ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 4 : les données des contribuables sont demandées à la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000">. Celle-ci renvoie un tableau d’élements de type </span><b><span style="color: #000000">[TaxPayerData]</span></b><span style="color: #000000"> qui est une classe d’attributs </span><b><span style="color: #000000">[marié, nbEnfants, salaire, montant, décôte, réduction, surcôte, taux]</span></b><span style="color: #000000"> (cf paragraphe </span><a href="#_Objets_échangés_entre"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">). S’il se produit une exception ici, comme elle n’est pas interceptée par un </span><i><span style="color: #000000">catch</span></i><span style="color: #000000">, elle remontera automatiquement au code appelant. Cela signifie qu’en cas d’exception, la ligne 6 n’est pas exécutée ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 6 : le tableau des résultats de type </span><b><span style="color: #000000">[TaxPayerData]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 8-22 : on calcule l’impôt pour chacun des éléments du tableau des contribuables </span><b><span style="color: #000000">[$taxPayersData]</span></b><span style="color: #000000">. Pour cela, on fait appel à la méthode interne </span><b><span style="color: #000000">[calculerImpot]</span></b><span style="color: #000000"> (ligne 10) ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 15-19 : le résultat obtenu est utilisé pour initialiser les attributs de </span><b><span style="color: #000000">[TaxPayerData]</span></b><span style="color: #000000"> qui ne l’étaient pas encore ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 21 : le résultat obtenu est cumulé dans le tableau des résultats </span><b><span style="color: #000000">[$results]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 24 : une fois l’impôt calculé pour tous les contribuables, les résultats sont mémorisés dans un fichier texte. C’est la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> qui fait ce travail ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Conclusion</span></strong></p>
 <p><span style="color: #000000">En général la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> est assez simple à écrire car elle s’adresse à la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> qui, elle, gère l’accès aux données avec la gestion des erreurs qui va avec.</span></p>
-<p><a id="refheadingtoc816053160985256"></a>
-<a id="toc42690695"></a>
+<p><a id="toc42689923"></a>
 <a id="toc42690309"></a>
-<a id="toc42689923"></a></p>
+<a id="toc42690695"></a>
+<a id="refheadingtoc816053160985256"></a></p>
 <h2 id="115-le-script-principal">11.5. Le script principal</h2>
 <p><span style="color: #000000">On écrit maintenant le script de la couche </span><strong><span style="color: #000000">[3]</span></strong><span style="color: #000000"> de notre architecture :</span></p>
 <p><img src="images/10000000000005540000010420FC1713.png" style="width:10.831cm;height:2.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005540000010420FC1713.png" /></p>
@@ -1990,24 +2048,33 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 24 : le nom du fichier des données contribuables ;</span></li>
-<li><span style="color: #000000">ligne 25 : le nom du fichier des résultats ;</span></li>
-<li><span style="color: #000000">ligne 26 : le nom du fichier des erreurs ;</span></li>
-<li><span style="color: #000000">ligne 27 : le nom du fichier jSON contenant les données de l’administration fiscale;</span></li>
-<li><span style="color: #000000">ligne 31 : création de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 33 : création de la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> s’appuyant sur cette couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 35 : exécution de la méthode </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> de la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 36-39 : on a vu que la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> pouvait remonter des exceptions. Elles sont interceptées ici ;</span></li>
+  <li><span style="color: #000000">ligne 24 : le nom du fichier des données contribuables ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 25 : le nom du fichier des résultats ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 26 : le nom du fichier des erreurs ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 27 : le nom du fichier jSON contenant les données de l’administration fiscale;</span>
+  </li>
+  <li><span style="color: #000000">ligne 31 : création de la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 33 : création de la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> s’appuyant sur cette couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 35 : exécution de la méthode </span><b><span style="color: #000000">[executeBatchImpots]</span></b><span style="color: #000000"> de la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 36-39 : on a vu que la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> pouvait remonter des exceptions. Elles sont interceptées ici ;</span>
+  </li>
 </ul>
-<p><a id="refheadingtoc788652244347140"></a>
-<a id="toc42690696"></a>
+
+<p><a id="toc42689924"></a>
 <a id="toc42690310"></a>
-<a id="toc42689924"></a></p>
+<a id="toc42690696"></a>
+<a id="refheadingtoc788652244347140"></a></p>
 <h2 id="116-tests-visuels">11.6. Tests visuels</h2>
-<p><a id="refheadingtoc788672244347140"></a>
-<a id="toc42690697"></a>
+<p><a id="toc42689925"></a>
 <a id="toc42690311"></a>
-<a id="toc42689925"></a></p>
+<a id="toc42690697"></a>
+<a id="refheadingtoc788672244347140"></a></p>
 <h3 id="1161-test-n-1">11.6.1. Test n° 1</h3>
 <p>Avec le fichier des contribuables <strong>[taxpayersdata.txt]</strong> suivants :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2049,10 +2116,10 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>{&quot;marié&quot;:&quot;non&quot;,&quot;enfants&quot;:0,&quot;salaire&quot;:200000,&quot;impôt&quot;:64210,&quot;surcôte&quot;:7498,&quot;décôte&quot;:0,&quot;réduction&quot;:0,&quot;taux&quot;:0.45}
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>{&quot;marié&quot;:&quot;oui&quot;,&quot;enfants&quot;:3,&quot;salaire&quot;:200000,&quot;impôt&quot;:42842,&quot;surcôte&quot;:17283,&quot;décôte&quot;:0,&quot;réduction&quot;:0,&quot;taux&quot;:0.41}
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc788692244347140"></a>
-<a id="toc42690698"></a>
+<p><a id="toc42689926"></a>
 <a id="toc42690312"></a>
-<a id="toc42689926"></a></p>
+<a id="toc42690698"></a>
+<a id="refheadingtoc788692244347140"></a></p>
 <h3 id="1162-test-n-2">11.6.2. Test n° 2</h3>
 <p><span style="color: #000000">Dans le script principal, on met pour le fichier des contribuables un nom de fichier qui n’existe pas :</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>const TAXPAYERS_DATA_FILENAME = &quot;taxpayersdata2.txt&quot;;
@@ -2066,9 +2133,12 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">ligne 1 : avertissements (warning) de l’interpréteur PHP ;</span></li>
-<li><span style="color: #000000">ligne 2 : le message d’erreur de l’exception lancée par la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">ligne 1 : avertissements (warning) de l’interpréteur PHP ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 2 : le message d’erreur de l’exception lancée par la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Il est possible de mettre en sourdine les messages d’erreur de l’interpréteur PHP :</span></p>
 <p><img src="images/10000000000004910000016E22CC2B26.png" style="width:9.281cm;height:2.911cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004910000016E22CC2B26.png" /></p>
 <p><span style="color: #000000">La ligne 21 du code ci-dessus demande à ce que les erreurs PHP ne soient pas affichées. Pendant la phase de développement il est nécessaire qu’elles soient affichées. En mode production, il faut les cacher.</span></p>
@@ -2079,23 +2149,26 @@
 </code></pre></div>
 
 <p><a id="testscodeception"></a>
-<a id="toc42690699"></a>
-<a id="toc42690313"></a>
+<a id="refheadingtoc1740952705769808"></a>
 <a id="toc42689927"></a>
-<a id="refheadingtoc1740952705769808"></a></p>
+<a id="toc42690313"></a>
+<a id="toc42690699"></a></p>
 <h2 id="117-tests-codeception">11.7. Tests [Codeception]</h2>
 <p>Les tests visuels sont très insuffisants :</p>
 <ul>
-<li>on se limite en général à quelques tests ;</li>
-<li>on est plus ou moins attentif lors de cette vérification visuelle et des détails peuvent nous échapper ;</li>
+  <li>on se limite en général à quelques tests ;
+  </li>
+  <li>on est plus ou moins attentif lors de cette vérification visuelle et des détails peuvent nous échapper ;
+  </li>
 </ul>
+
 <p>Dans la réalité du développement professionnel, les tests sont rédigés par des personnes dédiées dont c’est le rôle principal. Elles cherchent alors à faire les tests les plus complets possible(s). Pour cela elles utilisent des frameworks de test.</p>
 <p>Nous allons ici utiliser le framework <strong>Codeception</strong> <strong>[https://codeception.com/]</strong> car il peut être intégré à Netbeans. C’est un framework avec un large éventail de possibilités. Nous n’allons en utiliser que quelques-unes. L’idée est d’avoir un moyen rapide, après chaque nouvelle version de l’exercice d’application, de vérifier que celle-ci fonctionne. L’existence de tests réussis donne au développeur confiance dans le code qu’il a écrit. C’est un facteur important.</p>
 <p><a id="installationduframework"></a>
-<a id="toc42690700"></a>
-<a id="toc42690314"></a>
+<a id="refheadingtoc185651971629160"></a>
 <a id="toc42689928"></a>
-<a id="refheadingtoc185651971629160"></a></p>
+<a id="toc42690314"></a>
+<a id="toc42690700"></a></p>
 <h3 id="1171-installation-du-framework-codeception">11.7.1. Installation du framework [Codeception]</h3>
 <p><span style="color: #000000">Comme beaucoup de bibliothèques PHP, le framework </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> s’installe avec </span><strong><span style="color: #000000">[Composer]</span></strong><span style="color: #000000">. Nous ouvrons donc un terminal Laragon (cf paragraphe </span><a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">).</span></p>
 <p><span style="color: #000000">Il nous faut tout d’abord installer le framework de tests PHPUnit </span><strong><span style="color: #000000">[https://phpunit.de/]</span></strong><span style="color: #000000">. En effet Codeception utilise en sous-main le framework PHPUnit:</span></p>
@@ -2103,43 +2176,58 @@
 <p><span style="color: #000000">Ensuite, nous installons le framework Codeception :</span></p>
 <p><img src="images/10000000000003CB000001BD280D571A.png" style="width:7.711cm;height:3.53cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003CB000001BD280D571A.png" /></p>
 <p><span style="color: #000000">C’est tout. Maintenant voyons l’intégration de </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> dans Netbeans.</span></p>
-<p><a id="refheadingtoc1787322861440889"></a>
-<a id="toc42690701"></a>
+<p><a id="toc42689929"></a>
 <a id="toc42690315"></a>
-<a id="toc42689929"></a></p>
+<a id="toc42690701"></a>
+<a id="refheadingtoc1787322861440889"></a></p>
 <h3 id="1172-integration-de-codeception-dans-netbeans">11.7.2. Intégration de [CodeCeption] dans Netbeans</h3>
 <p><img src="images/100000000000052E0000044F2F84E725.png" style="width:10.531cm;height:8.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052E0000044F2F84E725.png" /></p>
 <ul>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[1-2]</span></strong><span style="color: #000000">, on accède aux propriétés du projet ;</span></li>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[3-4]</span></strong><span style="color: #000000">, on fait de </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> l’un des frameworks de test du projet ;</span></li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[1-2]</span></b><span style="color: #000000">, on accède aux propriétés du projet ;</span>
+  </li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[3-4]</span></b><span style="color: #000000">, on fait de </span><b><span style="color: #000000">[Codeception]</span></b><span style="color: #000000"> l’un des frameworks de test du projet ;</span>
+  </li>
 </ul>
+
 <p><img src="images/10000000000006E1000002FEF872F121.png" style="width:13.981cm;height:6.081cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E1000002FEF872F121.png" /></p>
 <p><img src="images/10000000000006D9000002FE51505EEE.png" style="width:13.911cm;height:6.081cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006D9000002FE51505EEE.png" /></p>
 <ul>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[5-8]</span></strong><span style="color: #000000">, on initialise le framework </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> pour le projet ;</span></li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[5-8]</span></b><span style="color: #000000">, on initialise le framework </span><b><span style="color: #000000">[Codeception]</span></b><span style="color: #000000"> pour le projet ;</span>
+  </li>
 </ul>
+
 <p><img src="images/100000000000045F000003F59033C0CE.png" style="width:8.88cm;height:8.041cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000045F000003F59033C0CE.png" /></p>
 <ul>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[9]</span></strong><span style="color: #000000">, un dossier </span><strong><span style="color: #000000">[tests]</span></strong><span style="color: #000000"> a été créé, ainsi qu’un fichier de configuration </span><strong><span style="color: #000000">[codeception.yml]</span></strong><span style="color: #000000"> en </span><strong><span style="color: #000000">[10-11]</span></strong><span style="color: #000000">. Le fichier </span><strong><span style="color: #000000">[11]</span></strong><span style="color: #000000"> est le même que le fichier </span><strong><span style="color: #000000">[10]</span></strong><span style="color: #000000">. Codeception a simplement créé un dossier </span><strong><span style="color: #000000">[Important Files]</span></strong><span style="color: #000000"> pour donner une signification particulière au fichier </span><strong><span style="color: #000000">[10]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[12-13]</span></strong><span style="color: #000000">, on revient aux propriétés du projet ;</span></li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[9]</span></b><span style="color: #000000">, un dossier </span><b><span style="color: #000000">[tests]</span></b><span style="color: #000000"> a été créé, ainsi qu’un fichier de configuration </span><b><span style="color: #000000">[codeception.yml]</span></b><span style="color: #000000"> en </span><b><span style="color: #000000">[10-11]</span></b><span style="color: #000000">. Le fichier </span><b><span style="color: #000000">[11]</span></b><span style="color: #000000"> est le même que le fichier </span><b><span style="color: #000000">[10]</span></b><span style="color: #000000">. Codeception a simplement créé un dossier </span><b><span style="color: #000000">[Important Files]</span></b><span style="color: #000000"> pour donner une signification particulière au fichier </span><b><span style="color: #000000">[10]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[12-13]</span></b><span style="color: #000000">, on revient aux propriétés du projet ;</span>
+  </li>
 </ul>
+
 <p><img src="images/10000000000007A20000037615D6D14F.png" style="width:15.511cm;height:7.032cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007A20000037615D6D14F.png" /></p>
 <ul>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[14-16]</span></strong><span style="color: #000000">, on désigne le dossier </span><strong><span style="color: #000000">[tests]</span></strong><span style="color: #000000"> </span><strong><span style="color: #000000">[16]</span></strong><span style="color: #000000">, comme le dossier de tests du projet ;</span></li>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[16]</span></strong><span style="color: #000000">, le dossier </span><strong><span style="color: #000000">[tests]</span></strong><span style="color: #000000"> apparaît alors sous le nouveau nom </span><strong><span style="color: #000000">[Test Files]</span></strong><span style="color: #000000">. La présence de ce dossier dans un projet PHP montre que ce projet intègre un framework de tests programmés ;</span></li>
-<li><span style="color: #000000">nous créerons nos tests dans le dossier </span><strong><span style="color: #000000">[unit]</span></strong><span style="color: #000000"> </span><strong><span style="color: #000000">[17]</span></strong><strong><span style="color: #000000"> ;</span></strong></li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[14-16]</span></b><span style="color: #000000">, on désigne le dossier </span><b><span style="color: #000000">[tests]</span></b><span style="color: #000000"> </span><b><span style="color: #000000">[16]</span></b><span style="color: #000000">, comme le dossier de tests du projet ;</span>
+  </li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[16]</span></b><span style="color: #000000">, le dossier </span><b><span style="color: #000000">[tests]</span></b><span style="color: #000000"> apparaît alors sous le nouveau nom </span><b><span style="color: #000000">[Test Files]</span></b><span style="color: #000000">. La présence de ce dossier dans un projet PHP montre que ce projet intègre un framework de tests programmés ;</span>
+  </li>
+  <li><span style="color: #000000">nous créerons nos tests dans le dossier </span><b><span style="color: #000000">[unit]</span></b><span style="color: #000000"> </span><b><span style="color: #000000">[17]</span></b><b><span style="color: #000000"> ;</span></b>
+  </li>
 </ul>
+
 <p><a id="testsdela"></a>
-<a id="toc42690702"></a>
-<a id="toc42690316"></a>
+<a id="refheadingtoc1703904100479126"></a>
 <a id="toc42689930"></a>
-<a id="refheadingtoc1703904100479126"></a></p>
+<a id="toc42690316"></a>
+<a id="toc42690702"></a></p>
 <h3 id="1173-tests-de-la-couche-dao">11.7.3. Tests de la couche [dao]</h3>
 <p><img src="images/10000000000001D00000034E225C8212.png" style="width:4.301cm;height:7.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D00000034E225C8212.png" /></p>
 <ul>
-<li><span style="color: #000000">nous allons créer tous nos tests dans le dossier </span><strong><span style="color: #000000">[unit]</span></strong><span style="color: #000000"> </span><strong><span style="color: #000000">[1]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">les noms des classes de test </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> </span><strong><span style="color: #000000">doivent se terminer par le mot clé </span></strong><strong><span style="color: #000000">[Test]</span></strong><strong><span style="color: #000000">, sinon les classes ne seront pas reconnues comme classes de test</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">nous allons créer tous nos tests dans le dossier </span><b><span style="color: #000000">[unit]</span></b><span style="color: #000000"> </span><b><span style="color: #000000">[1]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">les noms des classes de test </span><b><span style="color: #000000">[Codeception]</span></b><span style="color: #000000"> </span><b><span style="color: #000000">doivent se terminer par le mot clé </span></b><b><span style="color: #000000">[Test]</span></b><b><span style="color: #000000">, sinon les classes ne seront pas reconnues comme classes de test</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Nos classes de test </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> auront la forme suivante </span><strong><span style="color: #000000">[https://codeception.com/docs/05-UnitTests]</span></strong><span style="color: #000000"> :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2181,13 +2269,20 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 7 : les classes de test seront dans le même espace de noms que l’application testée ;</span></li>
-<li><span style="color: #000000">lignes 9-10 : ici on trouvera les opérations </span><strong><span style="color: #000000">[require]</span></strong><span style="color: #000000"> pour charger les classes et interfaces testées ;</span></li>
-<li><span style="color: #000000">ligne 12 : le nom de la classe de test </span><strong><span style="color: #000000">doit obligatoirement se terminer par le mot clé </span></strong><strong><span style="color: #000000">[Test]</span></strong><span style="color: #000000">. Cette classe doit étendre la classe </span><strong><span style="color: #000000">[\Codeception\Test\Unit]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 16-20 : le constructeur nous permettra d’initialiser l’environnement du test ;</span></li>
-<li><span style="color: #000000">ligne 23 : les noms des méthodes de test </span><strong><span style="color: #000000">doivent obligatoirement commencer par le mot clé </span></strong><strong><span style="color: #000000">[test]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 25-31 : diverses méthodes de test peuvent être utilisées ;</span></li>
+  <li><span style="color: #000000">ligne 7 : les classes de test seront dans le même espace de noms que l’application testée ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 9-10 : ici on trouvera les opérations </span><b><span style="color: #000000">[require]</span></b><span style="color: #000000"> pour charger les classes et interfaces testées ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 12 : le nom de la classe de test </span><b><span style="color: #000000">doit obligatoirement se terminer par le mot clé </span></b><b><span style="color: #000000">[Test]</span></b><span style="color: #000000">. Cette classe doit étendre la classe </span><b><span style="color: #000000">[\Codeception\Test\Unit]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 16-20 : le constructeur nous permettra d’initialiser l’environnement du test ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 23 : les noms des méthodes de test </span><b><span style="color: #000000">doivent obligatoirement commencer par le mot clé </span></b><b><span style="color: #000000">[test]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 25-31 : diverses méthodes de test peuvent être utilisées ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">La classe de test </span><strong><span style="color: #000000">[DaoTest]</span></strong><span style="color: #000000"> sera la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2284,10 +2379,14 @@
 
 <p><span style="color: #000000">Pour tester la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">, dans la classe de test :</span></p>
 <ul>
-<li><span style="color: #000000">nous reprenons l’environnement des lignes 13-27 de </span><strong><span style="color: #000000">[main.php]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">dans le constructeur de la classe de test, nous construisons la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> comme en ligne 31 ;</span></li>
-<li><span style="color: #000000">nous écrivons les méthodes de tests;</span></li>
+  <li><span style="color: #000000">nous reprenons l’environnement des lignes 13-27 de </span><b><span style="color: #000000">[main.php]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">dans le constructeur de la classe de test, nous construisons la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> comme en ligne 31 ;</span>
+  </li>
+  <li><span style="color: #000000">nous écrivons les méthodes de tests;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Nous procéderons de cette façon pour toutes les classes de test.</span></p>
 <p><span style="color: #000000">Revenons au code complet de la classe de test :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2352,21 +2451,33 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 10-25 : chargement de l’environnement nécessaire aux tests et définitions de constantes ;</span></li>
-<li><span style="color: #000000">lignes 31-36 : construction de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">, ligne 34, puis initialisation de l’attribut </span><strong><span style="color: #000000">[$taxAdminData]</span></strong><span style="color: #000000"> de la ligne 29. Cet attribut contient les données de l’administration fiscale ;</span></li>
-<li><span style="color: #000000">lignes 39-55 : l’unique méthode de test. Celui-ci consiste à vérifier que le contenu de l’attribut </span><strong><span style="color: #000000">[$taxAdminData]</span></strong><span style="color: #000000"> correspond à ce qui est attendu ;</span></li>
-<li><span style="color: #000000">lignes 41-50 : vérifications des constantes du calcul de l’impôt ;</span></li>
-<li><span style="color: #000000">lignes 52-55 : vérifications des tranches d’imposition. La méthode </span><strong><span style="color: #000000">[assertSame]</span></strong><span style="color: #000000"> vérifie que deux entités PHP, ici des tableaux, sont identiques ;</span></li>
+  <li><span style="color: #000000">lignes 10-25 : chargement de l’environnement nécessaire aux tests et définitions de constantes ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 31-36 : construction de la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000">, ligne 34, puis initialisation de l’attribut </span><b><span style="color: #000000">[$taxAdminData]</span></b><span style="color: #000000"> de la ligne 29. Cet attribut contient les données de l’administration fiscale ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 39-55 : l’unique méthode de test. Celui-ci consiste à vérifier que le contenu de l’attribut </span><b><span style="color: #000000">[$taxAdminData]</span></b><span style="color: #000000"> correspond à ce qui est attendu ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 41-50 : vérifications des constantes du calcul de l’impôt ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 52-55 : vérifications des tranches d’imposition. La méthode </span><b><span style="color: #000000">[assertSame]</span></b><span style="color: #000000"> vérifie que deux entités PHP, ici des tableaux, sont identiques ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Pour exécuter cette classe de test, on procède de la façon suivante :</span></p>
 <p><img src="images/100000000000078B0000017A585A23B7.png" style="width:15.331cm;height:3.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078B0000017A585A23B7.png" /></p>
 <ul>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[1-2]</span></strong><span style="color: #000000">, on exécute le test ;</span></li>
-<li><strong><span style="color: #000000">[3]</span></strong><span style="color: #000000"> : la fenêtre des résultats des tests ;</span></li>
-<li><strong><span style="color: #000000">[4]</span></strong><span style="color: #000000"> : la classe de test exécutée ;</span></li>
-<li><strong><span style="color: #000000">[5]</span></strong><span style="color: #000000"> : les résultats. Ici l’unique méthode de test a été réussie ;</span></li>
-<li><strong><span style="color: #000000">[6]</span></strong><span style="color: #000000"> : lorsque le test échoue ou plus fréquemment lorsqu’aucun test n’a été exécuté, il faut aller voir la fenêtre </span><strong><span style="color: #000000">[6]</span></strong><span style="color: #000000">. Le plus souvent, c’est le chargement de l’environnement du test qui a échoué et aucun test n’a alors pu être exécuté. Les erreurs affichées dans </span><strong><span style="color: #000000">[6]</span></strong><span style="color: #000000"> sont celles qu’on aurait avec l’exécution d’un script PHP classique ;</span></li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[1-2]</span></b><span style="color: #000000">, on exécute le test ;</span>
+  </li>
+  <li><b><span style="color: #000000">[3]</span></b><span style="color: #000000"> : la fenêtre des résultats des tests ;</span>
+  </li>
+  <li><b><span style="color: #000000">[4]</span></b><span style="color: #000000"> : la classe de test exécutée ;</span>
+  </li>
+  <li><b><span style="color: #000000">[5]</span></b><span style="color: #000000"> : les résultats. Ici l’unique méthode de test a été réussie ;</span>
+  </li>
+  <li><b><span style="color: #000000">[6]</span></b><span style="color: #000000"> : lorsque le test échoue ou plus fréquemment lorsqu’aucun test n’a été exécuté, il faut aller voir la fenêtre </span><b><span style="color: #000000">[6]</span></b><span style="color: #000000">. Le plus souvent, c’est le chargement de l’environnement du test qui a échoué et aucun test n’a alors pu être exécuté. Les erreurs affichées dans </span><b><span style="color: #000000">[6]</span></b><span style="color: #000000"> sont celles qu’on aurait avec l’exécution d’un script PHP classique ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Montrons un exemple de test erroné :</span></p>
 <p><span style="color: #000000">Dans la classe de test, nous introduisons une erreur dans la définition d’une constante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2379,10 +2490,10 @@
 <p><span style="color: #000000">Dans la fenêtre </span><strong><span style="color: #000000">[4]</span></strong><span style="color: #000000"> :</span></p>
 <p><img src="images/10000000000006BC00000164FA0036A0.png" style="width:13.681cm;height:2.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006BC00000164FA0036A0.png" /></p>
 <p><a id="testsdela1"></a>
-<a id="toc42690703"></a>
-<a id="toc42690317"></a>
+<a id="refheadingtoc1707494100479126"></a>
 <a id="toc42689931"></a>
-<a id="refheadingtoc1707494100479126"></a></p>
+<a id="toc42690317"></a>
+<a id="toc42690703"></a></p>
 <h3 id="1174-tests-de-la-couche-metier">11.7.4. Tests de la couche [métier]</h3>
 <p><span style="color: #000000">La classe de test </span><strong><span style="color: #000000">[MetierTest]</span></strong><span style="color: #000000"> suit les mêmes règles de construction que la classe </span><strong><span style="color: #000000">[DaoTest]</span></strong><span style="color: #000000"> mais il y a plus de méthodes de test :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2528,21 +2639,30 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 10-25 : chargements des fichiers définissant l’environnement du test. Celui-ci est le même que pour la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 31-37 : instanciation des couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 40-47 : un test de calcul d’impôt ;</span></li>
-<li><span style="color: #000000">ligne 41 : un certain calcul d’impôt est fait avec la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 42-46 : on vérifie que les résultats obtenus sont ceux du simulateur de l’administration fiscale </span><strong><span style="color: #000000">[https://www3.impots.gouv.fr/simulateur/calcul_impot/2019/simplifie/index.htm]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 23-26 : les tests d’égalité sont faits à 1 euro près. En effet, on a vu que des problèmes d’arrondi faisaient que l’algorithme du document donnait les résultats attendus à 1 euro près ;</span></li>
-<li><span style="color: #000000">ligne 27 : le taux d’imposition est lui calculé sans marge d’erreur ;</span></li>
-<li><span style="color: #000000">lignes 49-137 : on répète ce type de tests 10 fois avec à chaque fois une configuration du contribuable différente ;</span></li>
+  <li><span style="color: #000000">lignes 10-25 : chargements des fichiers définissant l’environnement du test. Celui-ci est le même que pour la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 31-37 : instanciation des couches </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 40-47 : un test de calcul d’impôt ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 41 : un certain calcul d’impôt est fait avec la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 42-46 : on vérifie que les résultats obtenus sont ceux du simulateur de l’administration fiscale </span><b><span style="color: #000000">[https://www3.impots.gouv.fr/simulateur/calcul_impot/2019/simplifie/index.htm]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 23-26 : les tests d’égalité sont faits à 1 euro près. En effet, on a vu que des problèmes d’arrondi faisaient que l’algorithme du document donnait les résultats attendus à 1 euro près ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 27 : le taux d’imposition est lui calculé sans marge d’erreur ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 49-137 : on répète ce type de tests 10 fois avec à chaque fois une configuration du contribuable différente ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Les tests donnent les résultats suivants :</span></p>
 <p><img src="images/100000000000077D000001B1B3AD815F.png" style="width:15.221cm;height:3.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077D000001B1B3AD815F.png" /></p>
-<p><a id="refheadingtoc185653971629160"></a>
-<a id="toc42690704"></a>
+<p><a id="toc42689932"></a>
 <a id="toc42690318"></a>
-<a id="toc42689932"></a></p>
+<a id="toc42690704"></a>
+<a id="refheadingtoc185653971629160"></a></p>
 <h3 id="1175-tests-des-prochaines-versions">11.7.5. Tests des prochaines versions</h3>
 <p><span style="color: #000000">Dans la suite, les tests des couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> seront identiques à ceux de la version 04. Seul changera l’environnement du test. Nous ne présenterons donc que celui-ci et les résultats des tests.</span></p>
 

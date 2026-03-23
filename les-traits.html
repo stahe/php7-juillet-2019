@@ -1088,22 +1088,22 @@
   
 
 
-<p><a id="refheadingtoc788212244347140"></a>
-<a id="toc42690671"></a>
+<p><a id="toc42689899"></a>
 <a id="toc42690285"></a>
-<a id="toc42689899"></a></p>
+<a id="toc42690671"></a>
+<a id="refheadingtoc788212244347140"></a></p>
 <h1 id="9-les-traits">9. Les Traits</h1>
 <p>Les <strong>Traits</strong> sont des structures analogues à des classes. Néanmoins on ne peut les instancier. Elles sont destinées à être incluses dans des classes. L’inclusion d’un <strong>Trait</strong> dans une classe a le même effet que si l’on avait copié le code du <strong>Trait</strong> dans la classe. On met dans un <strong>Trait</strong> du code susceptible d’être réutilisé dans plusieurs classes.</p>
-<p><a id="refheadingtoc788232244347140"></a>
-<a id="toc42690672"></a>
+<p><a id="toc42689900"></a>
 <a id="toc42690286"></a>
-<a id="toc42689900"></a></p>
+<a id="toc42690672"></a>
+<a id="refheadingtoc788232244347140"></a></p>
 <h2 id="91-larborescence-des-scripts">9.1. L’arborescence des scripts</h2>
 <p><img src="images/1000000000000160000002D26E146949.png" style="width:2.791cm;height:5.732cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000160000002D26E146949.png" /></p>
-<p><a id="refheadingtoc788252244347140"></a>
-<a id="toc42690673"></a>
+<p><a id="toc42689901"></a>
 <a id="toc42690287"></a>
-<a id="toc42689901"></a></p>
+<a id="toc42690673"></a>
+<a id="refheadingtoc788252244347140"></a></p>
 <h2 id="92-inclusion-dun-trait-dans-une-classe">9.2. Inclusion d’un trait dans une classe</h2>
 <p>Le script <strong>[traits-01.php]</strong> montre une utilisation basique d’un trait dans une classe :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1167,13 +1167,20 @@
 
 <p><strong>Commentaires du code</strong></p>
 <ul>
-<li>lignes 3-21 : définition de la classe <strong>[Class04]</strong> avec un attribut, ses get / set et un constructeur ;</li>
-<li>lignes 23-36 : on reprend le code de <strong>[Class04]</strong> sans son constructeur et on le transfère dans le trait <strong>[Trait04]</strong> tel quel. On ne reprend pas le constructeur puisqu’un Trait n’est pas instanciable ;</li>
-<li>ligne 23 : c’est le mot clé <strong>[trait]</strong> qui fait de <strong>[Trait04]</strong> un trait plutôt qu’une classe ;</li>
-<li>lignes 38-45 : on définit une classe <strong>[Class05]</strong> qui reprend le code du trait <strong>[Trait04]</strong> (ligne 40) et lui ajoute un constructeur (lignes 43-45), identique à celui de la classe <strong>[Class04]</strong> pour rendre la classe instanciable ;</li>
-<li>ligne 40 : c’est le mot clé <strong>[use]</strong> qui permet l’inclusion d’un Trait dans une classe ;</li>
-<li>lignes 50-56 : des tests montrent que les classes <strong>[Class04]</strong> et <strong>[Class05]</strong> fonctionnent de la même façon ;</li>
+  <li>lignes 3-21 : définition de la classe <b>[Class04]</b> avec un attribut, ses get / set et un constructeur ;
+  </li>
+  <li>lignes 23-36 : on reprend le code de <b>[Class04]</b> sans son constructeur et on le transfère dans le trait <b>[Trait04]</b> tel quel. On ne reprend pas le constructeur puisqu’un Trait n’est pas instanciable ;
+  </li>
+  <li>ligne 23 : c’est le mot clé <b>[trait]</b> qui fait de <b>[Trait04]</b> un trait plutôt qu’une classe ;
+  </li>
+  <li>lignes 38-45 : on définit une classe <b>[Class05]</b> qui reprend le code du trait <b>[Trait04]</b> (ligne 40) et lui ajoute un constructeur (lignes 43-45), identique à celui de la classe <b>[Class04]</b> pour rendre la classe instanciable ;
+  </li>
+  <li>ligne 40 : c’est le mot clé <b>[use]</b> qui permet l’inclusion d’un Trait dans une classe ;
+  </li>
+  <li>lignes 50-56 : des tests montrent que les classes <b>[Class04]</b> et <b>[Class05]</b> fonctionnent de la même façon ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1198,10 +1205,10 @@
 <p>Les résultats des lignes 3-10 montrent que les classes <strong>[Class04]</strong> et <strong>[Class05]</strong> ont la même contenu ;</p>
 <p><strong>Conclusion</strong></p>
 <p>L’utilisation de l’instruction <strong>[use Trait]</strong> dans une classe est équivalente à inclure le code de <strong>[Trait]</strong> dans la classe.</p>
-<p><a id="refheadingtoc788272244347140"></a>
-<a id="toc42690674"></a>
+<p><a id="toc42689902"></a>
 <a id="toc42690288"></a>
-<a id="toc42689902"></a></p>
+<a id="toc42690674"></a>
+<a id="refheadingtoc788272244347140"></a></p>
 <h2 id="93-utiliser-un-meme-trait-dans-differentes-classes">9.3. Utiliser un même trait dans différentes classes</h2>
 <p>Un premier intérêt du <strong>trait</strong> semble être la réutilisation d’un même code (attributs +méthodes) entre différentes classes. Nous allons voir cependant qu’on peut arriver au même objectif en utilisant de simples classes.</p>
 <p>Le partage d’un <em>trait</em> entre classes est illustré par le script <strong>[trait-02.php]</strong> suivant :</p>
@@ -1270,22 +1277,34 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 3-10 : un trait définissant un attibut (ligne 5) et une méthode (lignes 8-10).</li>
-<li>le trait <strong>[Trait01]</strong> est injecté dans deux classes <strong>[Class02]</strong> (lignes 14-32) et <strong>[Class03]</strong> (lignes 34-46).</li>
-<li>lignes 16-20 : injection de <strong>[Trait01]</strong> dans <strong>[Class02]</strong> ;</li>
-<li>la ligne 19 vise à résoudre un conflit : <strong>[Trait01]</strong> et <strong>[Class02]</strong> ont tous les deux une méthode appelée <strong>[doSomething]</strong>. Il y a deux cas à prévoir :<ul>
-<li>la méthode <strong>[Class02::doSomething]</strong> est appelée de l’extérieur de la classe. Dans ce cas, la méthode <strong>[Class02::doSomething]</strong> est prioritaire sur la méthode <strong>[Trait01::doSomething]</strong> et c’est elle qui est appelée ;</li>
-<li>la méthode <strong>[Class02::doSomething]</strong> est appelée de l’intérieur de la classe. Dans ce cas il y a conflit : l’interpréteur PHP ne sait pas quelle méthode appeler ;</li>
+  <li>lignes 3-10 : un trait définissant un attibut (ligne 5) et une méthode (lignes 8-10).
+  </li>
+  <li>le trait <b>[Trait01]</b> est injecté dans deux classes <b>[Class02]</b> (lignes 14-32) et <b>[Class03]</b> (lignes 34-46).
+  </li>
+  <li>lignes 16-20 : injection de <b>[Trait01]</b> dans <b>[Class02]</b> ;
+  </li>
+  <li>la ligne 19 vise à résoudre un conflit : <b>[Trait01]</b> et <b>[Class02]</b> ont tous les deux une méthode appelée <b>[doSomething]</b>. Il y a deux cas à prévoir :
+    <ul>
+      <li>la méthode <b>[Class02::doSomething]</b> est appelée de l’extérieur de la classe. Dans ce cas, la méthode <b>[Class02::doSomething]</b> est prioritaire sur la méthode <b>[Trait01::doSomething]</b> et c’est elle qui est appelée ;
+      </li>
+      <li>la méthode <b>[Class02::doSomething]</b> est appelée de l’intérieur de la classe. Dans ce cas il y a conflit : l’interpréteur PHP ne sait pas quelle méthode appeler ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>La ligne 19 permet de renommer <strong>[doSomethingInTrait]</strong> la méthode <strong>[Trait01::doSomething]</strong>. Ainsi, à l’intérieur de <strong>[Class02]</strong> on utilisera les notations :</p>
 <ul>
-<li><strong>[doSomethingInTrait]</strong> pour appeler la méthode <strong>[Trait01::doSomething]</strong> ;</li>
-<li><strong>[doSomething]</strong> pour appeler la méthode <strong>[Class02::doSomething]</strong> ;</li>
-<li>lignes 25, 27 : la classe <strong>[Class02]</strong> utilisent l’attribut et la méthode de <strong>[Trait01]</strong> comme s’ils lui étaient propres ;</li>
-<li>lignes 34-48 : la classe <strong>[Class03]</strong> est identique à la classe <strong>[Class02]</strong>. L’inclusion de <strong>[Trait01]</strong> est ici plus simple parce qu’il n’y pas collision entre les méthodes de <strong>[Trait01]</strong> et <strong>[Class03]</strong> ;</li>
+  <li><b>[doSomethingInTrait]</b> pour appeler la méthode <b>[Trait01::doSomething]</b> ;
+  </li>
+  <li><b>[doSomething]</b> pour appeler la méthode <b>[Class02::doSomething]</b> ;
+  </li>
+  <li>lignes 25, 27 : la classe <b>[Class02]</b> utilisent l’attribut et la méthode de <b>[Trait01]</b> comme s’ils lui étaient propres ;
+  </li>
+  <li>lignes 34-48 : la classe <b>[Class03]</b> est identique à la classe <b>[Class02]</b>. L’inclusion de <b>[Trait01]</b> est ici plus simple parce qu’il n’y pas collision entre les méthodes de <b>[Trait01]</b> et <b>[Class03]</b> ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1408,15 +1427,24 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 4-23 : la classe <strong>[Class01]</strong> remplace le trait <strong>[Trait01]</strong>. Le code de <strong>[Trait01]</strong> était incorporé au code des classes <strong>[Class02]</strong> et  <strong>[Class03]</strong>. Ici, ce ne sera pas le cas. Ce sera une référence au code de la classe <strong>[Class01]</strong> qui sera injectée dans les classes <strong>[Class02]</strong> et  <strong>[Class03]</strong>. Ce qui fait que les attributs de la classe <strong>[Class01]</strong> seront extérieurs au code des <strong>[Class02]</strong> et  <strong>[Class03]</strong>. Comme ici, l’attribut <strong>[id]</strong> est privé (ligne 6), il faut prévoir un getter (lignes 14-16) et un setter (lignes 9-11). C’est la 1re différence avec le trait : il faut créer le code d’accès aux attributs privés de la classe. On aurait pu passer la visibilité de l’attribut <strong>[id]</strong> à <strong>[public]</strong> mais il n’est jamais conseillé de faire cela. Passer par un setter pour fixer la valeur d’un attribut permet d’en vérifier la validité ;</li>
-<li>ligne 27 : inclusion dans le code de <strong>[Class02]</strong> d’une référence à la classe <strong>[Class01]</strong>. Parce que cet attribut est privé, il nous faut créer un setter (lignes 30-32) pour l’initialiser ;</li>
-<li>lignes 37-41 : pour tout usage du code de <strong>[Class01]</strong>, il nous faut passer par l’attribut <strong>[$this→class01]</strong> ;</li>
-<li>lignes 48-69 : la classe <strong>[Class03]</strong> est un clône de la classe <strong>[Classe02]</strong> si ce n’est que sa méthode a un nom différent ;</li>
-<li>lignes 72-82 : le 1er test. Celui-ci consiste à injecter dans les classes <strong>[Class02]</strong> et  <strong>[Class03]</strong> <strong>deux instances différentes</strong> de la classe <strong>[Class01]</strong> (lignes 77 et 78) ;</li>
-<li>lignes 85-97 : le 2e test injecte dans les classes <strong>[Class02]</strong> et  <strong>[Class03]</strong> <strong>la même instance</strong> de la classe <strong>[Class01]</strong> (lignes 97, 92, 93) ;</li>
-<li>lignes 100-101 : exécution du test <strong>[test01]</strong> ;</li>
-<li>lignes 103-104 : exécution du test <strong>[test02]</strong> ;</li>
+  <li>lignes 4-23 : la classe <b>[Class01]</b> remplace le trait <b>[Trait01]</b>. Le code de <b>[Trait01]</b> était incorporé au code des classes <b>[Class02]</b> et  <b>[Class03]</b>. Ici, ce ne sera pas le cas. Ce sera une référence au code de la classe <b>[Class01]</b> qui sera injectée dans les classes <b>[Class02]</b> et  <b>[Class03]</b>. Ce qui fait que les attributs de la classe <b>[Class01]</b> seront extérieurs au code des <b>[Class02]</b> et  <b>[Class03]</b>. Comme ici, l’attribut <b>[id]</b> est privé (ligne 6), il faut prévoir un getter (lignes 14-16) et un setter (lignes 9-11). C’est la 1re différence avec le trait : il faut créer le code d’accès aux attributs privés de la classe. On aurait pu passer la visibilité de l’attribut <b>[id]</b> à <b>[public]</b> mais il n’est jamais conseillé de faire cela. Passer par un setter pour fixer la valeur d’un attribut permet d’en vérifier la validité ;
+  </li>
+  <li>ligne 27 : inclusion dans le code de <b>[Class02]</b> d’une référence à la classe <b>[Class01]</b>. Parce que cet attribut est privé, il nous faut créer un setter (lignes 30-32) pour l’initialiser ;
+  </li>
+  <li>lignes 37-41 : pour tout usage du code de <b>[Class01]</b>, il nous faut passer par l’attribut <b>[$this→class01]</b> ;
+  </li>
+  <li>lignes 48-69 : la classe <b>[Class03]</b> est un clône de la classe <b>[Classe02]</b> si ce n’est que sa méthode a un nom différent ;
+  </li>
+  <li>lignes 72-82 : le 1er test. Celui-ci consiste à injecter dans les classes <b>[Class02]</b> et  <b>[Class03]</b> <b>deux instances différentes</b> de la classe <b>[Class01]</b> (lignes 77 et 78) ;
+  </li>
+  <li>lignes 85-97 : le 2e test injecte dans les classes <b>[Class02]</b> et  <b>[Class03]</b> <b>la même instance</b> de la classe <b>[Class01]</b> (lignes 97, 92, 93) ;
+  </li>
+  <li>lignes 100-101 : exécution du test <b>[test01]</b> ;
+  </li>
+  <li>lignes 103-104 : exécution du test <b>[test02]</b> ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -1440,13 +1468,16 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires des résultats</strong></p>
 <ul>
-<li>lignes 2-5 : on obtient les mêmes résultats qu’avec le trait <strong>[Trait01]</strong>. On en conclura que l’usage du trait n’est ici pas indispensable mais qu’il amène une réduction du code dû au fait qu’il n’y a pas besoin de méthodes pour accéder aux attributs du trait : ceux-ci font partie intégrante du code dans lequel le trait a été incorporé ;</li>
-<li>lignes 7-10 : du fait qu’on a injecté la même référence de <strong>[Class01]</strong> dans les classes <strong>[Class02]</strong> et  <strong>[Class03]</strong>, l’attribut <strong>[Class01::id]</strong> a été partagé entre les deux classes. C’est pour cela que la ligne 9 des résultats affiche 20 al lieu de 10 avec le trait. On en conclura que si des attributs du trait doivent être <strong>partagés</strong> entre des classes, alors le trait n’est pas utilisable et il faut alors utiliser une classe ;</li>
+  <li>lignes 2-5 : on obtient les mêmes résultats qu’avec le trait <b>[Trait01]</b>. On en conclura que l’usage du trait n’est ici pas indispensable mais qu’il amène une réduction du code dû au fait qu’il n’y a pas besoin de méthodes pour accéder aux attributs du trait : ceux-ci font partie intégrante du code dans lequel le trait a été incorporé ;
+  </li>
+  <li>lignes 7-10 : du fait qu’on a injecté la même référence de <b>[Class01]</b> dans les classes <b>[Class02]</b> et  <b>[Class03]</b>, l’attribut <b>[Class01::id]</b> a été partagé entre les deux classes. C’est pour cela que la ligne 9 des résultats affiche 20 al lieu de 10 avec le trait. On en conclura que si des attributs du trait doivent être <b>partagés</b> entre des classes, alors le trait n’est pas utilisable et il faut alors utiliser une classe ;
+  </li>
 </ul>
-<p><a id="refheadingtoc788292244347140"></a>
-<a id="toc42690675"></a>
+
+<p><a id="toc42689903"></a>
 <a id="toc42690289"></a>
-<a id="toc42689903"></a></p>
+<a id="toc42690675"></a>
+<a id="refheadingtoc788292244347140"></a></p>
 <h2 id="94-regrouper-des-methodes-dans-un-trait">9.4. Regrouper des méthodes dans un trait</h2>
 <p><span style="color: #000000">Dans l’exemple précédent, le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> comportait attributs et méthodes. Nous considérons ici le cas où il ne contient que des méthodes. Dans ce cas, le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> ressemble à une factorisation de méthodes qu’on peut alors utiliser dans différentes classes. Comme le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> n’a ici pas d’attribut, on va considérer le cas où les méthodes qu’ils rassemblent travaillent uniquement sur des paramètres qu’on leur passe. En fait, ce n’est pas obligatoire : un trait peut travailler sur un attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000"> sans avoir cet attribut. C’est alors aux classes qui utilisent ce trait de fournir l’attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000">.</span></p>
 <p><span style="color: #000000">Dans le cas où le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> n’a que des méthodes qui travaillent uniquement sur des paramètres qu’on leur passe, nous montrerons que le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> peut alors être remplacé par une </span><strong><span style="color: #000000">classe</span></strong><span style="color: #000000"> ayant les mêmes méthodes que le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> et déclarées statiques.</span></p>
@@ -1501,10 +1532,14 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 3-10 : le trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> n’a plus d’attributs ;</span></li>
-<li><span style="color: #000000">lignes 14-18 : inclusion de </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> dans </span><strong><span style="color: #000000">[Class02]</span></strong><span style="color: #000000">. La méthode de </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> est utilisée ligne 22 ;</span></li>
-<li><span style="color: #000000">ligne 31 : inclusion de </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> dans </span><strong><span style="color: #000000">[Class03]</span></strong><span style="color: #000000">. La méthode de </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> est utilisée ligne 36 ;</span></li>
+  <li><span style="color: #000000">lignes 3-10 : le trait </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> n’a plus d’attributs ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 14-18 : inclusion de </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> dans </span><b><span style="color: #000000">[Class02]</span></b><span style="color: #000000">. La méthode de </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> est utilisée ligne 22 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 31 : inclusion de </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> dans </span><b><span style="color: #000000">[Class03]</span></b><span style="color: #000000">. La méthode de </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> est utilisée ligne 36 ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
@@ -1557,10 +1592,14 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 3-10 : le trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> est remplacé par une classe abstraite </span><strong><span style="color: #000000">[Class01]</span></strong><span style="color: #000000"> dont toutes les méthodes sont déclarées statiques. La classe est déclarée abstraite uniquement pour empêcher son </span><strong><span style="color: #000000">instanciation</span></strong><span style="color: #000000">. On aurait voulu écrire également </span><strong><span style="color: #000000">[final]</span></strong><span style="color: #000000"> pour empêcher sa </span><strong><span style="color: #000000">dérivation</span></strong><span style="color: #000000"> mais PHP 7 n’accepte pas le préfixe </span><strong><span style="color: #000000">[final abstract]</span></strong><span style="color: #000000"> pour une classe. C’est l’un ou l’autre mais pas les deux ;</span></li>
-<li><span style="color: #000000">ligne 16 : au lieu d’écrire </span><strong><span style="color: #000000">[$this→doSomethingInTrait]</span></strong><span style="color: #000000"> on écrit maintenant </span><strong><span style="color: #000000">[Class01::doSomething]</span></strong><span style="color: #000000">, ç-à-d qu’on appelle la méthode statique </span><strong><span style="color: #000000">[doSomething]</span></strong><span style="color: #000000"> de la classe </span><strong><span style="color: #000000">[Class01]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 28 : on répète la même démarche dans </span><strong><span style="color: #000000">[Class03]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 3-10 : le trait </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> est remplacé par une classe abstraite </span><b><span style="color: #000000">[Class01]</span></b><span style="color: #000000"> dont toutes les méthodes sont déclarées statiques. La classe est déclarée abstraite uniquement pour empêcher son </span><b><span style="color: #000000">instanciation</span></b><span style="color: #000000">. On aurait voulu écrire également </span><b><span style="color: #000000">[final]</span></b><span style="color: #000000"> pour empêcher sa </span><b><span style="color: #000000">dérivation</span></b><span style="color: #000000"> mais PHP 7 n’accepte pas le préfixe </span><b><span style="color: #000000">[final abstract]</span></b><span style="color: #000000"> pour une classe. C’est l’un ou l’autre mais pas les deux ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 16 : au lieu d’écrire </span><b><span style="color: #000000">[$this→doSomethingInTrait]</span></b><span style="color: #000000"> on écrit maintenant </span><b><span style="color: #000000">[Class01::doSomething]</span></b><span style="color: #000000">, ç-à-d qu’on appelle la méthode statique </span><b><span style="color: #000000">[doSomething]</span></b><span style="color: #000000"> de la classe </span><b><span style="color: #000000">[Class01]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 28 : on répète la même démarche dans </span><b><span style="color: #000000">[Class03]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
@@ -1571,10 +1610,10 @@
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a>Class03-&gt;doSomethingElse
 </code></pre></div></td></tr></table></div>
 <p><span style="color: #000000">On a bien le même résultat qu’avec le trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> ce qui montre que l’usage de celui-ci peut être évité. On a écrit que les méthodes d’un trait peuvent travailler sur un attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000"> sans que le trait ait cet attribut. C’est alors aux classes qui utilisent ce trait de fournir l’attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000">. C’est un cas exotique : autant ‘remonter’ l’attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000"> que les classes utilisant le trait doivent avoir, dans le trait lui-même. Ainsi il fera forcément partie des attributs de la classe utilisant le trait.</span></p>
-<p><a id="refheadingtoc788312244347140"></a>
-<a id="toc42690676"></a>
+<p><a id="toc42689904"></a>
 <a id="toc42690290"></a>
-<a id="toc42689904"></a></p>
+<a id="toc42690676"></a>
+<a id="refheadingtoc788312244347140"></a></p>
 <h2 id="95-heritage-multiple-avec-un-trait">9.5. Héritage multiple avec un trait</h2>
 <p><span style="color: #000000">Il est fréquent de lire dans la littérature PHP que le trait permettrait l’héritage multiple : la possibilité pour une classe d’hériter de plusieurs classes. Le langage C++ possède cette possibilité mais pas les langages Java ou C# qui ne connaissent que l’héritage simple. Nous allons montrer que si effectivement l’usage d’un trait dans une classe dérivée permet d’implémenter quelque chose qui ressemble à l’héritage multiple, ce cas d’usage peut là encore s’implémenter avec de simples classes.</span></p>
 <p><span style="color: #000000">Le script </span><strong><span style="color: #000000">[trait-06.php]</span></strong><span style="color: #000000"> met en œuvre une classe dérivée et un trait :</span></p>
@@ -1636,11 +1675,16 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 3-15 : on revient à un trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> avec un attribut et une méthode manipulant celui-ci ;</span></li>
-<li><span style="color: #000000">lignes 17-29 : une classe </span><strong><span style="color: #000000">[Class02]</span></strong><span style="color: #000000"> qui n’a rien à voir avec le trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000">. Elle ne l’utilise pas ;</span></li>
-<li><span style="color: #000000">ligne 19 : on a déclaré l’unique attribut de </span><strong><span style="color: #000000">[Class02]</span></strong><span style="color: #000000"> avec une visibilité </span><strong><span style="color: #000000">[protected]</span></strong><span style="color: #000000"> pour que celui-ci soit accessible dans les classes dérivées ;</span></li>
-<li><span style="color: #000000">ligne 32 : la classe </span><strong><span style="color: #000000">[Class03]</span></strong><span style="color: #000000"> étend la classe </span><strong><span style="color: #000000">[Class02]</span></strong><span style="color: #000000">. De plus elle incorpore le trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> (ligne 35). Finalement, elle hérite des attributs et méthodes de </span><strong><span style="color: #000000">[Class02]</span></strong><span style="color: #000000"> et incorpore les attributs et méthodes de </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000">. On a donc bien quelque chose d’analogue à l’héritage multiple ;</span></li>
+  <li><span style="color: #000000">lignes 3-15 : on revient à un trait </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> avec un attribut et une méthode manipulant celui-ci ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 17-29 : une classe </span><b><span style="color: #000000">[Class02]</span></b><span style="color: #000000"> qui n’a rien à voir avec le trait </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000">. Elle ne l’utilise pas ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 19 : on a déclaré l’unique attribut de </span><b><span style="color: #000000">[Class02]</span></b><span style="color: #000000"> avec une visibilité </span><b><span style="color: #000000">[protected]</span></b><span style="color: #000000"> pour que celui-ci soit accessible dans les classes dérivées ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 32 : la classe </span><b><span style="color: #000000">[Class03]</span></b><span style="color: #000000"> étend la classe </span><b><span style="color: #000000">[Class02]</span></b><span style="color: #000000">. De plus elle incorpore le trait </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000"> (ligne 35). Finalement, elle hérite des attributs et méthodes de </span><b><span style="color: #000000">[Class02]</span></b><span style="color: #000000"> et incorpore les attributs et méthodes de </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000">. On a donc bien quelque chose d’analogue à l’héritage multiple ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
@@ -1650,9 +1694,12 @@
 </code></pre></div></td></tr></table></div>
 <p><span style="color: #000000">De la même façon qu’il a été fait dans un exemple précédent, nous allons montrer que :</span></p>
 <ul>
-<li><span style="color: #000000">le trait peut être remplacé par une classe ;</span></li>
-<li><span style="color: #000000">au lieu d’incorporer le trait dans la classe dérivée, on incorpore la référence d’une instance de la classe ;</span></li>
+  <li><span style="color: #000000">le trait peut être remplacé par une classe ;</span>
+  </li>
+  <li><span style="color: #000000">au lieu d’incorporer le trait dans la classe dérivée, on incorpore la référence d’une instance de la classe ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Le script </span><strong><span style="color: #000000">[trait-07.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1730,13 +1777,20 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 3-24 : la classe </span><strong><span style="color: #000000">[Class01]</span></strong><span style="color: #000000"> remplace le trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000">. Comme la classe </span><strong><span style="color: #000000">[Class01]</span></strong><span style="color: #000000"> va être incorporée dans les classes via une référence, on a prévu des get / set pour l’attribut </span><strong><span style="color: #000000">[$i]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 26-38 : la classe </span><strong><span style="color: #000000">[Classe02]</span></strong><span style="color: #000000"> ne change pas ;</span></li>
-<li><span style="color: #000000">ligne 40 : la classe </span><strong><span style="color: #000000">[Class03]</span></strong><span style="color: #000000"> étend la classe </span><strong><span style="color: #000000">[Classe02]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 42 : la classe </span><strong><span style="color: #000000">[Classe01]</span></strong><span style="color: #000000"> est incorporée à </span><strong><span style="color: #000000">[Classe03]</span></strong><span style="color: #000000"> via une référence ;</span></li>
-<li><span style="color: #000000">lignes 45-47 : on prévoit un </span><em><span style="color: #000000">setter</span></em><span style="color: #000000"> pour initialiser la référence à la classe </span><strong><span style="color: #000000">[Classe01]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 50-61 : la méthode </span><strong><span style="color: #000000">[doSomethingInClass03]</span></strong><span style="color: #000000"> fait la même chose que précédemment avec cependant un code plus complexe ;</span></li>
+  <li><span style="color: #000000">lignes 3-24 : la classe </span><b><span style="color: #000000">[Class01]</span></b><span style="color: #000000"> remplace le trait </span><b><span style="color: #000000">[Trait01]</span></b><span style="color: #000000">. Comme la classe </span><b><span style="color: #000000">[Class01]</span></b><span style="color: #000000"> va être incorporée dans les classes via une référence, on a prévu des get / set pour l’attribut </span><b><span style="color: #000000">[$i]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 26-38 : la classe </span><b><span style="color: #000000">[Classe02]</span></b><span style="color: #000000"> ne change pas ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 40 : la classe </span><b><span style="color: #000000">[Class03]</span></b><span style="color: #000000"> étend la classe </span><b><span style="color: #000000">[Classe02]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 42 : la classe </span><b><span style="color: #000000">[Classe01]</span></b><span style="color: #000000"> est incorporée à </span><b><span style="color: #000000">[Classe03]</span></b><span style="color: #000000"> via une référence ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 45-47 : on prévoit un </span><i><span style="color: #000000">setter</span></i><span style="color: #000000"> pour initialiser la référence à la classe </span><b><span style="color: #000000">[Classe01]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 50-61 : la méthode </span><b><span style="color: #000000">[doSomethingInClass03]</span></b><span style="color: #000000"> fait la même chose que précédemment avec cependant un code plus complexe ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
@@ -1746,16 +1800,19 @@
 </code></pre></div></td></tr></table></div>
 <p><span style="color: #000000">De cet exemple, on peut conclure que là encore le trait n’est pas indispensable mais il faut reconnaître qu’il permet l’écriture d’un code plus court dans la classe dérivée.</span></p>
 <p><a id="utiliseruntrait"></a>
-<a id="toc42690677"></a>
-<a id="toc42690291"></a>
+<a id="refheadingtoc1417873837603249"></a>
 <a id="toc42689905"></a>
-<a id="refheadingtoc1417873837603249"></a></p>
+<a id="toc42690291"></a>
+<a id="toc42690677"></a></p>
 <h2 id="96-utiliser-un-trait-a-la-place-dune-classe-abstraite">9.6. Utiliser un trait à la place d’une classe abstraite</h2>
 <p>On rencontre souvent le cas d’utilisation suivant : on crée une interface <strong>I</strong> assez générale qui peut donner naissance à plusieurs implémentations. Celles-ci partagent un code commun mais diffèrent par d’autres méthodes. On peut implémenter ce cas d’utilisation de deux façons :</p>
 <ol>
-<li>on crée une classe <strong>abstraite</strong> <strong>C</strong> qui regroupe le code commun aux classes dérivées. La classe C implémente l’interface I mais certaines méthodes qui doivent être déclarées dans les classes dérivées sont dans la classe C déclarées abstraites et donc la classe C est elle-même abstraite. On crée ensuite des classes C1 et C2 dérivées de C qui implémentent chacune à leur manière les méthodes non définies (abstraites) de leur classe parent C ;</li>
-<li>on crée un <strong>trait</strong> <strong>T</strong> quasi identique à la classe abstraite C de la solution précédente. Ce trait n’implémente pas l’interface I car syntaxiquement elle ne le peut pas.  On crée ensuite des classes C1 et C2 implémentant l’interface I et utilisant le trait T. Il ne reste plus à ces classes qu’à implémenter les méthodes de l’interface I non implémentées par le trait T qu’elles importent ;</li>
+  <li>on crée une classe <b>abstraite</b> <b>C</b> qui regroupe le code commun aux classes dérivées. La classe C implémente l’interface I mais certaines méthodes qui doivent être déclarées dans les classes dérivées sont dans la classe C déclarées abstraites et donc la classe C est elle-même abstraite. On crée ensuite des classes C1 et C2 dérivées de C qui implémentent chacune à leur manière les méthodes non définies (abstraites) de leur classe parent C ;
+  </li>
+  <li>on crée un <b>trait</b> <b>T</b> quasi identique à la classe abstraite C de la solution précédente. Ce trait n’implémente pas l’interface I car syntaxiquement elle ne le peut pas.  On crée ensuite des classes C1 et C2 implémentant l’interface I et utilisant le trait T. Il ne reste plus à ces classes qu’à implémenter les méthodes de l’interface I non implémentées par le trait T qu’elles importent ;
+  </li>
 </ol>
+
 <p>Voici un exemple qui montre la grande proximité de ces deux solutions.</p>
 <p>L’application 1 implémente la solution 1 décrite précédemment <strong>[trait-08.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1857,13 +1914,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 3-8 : <strong>l’interface</strong> <strong>[Interface1]</strong> a deux méthodes ;</li>
-<li>lignes 10-41 : la <strong>classe abstraite</strong> <strong>[AbstractClass]</strong> implémente l’interface <strong>[Interface1]</strong> (ligne 10). Elle a deux attributs avec leurs getters et setters (lignes 12-32), implémente la méthode <strong>[doSomething]</strong> de l’interface <strong>[Interface1]</strong> (lignes 35-37) mais ne sait pas implémenter la méthode <strong>[doSomethingElse]</strong>. Celle-ci est donc déclarée abstraite (ligne 40). La classe abstraite <strong>[AbstractClass]</strong> ne peut être instanciée et pour servir à quelque chose elle doit obligatoirement être dérivée ;</li>
-<li>lignes 44-63 : la classe <strong>Class1</strong> étend la classe abstraite <strong>[AbstractClass]</strong> et donc implémente l’interface <strong>[Interface1]</strong> (ligne 14). Elle donne un corps à la méthode <strong>[doSomethingElse]</strong> que sa classe parent n’avait pas définie (lignes 59-61). Elle ajoute également un attribut à ceux de sa classe parent (lignes 46-56) ;</li>
-<li>lignes 66-82 : la classe <strong>Class2</strong> étend la classe abstraite <strong>[AbstractClass]</strong> et donc implémente l’interface <strong>[Interface1]</strong> (ligne 66). Elle donne un corps à la méthode <strong>[doSomethingElse]</strong> que sa classe parent n’avait pas définie (lignes 80-82). Elle ajoute également un attribut à ceux de sa classe parent (lignes 68-77) ;</li>
-<li>lignes 87-90 : la fonction <strong>[useInterfaceWith]</strong> reçoit en paramètre un type <strong>[Interface1]</strong> et appelle les deux méthodes de cette interface ;</li>
-<li>lignes 93-94 : on appelle la fonction <strong>[useInterfaceWith]</strong> la 1re fois avec un type <strong>[Class1]</strong> et la seconde fois avec un type <strong>[Class2]</strong>. C’est correct puisque ces deux types implémentent l’interface <strong>[Interface1]</strong> ;</li>
+  <li>lignes 3-8 : <b>l’interface</b> <b>[Interface1]</b> a deux méthodes ;
+  </li>
+  <li>lignes 10-41 : la <b>classe abstraite</b> <b>[AbstractClass]</b> implémente l’interface <b>[Interface1]</b> (ligne 10). Elle a deux attributs avec leurs getters et setters (lignes 12-32), implémente la méthode <b>[doSomething]</b> de l’interface <b>[Interface1]</b> (lignes 35-37) mais ne sait pas implémenter la méthode <b>[doSomethingElse]</b>. Celle-ci est donc déclarée abstraite (ligne 40). La classe abstraite <b>[AbstractClass]</b> ne peut être instanciée et pour servir à quelque chose elle doit obligatoirement être dérivée ;
+  </li>
+  <li>lignes 44-63 : la classe <b>Class1</b> étend la classe abstraite <b>[AbstractClass]</b> et donc implémente l’interface <b>[Interface1]</b> (ligne 14). Elle donne un corps à la méthode <b>[doSomethingElse]</b> que sa classe parent n’avait pas définie (lignes 59-61). Elle ajoute également un attribut à ceux de sa classe parent (lignes 46-56) ;
+  </li>
+  <li>lignes 66-82 : la classe <b>Class2</b> étend la classe abstraite <b>[AbstractClass]</b> et donc implémente l’interface <b>[Interface1]</b> (ligne 66). Elle donne un corps à la méthode <b>[doSomethingElse]</b> que sa classe parent n’avait pas définie (lignes 80-82). Elle ajoute également un attribut à ceux de sa classe parent (lignes 68-77) ;
+  </li>
+  <li>lignes 87-90 : la fonction <b>[useInterfaceWith]</b> reçoit en paramètre un type <b>[Interface1]</b> et appelle les deux méthodes de cette interface ;
+  </li>
+  <li>lignes 93-94 : on appelle la fonction <b>[useInterfaceWith]</b> la 1re fois avec un type <b>[Class1]</b> et la seconde fois avec un type <b>[Class2]</b>. C’est correct puisque ces deux types implémentent l’interface <b>[Interface1]</b> ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">AbstractClass::doSomething <span style="font-weight:bold">[11,12]</span></span>
@@ -1973,21 +2037,32 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 3-8 : l’interface <strong>[Interface1]</strong> n’a pas changé ;</li>
-<li>lignes 10-41 : le trait <strong>[Trait1]</strong> remplace la classe abstraite <strong>[AbstractClass]</strong> de la solution 1. Le code est le même aux détails près suivants :<ul>
-<li>ligne 10 : le trait <strong>[Trait1]</strong> n’implémente pas l’interface <strong>[Interface1]</strong>. C’est syntaxiquement impossible ;</li>
-<li>lignes 12-13 : l’attribut de visibilité <strong>[protected]</strong> des attributs de la classe abstraite <strong>[AbstractClass]</strong> devient ici <strong>[private]</strong>. Ces deux attributs visent à donner aux classes dérivées un accès direct aux attributs de la classe parent (protected) ou du trait (private) sans avoir à passer par les getters et setters ;</li>
-<li>le trait <strong>[Trait1]</strong> ne déclare pas la méthode abstraite <strong>[doSomethingElse]</strong> ;</li>
+  <li>lignes 3-8 : l’interface <b>[Interface1]</b> n’a pas changé ;
+  </li>
+  <li>lignes 10-41 : le trait <b>[Trait1]</b> remplace la classe abstraite <b>[AbstractClass]</b> de la solution 1. Le code est le même aux détails près suivants :
+    <ul>
+      <li>ligne 10 : le trait <b>[Trait1]</b> n’implémente pas l’interface <b>[Interface1]</b>. C’est syntaxiquement impossible ;
+      </li>
+      <li>lignes 12-13 : l’attribut de visibilité <b>[protected]</b> des attributs de la classe abstraite <b>[AbstractClass]</b> devient ici <b>[private]</b>. Ces deux attributs visent à donner aux classes dérivées un accès direct aux attributs de la classe parent (protected) ou du trait (private) sans avoir à passer par les getters et setters ;
+      </li>
+      <li>le trait <b>[Trait1]</b> ne déclare pas la méthode abstraite <b>[doSomethingElse]</b> ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 41-62 : la classe <b>[Class1]</b> de la solution 2 est identique à la classe <b>[Class1]</b> de la solution 1 aux détails près suivants :
+    <ul>
+      <li>ligne 41 : la classe <b>[Class1]</b> implémente l’interface <b>[Interface1]</b> alors que dans la solution 1, elle étendait la classe abstraite <b>[AbstractClass]</b> ;
+      </li>
+      <li>ligne 43 : elle utilise le trait <b>[Trait1]</b> pour implémenter une partie de l’interface ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 65-85 : on peut faire les mêmes commentaires que pour <b>[Class1]</b> ;
+  </li>
+  <li>lignes 87-95 : le reste du code ne change pas ;
+  </li>
 </ul>
-</li>
-<li>lignes 41-62 : la classe <strong>[Class1]</strong> de la solution 2 est identique à la classe <strong>[Class1]</strong> de la solution 1 aux détails près suivants :<ul>
-<li>ligne 41 : la classe <strong>[Class1]</strong> implémente l’interface <strong>[Interface1]</strong> alors que dans la solution 1, elle étendait la classe abstraite <strong>[AbstractClass]</strong> ;</li>
-<li>ligne 43 : elle utilise le trait <strong>[Trait1]</strong> pour implémenter une partie de l’interface ;</li>
-</ul>
-</li>
-<li>lignes 65-85 : on peut faire les mêmes commentaires que pour <strong>[Class1]</strong> ;</li>
-<li>lignes 87-95 : le reste du code ne change pas ;</li>
-</ul>
+
 <p><strong>Résultats</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">Trait::doSomething <span style="font-weight:bold">[11,12]</span></span>
@@ -1997,10 +2072,10 @@
 </code></pre></div>
 
 <p>On obtient bien les mêmes résultats.</p>
-<p><a id="refheadingtoc788332244347140"></a>
-<a id="toc42690678"></a>
+<p><a id="toc42689906"></a>
 <a id="toc42690292"></a>
-<a id="toc42689906"></a></p>
+<a id="toc42690678"></a>
+<a id="refheadingtoc788332244347140"></a></p>
 <h2 id="97-conclusion">9.7. Conclusion</h2>
 <p><span style="color: #000000">Des exemples précédents, il ressort que les cas d’utilisation où l’usage du trait amènerait un avantage net ne sont pas clairs. Sur nos exemples on peut toujours s’en passer en le remplaçant par une classe. Il semble cependant que son utilisation soit pratique pour factoriser du code entre différentes classes dérivées, comme si ce code appartenait à une classe parent. C’est ce que nous ferons dans un exemple à suivre.</span></p>
 

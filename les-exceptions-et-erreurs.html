@@ -1132,50 +1132,53 @@
   
 
 
-<p><a id="refheadingtoc55563710956990"></a>
-<a id="toc42690650"></a>
+<p><a id="toc42689878"></a>
 <a id="toc42690264"></a>
-<a id="toc42689878"></a></p>
+<a id="toc42690650"></a>
+<a id="refheadingtoc55563710956990"></a></p>
 <h1 id="7-les-exceptions-et-erreurs">7. Les exceptions et erreurs</h1>
 <p>Lorsqu’une méthode d’une classe rencontre une erreur irrécupérable (fichier inexistant, base de données non connectée, connexion réseau hors service), elle n’affiche pas une erreur sur une console (fichier, base de données) mais <strong>lance une exception</strong>. Toutes les exceptions étendent la classe <strong>[\Exception]</strong>. Outre des exceptions, le fonctionnement interne de PHP émet également des erreurs dont la classe de base est la classe <strong>[\Error]</strong>. Les deux classes implémentent l’interface PHP <strong>[\Throwable]</strong>.</p>
-<p><a id="refheadingtoc787972244347140"></a>
-<a id="toc42690651"></a>
+<p><a id="toc42689879"></a>
 <a id="toc42690265"></a>
-<a id="toc42689879"></a></p>
+<a id="toc42690651"></a>
+<a id="refheadingtoc787972244347140"></a></p>
 <h2 id="71-larborescence-des-scripts">7.1. L’arborescence des scripts</h2>
 <p><img src="images/1000000000000182000001F53C2F7898.png" style="width:3.571cm;height:4.642cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000182000001F53C2F7898.png" /></p>
-<p><a id="refheadingtoc55565710956990"></a>
-<a id="toc42690652"></a>
+<p><a id="toc42689880"></a>
 <a id="toc42690266"></a>
-<a id="toc42689880"></a></p>
+<a id="toc42690652"></a>
+<a id="refheadingtoc55565710956990"></a></p>
 <h2 id="72-linterface-throwable">7.2. L’interface [\Throwable]</h2>
 <p>L’interface <strong>[\Throwable]</strong> est la suivante :</p>
 <p><img src="images/10000000000003B60000030A9D5E70DD.png" style="width:7.541cm;height:6.181cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B60000030A9D5E70DD.png" /></p>
 <p>Le rôle des méthodes de l’interface est le suivant :</p>
 <p><img src="images/1000000000000624000001A276916377.png" style="width:12.48cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000624000001A276916377.png" /></p>
-<p><a id="refheadingtoc55567710956990"></a>
-<a id="toc42690653"></a>
+<p><a id="toc42689881"></a>
 <a id="toc42690267"></a>
-<a id="toc42689881"></a></p>
+<a id="toc42690653"></a>
+<a id="refheadingtoc55567710956990"></a></p>
 <h2 id="73-les-exceptions-predefinies-dans-php-7">7.3. Les exceptions prédéfinies dans PHP 7</h2>
 <p>PHP 7 définit plusieurs classes d’exceptions :</p>
 <p><img src="images/1000000000000699000003EB5A5396D7.png" style="width:15.641cm;height:9.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000699000003EB5A5396D7.png" /></p>
 <ul>
-<li>en <strong>[1]</strong>, les exceptions prédéfinies dans PHP ;</li>
-<li>en <strong>[2]</strong>, les exceptions de la bibliothèque SPL (Standard PHP Library) de PHP 7. la bibliothèque SPL est une collection de classes et d’interfaces destinées à résoudre des problèmes rencontrés fréquemment par les développeurs.</li>
+  <li>en <b>[1]</b>, les exceptions prédéfinies dans PHP ;
+  </li>
+  <li>en <b>[2]</b>, les exceptions de la bibliothèque SPL (Standard PHP Library) de PHP 7. la bibliothèque SPL est une collection de classes et d’interfaces destinées à résoudre des problèmes rencontrés fréquemment par les développeurs.
+  </li>
 </ul>
-<p><a id="refheadingtoc55569710956990"></a>
-<a id="toc42690654"></a>
+
+<p><a id="toc42689882"></a>
 <a id="toc42690268"></a>
-<a id="toc42689882"></a></p>
+<a id="toc42690654"></a>
+<a id="refheadingtoc55569710956990"></a></p>
 <h2 id="74-les-erreurs-predefinies-dans-php-7">7.4. Les erreurs prédéfinies dans PHP 7</h2>
 <p>PHP 7 définit plusieurs classes d’erreurs :</p>
 <p><img src="images/10000000000001B60000023C194A52DA.png" style="width:4.061cm;height:5.301cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B60000023C194A52DA.png" /></p>
 <p>La classe <strong>[\Error]</strong> est la classe parent de toutes les erreurs prédéfinies dans PHP. La classe <strong>[ErrorException]</strong> permet d’encapsuler une instance de la classe <strong>[\Error]</strong> dans une instance de la classe <strong>[\Exception]</strong>. Ceci permet d’uniformiser la gestion des erreurs en ne traitant que des exceptions.</p>
-<p><a id="refheadingtoc55571710956990"></a>
-<a id="toc42690655"></a>
+<p><a id="toc42689883"></a>
 <a id="toc42690269"></a>
-<a id="toc42689883"></a></p>
+<a id="toc42690655"></a>
+<a id="refheadingtoc55571710956990"></a></p>
 <h2 id="75-exemple-1">7.5. Exemple 1</h2>
 <p>Le premier exemple <strong>[exceptions-01.php]</strong> montre à la fois des erreurs PHP et une exception :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1201,17 +1204,25 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 4 : on demande à PHP de signaler toutes les erreurs. Le second paramètre est le niveau d’erreurs demandé :</span></li>
+  <li><span style="color: #000000">ligne 4 : on demande à PHP de signaler toutes les erreurs. Le second paramètre est le niveau d’erreurs demandé :</span>
+  </li>
 </ul>
+
 <p><img src="images/10000000000007CB0000039244FC96F3.png" style="width:15.83cm;height:7.25cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007CB0000039244FC96F3.png" /></p>
 <p><img src="images/10000000000007CB000002E0AB3A90C4.png" style="width:15.83cm;height:5.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007CB000002E0AB3A90C4.png" /></p>
 <ul>
-<li><span style="color: #000000">ligne 5 : on demande d’afficher les erreurs sur la console ;</span></li>
-<li><span style="color: #000000">ligne 9 : on accède à un élément inexistant du tableau </span><strong><span style="color: #000000">[$var]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 11 : on fait une division par zéro ;</span></li>
-<li><span style="color: #000000">ligne 14 : on crée une instance de la classe </span><strong><span style="color: #000000">[SplFixedArray]</span></strong><span style="color: #000000">. Cette classe permet de créer un tableau à bornes fixes et à indices entiers ;</span></li>
-<li><span style="color: #000000">ligne 18 : on accède à un élément inexistant du tableau ;</span></li>
+  <li><span style="color: #000000">ligne 5 : on demande d’afficher les erreurs sur la console ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 9 : on accède à un élément inexistant du tableau </span><b><span style="color: #000000">[$var]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 11 : on fait une division par zéro ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 14 : on crée une instance de la classe </span><b><span style="color: #000000">[SplFixedArray]</span></b><span style="color: #000000">. Cette classe permet de créer un tableau à bornes fixes et à indices entiers ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 18 : on accède à un élément inexistant du tableau ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -1233,14 +1244,18 @@
 </code></pre></div></td></tr></table></div>
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 1 des résultats : accéder à une clé inexistante d’un tableau provoque une erreur PHP de niveau </span><strong><span style="color: #000000">[E_NOTICE]</span></strong><span style="color: #000000">. Cela n’interrompt pas l’exécution du script ;</span></li>
-<li><span style="color: #000000">ligne 3 des résultats : diviser un nombre par zéro provoque une erreur PHP de niveau </span><strong><span style="color: #000000">[E_WARNING]</span></strong><span style="color: #000000">. Cela n’interrompt pas l’exécution du script ;</span></li>
-<li><span style="color: #000000">lignes 6-9 des résultats : accéder à un indice inexistant d’un tableau </span><strong><span style="color: #000000">[SplFixedArray]</span></strong><span style="color: #000000"> provoque une exception de type </span><strong><span style="color: #000000">[RuntimeException]</span></strong><span style="color: #000000"> et interrompt l’exécution du script ;</span></li>
+  <li><span style="color: #000000">ligne 1 des résultats : accéder à une clé inexistante d’un tableau provoque une erreur PHP de niveau </span><b><span style="color: #000000">[E_NOTICE]</span></b><span style="color: #000000">. Cela n’interrompt pas l’exécution du script ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 3 des résultats : diviser un nombre par zéro provoque une erreur PHP de niveau </span><b><span style="color: #000000">[E_WARNING]</span></b><span style="color: #000000">. Cela n’interrompt pas l’exécution du script ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 6-9 des résultats : accéder à un indice inexistant d’un tableau </span><b><span style="color: #000000">[SplFixedArray]</span></b><span style="color: #000000"> provoque une exception de type </span><b><span style="color: #000000">[RuntimeException]</span></b><span style="color: #000000"> et interrompt l’exécution du script ;</span>
+  </li>
 </ul>
-<p><a id="refheadingtoc787992244347140"></a>
-<a id="toc42690656"></a>
+
+<p><a id="toc42689884"></a>
 <a id="toc42690270"></a>
-<a id="toc42689884"></a></p>
+<a id="toc42690656"></a>
+<a id="refheadingtoc787992244347140"></a></p>
 <h2 id="76-gerer-les-exceptions">7.6. Gérer les exceptions</h2>
 <p><span style="color: #000000">Le script </span><strong><span style="color: #000000">[exceptions-02.php]</span></strong><span style="color: #000000"> montre comment gérer les exceptions :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1274,10 +1289,14 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">le script est celui qui a été présenté au paragraphe précédent. Seulement maintenant on a entouré le code des lignes 8-19 susceptible de provoquer des erreurs par une structure </span><strong><span style="color: #000000">try / catch</span></strong><span style="color: #000000"> : si le code des lignes 8-21 provoque (lance) une exception ou une erreur, celle-ci sera gérée par la clause </span><strong><span style="color: #000000">catch</span></strong><span style="color: #000000"> des lignes 22-26 ;</span></li>
-<li><span style="color: #000000">ligne 22 : le paramètre de la clause </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000"> est le type d’exception ou d’erreur que l’on veut gérer. En mettant comme type </span><strong><span style="color: #000000">[\Throwable]</span></strong><span style="color: #000000"> qui est une interface, on indique qu’on veut gérer toute instance de classe implémentant l’interface </span><strong><span style="color: #000000">[\Throwable]</span></strong><span style="color: #000000">. Comme toutes les classes d’erreurs et d’exceptions implémentent cette interface, la clause </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000"> gère ici toute erreur / exception encapsulée dans une classe ;</span></li>
-<li><span style="color: #000000">ligne 19 : l’instruction qui déclenche l’erreur et donne naissance à l’exception. Dès qu’il y a exception, il y a branchement sur la clause </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000">. Le code derrière la ligne 19 ne sera donc pas exécuté ;</span></li>
+  <li><span style="color: #000000">le script est celui qui a été présenté au paragraphe précédent. Seulement maintenant on a entouré le code des lignes 8-19 susceptible de provoquer des erreurs par une structure </span><b><span style="color: #000000">try / catch</span></b><span style="color: #000000"> : si le code des lignes 8-21 provoque (lance) une exception ou une erreur, celle-ci sera gérée par la clause </span><b><span style="color: #000000">catch</span></b><span style="color: #000000"> des lignes 22-26 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 22 : le paramètre de la clause </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000"> est le type d’exception ou d’erreur que l’on veut gérer. En mettant comme type </span><b><span style="color: #000000">[\Throwable]</span></b><span style="color: #000000"> qui est une interface, on indique qu’on veut gérer toute instance de classe implémentant l’interface </span><b><span style="color: #000000">[\Throwable]</span></b><span style="color: #000000">. Comme toutes les classes d’erreurs et d’exceptions implémentent cette interface, la clause </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000"> gère ici toute erreur / exception encapsulée dans une classe ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 19 : l’instruction qui déclenche l’erreur et donne naissance à l’exception. Dès qu’il y a exception, il y a branchement sur la clause </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000">. Le code derrière la ligne 19 ne sera donc pas exécuté ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1291,13 +1310,16 @@
 </code></pre></div></td></tr></table></div>
 <p><strong><span style="color: #000000">Commentaires des résultats</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 1 et 3 : on retrouve les erreurs de niveau </span><strong><span style="color: #000000">[E_NOTICE]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[E_WARNING]</span></strong><span style="color: #000000">. Ces erreurs ne sont pas des exceptions et ne sont donc pas gérées par la clause </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 5 : on a le message d’erreur écrit dans la clause </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000">. Il s’est donc produit une exception dérivée de </span><strong><span style="color: #000000">[\Exception]</span></strong><span style="color: #000000"> ou une erreur dérivée de </span><strong><span style="color: #000000">[\Error]</span></strong><span style="color: #000000">. Nous voyons ici qu’il s’agit de la classe </span><strong><span style="color: #000000">[\RuntimeException]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 1 et 3 : on retrouve les erreurs de niveau </span><b><span style="color: #000000">[E_NOTICE]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[E_WARNING]</span></b><span style="color: #000000">. Ces erreurs ne sont pas des exceptions et ne sont donc pas gérées par la clause </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 5 : on a le message d’erreur écrit dans la clause </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000">. Il s’est donc produit une exception dérivée de </span><b><span style="color: #000000">[\Exception]</span></b><span style="color: #000000"> ou une erreur dérivée de </span><b><span style="color: #000000">[\Error]</span></b><span style="color: #000000">. Nous voyons ici qu’il s’agit de la classe </span><b><span style="color: #000000">[\RuntimeException]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
-<p><a id="refheadingtoc788012244347140"></a>
-<a id="toc42690657"></a>
+
+<p><a id="toc42689885"></a>
 <a id="toc42690271"></a>
-<a id="toc42689885"></a></p>
+<a id="toc42690657"></a>
+<a id="refheadingtoc788012244347140"></a></p>
 <h2 id="77-parametres-de-la-clause-catch">7.7. Paramètres de la clause [catch]</h2>
 <p><span style="color: #000000">Examinons le script </span><strong><span style="color: #000000">[exceptions-03.php]</span></strong><span style="color: #000000"> suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1367,20 +1389,30 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 8-31 : 3 façons différentes de gérer l’exception générée par l’utilisation d’un indice incorrect avec la classe </span><strong><span style="color: #000000">[\SplFixedArray]</span></strong><span style="color: #000000">. Nous avons vu que cette erreur générait une exception de type </span><strong><span style="color: #000000">[RuntimeException]</span></strong><span style="color: #000000"> ;</span><ul>
-<li><span style="color: #000000">ligne 12 : gère une erreur de type </span><strong><span style="color: #000000">[\Throwable]</span></strong><span style="color: #000000">. C’est valide puisque le type </span><strong><span style="color: #000000">[RuntimeException]</span></strong><span style="color: #000000"> dérive du type </span><strong><span style="color: #000000">[\Exception]</span></strong><span style="color: #000000"> qui implémente l’interface </span><strong><span style="color: #000000">[\Throwable]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 20 : gère une erreur de type </span><strong><span style="color: #000000">[\Exception]</span></strong><span style="color: #000000">. C’est valide puisque le type </span><strong><span style="color: #000000">[RuntimeException]</span></strong><span style="color: #000000"> dérive du type </span><strong><span style="color: #000000">[\Exception]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 28 : gère une erreur de type </span><strong><span style="color: #000000">[\RuntimeException]</span></strong><span style="color: #000000">. C’est la méthode à privilégier puisque c’est le type exact de l’exception générée ;</span></li>
+  <li><span style="color: #000000">lignes 8-31 : 3 façons différentes de gérer l’exception générée par l’utilisation d’un indice incorrect avec la classe </span><b><span style="color: #000000">[\SplFixedArray]</span></b><span style="color: #000000">. Nous avons vu que cette erreur générait une exception de type </span><b><span style="color: #000000">[RuntimeException]</span></b><span style="color: #000000"> ;</span>
+    <ul>
+      <li><span style="color: #000000">ligne 12 : gère une erreur de type </span><b><span style="color: #000000">[\Throwable]</span></b><span style="color: #000000">. C’est valide puisque le type </span><b><span style="color: #000000">[RuntimeException]</span></b><span style="color: #000000"> dérive du type </span><b><span style="color: #000000">[\Exception]</span></b><span style="color: #000000"> qui implémente l’interface </span><b><span style="color: #000000">[\Throwable]</span></b><span style="color: #000000"> ;</span>
+      </li>
+      <li><span style="color: #000000">ligne 20 : gère une erreur de type </span><b><span style="color: #000000">[\Exception]</span></b><span style="color: #000000">. C’est valide puisque le type </span><b><span style="color: #000000">[RuntimeException]</span></b><span style="color: #000000"> dérive du type </span><b><span style="color: #000000">[\Exception]</span></b><span style="color: #000000"> ;</span>
+      </li>
+      <li><span style="color: #000000">ligne 28 : gère une erreur de type </span><b><span style="color: #000000">[\RuntimeException]</span></b><span style="color: #000000">. C’est la méthode à privilégier puisque c’est le type exact de l’exception générée ;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">lignes 32-62 : 4 façons différentes de gérer l’exception générée par la fonction </span><b><span style="color: #000000">[intdiv]</span></b><span style="color: #000000"> lorsqu’on passe à celle-ci un diviseur égal à 0. La fonction </span><b><span style="color: #000000">[ intdiv ( int $dividend , int $divisor ) : int]</span></b><span style="color: #000000"> fait la division entière $dividend / $divisor. Lorsque le diviseur est nul, l’exception </span><b><span style="color: #000000">[\DivisionByzeroError]</span></b><span style="color: #000000"> est lancée ;</span>
+    <ul>
+      <li><span style="color: #000000">ligne 35 : on intercepte toute erreur implémentant l’interface </span><b><span style="color: #000000">[\Throwable]</span></b><span style="color: #000000">. C’est valide ;</span>
+      </li>
+      <li><span style="color: #000000">ligne 43 : on intercepte le type exact de l’erreur : c’est la méthode à privilégier ;</span>
+      </li>
+      <li><span style="color: #000000">ligne 51 : on intercepte le type </span><b><span style="color: #000000">[\Error]</span></b><span style="color: #000000">. C’est valide puisque la classe </span><b><span style="color: #000000">[DivisionByzeroError]</span></b><span style="color: #000000"> étend la classe </span><b><span style="color: #000000">[Error]</span></b><span style="color: #000000"> ;</span>
+      </li>
+      <li><span style="color: #000000">ligne 59 : on intercepte le type </span><b><span style="color: #000000">[\Exception]</span></b><span style="color: #000000">. C’est invalide car la classe </span><b><span style="color: #000000">[DivisionByzeroError]</span></b><span style="color: #000000"> n’a aucun lien avec la classe </span><b><span style="color: #000000">[\Exception]</span></b><span style="color: #000000"> ;</span>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-<li><span style="color: #000000">lignes 32-62 : 4 façons différentes de gérer l’exception générée par la fonction </span><strong><span style="color: #000000">[intdiv]</span></strong><span style="color: #000000"> lorsqu’on passe à celle-ci un diviseur égal à 0. La fonction </span><strong><span style="color: #000000">[ intdiv ( int $dividend , int $divisor ) : int]</span></strong><span style="color: #000000"> fait la division entière $dividend / $divisor. Lorsque le diviseur est nul, l’exception </span><strong><span style="color: #000000">[\DivisionByzeroError]</span></strong><span style="color: #000000"> est lancée ;</span><ul>
-<li><span style="color: #000000">ligne 35 : on intercepte toute erreur implémentant l’interface </span><strong><span style="color: #000000">[\Throwable]</span></strong><span style="color: #000000">. C’est valide ;</span></li>
-<li><span style="color: #000000">ligne 43 : on intercepte le type exact de l’erreur : c’est la méthode à privilégier ;</span></li>
-<li><span style="color: #000000">ligne 51 : on intercepte le type </span><strong><span style="color: #000000">[\Error]</span></strong><span style="color: #000000">. C’est valide puisque la classe </span><strong><span style="color: #000000">[DivisionByzeroError]</span></strong><span style="color: #000000"> étend la classe </span><strong><span style="color: #000000">[Error]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 59 : on intercepte le type </span><strong><span style="color: #000000">[\Exception]</span></strong><span style="color: #000000">. C’est invalide car la classe </span><strong><span style="color: #000000">[DivisionByzeroError]</span></strong><span style="color: #000000"> n’a aucun lien avec la classe </span><strong><span style="color: #000000">[\Exception]</span></strong><span style="color: #000000"> ;</span></li>
-</ul>
-</li>
-</ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -1406,21 +1438,27 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a>#1 {main}
 <a id="__codelineno-2-12" name="__codelineno-2-12"></a>thrown in C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-03.php on line 58
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc788032244347140"></a>
-<a id="toc42690658"></a>
+<p><a id="toc42689886"></a>
 <a id="toc42690272"></a>
-<a id="toc42689886"></a></p>
+<a id="toc42690658"></a>
+<a id="refheadingtoc788032244347140"></a></p>
 <h2 id="78-clause-finally">7.8. Clause [finally]</h2>
 <p>La structure try / catch peut avoir un troisième élément et devenir une structure <strong>try / catch / finally</strong>. Le code de la clausse <strong>[finally]</strong> est exécuté dans les deux cas suivants :</p>
 <ul>
-<li>la clause <strong>[try]</strong> ne lance pas d’exception. Elle est alors exécutée entièrement puis l’exécution du code passe à la clause <strong>[finally]</strong> qui est exécutée entièrement ;</li>
-<li>la clause <strong>[try]</strong> lance une exception. Elle est alors exécutée jusqu’à l’instruction qui lance l’exception. L’exécution du code passe alors à la clause <strong>[catch]</strong> qui est exécutée entièrement. Puis l’exécution du code passe à la clause <strong>[finally]</strong> qui est exécutée entièrement ;</li>
+  <li>la clause <b>[try]</b> ne lance pas d’exception. Elle est alors exécutée entièrement puis l’exécution du code passe à la clause <b>[finally]</b> qui est exécutée entièrement ;
+  </li>
+  <li>la clause <b>[try]</b> lance une exception. Elle est alors exécutée jusqu’à l’instruction qui lance l’exception. L’exécution du code passe alors à la clause <b>[catch]</b> qui est exécutée entièrement. Puis l’exécution du code passe à la clause <b>[finally]</b> qui est exécutée entièrement ;
+  </li>
 </ul>
+
 <p>Finalement, le code de la clause <strong>[finally]</strong> est toujours exécuté. Ce scénario est utile dans le cas suivant :</p>
 <ul>
-<li>dans le <strong>[try]</strong>, le code a obtenu des ressources (fichiers, bases de données, connexions réseau, files d’attente). En général ces ressources sont coûteuses en mémoire. Il faut alors les rendre (on dit le plus souvent <strong>fermer</strong>) dès que c’est possible ;</li>
-<li>si l’acquisition des ressources a été faite dans le <strong>[try]</strong>, on mettra leur restitution dans le <strong>[finally]</strong>. Cela nous assure que dans tous les cas (erreur ou pas), les ressources acquises sont restituées au système ;</li>
+  <li>dans le <b>[try]</b>, le code a obtenu des ressources (fichiers, bases de données, connexions réseau, files d’attente). En général ces ressources sont coûteuses en mémoire. Il faut alors les rendre (on dit le plus souvent <b>fermer</b>) dès que c’est possible ;
+  </li>
+  <li>si l’acquisition des ressources a été faite dans le <b>[try]</b>, on mettra leur restitution dans le <b>[finally]</b>. Cela nous assure que dans tous les cas (erreur ou pas), les ressources acquises sont restituées au système ;
+  </li>
 </ul>
+
 <p>Le script suivant <strong>[exemples/exceptions/exceptions-04.php]</strong> nous montre le fonctionnement de la clause <strong>[finally]</strong> dans diverses situations :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1461,13 +1499,20 @@
 
 <p><strong>Commentaires du code</strong></p>
 <ul>
-<li>ligne 4 : $e est une instance de la classe prédéfinie <strong>[\Exception]</strong>. On va la lancer à différents endroits ;</li>
-<li>lignes 8-15 : l’exception $e est lancée dans le <strong>[try]</strong> (ligne 10) ;</li>
-<li>ligne 11 : l’exception <strong>[\Exception]</strong> est interceptée et son message d’erreur écrit sur la console ;</li>
-<li>lignes 13-15 : la clause <strong>[finally]</strong> écrit un message. D’après ce qui a été dit précédemment, ce message devrait être tout le temps écrit, erreur ou pas dans le <strong>[try]</strong> ;</li>
-<li>lignes 18-24 : il n’y a pas d’erreur dans le <strong>[try]</strong>. On devrait là également passer dans le <strong>[finally]</strong> ;</li>
-<li>lignes 27-34 : il y a une instruction <strong>[return]</strong> dans le try et pas d’erreur. On peut se demander alors si on va passer dans la clause <strong>[finally]</strong>. L’exécution montre que oui ;</li>
+  <li>ligne 4 : $e est une instance de la classe prédéfinie <b>[\Exception]</b>. On va la lancer à différents endroits ;
+  </li>
+  <li>lignes 8-15 : l’exception $e est lancée dans le <b>[try]</b> (ligne 10) ;
+  </li>
+  <li>ligne 11 : l’exception <b>[\Exception]</b> est interceptée et son message d’erreur écrit sur la console ;
+  </li>
+  <li>lignes 13-15 : la clause <b>[finally]</b> écrit un message. D’après ce qui a été dit précédemment, ce message devrait être tout le temps écrit, erreur ou pas dans le <b>[try]</b> ;
+  </li>
+  <li>lignes 18-24 : il n’y a pas d’erreur dans le <b>[try]</b>. On devrait là également passer dans le <b>[finally]</b> ;
+  </li>
+  <li>lignes 27-34 : il y a une instruction <b>[return]</b> dans le try et pas d’erreur. On peut se demander alors si on va passer dans la clause <b>[finally]</b>. L’exécution montre que oui ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
@@ -1498,16 +1543,19 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 6 : l’instruction </span><strong><span style="color: #000000">[exit]</span></strong><span style="color: #000000"> arrête immédiatement l’exécution du script : la clause </span><strong><span style="color: #000000">[finally]</span></strong><span style="color: #000000"> n’est pas exécutée ;</span></li>
-<li><span style="color: #000000">lignes 4-9 : un exemple de try / catch / finally sans clause </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000">. C’est possible ;</span></li>
+  <li><span style="color: #000000">ligne 6 : l’instruction </span><b><span style="color: #000000">[exit]</span></b><span style="color: #000000"> arrête immédiatement l’exécution du script : la clause </span><b><span style="color: #000000">[finally]</span></b><span style="color: #000000"> n’est pas exécutée ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 4-9 : un exemple de try / catch / finally sans clause </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000">. C’est possible ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Quatrième test
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc788052244347140"></a>
-<a id="toc42690659"></a>
+<p><a id="toc42689887"></a>
 <a id="toc42690273"></a>
-<a id="toc42689887"></a></p>
+<a id="toc42690659"></a>
+<a id="refheadingtoc788052244347140"></a></p>
 <h2 id="79-creer-ses-propres-classes-dexceptions">7.9. Créer ses propres classes d’exceptions</h2>
 <p>Dans un projet un peu important, il est utile de différentier les différentes erreurs en les encapsulant dans différentes classes d’exceptions. Dans le script précédent, nous avons vu que toute exception pouvait être interceptée par une clause <strong>[catch (\Throwable]</strong>. C’est recommandé si on n’a aucune idée de l’erreur interceptée et que le traitement est le même pour toutes les erreurs. C’est parfois le cas mais on a souvent besoin d’adapter le traitement au type exact de l’erreur. Il faut alors différentier les erreurs entre-elles.</p>
 <p>Examinons le script <strong>[exceptions-06.php]</strong> suivant :</p>
@@ -1578,13 +1626,20 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 4-10 : on définit deux classes </span><strong><span style="color: #000000">[Exception1]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[Exception2]</span></strong><span style="color: #000000"> toutes deux dérivées de la classe prédéfinie </span><strong><span style="color: #000000">[\RuntimeException]</span></strong><span style="color: #000000">. Le corps de ces classes est vide. Autrement dit, on ne les utilise que pour leurs types : c’est parce qu’elles ont des types différents qu’on va pouvoir différentier ces deux exceptions dans les clauses </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 13-16 : on définit deux variables $e1 et $e2 ayant respectivement les types </span><strong><span style="color: #000000">[Exception1]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[Exception2]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 20-29 : on a une structure try / catch / catch. Cela permet de gérer différents types d’exception avec différentes clauses </span><strong><span style="color: #000000">[catch]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 23 : intercepte les exceptions de type </span><strong><span style="color: #000000">[Exception1]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 26 : intercepte les exceptions de type </span><strong><span style="color: #000000">[Exception2]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 49 : intercepte les exceptions de type </span><strong><span style="color: #000000">[Exception1]</span></strong><span style="color: #000000"> ou (|) </span><strong><span style="color: #000000">[Exception2]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 4-10 : on définit deux classes </span><b><span style="color: #000000">[Exception1]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[Exception2]</span></b><span style="color: #000000"> toutes deux dérivées de la classe prédéfinie </span><b><span style="color: #000000">[\RuntimeException]</span></b><span style="color: #000000">. Le corps de ces classes est vide. Autrement dit, on ne les utilise que pour leurs types : c’est parce qu’elles ont des types différents qu’on va pouvoir différentier ces deux exceptions dans les clauses </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 13-16 : on définit deux variables $e1 et $e2 ayant respectivement les types </span><b><span style="color: #000000">[Exception1]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[Exception2]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 20-29 : on a une structure try / catch / catch. Cela permet de gérer différents types d’exception avec différentes clauses </span><b><span style="color: #000000">[catch]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 23 : intercepte les exceptions de type </span><b><span style="color: #000000">[Exception1]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 26 : intercepte les exceptions de type </span><b><span style="color: #000000">[Exception2]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 49 : intercepte les exceptions de type </span><b><span style="color: #000000">[Exception1]</span></b><span style="color: #000000"> ou (|) </span><b><span style="color: #000000">[Exception2]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
@@ -1680,19 +1735,26 @@
 </code></pre></div></td></tr></table></div>
 <p><strong><span style="color: #000000">Commentaires des résultats</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 1-17 : le ‘contenu’ d’une exception :</span><ul>
-<li><span style="color: #000000">lignes 2-3 : le message d’erreur ;</span></li>
-<li><span style="color: #000000">lignes 6-7 : le code d’erreur ;</span></li>
-<li><span style="color: #000000">lignes 8-9 : le nom du fichier dans lequel s’est produite l’exception ;</span></li>
-<li><span style="color: #000000">lignes 10-11 : la ligne à laquelle s’est produite l’exception ;</span></li>
-<li><span style="color: #000000">lignes 15-16 : l’exception précédente. Une exception peut encapsuler une autre exception et définir ainsi une pile d’exceptions. L’attribut </span><strong><span style="color: #000000">[previous]</span></strong><span style="color: #000000"> va permettre d’exploiter cette pile ;</span></li>
+  <li><span style="color: #000000">lignes 1-17 : le ‘contenu’ d’une exception :</span>
+    <ul>
+      <li><span style="color: #000000">lignes 2-3 : le message d’erreur ;</span>
+      </li>
+      <li><span style="color: #000000">lignes 6-7 : le code d’erreur ;</span>
+      </li>
+      <li><span style="color: #000000">lignes 8-9 : le nom du fichier dans lequel s’est produite l’exception ;</span>
+      </li>
+      <li><span style="color: #000000">lignes 10-11 : la ligne à laquelle s’est produite l’exception ;</span>
+      </li>
+      <li><span style="color: #000000">lignes 15-16 : l’exception précédente. Une exception peut encapsuler une autre exception et définir ainsi une pile d’exceptions. L’attribut </span><b><span style="color: #000000">[previous]</span></b><span style="color: #000000"> va permettre d’exploiter cette pile ;</span>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
-<p><a id="refheadingtoc788072244347140"></a>
-<a id="toc42690660"></a>
+
+<p><a id="toc42689888"></a>
 <a id="toc42690274"></a>
-<a id="toc42689888"></a></p>
+<a id="toc42690660"></a>
+<a id="refheadingtoc788072244347140"></a></p>
 <h2 id="710-relancer-une-exception">7.10. Relancer une exception</h2>
 <p><span style="color: #000000">Une exception peut être lancée plusieurs fois comme le montre le script </span><strong><span style="color: #000000">[exceptions-07.php]</span></strong><span style="color: #000000"> suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1720,12 +1782,18 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 6 : on lance une exception ;</span></li>
-<li><span style="color: #000000">ligne 7 : on l’intercepte ;</span></li>
-<li><span style="color: #000000">ligne 9 : on la relance. Elle passe alors dans la structure try / catch / finally du niveau supérieur ;</span></li>
-<li><span style="color: #000000">ligne 14 : on l’intercepte de nouveau ;</span></li>
-<li><span style="color: #000000">lignes 10-12 : l’exécution montre que même après le </span><strong><span style="color: #000000">[throw]</span></strong><span style="color: #000000"> de la ligne 9, on passe bien dans la clause </span><strong><span style="color: #000000">[finally]</span></strong><span style="color: #000000"> du try / catch / finally ;</span></li>
+  <li><span style="color: #000000">ligne 6 : on lance une exception ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 7 : on l’intercepte ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 9 : on la relance. Elle passe alors dans la structure try / catch / finally du niveau supérieur ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 14 : on l’intercepte de nouveau ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 10-12 : l’exécution montre que même après le </span><b><span style="color: #000000">[throw]</span></b><span style="color: #000000"> de la ligne 9, on passe bien dans la clause </span><b><span style="color: #000000">[finally]</span></b><span style="color: #000000"> du try / catch / finally ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
@@ -1733,10 +1801,10 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>test dans try / catch / finally externe
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a>finally 2
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc788092244347140"></a>
-<a id="toc42690661"></a>
+<p><a id="toc42689889"></a>
 <a id="toc42690275"></a>
-<a id="toc42689889"></a></p>
+<a id="toc42690661"></a>
+<a id="refheadingtoc788092244347140"></a></p>
 <h2 id="711-exploitation-dune-pile-dexceptions">7.11. Exploitation d’une pile d’exceptions</h2>
 <p><span style="color: #000000">Une exception peut encapsuler une autre exception qui elle-même peut en encapsuler une autre formant finalement une pile d’exceptions. Voici un exemple </span><strong><span style="color: #000000">[exceptions-08.php]</span></strong><span style="color: #000000"> :</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-14">14</a></span>
@@ -1795,20 +1863,26 @@
 </code></pre></div></td></tr></table></div>
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 4-14 : définissent trois classes d’exceptions dérivées de l’exception prédéfinie </span><strong><span style="color: #000000">[RuntimeException]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 17 : une instance de la classe </span><strong><span style="color: #000000">[Exception3]</span></strong><span style="color: #000000"> est encapsulée dans une instance de la classe </span><strong><span style="color: #000000">[Exception2]</span></strong><span style="color: #000000"> qui elle-même est encapsulée dans une instance de la classe </span><strong><span style="color: #000000">[Exception1]</span></strong><span style="color: #000000">. Le constructeur utilisé ici est le constructeur de la classe </span><strong><span style="color: #000000">[Exception]</span></strong><span style="color: #000000"> :</span></li>
+  <li><span style="color: #000000">lignes 4-14 : définissent trois classes d’exceptions dérivées de l’exception prédéfinie </span><b><span style="color: #000000">[RuntimeException]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 17 : une instance de la classe </span><b><span style="color: #000000">[Exception3]</span></b><span style="color: #000000"> est encapsulée dans une instance de la classe </span><b><span style="color: #000000">[Exception2]</span></b><span style="color: #000000"> qui elle-même est encapsulée dans une instance de la classe </span><b><span style="color: #000000">[Exception1]</span></b><span style="color: #000000">. Le constructeur utilisé ici est le constructeur de la classe </span><b><span style="color: #000000">[Exception]</span></b><span style="color: #000000"> :</span>
+  </li>
 </ul>
+
 <p><img src="images/10000000000006030000006FF84FF42B.png" style="width:14.25cm;height:1.03cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006030000006FF84FF42B.png" /></p>
 <p><span style="color: #000000">Le 3</span><span style="color: #000000">e</span><span style="color: #000000"> paramètre du constructeur permet d’encapsuler une exception. Cela peut être utile dans le scénario suivant :</span></p>
 <ul>
-<li><span style="color: #000000">on définit une méthode M qui peut générer une exception de type </span><strong><span style="color: #000000">[Exception1]</span></strong><span style="color: #000000"> et seulement de ce type pour des raisons de compatibilité par exemple avec une interface ;</span></li>
-<li>
-<p><span style="color: #000000">or dans la méthode M peuvent se produire d’autres types d’exceptions. Pour remonter une erreur au code appelant la méthode M, on encapsulera alors ces exceptions dans le type </span><strong><span style="color: #000000">[Exception1]</span></strong><span style="color: #000000"> que l’on lancera. Cela permet de ne pas perdre l’information contenue dans l’exception encapsulée et qui a été la cause originelle de l’erreur ;</span></p>
-</li>
-<li>
-<p><span style="color: #000000">les lignes 20-27 montrent comment gérer la pile des exceptions internes à une exception ;</span></p>
-</li>
+  <li><span style="color: #000000">on définit une méthode M qui peut générer une exception de type </span><b><span style="color: #000000">[Exception1]</span></b><span style="color: #000000"> et seulement de ce type pour des raisons de compatibilité par exemple avec une interface ;</span>
+  </li>
+  <li><span style="color: #000000">or dans la méthode M peuvent se produire d’autres types d’exceptions. Pour remonter une erreur au code appelant la méthode M, on encapsulera alors ces exceptions dans le type </span><b><span style="color: #000000">[Exception1]</span></b><span style="color: #000000"> que l’on lancera. Cela permet de ne pas perdre l’information contenue dans l’exception encapsulée et qui a été la cause originelle de l’erreur ;</span>
+  </li>
 </ul>
+
+<ul>
+  <li><span style="color: #000000">les lignes 20-27 montrent comment gérer la pile des exceptions internes à une exception ;</span>
+  </li>
+</ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">object(<span style="font-weight:bold">Exception1</span>)#1 (7) {</span>

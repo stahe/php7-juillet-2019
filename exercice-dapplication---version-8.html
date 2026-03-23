@@ -1211,63 +1211,78 @@
   
 
 
-<p><a id="refheading399941881943603"></a>
-<a id="toc42690823"></a>
+<p><a id="toc42690051"></a>
 <a id="toc42690437"></a>
-<a id="toc42690051"></a></p>
+<a id="toc42690823"></a>
+<a id="refheading399941881943603"></a></p>
 <h1 id="18-exercice-dapplication-version-8">18. Exercice d’application – version 8</h1>
 <p>Nous allons reprendre l’application exemple – version 5 (paragraphe <a href="#_Exercice_d’application_–_1"><u><span style="color: #0563c1">lien</span></u></a>) et allons en faire une application client / serveur.</p>
-<p><a id="refheadingtoc1357822222329424"></a>
-<a id="toc42690824"></a>
+<p><a id="toc42690052"></a>
 <a id="toc42690438"></a>
-<a id="toc42690052"></a></p>
+<a id="toc42690824"></a>
+<a id="refheadingtoc1357822222329424"></a></p>
 <h2 id="181-introduction">18.1. Introduction</h2>
 <p>L’architecture de la version 5 était la suivante :</p>
 <p><img src="images/100000000000069B00000199BF9F7122.png" style="width:13.42cm;height:3.252cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000069B00000199BF9F7122.png" /></p>
 <ul>
-<li>la couche appelée <strong>[dao]</strong> (Data Access Objects) s&#x27;occupe des échanges avec la base de données MySQL et le système de fihiers local ;</li>
-<li>la couche appelée <strong>[métier]</strong> fait le calcul de l&#x27;impôt ;</li>
-<li>le script principal est le chef d’orchestre : il instancie les couches <strong>[dao]</strong> et <strong>[métier]</strong> puis dialogue avec la couche <strong>[métier]</strong> pour faire ce qu’il y a faire ;</li>
+  <li>la couche appelée <b>[dao]</b> (Data Access Objects) s&#x27;occupe des échanges avec la base de données MySQL et le système de fihiers local ;
+  </li>
+  <li>la couche appelée <b>[métier]</b> fait le calcul de l&#x27;impôt ;
+  </li>
+  <li>le script principal est le chef d’orchestre : il instancie les couches <b>[dao]</b> et <b>[métier]</b> puis dialogue avec la couche <b>[métier]</b> pour faire ce qu’il y a faire ;
+  </li>
 </ul>
+
 <p>Nous allons migrer cette architecture vers l’architecture client / serveur suivante :</p>
 <p><img src="images/100000000000067D0000027912065F5D.png" style="width:13.181cm;height:5.021cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000067D0000027912065F5D.png" /></p>
 <ul>
-<li>en <strong>[2]</strong>, nous reprendrons la couche <strong>[dao]</strong> de la version 5 en lui enlevant les méthodes d’accès au système de fichiers local. Ces méthodes migreront dans la couche <strong>[dao]</strong> du client <strong>[6, 7]</strong> ;</li>
-<li>en <strong>[3]</strong>, la couche <strong>[métier]</strong> restera celle de la version 5 sans ses méthodes <strong>[executeBatchImpôts, saveResults]</strong> qui migrent dans la couche <strong>[dao]</strong> <strong>[7]</strong> du client ;</li>
-<li>en <strong>[4]</strong>, le script serveur est à écrire : il aura à :<ul>
-<li>créer les couches <strong>[métier]</strong> et <strong>[dao]</strong> <strong>[3, 2]</strong> ;</li>
-<li>dialoguer avec le script client <strong>[5, 7]</strong> ;</li>
+  <li>en <b>[2]</b>, nous reprendrons la couche <b>[dao]</b> de la version 5 en lui enlevant les méthodes d’accès au système de fichiers local. Ces méthodes migreront dans la couche <b>[dao]</b> du client <b>[6, 7]</b> ;
+  </li>
+  <li>en <b>[3]</b>, la couche <b>[métier]</b> restera celle de la version 5 sans ses méthodes <b>[executeBatchImpôts, saveResults]</b> qui migrent dans la couche <b>[dao]</b> <b>[7]</b> du client ;
+  </li>
+  <li>en <b>[4]</b>, le script serveur est à écrire : il aura à :
+    <ul>
+      <li>créer les couches <b>[métier]</b> et <b>[dao]</b> <b>[3, 2]</b> ;
+      </li>
+      <li>dialoguer avec le script client <b>[5, 7]</b> ;
+      </li>
+    </ul>
+  </li>
+  <li>en <b>[7]</b>, la couche <b>[dao]</b> du client est à écrire :
+    <ul>
+      <li>elle sera un client HTTP du script serveur <b>[4, 5]</b> ;
+      </li>
+      <li>elle reprendra les méthodes d’accès au système de fichiers local de la couche <b>[dao]</b> de la version 5 ;
+      </li>
+    </ul>
+  </li>
+  <li>en <b>[8]</b>, la couche <b>[métier]</b> du client respectera l’interface <b>[InterfaceMetier]</b> de la version 5. Son implémentation sera cependant différente. Dans la version 5, la couche <b>[métier]</b> faisait le calcul de l’impôt. Ici, c’est la couche <b>[métier]</b> du serveur qui fait ce calcul. La couche <b>[métier]</b> fera donc appel à la couche <b>[dao]</b> <b>[7]</b>, pour dialoguer avec le serveur et lui demander de calculer l’impôt ;
+  </li>
+  <li>en <b>[9]</b>, le script console aura à instancier les couches <b>[dao, métier]</b> du client et à lancer l’exécution de celui-ci ;
+  </li>
 </ul>
-</li>
-<li>en <strong>[7]</strong>, la couche <strong>[dao]</strong> du client est à écrire :<ul>
-<li>elle sera un client HTTP du script serveur <strong>[4, 5]</strong> ;</li>
-<li>elle reprendra les méthodes d’accès au système de fichiers local de la couche <strong>[dao]</strong> de la version 5 ;</li>
-</ul>
-</li>
-<li>en <strong>[8]</strong>, la couche <strong>[métier]</strong> du client respectera l’interface <strong>[InterfaceMetier]</strong> de la version 5. Son implémentation sera cependant différente. Dans la version 5, la couche <strong>[métier]</strong> faisait le calcul de l’impôt. Ici, c’est la couche <strong>[métier]</strong> du serveur qui fait ce calcul. La couche <strong>[métier]</strong> fera donc appel à la couche <strong>[dao]</strong> <strong>[7]</strong>, pour dialoguer avec le serveur et lui demander de calculer l’impôt ;</li>
-<li>en <strong>[9]</strong>, le script console aura à instancier les couches <strong>[dao, métier]</strong> du client et à lancer l’exécution de celui-ci ;</li>
-</ul>
-<p><a id="refheadingtoc1357842222329424"></a>
-<a id="toc42690825"></a>
+
+<p><a id="toc42690053"></a>
 <a id="toc42690439"></a>
-<a id="toc42690053"></a></p>
+<a id="toc42690825"></a>
+<a id="refheadingtoc1357842222329424"></a></p>
 <h2 id="182-le-serveur">18.2. Le serveur</h2>
 <p>Nous nous intéressons à la partie serveur de l’application.</p>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
 <p>Cette architecture sera implémentée par les scripts suivants :</p>
 <p><img src="images/1000000000000743000002C83ED6ADB0.png" style="width:14.75cm;height:5.651cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000743000002C83ED6ADB0.png" /></p>
-<p><a id="refheadingtoc185679971629160"></a>
-<a id="toc42690826"></a>
+<p><a id="toc42690054"></a>
 <a id="toc42690440"></a>
-<a id="toc42690054"></a></p>
+<a id="toc42690826"></a>
+<a id="refheadingtoc185679971629160"></a></p>
 <h3 id="1821-les-entites-echangees-entre-les-couches">18.2.1. Les entités échangées entre les couches</h3>
 <p><img src="images/10000000000001CF00000143523496AE.png" style="width:4.291cm;height:2.991cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CF00000143523496AE.png" /></p>
 <p>Les entités échangées entre les couches sont celles de la version 5 décrites au paragraphe <a href="#_Les_entités"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p><a id="lacouchedao"></a>
-<a id="toc42690827"></a>
-<a id="toc42690441"></a>
+<a id="refheadingtoc1357862222329424"></a>
 <a id="toc42690055"></a>
-<a id="refheadingtoc1357862222329424"></a></p>
+<a id="toc42690441"></a>
+<a id="toc42690827"></a></p>
 <h3 id="1822-la-couche-dao">18.2.2. La couche [dao]</h3>
 <p><img src="images/100000000000046500000171C51E6343.png" style="width:10.42cm;height:3.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046500000171C51E6343.png" /></p>
 <p>La couche <strong>[dao]</strong> implémente l’interface <strong>[InterfaceServerDao]</strong> suivante :</p>
@@ -1285,8 +1300,10 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 9 : la méthode <strong>[getTaxAdminData]</strong> va chercher les données de l’administration fiscale dans une base de données ;</li>
+  <li>ligne 9 : la méthode <b>[getTaxAdminData]</b> va chercher les données de l’administration fiscale dans une base de données ;
+  </li>
 </ul>
+
 <p>L’interface <strong>[InterfaceServerDao]</strong> est implémentée par la classe <strong>[ServerDao]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 13;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1354,10 +1371,10 @@
 
 <p>Ce code a été présenté au paragraphe <a href="#_La_classe_[ImpotsWithTaxAdminDataIn"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p><a id="lacouchemetier1"></a>
-<a id="toc42690828"></a>
-<a id="toc42690442"></a>
+<a id="refheadingtoc1357882222329424"></a>
 <a id="toc42690056"></a>
-<a id="refheadingtoc1357882222329424"></a></p>
+<a id="toc42690442"></a>
+<a id="toc42690828"></a></p>
 <h3 id="1823-la-couche-metier">18.2.3. La couche [métier]</h3>
 <p><img src="images/100000000000046500000171C51E6343.png" style="width:10.42cm;height:3.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046500000171C51E6343.png" /></p>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
@@ -1444,10 +1461,10 @@
 </code></pre></div>
 
 <p>Ce code a déjà été vu et commenté dès la version 1 au paragraphe <a href="#_L’algorithme"><u><span style="color: #0563c1">lien</span></u></a>. Sa version objet avec une base de données a été présentée au paragraphe <a href="#_La_couche_[métier]"><u><span style="color: #0563c1">lien</span></u></a>.</p>
-<p><a id="refheadingtoc1357902222329424"></a>
-<a id="toc42690829"></a>
+<p><a id="toc42690057"></a>
 <a id="toc42690443"></a>
-<a id="toc42690057"></a></p>
+<a id="toc42690829"></a>
+<a id="refheadingtoc1357902222329424"></a></p>
 <h3 id="1824-le-script-serveur">18.2.4. Le script serveur</h3>
 <p><img src="images/10000000000006110000015EBAF9A9E4.png" style="width:12.33cm;height:2.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006110000015EBAF9A9E4.png" /></p>
 <p><img src="images/10000000000006F40000019EB9BDDE9E.png" style="width:16.481cm;height:3.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F40000019EB9BDDE9E.png" /></p>
@@ -1478,13 +1495,20 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 1 : le dossier racine à partir duquel les chemins de fichiers seront mesurés ;</li>
-<li>ligne 2 : le fichier jSON de configuration de la base de données MySQL ;</li>
-<li>ligne 3 : le fichier jSON des données de l’administration fiscale ;</li>
-<li>lignes 5-14 : les fichiers de l’application ;</li>
-<li>ligne 15 : la dépendance nécessaire aux bibliothèques tierces, ici Symfony ;</li>
-<li>lignes 16-20 : le tableau des utilisateurs autorisés à utiliser l’application ;</li>
+  <li>ligne 1 : le dossier racine à partir duquel les chemins de fichiers seront mesurés ;
+  </li>
+  <li>ligne 2 : le fichier jSON de configuration de la base de données MySQL ;
+  </li>
+  <li>ligne 3 : le fichier jSON des données de l’administration fiscale ;
+  </li>
+  <li>lignes 5-14 : les fichiers de l’application ;
+  </li>
+  <li>ligne 15 : la dépendance nécessaire aux bibliothèques tierces, ici Symfony ;
+  </li>
+  <li>lignes 16-20 : le tableau des utilisateurs autorisés à utiliser l’application ;
+  </li>
 </ul>
+
 <p>Les fichiers jSON <strong>[database.json, taxadmindata.json]</strong> sont ceux de la version 5 décrit au paragraphe <a href="#_Les_entités"><u><span style="color: #0563c1">lien</span></u></a>.</p>
 <p>Le script <strong>[impots-server]</strong> implémente la couche <strong>[web]</strong> de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1643,71 +1667,106 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 16 : on exploite le fichier de configuration ;</li>
-<li>lignes 18-26 : on charge toutes les dépendances ;</li>
-<li>ligne 29 : le nom du fichier <strong>[database.json]</strong> ;</li>
-<li>lignes 32-33 : on déclare les classes des bibliothèques tierces qu’on va utiliser ;</li>
-<li>lignes 36-38 : on prépare une réponse jSON ;</li>
-<li>lignes 40-52 : on vérifie que l’utilisateur qui fait la requête fait bien partie des utilisateurs autorisés ;</li>
-<li>lignes 54-63 : si ce n’est pas le cas, on envoie le code HTTP 401 qui indique un refus d’accès. A réception de ce code et de l’entête HTTP <strong>[WWW-Authenticate =&gt; Basic realm=]</strong>, la plupart des navigateurs affichent une fenêtre d’authentification invitant l’utilisateur à s’authentifier ;</li>
-<li>ligne 59 : la réponse jSON du serveur explique la cause de l’erreur. <span style="color: #000000">Toutes les réponses du serveur seront la chaîne jSON d’un tableau </span><strong><span style="color: #000000">[‘réponse’=&gt;’qq chose’]</span></strong><span style="color: #000000"> ;</span></li>
-<li>lignes 64-117 : on vérifie la validité de la requête :<ul>
-<li>une requête GET avec trois paramètres exactement ;</li>
-<li>un paramètre <strong>[marié]</strong> dont la valeur doit être ‘oui’ ou ‘non’ ;</li>
-<li>un paramètre <strong>[enfants]</strong> dont la valeur doit être un entier &gt;=0 ;</li>
-<li>un paramètre <strong>[salaire]</strong> dont la valeur doit être un entier &gt;=0 ;</li>
+  <li>ligne 16 : on exploite le fichier de configuration ;
+  </li>
+  <li>lignes 18-26 : on charge toutes les dépendances ;
+  </li>
+  <li>ligne 29 : le nom du fichier <b>[database.json]</b> ;
+  </li>
+  <li>lignes 32-33 : on déclare les classes des bibliothèques tierces qu’on va utiliser ;
+  </li>
+  <li>lignes 36-38 : on prépare une réponse jSON ;
+  </li>
+  <li>lignes 40-52 : on vérifie que l’utilisateur qui fait la requête fait bien partie des utilisateurs autorisés ;
+  </li>
+  <li>lignes 54-63 : si ce n’est pas le cas, on envoie le code HTTP 401 qui indique un refus d’accès. A réception de ce code et de l’entête HTTP <b>[WWW-Authenticate =&gt; Basic realm=]</b>, la plupart des navigateurs affichent une fenêtre d’authentification invitant l’utilisateur à s’authentifier ;
+  </li>
+  <li>ligne 59 : la réponse jSON du serveur explique la cause de l’erreur. <span style="color: #000000">Toutes les réponses du serveur seront la chaîne jSON d’un tableau </span><b><span style="color: #000000">[‘réponse’=&gt;’qq chose’]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li>lignes 64-117 : on vérifie la validité de la requête :
+    <ul>
+      <li>une requête GET avec trois paramètres exactement ;
+      </li>
+      <li>un paramètre <b>[marié]</b> dont la valeur doit être ‘oui’ ou ‘non’ ;
+      </li>
+      <li>un paramètre <b>[enfants]</b> dont la valeur doit être un entier &gt;=0 ;
+      </li>
+      <li>un paramètre <b>[salaire]</b> dont la valeur doit être un entier &gt;=0 ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 65 : à chaque fois qu’une erreur est détectée, un message d’erreur est ajouté au tableau <b>[$erreurs]</b> ;
+  </li>
+  <li>lignes 120-126 : si erreur il y a, alors on envoie le code HTTP <b>[400 Bad Request]</b> au client (ligne 122) ;
+  </li>
+  <li>ligne 123 : la réponse jSON du serveur explique la cause de l’erreur ;
+  </li>
+  <li>à partir de la ligne 132, tout a été vérifié. On peut instancier les couches <b>[dao, métier]</b>. Cette instanciation a un coût et il ne faut la faire que si on est sûr d’avoir une requête valide ;
+  </li>
+  <li>lignes 130-138 : on crée l’architecture du serveur. La construction de la couche <b>[dao]</b> peut lancer une exception de type <b>[ExceptionImpots]</b>. Si cette exception se produit, on note l’erreur ;
+  </li>
+  <li>lignes 135-138 : si exception il y a eu, alors on envoie le code HTTP 500 au client. Ce code signifie que le serveur a bogué ;
+  </li>
+  <li>ligne 143 : <span style="color: #000000">la réponse explique la cause de l’erreur ;</span>
+  </li>
+  <li>ligne 148     : le calcul de l’impôt est délégué à la couche <b>[métier]</b> ;
+  </li>
+  <li>lignes 150-151 : envoi de la réponse ;
+  </li>
 </ul>
-</li>
-<li>ligne 65 : à chaque fois qu’une erreur est détectée, un message d’erreur est ajouté au tableau <strong>[$erreurs]</strong> ;</li>
-<li>lignes 120-126 : si erreur il y a, alors on envoie le code HTTP <strong>[400 Bad Request]</strong> au client (ligne 122) ;</li>
-<li>ligne 123 : la réponse jSON du serveur explique la cause de l’erreur ;</li>
-<li>à partir de la ligne 132, tout a été vérifié. On peut instancier les couches <strong>[dao, métier]</strong>. Cette instanciation a un coût et il ne faut la faire que si on est sûr d’avoir une requête valide ;</li>
-<li>lignes 130-138 : on crée l’architecture du serveur. La construction de la couche <strong>[dao]</strong> peut lancer une exception de type <strong>[ExceptionImpots]</strong>. Si cette exception se produit, on note l’erreur ;</li>
-<li>lignes 135-138 : si exception il y a eu, alors on envoie le code HTTP 500 au client. Ce code signifie que le serveur a bogué ;</li>
-<li>ligne 143 : <span style="color: #000000">la réponse explique la cause de l’erreur ;</span></li>
-<li>ligne 148     : le calcul de l’impôt est délégué à la couche <strong>[métier]</strong> ;</li>
-<li>lignes 150-151 : envoi de la réponse ;</li>
-</ul>
+
 <p>Testons ce script avec un navigateur. Demandons l’URL sécurisée <strong>[https://localhost:443/php7/scripts-web/impots/version-08/impots-server.php?marié=oui&amp;enfants=5&amp;salaire=100000]</strong>:</p>
 <p><img src="images/10000000000008B0000005161B8206B6.png" style="width:14.712cm;height:8.61cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008B0000005161B8206B6.png" /></p>
 <ul>
-<li>en <strong>[1]</strong>, l’URL sécurisée demandée ;</li>
-<li>en <strong>[2]</strong>,  les trois paramètres <strong>[marié, enfants, salaire]</strong> ;</li>
-<li>en <strong>[3]</strong>, le serveur Apache de Laragon a envoyé un certificat SSL autosigné. Le navigateur l’a remarqué et affiche un avertissement de sécurité : il considère que le site du serveur n’est pas digne de confiance ;</li>
-<li>en <strong>[4]</strong>, on continue ;</li>
+  <li>en <b>[1]</b>, l’URL sécurisée demandée ;
+  </li>
+  <li>en <b>[2]</b>,  les trois paramètres <b>[marié, enfants, salaire]</b> ;
+  </li>
+  <li>en <b>[3]</b>, le serveur Apache de Laragon a envoyé un certificat SSL autosigné. Le navigateur l’a remarqué et affiche un avertissement de sécurité : il considère que le site du serveur n’est pas digne de confiance ;
+  </li>
+  <li>en <b>[4]</b>, on continue ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000005F5000001FB7822D6B4.png" style="width:12.101cm;height:4.021cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005F5000001FB7822D6B4.png" /></p>
 <ul>
-<li>en <strong>[6]</strong>, on continue ;</li>
+  <li>en <b>[6]</b>, on continue ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000005FD0000026294C6C37D.png" style="width:12.172cm;height:4.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005FD0000026294C6C37D.png" /></p>
 <ul>
-<li>en <strong>[7]</strong>, le navigateur affiche une fenêtre pour que l’utilisateur puisse s’authentifier ;</li>
-<li>en <strong>[9,10]</strong>, on tape <strong>[admin]</strong> et <strong>[admin]</strong> ;</li>
+  <li>en <b>[7]</b>, le navigateur affiche une fenêtre pour que l’utilisateur puisse s’authentifier ;
+  </li>
+  <li>en <b>[9,10]</b>, on tape <b>[admin]</b> et <b>[admin]</b> ;
+  </li>
 </ul>
+
 <p><img src="images/1000000000000199000001D89AA05092.png" style="width:3.252cm;height:3.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000199000001D89AA05092.png" /></p>
 <ul>
-<li>en <strong>[13]</strong>, la réponse jSON du serveur ;</li>
+  <li>en <b>[13]</b>, la réponse jSON du serveur ;
+  </li>
 </ul>
+
 <p>Faisons quelques tests d’erreur :</p>
 <p>On demande l’URL <strong>[https://localhost/php7/scripts-web/impots/version-08/impots-server.php?marié=x&amp;enfants=x&amp;salaire=x&amp;w=x]</strong></p>
 <p>On obtient le résultat suivant :</p>
 <p><img src="images/100000000000045F000001B4611160BD.png" style="width:8.88cm;height:3.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000045F000001B4611160BD.png" /></p>
 <p>On coupe le SGBD MySQL et on demande l’URL <strong>[https://localhost/php7/scripts-web/impots/version-08/impots-server.php?marié=oui&amp;enfants=3&amp;salaire=60000]</strong> :</p>
 <p><img src="images/1000000000000716000000F6B67E3A94.png" style="width:14.401cm;height:1.952cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000716000000F6B67E3A94.png" /></p>
-<p><a id="refheadingtoc185681971629160"></a>
-<a id="toc42690830"></a>
+<p><a id="toc42690058"></a>
 <a id="toc42690444"></a>
-<a id="toc42690058"></a></p>
+<a id="toc42690830"></a>
+<a id="refheadingtoc185681971629160"></a></p>
 <h3 id="1825-tests-codeception">18.2.5. Tests [Codeception]</h3>
 <p>A chaque fois que nous construirons une nouvelle version du serveur, nous testerons les couches <strong>[métier]</strong> et <strong>[dao]</strong> comme il a été fait depuis la version 04 (cf paragraphes <a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a> et <a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a>).</p>
 <p>Tout d’abord, nous associons le projet <strong>[scripts-web]</strong> aux tests <strong>[Codeception]</strong>. Pour cela, suivez la même procédure suivie pour le projet <strong>[scripts-console]</strong> au paragraphe <a href="#_Installation_du_framework"><u><span style="color: #0563c1">lien</span></u></a>. Nous obtenons un projet <strong>[scripts-web]</strong> avec un dossier <strong>[Test Files]</strong> :</p>
 <p><img src="images/100000000000064F0000032F7331FD7A.png" style="width:14.96cm;height:7.55cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000064F0000032F7331FD7A.png" /></p>
 <p>Nous allons créer un test pour la couche <strong>[dao]</strong> et un pour la couche <strong>[métier]</strong>.</p>
-<p><a id="refheadingtoc185683971629160"></a>
-<a id="toc42690831"></a>
+<p><a id="toc42690059"></a>
 <a id="toc42690445"></a>
-<a id="toc42690059"></a></p>
+<a id="toc42690831"></a>
+<a id="refheadingtoc185683971629160"></a></p>
 <h4 id="18251-tests-de-la-couche-dao">18.2.5.1. Tests de la couche [dao]</h4>
 <p><img src="images/10000000000001CE000000D11D7782DA.png" style="width:4.28cm;height:1.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000D11D7782DA.png" /></p>
 <p>Le test <strong>[ServerDaoTest]</strong> sera le suivant :</p>
@@ -1763,17 +1822,22 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 9-24 : on construit le même environnement de travail que celui du serveur <strong>[impots-server.php]</strong>. Cela se fait en lignes 9-12 avec  la définitions des deux constantes dont dépend l’environnement ;</li>
-<li>lignes 32-40 : on construit une instance de la couche <strong>[dao]</strong> à tester comme il était fait dans le script serveur <strong>[impots-server.php]</strong> ;</li>
-<li>à partir de maintenant on est dans les mêmes conditions que le script serveur <strong>[impots-server.php]</strong> : on peut démarrer les tests ;</li>
-<li><span style="color: #000000">lignes 43-45 : la méthode </span><strong><span style="color: #000000">[testTaxAdminData]</span></strong><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+  <li>lignes 9-24 : on construit le même environnement de travail que celui du serveur <b>[impots-server.php]</b>. Cela se fait en lignes 9-12 avec  la définitions des deux constantes dont dépend l’environnement ;
+  </li>
+  <li>lignes 32-40 : on construit une instance de la couche <b>[dao]</b> à tester comme il était fait dans le script serveur <b>[impots-server.php]</b> ;
+  </li>
+  <li>à partir de maintenant on est dans les mêmes conditions que le script serveur <b>[impots-server.php]</b> : on peut démarrer les tests ;
+  </li>
+  <li><span style="color: #000000">lignes 43-45 : la méthode </span><b><span style="color: #000000">[testTaxAdminData]</span></b><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p>Les résultats du test sont les suivants :</p>
 <p><img src="images/100000000000063C00000266401EA3F3.png" style="width:14.78cm;height:5.691cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000063C00000266401EA3F3.png" /></p>
-<p><a id="refheadingtoc185685971629160"></a>
-<a id="toc42690832"></a>
+<p><a id="toc42690060"></a>
 <a id="toc42690446"></a>
-<a id="toc42690060"></a></p>
+<a id="toc42690832"></a>
+<a id="refheadingtoc185685971629160"></a></p>
 <h4 id="18252-tests-de-la-couche-metier">18.2.5.2. Tests de la couche [métier]</h4>
 <p><img src="images/10000000000001CE000000D13AEA648A.png" style="width:4.28cm;height:1.93cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000D13AEA648A.png" /></p>
 <p>Le test <strong>[ServerMetierTest]</strong> sera le suivant :</p>
@@ -1837,38 +1901,47 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 9-24 : on construit le même environnement de travail que celui du serveur <strong>[impots-server.php]</strong>. Cela se fait en lignes 9-12 avec  la définitions des deux constantes dont dépend l’environnement ;</li>
-<li>lignes 30-38 : on construit une instance de la couche <strong>[métier]</strong> à tester comme il était fait dans le script serveur <strong>[impots-server.php]</strong> ;</li>
-<li>à partir de maintenant on est dans les mêmes conditions que le script serveur <strong>[impots-server.php]</strong> : on peut démarrer les tests ;</li>
-<li><span style="color: #000000">lignes 40-53 : les méthodes </span><strong><span style="color: #000000">[test1, test2…, test11]</span></strong><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+  <li>lignes 9-24 : on construit le même environnement de travail que celui du serveur <b>[impots-server.php]</b>. Cela se fait en lignes 9-12 avec  la définitions des deux constantes dont dépend l’environnement ;
+  </li>
+  <li>lignes 30-38 : on construit une instance de la couche <b>[métier]</b> à tester comme il était fait dans le script serveur <b>[impots-server.php]</b> ;
+  </li>
+  <li>à partir de maintenant on est dans les mêmes conditions que le script serveur <b>[impots-server.php]</b> : on peut démarrer les tests ;
+  </li>
+  <li><span style="color: #000000">lignes 40-53 : les méthodes </span><b><span style="color: #000000">[test1, test2…, test11]</span></b><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p>Les résultats du test sont les suivants :</p>
 <p><img src="images/10000000000006B400000270BC6919D9.png" style="width:15.892cm;height:5.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B400000270BC6919D9.png" /></p>
-<p><a id="refheadingtoc1357922222329424"></a>
-<a id="toc42690833"></a>
+<p><a id="toc42690061"></a>
 <a id="toc42690447"></a>
-<a id="toc42690061"></a></p>
+<a id="toc42690833"></a>
+<a id="refheadingtoc1357922222329424"></a></p>
 <h2 id="183-le-client">18.3. Le client</h2>
 <p>Nous nous intéressons à la partie cliente de l’application.</p>
 <p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
 <p>Cette architecture sera implémentée par les scripts suivants :</p>
 <p><img src="images/100000000000071500000252DCD19DBF.png" style="width:16.791cm;height:5.501cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000071500000252DCD19DBF.png" /></p>
-<p><a id="refheadingtoc185687971629160"></a>
-<a id="toc42690834"></a>
+<p><a id="toc42690062"></a>
 <a id="toc42690448"></a>
-<a id="toc42690062"></a></p>
+<a id="toc42690834"></a>
+<a id="refheadingtoc185687971629160"></a></p>
 <h3 id="1831-les-entites-echangees-entre-couches">18.3.1. Les entités échangées entre couches</h3>
 <p><img src="images/10000000000001950000016F5B5D8CDB.png" style="width:3.751cm;height:3.402cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001950000016F5B5D8CDB.png" /></p>
 <p>Les entités ci-dessus ont toutes été décrites et déjà utilisées :</p>
 <ul>
-<li><strong>[BaseEntity]</strong> au paragraphe <a href="#_La_classe_de"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
-<li><strong>[ExceptionImpots]</strong> au paragraphe <a href="#_L’exception_[ExceptionImpots]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
-<li><strong>[TaxPayerData]</strong> au paragraphe <a href="#_L’entité_[TaxPayerData]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
+  <li><b>[BaseEntity]</b> au paragraphe <a href="#_La_classe_de"><u><span style="color: #0563c1">lien</span></u></a> ;
+  </li>
+  <li><b>[ExceptionImpots]</b> au paragraphe <a href="#_L’exception_[ExceptionImpots]"><u><span style="color: #0563c1">lien</span></u></a> ;
+  </li>
+  <li><b>[TaxPayerData]</b> au paragraphe <a href="#_L’entité_[TaxPayerData]"><u><span style="color: #0563c1">lien</span></u></a> ;
+  </li>
 </ul>
-<p><a id="refheadingtoc1357942222329424"></a>
-<a id="toc42690835"></a>
+
+<p><a id="toc42690063"></a>
 <a id="toc42690449"></a>
-<a id="toc42690063"></a></p>
+<a id="toc42690835"></a>
+<a id="refheadingtoc1357942222329424"></a></p>
 <h3 id="1832-la-couche-dao">18.3.2. La couche [dao]</h3>
 <p><img src="images/100000000000043E000001BCD159FE32.png" style="width:10.06cm;height:4.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000043E000001BCD159FE32.png" /></p>
 <p>La couche <strong>[dao]</strong> implémente l’interface <strong>[InterfaceClientDao]</strong> suivante :</p>
@@ -1892,10 +1965,14 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 9 : la fonction <strong>[getTaxPayersData]</strong> amène en mémoire les données des contribuables du fichier <strong>[$taxPayersFilename]</strong>. Si erreurs il y a, elles sont consignées dans le fichier <strong>[$errorsFilename]</strong> ;</li>
-<li>ligne 12 : la fonction <strong>[calculerImpots]</strong> calcule l’impôt d’un contribuable ;</li>
-<li>ligne 15 : la fonction <strong>[saveResults]</strong> sauvegarde dans le fichier <strong>[$resultsFilename]</strong> les données du tableau <strong>[$taxPayersData]</strong> qui représentent les résultats de plusieurs calculs d’impôt ;</li>
+  <li>ligne 9 : la fonction <b>[getTaxPayersData]</b> amène en mémoire les données des contribuables du fichier <b>[$taxPayersFilename]</b>. Si erreurs il y a, elles sont consignées dans le fichier <b>[$errorsFilename]</b> ;
+  </li>
+  <li>ligne 12 : la fonction <b>[calculerImpots]</b> calcule l’impôt d’un contribuable ;
+  </li>
+  <li>ligne 15 : la fonction <b>[saveResults]</b> sauvegarde dans le fichier <b>[$resultsFilename]</b> les données du tableau <b>[$taxPayersData]</b> qui représentent les résultats de plusieurs calculs d’impôt ;
+  </li>
 </ul>
+
 <p>L’interface <strong>[InterfaceClientDao]</strong> est implémentée par la classe <strong>[ClientDao]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1956,31 +2033,47 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 10 : on insère <strong>[TraitDao]</strong> (cf paragraphe <a href="#_Le_trait_[TraitDao]"><u><span style="color: #0563c1">lien</span></u></a>) qui implémente les méthodes <strong>[getTaxPayersData]</strong> et <strong>[saveResults]</strong>. Ne reste donc que la méthode <strong>[calculerImpots]</strong> à implémenter. Celle-ci est implémentée aux lignes 22-49 ;</li>
-<li>lignes 16-19 : le constructeur de la classe <strong>[ClientDao]</strong> reçoit deux paramètres :<ul>
-<li>l’URL <strong>[$urlServer]</strong> du serveur de calcul d’impôt ;</li>
-<li>le tableau <strong>[$user]</strong> de clés ‘login’ et ‘passwd’ qui définit l’utilisateur qui fait la requête ;</li>
+  <li>ligne 10 : on insère <b>[TraitDao]</b> (cf paragraphe <a href="#_Le_trait_[TraitDao]"><u><span style="color: #0563c1">lien</span></u></a>) qui implémente les méthodes <b>[getTaxPayersData]</b> et <b>[saveResults]</b>. Ne reste donc que la méthode <b>[calculerImpots]</b> à implémenter. Celle-ci est implémentée aux lignes 22-49 ;
+  </li>
+  <li>lignes 16-19 : le constructeur de la classe <b>[ClientDao]</b> reçoit deux paramètres :
+    <ul>
+      <li>l’URL <b>[$urlServer]</b> du serveur de calcul d’impôt ;
+      </li>
+      <li>le tableau <b>[$user]</b> de clés ‘login’ et ‘passwd’ qui définit l’utilisateur qui fait la requête ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 22 : la méthode <b>[calculerImpots]</b> reçoit les trois paramètres à envoyer au serveur de calcul d’impôts ;
+  </li>
+  <li>lignes 24-27 : on crée un client HTTP avec :
+    <ul>
+      <li>ligne 25 : les identifiants de l’utilisateur qui fait la requête ;
+      </li>
+      <li>ligne 26 : l’option qui fait que le client HTTP ne vérifiera pas la validité du certificat SSL envoyé par le serveur ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 29-34 : le serveur est interrogé avec les trois paramètres qu’il attend ;
+  </li>
+  <li>ligne 36 : on récupère la réponse jSON du serveur. Si on ne met pas le paramètre <b>[false]</b> à la méthode <b>[Response::getContent]</b>, alors si le statut de la réponse du serveur est dans l’intervalle <b>[3xx-5xx]</b> (cas d’erreur), l’objet <b>[Response]</b> lance une exception dès qu’on cherche à obtenir le contenu de la réponse <b>[Response::getContent]</b> ou ses entêtes HTTP <b>[Response::getHeaders]</b>. Ici quelque soit le statut HTTP de la réponse, on veut pouvoir avoir accès au contenu de celle-ci, ne serait-ce que pour le loguer (ligne 40) ;
+  </li>
+  <li>lignes 37-38 : la réponse du serveur est la chaîne jSON d’un tableau <b>[‘réponse’=&gt;qqChose]</b>. On récupère le <b>[qqChose]</b> ;
+  </li>
+  <li>ligne 40 : on logue la réponse jSON en mode développement ;
+  </li>
+  <li>ligne 42 : on récupère le code de statut de la réponse ;
+  </li>
+  <li>lignes 44-49 : si le code de statut HTTP n’est pas 200, alors c’est que notre serveur a rencontré un problème. On lance alors une exception de type <b>[ExceptionImpots]</b> avec pour message, la réponse jSON du serveur augmentée du code HTTP de la réponse ;
+  </li>
+  <li>ligne 51 : on rend le résultat qui est un tableau associatif avec les clés <b>[impôt, surcôte, décôte, réduction, taux]</b> ;
+  </li>
 </ul>
-</li>
-<li>ligne 22 : la méthode <strong>[calculerImpots]</strong> reçoit les trois paramètres à envoyer au serveur de calcul d’impôts ;</li>
-<li>lignes 24-27 : on crée un client HTTP avec :<ul>
-<li>ligne 25 : les identifiants de l’utilisateur qui fait la requête ;</li>
-<li>ligne 26 : l’option qui fait que le client HTTP ne vérifiera pas la validité du certificat SSL envoyé par le serveur ;</li>
-</ul>
-</li>
-<li>lignes 29-34 : le serveur est interrogé avec les trois paramètres qu’il attend ;</li>
-<li>ligne 36 : on récupère la réponse jSON du serveur. Si on ne met pas le paramètre <strong>[false]</strong> à la méthode <strong>[Response::getContent]</strong>, alors si le statut de la réponse du serveur est dans l’intervalle <strong>[3xx-5xx]</strong> (cas d’erreur), l’objet <strong>[Response]</strong> lance une exception dès qu’on cherche à obtenir le contenu de la réponse <strong>[Response::getContent]</strong> ou ses entêtes HTTP <strong>[Response::getHeaders]</strong>. Ici quelque soit le statut HTTP de la réponse, on veut pouvoir avoir accès au contenu de celle-ci, ne serait-ce que pour le loguer (ligne 40) ;</li>
-<li>lignes 37-38 : la réponse du serveur est la chaîne jSON d’un tableau <strong>[‘réponse’=&gt;qqChose]</strong>. On récupère le <strong>[qqChose]</strong> ;</li>
-<li>ligne 40 : on logue la réponse jSON en mode développement ;</li>
-<li>ligne 42 : on récupère le code de statut de la réponse ;</li>
-<li>lignes 44-49 : si le code de statut HTTP n’est pas 200, alors c’est que notre serveur a rencontré un problème. On lance alors une exception de type <strong>[ExceptionImpots]</strong> avec pour message, la réponse jSON du serveur augmentée du code HTTP de la réponse ;</li>
-<li>ligne 51 : on rend le résultat qui est un tableau associatif avec les clés <strong>[impôt, surcôte, décôte, réduction, taux]</strong> ;</li>
-</ul>
+
 <p><a id="lacouchemetier2"></a>
-<a id="toc42690836"></a>
-<a id="toc42690450"></a>
+<a id="refheadingtoc1357962222329424"></a>
 <a id="toc42690064"></a>
-<a id="refheadingtoc1357962222329424"></a></p>
+<a id="toc42690450"></a>
+<a id="toc42690836"></a></p>
 <h3 id="1833-la-couche-metier">18.3.3. La couche [métier]</h3>
 <p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
 <p><img src="images/10000000000001F0000001B1C3AAED6A.png" style="width:4.59cm;height:4.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F0000001B1C3AAED6A.png" /></p>
@@ -2002,9 +2095,12 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 9 : la fonction <strong>[calculerImpots]</strong> calcule l’impôt ;</li>
-<li>ligne 12 : la fonction <strong>[executeBatchImpots]</strong> calcule l’impôt des contribuables dont les données sont dans le fichier <strong>[$taxPayersFileName]</strong>, met les résultats obtenus dans le fichier <strong>[$resultsFileName]</strong> et les erreurs rencontrées dans le fichier <strong>[$errorsFileName]</strong> ;</li>
+  <li>ligne 9 : la fonction <b>[calculerImpots]</b> calcule l’impôt ;
+  </li>
+  <li>ligne 12 : la fonction <b>[executeBatchImpots]</b> calcule l’impôt des contribuables dont les données sont dans le fichier <b>[$taxPayersFileName]</b>, met les résultats obtenus dans le fichier <b>[$resultsFileName]</b> et les erreurs rencontrées dans le fichier <b>[$errorsFileName]</b> ;
+  </li>
 </ul>
+
 <p>L’interface <strong>[InterfaceClientMetier]</strong> est implémentée par la classe <strong>[ClientMetier]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2055,15 +2151,19 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 11-14 : le constructeur de la classe <strong>[ClientMetier]</strong> reçoit comme paramètre une référence sur la couche <strong>[dao]</strong> ;</li>
-<li>lignes 17-19 : le calcul de l’impôt est délégué à la couche <strong>[dao]</strong> ;</li>
-<li>lignes 20-38 : la fonction <strong>[executeBatchImpots]</strong> a été décrite au paragraphe <a href="#_La_classe_[Metier]"><u><span style="color: #0563c1">lien</span></u></a> ;</li>
+  <li>lignes 11-14 : le constructeur de la classe <b>[ClientMetier]</b> reçoit comme paramètre une référence sur la couche <b>[dao]</b> ;
+  </li>
+  <li>lignes 17-19 : le calcul de l’impôt est délégué à la couche <b>[dao]</b> ;
+  </li>
+  <li>lignes 20-38 : la fonction <b>[executeBatchImpots]</b> a été décrite au paragraphe <a href="#_La_classe_[Metier]"><u><span style="color: #0563c1">lien</span></u></a> ;
+  </li>
 </ul>
+
 <p><a id="lescriptprincipal1"></a>
-<a id="toc42690837"></a>
-<a id="toc42690451"></a>
+<a id="refheadingtoc1357982222329424"></a>
 <a id="toc42690065"></a>
-<a id="refheadingtoc1357982222329424"></a></p>
+<a id="toc42690451"></a>
+<a id="toc42690837"></a></p>
 <h3 id="1834-le-script-principal">18.3.4. Le script principal</h3>
 <p><img src="images/1000000000000608000001693E68B4C3.png" style="width:12.262cm;height:2.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000608000001693E68B4C3.png" /></p>
 <p><img src="images/100000000000019D0000016661496F02.png" style="width:3.821cm;height:3.312cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019D0000016661496F02.png" /></p>
@@ -2097,14 +2197,22 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 1 : le dossier racine du client ;</li>
-<li>ligne 2 : le fichier jSON des données contribuables ;</li>
-<li>ligne 3 : le fichier jSON des résultats ;</li>
-<li>ligen 4 : le fichier jSON des erreurs ;</li>
-<li>lignes 6-19 : les différentes dépendances du projet client ;</li>
-<li>lignes 20-23 : l’utilisateur faisant les requêtes au serveur de calcul d’impôts ;</li>
-<li>ligne 24 : l’URL sécurisée du serveur de calcul d’impôts ;</li>
+  <li>ligne 1 : le dossier racine du client ;
+  </li>
+  <li>ligne 2 : le fichier jSON des données contribuables ;
+  </li>
+  <li>ligne 3 : le fichier jSON des résultats ;
+  </li>
+  <li>ligen 4 : le fichier jSON des erreurs ;
+  </li>
+  <li>lignes 6-19 : les différentes dépendances du projet client ;
+  </li>
+  <li>lignes 20-23 : l’utilisateur faisant les requêtes au serveur de calcul d’impôts ;
+  </li>
+  <li>ligne 24 : l’URL sécurisée du serveur de calcul d’impôts ;
+  </li>
 </ul>
+
 <p>Le code du script <strong>[MainImpotsClient.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2161,30 +2269,48 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 13 : chemin du fichier de configuration ;</li>
-<li>ligne 16 : exploitation du fichier de configuration ;</li>
-<li>lignes 18-26 : chargement des dépendances ;</li>
-<li>ligne 37 : création de la couche <strong>[dao]</strong>. On passe au constructeur de la couche, les deux informations qu’il attend :<ul>
-<li>l’URL du serveur de calcul d’impôts ;</li>
-<li>les identifiants de l’utilisateur qui va faire les requêtes ;</li>
+  <li>ligne 13 : chemin du fichier de configuration ;
+  </li>
+  <li>ligne 16 : exploitation du fichier de configuration ;
+  </li>
+  <li>lignes 18-26 : chargement des dépendances ;
+  </li>
+  <li>ligne 37 : création de la couche <b>[dao]</b>. On passe au constructeur de la couche, les deux informations qu’il attend :
+    <ul>
+      <li>l’URL du serveur de calcul d’impôts ;
+      </li>
+      <li>les identifiants de l’utilisateur qui va faire les requêtes ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 39 : création de la couche <b>[métier]</b>. On passe au constructeur de la couche, une référence sur la couche <b>[dao]</b> qui vient d’être créée ;
+  </li>
+  <li>ligne 43 : on demande à la couche <b>[métier]</b> de :
+    <ul>
+      <li>calculer les impôts de tous les contribuables du fichier <span style="color: #0000ff">$config</span><b><span style="color: #000000">[&quot;taxPayerDataFileName&quot;]</span></b><span style="color: #000000"> ;</span>
+      </li>
+      <li><span style="color: #000000">mettre les résultats dans le fichier </span><span style="color: #0000ff">$config</span><b><span style="color: #000000">[&quot;resultsFileName&quot;]</span></b><span style="color: #000000"> ;</span>
+      </li>
+      <li><span style="color: #000000">mettre les erreurs dans le fichier </span><span style="color: #0000ff">$config</span><b><span style="color: #000000">[&quot;errorsFileName&quot;]</span></b><span style="color: #000000"> ;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">la ligne 43 peut lancer des exceptions ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 46 : affichage du message d’erreur de l’exception ;</span>
+  </li>
 </ul>
-</li>
-<li>ligne 39 : création de la couche <strong>[métier]</strong>. On passe au constructeur de la couche, une référence sur la couche <strong>[dao]</strong> qui vient d’être créée ;</li>
-<li>ligne 43 : on demande à la couche <strong>[métier]</strong> de :<ul>
-<li>calculer les impôts de tous les contribuables du fichier <span style="color: #0000ff">$config</span><strong><span style="color: #000000">[&quot;taxPayerDataFileName&quot;]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">mettre les résultats dans le fichier </span><span style="color: #0000ff">$config</span><strong><span style="color: #000000">[&quot;resultsFileName&quot;]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">mettre les erreurs dans le fichier </span><span style="color: #0000ff">$config</span><strong><span style="color: #000000">[&quot;errorsFileName&quot;]</span></strong><span style="color: #000000"> ;</span></li>
-</ul>
-</li>
-<li><span style="color: #000000">la ligne 43 peut lancer des exceptions ;</span></li>
-<li><span style="color: #000000">ligne 46 : affichage du message d’erreur de l’exception ;</span></li>
-</ul>
+
 <p>L’exécution du client amène les mêmes résultats que les versions précédentes. Vérifiez les fichiers suivants :</p>
 <ul>
-<li><strong><span style="color: #000000">[Data/taxpayersdata.json]</span></strong> : données des contribuables pour lesquel on calcule le montant de l’impôt ;</li>
-<li><strong><span style="color: #000000">[Data/results.json]</span></strong> : résultats pour les différents contribuables du fichier <strong>[Data/taxpayersdata.json]</strong> ;</li>
-<li><strong><span style="color: #000000">[Data/errors.json]</span></strong> : les erreurs qui ont pu être rencontrées dans l’exploitation du fichier <strong>[Data/taxpayersdata.json]</strong> ;</li>
+  <li><b><span style="color: #000000">[Data/taxpayersdata.json]</span></b> : données des contribuables pour lesquel on calcule le montant de l’impôt ;
+  </li>
+  <li><b><span style="color: #000000">[Data/results.json]</span></b> : résultats pour les différents contribuables du fichier <b>[Data/taxpayersdata.json]</b> ;
+  </li>
+  <li><b><span style="color: #000000">[Data/errors.json]</span></b> : les erreurs qui ont pu être rencontrées dans l’exploitation du fichier <b>[Data/taxpayersdata.json]</b> ;
+  </li>
 </ul>
+
 <p>Regardons les cas d’erreur possibles. Tout d’abord, arrêtons le serveur Laragon. Les résultats dans la console du client sont alors les suivants :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="background-color:#ffff00">Couldn&#x27;t connect to server</span> for&quot;https://localhost/php7/scripts-web/impots/version-08/impots-server.php?mari%C3%A9=oui&amp;enfants=2&amp;salaire=55555&quot;.</span>
@@ -2214,17 +2340,17 @@
 <span class="odt-code-line">Terminé</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc185689971629160"></a>
-<a id="toc42690838"></a>
+<p><a id="toc42690066"></a>
 <a id="toc42690452"></a>
-<a id="toc42690066"></a></p>
+<a id="toc42690838"></a>
+<a id="refheadingtoc185689971629160"></a></p>
 <h3 id="1835-tests-codeception">18.3.5. Tests [Codeception]</h3>
 <p><span style="color: #000000">Comme il a été fait pour les version précédentes, nous allons écrire des tests </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> pour la version 08.</span></p>
 <p><img src="images/10000000000001CD00000170F10743BE.png" style="width:4.271cm;height:3.41cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000170F10743BE.png" /></p>
-<p><a id="refheadingtoc185691971629160"></a>
-<a id="toc42690839"></a>
+<p><a id="toc42690067"></a>
 <a id="toc42690453"></a>
-<a id="toc42690067"></a></p>
+<a id="toc42690839"></a>
+<a id="refheadingtoc185691971629160"></a></p>
 <h4 id="18351-test-de-la-couche-metier">18.3.5.1. Test de la couche [métier]</h4>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[ClientMetierTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2286,11 +2412,16 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 10-26 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><strong><span style="color: #000000">[MainImpotsClient]</span></strong><span style="color: #000000"> décrit au paragraphe </span><a href="#_Le_script_principal_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 33-41 : construction des couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 40 : l’attribut </span><strong><span style="color: #000000">[$this→métier]</span></strong><span style="color: #000000"> référence la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 44-51 : les méthodes </span><strong><span style="color: #000000">[test1, test2…, test11]</span></strong><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 10-26 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><b><span style="color: #000000">[MainImpotsClient]</span></b><span style="color: #000000"> décrit au paragraphe </span><a href="#_Le_script_principal_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 33-41 : construction des couches </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 40 : l’attribut </span><b><span style="color: #000000">[$this→métier]</span></b><span style="color: #000000"> référence la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 44-51 : les méthodes </span><b><span style="color: #000000">[test1, test2…, test11]</span></b><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/10000000000006BB000001C4F61225E8.png" style="width:15.96cm;height:4.19cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006BB000001C4F61225E8.png" /></p>
 

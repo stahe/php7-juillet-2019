@@ -1066,49 +1066,61 @@
   
 
 
-<p><a id="refheadingtoc788352244347140"></a>
-<a id="toc42690679"></a>
+<p><a id="toc42689907"></a>
 <a id="toc42690293"></a>
-<a id="toc42689907"></a></p>
+<a id="toc42690679"></a>
+<a id="refheadingtoc788352244347140"></a></p>
 <h1 id="10-applications-en-couches">10. Applications en couches</h1>
-<p><a id="refheadingtoc788372244347140"></a>
-<a id="toc42690680"></a>
+<p><a id="toc42689908"></a>
 <a id="toc42690294"></a>
-<a id="toc42689908"></a></p>
+<a id="toc42690680"></a>
+<a id="refheadingtoc788372244347140"></a></p>
 <h2 id="101-introduction">10.1. Introduction</h2>
 <p><img src="images/1000000000000183000001D944836178.png" style="width:3.581cm;height:4.381cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000183000001D944836178.png" /></p>
 <p>Nous allons découvrir maintenant comment structurer une application PHP en couches :</p>
 <p><img src="images/10000000000004EB000001154342CD64.png" style="width:9.991cm;height:2.2cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004EB000001154342CD64.png" /></p>
 <p>Dans ce schéma, c’est la <strong>couche de gauche qui prend l’initiative d’utiliser la couche de droite</strong>. Le rôle des couches est le suivant :</p>
 <ul>
-<li><strong>[1]</strong> : la couche appelée <strong>[dao]</strong> (Data Access Objects) s&#x27;occupe des échanges avec des entrepôts de données externes <strong>[4]</strong> (fichiers, bases de données, services web…). Cette couche est parfois appelée <strong>[DAL]</strong> (Data Access Layer) un terme qui décrit mieux le rôle de la couche. Cette couche peut lire des données <strong>[3]</strong> ou en écrire <strong>[2]</strong>. Elle est sollicitée par la couche <strong>[métier]</strong> <strong>[6]</strong> et lui rend des résultats <strong>[7]</strong> ;</li>
-<li><strong>[5]</strong> :une couche appelée <strong>[métier]</strong> qui rassemble des procédures ‘métier’ à qui on fournit toutes les données dont elles ont besoin. C’est généralement la couche la plus stable d’un projet car elle ne dépend pas de la façon dont les données sont acquises. Celles-ci ont deux sources :<ul>
-<li><strong>[9]</strong> : les données fournies par le script PHP ;</li>
-<li><strong>[6,7]</strong> : les données demandées à la couche <strong>[dao]</strong>.</li>
+  <li><b>[1]</b> : la couche appelée <b>[dao]</b> (Data Access Objects) s&#x27;occupe des échanges avec des entrepôts de données externes <b>[4]</b> (fichiers, bases de données, services web…). Cette couche est parfois appelée <b>[DAL]</b> (Data Access Layer) un terme qui décrit mieux le rôle de la couche. Cette couche peut lire des données <b>[3]</b> ou en écrire <b>[2]</b>. Elle est sollicitée par la couche <b>[métier]</b> <b>[6]</b> et lui rend des résultats <b>[7]</b> ;
+  </li>
+  <li><b>[5]</b> :une couche appelée <b>[métier]</b> qui rassemble des procédures ‘métier’ à qui on fournit toutes les données dont elles ont besoin. C’est généralement la couche la plus stable d’un projet car elle ne dépend pas de la façon dont les données sont acquises. Celles-ci ont deux sources :
+    <ul>
+      <li><b>[9]</b> : les données fournies par le script PHP ;
+      </li>
+      <li><b>[6,7]</b> : les données demandées à la couche <b>[dao]</b>.
+      </li>
+    </ul>
+  </li>
+  <li><b>[8]</b> : le script principal est le chef d’orchestre. Dans une application console, il va :
+    <ul>
+      <li>créer les couches <b>[métier]</b> et <b>[dao]</b> ;
+      </li>
+      <li>dérouler l’algorithme de l’application. Cet algorithme est celui d’un chef d’orchestre : on n’y trouve aucun code ‘métier’ ou d’accès aux données. Le script principal se contente d’appeler les procédures de la couche <b>[métier]</b> <b>[9]</b>. Il ignore totalement la couche <b>[dao]</b> et les données externes. Il peut fournir à la couche <b>[métier]</b> des données <b>[9]</b>. Dans une application console, celles-ci peuvent provenir de fichiers de configuration ou de l’utilisateur du script. Il reçoit des résultats <b>[10]</b> de la couche <b>[métier]</b>. Il peut avoir besoin de stocker certains résultats : pour cela il utilise de nouveau les procédures de la couche <b>[métier]</b> qui elles vont s’adresser à la couche <b>[dao]</b> qui va faire le travail ;
+      </li>
+      <li>parmi les résultats, le script principal peut recevoir des exceptions. C’est son rôle de gérer les exceptions qui remontent de toutes les couches ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-<li><strong>[8]</strong> : le script principal est le chef d’orchestre. Dans une application console, il va :<ul>
-<li>créer les couches <strong>[métier]</strong> et <strong>[dao]</strong> ;</li>
-<li>dérouler l’algorithme de l’application. Cet algorithme est celui d’un chef d’orchestre : on n’y trouve aucun code ‘métier’ ou d’accès aux données. Le script principal se contente d’appeler les procédures de la couche <strong>[métier]</strong> <strong>[9]</strong>. Il ignore totalement la couche <strong>[dao]</strong> et les données externes. Il peut fournir à la couche <strong>[métier]</strong> des données <strong>[9]</strong>. Dans une application console, celles-ci peuvent provenir de fichiers de configuration ou de l’utilisateur du script. Il reçoit des résultats <strong>[10]</strong> de la couche <strong>[métier]</strong>. Il peut avoir besoin de stocker certains résultats : pour cela il utilise de nouveau les procédures de la couche <strong>[métier]</strong> qui elles vont s’adresser à la couche <strong>[dao]</strong> qui va faire le travail ;</li>
-<li>parmi les résultats, le script principal peut recevoir des exceptions. C’est son rôle de gérer les exceptions qui remontent de toutes les couches ;</li>
-</ul>
-</li>
-</ul>
+
 <p>Ce découpage en couches est destiné à faciliter l’évolution de l’application. Pour cela, chaque couche implémente une interface. Supposons que :</p>
 <ul>
-<li>la couche <strong>[dao]</strong> est implémentée par une classe <strong>[Dao]</strong> qui implémente une interface <strong>[IDao]</strong> ;</li>
-<li>la couche <strong>[métier]</strong> est implémentée par une classe <strong>[Métier]</strong> qui implémente une interface <strong>[IMétier]</strong> ;</li>
+  <li>la couche <b>[dao]</b> est implémentée par une classe <b>[Dao]</b> qui implémente une interface <b>[IDao]</b> ;
+  </li>
+  <li>la couche <b>[métier]</b> est implémentée par une classe <b>[Métier]</b> qui implémente une interface <b>[IMétier]</b> ;
+  </li>
 </ul>
+
 <p>Les procédures de la couche <strong>[métier]</strong> vont alors utiliser l’interface <strong>[IDao]</strong> plutôt que la classe <strong>[Dao]</strong>. Ceci permet de faire évoluer la couche <strong>[Dao]</strong> sans toucher à la couche <strong>[Métier]</strong>. Supposons que dans une version 1, la couche <strong>[Dao1]</strong> utilise des données d’une base de données. Suite à une évolution, ces données sont maintenant fournies par un service web dans une version 2, <strong>[Dao2]</strong>. On s’assurera que les deux classes <strong>[Dao1]</strong> et <strong>[Dao2]</strong> implémentent la même interface <strong>[IDao]</strong> et qu’elles lancent les mêmes exceptions. Si ceci est vérifié, la couche <strong>[Métier]</strong> qui travaille avec l’interface <strong>[IDao]</strong> restera inchangée ;</p>
 <p>Le même raisonnement s’applique à la couche <strong>[Métier]</strong>.</p>
 <p>Voyons une implémentation avec des classes et interfaces :</p>
 <p><img src="images/100000000000012A00000145FDB3E370.png" style="width:2.761cm;height:3.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012A00000145FDB3E370.png" /></p>
 <p>L’application va implémenter la structure en couches suivante :</p>
 <p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000338000000EDAD236403.png" /></p>
-<p><a id="refheadingtoc788392244347140"></a>
-<a id="toc42690681"></a>
+<p><a id="toc42689909"></a>
 <a id="toc42690295"></a>
-<a id="toc42689909"></a></p>
+<a id="toc42690681"></a>
+<a id="refheadingtoc788392244347140"></a></p>
 <h2 id="102-objets-echanges-entre-couches">10.2. Objets échangés entre couches</h2>
 <p>En temps normal, les couches échangent divers objets. Ici elles échangeront la classe suivante <strong>[Personne.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1134,14 +1146,18 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 6 : la personne n’a qu’un attribut, son identifiant <strong>[$id]</strong>. On va supposer que celui-ci désigne une personne unique dans un entrepôt de données ;</li>
-<li>lignes 9-11 : le constructeur qui permet de construire un type <strong>[Personne]</strong> avec son identifiant ;</li>
-<li>lignes 14-16 : la méthode <strong>[__toString]</strong> qui affiche l’identifiant de la personne ;</li>
+  <li>ligne 6 : la personne n’a qu’un attribut, son identifiant <b>[$id]</b>. On va supposer que celui-ci désigne une personne unique dans un entrepôt de données ;
+  </li>
+  <li>lignes 9-11 : le constructeur qui permet de construire un type <b>[Personne]</b> avec son identifiant ;
+  </li>
+  <li>lignes 14-16 : la méthode <b>[__toString]</b> qui affiche l’identifiant de la personne ;
+  </li>
 </ul>
-<p><a id="refheadingtoc788412244347140"></a>
-<a id="toc42690682"></a>
+
+<p><a id="toc42689910"></a>
 <a id="toc42690296"></a>
-<a id="toc42689910"></a></p>
+<a id="toc42690682"></a>
+<a id="refheadingtoc788412244347140"></a></p>
 <h2 id="103-couche-dao">10.3. Couche [dao]</h2>
 <p>L’interface <strong>[IDao]</strong> implémentée par la couche <strong>[dao, 1]</strong> est la suivante <strong>[IDao.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1182,9 +1198,12 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>la classe n’interagit pas avec un entrepôt de données. On se contente d’afficher des messages pour suivre le déroulement du code (lignes 7 et 12) ;</li>
-<li>ligne 13 : on rend bien une personne ayant l’identifiant passé en paramètre à la méthode (ligne 11) ;</li>
+  <li>la classe n’interagit pas avec un entrepôt de données. On se contente d’afficher des messages pour suivre le déroulement du code (lignes 7 et 12) ;
+  </li>
+  <li>ligne 13 : on rend bien une personne ayant l’identifiant passé en paramètre à la méthode (ligne 11) ;
+  </li>
 </ul>
+
 <p>Nous implémentons également l’interface <strong>[IDao]</strong> avec la classe <strong>[Dao2]</strong> suivante <strong>[Dao2.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1206,10 +1225,10 @@
 </code></pre></div>
 
 <p>La classe <strong>[Dao2]</strong> est similaire à la classe <strong>[Dao1]</strong> si ce n’est que nous avons modifié les messages affichés.</p>
-<p><a id="refheadingtoc788432244347140"></a>
-<a id="toc42690683"></a>
+<p><a id="toc42689911"></a>
 <a id="toc42690297"></a>
-<a id="toc42689911"></a></p>
+<a id="toc42690683"></a>
+<a id="refheadingtoc788432244347140"></a></p>
 <h2 id="104-couche-metier">10.4. Couche [métier]</h2>
 <p>La couche <strong>[métier, 2]</strong> offre l’interface <strong>[IMétier]</strong> suivante <strong>[IMetier.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1225,9 +1244,12 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>l’interface <strong>[IMétier]</strong> étend l’interface <strong>[IDao]</strong>. Ce n’est pas du tout obligatoire. On le fait ici parce que l’exemple est simple ;</li>
-<li>ligne 7 : la méthode <strong>[doSomething]</strong> est propre à la couche <strong>[Métier]</strong> ;</li>
+  <li>l’interface <b>[IMétier]</b> étend l’interface <b>[IDao]</b>. Ce n’est pas du tout obligatoire. On le fait ici parce que l’exemple est simple ;
+  </li>
+  <li>ligne 7 : la méthode <b>[doSomething]</b> est propre à la couche <b>[Métier]</b> ;
+  </li>
 </ul>
+
 <p>L’interface <strong>[IMétier]</strong> sera implémentée par la classe <strong>[Métier]</strong> suivante <strong>[Métier.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1270,18 +1292,24 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 5 : la couche <strong>[métier]</strong> doit avoir une référence sur la couche <strong>[dao]</strong> pour pouvoir utiliser les méthodes de celle-ci ;</li>
-<li>lignes 8-10 : la méthode <strong>[setDao]</strong> permet de donner à la couche <strong>[métier]</strong> la référence de la couche <strong>[dao]</strong>. On notera que le type du paramètre est <strong>[IDao]</strong>. Ainsi la couche <strong>[métier]</strong> va être capable de travailler avec toute classe implémentant l’interface <strong>[IDao]</strong>. Si on passe d’une couche <strong>[Dao1]</strong> à une couche <strong>[Dao2]</strong> et que toutes deux implémentent l’interface <strong>[IDao]</strong>, la couche <strong>[métier]</strong> n’a pas à être réécrite ;</li>
-<li>lignes 17-20 : implémentation de <strong>[IMetier::doSomething]</strong> ;</li>
-<li>lignes 23-27 : implémentation de <strong>[IMetier::save]</strong>. Cette méthode doit sauvegarder une personne dans un entrepôt de données. La couche <strong>[métier]</strong> ne sait pas faire ça. Elle s’adresse à la couche <strong>[dao]</strong> pour faire cette sauvegarde ;</li>
-<li>lignes 29-34 : implémentation de <strong>[IMetier::get]</strong>. Cette méthode doit récupérer dans un entrepôt de données la personne dont l’identifiant lui est passé en paramètre. La couche <strong>[métier]</strong> ne sait pas faire ça. Elle s’adresse à la couche <strong>[dao]</strong> pour faire le travail (ligne 32) ;</li>
+  <li>ligne 5 : la couche <b>[métier]</b> doit avoir une référence sur la couche <b>[dao]</b> pour pouvoir utiliser les méthodes de celle-ci ;
+  </li>
+  <li>lignes 8-10 : la méthode <b>[setDao]</b> permet de donner à la couche <b>[métier]</b> la référence de la couche <b>[dao]</b>. On notera que le type du paramètre est <b>[IDao]</b>. Ainsi la couche <b>[métier]</b> va être capable de travailler avec toute classe implémentant l’interface <b>[IDao]</b>. Si on passe d’une couche <b>[Dao1]</b> à une couche <b>[Dao2]</b> et que toutes deux implémentent l’interface <b>[IDao]</b>, la couche <b>[métier]</b> n’a pas à être réécrite ;
+  </li>
+  <li>lignes 17-20 : implémentation de <b>[IMetier::doSomething]</b> ;
+  </li>
+  <li>lignes 23-27 : implémentation de <b>[IMetier::save]</b>. Cette méthode doit sauvegarder une personne dans un entrepôt de données. La couche <b>[métier]</b> ne sait pas faire ça. Elle s’adresse à la couche <b>[dao]</b> pour faire cette sauvegarde ;
+  </li>
+  <li>lignes 29-34 : implémentation de <b>[IMetier::get]</b>. Cette méthode doit récupérer dans un entrepôt de données la personne dont l’identifiant lui est passé en paramètre. La couche <b>[métier]</b> ne sait pas faire ça. Elle s’adresse à la couche <b>[dao]</b> pour faire le travail (ligne 32) ;
+  </li>
 </ul>
+
 <p><strong>Conclusion</strong></p>
 <p>Dès que la couche <strong>[métier]</strong> a besoin d’accéder aux données stockées dans l’entrepôt de données, elle doit passer par la couche <strong>[dao]</strong> qui a été créée pour accéder à ces données.</p>
-<p><a id="refheadingtoc788452244347140"></a>
-<a id="toc42690684"></a>
+<p><a id="toc42689912"></a>
 <a id="toc42690298"></a>
-<a id="toc42689912"></a></p>
+<a id="toc42690684"></a>
+<a id="refheadingtoc788452244347140"></a></p>
 <h2 id="105-script-principal">10.5. Script principal</h2>
 <p>Nous allons écrire deux scripts, chefs d’orchestre pour cette application. Le 1er <strong>[main1.php]</strong> utilisera la couche <strong>[Dao1]</strong> alors que le second <strong>[main2.php]</strong> utilisera la couche <strong>[Dao2]</strong>. Nous voulons montrer que cela n’a aucune incidence sur le code de la couche <strong>[Métier]</strong>.</p>
 <p>Le script <strong>[main1.php]</strong> est le suivant :</p>
@@ -1311,8 +1339,10 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>rappelons quelques points : le script <strong>[main1.php]</strong> est le chef d’orchestre de l’application. Il crée la structure en couches de l’application (lignes 15-17) puis ensuite commence à dialoguer avec la couche <strong>[métier]</strong> (lignes 19-21). La structure en couches est en effet la suivante :</li>
+  <li>rappelons quelques points : le script <b>[main1.php]</b> est le chef d’orchestre de l’application. Il crée la structure en couches de l’application (lignes 15-17) puis ensuite commence à dialoguer avec la couche <b>[métier]</b> (lignes 19-21). La structure en couches est en effet la suivante :
+  </li>
 </ul>
+
 <p><img src="images/1000000000000338000000EDAD236403.png" style="width:6.541cm;height:1.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000338000000EDAD236403.png" /></p>
 <p>Selon ce schéma, le script <strong>[main1.php]</strong> ne doit s’adresser qu’à la couche <strong>[métier]</strong>. Elle ne doit pas s’adresser à la couche <strong>[dao]</strong> même si c’est théoriquement possible.</p>
 <p>Les résultats de l’exécution sont les suivants :</p>
@@ -1326,10 +1356,14 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>la ligne 10 du code a provoqué l’écriture des lignes 1 et 2 des résultats ;</li>
-<li>la ligne 20 du code a provoqué l’écriture de la ligne 3 des résultats ;</li>
-<li>la ligne 21 du code a provoqué l’écriture des lignes 4 et 5 des résultats ;</li>
+  <li>la ligne 10 du code a provoqué l’écriture des lignes 1 et 2 des résultats ;
+  </li>
+  <li>la ligne 20 du code a provoqué l’écriture de la ligne 3 des résultats ;
+  </li>
+  <li>la ligne 21 du code a provoqué l’écriture des lignes 4 et 5 des résultats ;
+  </li>
 </ul>
+
 <p>Le script <strong>[main2.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1357,8 +1391,10 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 36-38 : la structure en couches utilise désormais la couche <strong>[Dao2]</strong> ;</li>
+  <li>lignes 36-38 : la structure en couches utilise désormais la couche <b>[Dao2]</b> ;
+  </li>
 </ul>
+
 <p>Les résultats de l’exécution sont les suivants :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="font-weight:bold">[Métier]</span> : récupération de la personne d&#x27;identifiant 4</span>

@@ -972,10 +972,10 @@
   
 
 
-<p><a id="refheadingtoc19179436505072"></a>
-<a id="toc42690963"></a>
+<p><a id="toc42690191"></a>
 <a id="toc42690577"></a>
-<a id="toc42690191"></a></p>
+<a id="toc42690963"></a>
+<a id="refheadingtoc19179436505072"></a></p>
 <h1 id="24-exercice-dapplication-version-13">24. Exercice d’application – version 13</h1>
 <p>La version 13 amène peu de changements : elle sécurise l’accès aux fichiers de l’application.</p>
 <p>Avec la version 12, on peut demander l’URL suivante <strong>[http://localhost/php7/scripts-web/impots/version-12/config.json]</strong>. On obtient alors la page suivante (Firefox) :</p>
@@ -984,10 +984,14 @@
 <p>Dans Netbeans, nous faisons un copier-coller du dossier <strong>[version-12]</strong> dans <strong>[version-13]</strong> :</p>
 <p><img src="images/10000000000002EC000002AEA4603D04.png" style="width:6.931cm;height:6.351cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002EC000002AEA4603D04.png" /></p>
 <ul>
-<li>en <strong>[1]</strong>, dans le dossier racine de l’application, nous ne laissons que les scripts <strong>[index.php, main.php]</strong> ;</li>
-<li>en <strong>[2]</strong>, les fichiers de configuration sont placés dans un dossier <strong>[Config]</strong> ;</li>
-<li>en <strong>[3]</strong>, l’image <strong>[logo.jpg]</strong> est placée dans un dossier <strong>[Resources]</strong> ;</li>
+  <li>en <b>[1]</b>, dans le dossier racine de l’application, nous ne laissons que les scripts <b>[index.php, main.php]</b> ;
+  </li>
+  <li>en <b>[2]</b>, les fichiers de configuration sont placés dans un dossier <b>[Config]</b> ;
+  </li>
+  <li>en <b>[3]</b>, l’image <b>[logo.jpg]</b> est placée dans un dossier <b>[Resources]</b> ;
+  </li>
 </ul>
+
 <p>Le serveur HTTP utilisé est ici un serveur Apache. Celui-ci permet de contrôler l’accès à un dossier via un fichier <strong>[.htaccess]</strong>. Dans tous les dossiers auxquels nous voulons interdire un accès direct par URL, nous créons le fichier <strong>[.htaccess]</strong> suivant :</p>
 <p><img src="images/10000000000001D6000000E31188E69B.png" style="width:4.351cm;height:2.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D6000000E31188E69B.png" /></p>
 <p>Ces deux lignes font que tout accès au dossier est interdit à tous.</p>

@@ -1273,57 +1273,75 @@
 
 
 <p><a id="exercicedapplication-1"></a>
-<a id="toc42690715"></a>
-<a id="toc42690329"></a>
+<a id="refheading399241881943603"></a>
 <a id="toc42689943"></a>
-<a id="refheading399241881943603"></a></p>
+<a id="toc42690329"></a>
+<a id="toc42690715"></a></p>
 <h1 id="13-exercice-dapplication-version-5">13. Exercice d’application – version 5</h1>
 <p><img src="images/10000000000000ED000000FF746725B4.png" style="width:2.192cm;height:2.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000FF746725B4.png" /></p>
 <p>Nous avons déjà écrit plusieurs versions de cet exercice. La dernière version utilisait une architecture en couches :</p>
 <p><img src="images/1000000000000539000001032BF5D263.png" style="width:10.611cm;height:2.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000539000001032BF5D263.png" /></p>
 <p><span style="color: #000000">La couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> implémente une interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">. Nous avons construit une classe implémentant de cette interface :</span></p>
 <ul>
-<li><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInJsonFile]</span></strong><span style="color: #000000"> qui allait chercher les données fiscales dans un fichier jSON ;</span></li>
+  <li><b><span style="color: #000000">[DaoImpotsWithTaxAdminDataInJsonFile]</span></b><span style="color: #000000"> qui allait chercher les données fiscales dans un fichier jSON ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Nous allons implémenter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> par une nouvelle classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> qui ira chercher les données de l’administration fiscale dans une base de données MySQL.</span></p>
-<p><a id="refheadingtoc822303439697744"></a>
-<a id="toc42690716"></a>
+<p><a id="toc42689944"></a>
 <a id="toc42690330"></a>
-<a id="toc42689944"></a></p>
+<a id="toc42690716"></a>
+<a id="refheadingtoc822303439697744"></a></p>
 <h2 id="131-creation-de-la-base-de-donnees-dbimpots-2019">13.1. Création de la base de données [dbimpots-2019]</h2>
 <p>En suivant l’exemple du paragraphe <a href="#_Création_d’une_base"><u><span style="color: #0563c1">lien</span></u></a>, nous construisons une base de données MySQL nommée <strong>[dbimpots-2019]</strong> dont le propriétaire sera <strong>[admimpots]</strong> avec le mot de passe <strong>[mdpimpots]</strong> :</p>
 <p><img src="images/10000000000004C800000247CE804F2A.png" style="width:9.722cm;height:4.631cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C800000247CE804F2A.png" /></p>
 <ul>
-<li>en <strong>[1-4]</strong> ci-dessus, nous voyons la base <strong>[dbimpots-2019]</strong> qui pour l’instant n’a pas de tables ;</li>
+  <li>en <b>[1-4]</b> ci-dessus, nous voyons la base <b>[dbimpots-2019]</b> qui pour l’instant n’a pas de tables ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000007EA00000265B3FC96D0.png" style="width:16.08cm;height:4.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007EA00000265B3FC96D0.png" /></p>
 <ul>
-<li>en <strong>[1-5]</strong> ci-dessus, nous voyons que l’utilisateur <strong>[admimpots]</strong> a tous les droits sur la base <strong>[dbimpots-2019]</strong>. Ce que nous ne voyons pas ici c’est que cet utilisateur a le mot de passe <strong>[admimpots]</strong> ;</li>
+  <li>en <b>[1-5]</b> ci-dessus, nous voyons que l’utilisateur <b>[admimpots]</b> a tous les droits sur la base <b>[dbimpots-2019]</b>. Ce que nous ne voyons pas ici c’est que cet utilisateur a le mot de passe <b>[admimpots]</b> ;
+  </li>
 </ul>
+
 <p>Nous créons maintenant la table <strong>[tbtranches]</strong>qui contiendra les tranches d’imposition :</p>
 <p><img src="images/10000000000004EC00000254D3B474F7.png" style="width:10cm;height:4.732cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004EC00000254D3B474F7.png" /></p>
 <ul>
-<li>en <strong>[1-7]</strong>, nous créons une table nommée <strong>[tbtranches]</strong> ayant 4 colonnes ;</li>
+  <li>en <b>[1-7]</b>, nous créons une table nommée <b>[tbtranches]</b> ayant 4 colonnes ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000008D0000004606D93747C.png" style="width:17.911cm;height:8.891cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008D0000004606D93747C.png" /></p>
 <ul>
-<li>en <strong>[3-6]</strong> nous définissons une colonne nommée <strong>[id]</strong> (3), de type entier <strong>[int]</strong> (4), qui sera clé primaire <strong>[6]</strong> de la table et sera autoincrémentée <strong>[5]</strong> par le SGBD. Cela signifie que MySQL va gérer lui-même les valeurs de la clé primaire au moment des insertions. Il affectera la valeur 1 à la clé primaire de la 1ière insertion, puis 2 à la suivante, etc … ;</li>
-<li>en <strong>[7]</strong>, l’assistant nous propose d’autres options de configuration de la clé primaire. Ici on se contente de valider <strong>[7]</strong> les valeurs par défaut ;</li>
+  <li>en <b>[3-6]</b> nous définissons une colonne nommée <b>[id]</b> (3), de type entier <b>[int]</b> (4), qui sera clé primaire <b>[6]</b> de la table et sera autoincrémentée <b>[5]</b> par le SGBD. Cela signifie que MySQL va gérer lui-même les valeurs de la clé primaire au moment des insertions. Il affectera la valeur 1 à la clé primaire de la 1ière insertion, puis 2 à la suivante, etc … ;
+  </li>
+  <li>en <b>[7]</b>, l’assistant nous propose d’autres options de configuration de la clé primaire. Ici on se contente de valider <b>[7]</b> les valeurs par défaut ;
+  </li>
 </ul>
+
 <p><img src="images/100000000000072300000268AC43A360.png" style="width:14.5cm;height:4.89cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000072300000268AC43A360.png" /></p>
 <ul>
-<li>en <strong>[8-16]</strong>, on définit les trois autres colonnes de la table :<ul>
-<li><strong>[limites]</strong> (8) de type nombre décimal (9) à 10 chiffres dont 2 décimales (10) contiendra les éléments de la colonne 17 des tranches d’impôts ;</li>
-<li><strong>[coeffR]</strong> (11) de type nombre décimal (12) à 6 chiffres dont 2 décimales (13) contiendra les éléments de la colonne 18 des tranches d’impôts ;</li>
-<li><strong>[coeffN]</strong> (14) de type nombre décimal (15) à 10 chiffres dont 2 décimales (16) contiendra les éléments de la colonne 19 des tranches d’impôts ;</li>
+  <li>en <b>[8-16]</b>, on définit les trois autres colonnes de la table :
+    <ul>
+      <li><b>[limites]</b> (8) de type nombre décimal (9) à 10 chiffres dont 2 décimales (10) contiendra les éléments de la colonne 17 des tranches d’impôts ;
+      </li>
+      <li><b>[coeffR]</b> (11) de type nombre décimal (12) à 6 chiffres dont 2 décimales (13) contiendra les éléments de la colonne 18 des tranches d’impôts ;
+      </li>
+      <li><b>[coeffN]</b> (14) de type nombre décimal (15) à 10 chiffres dont 2 décimales (16) contiendra les éléments de la colonne 19 des tranches d’impôts ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>Après avoir validé cette structure, nous obtenons le résultat suivant :</p>
 <p><img src="images/10000000000006D8000001F9A0DA3139.png" style="width:13.911cm;height:4.01cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006D8000001F9A0DA3139.png" /></p>
 <ul>
-<li>en <strong>[5]</strong>, l’icône de la clé indique que la colonne <strong>[id]</strong> est clé primaire. On voit également que cette clé primaire a des valeurs entières (6) et qu’elle est gérée (autoincrémentée) par MySQL ;</li>
+  <li>en <b>[5]</b>, l’icône de la clé indique que la colonne <b>[id]</b> est clé primaire. On voit également que cette clé primaire a des valeurs entières (6) et qu’elle est gérée (autoincrémentée) par MySQL ;
+  </li>
 </ul>
+
 <p>De la même façon que nous avons créé la table <strong>[tbtranches]</strong> nous construisons la table <strong>[tbconstantes]</strong> qui contiendra les constantes du calcul de l’impôt :</p>
 <p><img src="images/10000000000006050000038306A0940B.png" style="width:12.232cm;height:7.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006050000038306A0940B.png" /></p>
 <p>Il est possible d’exporter la structure de la base de données dans un fichier texte sous forme d’une suite d’ordres SQL :</p>
@@ -1436,23 +1454,30 @@
 <p>Vous pouvez utiliser ce fichier SQL pour régénérer la base <strong>[dbimpots-2019]</strong> si elle a été détruite ou altérée. Il n’y a pas lieu ici de supprimer la base avant de la régénérer puisque le script SQL prend soin de le faire lui-même :</p>
 <p><img src="images/10000000000004AE000002A399F8210F.png" style="width:9.512cm;height:5.361cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004AE000002A399F8210F.png" /></p>
 <p><img src="images/100000000000048B0000031074337D0E.png" style="width:9.231cm;height:6.22cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048B0000031074337D0E.png" /></p>
-<p><a id="refheadingtoc185655971629160"></a>
-<a id="toc42690717"></a>
+<p><a id="toc42689945"></a>
 <a id="toc42690331"></a>
-<a id="toc42689945"></a></p>
+<a id="toc42690717"></a>
+<a id="refheadingtoc185655971629160"></a></p>
 <h2 id="132-organisation-du-code">13.2. Organisation du code</h2>
 <p>Pour mieux montrer le rôle des différents scripts PHP que nous écrivons, nous allons organiser notre code en dossiers :</p>
 <p><img src="images/10000000000007570000021284DA5294.png" style="width:14.911cm;height:4.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007570000021284DA5294.png" /></p>
 <ul>
-<li>en <strong>[1]</strong>, vue d’ensemble de la version 05 ;</li>
-<li>en <strong>[2]</strong>, les entités de l’application, entités échangées entre couches ;</li>
-<li>en <strong>[3]</strong>, les utilitaires de l’application ;</li>
-<li>en <strong>[4]</strong>, les données utilisées ou produites par l’application. Nous prenons ici la décision de n’utiliser que des fichiers jSON pour les fichiers texte. Ceux-ci présentent plusieurs avantages :<ul>
-<li>ils sont reconnus par beaucoup d’outils ;</li>
-<li>ces outils ont une coloration syntaxique. Par ailleurs, la notation jSON a des règles. Lorsque celles-ci ne sont pas respectées les outils les signalent. Par exemple, une erreur difficile à détecter dans un fichier texte basique est l’utilisation de O majuscule / minuscule à la place de zéros. Si cette erreur se produit elle sera signalée. En effet dans le code jSON :</li>
+  <li>en <b>[1]</b>, vue d’ensemble de la version 05 ;
+  </li>
+  <li>en <b>[2]</b>, les entités de l’application, entités échangées entre couches ;
+  </li>
+  <li>en <b>[3]</b>, les utilitaires de l’application ;
+  </li>
+  <li>en <b>[4]</b>, les données utilisées ou produites par l’application. Nous prenons ici la décision de n’utiliser que des fichiers jSON pour les fichiers texte. Ceux-ci présentent plusieurs avantages :
+    <ul>
+      <li>ils sont reconnus par beaucoup d’outils ;
+      </li>
+      <li>ces outils ont une coloration syntaxique. Par ailleurs, la notation jSON a des règles. Lorsque celles-ci ne sont pas respectées les outils les signalent. Par exemple, une erreur difficile à détecter dans un fichier texte basique est l’utilisation de O majuscule / minuscule à la place de zéros. Si cette erreur se produit elle sera signalée. En effet dans le code jSON :
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p><span style="color: #7f007f"><mark style="background-color: #e8f2fe">&quot;plafondRevenusCouplePourReduction&quot;</mark></span><span style="color: #000000"><mark style="background-color: #e8f2fe">:</mark></span><mark style="background-color: #e8f2fe"> </mark><span style="color: #ff0000"><mark style="background-color: #e8f2fe">42O74</mark></span></p>
 <p>où on a mis par inadvertance un O majuscule à la place du zéro dans <strong>[42074]</strong>, Netbeans signale la faute :</p>
 <p><img src="images/10000000000007BE0000015A3EBB4F57.png" style="width:15.731cm;height:2.751cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007BE0000015A3EBB4F57.png" /></p>
@@ -1460,26 +1485,33 @@
 <p>Les autres éléments de la version 05 sont les suivants :</p>
 <p><img src="images/1000000000000785000001504D6DC72E.png" style="width:17.83cm;height:3.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000785000001504D6DC72E.png" /></p>
 <ul>
-<li>en <strong>[6]</strong>, les interfaces et classes de la couche <strong>[Dao]</strong> ;</li>
-<li>en <strong>[7]</strong>, les interfaces et classes de la couche <strong>[métier]</strong> ;</li>
-<li>en <strong>[8]</strong>, les scripts principaux de la version 05 ;</li>
+  <li>en <b>[6]</b>, les interfaces et classes de la couche <b>[Dao]</b> ;
+  </li>
+  <li>en <b>[7]</b>, les interfaces et classes de la couche <b>[métier]</b> ;
+  </li>
+  <li>en <b>[8]</b>, les scripts principaux de la version 05 ;
+  </li>
 </ul>
+
 <p>La version 05 a deux objectifs distincts :</p>
 <ul>
-<li>remplir la base MySQL <strong>[dbimpots-2019]</strong> avec le contenu du fichier jSON <strong>[Data/txadmindata.json]</strong> ;</li>
-<li>implémenter le calcul de l’impôt avec des données fiscales venant désormais de la base MySQL <strong>[dbimpots-2019]</strong> ;</li>
+  <li>remplir la base MySQL <b>[dbimpots-2019]</b> avec le contenu du fichier jSON <b>[Data/txadmindata.json]</b> ;
+  </li>
+  <li>implémenter le calcul de l’impôt avec des données fiscales venant désormais de la base MySQL <b>[dbimpots-2019]</b> ;
+  </li>
 </ul>
+
 <p>Nous allons traiter ces deux objectifs séparément.</p>
 <p><a id="remplissagedebase"></a>
-<a id="toc42690718"></a>
-<a id="toc42690332"></a>
+<a id="refheadingtoc822323439697744"></a>
 <a id="toc42689946"></a>
-<a id="refheadingtoc822323439697744"></a></p>
+<a id="toc42690332"></a>
+<a id="toc42690718"></a></p>
 <h2 id="133-remplissage-de-base-de-donnees-dbimpots-2019">13.3. Remplissage de base de données [dbimpots-2019]</h2>
-<p><a id="refheadingtoc900663955410047"></a>
-<a id="toc42690719"></a>
+<p><a id="toc42689947"></a>
 <a id="toc42690333"></a>
-<a id="toc42689947"></a></p>
+<a id="toc42690719"></a>
+<a id="refheadingtoc900663955410047"></a></p>
 <h3 id="1331-objectif">13.3.1. Objectif</h3>
 <p>Le fichier texte <em>taxadmindata.json</em> contient les données de l’administration fiscale :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1520,10 +1552,10 @@
 
 <p>Notre objectif est de transférer ces données dans la base MySQL <strong>[dbimpots-2019]</strong> créée précédemment.</p>
 <p><a id="lesentites"></a>
-<a id="toc42690720"></a>
-<a id="toc42690334"></a>
+<a id="refheadingtoc1888263931965946"></a>
 <a id="toc42689948"></a>
-<a id="refheadingtoc1888263931965946"></a></p>
+<a id="toc42690334"></a>
+<a id="toc42690720"></a></p>
 <h3 id="1332-les-entites">13.3.2. Les entités</h3>
 <p><img src="images/10000000000003ED0000021E69AFDE53.png" style="width:9.311cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003ED0000021E69AFDE53.png" /></p>
 <p>L’entité <strong>[Database]</strong> servira à encapsuler les données du fichier jSON <strong>[database.json]</strong> suivant :</p>
@@ -1654,10 +1686,10 @@
 </code></pre></div>
 
 <p><a id="laclassede"></a>
-<a id="toc42690721"></a>
-<a id="toc42690335"></a>
+<a id="refheadingtoc1911633931965946"></a>
 <a id="toc42689949"></a>
-<a id="refheadingtoc1911633931965946"></a></p>
+<a id="toc42690335"></a>
+<a id="toc42690721"></a></p>
 <h4 id="13321-la-classe-de-base-baseentity">13.3.2.1. La classe de base [BaseEntity]</h4>
 <p>Pour simplifier le code des entités, nous adopterons la règle suivante : <strong>les attributs d’une entité ont les mêmes noms que les attributs du fichier jSON que l’entité doit encapsuler</strong>. Moyennant cette règle, les entités <strong>[Database, TaxAdminData, TaxPayerData]</strong> ont des points communs qui peuvent être factorisés dans une classe parent. Ce sera la classe <strong>[BaseEntity]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1742,19 +1774,28 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 5 : la classe <strong>[BaseEntity]</strong> est destinée à être étendue par les classes <strong>[Database, TaxAdminData, TaxPayerData]</strong> ;</li>
-<li>ligne 7 : l’attribut <strong>[$arrayOfAttributes]</strong> est un tableau contenant tous les attributs de la classe fille ayant étendu <strong>[BaseEntity]</strong> ainsi que leurs valeurs ;</li>
-<li>lignes 9-41 : l’attribut <strong>[$arrayOfAttributes]</strong> est initialisé à partir du fichier jSON <strong>[$jsonFilename]</strong> passé en paramètre. Une exception de type <strong>[ExceptionImpot]</strong> est lancée si le fichier jSON n’a pu être lu ou si ce n’est pas un fichier jSON valide ;</li>
-<li>lignes 36-38 : on a là un code spécial s’il est exécuté par une classe fille. Dans ce cas, <strong>[$this]</strong> représente une instance de la classe fille <strong>[Database, TaxAdminData, TaxPayerData]</strong> et dans ce cas là, <strong>les lignes 36-38 initialisent les attributs de cette classe fille, </strong>à condition que ces attributs aient la visibilité<strong> protected </strong>(ou public) (cf paragraphe <a href="#_Visibilité_entre_classe"><u><span style="color: #0563c1">lien</span></u></a>). On a dit en effet que les attributs des entités <strong>[Database, TaxAdminData, TaxPayerData]</strong> étaient les mêmes que les attributs du fichier jSON qu’ils encapsulaient. Finalement, la méthode <strong>[setFromJsonFile]</strong> permet à une classe fille de s’initialiser à partir d’un fichier jSON ;</li>
-<li>ligne 40 : on rend l’objet <strong>[$this]</strong> donc une instance de classe fille si la méthode <strong>[setFromJsonFile]</strong> a été appelée par une classe fille ;</li>
-<li>lignes 43-51 : la méthode <strong>[checkForAllAttributes]</strong> permet à une classe fille de vérifier que tous ses attributs ont été initialisés. Si ce n’est pas le cas, une exception <strong>[ExceptionImpots]</strong> est lancée. Cette méthode permet à la classe fille de vérifier que son fichier jSON n’a pas oublié certains attributs ;</li>
-<li>lignes 53-60 : la méthode <strong>[setFromArrayOfAttributes]</strong> permet à une classe fille d’initialiser tout ou partie de ses attributs à partir d’un tableau associatif dont les clés ont les mêmes noms que les attributs de la classe fille à initialiser ;</li>
-<li>lignes 63-70 : la méthode <strong>[__toString]</strong> permet d’avoir la représentation jSON d’une classe fille ;</li>
+  <li>ligne 5 : la classe <b>[BaseEntity]</b> est destinée à être étendue par les classes <b>[Database, TaxAdminData, TaxPayerData]</b> ;
+  </li>
+  <li>ligne 7 : l’attribut <b>[$arrayOfAttributes]</b> est un tableau contenant tous les attributs de la classe fille ayant étendu <b>[BaseEntity]</b> ainsi que leurs valeurs ;
+  </li>
+  <li>lignes 9-41 : l’attribut <b>[$arrayOfAttributes]</b> est initialisé à partir du fichier jSON <b>[$jsonFilename]</b> passé en paramètre. Une exception de type <b>[ExceptionImpot]</b> est lancée si le fichier jSON n’a pu être lu ou si ce n’est pas un fichier jSON valide ;
+  </li>
+  <li>lignes 36-38 : on a là un code spécial s’il est exécuté par une classe fille. Dans ce cas, <b>[$this]</b> représente une instance de la classe fille <b>[Database, TaxAdminData, TaxPayerData]</b> et dans ce cas là, <b>les lignes 36-38 initialisent les attributs de cette classe fille, </b>à condition que ces attributs aient la visibilité<b> protected </b>(ou public) (cf paragraphe <a href="#_Visibilité_entre_classe"><u><span style="color: #0563c1">lien</span></u></a>). On a dit en effet que les attributs des entités <b>[Database, TaxAdminData, TaxPayerData]</b> étaient les mêmes que les attributs du fichier jSON qu’ils encapsulaient. Finalement, la méthode <b>[setFromJsonFile]</b> permet à une classe fille de s’initialiser à partir d’un fichier jSON ;
+  </li>
+  <li>ligne 40 : on rend l’objet <b>[$this]</b> donc une instance de classe fille si la méthode <b>[setFromJsonFile]</b> a été appelée par une classe fille ;
+  </li>
+  <li>lignes 43-51 : la méthode <b>[checkForAllAttributes]</b> permet à une classe fille de vérifier que tous ses attributs ont été initialisés. Si ce n’est pas le cas, une exception <b>[ExceptionImpots]</b> est lancée. Cette méthode permet à la classe fille de vérifier que son fichier jSON n’a pas oublié certains attributs ;
+  </li>
+  <li>lignes 53-60 : la méthode <b>[setFromArrayOfAttributes]</b> permet à une classe fille d’initialiser tout ou partie de ses attributs à partir d’un tableau associatif dont les clés ont les mêmes noms que les attributs de la classe fille à initialiser ;
+  </li>
+  <li>lignes 63-70 : la méthode <b>[__toString]</b> permet d’avoir la représentation jSON d’une classe fille ;
+  </li>
 </ul>
-<p><a id="refheadingtoc185657971629160"></a>
-<a id="toc42690722"></a>
+
+<p><a id="toc42689950"></a>
 <a id="toc42690336"></a>
-<a id="toc42689950"></a></p>
+<a id="toc42690722"></a>
+<a id="refheadingtoc185657971629160"></a></p>
 <h4 id="13322-lentite-database">13.3.2.2. L’entité [Database]</h4>
 <p>L’entité <strong>[Database]</strong> est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1813,7 +1854,7 @@
 </code></pre></div>
 
 <p>La classe et le fichier jSON ont les mêmes attributs. Ceux-ci décrivent les caractéristiques de la base de données MySQL <strong>[dbimpots-2019]</strong> :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><span style="color: #7f007f">dsn</span></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Nom DSN de la base</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><span style="color: #7f007f">id</span></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Propriétaire de la base</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><span style="color: #7f007f">pwd</span></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Son mot de passe</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><span style="color: #7f007f">tableTranches</span></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Nom de la table contenant les tranches d’imposition</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><span style="color: #7f007f">colLimites</span></p><p style="margin:0;"><span style="color: #7f007f">colCoeffR</span></p><p style="margin:0;"><span style="color: #7f007f">colCoeffN</span></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Noms des colonnes de la table <b>[tableTranches]</b></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><span style="color: #7f007f">tableConstantes</span></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Nom de la table contenant les constantes de calcul de l’impôt</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><span style="color: #7f007f">colPlafondQfDemiPart</span></p><p style="margin:0;"><span style="color: #7f007f">colPlafondRevenusCelibatairePourReduction</span></p><p style="margin:0;"><span style="color: #7f007f">colPlafondRevenusCouplePourReduction</span></p><p style="margin:0;"><span style="color: #7f007f">colValeurReducDemiPart</span></p><p style="margin:0;"><span style="color: #7f007f">colPlafondDecoteCelibataire</span></p><p style="margin:0;"><span style="color: #7f007f">colPlafondDecoteCouple</span></p><p style="margin:0;"><span style="color: #7f007f">colPlafondImpotCelibatairePourDecote</span></p><p style="margin:0;"><span style="color: #7f007f">colPlafondImpotCouplePourDecote</span></p><p style="margin:0;"><span style="color: #7f007f">colAbattementDixPourcentMax</span></p><p style="margin:0;"><span style="color: #7f007f">colAbattementDixPourcentMin</span></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Noms des colonnes de la table <b>[tableConstantes]</b> contenant les constantes de calcul de l’impôt</p></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">dsn</span></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Nom DSN de la base</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">id</span></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Propriétaire de la base</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">pwd</span></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Son mot de passe</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">tableTranches</span></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Nom de la table contenant les tranches d’imposition</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colLimites</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colCoeffR</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colCoeffN</span></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Noms des colonnes de la table <b>[tableTranches]</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">tableConstantes</span></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Nom de la table contenant les constantes de calcul de l’impôt</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colPlafondQfDemiPart</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colPlafondRevenusCelibatairePourReduction</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colPlafondRevenusCouplePourReduction</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colValeurReducDemiPart</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colPlafondDecoteCelibataire</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colPlafondDecoteCouple</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colPlafondImpotCelibatairePourDecote</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colPlafondImpotCouplePourDecote</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colAbattementDixPourcentMax</span></div><div style="margin:0 0 0.5em 0"><span style="color: #7f007f">colAbattementDixPourcentMin</span></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Noms des colonnes de la table <b>[tableConstantes]</b> contenant les constantes de calcul de l’impôt</div></td></tr></table>
 
 <p>Pourquoi nommer les tables et les colonnes alors qu’on connaît déjà leurs noms et que ce n’est pas quelque chose amené à changer ? Après le SGBD MySQL, on va utiliser le SGBD PostgreSQL pour stocker les données de l’administration fiscale. Or les noms des colonnes et tables Postgres ne suivent pas les mêmes règles que MySQL. On va être obligés d’utiliser d’autres noms. C’est également vrai pour d’autres SGBD. Si on veut avoir du code portable entre SGBD, il est alors préférable d’utiliser des paramètres plutôt que les noms en dur des tables et colonnes.</p>
 <p>Revenons au code de la classe <strong>[Database]</strong> :</p>
@@ -1873,17 +1914,24 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 7-24 : tous les attributs de la classe ont la visibilité <strong>[protected]</strong>. C’est la condition pour qu’ils puissent être modifiés depuis la classe parent <strong>[BaseEntity]</strong> (cf paragraphe <a href="#_Visibilité_entre_classe"><u><span style="color: #0563c1">lien</span></u></a>) ;</li>
-<li>lignes 28-35 : la méthode <strong>[setFromJsonFile]</strong> permet d’initialiser les attributs de la classe <strong>[Database]</strong> à partir du contenu d’un fichier jSON passé en paramètre. Il faut que les attributs du fichier jSON et ceux de la classe <strong>[Database]</strong> soient identiques. Si le fichier jSON n’est pas exploitable, une exception est lancée ;</li>
-<li>ligne 30 : c’est la classe parent qui fait l’initialisation ;</li>
-<li>ligne 32 : on demande à la classe parent de vérifier que tous les attributs de la classe <strong>[Database]</strong> ont été initialisés. Si ce n’est pas le cas, une exception est lancée ;</li>
-<li>ligne 34 : on rend l’instance <strong>[Database]</strong> qui vient d’être initialisée ;</li>
-<li>lignes 37 et au-delà : les getters et setters des attributs de la classe ;</li>
+  <li>lignes 7-24 : tous les attributs de la classe ont la visibilité <b>[protected]</b>. C’est la condition pour qu’ils puissent être modifiés depuis la classe parent <b>[BaseEntity]</b> (cf paragraphe <a href="#_Visibilité_entre_classe"><u><span style="color: #0563c1">lien</span></u></a>) ;
+  </li>
+  <li>lignes 28-35 : la méthode <b>[setFromJsonFile]</b> permet d’initialiser les attributs de la classe <b>[Database]</b> à partir du contenu d’un fichier jSON passé en paramètre. Il faut que les attributs du fichier jSON et ceux de la classe <b>[Database]</b> soient identiques. Si le fichier jSON n’est pas exploitable, une exception est lancée ;
+  </li>
+  <li>ligne 30 : c’est la classe parent qui fait l’initialisation ;
+  </li>
+  <li>ligne 32 : on demande à la classe parent de vérifier que tous les attributs de la classe <b>[Database]</b> ont été initialisés. Si ce n’est pas le cas, une exception est lancée ;
+  </li>
+  <li>ligne 34 : on rend l’instance <b>[Database]</b> qui vient d’être initialisée ;
+  </li>
+  <li>lignes 37 et au-delà : les getters et setters des attributs de la classe ;
+  </li>
 </ul>
-<p><a id="refheadingtoc185659971629160"></a>
-<a id="toc42690723"></a>
+
+<p><a id="toc42689951"></a>
 <a id="toc42690337"></a>
-<a id="toc42689951"></a></p>
+<a id="toc42690723"></a>
+<a id="refheadingtoc185659971629160"></a></p>
 <h4 id="13323-lentite-taxadmindata">13.3.2.3. L’entité [TaxAdminData]</h4>
 <p>L’entité <strong>[TaxAdminData]</strong> est la suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2039,15 +2087,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 23 : la méthode <strong>[setFromJsonFile]</strong> sert à initialiser les attributs de la classe <strong>[TaxAdminData]</strong> à partir d’un fichier jSON passé en paramètre. Il faut que les attributs du fichier jSON existent sous le même nom dans la classe ;</li>
-<li>ligne 25 : c’est la classe parent qui fait ce travail ;</li>
-<li>ligne 27 : on demande à la classe parent de vérifier que tous les attributs de la classe fille ont été initialisés ;</li>
-<li>lignes 29-42 : on vérifie localement que tous les attributs ont eu une valeur réelle positive ou nulle. Cette vérification a déjà été discutée au paragraphe <a href="#_La_classe_[TaxAdminData]"><u><span style="color: #0563c1">lien</span></u></a> de la version 03 ;</li>
+  <li>ligne 23 : la méthode <b>[setFromJsonFile]</b> sert à initialiser les attributs de la classe <b>[TaxAdminData]</b> à partir d’un fichier jSON passé en paramètre. Il faut que les attributs du fichier jSON existent sous le même nom dans la classe ;
+  </li>
+  <li>ligne 25 : c’est la classe parent qui fait ce travail ;
+  </li>
+  <li>ligne 27 : on demande à la classe parent de vérifier que tous les attributs de la classe fille ont été initialisés ;
+  </li>
+  <li>lignes 29-42 : on vérifie localement que tous les attributs ont eu une valeur réelle positive ou nulle. Cette vérification a déjà été discutée au paragraphe <a href="#_La_classe_[TaxAdminData]"><u><span style="color: #0563c1">lien</span></u></a> de la version 03 ;
+  </li>
 </ul>
-<p><a id="refheadingtoc900683955410047"></a>
-<a id="toc42690724"></a>
+
+<p><a id="toc42689952"></a>
 <a id="toc42690338"></a>
-<a id="toc42689952"></a></p>
+<a id="toc42690724"></a>
+<a id="refheadingtoc900683955410047"></a></p>
 <h3 id="1333-la-couche-dao">13.3.3. La couche [dao]</h3>
 <p>Maintenant nous pouvons écrire le code qui va transférer les données du fichier texte <strong>[taxadmindata.json]</strong> dans les tables <strong>[tbtranches, tbconstantes]</strong> de la base MySQL <strong>[dbimpots-2019]</strong>. Nous adopterons l’architecture suivante :</p>
 <p><img src="images/10000000000005720000019D40CA363B.png" style="width:11.06cm;height:3.282cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005720000019D40CA363B.png" /></p>
@@ -2067,8 +2120,10 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 8 : la méthode <strong>[transferAdminData2Database]</strong> a pour rôle de stocker les données de l’administration fiscale dans une base de données ;</li>
+  <li>ligne 8 : la méthode <b>[transferAdminData2Database]</b> a pour rôle de stocker les données de l’administration fiscale dans une base de données ;
+  </li>
 </ul>
+
 <p>L’interface <strong>[InterfaceDao4TransferAdminData2Database]</strong> sera implémentée par la classe <strong>[DaoTransferAdminDataFromJsonFile2Database]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2140,23 +2195,38 @@
 <p><strong>Commentaires</strong></p>
 <p>Nous utilisons ici ce que nous avons appris dans le chapitre sur MySQL.</p>
 <ul>
-<li>ligne 7 : la classe <strong>[DaoTransferAdminDataFromJsonFile2Database]</strong> implémente l’interface <strong>[InterfaceDao4TransferAdminData2Database]</strong> ;</li>
-<li>ligne 9 : l’attribut <strong>[$database]</strong> est l’objet de type <strong>[Database]</strong> encapsulant les données du fichier <strong>[database.json]</strong> ;</li>
-<li>ligne 11 : l’attribut <strong>[$taxAdminData]</strong> est l’objet de type <strong>[TaxAdminData]</strong> encapsulant les données du fichier <strong>[taxadmindata.json]</strong> ;</li>
-<li>lignes 14-19 : le constructeur reçoit en paramètres les noms des fichiers <strong>[database.json, taxadmindata.json]</strong> ;</li>
-<li>ligne 16 : initialisation de l’attribut <strong>[$database]</strong> ;</li>
-<li>ligne 18 : initialisation de l’attribut <strong>[$taxAdminData]</strong> ;</li>
-<li>ligne 23 : on implémente l’unique méthode de l’interface <strong>[InterfaceDao4TransferAdminData2Database]</strong> ;</li>
-<li>lignes 26-38 : on remplit les tables <strong>[tbtranches, tbconstantes]</strong> en deux temps :<ul>
-<li>ligne 34 : on remplit d’abord la table <strong>[tbtranches]</strong>. Cela se fait au sein d’une transaction (lignes 32, 38). La méthode <strong>[fillTableTranches]</strong> (ligne 55) lance une exception dès que quelque chose se passe mal. Dans ce cas, l’exécution se poursuit avec le catch / finally des lignes 39-50 ;</li>
-<li>ligne 36 : on remplit la table <strong>[tbconstantes]</strong> de la même façon à l’aide de la méthode <strong>[fillTableConstantes]</strong> (ligne 60) ;</li>
+  <li>ligne 7 : la classe <b>[DaoTransferAdminDataFromJsonFile2Database]</b> implémente l’interface <b>[InterfaceDao4TransferAdminData2Database]</b> ;
+  </li>
+  <li>ligne 9 : l’attribut <b>[$database]</b> est l’objet de type <b>[Database]</b> encapsulant les données du fichier <b>[database.json]</b> ;
+  </li>
+  <li>ligne 11 : l’attribut <b>[$taxAdminData]</b> est l’objet de type <b>[TaxAdminData]</b> encapsulant les données du fichier <b>[taxadmindata.json]</b> ;
+  </li>
+  <li>lignes 14-19 : le constructeur reçoit en paramètres les noms des fichiers <b>[database.json, taxadmindata.json]</b> ;
+  </li>
+  <li>ligne 16 : initialisation de l’attribut <b>[$database]</b> ;
+  </li>
+  <li>ligne 18 : initialisation de l’attribut <b>[$taxAdminData]</b> ;
+  </li>
+  <li>ligne 23 : on implémente l’unique méthode de l’interface <b>[InterfaceDao4TransferAdminData2Database]</b> ;
+  </li>
+  <li>lignes 26-38 : on remplit les tables <b>[tbtranches, tbconstantes]</b> en deux temps :
+    <ul>
+      <li>ligne 34 : on remplit d’abord la table <b>[tbtranches]</b>. Cela se fait au sein d’une transaction (lignes 32, 38). La méthode <b>[fillTableTranches]</b> (ligne 55) lance une exception dès que quelque chose se passe mal. Dans ce cas, l’exécution se poursuit avec le catch / finally des lignes 39-50 ;
+      </li>
+      <li>ligne 36 : on remplit la table <b>[tbconstantes]</b> de la même façon à l’aide de la méthode <b>[fillTableConstantes]</b> (ligne 60) ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 39-47 : cas où une exception a été lancée par le code ;
+  </li>
+  <li>lignes 41-44 : si une transaction existe, elle est annulée ;
+  </li>
+  <li>ligne 46 : on lance une exception de type <b>[ExceptionImpots]</b> avec le message de l’exception originelle qui est, elle, d’un type quelconque ;
+  </li>
+  <li>lignes 47-50 : dans la clause <b>[finally]</b>, la connexion est fermée ;
+  </li>
 </ul>
-</li>
-<li>lignes 39-47 : cas où une exception a été lancée par le code ;</li>
-<li>lignes 41-44 : si une transaction existe, elle est annulée ;</li>
-<li>ligne 46 : on lance une exception de type <strong>[ExceptionImpots]</strong> avec le message de l’exception originelle qui est, elle, d’un type quelconque ;</li>
-<li>lignes 47-50 : dans la clause <strong>[finally]</strong>, la connexion est fermée ;</li>
-</ul>
+
 <p>Le code de la méthode <strong>[fillTableTranches]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">private </span><span style="font-weight:bold;color:#7f0055">function</span> fillTableTranches($connexion): <span style="font-weight:bold;color:#7f0055">void </span>{</span>
@@ -2186,12 +2256,18 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 1 : la méthode <strong>[fillTableTranches]</strong> reçoit en paramètre une connexion ouverte. On sait de plus qu’une transaction a démarré au sein de cette connexion ;</li>
-<li>lignes 5-7 : les valeurs à insérer dans la table sont fournies par l’attribut <strong>[$taxAdminData]</strong> ;</li>
-<li>lignes 9-10 : on supprime le contenu actuel de la table <strong>[tbtranches]</strong> ;</li>
-<li>lignes 12-15 : on prépare l’insertion de lignes dans la table. On utilise ici les noms des colonnes fournis par l’attribut <strong>[$database]</strong> ;</li>
-<li>lignes 17-22 : on exécute autant de fois que nécessaire, l’instruction d’insertion préparée aux lignes 12-15 ;</li>
+  <li>ligne 1 : la méthode <b>[fillTableTranches]</b> reçoit en paramètre une connexion ouverte. On sait de plus qu’une transaction a démarré au sein de cette connexion ;
+  </li>
+  <li>lignes 5-7 : les valeurs à insérer dans la table sont fournies par l’attribut <b>[$taxAdminData]</b> ;
+  </li>
+  <li>lignes 9-10 : on supprime le contenu actuel de la table <b>[tbtranches]</b> ;
+  </li>
+  <li>lignes 12-15 : on prépare l’insertion de lignes dans la table. On utilise ici les noms des colonnes fournis par l’attribut <b>[$database]</b> ;
+  </li>
+  <li>lignes 17-22 : on exécute autant de fois que nécessaire, l’instruction d’insertion préparée aux lignes 12-15 ;
+  </li>
 </ul>
+
 <p>Le code de la méthode <strong>[fillTableConstantes]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">private </span><span style="font-weight:bold;color:#7f0055">function</span> fillTableConstantes($connexion): <span style="font-weight:bold;color:#7f0055">void </span>{</span>
@@ -2243,15 +2319,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 1 : la méthode <strong>[fillTableConstantes]</strong> reçoit en paramètre une connexion ouverte. On sait de plus qu’une transaction a démarré au sein de cette connexion ;</li>
-<li>lignes 5-6 : la table <strong>[tbconstantes]</strong> est vidée ;</li>
-<li>lignes 9-31 : préparation de l’ordre SQL d’insertion. Il est complexe du fait qu’il y a 10 colonnes à initialiser dans cette opération d’insertion et qu’il faut aller chercher les noms des colonnes dans l’attribut <strong>[$database]</strong> ;</li>
-<li>ligne 33-44 : exécution de l’ordre d’insertion. Il n’y a qu’une ligne à insérer. Là encore, le code est rendu complexe du fait qu’il faille chercher les valeurs à insérer dans l’attribut <strong>[$taxAdminData]</strong> ;</li>
+  <li>ligne 1 : la méthode <b>[fillTableConstantes]</b> reçoit en paramètre une connexion ouverte. On sait de plus qu’une transaction a démarré au sein de cette connexion ;
+  </li>
+  <li>lignes 5-6 : la table <b>[tbconstantes]</b> est vidée ;
+  </li>
+  <li>lignes 9-31 : préparation de l’ordre SQL d’insertion. Il est complexe du fait qu’il y a 10 colonnes à initialiser dans cette opération d’insertion et qu’il faut aller chercher les noms des colonnes dans l’attribut <b>[$database]</b> ;
+  </li>
+  <li>ligne 33-44 : exécution de l’ordre d’insertion. Il n’y a qu’une ligne à insérer. Là encore, le code est rendu complexe du fait qu’il faille chercher les valeurs à insérer dans l’attribut <b>[$taxAdminData]</b> ;
+  </li>
 </ul>
-<p><a id="refheadingtoc900703955410047"></a>
-<a id="toc42690725"></a>
+
+<p><a id="toc42689953"></a>
 <a id="toc42690339"></a>
-<a id="toc42689953"></a></p>
+<a id="toc42690725"></a>
+<a id="refheadingtoc900703955410047"></a></p>
 <h3 id="1334-le-script-principal">13.3.4. Le script principal</h3>
 <p><img src="images/1000000000000555000001880BB7E59F.png" style="width:10.831cm;height:3.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000555000001880BB7E59F.png" /></p>
 <p><img src="images/10000000000003380000014ACA8CBABD.png" style="width:7.631cm;height:3.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003380000014ACA8CBABD.png" /></p>
@@ -2300,42 +2381,49 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 12-21 : chargement des classes et interfaces de l’application ;</li>
-<li>lignes 24-24 : les deux fichiers jSON ;</li>
-<li>ligne 30 : on instancie la couche <strong>[dao]</strong> en passant au constructeur les deux fichiers jSON ;</li>
-<li>ligne 32 : on opère le transfert de données ;</li>
+  <li>lignes 12-21 : chargement des classes et interfaces de l’application ;
+  </li>
+  <li>lignes 24-24 : les deux fichiers jSON ;
+  </li>
+  <li>ligne 30 : on instancie la couche <b>[dao]</b> en passant au constructeur les deux fichiers jSON ;
+  </li>
+  <li>ligne 32 : on opère le transfert de données ;
+  </li>
 </ul>
+
 <p>Lorsque nous exécutons ce code, nous obtenons le résultat suivant dans la base de données :</p>
 <p><img src="images/10000000000003FB0000032EFA4546A4.png" style="width:8.09cm;height:6.46cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003FB0000032EFA4546A4.png" /></p>
 <p>Colonne <strong>[3]</strong>, on voit les valeurs attribuées par MySQL à la clé primaire <strong>[id]</strong>. La numérotation démarre à 1. La copie d’écran ci-dessus a été obtenue après plusieurs exécutions du script.</p>
 <p><img src="images/100000000000086100000260B490BAA4.png" style="width:17.031cm;height:4.83cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000086100000260B490BAA4.png" /></p>
 <p><img src="images/10000000000008660000025EBE57E56F.png" style="width:17.07cm;height:4.811cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008660000025EBE57E56F.png" /></p>
 <p><a id="calculdelimpot"></a>
-<a id="toc42690726"></a>
-<a id="toc42690340"></a>
+<a id="refheadingtoc900723955410047"></a>
 <a id="toc42689954"></a>
-<a id="refheadingtoc900723955410047"></a></p>
+<a id="toc42690340"></a>
+<a id="toc42690726"></a></p>
 <h2 id="134-calcul-de-limpot">13.4. Calcul de l’impôt</h2>
 <p><img src="images/10000000000002AC000001B237376769.png" style="width:5.43cm;height:3.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AC000001B237376769.png" /></p>
 <p><a id="architecture"></a>
-<a id="toc42690727"></a>
-<a id="toc42690341"></a>
+<a id="refheading399281881943603"></a>
 <a id="toc42689955"></a>
-<a id="refheading399281881943603"></a></p>
+<a id="toc42690341"></a>
+<a id="toc42690727"></a></p>
 <h3 id="1341-architecture">13.4.1. Architecture</h3>
 <p>La version 04 de l’application de calcul d’impôt utilisait une architecture en couches :</p>
 <p><img src="images/1000000000000550000001085618D9E1.png" style="width:10.801cm;height:2.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000550000001085618D9E1.png" /></p>
 <p><span style="color: #000000">La couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> implémente une interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">. Nous avons construit une classe implémentant cette interface :</span></p>
 <ul>
-<li><strong><span style="color: #000000">[</span></strong><strong><span style="color: #000000">DaoImpotsWithTaxAdminDataInJsonFile</span></strong><strong><span style="color: #000000">]</span></strong><span style="color: #000000"> qui allait chercher les données fiscales dans un fichier jSON. C’était la version 04 ;</span></li>
+  <li><b><span style="color: #000000">[</span></b><b><span style="color: #000000">DaoImpotsWithTaxAdminDataInJsonFile</span></b><b><span style="color: #000000">]</span></b><span style="color: #000000"> qui allait chercher les données fiscales dans un fichier jSON. C’était la version 04 ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Nous allons implémenter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> par une nouvelle classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> qui ira chercher les données de l’administration fiscale dans une base de données MySQL. La couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">, comme précédemment, écrira les résultats et les erreurs dans des fichiers texte et trouvera les données des contribuables également dans un fichier texte. Seulement cette fois-ci, ces fichiers texte seront des fichiers jSON. Par ailleurs, nous savons que si nous continuons à respecter l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">, la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> n’aura pas à être modifiée.</span></p>
 <p><img src="images/1000000000000695000001A3EDBCE526.png" style="width:13.371cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000695000001A3EDBCE526.png" /></p>
 <p><a id="lentitetaxpayerdata"></a>
-<a id="toc42690728"></a>
-<a id="toc42690342"></a>
+<a id="refheadingtoc1911673931965946"></a>
 <a id="toc42689956"></a>
-<a id="refheadingtoc1911673931965946"></a></p>
+<a id="toc42690342"></a>
+<a id="toc42690728"></a></p>
 <h3 id="1342-lentite-taxpayerdata">13.4.2. L’entité [TaxPayerData]</h3>
 <p><img src="images/10000000000005650000022681C57D11.png" style="width:10.962cm;height:4.37cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005650000022681C57D11.png" /></p>
 <p>La classe <strong>[TaxPayerData]</strong> sert à encapsuler dans une classe les données du fichier jSON <strong>[taxpayersdata.json]</strong> suivant :</p>
@@ -2431,18 +2519,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 7 : la classe <strong>[TaxPayerData]</strong> étend la classe <strong>[BaseEntity]</strong>. Les méthodes de sa classe parent étant suffisantes, la classe <strong>[TaxPayerData]</strong> n’en définit pas elle-même. On rappelle que les attributs de la classe <strong>[TaxPayerData]</strong> sont identiques à ceux du fichier jSON <strong>[taxpayersdata.json]</strong> ;</li>
+  <li>ligne 7 : la classe <b>[TaxPayerData]</b> étend la classe <b>[BaseEntity]</b>. Les méthodes de sa classe parent étant suffisantes, la classe <b>[TaxPayerData]</b> n’en définit pas elle-même. On rappelle que les attributs de la classe <b>[TaxPayerData]</b> sont identiques à ceux du fichier jSON <b>[taxpayersdata.json]</b> ;
+  </li>
 </ul>
-<p><a id="refheadingtoc900743955410047"></a>
-<a id="toc42690729"></a>
+
+<p><a id="toc42689957"></a>
 <a id="toc42690343"></a>
-<a id="toc42689957"></a></p>
+<a id="toc42690729"></a>
+<a id="refheadingtoc900743955410047"></a></p>
 <h3 id="1343-la-couche-dao">13.4.3. La couche [dao]</h3>
 <p><a id="letraittraitdao"></a>
-<a id="toc42690730"></a>
-<a id="toc42690344"></a>
+<a id="refheadingtoc1932293931965946"></a>
 <a id="toc42689958"></a>
-<a id="refheadingtoc1932293931965946"></a></p>
+<a id="toc42690344"></a>
+<a id="toc42690730"></a></p>
 <h4 id="13431-le-trait-traitdao">13.4.3.1. Le trait [TraitDao]</h4>
 <p>Le trait <strong>[TraitDao]</strong> implémente une partie de l’interface <strong>[InterfaceDao]</strong>. Rappelons celle-ci :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2576,40 +2666,64 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li><strong>[TraitDao]</strong> implémente les méthodes <strong>[getTaxPayersData]</strong> (ligne 9) et <strong>[saveResults]</strong> (ligne 86) de l’interface <strong>[InterfaceDao]</strong> ;</li>
-<li>ligne 9 : la méthode <strong>[getTaxPayersData]</strong> reçoit en paramètres :<ul>
-<li><strong>[$taxPayersFilename]</strong> : le nom du fichier jSON des données des contribuables <strong>[taxpayersdata.json]</strong> ;</li>
-<li><strong>[$errorsFilename]</strong> : le nom du fichier jSON des erreurs <strong>[errors.json]</strong> ;</li>
+  <li><b>[TraitDao]</b> implémente les méthodes <b>[getTaxPayersData]</b> (ligne 9) et <b>[saveResults]</b> (ligne 86) de l’interface <b>[InterfaceDao]</b> ;
+  </li>
+  <li>ligne 9 : la méthode <b>[getTaxPayersData]</b> reçoit en paramètres :
+    <ul>
+      <li><b>[$taxPayersFilename]</b> : le nom du fichier jSON des données des contribuables <b>[taxpayersdata.json]</b> ;
+      </li>
+      <li><b>[$errorsFilename]</b> : le nom du fichier jSON des erreurs <b>[errors.json]</b> ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 11-13 : le contenu du fichier jSON des données des contribuables est transféré dans un tableau associatif <b>[$arrayOfAttributes]</b>. Si le fichier jSON s’avère inexploitable, une exception <b>[ExceptionImpots]</b> a été lancée ;
+  </li>
+  <li>ligne 15 : le tableau <b>[$taxPayersData]</b> va contenir  les données des contribuables encapsulées dans des objets de type <b>[TaxPayerData]</b> ;
+  </li>
+  <li>ligne 17 : on va cumuler les erreurs dans le tableau <b>[$errors]</b> ;
+  </li>
+  <li>lignes 99-33 : construction du tableau <b>[$taxPayersData]</b> ;
+  </li>
+  <li>ligne 22 : avant d’être encapsulées dans un type <b>[TaxPayerData]</b>, les données sont vérifiées. La méthode <b>[check]</b> rend :
+    <ul>
+      <li>un tableau <b>[‘erreurs’=&gt;[…]</b>] avec les attributs erronés si les données sont incorrectes ;
+      </li>
+      <li>un tableau vide si les données sont correctes ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 25 : cas où les données sont valides. Un nouvel objet <b>[TaxPayerData]</b> est construit et ajouté au tableau <b>[$taxPayersData]</b> ;
+  </li>
+  <li>lignes 26-30 : cas où les données sont invalides. On note dans l’erreur, le n° de l’objet <b>[TaxPayerData]</b> erroné dans le fichier jSON pour que l’utilisateur puisse le retrouver, puis l’erreur est ajoutée au tableau <b>[$errors]</b> ;
+  </li>
+  <li>lignes 35-39 : on enregistre les erreurs rencontrées dans le fichier jSON <b>[$errorsFilename]</b> passé en paramètre, ligne 9 ;
+  </li>
+  <li>ligne 41 : on rend le tableau des objets <b>[TaxPayerData]</b> construits : c’était l’objectif de la méthode ;
+  </li>
+  <li>lignes 44-83 : la méthode privée <b>[check]</b> vérifie la validité des paramètres <b>[marié, enfants, salaire]</b> du tableau <b>[$attributesOfTaxPayerData]</b> passé en paramètre ligne 44. S’il y a des attributs erronés, elle les cumule dans le tableau <b>[$attributes]</b> (lignes 47, 53, 60, 70) sous la forme d’un tableau <b>[‘attribut erroné’=&gt; valeur de l’attribut erroné]</b> ;
+  </li>
+  <li>ligne 78 : s’il y a des erreurs, on rend un tableau <b>[‘erreurs’=&gt;$attributes]</b> ;
+  </li>
+  <li>ligne 81 : s’il n’y a pas d’erreurs, on rend un tableau d’erreurs vide ;
+  </li>
+  <li>lignes 86-93 : implémentation de la méthode <b>[saveResults]</b> de l’interface <b>[InterfaceDao]</b> ;
+  </li>
+  <li>ligne 90 : on construit la chaîne jSON à enregistrer dans le fichier jSON <b><span style="color: #000000">[$resultsFilename]</span></b><span style="color: #000000"> passé en paramètre ligne 86. on doit construire la chaîne jSON d’un tableau :</span>
+    <ul>
+      <li><span style="color: #000000">chaque élément du tableau est séparé du suivant par une virgule et un saut de ligne ;</span>
+      </li>
+      <li><span style="color: #000000">l’ensemble du tableau est entouré de crochets </span><span style="color: #000000">[]</span><span style="color: #000000"> ;</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">ligne 92 : la chaîne jSON est enregistrée dans le fichier jSON </span><b><span style="color: #000000">[$resultsFilename]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
-</li>
-<li>lignes 11-13 : le contenu du fichier jSON des données des contribuables est transféré dans un tableau associatif <strong>[$arrayOfAttributes]</strong>. Si le fichier jSON s’avère inexploitable, une exception <strong>[ExceptionImpots]</strong> a été lancée ;</li>
-<li>ligne 15 : le tableau <strong>[$taxPayersData]</strong> va contenir  les données des contribuables encapsulées dans des objets de type <strong>[TaxPayerData]</strong> ;</li>
-<li>ligne 17 : on va cumuler les erreurs dans le tableau <strong>[$errors]</strong> ;</li>
-<li>lignes 99-33 : construction du tableau <strong>[$taxPayersData]</strong> ;</li>
-<li>ligne 22 : avant d’être encapsulées dans un type <strong>[TaxPayerData]</strong>, les données sont vérifiées. La méthode <strong>[check]</strong> rend :<ul>
-<li>un tableau <strong>[‘erreurs’=&gt;[…]</strong>] avec les attributs erronés si les données sont incorrectes ;</li>
-<li>un tableau vide si les données sont correctes ;</li>
-</ul>
-</li>
-<li>ligne 25 : cas où les données sont valides. Un nouvel objet <strong>[TaxPayerData]</strong> est construit et ajouté au tableau <strong>[$taxPayersData]</strong> ;</li>
-<li>lignes 26-30 : cas où les données sont invalides. On note dans l’erreur, le n° de l’objet <strong>[TaxPayerData]</strong> erroné dans le fichier jSON pour que l’utilisateur puisse le retrouver, puis l’erreur est ajoutée au tableau <strong>[$errors]</strong> ;</li>
-<li>lignes 35-39 : on enregistre les erreurs rencontrées dans le fichier jSON <strong>[$errorsFilename]</strong> passé en paramètre, ligne 9 ;</li>
-<li>ligne 41 : on rend le tableau des objets <strong>[TaxPayerData]</strong> construits : c’était l’objectif de la méthode ;</li>
-<li>lignes 44-83 : la méthode privée <strong>[check]</strong> vérifie la validité des paramètres <strong>[marié, enfants, salaire]</strong> du tableau <strong>[$attributesOfTaxPayerData]</strong> passé en paramètre ligne 44. S’il y a des attributs erronés, elle les cumule dans le tableau <strong>[$attributes]</strong> (lignes 47, 53, 60, 70) sous la forme d’un tableau <strong>[‘attribut erroné’=&gt; valeur de l’attribut erroné]</strong> ;</li>
-<li>ligne 78 : s’il y a des erreurs, on rend un tableau <strong>[‘erreurs’=&gt;$attributes]</strong> ;</li>
-<li>ligne 81 : s’il n’y a pas d’erreurs, on rend un tableau d’erreurs vide ;</li>
-<li>lignes 86-93 : implémentation de la méthode <strong>[saveResults]</strong> de l’interface <strong>[InterfaceDao]</strong> ;</li>
-<li>ligne 90 : on construit la chaîne jSON à enregistrer dans le fichier jSON <strong><span style="color: #000000">[$resultsFilename]</span></strong><span style="color: #000000"> passé en paramètre ligne 86. on doit construire la chaîne jSON d’un tableau :</span><ul>
-<li><span style="color: #000000">chaque élément du tableau est séparé du suivant par une virgule et un saut de ligne ;</span></li>
-<li><span style="color: #000000">l’ensemble du tableau est entouré de crochets </span><span style="color: #000000">[]</span><span style="color: #000000"> ;</span></li>
-</ul>
-</li>
-<li><span style="color: #000000">ligne 92 : la chaîne jSON est enregistrée dans le fichier jSON </span><strong><span style="color: #000000">[$resultsFilename]</span></strong><span style="color: #000000"> ;</span></li>
-</ul>
-<p><a id="refheadingtoc185661971629160"></a>
-<a id="toc42690731"></a>
+
+<p><a id="toc42689959"></a>
 <a id="toc42690345"></a>
-<a id="toc42689959"></a></p>
+<a id="toc42690731"></a>
+<a id="refheadingtoc185661971629160"></a></p>
 <h4 id="13432-la-classe-daoimpotswithtaxadmindataindatabase">13.4.3.2. La classe [DaoImpotsWithTaxAdminDataInDatabase]</h4>
 <p><span style="color: #000000">La classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> implémente l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> de la façon suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2684,21 +2798,36 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 4 : on garde l’espace de noms déjà utilisé pour les autres implémentations de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 7 : la classe </span><strong><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></strong><span style="color: #000000"> implémente l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 9 : on importe le trait </span><strong><span style="color: #000000">[TraitDao]</span></strong><span style="color: #000000">. On sait que ce trait implémente une partie de l’interface. La seule méthode qui reste à implémenter est la méthode </span><strong><span style="color: #000000">[getTaxAdminData]</span></strong><span style="color: #000000"> des lignes 62-64. Cette méthode se contente de rendre l’attribut privé </span><strong><span style="color: #000000">[taxAdminData]</span></strong><span style="color: #000000"> de la ligne 11. On en déduit que le constructeur devra initialiser cet attribut. C’est son unique rôle ;</span></li>
-<li><span style="color: #000000">ligne 16 : le constructeur reçoit comme unique paramètre </span><strong><span style="color: #000000">[$databaseFilename]</span></strong><span style="color: #000000"> qui est le nom du fichier jSON </span><strong><span style="color: #000000">[database.json]</span></strong><span style="color: #000000"> qui définit la base de données MySQL </span><strong><span style="color: #000000">[dbimpots-2019]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 18 : le fichier jSON </span><strong><span style="color: #000000">[$databaseFilename]</span></strong><span style="color: #000000"> est utilisé pour créer un objet de type </span><strong><span style="color: #000000">[Database]</span></strong><span style="color: #000000"> construit et mémorisé dans l’attribut </span><strong><span style="color: #000000">[$database]</span></strong><span style="color: #000000"> de la ligne 13. Si le fichier jSON n’a pu être exploité correctement, une exception </span><strong><span style="color: #000000">[ExceptionImpots]</span></strong><span style="color: #000000"> a été lancée ;</span></li>
-<li><span style="color: #000000">ligne 20 : on crée l’objet </span><strong><span style="color: #000000">[$this→taxAdminData]</span></strong><span style="color: #000000"> que le constructeur doit initialiser ;</span></li>
-<li><span style="color: #000000">lignes 22-26 : on ouvre la connexion à la base de données. Notez la notation </span><strong><span style="color: #000000">[\PDO]</span></strong><span style="color: #000000"> pour désigner la classe </span><strong><span style="color: #000000">[PDO]</span></strong><span style="color: #000000"> de PHP. En effet, comme on est dans l’espace de noms </span><strong><span style="color: #000000">[Application]</span></strong><span style="color: #000000">, si on écrivait simplement </span><strong><span style="color: #000000">[PDO]</span></strong><span style="color: #000000">, ce nom relatif serait préfixé par l’espace de noms courant et donnerait donc la classe </span><strong><span style="color: #000000">[Application\PDO]</span></strong><span style="color: #000000"> qui n’existe pas ;</span></li>
-<li><span style="color: #000000">ligne 28 : lors d’une erreur, le SGBD lancera une \PDOException (ligne 37) ;</span></li>
-<li><span style="color: #000000">ligne 30 : on démarre une transaction. Celle-ci n’est pas vraiment utile car seuls deux ordres SQL vont être exécutés, ordres qui ne modifient pas la base. On le fait néanmoins pour s’isoler des autres utilisateurs de la base ;</span></li>
-<li><span style="color: #000000">ligne 32 : la lecture de la table des tranches d’imposition </span><strong><span style="color: #000000">[tbtranches]</span></strong><span style="color: #000000"> est faite par la méthode privée </span><strong><span style="color: #000000">[getTranches]</span></strong><span style="color: #000000"> de la ligne 52 ;</span></li>
-<li><span style="color: #000000">ligne 34 : la lecture de la table des constantes de calcul </span><strong><span style="color: #000000">[tbconstantes]</span></strong><span style="color: #000000"> est faite par la méthode privée </span><strong><span style="color: #000000">[getConstantes]</span></strong><span style="color: #000000"> de la ligne 57 ;</span></li>
-<li><span style="color: #000000">ligne 36 : si on arrive à cette ligne c’est que tout s’est bien passé. On valide donc la transaction;</span></li>
-<li><span style="color: #000000">lignes 37-42 :  si on arrive là c’est qu’une exception s’est produite. On invalide donc la transaction s’il y en avait une en cours (lignes 39-42). Ligne 44, pour avoir des exceptions homogènes, on relance le message de l’exception reçue sous la forme cette fois d’une exception de type </span><strong><span style="color: #000000">[ExceptionImpots]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 45-48 : dans tous les cas (exception ou pas) on ferme la connexion ;</span></li>
+  <li><span style="color: #000000">ligne 4 : on garde l’espace de noms déjà utilisé pour les autres implémentations de la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 7 : la classe </span><b><span style="color: #000000">[DaoImpotsWithTaxAdminDataInDatabase]</span></b><span style="color: #000000"> implémente l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 9 : on importe le trait </span><b><span style="color: #000000">[TraitDao]</span></b><span style="color: #000000">. On sait que ce trait implémente une partie de l’interface. La seule méthode qui reste à implémenter est la méthode </span><b><span style="color: #000000">[getTaxAdminData]</span></b><span style="color: #000000"> des lignes 62-64. Cette méthode se contente de rendre l’attribut privé </span><b><span style="color: #000000">[taxAdminData]</span></b><span style="color: #000000"> de la ligne 11. On en déduit que le constructeur devra initialiser cet attribut. C’est son unique rôle ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 16 : le constructeur reçoit comme unique paramètre </span><b><span style="color: #000000">[$databaseFilename]</span></b><span style="color: #000000"> qui est le nom du fichier jSON </span><b><span style="color: #000000">[database.json]</span></b><span style="color: #000000"> qui définit la base de données MySQL </span><b><span style="color: #000000">[dbimpots-2019]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 18 : le fichier jSON </span><b><span style="color: #000000">[$databaseFilename]</span></b><span style="color: #000000"> est utilisé pour créer un objet de type </span><b><span style="color: #000000">[Database]</span></b><span style="color: #000000"> construit et mémorisé dans l’attribut </span><b><span style="color: #000000">[$database]</span></b><span style="color: #000000"> de la ligne 13. Si le fichier jSON n’a pu être exploité correctement, une exception </span><b><span style="color: #000000">[ExceptionImpots]</span></b><span style="color: #000000"> a été lancée ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 20 : on crée l’objet </span><b><span style="color: #000000">[$this→taxAdminData]</span></b><span style="color: #000000"> que le constructeur doit initialiser ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 22-26 : on ouvre la connexion à la base de données. Notez la notation </span><b><span style="color: #000000">[\PDO]</span></b><span style="color: #000000"> pour désigner la classe </span><b><span style="color: #000000">[PDO]</span></b><span style="color: #000000"> de PHP. En effet, comme on est dans l’espace de noms </span><b><span style="color: #000000">[Application]</span></b><span style="color: #000000">, si on écrivait simplement </span><b><span style="color: #000000">[PDO]</span></b><span style="color: #000000">, ce nom relatif serait préfixé par l’espace de noms courant et donnerait donc la classe </span><b><span style="color: #000000">[Application\PDO]</span></b><span style="color: #000000"> qui n’existe pas ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 28 : lors d’une erreur, le SGBD lancera une \PDOException (ligne 37) ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 30 : on démarre une transaction. Celle-ci n’est pas vraiment utile car seuls deux ordres SQL vont être exécutés, ordres qui ne modifient pas la base. On le fait néanmoins pour s’isoler des autres utilisateurs de la base ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 32 : la lecture de la table des tranches d’imposition </span><b><span style="color: #000000">[tbtranches]</span></b><span style="color: #000000"> est faite par la méthode privée </span><b><span style="color: #000000">[getTranches]</span></b><span style="color: #000000"> de la ligne 52 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 34 : la lecture de la table des constantes de calcul </span><b><span style="color: #000000">[tbconstantes]</span></b><span style="color: #000000"> est faite par la méthode privée </span><b><span style="color: #000000">[getConstantes]</span></b><span style="color: #000000"> de la ligne 57 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 36 : si on arrive à cette ligne c’est que tout s’est bien passé. On valide donc la transaction;</span>
+  </li>
+  <li><span style="color: #000000">lignes 37-42 :  si on arrive là c’est qu’une exception s’est produite. On invalide donc la transaction s’il y en avait une en cours (lignes 39-42). Ligne 44, pour avoir des exceptions homogènes, on relance le message de l’exception reçue sous la forme cette fois d’une exception de type </span><b><span style="color: #000000">[ExceptionImpots]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 45-48 : dans tous les cas (exception ou pas) on ferme la connexion ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000"> La méthode </span><strong><span style="color: #000000">[getTranches]</span></strong><span style="color: #000000"> est la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">private </span><span style="font-weight:bold;color:#7f0055">function</span> getTranches($connexion): <span style="font-weight:bold;color:#7f0055">void </span>{</span>
@@ -2734,12 +2863,18 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 1 : la méthode reçoit en paramètre </span><strong><span style="color: #000000">[$connexion]</span></strong><span style="color: #000000"> qui est une connexion ouverte et dans laquelle une transaction est en cours ;</span></li>
-<li><span style="color: #000000">lignes 2-4 : on crée deux raccourcis pour éviter d’avoir à écrire </span><strong><span style="color: #000000">[$this-&gt;database]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[$taxAdminData = $this-&gt;taxAdminData]</span></strong><span style="color: #000000"> dans tout le code. On a là des copies de références d’objets et non pas une copie des objets eux-mêmes ;</span></li>
-<li><span style="color: #000000">ligne 6-10 : l’ordre SELECT est préparé, puis exécuté en ligne 12 ;</span></li>
-<li><span style="color: #000000">lignes 13-22 : le résultat du SELECT est exploité. Les informations reçues sont cumulées dans trois tableaux </span><strong><span style="color: #000000">[limites, coeffR, coeffN]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 24-28 : les trois tableaux sont utilisés pour initialiser l’attribut </span><strong><span style="color: #000000">[$this-&gt;taxAdminData]</span></strong><span style="color: #000000"> de la classe ;</span></li>
+  <li><span style="color: #000000">ligne 1 : la méthode reçoit en paramètre </span><b><span style="color: #000000">[$connexion]</span></b><span style="color: #000000"> qui est une connexion ouverte et dans laquelle une transaction est en cours ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 2-4 : on crée deux raccourcis pour éviter d’avoir à écrire </span><b><span style="color: #000000">[$this-&gt;database]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[$taxAdminData = $this-&gt;taxAdminData]</span></b><span style="color: #000000"> dans tout le code. On a là des copies de références d’objets et non pas une copie des objets eux-mêmes ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 6-10 : l’ordre SELECT est préparé, puis exécuté en ligne 12 ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 13-22 : le résultat du SELECT est exploité. Les informations reçues sont cumulées dans trois tableaux </span><b><span style="color: #000000">[limites, coeffR, coeffN]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 24-28 : les trois tableaux sont utilisés pour initialiser l’attribut </span><b><span style="color: #000000">[$this-&gt;taxAdminData]</span></b><span style="color: #000000"> de la classe ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">La méthode privée </span><strong><span style="color: #000000">[getConstantes]</span></strong><span style="color: #000000"> est la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">private </span><span style="font-weight:bold;color:#7f0055">function</span> getConstantes($connexion): <span style="font-weight:bold;color:#7f0055">void </span>{</span>
@@ -2776,23 +2911,31 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 1 : la méthode reçoit en paramètre </span><strong><span style="color: #000000">[$connexion]</span></strong><span style="color: #000000"> qui est une connexion ouverte et dans laquelle une transaction est en cours ;</span></li>
-<li><span style="color: #000000">lignes 2-4 : on crée deux raccourcis pour éviter d’avoir à écrire </span><strong><span style="color: #000000">[$this-&gt;database]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[$taxAdminData = $this-&gt;taxAdminData]</span></strong><span style="color: #000000"> dans tout le code. On a là des copies de références d’objets et non pas une copie des objets eux-mêmes ;</span></li>
-<li><span style="color: #000000">ligne 6-15 : l’ordre SELECT est préparé, puis exécuté en ligne 15 ;</span></li>
-<li><span style="color: #000000">lignes 17-29 : le résultat du SELECT est exploité. Les informations récupérées sont utilisées pour initialiser l’attribut </span><strong><span style="color: #000000">[$this-&gt;taxAdminData]</span></strong><span style="color: #000000"> de la classe ;</span></li>
+  <li><span style="color: #000000">ligne 1 : la méthode reçoit en paramètre </span><b><span style="color: #000000">[$connexion]</span></b><span style="color: #000000"> qui est une connexion ouverte et dans laquelle une transaction est en cours ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 2-4 : on crée deux raccourcis pour éviter d’avoir à écrire </span><b><span style="color: #000000">[$this-&gt;database]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[$taxAdminData = $this-&gt;taxAdminData]</span></b><span style="color: #000000"> dans tout le code. On a là des copies de références d’objets et non pas une copie des objets eux-mêmes ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 6-15 : l’ordre SELECT est préparé, puis exécuté en ligne 15 ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 17-29 : le résultat du SELECT est exploité. Les informations récupérées sont utilisées pour initialiser l’attribut </span><b><span style="color: #000000">[$this-&gt;taxAdminData]</span></b><span style="color: #000000"> de la classe ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Note</span></strong><span style="color: #000000"> : on remarquera que la classe ne dépend pas du SGBD MySQL. C’est le code appelant qui fixe le SGBD utilisé via le DSN de la base de données.</span></p>
 <p><a id="lacouchemetier"></a>
-<a id="toc42690732"></a>
-<a id="toc42690346"></a>
+<a id="refheadingtoc1882293931965946"></a>
 <a id="toc42689960"></a>
-<a id="refheadingtoc1882293931965946"></a></p>
+<a id="toc42690346"></a>
+<a id="toc42690732"></a></p>
 <h3 id="1344-la-couche-metier">13.4.4. La couche [métier]</h3>
 <p><img src="images/10000000000006B00000018B31BDA50D.png" style="width:13.592cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B00000018B31BDA50D.png" /></p>
 <ul>
-<li><span style="color: #000000">nous venons d’implémenter la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> (3) ;</span></li>
-<li><span style="color: #000000">parce que nous avons respecté l’interface </span><strong><span style="color: #000000">[InterfaceDao]</span></strong><span style="color: #000000">, la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> (2) peut en théorie rester inchangée. Cependant, nous n’avons pas seulement modifié la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000">. Nous avons également modifié les entités qui elles sont partagées par toutes les couches ;</span></li>
+  <li><span style="color: #000000">nous venons d’implémenter la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> (3) ;</span>
+  </li>
+  <li><span style="color: #000000">parce que nous avons respecté l’interface </span><b><span style="color: #000000">[InterfaceDao]</span></b><span style="color: #000000">, la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> (2) peut en théorie rester inchangée. Cependant, nous n’avons pas seulement modifié la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000">. Nous avons également modifié les entités qui elles sont partagées par toutes les couches ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">La couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> implémente l’interface </span><strong><span style="color: #000000">[InterfaceMetier]</span></strong><span style="color: #000000"> suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2811,8 +2954,10 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">ligne 12 : la méthode </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> utilise désormais le fichier jSON </span><strong><span style="color: #000000">[$taxPayersFileName]</span></strong><span style="color: #000000"> alors que dans la version 04, c’était un fichier texte basique. ;</span></li>
+  <li><span style="color: #000000">ligne 12 : la méthode </span><b><span style="color: #000000">[executeBatchImpots]</span></b><span style="color: #000000"> utilise désormais le fichier jSON </span><b><span style="color: #000000">[$taxPayersFileName]</span></b><span style="color: #000000"> alors que dans la version 04, c’était un fichier texte basique. ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Dans la version 04, la méthode </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> était la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span> executeBatchImpots(<span style="font-weight:bold;color:#7f0055">string </span>$taxPayersFileName, <span style="font-weight:bold;color:#7f0055">string </span>$resultsFileName, <span style="font-weight:bold;color:#7f0055">string </span>$errorsFileName): <span style="font-weight:bold;color:#7f0055">void </span>{</span>
@@ -2843,8 +2988,10 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">la ligne 15 est désormais erronée. Dans la nouvelle définition de la classe </span><strong><span style="color: #000000">[TaxPayerData]</span></strong><span style="color: #000000">, la méthode </span><strong><span style="color: #000000">[setMontant]</span></strong><span style="color: #000000"> n’existe plus ;</span></li>
+  <li><span style="color: #000000">la ligne 15 est désormais erronée. Dans la nouvelle définition de la classe </span><b><span style="color: #000000">[TaxPayerData]</span></b><span style="color: #000000">, la méthode </span><b><span style="color: #000000">[setMontant]</span></b><span style="color: #000000"> n’existe plus ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Dans la version 05, la méthode </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> sera la suivante :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
 <span class="odt-code-line"><span style="font-weight:bold;color:#008040">public </span><span style="font-weight:bold;color:#7f0055">function</span> executeBatchImpots(<span style="font-weight:bold;color:#7f0055">string </span>$taxPayersFileName, <span style="font-weight:bold;color:#7f0055">string </span>$resultsFileName, <span style="font-weight:bold;color:#7f0055">string </span>$errorsFileName): <span style="font-weight:bold;color:#7f0055">void </span>{</span>
@@ -2872,20 +3019,26 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 15 : au lieu d’utiliser les setters individuels de la la classe </span><strong><span style="color: #000000">[</span></strong><strong><span style="color: #000000">TaxPayerData</span></strong><strong><span style="color: #000000">]</span></strong><span style="color: #000000">, on utilise son setter global </span><strong><span style="color: #000000">[setFromArrayOfAttributes]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">le reste du code n’a pas à être modifié ;</span></li>
+  <li><span style="color: #000000">ligne 15 : au lieu d’utiliser les setters individuels de la la classe </span><b><span style="color: #000000">[</span></b><b><span style="color: #000000">TaxPayerData</span></b><b><span style="color: #000000">]</span></b><span style="color: #000000">, on utilise son setter global </span><b><span style="color: #000000">[setFromArrayOfAttributes]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">le reste du code n’a pas à être modifié ;</span>
+  </li>
 </ul>
+
 <p><a id="lescriptprincipal"></a>
-<a id="toc42690733"></a>
-<a id="toc42690347"></a>
+<a id="refheadingtoc822343439697744"></a>
 <a id="toc42689961"></a>
-<a id="refheadingtoc822343439697744"></a></p>
+<a id="toc42690347"></a>
+<a id="toc42690733"></a></p>
 <h3 id="1345-le-script-principal">13.4.5. Le script principal</h3>
 <p><img src="images/10000000000006910000018BC715A4E0.png" style="width:13.341cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006910000018BC715A4E0.png" /></p>
 <ul>
-<li><span style="color: #000000">nous venons d’implémenter les couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> (3) et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> (2) ;</span></li>
-<li><span style="color: #000000">il nous reste à écrire le script principal (1) ;</span></li>
+  <li><span style="color: #000000">nous venons d’implémenter les couches </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> (3) et </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> (2) ;</span>
+  </li>
+  <li><span style="color: #000000">il nous reste à écrire le script principal (1) ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Le script principal est analogue à celui de la version 04 :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2938,18 +3091,27 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 12-22 : chargement de tous les fichiers de la version 05;</span></li>
-<li><span style="color: #000000">lignes 25-29 : les noms des différents fichiers jSON de l’application ;</span></li>
-<li><span style="color: #000000">ligne 33 : construction de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 35 : construction de la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 37 : appel de la méthode </span><strong><span style="color: #000000">[executeBatchImpots]</span></strong><span style="color: #000000"> de la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 12-22 : chargement de tous les fichiers de la version 05;</span>
+  </li>
+  <li><span style="color: #000000">lignes 25-29 : les noms des différents fichiers jSON de l’application ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 33 : construction de la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 35 : construction de la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 37 : appel de la méthode </span><b><span style="color: #000000">[executeBatchImpots]</span></b><span style="color: #000000"> de la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <p><span style="color: #000000">L’application produit deux fichiers jSON :</span></p>
 <ul>
-<li><strong><span style="color: #000000">[resultats.json]</span></strong><span style="color: #000000"> : les résultats des différents calcul d’impôts ;</span></li>
-<li><strong><span style="color: #000000">[errors.json]</span></strong><span style="color: #000000"> : qui signale les erreurs trouvées dans le fichier jSON </span><strong><span style="color: #000000">[taxpayersdata.json]</span></strong><span style="color: #000000"> ;</span></li>
+  <li><b><span style="color: #000000">[resultats.json]</span></b><span style="color: #000000"> : les résultats des différents calcul d’impôts ;</span>
+  </li>
+  <li><b><span style="color: #000000">[errors.json]</span></b><span style="color: #000000"> : qui signale les erreurs trouvées dans le fichier jSON </span><b><span style="color: #000000">[taxpayersdata.json]</span></b><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Le fichier </span><strong><span style="color: #000000">[errors.json]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">{</span>
@@ -3151,17 +3313,17 @@
 </code></pre></div>
 
 <p><span style="color: #000000">Ces résultats sont conformes à ceux de la version 04.</span></p>
-<p><a id="refheadingtoc1787302861440889"></a>
-<a id="toc42690734"></a>
+<p><a id="toc42689962"></a>
 <a id="toc42690348"></a>
-<a id="toc42689962"></a></p>
+<a id="toc42690734"></a>
+<a id="refheadingtoc1787302861440889"></a></p>
 <h2 id="135-tests-codeception">13.5. Tests [Codeception]</h2>
 <p><span style="color: #000000">Comme il a été fait au paragraphe </span><a href="#_Tests_[Codeception]"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> pour la version 04, nous allons écrire des tests </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> pour la version 05.</span></p>
 <p><img src="images/10000000000001E2000001DC4E27D094.png" style="width:3.83cm;height:3.781cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000001DC4E27D094.png" /></p>
-<p><a id="refheadingtoc185663971629160"></a>
-<a id="toc42690735"></a>
+<p><a id="toc42689963"></a>
 <a id="toc42690349"></a>
-<a id="toc42689963"></a></p>
+<a id="toc42690735"></a>
+<a id="refheadingtoc185663971629160"></a></p>
 <h3 id="1351-test-de-la-couche-dao">13.5.1. Test de la couche [dao]</h3>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[DaoTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3222,17 +3384,22 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 9-33 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInMySQLDatabase]</span></strong><span style="color: #000000"> décrit au paragraphe </span><a href="#_Le_script_principal"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 39-44 : construction de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 43 : l’attribut </span><strong><span style="color: #000000">[$this→taxAdminData]</span></strong><span style="color: #000000"> contient les données à tester ;</span></li>
-<li><span style="color: #000000">lignes 47-51 : la méthode </span><strong><span style="color: #000000">[testTaxAdminData]</span></strong><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 9-33 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><b><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInMySQLDatabase]</span></b><span style="color: #000000"> décrit au paragraphe </span><a href="#_Le_script_principal"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 39-44 : construction de la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 43 : l’attribut </span><b><span style="color: #000000">[$this→taxAdminData]</span></b><span style="color: #000000"> contient les données à tester ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 47-51 : la méthode </span><b><span style="color: #000000">[testTaxAdminData]</span></b><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/100000000000066B000001BF003361FE.png" style="width:13.04cm;height:3.551cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066B000001BF003361FE.png" /></p>
-<p><a id="refheadingtoc185665971629160"></a>
-<a id="toc42690736"></a>
+<p><a id="toc42689964"></a>
 <a id="toc42690350"></a>
-<a id="toc42689964"></a></p>
+<a id="toc42690736"></a>
+<a id="refheadingtoc185665971629160"></a></p>
 <h3 id="1352-test-de-la-couche-metier">13.5.2. Test de la couche [métier]</h3>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[MetierTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -3306,11 +3473,16 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 9-33 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInMySQLDatabase]</span></strong><span style="color: #000000"> décrit au paragraphe </span><a href="#_Le_script_principal"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 39-45 : construction des couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 44 : l’attribut </span><strong><span style="color: #000000">[$this→métier]</span></strong><span style="color: #000000"> référence la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 47-64 : les méthodes </span><strong><span style="color: #000000">[test1, test2…, test11]</span></strong><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 9-33 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><b><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInMySQLDatabase]</span></b><span style="color: #000000"> décrit au paragraphe </span><a href="#_Le_script_principal"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 39-45 : construction des couches </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 44 : l’attribut </span><b><span style="color: #000000">[$this→métier]</span></b><span style="color: #000000"> référence la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 47-64 : les méthodes </span><b><span style="color: #000000">[test1, test2…, test11]</span></b><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/1000000000000680000001A8D691E807.png" style="width:13.211cm;height:3.372cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000680000001A8D691E807.png" /></p>
 

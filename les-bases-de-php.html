@@ -1294,22 +1294,22 @@
   
 
 
-<p><a id="refheading398461881943603"></a>
-<a id="toc42690582"></a>
+<p><a id="toc42689810"></a>
 <a id="toc42690196"></a>
-<a id="toc42689810"></a></p>
+<a id="toc42690582"></a>
+<a id="refheading398461881943603"></a></p>
 <h1 id="3-les-bases-de-php">3. Les bases de PHP</h1>
-<p><a id="refheadingtoc787872244347140"></a>
-<a id="toc42690583"></a>
+<p><a id="toc42689811"></a>
 <a id="toc42690197"></a>
-<a id="toc42689811"></a></p>
+<a id="toc42690583"></a>
+<a id="refheadingtoc787872244347140"></a></p>
 <h2 id="31-larborescence-des-scripts">3.1. L’arborescence des scripts</h2>
 <p><img src="images/1000000000000187000002F720EB73C0.png" style="width:3.62cm;height:7.032cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000187000002F720EB73C0.png" /></p>
 <p><a id="configurationdephp"></a>
-<a id="toc42690584"></a>
-<a id="toc42690198"></a>
+<a id="refheadingtoc900623955410047"></a>
 <a id="toc42689812"></a>
-<a id="refheadingtoc900623955410047"></a></p>
+<a id="toc42690198"></a>
+<a id="toc42690584"></a></p>
 <h2 id="32-configuration-de-php">3.2. Configuration de PHP</h2>
 <p>PHP arrive préconfiguré par un fichier texte <strong>[php.ini]</strong>. Toutes ces configurations peuvent être changées par programmation. La configuration de PHP influence grandement l’exécution des scripts. Il est donc important de la connaître. Le script suivant <strong>[phpinfo.php]</strong> le permet :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -1320,8 +1320,10 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 3 : la fonction <strong>[phpinfo]</strong> affiche la configuration de PHP ;</li>
+  <li>ligne 3 : la fonction <b>[phpinfo]</b> affiche la configuration de PHP ;
+  </li>
 </ul>
+
 <p><strong>Résultats de l’exécution</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1358,16 +1360,16 @@
 <a id="__codelineno-1-17" name="__codelineno-1-17"></a>Done.
 </code></pre></div></td></tr></table></div>
 <p>La fonction <strong>[phpinfo]</strong> affiche ici plus de 800 lignes de configuration. Nous n’allons pas les commenter car la plupart concerne un usage avancé de PHP. Une ligne importante est la ligne 13 ci-dessus : elle indique quel fichier <strong>[php.ini]</strong> a été utilisé pour configurer le PHP que vous allez utiliser pour exécuter vos scripts. Si vous souhaitez modifier la configuration d’exécution de PHP, c’est ce fichier qu’il vous faut modifier. De nombreux commentaires sont présents dans ce fichier pour expliquer le rôle des différentes configurations.</p>
-<p><a id="refheading398481881943603"></a>
-<a id="toc42690585"></a>
+<p><a id="toc42689813"></a>
 <a id="toc42690199"></a>
-<a id="toc42689813"></a></p>
+<a id="toc42690585"></a>
+<a id="refheading398481881943603"></a></p>
 <h2 id="33-un-premier-exemple">3.3. Un premier exemple</h2>
 <p><a id="lecode"></a>
-<a id="toc42690586"></a>
-<a id="toc42690200"></a>
+<a id="refheadingtoc900643955410047"></a>
 <a id="toc42689814"></a>
-<a id="refheadingtoc900643955410047"></a></p>
+<a id="toc42690200"></a>
+<a id="toc42690586"></a></p>
 <h3 id="331-le-code">3.3.1. Le code</h3>
 <p>Ci-dessous, on trouvera un programme <strong>[bases-01.php]</strong> présentant les premières caractéristiques de PHP.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1509,46 +1511,83 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 5 : en PHP, on ne déclare pas le type des variables. Celles-ci ont un type dynamique qui peut varier au cours du temps. $<strong>nom</strong> représente la variable d&#x27;identifiant <em>nom ;</em></li>
-<li>ligne 7 : pour écrire à l&#x27;écran, on peut utiliser l&#x27;instruction <em>print</em> ou l&#x27;instruction <em>echo ;</em></li>
-<li>ligne 9 : le mot clé <em>array</em> permet de définir un tableau. La variable <em>$nom</em><strong><em>[$i]</em></strong> représente l&#x27;élément <em>$i</em> du tableau <em>$tableau ;</em></li>
-<li>ligne 11 : la fonction <em>count($tableau)</em> rend le nombre d&#x27;éléments du tableau <em>$tableau</em> ;</li>
-<li>lignes 13-15 : une boucle. Celle-ci n’ayant qu’une instruction, les accolades sont alors facultatives. Dans la suite de ce document, nous mettrons systématiquement les accolades quelque soit le nombre d’instructions ;</li>
-<li>ligne 14 : les chaînes de caractères sont entourées de guillemets &quot; ou d&#x27;apostrophes &#x27;. A l&#x27;intérieur de guillemets, les variables $<em>variable</em> sont évaluées mais pas à l&#x27;intérieur d&#x27;apostrophes ;</li>
-<li>ligne 17 : la fonction <em>list</em> permet de rassembler des variables dans une liste et de leur attribuer une valeur avec une unique opération d&#x27;affectation. Ici <em>$chaine1=&quot;chaine1&quot;</em> et <em>$chaine2=&quot;chaine2</em>&quot; ;</li>
-<li>ligne 19 : l&#x27;opérateur . est l&#x27;opérateur de concaténation de chaînes ;</li>
-<li>lignes 83-86 : le mot clé <em>function</em> définit une fonction. Une fonction rend ou non des valeurs par l&#x27;instruction <em>return</em>. Le code appelant peut ignorer ou récupérer les résultats d&#x27;une fonction. Une fonction peut être définie n&#x27;importe où dans le code.</li>
-<li>ligne 92 : la fonction prédéfinie <em>getType($variable)</em> rend une chaîne de caractères représentant le type de <em>$variable</em>. Ce type peut changer au cours du temps ;</li>
-<li>ligne 45 : l’opérateur === compare deux éléments de façon stricte : il faut qu’ils aient le <strong>même type</strong> pour être comparés. L’opérateur == est moins strict : deux éléments peuvent être égaux <strong>sans être du même type</strong>. C’est ce que montrent les instructions des lignes 50-60. Dans le cas de l’opérateur ==, la comparaison se fait après transtypage des deux éléments comparés dans un même type. Des conversions implicites ont alors lieu. Il est assez facile « d’oublier » la présence de ces conversions implicites et d’aboutir ainsi à des résultats imprévus, tels que de découvrir qu’une condition est vraie alors que vous l’attendiez fausse. Pour éviter cet écueil, nous utiliserons systématiquement l’opérateur de compraison === ;</li>
-<li>ligne 64 : on peut utiliser également les opérateurs booléens <strong>or</strong> et <strong>! ;</strong></li>
-<li>ligne 69 : à la place de la notation <strong>array()</strong>, on peut utiliser la notation <strong>[]</strong> pour initialiser un tableau depuis PHP7 ;</li>
-<li>ligne 80 : la fonction prédéfinie <em>exit</em> arrête l’exécution du script ;</li>
-<li>ligne 107 : la balise <strong>?&gt;</strong> signale la fin du script PHP. Elle n’est pas indispensable. De plus, dans un contexte web, elle peut poser problème si elle est suivie par des espaces ou des marques de fin de ligne, difficiles à détecter car non visibles dans un éditeur de texte. Aussi dans la suite du document, nous omettrons systématiquement cette balise ;</li>
+  <li>ligne 5 : en PHP, on ne déclare pas le type des variables. Celles-ci ont un type dynamique qui peut varier au cours du temps. $<b>nom</b> représente la variable d&#x27;identifiant <i>nom ;</i>
+  </li>
+  <li>ligne 7 : pour écrire à l&#x27;écran, on peut utiliser l&#x27;instruction <i>print</i> ou l&#x27;instruction <i>echo ;</i>
+  </li>
+  <li>ligne 9 : le mot clé <i>array</i> permet de définir un tableau. La variable <i>$nom</i><i><b>[$i]</b></i> représente l&#x27;élément <i>$i</i> du tableau <i>$tableau ;</i>
+  </li>
+  <li>ligne 11 : la fonction <i>count($tableau)</i> rend le nombre d&#x27;éléments du tableau <i>$tableau</i> ;
+  </li>
+  <li>lignes 13-15 : une boucle. Celle-ci n’ayant qu’une instruction, les accolades sont alors facultatives. Dans la suite de ce document, nous mettrons systématiquement les accolades quelque soit le nombre d’instructions ;
+  </li>
+  <li>ligne 14 : les chaînes de caractères sont entourées de guillemets &quot; ou d&#x27;apostrophes &#x27;. A l&#x27;intérieur de guillemets, les variables $<i>variable</i> sont évaluées mais pas à l&#x27;intérieur d&#x27;apostrophes ;
+  </li>
+  <li>ligne 17 : la fonction <i>list</i> permet de rassembler des variables dans une liste et de leur attribuer une valeur avec une unique opération d&#x27;affectation. Ici <i>$chaine1=&quot;chaine1&quot;</i> et <i>$chaine2=&quot;chaine2</i>&quot; ;
+  </li>
+  <li>ligne 19 : l&#x27;opérateur . est l&#x27;opérateur de concaténation de chaînes ;
+  </li>
+  <li>lignes 83-86 : le mot clé <i>function</i> définit une fonction. Une fonction rend ou non des valeurs par l&#x27;instruction <i>return</i>. Le code appelant peut ignorer ou récupérer les résultats d&#x27;une fonction. Une fonction peut être définie n&#x27;importe où dans le code.
+  </li>
+  <li>ligne 92 : la fonction prédéfinie <i>getType($variable)</i> rend une chaîne de caractères représentant le type de <i>$variable</i>. Ce type peut changer au cours du temps ;
+  </li>
+  <li>ligne 45 : l’opérateur === compare deux éléments de façon stricte : il faut qu’ils aient le <b>même type</b> pour être comparés. L’opérateur == est moins strict : deux éléments peuvent être égaux <b>sans être du même type</b>. C’est ce que montrent les instructions des lignes 50-60. Dans le cas de l’opérateur ==, la comparaison se fait après transtypage des deux éléments comparés dans un même type. Des conversions implicites ont alors lieu. Il est assez facile « d’oublier » la présence de ces conversions implicites et d’aboutir ainsi à des résultats imprévus, tels que de découvrir qu’une condition est vraie alors que vous l’attendiez fausse. Pour éviter cet écueil, nous utiliserons systématiquement l’opérateur de compraison === ;
+  </li>
+  <li>ligne 64 : on peut utiliser également les opérateurs booléens <b>or</b> et <b>! ;</b>
+  </li>
+  <li>ligne 69 : à la place de la notation <b>array()</b>, on peut utiliser la notation <b>[]</b> pour initialiser un tableau depuis PHP7 ;
+  </li>
+  <li>ligne 80 : la fonction prédéfinie <i>exit</i> arrête l’exécution du script ;
+  </li>
+  <li>ligne 107 : la balise <b>?&gt;</b> signale la fin du script PHP. Elle n’est pas indispensable. De plus, dans un contexte web, elle peut poser problème si elle est suivie par des espaces ou des marques de fin de ligne, difficiles à détecter car non visibles dans un éditeur de texte. Aussi dans la suite du document, nous omettrons systématiquement cette balise ;
+  </li>
 </ul>
+
 <p><strong>Note</strong> : dans ce document, nous utiliserons le mot clé <strong>[print]</strong> pour afficher du texte sur la console. Une autre méthode pour faire la même chose est d’utiliser le mot clé <strong>[echo]</strong>. Il y a de subtiles différences entre ces deux mots clés, mais dans le contexte de ce document il n’y en aura aucune. Si donc vous préférez utiliser <strong>[echo]</strong>, alors faites-le.</p>
-<p><a id="refheadingtoc787892244347140"></a>
-<a id="toc42690587"></a>
+<p><a id="toc42689815"></a>
 <a id="toc42690201"></a>
-<a id="toc42689815"></a></p>
+<a id="toc42690587"></a>
+<a id="refheadingtoc787892244347140"></a></p>
 <h3 id="332-usage-de-netbeans">3.3.2. Usage de Netbeans</h3>
 <p>Netbeans émet divers avertissements qu’il est utile de vérifier. Prenons l’exemple du script <strong>[bases-01.php]</strong> :</p>
 <p><img src="images/100000000000068E0000015946944AA2.png" style="width:15.541cm;height:3.192cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000068E0000015946944AA2.png" /></p>
 <p>A la ligne 5, Netbeans émet un avertissement comme quoi le fichier ne respecte pas la recommandation PSR-1 (PHP Standard Recommendations n° 1). Les PSR sont des recommandations pour produire un code standard et ainsi faciliter l’interopérabilité et la maintenance de codes écrits par différentes personnes. Il peut être ennuyeux d’avoir des avertissements si on veut transgresser délibérément les standards, parce que par exemple l’équipe du projet en a d’autres. Ce que l’on souhaite vérifier ou pas avec Netbeans est configurable :</p>
 <p><img src="images/100000000000070C0000035D3FFB1A63.png" style="width:16.71cm;height:7.97cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000070C0000035D3FFB1A63.png" /></p>
 <ul>
-<li>en <strong>[5]</strong>, on trouve les éléments que l’on veut contrôler avec Netbeans ;</li>
-<li>en <strong>[6]</strong>, le niveau de sévérité assigné à l’erreur signalée par Netbeans ;</li>
+  <li>en <b>[5]</b>, on trouve les éléments que l’on veut contrôler avec Netbeans ;
+  </li>
+  <li>en <b>[6]</b>, le niveau de sévérité assigné à l’erreur signalée par Netbeans ;
+  </li>
 </ul>
+
 <p><img src="images/100000000000077000000192B350B3AA.png" style="width:17.631cm;height:3.721cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000077000000192B350B3AA.png" /></p>
 <p>On voit en <strong>[7]</strong> qu’on a demandé à contrôler que le code suit bien les recommandations PSR-0 et PSR-1. Il n’y a rien d’obligatoire. En phase d’apprentissage du langage, ll est conseillé de contrôler le maximum d’options proposées par Netbeans. On apprend ainsi beaucoup de choses. On adaptera ensuite ce contrôle de Netbeans aux normes de codage de l’équipe d’un projet.</p>
 <p>Voyons les normes de codage PSR-1 <strong>[8, 9]</strong> :</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Option</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;"><b>Contrôle</b></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Class Constant Declaration</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Class constants MUST be declared in all upper case with underscore separators.</p><p style="margin:0;">Ex : <i>const TAUX_TVA</i></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Method Declaration</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Method names MUST be declared in camelCase().</p><p style="margin:0;">Ex : <i>public function executeBatchImpots{}</i></p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Property Name</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Property names SHOULD be declared in $StudlyCaps, $camelCase, or $under_score format (consistently in a scope)</p><p style="margin:0;">Ex : <i>public SalaireAnnuel </i>(StudlyCaps), <i>public salaireAnnuel</i> (camelCase), <i>public salaire_annuel</i> (under_score)</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Side Effects</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">A file SHOULD declare new symbols and cause no other side effects, or it SHOULD execute logic with side effects, but SHOULD NOT do both.</p></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">&bull; <b>Type Declaration</b></p></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><p style="margin:0;">Type names MUST be declared in StudlyCaps (Code written for 5.2.x and before SHOULD use the pseudonamespacing convention of Vendor_ prefixes on type names). Each type is in a file by itself, and is in a namespace of at least one level: a top-level vendor name.</p><p style="margin:0;">Ex : <i>class EtudiantBoursier {}</i></p></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Option</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Contrôle</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><ol>
+  <li><b>Class Constant Declaration</b>
+  </li>
+</ol></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Class constants MUST be declared in all upper case with underscore separators.</div><div style="margin:0 0 0.5em 0">Ex : <i>const TAUX_TVA</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><ol>
+  <li><b>Method Declaration</b>
+  </li>
+</ol></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Method names MUST be declared in camelCase().</div><div style="margin:0 0 0.5em 0">Ex : <i>public function executeBatchImpots{}</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><ol>
+  <li><b>Property Name</b>
+  </li>
+</ol></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Property names SHOULD be declared in $StudlyCaps, $camelCase, or $under_score format (consistently in a scope)</div><div style="margin:0 0 0.5em 0">Ex : <i>public SalaireAnnuel </i>(StudlyCaps), <i>public salaireAnnuel</i> (camelCase), <i>public salaire_annuel</i> (under_score)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><ol>
+  <li><b>Side Effects</b>
+  </li>
+</ol></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">A file SHOULD declare new symbols and cause no other side effects, or it SHOULD execute logic with side effects, but SHOULD NOT do both.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><ol>
+  <li><b>Type Declaration</b>
+  </li>
+</ol></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Type names MUST be declared in StudlyCaps (Code written for 5.2.x and before SHOULD use the pseudonamespacing convention of Vendor_ prefixes on type names). Each type is in a file by itself, and is in a namespace of at least one level: a top-level vendor name.</div><div style="margin:0 0 0.5em 0">Ex : <i>class EtudiantBoursier {}</i></div></td></tr></table>
 
 <p>La recommandation PSR-1 / 4 dit que dans un fichier PHP, on doit trouver :</p>
 <ul>
-<li>soit la déclaration d’un type (classes, interface) ;</li>
-<li>soit du code exécutable sans déclaration de nouveaux types ;</li>
+  <li>soit la déclaration d’un type (classes, interface) ;
+  </li>
+  <li>soit du code exécutable sans déclaration de nouveaux types ;
+  </li>
 </ul>
+
 <p>Il existe d’autres recommandations PHP non contrôlées par Netbeans : PSR-3, PSR-4, PSR-6, PSR-7 et PSR-13.</p>
 <p>Par facilité, les exemples du document ne vérifient pas tous la recommandation PSR-1 car cela oblige à dispatcher le code des classes et interfaces dans des fichiers séparés, ce qui est trop lourd pour des exemples basiques. Il est alors plus facile de tout mettre dans un fichier. Pour l’exemple de l’application présentée comme fil rouge de ce document, on a cherché à observer au mieux la recommandation PSR-1.</p>
 <p>Certains avertissements de Netbeans signalent une erreur potentielle :</p>
@@ -1557,15 +1596,15 @@
 <p>Finalement, il est conseillé de vérifier tous les avertissements de Netbeans signalés par un panneau dans la marge gauche du code et un tiret jaune dans la marge droite :</p>
 <p><img src="images/1000000000000762000001273191D1D4.png" style="width:17.5cm;height:2.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000762000001273191D1D4.png" /></p>
 <p><img src="images/10000000000003AA000001769A5DDA88.png" style="width:8.691cm;height:3.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003AA000001769A5DDA88.png" /></p>
-<p><a id="refheading398521881943603"></a>
-<a id="toc42690588"></a>
+<p><a id="toc42689816"></a>
 <a id="toc42690202"></a>
-<a id="toc42689816"></a></p>
+<a id="toc42690588"></a>
+<a id="refheading398521881943603"></a></p>
 <h2 id="34-la-portee-des-variables">3.4. La portée des variables</h2>
-<p><a id="refheading398541881943603"></a>
-<a id="toc42690589"></a>
+<p><a id="toc42689817"></a>
 <a id="toc42690203"></a>
-<a id="toc42689817"></a></p>
+<a id="toc42690589"></a>
+<a id="refheading398541881943603"></a></p>
 <h3 id="341-exemple-1">3.4.1. Exemple 1</h3>
 <p>Le script <strong>[bases-02.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1618,13 +1657,16 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 29-30 : définissent 2 variables <em>$i</em> et <em>$j</em> du programme principal. Ces variables ne sont pas connues à l&#x27;intérieur des fonctions. Ainsi, ligne 9, la variable <em>$j</em> de la fonction <em>f1</em> est une variable <strong>locale</strong> à la fonction <em>f1</em> et est différente de la variable <em>$j</em> du programme principal. Une fonction peut accéder à une variable <em>$variable</em> du programme principal via le mot clé <strong>global ;</strong></li>
-<li>ligne 7, l’instruction désigne la variable globale <em>$i</em> du programme principal ;</li>
+  <li>lignes 29-30 : définissent 2 variables <i>$i</i> et <i>$j</i> du programme principal. Ces variables ne sont pas connues à l&#x27;intérieur des fonctions. Ainsi, ligne 9, la variable <i>$j</i> de la fonction <i>f1</i> est une variable <b>locale</b> à la fonction <i>f1</i> et est différente de la variable <i>$j</i> du programme principal. Une fonction peut accéder à une variable <i>$variable</i> du programme principal via le mot clé <b>global ;</b>
+  </li>
+  <li>ligne 7, l’instruction désigne la variable globale <i>$i</i> du programme principal ;
+  </li>
 </ul>
-<p><a id="refheading398561881943603"></a>
-<a id="toc42690590"></a>
+
+<p><a id="toc42689818"></a>
 <a id="toc42690204"></a>
-<a id="toc42689818"></a></p>
+<a id="toc42690590"></a>
+<a id="refheading398561881943603"></a></p>
 <h3 id="342-exemple-3">3.4.2. Exemple 3</h3>
 <p>Le script <strong>[bases-03.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1643,10 +1685,10 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <p>Dans certains langages, une variable définie à l&#x27;intérieur d&#x27;accolades a la portée de celles-ci : elle n&#x27;est pas connue à l&#x27;extérieur de celles-ci. Les résultats ci-dessus montrent qu&#x27;il n&#x27;en est rien en PHP. La variable $i définie ligne 5 à l&#x27;intérieur des accolades est la même que celle utilisée lignes 4 et 8 à l&#x27;extérieur de celles-ci.</p>
-<p><a id="refheadingtoc55547710956990"></a>
-<a id="toc42690591"></a>
+<p><a id="toc42689819"></a>
 <a id="toc42690205"></a>
-<a id="toc42689819"></a></p>
+<a id="toc42690591"></a>
+<a id="refheadingtoc55547710956990"></a></p>
 <h2 id="35-les-changements-de-types">3.5. Les changements de types</h2>
 <p>Les variables en PHP n’ont pas un type constant. Celui-ci peut changer en cours d’exécution selon la valeur affectée à la variable. Dans des opérations impliquant des données de divers types, l’interpréteur PHP fait des conversions implicites pour ramener les opérandes dans un type commun. Ces conversions implicites, si elles ne sont pas connues du développeur, peuvent être une source d’erreurs difficiles à repérer. On présente ci-dessous, un script <strong>[bases-04.php]</strong> montrant des conversions implicites et explicites :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1681,21 +1723,34 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 4 : demande une vérification stricte du type des paramètres d’une fonction lorsque celui-ci est précisé ;</li>
-<li>ligne 18 : la fonction <strong>[showBool]</strong> a pour but de montrer la transformation implicite (automatique) que fait l’interpréteur PHP lorsqu’une valeur de tout type doit être transformée en booléen (ligne 21) ;</li>
-<li>ligne 18 : la paramètre $var n’a pas de type assigné. Le paramètre effectif pourra donc être de tout type. Le paramètre $<em>prefixe</em> lui devra être de type <strong>string</strong>. La fonction <em>showBool</em> ne rend aucune valeur (<strong>void</strong>) ;</li>
-<li>ligne 21 : dans l’instruction <strong>if($var)</strong>, la valeur de $var doit être transformée en booléen pour que le <em>if</em> soit évalué. De façon étonnante l’interpréteur PHP a une réponse pour tout type de valeur qu’on lui donne ;</li>
-<li>lignes 9-16 : la valeur du paramètre de la fonction <strong>[showBool]</strong> sera successivement :<ul>
-<li>ligne 9 : une chaîne non vide : résultat TRUE (la casse n’est pas importante, TRUE=true) ;</li>
-<li>ligne 10 : une chaîne vide : résultat FALSE ;</li>
-<li>ligne 11 : un tableau non vide : résultat TRUE ;</li>
-<li>ligne 12 : un tableau vide : résultat FALSE ;</li>
-<li>ligne 14 : le nombre réel 0 : résultat FALSE ;</li>
-<li>ligne 15 : le nombre entier 0 : résultat FALSE ;</li>
-<li>ligne 16 : le nombre réel (ou entier) différent de 0 : résultat TRUE ;</li>
+  <li>ligne 4 : demande une vérification stricte du type des paramètres d’une fonction lorsque celui-ci est précisé ;
+  </li>
+  <li>ligne 18 : la fonction <b>[showBool]</b> a pour but de montrer la transformation implicite (automatique) que fait l’interpréteur PHP lorsqu’une valeur de tout type doit être transformée en booléen (ligne 21) ;
+  </li>
+  <li>ligne 18 : la paramètre $var n’a pas de type assigné. Le paramètre effectif pourra donc être de tout type. Le paramètre $<i>prefixe</i> lui devra être de type <b>string</b>. La fonction <i>showBool</i> ne rend aucune valeur (<b>void</b>) ;
+  </li>
+  <li>ligne 21 : dans l’instruction <b>if($var)</b>, la valeur de $var doit être transformée en booléen pour que le <i>if</i> soit évalué. De façon étonnante l’interpréteur PHP a une réponse pour tout type de valeur qu’on lui donne ;
+  </li>
+  <li>lignes 9-16 : la valeur du paramètre de la fonction <b>[showBool]</b> sera successivement :
+    <ul>
+      <li>ligne 9 : une chaîne non vide : résultat TRUE (la casse n’est pas importante, TRUE=true) ;
+      </li>
+      <li>ligne 10 : une chaîne vide : résultat FALSE ;
+      </li>
+      <li>ligne 11 : un tableau non vide : résultat TRUE ;
+      </li>
+      <li>ligne 12 : un tableau vide : résultat FALSE ;
+      </li>
+      <li>ligne 14 : le nombre réel 0 : résultat FALSE ;
+      </li>
+      <li>ligne 15 : le nombre entier 0 : résultat FALSE ;
+      </li>
+      <li>ligne 16 : le nombre réel (ou entier) différent de 0 : résultat TRUE ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>C’est ce que montrent les affichages écrans obtenus :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">Conversion vers un booléen------------------------------</span>
@@ -1728,14 +1783,20 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 9 : la fonction </span><strong><span style="color: #000000">[showNumber]</span></strong><span style="color: #000000"> admet un paramètre de type </span><strong><span style="color: #000000">string</span></strong><span style="color: #000000"> et ne rend pas de résultat (</span><strong><span style="color: #000000">void</span></strong><span style="color: #000000">) ;</span></li>
-<li><span style="color: #000000">ligne 10 : ce paramètre est utilisé dans une opération arithmétique, ce qui va forcer l’interpréteur PHP à essayer de transformer $var en nombre ;</span><ul>
-<li><span style="color: #000000">ligne 5 : va transformer la chaîne “12” en nombre entier 12 ;</span></li>
-<li><span style="color: #000000">ligne 6 : va transformer la chaîne “45.67” en nombre réel 45.67 ;</span></li>
-<li><span style="color: #000000">ligne 7 : va émettre un avertissement mais va quand même transformer la chaîne “abcd” en nombre 0 ;</span></li>
+  <li><span style="color: #000000">ligne 9 : la fonction </span><b><span style="color: #000000">[showNumber]</span></b><span style="color: #000000"> admet un paramètre de type </span><b><span style="color: #000000">string</span></b><span style="color: #000000"> et ne rend pas de résultat (</span><b><span style="color: #000000">void</span></b><span style="color: #000000">) ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 10 : ce paramètre est utilisé dans une opération arithmétique, ce qui va forcer l’interpréteur PHP à essayer de transformer $var en nombre ;</span>
+    <ul>
+      <li><span style="color: #000000">ligne 5 : va transformer la chaîne “12” en nombre entier 12 ;</span>
+      </li>
+      <li><span style="color: #000000">ligne 6 : va transformer la chaîne “45.67” en nombre réel 45.67 ;</span>
+      </li>
+      <li><span style="color: #000000">ligne 7 : va émettre un avertissement mais va quand même transformer la chaîne “abcd” en nombre 0 ;</span>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p><span style="color: #000000">Voici les résultats de l’exécution :</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
@@ -1776,12 +1837,18 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 21 : la fonction </span><strong><span style="color: #000000">[showInt]</span></strong><span style="color: #000000"> reçoit un paramètre de n’importe quel type et ne rend pas de résultat. Elle essaie de convertir le paramètre $</span><em><span style="color: #000000">var</span></em><span style="color: #000000"> en entier ligne 26. De façon générale, pour changer une variable $</span><em><span style="color: #000000">var</span></em><span style="color: #000000"> en un type T, on écrit </span><strong><span style="color: #000000">(T) $var</span></strong><span style="color: #000000"> où </span><strong><span style="color: #000000">T</span></strong><span style="color: #000000"> peut être : </span><strong><span style="color: #000000">int, integer, bool, boolean, float, double, real, string, array, object, unset</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 16 : convertit la chaîne “12.45” en entier 12 ;</span></li>
-<li><span style="color: #000000">ligne 17 : convertit le réel 67.8 en entier 67 ;</span></li>
-<li><span style="color: #000000">ligne 18 : convertit le booléen TRUE en l’entier 1 (le booléen FALSE en l’entier 0) ;</span></li>
-<li><span style="color: #000000">ligne 19 : convertit le pointeur NULL en entier 0 ;</span></li>
+  <li><span style="color: #000000">ligne 21 : la fonction </span><b><span style="color: #000000">[showInt]</span></b><span style="color: #000000"> reçoit un paramètre de n’importe quel type et ne rend pas de résultat. Elle essaie de convertir le paramètre $</span><i><span style="color: #000000">var</span></i><span style="color: #000000"> en entier ligne 26. De façon générale, pour changer une variable $</span><i><span style="color: #000000">var</span></i><span style="color: #000000"> en un type T, on écrit </span><b><span style="color: #000000">(T) $var</span></b><span style="color: #000000"> où </span><b><span style="color: #000000">T</span></b><span style="color: #000000"> peut être : </span><b><span style="color: #000000">int, integer, bool, boolean, float, double, real, string, array, object, unset</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 16 : convertit la chaîne “12.45” en entier 12 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 17 : convertit le réel 67.8 en entier 67 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 18 : convertit le booléen TRUE en l’entier 1 (le booléen FALSE en l’entier 0) ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 19 : convertit le pointeur NULL en entier 0 ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">C’est ce que montrent les affichages écran :</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
@@ -1833,13 +1900,20 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 35 : la fonction </span><strong><span style="color: #000000">[showFloat]</span></strong><span style="color: #000000"> reçoit un paramètre de type quelconque et ne rend pas de résultat ;</span></li>
-<li><span style="color: #000000">ligne 40 : la valeur de ce paramètre est  transformée explicitement en </span><em><span style="color: #000000">float</span></em><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 30 : la chaîne “12.45” est transformée en le nombre réel 12.45 ;</span></li>
-<li><span style="color: #000000">ligne 31 : l’entier 67 est transformée en le nombre réel 67 ;</span></li>
-<li><span style="color: #000000">ligne 32 : le booléen TRUE est transformé en le nombre réel 1 (la valeur FALSE en le nombre 0) ;</span></li>
-<li><span style="color: #000000">ligne 33 : le pointeur NULL est transformé en le nombre réel 0 ;</span></li>
+  <li><span style="color: #000000">ligne 35 : la fonction </span><b><span style="color: #000000">[showFloat]</span></b><span style="color: #000000"> reçoit un paramètre de type quelconque et ne rend pas de résultat ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 40 : la valeur de ce paramètre est  transformée explicitement en </span><i><span style="color: #000000">float</span></i><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 30 : la chaîne “12.45” est transformée en le nombre réel 12.45 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 31 : l’entier 67 est transformée en le nombre réel 67 ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 32 : le booléen TRUE est transformé en le nombre réel 1 (la valeur FALSE en le nombre 0) ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 33 : le pointeur NULL est transformé en le nombre réel 0 ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">C’est ce montrent les résultats écran :</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
@@ -1890,13 +1964,20 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 49 : la fonction <strong>[showString]</strong> reçoit un paramètre de type quelconque et ne rend pas de résultat ;</li>
-<li>ligne 54 : la valeur du paramètre est transformée en un type <strong>string</strong> ;</li>
-<li>ligne 44 : l’entier 5 sera transformé en la chaîne « 5 » ;</li>
-<li>ligne 45 : le réel 6.7 sera transformé en la chaîne « 6.7 » ;</li>
-<li>ligne 46 : le booléen FALSE sera ransformé en chaîne vide ;</li>
-<li>ligne 47 : le pointeur NULL sera transformé en chaîne vide ;</li>
+  <li>ligne 49 : la fonction <b>[showString]</b> reçoit un paramètre de type quelconque et ne rend pas de résultat ;
+  </li>
+  <li>ligne 54 : la valeur du paramètre est transformée en un type <b>string</b> ;
+  </li>
+  <li>ligne 44 : l’entier 5 sera transformé en la chaîne « 5 » ;
+  </li>
+  <li>ligne 45 : le réel 6.7 sera transformé en la chaîne « 6.7 » ;
+  </li>
+  <li>ligne 46 : le booléen FALSE sera ransformé en chaîne vide ;
+  </li>
+  <li>ligne 47 : le pointeur NULL sera transformé en chaîne vide ;
+  </li>
 </ul>
+
 <p>Voici les résultats écran :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
@@ -1928,15 +2009,15 @@
 <a id="__codelineno-7-14" name="__codelineno-7-14"></a>
 <a id="__codelineno-7-15" name="__codelineno-7-15"></a>résultat de la conversion : string(0) &quot;&quot;
 </code></pre></div></td></tr></table></div>
-<p><a id="refheading398581881943603"></a>
-<a id="toc42690592"></a>
+<p><a id="toc42689820"></a>
 <a id="toc42690206"></a>
-<a id="toc42689820"></a></p>
+<a id="toc42690592"></a>
+<a id="refheading398581881943603"></a></p>
 <h2 id="36-les-tableaux">3.6. Les tableaux</h2>
-<p><a id="refheading398601881943603"></a>
-<a id="toc42690593"></a>
+<p><a id="toc42689821"></a>
 <a id="toc42690207"></a>
-<a id="toc42689821"></a></p>
+<a id="toc42690593"></a>
+<a id="refheading398601881943603"></a></p>
 <h3 id="361-tableaux-classiques-a-une-dimension">3.6.1. Tableaux classiques à une dimension</h3>
 <p>Le script <strong>[bases-05.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2068,27 +2149,38 @@
 </code></pre></div></td></tr></table></div>
 <p>On a ainsi <em>$tableau</em><strong><em>[2]</em></strong><em>=&quot;trois&quot;</em>. Finalement, il n&#x27;y a que des dictionnaires. Dans le cas d&#x27;un tableau classique de <em>n</em> éléments, les clés sont les nombres entiers de l&#x27;intervalle <strong>[0,n-1]</strong>.</p>
 <ul>
-<li>ligne 14 : la fonction <em>each($tableau)</em> permet de parcourir un dictionnaire. A chaque appel, elle rend une paire (clé,valeur) de celui-ci. Comme le montre la ligne 10 des résultats, la fonction <strong>each</strong> est désormais <strong>obsolète</strong> dans PHP 7 ;</li>
-<li>ligne 13 : la fonction <em>reset($dictionnaire)</em> positionne la fonction <em>each</em> sur la première paire (clé,valeur) du dictionnaire.</li>
-<li>ligne 14 : la boucle <em>while</em> s&#x27;arrête lorsque la fonction <em>each</em> rend une paire vide à la fin du dictionnaire. C’est une conversion implicite qui agit ici : la paire vide est convertie en le booléen FALSE ;</li>
-<li>ligne 18 : la notation <em>$tableau</em><em>[]</em><em>=valeur</em> ajoute l&#x27;élément <em>valeur</em> comme dernier élément de <em>$tableau ;</em></li>
-<li>ligne 23 : le tableau est parcouru avec un <em>foreach</em>. Cet élément syntaxique permet de parcourir un dictionnaire, donc un tableau, selon deux syntaxes :</li>
+  <li>ligne 14 : la fonction <i>each($tableau)</i> permet de parcourir un dictionnaire. A chaque appel, elle rend une paire (clé,valeur) de celui-ci. Comme le montre la ligne 10 des résultats, la fonction <b>each</b> est désormais <b>obsolète</b> dans PHP 7 ;
+  </li>
+  <li>ligne 13 : la fonction <i>reset($dictionnaire)</i> positionne la fonction <i>each</i> sur la première paire (clé,valeur) du dictionnaire.
+  </li>
+  <li>ligne 14 : la boucle <i>while</i> s&#x27;arrête lorsque la fonction <i>each</i> rend une paire vide à la fin du dictionnaire. C’est une conversion implicite qui agit ici : la paire vide est convertie en le booléen FALSE ;
+  </li>
+  <li>ligne 18 : la notation <i>$tableau</i><i>[]</i><i>=valeur</i> ajoute l&#x27;élément <i>valeur</i> comme dernier élément de <i>$tableau ;</i>
+  </li>
+  <li>ligne 23 : le tableau est parcouru avec un <i>foreach</i>. Cet élément syntaxique permet de parcourir un dictionnaire, donc un tableau, selon deux syntaxes :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>foreach($dictionnaire as $clé=&gt;$valeur)
 <a id="__codelineno-10-2" name="__codelineno-10-2"></a>foreach($tableau as $valeur)
 </code></pre></div></td></tr></table></div>
 <p>La première syntaxe ramène une paire (<em>clé,valeur</em>) à chaque itération alors que la seconde syntaxe ne ramène que l&#x27;élément <em>valeur</em> du dictionnaire.</p>
 <ul>
-<li>ligne 28 : la fonction <em>array_pop($tableau)</em> supprime le dernier élément de $<em>tableau ;</em></li>
-<li>ligne 35 : la fonction <em>array_shift($tableau)</em> supprime le premier élément de $<em>tableau ;</em></li>
-<li>ligne 42 : la fonction <em>array_push($tableau,valeur)</em> ajoute <em>valeur</em> comme dernier élément de $<em>tableau ;</em></li>
-<li>ligne 49 : la fonction <em>array_unshift($tableau,valeur)</em> ajoute <em>valeur</em> comme premier élément de $<em>tableau ;</em></li>
+  <li>ligne 28 : la fonction <i>array_pop($tableau)</i> supprime le dernier élément de $<i>tableau ;</i>
+  </li>
+  <li>ligne 35 : la fonction <i>array_shift($tableau)</i> supprime le premier élément de $<i>tableau ;</i>
+  </li>
+  <li>ligne 42 : la fonction <i>array_push($tableau,valeur)</i> ajoute <i>valeur</i> comme dernier élément de $<i>tableau ;</i>
+  </li>
+  <li>ligne 49 : la fonction <i>array_unshift($tableau,valeur)</i> ajoute <i>valeur</i> comme premier élément de $<i>tableau ;</i>
+  </li>
 </ul>
-<p><a id="refheading398621881943603"></a>
-<a id="toc42690594"></a>
+
+<p><a id="toc42689822"></a>
 <a id="toc42690208"></a>
-<a id="toc42689822"></a></p>
+<a id="toc42690594"></a>
+<a id="refheading398621881943603"></a></p>
 <h3 id="362-le-dictionnaire-ou-tableau-associatif">3.6.2. Le dictionnaire ou tableau associatif</h3>
 <p>Le script <strong>[bases-06.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2175,16 +2267,22 @@
 <p><strong>Commentaires</strong></p>
 <p>Le code précédent applique à un dictionnaire ce qui a été vu auparavant pour un simple tableau. Nous ne commentons que les nouveautés :</p>
 <ul>
-<li>ligne 12 : la fonction <em>ksort (key sort)</em> permet de trier un dictionnaire dans l&#x27;ordre naturel de la clé ;</li>
-<li>ligne 19 : la fonction <em>array_keys($dictionnaire)</em> rend la liste des clés du dictionnaire sous forme de tableau ;</li>
-<li>ligne 24 : la fonction <em>array_values($dictionnaire)</em> rend la liste des valeurs du dictionnaire sous forme de tableau ;</li>
-<li>ligne 43 : la fonction <em>isset($variable)</em> rend TRUE si la variable $<em>variable</em> a été définie, FALSE sinon ;</li>
-<li>ligne 33 : la fonction <em>unset($variable)</em> supprime la variable $<em>variable</em>.</li>
+  <li>ligne 12 : la fonction <i>ksort (key sort)</i> permet de trier un dictionnaire dans l&#x27;ordre naturel de la clé ;
+  </li>
+  <li>ligne 19 : la fonction <i>array_keys($dictionnaire)</i> rend la liste des clés du dictionnaire sous forme de tableau ;
+  </li>
+  <li>ligne 24 : la fonction <i>array_values($dictionnaire)</i> rend la liste des valeurs du dictionnaire sous forme de tableau ;
+  </li>
+  <li>ligne 43 : la fonction <i>isset($variable)</i> rend TRUE si la variable $<i>variable</i> a été définie, FALSE sinon ;
+  </li>
+  <li>ligne 33 : la fonction <i>unset($variable)</i> supprime la variable $<i>variable</i>.
+  </li>
 </ul>
-<p><a id="refheading398641881943603"></a>
-<a id="toc42690595"></a>
+
+<p><a id="toc42689823"></a>
 <a id="toc42690209"></a>
-<a id="toc42689823"></a></p>
+<a id="toc42690595"></a>
+<a id="refheading398641881943603"></a></p>
 <h3 id="363-les-tableaux-a-plusieurs-dimensions">3.6.3. Les tableaux à plusieurs dimensions</h3>
 <p>Le script <strong>[bases-07.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2240,18 +2338,21 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 5 : les éléments du tableau $<em>multi</em> sont eux-mêmes des tableaux ;</li>
-<li>ligne 14 : le tableau $<em>multi</em> devient un dictionnaire (<em>clé,valeur</em>) où chaque <em>valeur</em> est un tableau ;</li>
+  <li>ligne 5 : les éléments du tableau $<i>multi</i> sont eux-mêmes des tableaux ;
+  </li>
+  <li>ligne 14 : le tableau $<i>multi</i> devient un dictionnaire (<i>clé,valeur</i>) où chaque <i>valeur</i> est un tableau ;
+  </li>
 </ul>
-<p><a id="refheading398681881943603"></a>
-<a id="toc42690596"></a>
+
+<p><a id="toc42689824"></a>
 <a id="toc42690210"></a>
-<a id="toc42689824"></a></p>
+<a id="toc42690596"></a>
+<a id="refheading398681881943603"></a></p>
 <h2 id="37-les-chaines-de-caracteres">3.7. Les chaînes de caractères</h2>
-<p><a id="refheading398701881943603"></a>
-<a id="toc42690597"></a>
+<p><a id="toc42689825"></a>
 <a id="toc42690211"></a>
-<a id="toc42689825"></a></p>
+<a id="toc42690597"></a>
+<a id="refheading398701881943603"></a></p>
 <h3 id="371-notation">3.7.1. Notation</h3>
 <p>Le script <strong>[bases-08.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2267,10 +2368,10 @@
 <p><strong>Résultats</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>[un,un]
 </code></pre></div></td></tr></table></div>
-<p><a id="refheading398721881943603"></a>
-<a id="toc42690598"></a>
+<p><a id="toc42689826"></a>
 <a id="toc42690212"></a>
-<a id="toc42689826"></a></p>
+<a id="toc42690598"></a>
+<a id="refheading398721881943603"></a></p>
 <h3 id="372-comparaison">3.7.2. Comparaison</h3>
 <p>Le script <strong>[bases-09.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2305,12 +2406,14 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 9 du code : on aurait pu utiliser le comparateur == plutôt que ===. Ce dernier opérateur est plus contraignant en ce sens qu’il impose que les deux opérandes soient de même type. A noter qu’ici, il pouvait être remplacé par l’opérateur ==  puisque le type des deux paramètres est fixé à <strong>string</strong> dans la signature de la fonction ;</li>
+  <li>ligne 9 du code : on aurait pu utiliser le comparateur == plutôt que ===. Ce dernier opérateur est plus contraignant en ce sens qu’il impose que les deux opérandes soient de même type. A noter qu’ici, il pouvait être remplacé par l’opérateur ==  puisque le type des deux paramètres est fixé à <b>string</b> dans la signature de la fonction ;
+  </li>
 </ul>
-<p><a id="refheading398661881943603"></a>
-<a id="toc42690599"></a>
+
+<p><a id="toc42689827"></a>
 <a id="toc42690213"></a>
-<a id="toc42689827"></a></p>
+<a id="toc42690599"></a>
+<a id="refheading398661881943603"></a></p>
 <h3 id="373-liens-entre-chaines-et-tableaux">3.7.3. Liens entre chaînes et tableaux</h3>
 <p>Le script <strong>[bases-10.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2374,13 +2477,16 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 5 : la fonction <em>explode($séparateur,$chaine)</em> permet de récupérer les champs de $<em>chaine</em> séparés par $<em>séparateur</em>. Ainsi <em>explode(&quot;:&quot;,$chaine)</em> permet de récupérer sous forme de tableau les éléments de $<em>chaine</em> qui sont séparés par la chaîne &quot;:&quot; ;</li>
-<li>ligne 12 : la fonction <em>implode</em>($séparateur,$tableau) fait l&#x27;opération inverse de la fonction <em>explode</em>. Elle rend une chaîne de caractères formée des éléments de $<em>tableau</em> séparés par $<em>séparateur ;</em></li>
+  <li>ligne 5 : la fonction <i>explode($séparateur,$chaine)</i> permet de récupérer les champs de $<i>chaine</i> séparés par $<i>séparateur</i>. Ainsi <i>explode(&quot;:&quot;,$chaine)</i> permet de récupérer sous forme de tableau les éléments de $<i>chaine</i> qui sont séparés par la chaîne &quot;:&quot; ;
+  </li>
+  <li>ligne 12 : la fonction <i>implode</i>($séparateur,$tableau) fait l&#x27;opération inverse de la fonction <i>explode</i>. Elle rend une chaîne de caractères formée des éléments de $<i>tableau</i> séparés par $<i>séparateur ;</i>
+  </li>
 </ul>
-<p><a id="refheading398741881943603"></a>
-<a id="toc42690600"></a>
+
+<p><a id="toc42689828"></a>
 <a id="toc42690214"></a>
-<a id="toc42689828"></a></p>
+<a id="toc42690600"></a>
+<a id="refheading398741881943603"></a></p>
 <h3 id="374-les-expressions-regulieres">3.7.4. Les expressions régulières</h3>
 <p>Le script <strong>[bases-11.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2519,8 +2625,10 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>nous utilisons ici les expression régulières pour récupérer les divers champs d&#x27;une chaîne de caractères. Les expressions régulières permettent de dépasser les limites de la fonction <em>implode</em>. Le principe est de comparer une chaîne de caractères à une autre chaîne appelée <em>modèle</em> à l&#x27;aide de la fonction <em>preg_match</em> :</li>
+  <li>nous utilisons ici les expression régulières pour récupérer les divers champs d&#x27;une chaîne de caractères. Les expressions régulières permettent de dépasser les limites de la fonction <i>implode</i>. Le principe est de comparer une chaîne de caractères à une autre chaîne appelée <i>modèle</i> à l&#x27;aide de la fonction <i>preg_match</i> :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">$correspond<span style="color:#008080"> </span>=<span style="color:#008080"> </span>preg_match($modèle,<span style="color:#008080"> </span>$chaîne,<span style="color:#008080"> </span>$champs);</span>
 </code></pre></div>
@@ -2528,10 +2636,14 @@
 <p><span style="color: #000000">La fonction </span><em><span style="color: #000000">preg_match</span></em><span style="color: #000000"> rend un booléen TRUE si le </span><em><span style="color: #000000">modèle</span></em><span style="color: #000000"> peut être trouvé dans la </span><em><span style="color: #000000">chaîne</span></em><span style="color: #000000">. Si oui, $</span><em><span style="color: #000000">champs</span></em><strong><em><span style="color: #000000">[0]</span></em></strong><span style="color: #000000"> représente la sous-chaîne correspondant au modèle. Par ailleurs, si </span><em><span style="color: #000000">modèle</span></em><span style="color: #000000"> contient des sous-modèles entre parenthèses, $</span><em><span style="color: #000000">champs</span></em><strong><em><span style="color: #000000">[1]</span></em></strong><span style="color: #000000"> est le morceau de $</span><em><span style="color: #000000">chaîne</span></em><span style="color: #000000"> correspondant au 1</span><span style="color: #000000">er</span><span style="color: #000000"> sous-modèle, $</span><em><span style="color: #000000">champs</span></em><strong><em><span style="color: #000000">[2]</span></em></strong><span style="color: #000000"> est le morceau de $</span><em><span style="color: #000000">chaîne</span></em><span style="color: #000000"> correspondant au 2</span><span style="color: #000000">e</span><span style="color: #000000"> sous-modèle, etc…</span></p>
 <p><span style="color: #000000">Considérons le 1</span><span style="color: #000000">er</span><span style="color: #000000"> exemple. Le modèle est défini ligne 10 : il désigne une suite de un ou plusieurs (+) chiffres (\d) placés n&#x27;importe où dans une chaîne. Par ailleurs, le modèle définit un sous-modèle entouré de parenthèses ;</span></p>
 <ul>
-<li><span style="color: #000000">ligne 12 : le modèle </span><strong><span style="color: #000000">/(\d+)/</span></strong><span style="color: #000000"> (suite d&#x27;un ou plusieurs chiffres n&#x27;importe où dans la chaîne) est comparé à la chaîne &quot;</span><strong>xyz1234abcd</strong>&quot;. On voit que la sous-chaîne 1234 correspond au modèle. On aura donc $champs<strong>[0]</strong> égal à &quot;1234&quot;. Par ailleurs, le modèle a des sous-modèles entre parenthèses. On aura $champs<strong>[1]</strong>=&quot;1234&quot; ;</li>
-<li>ligne 13 :  <span style="color: #000000">le modèle </span><strong><span style="color: #000000">/(\d+)/</span></strong><span style="color: #000000"> est comparé à la chaîne &quot;</span><strong>12 34</strong>&quot;. On voit que les sous-chaînes 12 et 34 correspondent au modèle. La comparaison s&#x27;arrête à la première sous-chaîne correspondant au modèle. On aura donc, $champs<strong>[0]</strong>=12 et $champs<strong>[1]</strong>=12 ;</li>
-<li>ligne 14 :  <span style="color: #000000">le modèle </span><strong><span style="color: #000000">/(\d+)/</span></strong><span style="color: #000000"> est comparé à la chaîne &quot;</span><strong>abcd</strong>&quot;. Aucune correspondance n&#x27;est trouvée ;</li>
+  <li><span style="color: #000000">ligne 12 : le modèle </span><b><span style="color: #000000">/(\d+)/</span></b><span style="color: #000000"> (suite d&#x27;un ou plusieurs chiffres n&#x27;importe où dans la chaîne) est comparé à la chaîne &quot;</span><b>xyz1234abcd</b>&quot;. On voit que la sous-chaîne 1234 correspond au modèle. On aura donc $champs<b>[0]</b> égal à &quot;1234&quot;. Par ailleurs, le modèle a des sous-modèles entre parenthèses. On aura $champs<b>[1]</b>=&quot;1234&quot; ;
+  </li>
+  <li>ligne 13 :  <span style="color: #000000">le modèle </span><b><span style="color: #000000">/(\d+)/</span></b><span style="color: #000000"> est comparé à la chaîne &quot;</span><b>12 34</b>&quot;. On voit que les sous-chaînes 12 et 34 correspondent au modèle. La comparaison s&#x27;arrête à la première sous-chaîne correspondant au modèle. On aura donc, $champs<b>[0]</b>=12 et $champs<b>[1]</b>=12 ;
+  </li>
+  <li>ligne 14 :  <span style="color: #000000">le modèle </span><b><span style="color: #000000">/(\d+)/</span></b><span style="color: #000000"> est comparé à la chaîne &quot;</span><b>abcd</b>&quot;. Aucune correspondance n&#x27;est trouvée ;
+  </li>
 </ul>
+
 <p>Explicitons les modèles utilisés dans la suite du code :</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#0000ff">$modèle</span><span style="color:#008080"> </span>=<span style="color:#008080"> </span>&quot;/^(.*?)(\d+)(.*?)$/&quot;;</span>
@@ -2549,15 +2661,15 @@
 
 <p><span style="color: #000000">correspond à début de chaîne (^), 0 ou plusieurs espaces (\s*), un signe + ou - </span><strong><span style="color: #000000">[+|-]</span></strong><span style="color: #000000"> présent 0 ou 1 fois (?), une suite de 0 ou plusieurs espaces (\s*), 1 ou plusieurs chiffres suivis d&#x27;un point décimal suivi de zéro ou plusieurs chiffres (\d+\.\d*) ou (|) un point décimal (\.) suivi d&#x27;un ou plusieurs chiffres (\d+) ou (|) un ou plusieurs chiffres (\d+), une suite de 0 ou plusieurs espaces (\s*)].</span></p>
 <p><strong><span style="color: #000000">Note</span></strong><span style="color: #000000"> : le terme </span><strong><span style="color: #000000">[espace]</span></strong><span style="color: #000000"> dans les expressions régulières désigne un ensemble de caractères : blanc, saut de ligne \n, tabulation \t, retour à la ligne \r, saut de page \f…</span></p>
-<p><a id="refheading398761881943603"></a>
-<a id="toc42690601"></a>
+<p><a id="toc42689829"></a>
 <a id="toc42690215"></a>
-<a id="toc42689829"></a></p>
+<a id="toc42690601"></a>
+<a id="refheading398761881943603"></a></p>
 <h2 id="38-les-fonctions">3.8. Les fonctions</h2>
-<p><a id="refheadingtoc55549710956990"></a>
-<a id="toc42690602"></a>
+<p><a id="toc42689830"></a>
 <a id="toc42690216"></a>
-<a id="toc42689830"></a></p>
+<a id="toc42690602"></a>
+<a id="refheadingtoc55549710956990"></a></p>
 <h3 id="381-mode-de-passage-des-parametres">3.8.1. Mode de passage des paramètres</h3>
 <p>Le script <strong>[base-12.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2605,12 +2717,18 @@
 <a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="nx">f</span><span class="p">(</span><span class="nx">$i</span><span class="p">,</span><span class="nx">$j</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 1 : définit les paramètres formels $a et $b de la fonction f. Celle-ci manipule ces deux paramètres formels et rend un résultat ;</li>
-<li>ligne 7 : appel de la fonction f avec deux paramètres effectifs $i et $j. Les liens entre les paramètres formels ($a,$b) et les paramètres effectifs ($i,$j) sont définis par les lignes 1 et 7 :</li>
-<li>&amp;$a : le signe <strong>&amp;</strong> indique que le paramètre formel $a prendra pour valeur l&#x27;adresse du paramètre effectif $i. Dit autrement, $a et $i sont deux références sur un même emplacement mémoire. Manipuler le paramètre formel $a revient à manipuler le paramètre effectif $i. C&#x27;est ce que montre l&#x27;exécution du code. Ce mode de passage convient aux paramètres de sortie et aux données volumineuses telles que les tableaux et dictionnaires. On appelle ce mode passage, passage par <strong>référence</strong>.</li>
-<li>$b : le paramètre formel $b prendra pour valeur celle du paramètre effectif $j. C&#x27;est un passage par <strong>valeur</strong>. Les paramètres formels et effectifs sont deux variables différentes. Manipuler le paramètre formel $b n&#x27;a aucune incidence sur le paramètre effectif $j. C&#x27;est ce que montre l&#x27;exécution du code. Ce mode de passage convient aux paramètres d&#x27;entrée.</li>
-<li>Soit la fonction <em>échange</em> qui admet deux paramètres formels $<em>a</em> et $<em>b</em>. La fonction échange la valeur de ces deux paramètres. Ainsi lors d&#x27;un appel échange <em>($i,$j)</em>, le code appelant s&#x27;attend à ce que les valeurs des deux paramètres effectifs soient échangées. Ce sont donc des paramètres de sortie (ils sont modifiés). On écrira donc :</li>
+  <li>ligne 1 : définit les paramètres formels $a et $b de la fonction f. Celle-ci manipule ces deux paramètres formels et rend un résultat ;
+  </li>
+  <li>ligne 7 : appel de la fonction f avec deux paramètres effectifs $i et $j. Les liens entre les paramètres formels ($a,$b) et les paramètres effectifs ($i,$j) sont définis par les lignes 1 et 7 :
+  </li>
+  <li>&amp;$a : le signe <b>&amp;</b> indique que le paramètre formel $a prendra pour valeur l&#x27;adresse du paramètre effectif $i. Dit autrement, $a et $i sont deux références sur un même emplacement mémoire. Manipuler le paramètre formel $a revient à manipuler le paramètre effectif $i. C&#x27;est ce que montre l&#x27;exécution du code. Ce mode de passage convient aux paramètres de sortie et aux données volumineuses telles que les tableaux et dictionnaires. On appelle ce mode passage, passage par <b>référence</b>.
+  </li>
+  <li>$b : le paramètre formel $b prendra pour valeur celle du paramètre effectif $j. C&#x27;est un passage par <b>valeur</b>. Les paramètres formels et effectifs sont deux variables différentes. Manipuler le paramètre formel $b n&#x27;a aucune incidence sur le paramètre effectif $j. C&#x27;est ce que montre l&#x27;exécution du code. Ce mode de passage convient aux paramètres d&#x27;entrée.
+  </li>
+  <li>Soit la fonction <i>échange</i> qui admet deux paramètres formels $<i>a</i> et $<i>b</i>. La fonction échange la valeur de ces deux paramètres. Ainsi lors d&#x27;un appel échange <i>($i,$j)</i>, le code appelant s&#x27;attend à ce que les valeurs des deux paramètres effectifs soient échangées. Ce sont donc des paramètres de sortie (ils sont modifiés). On écrira donc :
+  </li>
 </ul>
+
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">échange</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">$a</span><span class="p">,</span><span class="o">&amp;</span><span class="nx">$b</span><span class="p">){</span><span class="err">…</span><span class="p">.}</span>
 </code></pre></div>
 <p>Le script suivant <strong>[base-13.php]</strong> montre d’autres exemples :</p>
@@ -2661,15 +2779,24 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 8-14 : la fonction <strong>f</strong> étudiée dans le paragraphe précédent mais on n’a pas typé les paramètres ;</li>
-<li>lignes 16-22 : la fonction <strong>g</strong> fait la même chose que la fonction <strong>f</strong> mais on précise le type des paramètres attendus – c’est une nouveauté PHP 7. On attend deux paramètres de type <strong>int.</strong> On veut voir ce qui se passe lorsque le paramètre effectif passé à la fonction n’a pas le type attendu par celle-ci ;</li>
-<li>lignes 25-26 : $i et $j sont deux entiers ;</li>
-<li>lignes 28-29 : appel de la fonction <strong>f</strong> avec des paramètres du type attendu ;</li>
-<li>lignes 31-32 : appel de la fonction <strong>g</strong> avec des paramètres du type attendu ;</li>
-<li>lignes 34-35 : les variables $a et $b sont de type <strong>float</strong> ;</li>
-<li>lignes 36-37 : appel de la fonction <strong>f</strong> avec des paramètres qui ne sont pas du type attendu ;</li>
-<li>lignes 41-42 : appel de la fonction <strong>g</strong> avec des paramètres qui ne sont pas du type attendu ;</li>
+  <li>lignes 8-14 : la fonction <b>f</b> étudiée dans le paragraphe précédent mais on n’a pas typé les paramètres ;
+  </li>
+  <li>lignes 16-22 : la fonction <b>g</b> fait la même chose que la fonction <b>f</b> mais on précise le type des paramètres attendus – c’est une nouveauté PHP 7. On attend deux paramètres de type <b>int.</b> On veut voir ce qui se passe lorsque le paramètre effectif passé à la fonction n’a pas le type attendu par celle-ci ;
+  </li>
+  <li>lignes 25-26 : $i et $j sont deux entiers ;
+  </li>
+  <li>lignes 28-29 : appel de la fonction <b>f</b> avec des paramètres du type attendu ;
+  </li>
+  <li>lignes 31-32 : appel de la fonction <b>g</b> avec des paramètres du type attendu ;
+  </li>
+  <li>lignes 34-35 : les variables $a et $b sont de type <b>float</b> ;
+  </li>
+  <li>lignes 36-37 : appel de la fonction <b>f</b> avec des paramètres qui ne sont pas du type attendu ;
+  </li>
+  <li>lignes 41-42 : appel de la fonction <b>g</b> avec des paramètres qui ne sont pas du type attendu ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
@@ -2688,9 +2815,12 @@
 <a id="__codelineno-15-8" name="__codelineno-15-8"></a>test[a,b]=[6,6.2]
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>les lignes 5-6 montrent que la fonction <strong>f</strong> a accepté les deux paramètres de type <strong>float</strong> et a travaillé avec ;</li>
-<li>les lignes 7-8 montrent que la fonction <strong>g</strong> a accepté les deux paramètres de type <strong>float</strong> mais qu’elle les a transformés en type <strong>int</strong> (ligne 7) ;</li>
+  <li>les lignes 5-6 montrent que la fonction <b>f</b> a accepté les deux paramètres de type <b>float</b> et a travaillé avec ;
+  </li>
+  <li>les lignes 7-8 montrent que la fonction <b>g</b> a accepté les deux paramètres de type <b>float</b> mais qu’elle les a transformés en type <b>int</b> (ligne 7) ;
+  </li>
 </ul>
+
 <p>Maintenant décommentons la ligne 4 :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="x">declare(strict_types = 1);</span>
 </code></pre></div>
@@ -2720,12 +2850,14 @@
 <a id="__codelineno-17-12" name="__codelineno-17-12"></a>  <span class="n">thrown</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">php7</span>\<span class="n">php5</span><span class="o">-</span><span class="n">exemples</span>\<span class="n">exemples</span>\<span class="n">exemple_111</span><span class="o">.</span><span class="n">php</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">15</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>lignes 9-10 : l’interpréteur PHP 7 a lancé une exception pour indiquer que le 1er paramètre passé à la fonction <strong>g</strong> n’avait pas le bon type. Il est recommandé d’être strict sur les types des paramètres, chaque fois que c’est possible, pour détecter les erreurs d’appel de fonctions ;</li>
+  <li>lignes 9-10 : l’interpréteur PHP 7 a lancé une exception pour indiquer que le 1er paramètre passé à la fonction <b>g</b> n’avait pas le bon type. Il est recommandé d’être strict sur les types des paramètres, chaque fois que c’est possible, pour détecter les erreurs d’appel de fonctions ;
+  </li>
 </ul>
-<p><a id="refheading398781881943603"></a>
-<a id="toc42690603"></a>
+
+<p><a id="toc42689831"></a>
 <a id="toc42690217"></a>
-<a id="toc42689831"></a></p>
+<a id="toc42690603"></a>
+<a id="refheading398781881943603"></a></p>
 <h3 id="382-resultats-rendus-par-une-fonction">3.8.2. Résultats rendus par une fonction</h3>
 <p>Le script <strong>[base-15.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2821,22 +2953,32 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>le programme précédent montre qu&#x27;une fonction PHP peut rendre un ensemble de résultats et non un seul, sous la forme d&#x27;un tableau ou d&#x27;un objet. La notion d&#x27;objet est explicitée un peu plus loin ;</li>
-<li>lignes 35-38 : la fonction f1 rend plusieurs valeurs sous la forme d&#x27;un tableau (<strong>array</strong>) ;</li>
-<li>lignes 41-48 : la fonction f2 rend plusieurs valeurs sous la forme d&#x27;un objet (<strong>object</strong>) ;</li>
-<li>lignes 51-59 : la fonction f3 est identique à la fonction f2 si ce n’est qu’elle crée explicitement un objet, ligne 53 ;</li>
-<li>la ligne 6 des résultats émet un avertissement (warning) indiquant que PHP a été obligé de créer un objet par défaut à la ligne 43 du code, ç-a-d lors de l’utilisation de la notation <strong>[$res→res1]</strong>. La fonction <strong>var_dump</strong> de la ligne 20 du code donne accès à la nature de l’objet et à son contenu. Dans les résultats, on voit que :<ul>
-<li>ligne 8 : l’objet créé par défaut est de type <strong>stdClass</strong> ;</li>
-<li>lignes 9-10 : la propriété <em>res1</em> est de type <em>entier</em> et a la valeur 11 ;</li>
-<li>etc…</li>
-<li>pour éviter le warning de la ligne 6 des résultats, on crée explicitement, ligne 53 de la fonction f3, un objet de type <strong>stdClass ;</strong></li>
+  <li>le programme précédent montre qu&#x27;une fonction PHP peut rendre un ensemble de résultats et non un seul, sous la forme d&#x27;un tableau ou d&#x27;un objet. La notion d&#x27;objet est explicitée un peu plus loin ;
+  </li>
+  <li>lignes 35-38 : la fonction f1 rend plusieurs valeurs sous la forme d&#x27;un tableau (<b>array</b>) ;
+  </li>
+  <li>lignes 41-48 : la fonction f2 rend plusieurs valeurs sous la forme d&#x27;un objet (<b>object</b>) ;
+  </li>
+  <li>lignes 51-59 : la fonction f3 est identique à la fonction f2 si ce n’est qu’elle crée explicitement un objet, ligne 53 ;
+  </li>
+  <li>la ligne 6 des résultats émet un avertissement (warning) indiquant que PHP a été obligé de créer un objet par défaut à la ligne 43 du code, ç-a-d lors de l’utilisation de la notation <b>[$res→res1]</b>. La fonction <b>var_dump</b> de la ligne 20 du code donne accès à la nature de l’objet et à son contenu. Dans les résultats, on voit que :
+    <ul>
+      <li>ligne 8 : l’objet créé par défaut est de type <b>stdClass</b> ;
+      </li>
+      <li>lignes 9-10 : la propriété <i>res1</i> est de type <i>entier</i> et a la valeur 11 ;
+      </li>
+      <li>etc…
+      </li>
+      <li>pour éviter le warning de la ligne 6 des résultats, on crée explicitement, ligne 53 de la fonction f3, un objet de type <b>stdClass ;</b>
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
-<p><a id="refheading398801881943603"></a>
-<a id="toc42690604"></a>
+
+<p><a id="toc42689832"></a>
 <a id="toc42690218"></a>
-<a id="toc42689832"></a></p>
+<a id="toc42690604"></a>
+<a id="refheading398801881943603"></a></p>
 <h2 id="39-les-fichiers-texte">3.9. Les fichiers texte</h2>
 <p>Le script <strong>[bases-16.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2947,21 +3089,32 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 12 : <em>fopen(nom_fichier,&quot;w&quot;)</em> ouvre le fichier <em>nom_fichier</em> en écriture (<em>w=write</em>). Si le fichier n&#x27;existe pas, il est créé. S&#x27;il existe, il est vidé. Si la création échoue, <em>fopen</em> rend la valeur <em>false</em>. Dans l&#x27;instruction <strong><em><span style="color: #000000">if</span></em></strong><em><span style="color: #008080"> </span></em><em><span style="color: #000000">(!</span></em><em><span style="color: #0000ff">$fic</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #000000">=</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #000000">fopen(</span></em><em><span style="color: #0000ff">$INFOS</span></em><em><span style="color: #000000">,</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #008000">&quot;w&quot;</span></em><em><span style="color: #000000">))</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #000000">{…}</span></em><span style="color: #000000">, il y a deux opérations successives : 1) </span><em><span style="color: #000000">$fic=fopen(..)</span></em><span style="color: #000000"> 2) </span><em><span style="color: #000000">if( ! $fic) {…} ;</span></em></li>
-<li>ligne 18 : <em>fputs($fic,$chaîne)</em> écrit <em>chaîne</em> dans le fichier $<em>fic. $chaine</em> est écrite avec la marque de fin de ligne \n derrière ;</li>
-<li>ligne 21 : <em>fclose($fic)</em> ferme le fichier $<em>fic ;</em></li>
-<li>ligne 26 : <em>fopen(nom_fichier,&quot;r&quot;)</em> ouvre le fichier <em>nom_fichier</em> en lecture (<em>r=read</em>). Si l&#x27;ouverture échoue (le fichier n&#x27;existe pas par exemple), <em>fopen</em> rend la valeur <em>false ;</em></li>
-<li>ligne 34 : <em>fgets($fic,1000)</em> lit la ligne suivante du fichier dans la limite de 1000 caractères. Dans l&#x27;opération <strong><em><span style="color: #000000">while</span></em></strong><em><span style="color: #008080"> </span></em><em><span style="color: #000000">(</span></em><em><span style="color: #0000ff">$ligne</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #000000">=</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #000000">fgets(</span></em><em><span style="color: #0000ff">$fic</span></em><em><span style="color: #000000">,</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #000080">1000</span></em><em><span style="color: #000000">))</span></em><em><span style="color: #008080"> </span></em><em><span style="color: #000000">{…}</span></em><span style="color: #000000">, il y a deux opérations successives 1) </span><em><span style="color: #000000">$ligne=fgets(…)</span></em><span style="color: #000000"> 2) </span><em><span style="color: #000000">while ( ! $ligne)</span></em><span style="color: #000000">. Après que le dernier caractère du fichier a été lu, la fonction </span><em><span style="color: #000000">fgets</span></em><span style="color: #000000"> rend la valeur </span><em><span style="color: #000000">false</span></em><span style="color: #000000"> et la boucle </span><em><span style="color: #000000">while</span></em><span style="color: #000000"> s&#x27;arrête. La fonction </span><em><span style="color: #000000">fgets</span></em><span style="color: #000000"> tente ici de lire au plus 1000 caractères mais s’arrête dès qu’une marque de fin de ligne est rencontrée. Ici toutes les lignes ayant moins de 1000 caractères, </span><strong><span style="color: #000000">[fgets]</span></strong><span style="color: #000000"> lit une ligne de texte, caractère de fin de ligne inclus. La fonction </span><em><span style="color: #000000">cutNewLineChar</span></em><span style="color: #000000"> des lignes 75-84 élimine les éventuels caractères de fin de ligne ;</span></li>
-<li><span style="color: #000000">ligne 77 : la fonction </span><em><span style="color: #000000">strlen($chaîne)</span></em><span style="color: #000000"> rend le nombre de caractères de $</span><em><span style="color: #000000">chaîne </span></em><span style="color: #000000">;</span></li>
-<li><span style="color: #000000">ligne 78 : la fonction </span><em><span style="color: #000000">substr($ligne, $position, $taille)</span></em><span style="color: #000000"> rend $</span><em><span style="color: #000000">taille</span></em><span style="color: #000000"> caractères de $</span><em><span style="color: #000000">ligne</span></em><span style="color: #000000">, pris à partir du caractère n° $</span><em><span style="color: #000000">position</span></em><span style="color: #000000">, le 1</span><span style="color: #000000">er</span><span style="color: #000000"> caractère ayant le n° 0. Sur les machines windows, la marque de fin de ligne est &quot;\r\n&quot;. Sur les machines Unix, c&#x27;est la chaîne &quot;\n&quot; ;</span></li>
-<li><span style="color: #000000">ligne 40 : la fonction </span><em><span style="color: #000000">array_shift($tableau)</span></em><span style="color: #000000"> élimine le 1</span><span style="color: #000000">er</span><span style="color: #000000"> élément de $</span><em><span style="color: #000000">tableau</span></em><span style="color: #000000"> et le rend comme résultat. On néglige ici le résultat rendu par </span><em><span style="color: #000000">array_shift</span></em><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 62 : la fonction </span><em><span style="color: #000000">is_array($variable)</span></em><span style="color: #000000"> rend </span><em><span style="color: #000000">true</span></em><span style="color: #000000"> si $</span><em><span style="color: #000000">variable</span></em><span style="color: #000000"> est un tableau, </span><em><span style="color: #000000">false</span></em><span style="color: #000000"> sinon ;</span></li>
-<li><span style="color: #000000">ligne 63 : la fonction </span><em><span style="color: #000000">join</span></em><span style="color: #000000"> fait la même chose que la fonction </span><em><span style="color: #000000">implode</span></em><span style="color: #000000"> déjà rencontrée ;</span></li>
+  <li>ligne 12 : <i>fopen(nom_fichier,&quot;w&quot;)</i> ouvre le fichier <i>nom_fichier</i> en écriture (<i>w=write</i>). Si le fichier n&#x27;existe pas, il est créé. S&#x27;il existe, il est vidé. Si la création échoue, <i>fopen</i> rend la valeur <i>false</i>. Dans l&#x27;instruction <i><b><span style="color: #000000">if</span></b></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">(!</span></i><i><span style="color: #0000ff">$fic</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">=</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">fopen(</span></i><i><span style="color: #0000ff">$INFOS</span></i><i><span style="color: #000000">,</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #008000">&quot;w&quot;</span></i><i><span style="color: #000000">))</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">{…}</span></i><span style="color: #000000">, il y a deux opérations successives : 1) </span><i><span style="color: #000000">$fic=fopen(..)</span></i><span style="color: #000000"> 2) </span><i><span style="color: #000000">if( ! $fic) {…} ;</span></i>
+  </li>
+  <li>ligne 18 : <i>fputs($fic,$chaîne)</i> écrit <i>chaîne</i> dans le fichier $<i>fic. $chaine</i> est écrite avec la marque de fin de ligne \n derrière ;
+  </li>
+  <li>ligne 21 : <i>fclose($fic)</i> ferme le fichier $<i>fic ;</i>
+  </li>
+  <li>ligne 26 : <i>fopen(nom_fichier,&quot;r&quot;)</i> ouvre le fichier <i>nom_fichier</i> en lecture (<i>r=read</i>). Si l&#x27;ouverture échoue (le fichier n&#x27;existe pas par exemple), <i>fopen</i> rend la valeur <i>false ;</i>
+  </li>
+  <li>ligne 34 : <i>fgets($fic,1000)</i> lit la ligne suivante du fichier dans la limite de 1000 caractères. Dans l&#x27;opération <i><b><span style="color: #000000">while</span></b></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">(</span></i><i><span style="color: #0000ff">$ligne</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">=</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">fgets(</span></i><i><span style="color: #0000ff">$fic</span></i><i><span style="color: #000000">,</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #000080">1000</span></i><i><span style="color: #000000">))</span></i><i><span style="color: #008080"> </span></i><i><span style="color: #000000">{…}</span></i><span style="color: #000000">, il y a deux opérations successives 1) </span><i><span style="color: #000000">$ligne=fgets(…)</span></i><span style="color: #000000"> 2) </span><i><span style="color: #000000">while ( ! $ligne)</span></i><span style="color: #000000">. Après que le dernier caractère du fichier a été lu, la fonction </span><i><span style="color: #000000">fgets</span></i><span style="color: #000000"> rend la valeur </span><i><span style="color: #000000">false</span></i><span style="color: #000000"> et la boucle </span><i><span style="color: #000000">while</span></i><span style="color: #000000"> s&#x27;arrête. La fonction </span><i><span style="color: #000000">fgets</span></i><span style="color: #000000"> tente ici de lire au plus 1000 caractères mais s’arrête dès qu’une marque de fin de ligne est rencontrée. Ici toutes les lignes ayant moins de 1000 caractères, </span><b><span style="color: #000000">[fgets]</span></b><span style="color: #000000"> lit une ligne de texte, caractère de fin de ligne inclus. La fonction </span><i><span style="color: #000000">cutNewLineChar</span></i><span style="color: #000000"> des lignes 75-84 élimine les éventuels caractères de fin de ligne ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 77 : la fonction </span><i><span style="color: #000000">strlen($chaîne)</span></i><span style="color: #000000"> rend le nombre de caractères de $</span><i><span style="color: #000000">chaîne </span></i><span style="color: #000000">;</span>
+  </li>
+  <li><span style="color: #000000">ligne 78 : la fonction </span><i><span style="color: #000000">substr($ligne, $position, $taille)</span></i><span style="color: #000000"> rend $</span><i><span style="color: #000000">taille</span></i><span style="color: #000000"> caractères de $</span><i><span style="color: #000000">ligne</span></i><span style="color: #000000">, pris à partir du caractère n° $</span><i><span style="color: #000000">position</span></i><span style="color: #000000">, le 1</span><span style="color: #000000">er</span><span style="color: #000000"> caractère ayant le n° 0. Sur les machines windows, la marque de fin de ligne est &quot;\r\n&quot;. Sur les machines Unix, c&#x27;est la chaîne &quot;\n&quot; ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 40 : la fonction </span><i><span style="color: #000000">array_shift($tableau)</span></i><span style="color: #000000"> élimine le 1</span><span style="color: #000000">er</span><span style="color: #000000"> élément de $</span><i><span style="color: #000000">tableau</span></i><span style="color: #000000"> et le rend comme résultat. On néglige ici le résultat rendu par </span><i><span style="color: #000000">array_shift</span></i><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 62 : la fonction </span><i><span style="color: #000000">is_array($variable)</span></i><span style="color: #000000"> rend </span><i><span style="color: #000000">true</span></i><span style="color: #000000"> si $</span><i><span style="color: #000000">variable</span></i><span style="color: #000000"> est un tableau, </span><i><span style="color: #000000">false</span></i><span style="color: #000000"> sinon ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 63 : la fonction </span><i><span style="color: #000000">join</span></i><span style="color: #000000"> fait la même chose que la fonction </span><i><span style="color: #000000">implode</span></i><span style="color: #000000"> déjà rencontrée ;</span>
+  </li>
 </ul>
-<p><a id="refheadingtoc185623971629160"></a>
-<a id="toc42690605"></a>
+
+<p><a id="toc42689833"></a>
 <a id="toc42690219"></a>
-<a id="toc42689833"></a></p>
+<a id="toc42690605"></a>
+<a id="refheadingtoc185623971629160"></a></p>
 <h2 id="310-encodage-decodage-json">3.10. Encodage / décodage jSON</h2>
 <p><img src="images/100000000000010A000000C2B964F140.png" style="width:3.521cm;height:2.571cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010A000000C2B964F140.png" /></p>
 <p>L’encodage / décodage jSON <span style="color: #000000"> (</span><strong><span style="color: #000000">J</span></strong><span style="color: #000000">avaScript </span><strong><span style="color: #000000">O</span></strong><span style="color: #000000">bject </span><strong><span style="color: #000000">N</span></strong><span style="color: #000000">otation) </span>est quelque chose que nous allons utiliser intensivement dans l’exercice qui sert de fil rouge au document. Les scripts <strong>[json-01.php, json-02.php, json-03.php]</strong> expliquent ce qui est à savoir pour la suite.</p>
@@ -3053,16 +3206,26 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 6 du code : la fonction <strong>[json_encode]</strong> transforme son paramètre en chaîne de caractères jSON ;</li>
-<li>ligne 2 des résultats : la chaîne jSON produite. Les caractères Unicode éâ ont été remplacés par leur code Unicode qui commence par \u ;</li>
-<li>ligne 10 du code : on refait la même chose en demandant cette fois-ci à ce que les caractères Unicode soient conservés tels quels ;</li>
-<li>ligne 4 des résultats : la chaîne jSON résultante. Elle est beaucoup plus lisible ;</li>
-<li>lignes 14-18 du code : on fait l’opération inverse. On transforme une chaîne jSON en tableau associatif ;</li>
-<li>lignes 6-13 des résultats : on voit qu’on a récupéré un tableau associatif ;</li>
-<li>lignes 19-25 du code : on transforme une chaîne jSON en objet de type <strong>[stdClass]</strong> ;</li>
-<li>lignes 18-25 des résultats : on voit qu’on a récupéré un objet de type <strong>[stdClass]</strong> ;</li>
-<li>lignes 23-25 du code : l’attribut A d’un objet O est noté <strong>[O→A]</strong> ;</li>
+  <li>ligne 6 du code : la fonction <b>[json_encode]</b> transforme son paramètre en chaîne de caractères jSON ;
+  </li>
+  <li>ligne 2 des résultats : la chaîne jSON produite. Les caractères Unicode éâ ont été remplacés par leur code Unicode qui commence par \u ;
+  </li>
+  <li>ligne 10 du code : on refait la même chose en demandant cette fois-ci à ce que les caractères Unicode soient conservés tels quels ;
+  </li>
+  <li>ligne 4 des résultats : la chaîne jSON résultante. Elle est beaucoup plus lisible ;
+  </li>
+  <li>lignes 14-18 du code : on fait l’opération inverse. On transforme une chaîne jSON en tableau associatif ;
+  </li>
+  <li>lignes 6-13 des résultats : on voit qu’on a récupéré un tableau associatif ;
+  </li>
+  <li>lignes 19-25 du code : on transforme une chaîne jSON en objet de type <b>[stdClass]</b> ;
+  </li>
+  <li>lignes 18-25 des résultats : on voit qu’on a récupéré un objet de type <b>[stdClass]</b> ;
+  </li>
+  <li>lignes 23-25 du code : l’attribut A d’un objet O est noté <b>[O→A]</b> ;
+  </li>
 </ul>
+
 <p>On peut encoder en jSON des tableaux à plusieurs niveaux comme le montre le script <strong>[json-02.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -3088,9 +3251,12 @@
 <p><strong>Commentaires</strong></p>
 <p>Dans la chaîne jSON :</p>
 <ul>
-<li>les tableaux non associatifs sont entourés de crochets [] ;</li>
-<li>les tableaux associatifs sont entourés d’accolades {} ;</li>
+  <li>les tableaux non associatifs sont entourés de crochets [] ;
+  </li>
+  <li>les tableaux associatifs sont entourés d’accolades {} ;
+  </li>
 </ul>
+
 <p>Le script <strong>[json-03.php]</strong> montre comment exploiter le fichier jSON <strong>[famille.json]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">{</span>
@@ -3135,9 +3301,12 @@
 
 <p>Commentaires</p>
 <ul>
-<li>ligne 4 : la fonction <strong>[file_get_contents]</strong> lit le contenu du fichier nommé <strong>[famille.json]</strong> et le met dans la variable <strong>[$json]</strong> ;</li>
-<li>la variable est ensuite décodée en objet (lignes 5-8) et en tableau associatif (lignes 9-12) ;</li>
+  <li>ligne 4 : la fonction <b>[file_get_contents]</b> lit le contenu du fichier nommé <b>[famille.json]</b> et le met dans la variable <b>[$json]</b> ;
+  </li>
+  <li>la variable est ensuite décodée en objet (lignes 5-8) et en tableau associatif (lignes 9-12) ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">----famille1</span>
@@ -3220,8 +3389,10 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 1-38 : l’objet issu du décodage du fichier jSON <strong>[famille.json]</strong> ;</li>
-<li>lignes 39-76 : le tableau associatif issu du décodage du fichier jSON <strong>[famille.json]</strong> ;</li>
+  <li>lignes 1-38 : l’objet issu du décodage du fichier jSON <b>[famille.json]</b> ;
+  </li>
+  <li>lignes 39-76 : le tableau associatif issu du décodage du fichier jSON <b>[famille.json]</b> ;
+  </li>
 </ul>
 
 

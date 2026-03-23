@@ -974,10 +974,10 @@
   
 
 
-<p><a id="refheading400021881943603"></a>
-<a id="toc42690868"></a>
+<p><a id="toc42690096"></a>
 <a id="toc42690482"></a>
-<a id="toc42690096"></a></p>
+<a id="toc42690868"></a>
+<a id="refheading400021881943603"></a></p>
 <h1 id="21-traitement-de-documents-xml">21. Traitement de documents XML</h1>
 <p><img src="images/10000000000001C8000002BEFCF65A2E.png" style="width:4.22cm;height:6.501cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C8000002BEFCF65A2E.png" /></p>
 <p>Nous considérons le fichier XML <strong>[data.xml]</strong> suivant :</p>
@@ -1027,11 +1027,16 @@
 
 <p><span style="color: #000000">Nous utilisons ici un module PHP appelé </span><strong><span style="color: #000000">[simpleXML]</span></strong><span style="color: #000000"> qui permet d&#x27;exploiter des documents XML.</span></p>
 <ul>
-<li>ligne 6 : chargement du fichier XML ;</li>
-<li>ligne 7 : affichage du document XML ;</li>
-<li>ligne 8 : affichage de la valeur de l&#x27;attribut &#x27;<em>sexe</em>&#x27; d&#x27;une personne enseignante : <em>&lt;enseignant&gt;&lt;personne sexe=&#x27;…&#x27;&gt; ;</em></li>
-<li>ligne 9 : affichage de la valeur de la 1re balise <em>&lt;enseignant&gt;&lt;personne&gt;&lt;nom&gt; ;</em></li>
+  <li>ligne 6 : chargement du fichier XML ;
+  </li>
+  <li>ligne 7 : affichage du document XML ;
+  </li>
+  <li>ligne 8 : affichage de la valeur de l&#x27;attribut &#x27;<i>sexe</i>&#x27; d&#x27;une personne enseignante : <i>&lt;enseignant&gt;&lt;personne sexe=&#x27;…&#x27;&gt; ;</i>
+  </li>
+  <li>ligne 9 : affichage de la valeur de la 1re balise <i>&lt;enseignant&gt;&lt;personne&gt;&lt;nom&gt; ;</i>
+  </li>
 </ul>
+
 <p>On notera que la balise racine &lt;tribu&gt; n’intervient pas dans le code. Elle pourrait être n’importe quoi ;</p>
 <p><strong>Résultats console</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1084,8 +1089,10 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 1-37 : le document XML sous la forme d&#x27;un objet de type <strong>[simpleXML]</strong>.</li>
+  <li>lignes 1-37 : le document XML sous la forme d&#x27;un objet de type <b>[simpleXML]</b>.
+  </li>
 </ul>
+
 <p>Le script précédent ne nous montre pas toutes les possibilités du module <strong>[simpleXML]</strong> mais il nous suffit pour écrire une nouvelle  version de l&#x27;exercice d’application.</p>
 
 

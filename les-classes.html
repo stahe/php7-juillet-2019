@@ -1220,22 +1220,22 @@
   
 
 
-<p><a id="refheading398901881943603"></a>
-<a id="toc42690625"></a>
+<p><a id="toc42689853"></a>
 <a id="toc42690239"></a>
-<a id="toc42689853"></a></p>
+<a id="toc42690625"></a>
+<a id="refheading398901881943603"></a></p>
 <h1 id="5-les-classes">5. Les classes</h1>
-<p><strong>Vocabulaire : </strong>Une classe <strong>class</strong> est un type PHP. Une variable de ce type est appelée <strong>objet</strong>. Un objet est une <strong>instance</strong> (exemplaire) de classe.</p>
-<p><a id="refheadingtoc787932244347140"></a>
-<a id="toc42690626"></a>
+<p><strong>Vocabulaire :</strong> Une classe <strong>class</strong> est un type PHP. Une variable de ce type est appelée <strong>objet</strong>. Un objet est une <strong>instance</strong> (exemplaire) de classe.</p>
+<p><a id="toc42689854"></a>
 <a id="toc42690240"></a>
-<a id="toc42689854"></a></p>
+<a id="toc42690626"></a>
+<a id="refheadingtoc787932244347140"></a></p>
 <h2 id="51-larborescence-des-scripts">5.1. L’arborescence des scripts</h2>
 <p><img src="images/1000000000000179000003402C9077BE.png" style="width:3.492cm;height:7.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000179000003402C9077BE.png" /></p>
-<p><a id="refheading398921881943603"></a>
-<a id="toc42690627"></a>
+<p><a id="toc42689855"></a>
 <a id="toc42690241"></a>
-<a id="toc42689855"></a></p>
+<a id="toc42690627"></a>
+<a id="refheading398921881943603"></a></p>
 <h2 id="52-toute-variable-peut-devenir-un-objet-dote-dattributs">5.2. Toute variable peut devenir un objet doté d&#x27;attributs</h2>
 <p>Le script <strong>[classes-01.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1351,29 +1351,40 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 6 : la notation <em>$obj-&gt;attr</em> désigne l&#x27;attribut <em>attr</em> de la variable $<em>obj</em>. S&#x27;il n&#x27;existe pas il est créé, faisant ainsi de la variable $<em>obj</em>, un objet avec attributs. Nous avons vu que PHP crée alors par défaut un objet de type <strong>stdClass</strong> ;</li>
-<li>ligne 16 : l&#x27;expression <em>$obj2=$obj1</em>, lorsque $<em>obj1</em> est un objet, est une copie d&#x27;objets par <strong>référence</strong> : $<em>obj2</em> et $<em>obj1</em> sont des références (adresses) sur un même objet. L&#x27;objet lui-même peut être modifié par l&#x27;une ou l&#x27;autre des références ;</li>
-<li>lignes 23-27 : visent à montrer que $<em>obj1</em> et $<em>obj2</em> sont deux variables différentes : elles ne sont pas à la même adresse mémoire :<ul>
-<li><em>$obj2=$obj1</em> a copié la valeur de $<em>obj1</em> dans la variable $<em>obj2</em> (opération 1 ci-dessus). La valeur de $<em>obj1</em> est l’adresse d’un l’objet. Ainsi $<em>obj1</em> et $<em>obj2</em> pointent sur le même objet. Lorsqu’on manipule une variable $<em>obj</em> et que celle-ci pointe sur un objet, PHP manipule l’objet pointé par la variable $<em>obj</em>. D’après le schéma ci-dessous, on voit qu’on peut modifier l’objet pointé soit via $<em>obj1</em> soit via $*obj2. * C’est ce que montrent les lignes 4 et 5 des résultats ;</li>
+  <li>ligne 6 : la notation <i>$obj-&gt;attr</i> désigne l&#x27;attribut <i>attr</i> de la variable $<i>obj</i>. S&#x27;il n&#x27;existe pas il est créé, faisant ainsi de la variable $<i>obj</i>, un objet avec attributs. Nous avons vu que PHP crée alors par défaut un objet de type <b>stdClass</b> ;
+  </li>
+  <li>ligne 16 : l&#x27;expression <i>$obj2=$obj1</i>, lorsque $<i>obj1</i> est un objet, est une copie d&#x27;objets par <b>référence</b> : $<i>obj2</i> et $<i>obj1</i> sont des références (adresses) sur un même objet. L&#x27;objet lui-même peut être modifié par l&#x27;une ou l&#x27;autre des références ;
+  </li>
+  <li>lignes 23-27 : visent à montrer que $<i>obj1</i> et $<i>obj2</i> sont deux variables différentes : elles ne sont pas à la même adresse mémoire :
+    <ul>
+      <li><i>$obj2=$obj1</i> a copié la valeur de $<i>obj1</i> dans la variable $<i>obj2</i> (opération 1 ci-dessus). La valeur de $<i>obj1</i> est l’adresse d’un l’objet. Ainsi $<i>obj1</i> et $<i>obj2</i> pointent sur le même objet. Lorsqu’on manipule une variable $<i>obj</i> et que celle-ci pointe sur un objet, PHP manipule l’objet pointé par la variable $<i>obj</i>. D’après le schéma ci-dessous, on voit qu’on peut modifier l’objet pointé soit via $<i>obj1</i> soit via $<i>obj2. </i> C’est ce que montrent les lignes 4 et 5 des résultats ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p><img src="images/100000000000049A00000174F759A12C.png" style="width:9.351cm;height:2.95cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000049A00000174F759A12C.png" /></p>
 <ul>
-<li>ligne 30 : l&#x27;expression <em>$obj3=&amp;$obj2</em> fait que <em>$obj2 et $obj3</em> sont à la même adresse <strong>[1 ci-dessous]</strong>. On pourrait dire que les deux variables sont des alias du même emplacement mémoire. Elles pointent toutes les deux sur un objet, <strong>Objet A</strong> ci-dessous <strong>[2]</strong> ;<ul>
-<li>l’opération <em>$obj2=new stdClass()</em> fait qu’un nouvel objet, <strong>Objet B</strong> est créé <strong>[3 ci-dessous]</strong> et l’adresse de ce nouvel objet est affectée à la variable $<em>obj2</em>. Puisque $<em>obj2</em> et $<em>obj3</em> sont deux alias du même emplacement mémoire, $<em>obj3</em> pointe également sur le nouvel objet <strong>Objet B</strong>.** ** C’est ce que montrent les lignes 16-27 et 30-41 des résultats ;</li>
+  <li>ligne 30 : l&#x27;expression <i>$obj3=&amp;$obj2</i> fait que <i>$obj2 et $obj3</i> sont à la même adresse <b>[1 ci-dessous]</b>. On pourrait dire que les deux variables sont des alias du même emplacement mémoire. Elles pointent toutes les deux sur un objet, <b>Objet A</b> ci-dessous <b>[2]</b> ;
+    <ul>
+      <li>l’opération <i>$obj2=new stdClass()</i> fait qu’un nouvel objet, <b>Objet B</b> est créé <b>[3 ci-dessous]</b> et l’adresse de ce nouvel objet est affectée à la variable $<i>obj2</i>. Puisque $<i>obj2</i> et $<i>obj3</i> sont deux alias du même emplacement mémoire, $<i>obj3</i> pointe également sur le nouvel objet <b>Objet B</b>.<b> </b> C’est ce que montrent les lignes 16-27 et 30-41 des résultats ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p><img src="images/10000000000004D400000145B81B5FC7.png" style="width:9.812cm;height:2.581cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004D400000145B81B5FC7.png" /></p>
 <ul>
-<li>lignes 52-54 : montrent qu&#x27;un objet peut être parcouru comme un dictionnaire. Les clés du dictionnaire sont les noms des attributs et les valeurs du dictionnaire, les valeurs de ces mêmes attributs ;</li>
-<li>ligne 51 : la fonction <em>count</em> peut être appliquée à un objet (moyennant un warning) mais ne donne pas, comme on aurait pu s&#x27;y attendre, le nombre d&#x27;attributs. Donc un objet présente des similitudes avec un dictionnaire mais n&#x27;en est pas un ;</li>
+  <li>lignes 52-54 : montrent qu&#x27;un objet peut être parcouru comme un dictionnaire. Les clés du dictionnaire sont les noms des attributs et les valeurs du dictionnaire, les valeurs de ces mêmes attributs ;
+  </li>
+  <li>ligne 51 : la fonction <i>count</i> peut être appliquée à un objet (moyennant un warning) mais ne donne pas, comme on aurait pu s&#x27;y attendre, le nombre d&#x27;attributs. Donc un objet présente des similitudes avec un dictionnaire mais n&#x27;en est pas un ;
+  </li>
 </ul>
-<p><a id="refheading398941881943603"></a>
-<a id="toc42690628"></a>
+
+<p><a id="toc42689856"></a>
 <a id="toc42690242"></a>
-<a id="toc42689856"></a></p>
+<a id="toc42690628"></a>
+<a id="refheading398941881943603"></a></p>
 <h2 id="53-une-classe-personne-sans-attributs-declares">5.3. Une classe Personne sans attributs déclarés</h2>
 <p>Le script <strong>[classes-02.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1408,16 +1419,22 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 3-13 : définissent une <strong>classe</strong> <em>Personne</em>. Une classe est un moule à partir duquel on crée des objets. Elle regroupe des <strong>attributs</strong> et des fonctions appelées <strong>méthodes</strong>. Il n&#x27;y a pas obligation à déclarer les attributs ;</li>
-<li>lignes 8-11 : la méthode <em>identité</em> affiche la valeur de trois attributs non déclarés dans la classe. Le mot clé $<strong>this</strong> désigne l&#x27;objet auquel on applique la méthode ;</li>
-<li>ligne 17 : on crée un objet $<em>p</em> de type <em>Personne</em>. Le mot clé <strong>new</strong> sert à créer un nouvel objet. L&#x27;opération rend une <strong>référence</strong> sur l&#x27;objet créé (donc une adresse). Diverses écritures sont possibles : <em>new Personne()</em>, <em>new Personne</em>, <em>new personne</em>. Le nom de la classe est insensible à la casse ;</li>
-<li>lignes 18-20 : les trois attributs nécessaires à la méthode <em>identité</em> sont créés dans l&#x27;objet $p ;</li>
-<li>ligne 22 : la méthode <em>identité</em> de la classe <em>Personne</em> est appliquée sur l&#x27;objet $<em>p</em>. Dans le code (lignes 8-11) de la méthode <em>identité</em>, $<em>this</em> référence le même objet que $<em>p ;</em></li>
+  <li>lignes 3-13 : définissent une <b>classe</b> <i>Personne</i>. Une classe est un moule à partir duquel on crée des objets. Elle regroupe des <b>attributs</b> et des fonctions appelées <b>méthodes</b>. Il n&#x27;y a pas obligation à déclarer les attributs ;
+  </li>
+  <li>lignes 8-11 : la méthode <i>identité</i> affiche la valeur de trois attributs non déclarés dans la classe. Le mot clé $<b>this</b> désigne l&#x27;objet auquel on applique la méthode ;
+  </li>
+  <li>ligne 17 : on crée un objet $<i>p</i> de type <i>Personne</i>. Le mot clé <b>new</b> sert à créer un nouvel objet. L&#x27;opération rend une <b>référence</b> sur l&#x27;objet créé (donc une adresse). Diverses écritures sont possibles : <i>new Personne()</i>, <i>new Personne</i>, <i>new personne</i>. Le nom de la classe est insensible à la casse ;
+  </li>
+  <li>lignes 18-20 : les trois attributs nécessaires à la méthode <i>identité</i> sont créés dans l&#x27;objet $p ;
+  </li>
+  <li>ligne 22 : la méthode <i>identité</i> de la classe <i>Personne</i> est appliquée sur l&#x27;objet $<i>p</i>. Dans le code (lignes 8-11) de la méthode <i>identité</i>, $<i>this</i> référence le même objet que $<i>p ;</i>
+  </li>
 </ul>
-<p><a id="refheading398961881943603"></a>
-<a id="toc42690629"></a>
+
+<p><a id="toc42689857"></a>
 <a id="toc42690243"></a>
-<a id="toc42689857"></a></p>
+<a id="toc42690629"></a>
+<a id="refheading398961881943603"></a></p>
 <h2 id="54-la-classe-personne-avec-attributs-declares">5.4. La classe Personne avec attributs déclarés</h2>
 <p>Le script <strong>[classes-03.php]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1456,12 +1473,14 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 6-8 : les attributs de la classe sont explicitement déclarés avec le mot clé <strong>var ;</strong></li>
+  <li>lignes 6-8 : les attributs de la classe sont explicitement déclarés avec le mot clé <b>var ;</b>
+  </li>
 </ul>
-<p><a id="refheading398981881943603"></a>
-<a id="toc42690630"></a>
+
+<p><a id="toc42689858"></a>
 <a id="toc42690244"></a>
-<a id="toc42689858"></a></p>
+<a id="toc42690630"></a>
+<a id="refheading398981881943603"></a></p>
 <h2 id="55-la-classe-personne-avec-un-constructeur">5.5. La classe Personne avec un constructeur</h2>
 <p>Les exemples précédents montraient des classes <em>Personne</em> exotiques telles qu&#x27;on pouvait les trouver dans PHP 4. Il n&#x27;est pas conseillé de suivre ces exemples. Nous présentons maintenant une classe <em>Personne</em> <strong>[classes-04.php]</strong> correspondant aux bonnes pratiques de PHP 7 :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1535,39 +1554,52 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 6-50 : la classe <em>Personne ;</em></li>
-<li>lignes 7-9 : les attributs privés (<strong>private</strong>) de la classe. Ces attributs ne sont visibles qu&#x27;à l&#x27;intérieur de la classe. Les autres mots clés utilisables sont :</li>
-<li><strong>public </strong>: fait de l&#x27;attribut un attribut <em>public</em> visible de l&#x27;extérieur de la classe,</li>
-<li><strong>protected </strong>: fait de l&#x27;attribut un attribut <em>protégé</em> visible de l&#x27;intérieur de la classe et des classes dérivées de celle-ci ;</li>
-<li>parce que les attributs sont privés, on ne peut y accéder de l&#x27;extérieur de la classe. On ne peut donc écrire le code suivant :</li>
+  <li>lignes 6-50 : la classe <i>Personne ;</i>
+  </li>
+  <li>lignes 7-9 : les attributs privés (<b>private</b>) de la classe. Ces attributs ne sont visibles qu&#x27;à l&#x27;intérieur de la classe. Les autres mots clés utilisables sont :
+  </li>
+  <li><b>public </b>: fait de l&#x27;attribut un attribut <i>public</i> visible de l&#x27;extérieur de la classe,
+  </li>
+  <li><b>protected </b>: fait de l&#x27;attribut un attribut <i>protégé</i> visible de l&#x27;intérieur de la classe et des classes dérivées de celle-ci ;
+  </li>
+  <li>parce que les attributs sont privés, on ne peut y accéder de l&#x27;extérieur de la classe. On ne peut donc écrire le code suivant :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>$p=new Personne() ;
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>$p-&gt;nom=&quot;Landru&quot; ;
 </code></pre></div></td></tr></table></div>
 <p>Ici, on est en-dehors de la classe <em>Personne</em>. Comme l&#x27;attribut <em>nom</em> est privé, la ligne 2 est incorrecte. Pour initialiser les champs privés de l&#x27;objet $p, il y a deux moyens :</p>
 <ul>
-<li>utiliser les méthodes publiques <strong>set</strong> et <strong>get</strong> (le nom de ces méthodes peut être quelconque) des lignes 12-34. On pourra alors écrire :</li>
+  <li>utiliser les méthodes publiques <b>set</b> et <b>get</b> (le nom de ces méthodes peut être quelconque) des lignes 12-34. On pourra alors écrire :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>$p=new Personne() ;
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>$p-&gt;setNom(&quot;Landru&quot;) ;
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>utiliser le constructeur des lignes 37-42. On écrira alors :</li>
+  <li>utiliser le constructeur des lignes 37-42. On écrira alors :
+  </li>
 </ul>
+
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>$p=new Personne(&quot;Michel&quot;,&quot;Landru&quot;,44) ;
 </code></pre></div></td></tr></table></div>
 <p>L&#x27;écriture ci-dessus, appelle automatiquement la méthode de la classe <em>Personne</em> appelée __<em>construct ;</em></p>
 <ul>
-<li>ligne 59 : cette ligne affiche la personne $<em>p</em> sous la forme d&#x27;une chaîne de caractères. Pour ce faire, la méthode de la classe <em>Personne</em> appelée __<em>toString</em> (lignes 45-47) est utilisée ;</li>
-<li>toutes les méthodes de la classe (fonctions) ont été préfixées par le mot clé <strong>public</strong> qui indique que la fonction est visible en-dehors de la classe. Les autres mots clés utilisables sont, comme pour les attributs et avec la même signification, <strong>private</strong> et <strong>protected.</strong> Sans attribut explicite de visibilité, la fonction est de visibilité implicite <strong>public</strong> ;</li>
+  <li>ligne 59 : cette ligne affiche la personne $<i>p</i> sous la forme d&#x27;une chaîne de caractères. Pour ce faire, la méthode de la classe <i>Personne</i> appelée __<i>toString</i> (lignes 45-47) est utilisée ;
+  </li>
+  <li>toutes les méthodes de la classe (fonctions) ont été préfixées par le mot clé <b>public</b> qui indique que la fonction est visible en-dehors de la classe. Les autres mots clés utilisables sont, comme pour les attributs et avec la même signification, <b>private</b> et <b>protected.</b> Sans attribut explicite de visibilité, la fonction est de visibilité implicite <b>public</b> ;
+  </li>
 </ul>
+
 <p><a id="laclassepersonne"></a>
-<a id="toc42690631"></a>
-<a id="toc42690245"></a>
+<a id="refheading399001881943603"></a>
 <a id="toc42689859"></a>
-<a id="refheading399001881943603"></a></p>
+<a id="toc42690245"></a>
+<a id="toc42690631"></a></p>
 <h2 id="56-la-classe-personne-avec-controles-de-validite-dans-le-constructeur">5.6. La classe Personne avec contrôles de validité dans le constructeur</h2>
 <p>Le constructeur d&#x27;une classe est le bon endroit pour vérifier que les valeurs d&#x27;initialisation de l&#x27;objet sont corrects. Mais un objet peut être également initialisé par ses méthodes <em>set</em> ou équivalentes. Pour éviter de mettre à deux endroits différents les mêmes vérifications, on pourra mettre ces dernières dans les méthodes <em>set</em>. Si une valeur d&#x27;initialisation d&#x27;un objet se révèle incorrecte, on lancera une <strong>exception</strong>. Voici un exemple.</p>
 <p>On déplace tout d’abord la définition de la classe <em>Personne</em> dans son propre fichier <strong>[Personne.php]</strong> :</p>
@@ -1653,13 +1685,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 4 : on demande à ce que le type des paramètres des fonctions soit respecté lorsqu’il est déclaré ;</li>
-<li>ligne 7 : définit un espace de noms (<strong>namespace</strong>). Le nom complet (on dit <em>qualifié</em>) de la classe <em>Personne</em> est alors<em>\Exemples\Personne</em>. Notez le caractère <strong>\</strong> commençant le nom qualifié : on a alors un nom qualifié <em>absolu</em>. Si ce caractère est absent, on a un nom qualifié <em>relatif</em> (relatif à l’espace de noms courant). Ainsi si deux classes A et B font partie du même espace de noms E, dans le code de la classe A on pourra atteindre la classe B par la notation <em>relative</em> <strong>B</strong>. Si la classe A fait partie de l’espace de noms E1 et B de l’espace de noms E2, dans le code de A, B sera atteint par la notation <em>absolue</em> <strong>\E2\B</strong>. Définir une classe à l’intérieur d’un espace de noms n’est pas obligatoire mais Netbeans émet un warning si on ne le fait pas. Donc on le fera. Par ailleurs, les espaces de noms devraient correspondre à l’arborescence des fichiers. Ainsi la classe A dans un espace de noms E1 devrait être dans un fichier <strong>E1/A.php</strong>. Ce n’est pas obligatoire mais là encore Netbeans émet un avertissement si on ne le fait pas. Sur l’exemple de la classe <strong>[\Exemples\Personne]</strong>, Netbeans émet un avertissement parce que l’arborescence du fichier <strong>[Personne.php]</strong> est <strong>[exemples/classes/Personne.php]</strong> et ne correspond donc pas à l’espace de noms. Il ne faut pas confondre arborescence et espace de noms. Le nom pleinement qualifié d’une classe utilise un espace de noms et <strong>n’a rien à voir</strong> avec l’arborescence du fichier PHP de la classe). Le lien arborescence / espace de noms est facultatif et peut ne pas être observé, comme nous l’avons fait ici;</li>
-<li>lignes 12-14 : les trois attributs privés de la classe ;</li>
-<li>lignes 29-37 : initialisation de l&#x27;attribut <em>prenom</em> et vérification de la valeur d&#x27;initialisation ;</li>
-<li>ligne 31 : la fonction <em>trim($chaine)</em> élimine les espaces qui se trouvent en début et fin de $<em>chaine</em>. Ainsi <em>trim(«  abcd   «)</em> est la chaîne «abcd» et <em>trim «    «</em> est la chaîne vide ;</li>
-<li>ligne 32 : si le prénom est vide, alors on lance une exception (ligne 33) sinon le prénom est mémorisé (ligne 35). Pour lancer une exception on a utilisé ici la classe prédéfinie <strong>[Exception]</strong>. On est obligés ici d’utiliser son nom absolu <strong>[\Exception]</strong>. Si on utilise son nom relatif <strong>[Exception]</strong> alors cette classe sera cherchée dans l’espace de noms du moment, ç-à-d l’espace de noms <strong>[Exemples]</strong> de la classe <em>Personne</em>. Ainsi l’interpréteur PHP cherchera une classe de nom absolu <strong>[\Exemples\Exception]</strong> qui n’existe pas ;</li>
+  <li>ligne 4 : on demande à ce que le type des paramètres des fonctions soit respecté lorsqu’il est déclaré ;
+  </li>
+  <li>ligne 7 : définit un espace de noms (<b>namespace</b>). Le nom complet (on dit <i>qualifié</i>) de la classe <i>Personne</i> est alors<i>\Exemples\Personne</i>. Notez le caractère <b>\</b> commençant le nom qualifié : on a alors un nom qualifié <i>absolu</i>. Si ce caractère est absent, on a un nom qualifié <i>relatif</i> (relatif à l’espace de noms courant). Ainsi si deux classes A et B font partie du même espace de noms E, dans le code de la classe A on pourra atteindre la classe B par la notation <i>relative</i> <b>B</b>. Si la classe A fait partie de l’espace de noms E1 et B de l’espace de noms E2, dans le code de A, B sera atteint par la notation <i>absolue</i> <b>\E2\B</b>. Définir une classe à l’intérieur d’un espace de noms n’est pas obligatoire mais Netbeans émet un warning si on ne le fait pas. Donc on le fera. Par ailleurs, les espaces de noms devraient correspondre à l’arborescence des fichiers. Ainsi la classe A dans un espace de noms E1 devrait être dans un fichier <b>E1/A.php</b>. Ce n’est pas obligatoire mais là encore Netbeans émet un avertissement si on ne le fait pas. Sur l’exemple de la classe <b>[\Exemples\Personne]</b>, Netbeans émet un avertissement parce que l’arborescence du fichier <b>[Personne.php]</b> est <b>[exemples/classes/Personne.php]</b> et ne correspond donc pas à l’espace de noms. Il ne faut pas confondre arborescence et espace de noms. Le nom pleinement qualifié d’une classe utilise un espace de noms et <b>n’a rien à voir</b> avec l’arborescence du fichier PHP de la classe). Le lien arborescence / espace de noms est facultatif et peut ne pas être observé, comme nous l’avons fait ici;
+  </li>
+  <li>lignes 12-14 : les trois attributs privés de la classe ;
+  </li>
+  <li>lignes 29-37 : initialisation de l&#x27;attribut <i>prenom</i> et vérification de la valeur d&#x27;initialisation ;
+  </li>
+  <li>ligne 31 : la fonction <i>trim($chaine)</i> élimine les espaces qui se trouvent en début et fin de $<i>chaine</i>. Ainsi <i>trim(«  abcd   «)</i> est la chaîne «abcd» et <i>trim «    «</i> est la chaîne vide ;
+  </li>
+  <li>ligne 32 : si le prénom est vide, alors on lance une exception (ligne 33) sinon le prénom est mémorisé (ligne 35). Pour lancer une exception on a utilisé ici la classe prédéfinie <b>[Exception]</b>. On est obligés ici d’utiliser son nom absolu <b>[\Exception]</b>. Si on utilise son nom relatif <b>[Exception]</b> alors cette classe sera cherchée dans l’espace de noms du moment, ç-à-d l’espace de noms <b>[Exemples]</b> de la classe <i>Personne</i>. Ainsi l’interpréteur PHP cherchera une classe de nom absolu <b>[\Exemples\Exception]</b> qui n’existe pas ;
+  </li>
 </ul>
+
 <p>La classe <strong>[Personne]</strong> est utilisée par le script <strong>[classes-05.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1701,9 +1740,12 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 7 : le script va utiliser la classe <strong>[Personne]</strong>. Il faut alors dire à l’interpréteur PHP où il peut trouver la définition de cette classe. C’est le rôle des instructions <strong>[include fichier]</strong> et <strong>[require fichier]</strong>. Ici on a utilisé l’instruction <strong>[include]</strong>. La différence entre les deux instructions est la suivante : si l’instruction <strong>[include fichier]</strong> rencontre des erreurs lors du chargement de <strong>[fichier]</strong> une erreur de niveau <strong>[E_WARNING]</strong> est émise mais l’exécution continue alors que <strong>[require]</strong> dans le même cas génère une erreur fatale et l’exécution du script s’arrête. Chacune des deux instructions a une variante <strong>[include_once]</strong> et <strong>[require_once]</strong>. Ces deux variantes permettent de gérer le cas des inclusions multiples d’un même fichier. On peut imaginer ici un projet constitué de plusieurs scripts PHP dont plusieurs référencent la classe <strong>[Personne]</strong>. Leur exécution va alors provoquer plusieurs fois l’inclusion du fichier <strong>[Personne.php]</strong> et provoquer une erreur car une classe ne peut être définie deux fois. La solution est d’utiliser les variantes <strong>[_once]</strong> qui assurent que le fichier ne sera inclus qu’une fois dans le script global du projet ;</li>
-<li>ligne 7 : la constante <strong>[__DIR__]</strong> est une constante PHP qui désigne le nom complet du dossier dans lequel se trouve le script contenant la constante <strong>[__DIR__]</strong>. Ainsi l’expression de la ligne 17 :</li>
+  <li>ligne 7 : le script va utiliser la classe <b>[Personne]</b>. Il faut alors dire à l’interpréteur PHP où il peut trouver la définition de cette classe. C’est le rôle des instructions <b>[include fichier]</b> et <b>[require fichier]</b>. Ici on a utilisé l’instruction <b>[include]</b>. La différence entre les deux instructions est la suivante : si l’instruction <b>[include fichier]</b> rencontre des erreurs lors du chargement de <b>[fichier]</b> une erreur de niveau <b>[E_WARNING]</b> est émise mais l’exécution continue alors que <b>[require]</b> dans le même cas génère une erreur fatale et l’exécution du script s’arrête. Chacune des deux instructions a une variante <b>[include_once]</b> et <b>[require_once]</b>. Ces deux variantes permettent de gérer le cas des inclusions multiples d’un même fichier. On peut imaginer ici un projet constitué de plusieurs scripts PHP dont plusieurs référencent la classe <b>[Personne]</b>. Leur exécution va alors provoquer plusieurs fois l’inclusion du fichier <b>[Personne.php]</b> et provoquer une erreur car une classe ne peut être définie deux fois. La solution est d’utiliser les variantes <b>[_once]</b> qui assurent que le fichier ne sera inclus qu’une fois dans le script global du projet ;
+  </li>
+  <li>ligne 7 : la constante <b>[__DIR__]</b> est une constante PHP qui désigne le nom complet du dossier dans lequel se trouve le script contenant la constante <b>[__DIR__]</b>. Ainsi l’expression de la ligne 17 :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">require_once<span style="color:#008080"> </span>__DIR__.<span style="color:#008000">&quot;/Personne.php&quot;</span>;</span>
 </code></pre></div>
@@ -1715,23 +1757,32 @@
 
 <p>Dans le chemin du fichier, on peut utiliser indifféremment les signes / et \ ;</p>
 <ul>
-<li>ligne 14 : on utilise la classe <strong>[Personne]</strong> que nous venons de définir. Le script <strong>[classes-05.php]</strong> n’a pas d’espaces de noms. La ligne 14 utilise le nom relatif de la classe <strong>[Personne]</strong> sans espace de noms. En l’absence d’espace de noms de la classe <strong>[Personne]</strong>, celle-ci est cherchée dans le script <strong>[classes-05.php]</strong> lui même et ne sera donc pas trouvée. Il y a deux solutions à ce problème :<ul>
-<li>utiliser le nom complet de la classe <strong>[\Exemples\Personne]</strong> ;</li>
-<li>utiliser l’instruction <strong>use</strong> de la ligne 10. Celle-ci indique que le code qui suit utilise la classe <strong>[\Exemples\Personne]</strong> ;</li>
+  <li>ligne 14 : on utilise la classe <b>[Personne]</b> que nous venons de définir. Le script <b>[classes-05.php]</b> n’a pas d’espaces de noms. La ligne 14 utilise le nom relatif de la classe <b>[Personne]</b> sans espace de noms. En l’absence d’espace de noms de la classe <b>[Personne]</b>, celle-ci est cherchée dans le script <b>[classes-05.php]</b> lui même et ne sera donc pas trouvée. Il y a deux solutions à ce problème :
+    <ul>
+      <li>utiliser le nom complet de la classe <b>[\Exemples\Personne]</b> ;
+      </li>
+      <li>utiliser l’instruction <b>use</b> de la ligne 10. Celle-ci indique que le code qui suit utilise la classe <b>[\Exemples\Personne]</b> ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 10 : l’instruction <b>use</b> permet à l’interpréteur de savoir que la classe <b>[Personne]</b> référencée ligne 14 est en réalité la classe <b>[\Exemples\Personne]</b>. Ceci dit, où l’interpréteur va-t-il trouver le code de cette classe ? C’est la ligne 7 qui le lui dit. Celle-ci indique que pour exécuter le script courant il faut également charger le script <b>[Personne.php]</b>. On a utilisé ici le nom relatif du fichier. Il sera donc cherché dans le dossier qui contient le script <b>[classes-05.php]</b>. Il faut donc que les scripts <b>[Personne.php]</b> et <b>[classes-05.php]</b> soient dans le même dossier. C’est le cas ici où ils sont tous les deux dans le dossier <b>[exemples/classes]</b>. L’instruction de la ligne 10 est équivalente à :
+  </li>
 </ul>
-</li>
-<li>ligne 10 : l’instruction <strong>use</strong> permet à l’interpréteur de savoir que la classe <strong>[Personne]</strong> référencée ligne 14 est en réalité la classe <strong>[\Exemples\Personne]</strong>. Ceci dit, où l’interpréteur va-t-il trouver le code de cette classe ? C’est la ligne 7 qui le lui dit. Celle-ci indique que pour exécuter le script courant il faut également charger le script <strong>[Personne.php]</strong>. On a utilisé ici le nom relatif du fichier. Il sera donc cherché dans le dossier qui contient le script <strong>[classes-05.php]</strong>. Il faut donc que les scripts <strong>[Personne.php]</strong> et <strong>[classes-05.php]</strong> soient dans le même dossier. C’est le cas ici où ils sont tous les deux dans le dossier <strong>[exemples/classes]</strong>. L’instruction de la ligne 10 est équivalente à :</li>
-</ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="font-weight:bold">use</span><span style="color:#008080"> </span>\Exemples\Personne as Personne;</span>
 </code></pre></div>
 
 <p>L’instruction <strong>[use]</strong> ci-dessus dit que <strong>l’alias</strong> <strong>[Personne]</strong> désigne la classe <strong>[\Exemples\Personne]</strong> ;</p>
 <ul>
-<li>ligne 14 : un objet <strong>[Personne]</strong> est créé. C’est la méthode <strong>[__construct]</strong> de la classe <strong>[Personne]</strong> qui va être ici implicitement exécutée ;</li>
-<li>ligne 16 : fait afficher la <em>Personne $p</em>. Pour être affichée, la valeur de la variable $p doit être transformée en chaîne de caractères. Implicitement c’est la méthode <strong>[Personne.__toString]</strong> qui est alors exécutée. Celle-ci doit donc rendre une chaîne de caractères ;</li>
-<li>nous avons vu que le constructeur de la classe <strong>[Personne]</strong> pouvait lancer une exception de type <strong>[\Exception]</strong>. Il faut donc gérer celle-ci. Aussi le code de la ligne 14 est-il incomplet. Il faut utiliser celui des lignes 18-24 pour gérer correctement l’exception qui peut se produire. Ici on en produit volontairement une en passant un âge qui n’est pas un entier. Dans ce cas particulier l’exception qui se produit est lancée par l’interpréteur PHP et non par le code de la classe <strong>[Personne]</strong>. En effet, la signature de la méthode <strong>[Personne.__construct]</strong> est la suivante :</li>
+  <li>ligne 14 : un objet <b>[Personne]</b> est créé. C’est la méthode <b>[__construct]</b> de la classe <b>[Personne]</b> qui va être ici implicitement exécutée ;
+  </li>
+  <li>ligne 16 : fait afficher la <i>Personne $p</i>. Pour être affichée, la valeur de la variable $p doit être transformée en chaîne de caractères. Implicitement c’est la méthode <b>[Personne.__toString]</b> qui est alors exécutée. Celle-ci doit donc rendre une chaîne de caractères ;
+  </li>
+  <li>nous avons vu que le constructeur de la classe <b>[Personne]</b> pouvait lancer une exception de type <b>[\Exception]</b>. Il faut donc gérer celle-ci. Aussi le code de la ligne 14 est-il incomplet. Il faut utiliser celui des lignes 18-24 pour gérer correctement l’exception qui peut se produire. Ici on en produit volontairement une en passant un âge qui n’est pas un entier. Dans ce cas particulier l’exception qui se produit est lancée par l’interpréteur PHP et non par le code de la classe <b>[Personne]</b>. En effet, la signature de la méthode <b>[Personne.__construct]</b> est la suivante :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line">function<span style="color:#008080"> </span>__construct(string<span style="color:#008080"> </span><span style="color:#0000ff">$prenom</span>,<span style="color:#008080"> </span>string<span style="color:#008080"> </span><span style="color:#0000ff">$nom</span>,<span style="color:#008080"> </span>int<span style="color:#008080"> </span><span style="color:#0000ff">$age</span>)</span>
 </code></pre></div>
@@ -1739,15 +1790,20 @@
 <p>Il faut donc que le paramètre <strong>[age]</strong> passé au constructeur soit de type <strong>entier</strong>. Si ce n’est pas le cas, l’interpréteur PHP lance une erreur de type <strong>[TypeError]</strong>. Par ailleurs, les méthodes <strong>[set]</strong> de la classe <strong>[Personne]</strong> lancent, elles, une exception de type <strong>[\Exception]</strong>. Comme le constructeur qui les appelle n’a pas de structure <em>try / catch</em>, l’exception remonte d’un niveau, au code qui a appelé le constructeur, ç-à-d le code du script <strong>[classes-05.php]</strong>. Finalement, le script <strong>[classes-05.php]</strong> peut recevoir deux types d’exception :  \<strong>Exception</strong> ou \<strong>TypeError.</strong> On notera que lorsque le développeur est sûr que certaines exceptions ne peuvent se produire, il n’utilisera pas les options <strong>catch</strong> correspondantes. Ici elles sont systématiquement utilisées par unique souci de démonstration. Les options <strong>catch</strong> seront cependant utilisées <strong>pour toute exception possible, même peu probable</strong> ;</p>
 <p>Pour cette raison, la structure <strong>try</strong> des lignes 18-24 a deux <strong>catch</strong> pour gérer séparément les deux types d’exception ;</p>
 <ul>
-<li>ligne 20 : on peut écrire indifféremment <strong>[Exception]</strong> ou <strong>[\Exception]</strong> :<ul>
-<li>le 1re version utilise le nom relatif de la classe, relatif à l’espace de noms du script. Celui-ci n’en a pas. Son espace de noms est alors la racine des espaces de noms : \. Donc écrire ici  <strong>[Exception]</strong> revient à écrire <strong>[\Exception]</strong>. Or la classe <strong>[Exception]</strong> se trouve bien dans l’espace de noms <strong>[\]</strong> ;</li>
+  <li>ligne 20 : on peut écrire indifféremment <b>[Exception]</b> ou <b>[\Exception]</b> :
+    <ul>
+      <li>le 1re version utilise le nom relatif de la classe, relatif à l’espace de noms du script. Celui-ci n’en a pas. Son espace de noms est alors la racine des espaces de noms : \. Donc écrire ici  <b>[Exception]</b> revient à écrire <b>[\Exception]</b>. Or la classe <b>[Exception]</b> se trouve bien dans l’espace de noms <b>[\]</b> ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>Il est préférable d’utiliser le nom absolu des exceptions prédéfinies de PHP dans un script n’ayant pas d’espaces de noms lui-même. Ainsi si on décide de donner un espace de noms à ce script, l’écriture des noms absolus de classes reste valide alors que dans l’autre cas, le changement d’espace de noms va provoquer des erreurs sur les noms relatifs des classes ;</p>
 <ul>
-<li>ligne 21 : lorsqu’il y a exception, la méthode <strong>[Exception→getMessage]</strong> permet d’obtenir le message d’erreur de l’exception. Il en est de même pour une erreur de type <strong>[TypeError]</strong>. Dans la méthode <strong>[Personne.setPrenom]</strong>, on a écrit :</li>
+  <li>ligne 21 : lorsqu’il y a exception, la méthode <b>[Exception→getMessage]</b> permet d’obtenir le message d’erreur de l’exception. Il en est de même pour une erreur de type <b>[TypeError]</b>. Dans la méthode <b>[Personne.setPrenom]</b>, on a écrit :
+  </li>
 </ul>
+
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-js">
 <span class="odt-code-line"><span style="color:#008080">  </span><span style="font-weight:bold">public</span><span style="color:#008080"> </span><span style="font-weight:bold">function</span><span style="color:#008080"> </span>setPrenom(<span style="font-weight:bold">string</span><span style="color:#008080"> </span><span style="color:#0000ff">$prénom</span>)<span style="color:#008080"> </span>{</span>
 <span class="odt-code-line"><span style="color:#008080">    </span>// le prénom doit être non vide</span>
@@ -1768,10 +1824,10 @@
 <span class="odt-code-line">Exemple3, erreur : Le prénom doit être non vide</span>
 </code></pre></div>
 
-<p><a id="refheading399021881943603"></a>
-<a id="toc42690632"></a>
+<p><a id="toc42689860"></a>
 <a id="toc42690246"></a>
-<a id="toc42689860"></a></p>
+<a id="toc42690632"></a>
+<a id="refheading399021881943603"></a></p>
 <h2 id="57-ajout-dune-methode-faisant-office-de-second-constructeur">5.7. Ajout d&#x27;une méthode faisant office de second constructeur</h2>
 <p>En PHP 7, il n&#x27;est pas possible d&#x27;avoir plusieurs constructeurs avec des paramètres différents qui permettraient de construire un objet de diverses façons. On peut alors utiliser des méthodes faisant office de constructeur :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
@@ -1784,8 +1840,10 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 2-5 : la méthode <em>initWithPersonne</em> permet d&#x27;affecter à l&#x27;objet courant les valeurs des attributs d&#x27;un autre objet <em>Personne</em>. Ici, elle fait appel au constructeur __<em>construct</em> mais ce n&#x27;est pas obligatoire. Elle pourrait initialiser elle-même les attributs de la classe <strong>[Personne]</strong> ;</li>
+  <li>lignes 2-5 : la méthode <i>initWithPersonne</i> permet d&#x27;affecter à l&#x27;objet courant les valeurs des attributs d&#x27;un autre objet <i>Personne</i>. Ici, elle fait appel au constructeur __<i>construct</i> mais ce n&#x27;est pas obligatoire. Elle pourrait initialiser elle-même les attributs de la classe <b>[Personne]</b> ;
+  </li>
 </ul>
+
 <p>La nouvelle classe <strong>[Personne]</strong> est utilisée par le script <strong>[classes-06.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1827,17 +1885,19 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 14, 23, 30 : il est fréquent qu’après une exception, on doive arrêter l’exécution d’un script console si l’erreur rencontrée est irrécupérable. Ce n’est pas le cas dans un script web : on n’arrête pas l’exécution du script mais on fait afficher une page d’erreur. Si on est dans une fonction, ce n’est pas l’instruction <strong>exit</strong> qui sera utilisée mais <strong>return</strong> : on n’arrête pas l’exécution du script (<strong>exit</strong>) mais on sort de la fonction (<strong>return</strong>) après avoir positionné une erreur ;</li>
+  <li>lignes 14, 23, 30 : il est fréquent qu’après une exception, on doive arrêter l’exécution d’un script console si l’erreur rencontrée est irrécupérable. Ce n’est pas le cas dans un script web : on n’arrête pas l’exécution du script mais on fait afficher une page d’erreur. Si on est dans une fonction, ce n’est pas l’instruction <b>exit</b> qui sera utilisée mais <b>return</b> : on n’arrête pas l’exécution du script (<b>exit</b>) mais on sort de la fonction (<b>return</b>) après avoir positionné une erreur ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>personne=[Paul,Langevin,48]
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>personne=[Laure,Adeline,67]
 </code></pre></div></td></tr></table></div>
-<p><a id="refheading399041881943603"></a>
-<a id="toc42690633"></a>
+<p><a id="toc42689861"></a>
 <a id="toc42690247"></a>
-<a id="toc42689861"></a></p>
+<a id="toc42690633"></a>
+<a id="refheading399041881943603"></a></p>
 <h2 id="58-un-tableau-dobjets-personne">5.8. Un tableau d&#x27;objets [Personne]</h2>
 <p>L&#x27;exemple suivant <strong>[classes-07.php]</strong> montre qu&#x27;on peut avoir des tableaux d&#x27;objets.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1867,15 +1927,19 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 9 : création d&#x27;un tableau de 2 personnes ;</li>
-<li>ligne 12 : parcours du tableau ;</li>
-<li>ligne 13 : <em>$groupe</em><strong><em>[$i]</em></strong> est un objet de type <em>Personne</em>. La méthode <strong>[Personne.__toString]</strong> est utilisée pour l&#x27;afficher ;</li>
+  <li>ligne 9 : création d&#x27;un tableau de 2 personnes ;
+  </li>
+  <li>ligne 12 : parcours du tableau ;
+  </li>
+  <li>ligne 13 : <i>$groupe</i><i><b>[$i]</b></i> est un objet de type <i>Personne</i>. La méthode <b>[Personne.__toString]</b> est utilisée pour l&#x27;afficher ;
+  </li>
 </ul>
+
 <p><a id="creationduneclasse"></a>
-<a id="toc42690634"></a>
-<a id="toc42690248"></a>
+<a id="refheading399061881943603"></a>
 <a id="toc42689862"></a>
-<a id="refheading399061881943603"></a></p>
+<a id="toc42690248"></a>
+<a id="toc42690634"></a></p>
 <h2 id="59-creation-dune-classe-derivee-de-la-classe-personne">5.9. Création d&#x27;une classe dérivée de la classe Personne</h2>
 <p>On crée dans un fichier <strong>[Enseignant.php]</strong> la classe <strong>[Enseignant]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1920,17 +1984,26 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 7 : la classe <strong>[Enseignant]</strong> fait partie elle aussi de l’espace de noms <strong>[Exemples]</strong> ;</li>
-<li>ligne 10 : la classe <em>Enseignant</em> dérive (<strong>extends</strong>) de la classe <em>Personne.</em> La classe dérivée <em>Enseignant</em> hérite des attributs et des méthodes de sa classe mère ;</li>
-<li>ligne 12 : la classe <em>Enseignant</em> ajoute un nouvel attribut <em>discipline</em> qui lui est propre ;</li>
-<li>ligne 25 : le constructeur de la classe <em>Enseignant</em> reçoit 4 paramètres :<ul>
-<li>3 pour initialiser sa classe parent (prénom, nom, âge), ligne 27 ;</li>
-<li>1 pour sa propre initialisation (discipline), ligne 29 ;</li>
+  <li>ligne 7 : la classe <b>[Enseignant]</b> fait partie elle aussi de l’espace de noms <b>[Exemples]</b> ;
+  </li>
+  <li>ligne 10 : la classe <i>Enseignant</i> dérive (<b>extends</b>) de la classe <i>Personne.</i> La classe dérivée <i>Enseignant</i> hérite des attributs et des méthodes de sa classe mère ;
+  </li>
+  <li>ligne 12 : la classe <i>Enseignant</i> ajoute un nouvel attribut <i>discipline</i> qui lui est propre ;
+  </li>
+  <li>ligne 25 : le constructeur de la classe <i>Enseignant</i> reçoit 4 paramètres :
+    <ul>
+      <li>3 pour initialiser sa classe parent (prénom, nom, âge), ligne 27 ;
+      </li>
+      <li>1 pour sa propre initialisation (discipline), ligne 29 ;
+      </li>
+    </ul>
+  </li>
+  <li>ligne 27 : la classe dérivée a accès aux méthodes et constructeurs de sa classe parent via le mot clé <b>parent ::</b>. Ici on passe les paramètres (prénom, nom, âge) au constructeur de la classe parent ;
+  </li>
+  <li>lignes 33-35 : la méthode __<i>toString</i> de la classe dérivée utilise la méthode __<i>toString</i> de la classe parent ;
+  </li>
 </ul>
-</li>
-<li>ligne 27 : la classe dérivée a accès aux méthodes et constructeurs de sa classe parent via le mot clé <strong>parent ::</strong>. Ici on passe les paramètres (prénom, nom, âge) au constructeur de la classe parent ;</li>
-<li>lignes 33-35 : la méthode __<em>toString</em> de la classe dérivée utilise la méthode __<em>toString</em> de la classe parent ;</li>
-</ul>
+
 <p>La classe <strong>[Enseignant]</strong> est utilisée par le script <strong>[classes-08.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1957,22 +2030,28 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 4-5 : il nous faut dire à l’interpréteur PHP où se trouvent les deux classes <strong>[Enseignant, Personne]</strong> ;</li>
-<li>lignes 7-8 : déclaration des noms complets des deux classes. Ceci nous permettra de les désigner dans le code simplement par leur nom sans le suffixe de leurs espaces de noms ;</li>
-<li>ligne 13 : on crée un tableau comportant un type <strong>[Personne]</strong> et un type <strong>[Enseignant]</strong> ;</li>
-<li>lignes 16-18 : affichent les éléments du tableau ;</li>
-<li>ligne 17 : la méthode __<em>toString</em> de chaque élément <em>$groupe</em><strong><em>[$i]</em></strong> va être appelée. La classe <em>Personne</em> a une méthode __<em>toString</em>. La classe <em>Enseignant</em> en a deux : celle de sa classe parent et la sienne propre. On peut se demander laquelle va être appelée. L&#x27;exécution montre que c&#x27;est celle de la classe <em>Enseignant</em> qui a été appelée. C&#x27;est toujours ainsi : lorsqu&#x27;une méthode est appelée sur un objet, celle-ci est cherchée dans l&#x27;ordre suivant : dans l&#x27;objet lui-même, dans sa classe parent s&#x27;il en a une, puis dans la classe parent de la classe parent, etc … La recherche s&#x27;arrête dès que la méthode a été trouvée.</li>
+  <li>lignes 4-5 : il nous faut dire à l’interpréteur PHP où se trouvent les deux classes <b>[Enseignant, Personne]</b> ;
+  </li>
+  <li>lignes 7-8 : déclaration des noms complets des deux classes. Ceci nous permettra de les désigner dans le code simplement par leur nom sans le suffixe de leurs espaces de noms ;
+  </li>
+  <li>ligne 13 : on crée un tableau comportant un type <b>[Personne]</b> et un type <b>[Enseignant]</b> ;
+  </li>
+  <li>lignes 16-18 : affichent les éléments du tableau ;
+  </li>
+  <li>ligne 17 : la méthode __<i>toString</i> de chaque élément <i>$groupe</i><i><b>[$i]</b></i> va être appelée. La classe <i>Personne</i> a une méthode __<i>toString</i>. La classe <i>Enseignant</i> en a deux : celle de sa classe parent et la sienne propre. On peut se demander laquelle va être appelée. L&#x27;exécution montre que c&#x27;est celle de la classe <i>Enseignant</i> qui a été appelée. C&#x27;est toujours ainsi : lorsqu&#x27;une méthode est appelée sur un objet, celle-ci est cherchée dans l&#x27;ordre suivant : dans l&#x27;objet lui-même, dans sa classe parent s&#x27;il en a une, puis dans la classe parent de la classe parent, etc … La recherche s&#x27;arrête dès que la méthode a été trouvée.
+  </li>
 </ul>
+
 <p><strong>Résultats</strong> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>groupe[0]=[[Paul,Langevin,48],anglais]
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a>groupe[1]=[Sylvie,Lefur,70]
 </code></pre></div></td></tr></table></div>
 <p><a id="creationduneseconde"></a>
-<a id="toc42690635"></a>
-<a id="toc42690249"></a>
+<a id="refheading399081881943603"></a>
 <a id="toc42689863"></a>
-<a id="refheading399081881943603"></a></p>
+<a id="toc42690249"></a>
+<a id="toc42690635"></a></p>
 <h2 id="510-creation-dune-seconde-classe-derivee-de-la-classe-personne">5.10. Création d&#x27;une seconde classe dérivée de la classe Personne</h2>
 <p>L&#x27;exemple suivant crée une classe <em>Etudiant</em> dérivée de la classe <em>Personne</em>, dans le fichier <strong>[Etudiant.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2045,10 +2124,10 @@
 <span class="odt-code-line">groupe<span style="font-weight:bold">[2]</span>=<span style="font-weight:bold">[[Steve,Boer,23]</span>,iup2 qualité]</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc55551710956990"></a>
-<a id="toc42690636"></a>
+<p><a id="toc42689864"></a>
 <a id="toc42690250"></a>
-<a id="toc42689864"></a></p>
+<a id="toc42690636"></a>
+<a id="refheadingtoc55551710956990"></a></p>
 <h2 id="511-relation-du-constructeur-dune-classe-derivee-avec-celui-de-la-classe-parent">5.11. Relation du constructeur d’une classe dérivée avec celui de la classe parent</h2>
 <p>Dans certains langages orientés objet, le constructeur d’une classe dérivée appelle automatiquement celui de sa classe parent. Le code suivant <strong>[classes-16.php]</strong> montre qu’avec PHP 7 ce n’est pas le cas :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2103,10 +2182,10 @@
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a>constructeur de la classe Classe1
 <a id="__codelineno-9-5" name="__codelineno-9-5"></a>constructeur de la classe Classe3
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc55553710956990"></a>
-<a id="toc42690637"></a>
+<p><a id="toc42689865"></a>
 <a id="toc42690251"></a>
-<a id="toc42689865"></a></p>
+<a id="toc42690637"></a>
+<a id="refheadingtoc55553710956990"></a></p>
 <h2 id="512-redefinition-dune-methode-de-la-classe-parent">5.12. Redéfinition d’une méthode de la classe parent</h2>
 <p>Nous avons déjà vu qu’une méthode de la classe parent pouvait être redéfinie dans une classe fille. Ainsi la méthode <strong>[__toString]</strong> de la classe <strong>[Personne]</strong> (cf <a href="#_La_classe_Personne"><u><span style="color: #0563c1">lien</span></u></a>) a été redéfinie dans les classes filles <strong>[Enseignant]</strong> (cf. <a href="#_Création_d'une_classe"><u><span style="color: #0563c1">lien</span></u></a>) et <strong>[Etudiant]</strong> (cf. <a href="#_Création_d'une_seconde"><u><span style="color: #0563c1">lien</span></u></a>). Le script <strong>[classes-13.php]</strong> illustre de nouveau le concept :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2148,9 +2227,12 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 7-17 : la classe <strong>[Classe1]</strong> définit deux méthodes <strong>f</strong> et <strong>g</strong> ;</li>
-<li>lignes 20-27 : la classe <strong>[Classe2]</strong> étend la classe <strong>[Classe1]</strong> et redéfinit la méthode <strong>f</strong> de celle-ci ;</li>
+  <li>lignes 7-17 : la classe <b>[Classe1]</b> définit deux méthodes <b>f</b> et <b>g</b> ;
+  </li>
+  <li>lignes 20-27 : la classe <b>[Classe2]</b> étend la classe <b>[Classe1]</b> et redéfinit la méthode <b>f</b> de celle-ci ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
@@ -2160,17 +2242,23 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>la ligne 30 du code crée un objet $c2 de type <strong>[Classe2]</strong> ;</li>
-<li>la ligne 31 du code appelle la méthode <strong>f</strong> de l’objet $<strong>c2</strong>. Comme celle-ci existe, elle est exécutée ;</li>
-<li>la ligne 32 du code appelle la méthode <strong>g</strong> de l’objet $<strong>c2</strong>. Comme celle-ci n’existe pas, elle est recherchée dans la classe parent où elle est trouvée et exécutée ;</li>
-<li>la ligne 33 du code crée un objet $<strong>c1</strong> de type <strong>[Classe1]</strong> ;</li>
-<li>la ligne 34 du code appelle la méthode <strong>f</strong> de l’objet $<strong>c1</strong>. Comme celle-ci existe, elle est exécutée ;</li>
+  <li>la ligne 30 du code crée un objet $c2 de type <b>[Classe2]</b> ;
+  </li>
+  <li>la ligne 31 du code appelle la méthode <b>f</b> de l’objet $<b>c2</b>. Comme celle-ci existe, elle est exécutée ;
+  </li>
+  <li>la ligne 32 du code appelle la méthode <b>g</b> de l’objet $<b>c2</b>. Comme celle-ci n’existe pas, elle est recherchée dans la classe parent où elle est trouvée et exécutée ;
+  </li>
+  <li>la ligne 33 du code crée un objet $<b>c1</b> de type <b>[Classe1]</b> ;
+  </li>
+  <li>la ligne 34 du code appelle la méthode <b>f</b> de l’objet $<b>c1</b>. Comme celle-ci existe, elle est exécutée ;
+  </li>
 </ul>
+
 <p><a id="passagedunobjet"></a>
-<a id="toc42690638"></a>
-<a id="toc42690252"></a>
+<a id="refheadingtoc534922660406439"></a>
 <a id="toc42689866"></a>
-<a id="refheadingtoc534922660406439"></a></p>
+<a id="toc42690252"></a>
+<a id="toc42690638"></a></p>
 <h2 id="513-passage-dun-objet-en-parametre-dune-fonction">5.13. Passage d’un objet en paramètre d’une fonction</h2>
 <p>Considérons le script <strong>[classes-14.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2216,25 +2304,33 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 7-17 : la classe <strong>[Classe1]</strong> ;</li>
-<li>ligne 20-27 : une classe <strong>[Classe2]</strong> dérivée de <strong>[Classe1]</strong> ;</li>
-<li>ligne 30 : une fonction qui attend un paramètre de type <strong>[Classe1]</strong>. Lorsque le type attendu est une classe alors le paramètre effectif peut être un objet du type attendu <strong>ou dérivé </strong>;</li>
-<li>lignes 35-38 : on appelle la fonction <strong>[doSomething]</strong> avec un paramètre de type <strong>[Classe2]</strong> alors que c’est le type <strong>[Classe1]</strong> qui est attendu ;</li>
+  <li>lignes 7-17 : la classe <b>[Classe1]</b> ;
+  </li>
+  <li>ligne 20-27 : une classe <b>[Classe2]</b> dérivée de <b>[Classe1]</b> ;
+  </li>
+  <li>ligne 30 : une fonction qui attend un paramètre de type <b>[Classe1]</b>. Lorsque le type attendu est une classe alors le paramètre effectif peut être un objet du type attendu <b>ou dérivé </b>;
+  </li>
+  <li>lignes 35-38 : on appelle la fonction <b>[doSomething]</b> avec un paramètre de type <b>[Classe2]</b> alors que c’est le type <b>[Classe1]</b> qui est attendu ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>13
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc55555710956990"></a>
-<a id="toc42690639"></a>
+<p><a id="toc42689867"></a>
 <a id="toc42690253"></a>
-<a id="toc42689867"></a></p>
+<a id="toc42690639"></a>
+<a id="refheadingtoc55555710956990"></a></p>
 <h2 id="514-classes-abstraites">5.14. Classes abstraites</h2>
 <p>Une classe <strong>abstraite</strong> est une classe incomplète qui ne peut être instanciée. Elle doit obligatoirement être dérivée pour être utilisable.</p>
 <p>A quoi sert une classe abstraite ? On a parfois des classes qui partagent une ou des méthodes mais qui se différencient par d’autres méthodes ou d’autres attributs. Il est alors souhaitable de rassembler tout ce qui est commun dans une classe parent. Pour l’instant on n’a pas besoin de classe abstraite. Mais supposons que les classes filles ne diffèrent que par une méthode <strong>M</strong> : la signature de la méthode serait la même dans toutes les classes filles mais son implémentation diffèrerait. Pour imposer aux classes filles d’implémenter la méthode M :</p>
 <ul>
-<li>on va déclarer la signature de la méthode M dans la classe parent. Comme celle-ci ne sait pas comment l’implémenter, on préfixe la méthode par le mot clé <strong>abstract</strong> : cela signifie que l’implémentation de la méthode M est reportée sur les classes filles ;</li>
-<li>parce que la classe parent n’est pas totalement implémentée, elle est elle-aussi déclarée abstraite avec le même mot clé <strong>abstract</strong>. Ceci fait que la classe ne peut plus être instanciée. Il faut obligatoirement créer une classe fille qui définira l’implémentation de la méthode M, pour que le corps de la classe parent soit utilisable ;</li>
+  <li>on va déclarer la signature de la méthode M dans la classe parent. Comme celle-ci ne sait pas comment l’implémenter, on préfixe la méthode par le mot clé <b>abstract</b> : cela signifie que l’implémentation de la méthode M est reportée sur les classes filles ;
+  </li>
+  <li>parce que la classe parent n’est pas totalement implémentée, elle est elle-aussi déclarée abstraite avec le même mot clé <b>abstract</b>. Ceci fait que la classe ne peut plus être instanciée. Il faut obligatoirement créer une classe fille qui définira l’implémentation de la méthode M, pour que le corps de la classe parent soit utilisable ;
+  </li>
 </ul>
+
 <p>Voici un exemple <strong>[classes-15.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2290,12 +2386,18 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 7-16 : la classe <strong>[Classe1]</strong> est abstraite (ligne 7) car elle ne sait pas implémenter la méthode g de la ligne 15. Elle doit donc être obligatoirement dérivée pour être utilisable ;</li>
-<li>lignes 19-26 : la classe <strong>[Classe2]</strong> étend la classe <strong>[Classe1]</strong> et redéfinit la méthode <strong>g</strong> de sa classe parent (lignes 22-24) ;</li>
-<li>lignes 29-41 : la classe <strong>[Classe3]</strong> étend la classe <strong>[Classe1]</strong> et redéfinit la méthode <strong>g</strong> de sa classe parent (lignes 32-34) ;</li>
-<li>lignes 37-39 : la classe <strong>[Classe3]</strong> redéfinit la méthode <strong>f</strong> de sa classe parent ;</li>
-<li>lignes 44-49 : on crée deux objets de type <strong>[Classe2]</strong> et <strong>[Classe3]</strong> et on appelle leurs méthodes <strong>f</strong> et <strong>g</strong> ;</li>
+  <li>lignes 7-16 : la classe <b>[Classe1]</b> est abstraite (ligne 7) car elle ne sait pas implémenter la méthode g de la ligne 15. Elle doit donc être obligatoirement dérivée pour être utilisable ;
+  </li>
+  <li>lignes 19-26 : la classe <b>[Classe2]</b> étend la classe <b>[Classe1]</b> et redéfinit la méthode <b>g</b> de sa classe parent (lignes 22-24) ;
+  </li>
+  <li>lignes 29-41 : la classe <b>[Classe3]</b> étend la classe <b>[Classe1]</b> et redéfinit la méthode <b>g</b> de sa classe parent (lignes 32-34) ;
+  </li>
+  <li>lignes 37-39 : la classe <b>[Classe3]</b> redéfinit la méthode <b>f</b> de sa classe parent ;
+  </li>
+  <li>lignes 44-49 : on crée deux objets de type <b>[Classe2]</b> et <b>[Classe3]</b> et on appelle leurs méthodes <b>f</b> et <b>g</b> ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
@@ -2305,10 +2407,10 @@
 <a id="__codelineno-12-3" name="__codelineno-12-3"></a>2
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a>21
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc55557710956990"></a>
-<a id="toc42690640"></a>
+<p><a id="toc42689868"></a>
 <a id="toc42690254"></a>
-<a id="toc42689868"></a></p>
+<a id="toc42690640"></a>
+<a id="refheadingtoc55557710956990"></a></p>
 <h2 id="515-classes-finales">5.15. Classes finales</h2>
 <p>Une classe finale est une classe qu’on ne peut dériver. Considérons le script <strong>[classes-11.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2333,17 +2435,21 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 7-9 : le mot clé <strong>final</strong>, fait de la classe <strong>[Classe1]</strong> une classe finale qu’on ne peut dériver ;</li>
-<li>lignes 12-14 : la classe <strong>[Classe2]</strong> étend la classe finale <strong>[Classe1]</strong>, ce qui est une erreur ;</li>
-<li>ligne 17 : l’erreur ne sera signalée qu’à l’exécution du script lorsqu’on essaiera de manipuler un objet de type <strong>[Classe2]</strong> ;</li>
+  <li>lignes 7-9 : le mot clé <b>final</b>, fait de la classe <b>[Classe1]</b> une classe finale qu’on ne peut dériver ;
+  </li>
+  <li>lignes 12-14 : la classe <b>[Classe2]</b> étend la classe finale <b>[Classe1]</b>, ce qui est une erreur ;
+  </li>
+  <li>ligne 17 : l’erreur ne sera signalée qu’à l’exécution du script lorsqu’on essaiera de manipuler un objet de type <b>[Classe2]</b> ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">Fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">Class</span> <span class="n">Exemples</span>\<span class="n">Classe2</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">inherit</span> <span class="kn">from</span><span class="w"> </span><span class="nn">final</span> <span class="k">class</span><span class="w"> </span><span class="err">(</span><span class="nc">Exemples</span>\<span class="n">Classe1</span><span class="p">)</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2019</span>\<span class="n">dev</span>\<span class="n">php7</span>\<span class="n">php5</span><span class="o">-</span><span class="n">exemples</span>\<span class="n">exemples</span>\<span class="n">classes</span>\<span class="n">classes</span><span class="o">-</span><span class="mf">11.</span><span class="n">php</span> <span class="n">on</span> <span class="n">line</span> <span class="mi">14</span>
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc55559710956990"></a>
-<a id="toc42690641"></a>
+<p><a id="toc42689869"></a>
 <a id="toc42690255"></a>
-<a id="toc42689869"></a></p>
+<a id="toc42690641"></a>
+<a id="refheadingtoc55559710956990"></a></p>
 <h2 id="516-methodes-finales">5.16. Méthodes finales</h2>
 <p>Une méthode finale est une méthode qu’on ne peut redéfinir par dérivation. Voici un exemple <strong>[classes-12.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2380,24 +2486,32 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 13 : la méthode <strong>f</strong> de la classe <strong>[Classe1]</strong> est déclarée finale par le mot clé <strong>final</strong> ;</li>
-<li>ligne 20 : la classe <strong>[Classe2]</strong> étend classe <strong>[Classe1]</strong> ;</li>
-<li>lignes 22-23 : on redéfinit la fonction <strong>f</strong> de la classe parent <strong>[Classe1]</strong>. Cela doit provoquer une erreur ;</li>
-<li>ligne 29 : on crée un objet de type <strong>[Classe2]</strong> pour forcer l’interpréteur PHP à inspecter la classe <strong>[Classe2]</strong> ;</li>
+  <li>ligne 13 : la méthode <b>f</b> de la classe <b>[Classe1]</b> est déclarée finale par le mot clé <b>final</b> ;
+  </li>
+  <li>ligne 20 : la classe <b>[Classe2]</b> étend classe <b>[Classe1]</b> ;
+  </li>
+  <li>lignes 22-23 : on redéfinit la fonction <b>f</b> de la classe parent <b>[Classe1]</b>. Cela doit provoquer une erreur ;
+  </li>
+  <li>ligne 29 : on crée un objet de type <b>[Classe2]</b> pour forcer l’interpréteur PHP à inspecter la classe <b>[Classe2]</b> ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>Fatal error: Cannot override final method Exemples\Classe1::f() in C:\Data\st-2019\dev\php7\php5-exemples\exemples\classes\classes-12.php on line 26
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc55561710956990"></a>
-<a id="toc42690642"></a>
+<p><a id="toc42689870"></a>
 <a id="toc42690256"></a>
-<a id="toc42689870"></a></p>
+<a id="toc42690642"></a>
+<a id="refheadingtoc55561710956990"></a></p>
 <h2 id="517-methodes-et-attributs-statiques">5.17. Méthodes et attributs statiques</h2>
 <p>Une méthode <strong>statique</strong> est une méthode liée à la <strong>classe</strong> dans laquelle elle est définie et non aux objets instances de la classe. Ainsi si la classe <strong>C</strong> déclare une méthode statique <strong>M</strong>, pour utiliser cette dernière on écrira :</p>
 <ul>
-<li><strong>C::M</strong> si on est à l’extérieur de la classe ;</li>
-<li><strong>self::M</strong> si on est dans la classe ;</li>
+  <li><b>C::M</b> si on est à l’extérieur de la classe ;
+  </li>
+  <li><b>self::M</b> si on est dans la classe ;
+  </li>
 </ul>
+
 <p>Voici un exemple <strong>[classes-17.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2417,9 +2531,12 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 6 : la méthode <strong>[say]</strong> est déclarée statique avec le mot clé <strong>static</strong> ;</li>
-<li>ligne 13 : appel de la méthode statique <strong>[say]</strong> avec la notation : <strong>Classe1::say</strong> ;</li>
+  <li>ligne 6 : la méthode <b>[say]</b> est déclarée statique avec le mot clé <b>static</b> ;
+  </li>
+  <li>ligne 13 : appel de la méthode statique <b>[say]</b> avec la notation : <b>Classe1::say</b> ;
+  </li>
 </ul>
+
 <p><strong>Résultats</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>hello
 </code></pre></div></td></tr></table></div>
@@ -2451,12 +2568,18 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">ligne 5 : on déclare un attribut </span><strong><span style="color: #000000">statique</span></strong><span style="color: #000000"> qui va compter le nombre d’instances de la classe </span><strong><span style="color: #000000">[Classe1]</span></strong><span style="color: #000000"> créées. Ce n’est pas un attribut qui peut appartenir à une instance de la classe. En effet, si deux objets O1 et O2 sont créés, aucun des deux n’a connaissance de l’autre. Avoir un compteur dans l’instance n’a pas de sens : lorsqu’un nouvel objet est créé, dans quelle </span><span style="color: #000000">instance va-t-on incrémenter un compteur ? On serait obliger d’incrémenter le compteur d’un objet particulier délaissant les compteurs des autres instances. Un attribut </span><strong><span style="color: #000000">statique</span></strong><span style="color: #000000"> est un attribut de classe et non d’instance de la classe ;</span></li>
-<li><span style="color: #000000">lignes 7-10 : c’est dans le constructeur qu’on va compter les objets créés puisque la création de chaque nouvel objet provoque l’exécution du constructeur ;</span></li>
-<li><span style="color: #000000">ligne 14 : on notera la notation </span><strong><span style="color: #000000">self::$nbObjects</span></strong><span style="color: #000000"> pour indiquer qu’on fait référence à un attribut statique de la classe dans laquelle se trouve le code exécuté ;</span></li>
-<li><span style="color: #000000">lignes 13-15 : la méthode statique </span><strong><span style="color: #000000">[say]</span></strong><span style="color: #000000"> a pour rôle d’afficher le nombre d’objets créés ;</span></li>
-<li><span style="color: #000000">lignes 20-22 : on crée deux objets et on fait afficher le compteur d’objets ;</span></li>
+  <li><span style="color: #000000">ligne 5 : on déclare un attribut </span><b><span style="color: #000000">statique</span></b><span style="color: #000000"> qui va compter le nombre d’instances de la classe </span><b><span style="color: #000000">[Classe1]</span></b><span style="color: #000000"> créées. Ce n’est pas un attribut qui peut appartenir à une instance de la classe. En effet, si deux objets O1 et O2 sont créés, aucun des deux n’a connaissance de l’autre. Avoir un compteur dans l’instance n’a pas de sens : lorsqu’un nouvel objet est créé, dans quelle </span><span style="color: #000000">instance va-t-on incrémenter un compteur ? On serait obliger d’incrémenter le compteur d’un objet particulier délaissant les compteurs des autres instances. Un attribut </span><b><span style="color: #000000">statique</span></b><span style="color: #000000"> est un attribut de classe et non d’instance de la classe ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 7-10 : c’est dans le constructeur qu’on va compter les objets créés puisque la création de chaque nouvel objet provoque l’exécution du constructeur ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 14 : on notera la notation </span><b><span style="color: #000000">self::$nbObjects</span></b><span style="color: #000000"> pour indiquer qu’on fait référence à un attribut statique de la classe dans laquelle se trouve le code exécuté ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 13-15 : la méthode statique </span><b><span style="color: #000000">[say]</span></b><span style="color: #000000"> a pour rôle d’afficher le nombre d’objets créés ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 20-22 : on crée deux objets et on fait afficher le compteur d’objets ;</span>
+  </li>
 </ul>
+
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">constructeur Classe1</span>
@@ -2465,10 +2588,10 @@
 </code></pre></div>
 
 <p><a id="visibiliteentreclasse"></a>
-<a id="toc42690643"></a>
-<a id="toc42690257"></a>
+<a id="refheadingtoc171229488830776"></a>
 <a id="toc42689871"></a>
-<a id="refheadingtoc171229488830776"></a></p>
+<a id="toc42690257"></a>
+<a id="toc42690643"></a></p>
 <h2 id="518-visibilite-entre-classe-parent-et-classe-fille">5.18. Visibilité entre classe Parent et classe Fille</h2>
 <p>Examinons le script <strong>[classes-19.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2514,32 +2637,52 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 3-17 : la classe <strong>[SomeParent]</strong> ;</li>
-<li>lignes 19-32 : la classe fille <strong>[SomeChild]</strong>. On voit qu’elle étend la classe <strong>[SomeParent]</strong> (ligne 19) ;</li>
-<li>ligne 5 : la classe <strong>[SomeParent]</strong> n’a qu’un attribut ;</li>
-<li>lignes 8-17 : la méthode <strong>[SomeParent::doTest]</strong> a pour but d’afficher deux attributs :<ul>
-<li><strong>[$attributeOfParent]</strong> qui appartient à la classe <strong>[SomeParent]</strong> ;</li>
-<li><strong>[$attributeOfChild]</strong> qui appartient à la classe <strong>[SomeChild]</strong> (ligne 21) ;</li>
+  <li>lignes 3-17 : la classe <b>[SomeParent]</b> ;
+  </li>
+  <li>lignes 19-32 : la classe fille <b>[SomeChild]</b>. On voit qu’elle étend la classe <b>[SomeParent]</b> (ligne 19) ;
+  </li>
+  <li>ligne 5 : la classe <b>[SomeParent]</b> n’a qu’un attribut ;
+  </li>
+  <li>lignes 8-17 : la méthode <b>[SomeParent::doTest]</b> a pour but d’afficher deux attributs :
+    <ul>
+      <li><b>[$attributeOfParent]</b> qui appartient à la classe <b>[SomeParent]</b> ;
+      </li>
+      <li><b>[$attributeOfChild]</b> qui appartient à la classe <b>[SomeChild]</b> (ligne 21) ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 10-11 : on affiche l’identité de l’appelant : on va en effet appeler la méthode de deux façons différentes :
+    <ul>
+      <li>à partir de la classe parent <b>[SomeParent]</b> ;
+      </li>
+      <li>à partir de la classe fille <b>[SomeChild]</b> ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 13-14 : affichage des deux attributs ;
+  </li>
+  <li>lignes 19-32 : la classe fille <b>[SomeChild]</b> qui étend la classe <b>[SomeParent]</b> (ligne 19) ;
+  </li>
+  <li>ligne 21 : la classe <b>[SomeChild]</b> n’a qu’un attribut ;
+  </li>
+  <li>lignes 24 : la méthode <b>[SomeChild::doTest]</b> a pour but d’afficher deux attributs :
+    <ul>
+      <li><b>[$attributeOfParent]</b> qui appartient à la classe <b>[SomeParent]</b> ;
+      </li>
+      <li><b>[$attributeOfChild]</b> qui appartient à la classe <b>[SomeChild]</b> ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 26-27 : affichage des deux attributs ;
+  </li>
+  <li>ligne 30 : appel de la méthode <b>[doTest]</b> de la classe parent qui va à son tour afficher les deux attributs ;
+  </li>
+  <li>ligne 36 : la méthode <b>[SomeParent::doTest]</b> est appelée ;
+  </li>
+  <li>ligne 38 : la méthode <b>[SomeChild::doTest]</b> est appelée ;
+  </li>
 </ul>
-</li>
-<li>lignes 10-11 : on affiche l’identité de l’appelant : on va en effet appeler la méthode de deux façons différentes :<ul>
-<li>à partir de la classe parent <strong>[SomeParent]</strong> ;</li>
-<li>à partir de la classe fille <strong>[SomeChild]</strong> ;</li>
-</ul>
-</li>
-<li>lignes 13-14 : affichage des deux attributs ;</li>
-<li>lignes 19-32 : la classe fille <strong>[SomeChild]</strong> qui étend la classe <strong>[SomeParent]</strong> (ligne 19) ;</li>
-<li>ligne 21 : la classe <strong>[SomeChild]</strong> n’a qu’un attribut ;</li>
-<li>lignes 24 : la méthode <strong>[SomeChild::doTest]</strong> a pour but d’afficher deux attributs :<ul>
-<li><strong>[$attributeOfParent]</strong> qui appartient à la classe <strong>[SomeParent]</strong> ;</li>
-<li><strong>[$attributeOfChild]</strong> qui appartient à la classe <strong>[SomeChild]</strong> ;</li>
-</ul>
-</li>
-<li>lignes 26-27 : affichage des deux attributs ;</li>
-<li>ligne 30 : appel de la méthode <strong>[doTest]</strong> de la classe parent qui va à son tour afficher les deux attributs ;</li>
-<li>ligne 36 : la méthode <strong>[SomeParent::doTest]</strong> est appelée ;</li>
-<li>ligne 38 : la méthode <strong>[SomeChild::doTest]</strong> est appelée ;</li>
-</ul>
+
 <p>Dans le 1er test, la visibilité des deux attributs est <strong>[private]</strong>. On peut donc s’attendre à ce que la classe fille ne voit pas l’attribut de sa classe parent. Il faudrait que celui-ci ait au moins la visibilité <strong>[protected]</strong>. Mais qu’en est-il de l’attribut de la classe fille ? Est-il visible dans la classe parent ?</p>
 <p>Voici les résultats de ce 1er test :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
@@ -2604,18 +2747,30 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 1-10 : résultats du 1er test où la méthode <strong>[SomeParent::doTest]</strong> est appelée ;</li>
-<li>lignes 3-6 : on voit que l’objet qui appelle la méthode est de type <strong>[SomeParent]</strong> ;</li>
-<li>ligne 7 : affichage de l’attribut <strong>[$attributeOfParent]</strong> ;</li>
-<li>lignes 9-10 : on voit que l’attribut <strong>[SomeParent::$attributeOfChild]</strong> n’existe pas. Il n’est donc pas affiché ;</li>
-<li>lignes 11-30 : résultats du 2e test où la méthode <strong>[SomeChild::doTest]</strong> est appelée ;</li>
-<li>lignes 13-14 : on voit que l’attribut <strong>[SomeChild::$attributeOfParent]</strong> n’existe pas. Il n’est donc pas affiché. C’est normal : l’attribut <strong>[SomeParent::$attributeOfParent]</strong> est <strong>[private]</strong> et donc pas connu dans la classe fille ;</li>
-<li>ligne 15 : affichage de l’attribut <strong>[$attributeOfChild]</strong> ;</li>
-<li>lignes 16-30 : on est dans la méthode <strong>[SomeParent::doTest]</strong> appelée par la classe fille ;</li>
-<li>lignes 17-22 : on voit que <strong>[$this]</strong> est de type <strong>[SomeChild]</strong> avec deux attributs privés ;</li>
-<li>ligne 23 : de façon très étonnante, <strong>[$this]</strong> de type <strong>[SomeChild]</strong> voit ici l’attribut du parent <strong>[$attributeOfParent]</strong> ;</li>
-<li>lignes 25-30 : de façon tout aussi étonnante, <strong>[$this]</strong> de type <strong>[SomeChild]</strong> ne voit pas son attribut <strong>[$attributeOfChild]</strong> ;</li>
+  <li>lignes 1-10 : résultats du 1er test où la méthode <b>[SomeParent::doTest]</b> est appelée ;
+  </li>
+  <li>lignes 3-6 : on voit que l’objet qui appelle la méthode est de type <b>[SomeParent]</b> ;
+  </li>
+  <li>ligne 7 : affichage de l’attribut <b>[$attributeOfParent]</b> ;
+  </li>
+  <li>lignes 9-10 : on voit que l’attribut <b>[SomeParent::$attributeOfChild]</b> n’existe pas. Il n’est donc pas affiché ;
+  </li>
+  <li>lignes 11-30 : résultats du 2e test où la méthode <b>[SomeChild::doTest]</b> est appelée ;
+  </li>
+  <li>lignes 13-14 : on voit que l’attribut <b>[SomeChild::$attributeOfParent]</b> n’existe pas. Il n’est donc pas affiché. C’est normal : l’attribut <b>[SomeParent::$attributeOfParent]</b> est <b>[private]</b> et donc pas connu dans la classe fille ;
+  </li>
+  <li>ligne 15 : affichage de l’attribut <b>[$attributeOfChild]</b> ;
+  </li>
+  <li>lignes 16-30 : on est dans la méthode <b>[SomeParent::doTest]</b> appelée par la classe fille ;
+  </li>
+  <li>lignes 17-22 : on voit que <b>[$this]</b> est de type <b>[SomeChild]</b> avec deux attributs privés ;
+  </li>
+  <li>ligne 23 : de façon très étonnante, <b>[$this]</b> de type <b>[SomeChild]</b> voit ici l’attribut du parent <b>[$attributeOfParent]</b> ;
+  </li>
+  <li>lignes 25-30 : de façon tout aussi étonnante, <b>[$this]</b> de type <b>[SomeChild]</b> ne voit pas son attribut <b>[$attributeOfChild]</b> ;
+  </li>
 </ul>
+
 <p>Ce résultat est très étonnant : bien que les lignes 17-21 indiquent que <strong>[$this]</strong> est de type <strong>[SomeChild]</strong>, ce <strong>[$this]</strong> à l’intérieur de la méthode <strong>[SomeParent::doTest]</strong> se comporte comme s’il était une instance de la classe <strong>[SomeParent]</strong> et non de la classe <strong>[SomeChild]</strong>.</p>
 <p>Faisons un nouveau test avec le script <strong>[classes-20.php]</strong>. L’attribut <strong>[$attributeOfParent]</strong> a maintenant une visibilité <strong>[protected]</strong> (ligne 5) :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -2719,9 +2874,12 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 12 : la classe <strong>[SomeChild]</strong> voit désormais l’attribut de son parent <strong>[$attributeOfParent]</strong>. C’est normal puisque celui-ci a maintenant une portée <strong>[protected]</strong> ;</li>
-<li>dans la méthode <strong>[someParent::doTest]</strong>, l’objet <strong>[$this]</strong> est de type <strong>[SomeChild]</strong> (lignes 15-20). Il voit l’attribut de son parent <strong>[$attributeOfparent]</strong> (ligne 21) mais toujours pas son propre attribut <strong>[$attributeOfChild]</strong> (lignes 23-28) ;</li>
+  <li>ligne 12 : la classe <b>[SomeChild]</b> voit désormais l’attribut de son parent <b>[$attributeOfParent]</b>. C’est normal puisque celui-ci a maintenant une portée <b>[protected]</b> ;
+  </li>
+  <li>dans la méthode <b>[someParent::doTest]</b>, l’objet <b>[$this]</b> est de type <b>[SomeChild]</b> (lignes 15-20). Il voit l’attribut de son parent <b>[$attributeOfparent]</b> (ligne 21) mais toujours pas son propre attribut <b>[$attributeOfChild]</b> (lignes 23-28) ;
+  </li>
 </ul>
+
 <p>Dans le 3e essai, l’attribut <strong>[$attributeOfChild]</strong> a lui également une portée <strong>[protected]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2811,37 +2969,51 @@
 <a id="__codelineno-18-22" name="__codelineno-18-22"></a><span class="n">parent</span> <span class="p">:</span> <span class="n">attributeOfChild</span><span class="o">=</span><span class="mi">14</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>ligne 22 : cette fois-ci, à l’intérieur du parent, <strong>[$this]</strong> de type <strong>[SomeChild]</strong> (lignes 15-20) voit l’attribut protégé <strong>[$attributeOfChild]</strong> de sa propre classe <strong>[SomeChild]</strong>.</li>
+  <li>ligne 22 : cette fois-ci, à l’intérieur du parent, <b>[$this]</b> de type <b>[SomeChild]</b> (lignes 15-20) voit l’attribut protégé <b>[$attributeOfChild]</b> de sa propre classe <b>[SomeChild]</b>.
+  </li>
 </ul>
+
 <p>Que retenir de ces tests ?</p>
 <ul>
-<li>que le <strong>[$this]</strong> instance d’une classe parent, utilisée dans une méthode de la classe parent voit :<ul>
-<li>les attributs et méthodes de la classe parent quelque soit leur visibilité ;</li>
-<li>ne voit rien des attributs et méthodes de ses classes filles ;</li>
+  <li>que le <b>[$this]</b> instance d’une classe parent, utilisée dans une méthode de la classe parent voit :
+    <ul>
+      <li>les attributs et méthodes de la classe parent quelque soit leur visibilité ;
+      </li>
+      <li>ne voit rien des attributs et méthodes de ses classes filles ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>C’est le comportement attendu.</p>
 <ul>
-<li>que le <strong>[$this]</strong> instance d’une classe fille, utilisée dans une méthode de la classe fille voit :<ul>
-<li>les attributs et méthodes de la classe parent s’ils ont au moins la visibilité <strong>[protected]</strong>. Ceux qui ont la visibilité <strong>[private]</strong> ne sont pas vus ;</li>
-<li>les attributs et méthodes de la classe fille quelque soit leur visibilité ;</li>
+  <li>que le <b>[$this]</b> instance d’une classe fille, utilisée dans une méthode de la classe fille voit :
+    <ul>
+      <li>les attributs et méthodes de la classe parent s’ils ont au moins la visibilité <b>[protected]</b>. Ceux qui ont la visibilité <b>[private]</b> ne sont pas vus ;
+      </li>
+      <li>les attributs et méthodes de la classe fille quelque soit leur visibilité ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>C’est le comportement attendu.</p>
 <ul>
-<li>que le <strong>[$this]</strong> instance d’une classe fille, utilisée dans une méthode de la classe parent voit :<ul>
-<li>les attributs et méthodes de la classe parent quelque soit leur visibilité ;</li>
-<li>les attributs et méthodes de sa propre classe uniquement s’ils ont au moins la visibilité <strong>[protected]</strong>. Ceux qui ont la visibilité <strong>[private]</strong> ne sont pas vus ;</li>
+  <li>que le <b>[$this]</b> instance d’une classe fille, utilisée dans une méthode de la classe parent voit :
+    <ul>
+      <li>les attributs et méthodes de la classe parent quelque soit leur visibilité ;
+      </li>
+      <li>les attributs et méthodes de sa propre classe uniquement s’ils ont au moins la visibilité <b>[protected]</b>. Ceux qui ont la visibilité <b>[private]</b> ne sont pas vus ;
+      </li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
+
 <p>C’est un comportement inattendu.</p>
-<p><a id="refheadingtoc185649971629160"></a>
-<a id="toc42690644"></a>
+<p><a id="toc42689872"></a>
 <a id="toc42690258"></a>
-<a id="toc42689872"></a></p>
+<a id="toc42690644"></a>
+<a id="refheadingtoc185649971629160"></a></p>
 <h2 id="519-encodage-json-dune-classe">5.19. Encodage jSON d’une classe</h2>
 <p>Dans une classe la méthode <strong>[__toString]</strong> est souvent présente : elle est censée rendre une chaîne de caractères représentant l’objet qui l’appelle. Il peut être tentant que cette chaîne soit une chaîne jSON. Nous explorons cette voie maintenant.</p>
 <p><img src="images/100000000000016F0000011F619267FA.png" style="width:3.402cm;height:2.661cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016F0000011F619267FA.png" /></p>
@@ -2899,13 +3071,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 5-8 : les quatre attributs de la classe ;</li>
-<li>lignes 20-35 : les getters qui permettent d’avoir la valeur de ces attributs ;</li>
-<li>lignes 11-18 : un setter global qui permet d’initialiser les attributs à partir d’un tableau associatif <strong>[$arrayOfAttributes]</strong> ayant des clés <strong>identiques</strong> aux attributs de la classe ;</li>
-<li>lignes 38-46 : la méthode <strong>[__toString]</strong> de la classe ;</li>
-<li>ligne 42 : la fonction PHP <strong>[get_object_vars]</strong> permet d’obtenir la valeur des attributs de la classe sous la forme d’un tableau associatif <strong>[‘nom’=&gt;’nom1’, ‘prénom’=&gt;’prénom1, ‘âge’=&gt;âge1, ‘enfants’=&gt;[]</strong>] ;</li>
-<li>ligne 45 : on rend la chaîne jSON de ce tableau d’attributs ;</li>
+  <li>lignes 5-8 : les quatre attributs de la classe ;
+  </li>
+  <li>lignes 20-35 : les getters qui permettent d’avoir la valeur de ces attributs ;
+  </li>
+  <li>lignes 11-18 : un setter global qui permet d’initialiser les attributs à partir d’un tableau associatif <b>[$arrayOfAttributes]</b> ayant des clés <b>identiques</b> aux attributs de la classe ;
+  </li>
+  <li>lignes 38-46 : la méthode <b>[__toString]</b> de la classe ;
+  </li>
+  <li>ligne 42 : la fonction PHP <b>[get_object_vars]</b> permet d’obtenir la valeur des attributs de la classe sous la forme d’un tableau associatif <b>[‘nom’=&gt;’nom1’, ‘prénom’=&gt;’prénom1, ‘âge’=&gt;âge1, ‘enfants’=&gt;[]</b>] ;
+  </li>
+  <li>ligne 45 : on rend la chaîne jSON de ce tableau d’attributs ;
+  </li>
 </ul>
+
 <p>Examinons le script <strong>[json-01.php]</strong> qui exploite la classe <strong>[Personne]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -2951,14 +3130,22 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 6-13 : on initialise un objet <strong>[Personne]</strong> <strong>[$père]</strong> avec la méthode <strong>[Personne::setFromArray]</strong> qui permet d’initialiser un objet <strong>[Personne]</strong> avec un tableau ayant des clés identiques aux attributs de la classe <strong>[Personne]</strong> ;</li>
-<li>lignes 14-19 : on initialise un objet <strong>[Personne]</strong> <strong>[$enfant1]</strong> de la même façon ;</li>
-<li>lignes 21-25 : on initialise un objet <strong>[Personne]</strong> <strong>[$enfant2]</strong> ;</li>
-<li>lignes 27-29 : on initialise l’attribut <strong>[$père→enfants]</strong> avec un tableau des deux enfants ;</li>
-<li>lignes 32-33 : on affecte les deux enfants au père ;</li>
-<li>ligne 35 : l’opération <strong>[print]</strong> va chercher à transformer l’objet <strong>[$enfant1]</strong> en chaîne de caractères. Pour cela, elle utilise la méthode <strong>[__toString]</strong> de l’objet. On espère donc voir la chaîne jSON de l’objet ;</li>
-<li>lignes 38-39 : on fait de même avec le père ;</li>
+  <li>lignes 6-13 : on initialise un objet <b>[Personne]</b> <b>[$père]</b> avec la méthode <b>[Personne::setFromArray]</b> qui permet d’initialiser un objet <b>[Personne]</b> avec un tableau ayant des clés identiques aux attributs de la classe <b>[Personne]</b> ;
+  </li>
+  <li>lignes 14-19 : on initialise un objet <b>[Personne]</b> <b>[$enfant1]</b> de la même façon ;
+  </li>
+  <li>lignes 21-25 : on initialise un objet <b>[Personne]</b> <b>[$enfant2]</b> ;
+  </li>
+  <li>lignes 27-29 : on initialise l’attribut <b>[$père→enfants]</b> avec un tableau des deux enfants ;
+  </li>
+  <li>lignes 32-33 : on affecte les deux enfants au père ;
+  </li>
+  <li>ligne 35 : l’opération <b>[print]</b> va chercher à transformer l’objet <b>[$enfant1]</b> en chaîne de caractères. Pour cela, elle utilise la méthode <b>[__toString]</b> de l’objet. On espère donc voir la chaîne jSON de l’objet ;
+  </li>
+  <li>lignes 38-39 : on fait de même avec le père ;
+  </li>
 </ul>
+
 <p>Les résultats sont les suivants :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">------------------------enfant1</span>
@@ -3077,14 +3264,22 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 2-11 : l’objet <strong>[$enfant1]</strong> ;</li>
-<li>lignes 12-21 : le tableau des attributs de l’objet <strong>[$enfant1]</strong>. On les a bien tous ;</li>
-<li>ligne 22 : on a bien la chaîne jSON de l’objet <strong>[$enfant1]</strong> ;</li>
-<li>lignes 23-44 : idem pour l’objet <strong>[$enfant2]</strong> ;</li>
-<li>lignes 45-112 : pour le père c’est un peu différent puisque son attribut <strong>[enfants]</strong> n’est pas NULL comme il l’était chez les enfants ;</li>
-<li>ligne 112 : on voit que dans la chaîne jSON du père, il manque les enfants ;</li>
-<li>lignes 79-111 : on voit que dans le tableau d’attributs du père, l’enfant 1 (lignes 89-98) est resté un objet, de même pour l’enfant 2 (lignes 99-110). En clair, l’expression <strong>[\get_object_vars($this)]</strong> où <strong>[$this]</strong> représente le père n’est pas récursive : si un attribut de la classe <strong>[Personne]</strong> est lui-même un objet, l’expression <strong>[\get_object_vars($this)]</strong> n’essaie pas d’obtenir son tableau d’attributs ;</li>
+  <li>lignes 2-11 : l’objet <b>[$enfant1]</b> ;
+  </li>
+  <li>lignes 12-21 : le tableau des attributs de l’objet <b>[$enfant1]</b>. On les a bien tous ;
+  </li>
+  <li>ligne 22 : on a bien la chaîne jSON de l’objet <b>[$enfant1]</b> ;
+  </li>
+  <li>lignes 23-44 : idem pour l’objet <b>[$enfant2]</b> ;
+  </li>
+  <li>lignes 45-112 : pour le père c’est un peu différent puisque son attribut <b>[enfants]</b> n’est pas NULL comme il l’était chez les enfants ;
+  </li>
+  <li>ligne 112 : on voit que dans la chaîne jSON du père, il manque les enfants ;
+  </li>
+  <li>lignes 79-111 : on voit que dans le tableau d’attributs du père, l’enfant 1 (lignes 89-98) est resté un objet, de même pour l’enfant 2 (lignes 99-110). En clair, l’expression <b>[\get_object_vars($this)]</b> où <b>[$this]</b> représente le père n’est pas récursive : si un attribut de la classe <b>[Personne]</b> est lui-même un objet, l’expression <b>[\get_object_vars($this)]</b> n’essaie pas d’obtenir son tableau d’attributs ;
+  </li>
 </ul>
+
 <p>On peut améliorer les choses. On modifie la classe <strong>[Personne]</strong> en la classe <strong>[Personne2]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -3131,13 +3326,20 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 36-38 : la fonction <strong>[getAttributes]</strong> rend le tableau des attributs de l’objet qui l’appelle ;</li>
-<li>lignes 25-34 : la fonction <strong>[__toString]</strong> ;</li>
-<li>ligne 27 : on récupère les attributs de la classe <strong>[Personne]</strong> dans le tableau <strong>[$attributes]</strong> ;</li>
-<li>ligne 28 : on sait, d’après l’exemple précédent, que <strong>[$attributes[&quot;enfants&quot;]</strong>] est un tableau de deux objets de type <strong>[Personne]</strong> ;</li>
-<li>lignes 29-31 : les deux objets sont remplacés par leur tableau d’attributs ;</li>
-<li>ligne 33 : il ne reste plus qu’à encoder en jSON le tableau des attributs construit ;</li>
+  <li>lignes 36-38 : la fonction <b>[getAttributes]</b> rend le tableau des attributs de l’objet qui l’appelle ;
+  </li>
+  <li>lignes 25-34 : la fonction <b>[__toString]</b> ;
+  </li>
+  <li>ligne 27 : on récupère les attributs de la classe <b>[Personne]</b> dans le tableau <b>[$attributes]</b> ;
+  </li>
+  <li>ligne 28 : on sait, d’après l’exemple précédent, que <b>[$attributes[&quot;enfants&quot;]</b>] est un tableau de deux objets de type <b>[Personne]</b> ;
+  </li>
+  <li>lignes 29-31 : les deux objets sont remplacés par leur tableau d’attributs ;
+  </li>
+  <li>ligne 33 : il ne reste plus qu’à encoder en jSON le tableau des attributs construit ;
+  </li>
 </ul>
+
 <p>Le script <strong>[json-02.php]</strong> exploite la classe <strong>[Personne2]</strong> de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -3267,10 +3469,14 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 21-22 : cette fois-ci, la méthode <strong>[__toString]</strong> demande les attributs de sa classe et demande à ce que ce soit fait récursivement : si un attribut est un objet ou un tableau d’objets, alors chaque objet doit être remplacé par son tableau d’attributs dans le tableau d’attributs final de la classe ;</li>
-<li>lignes 31-78 : la fonction <strong>[getRecursiveAttributes]</strong> fait ce travail. On a commenté son code. L’écriture d’une fonction récursive est souvent quelque chose de complexe. C’est le cas ici. Le lecteur ne perdra rien s’il ne le comprend pas. Il existe des bibliothèques qui font ce travail. L’appel récursif a lieu aux lignes 64 et 72 ;</li>
-<li>l’intérêt de ce code est qu’il n’a pas été écrit pour la seule classe <strong>[Personne3]</strong>. Il est valable pour toute classe ayant des attributs ayant pour valeurs des types d’objets différents, tant que les classes utilisées par la classe principale, ont comme elle la méthode <strong>[getAttributes]</strong> des lignes 27-29</li>
+  <li>lignes 21-22 : cette fois-ci, la méthode <b>[__toString]</b> demande les attributs de sa classe et demande à ce que ce soit fait récursivement : si un attribut est un objet ou un tableau d’objets, alors chaque objet doit être remplacé par son tableau d’attributs dans le tableau d’attributs final de la classe ;
+  </li>
+  <li>lignes 31-78 : la fonction <b>[getRecursiveAttributes]</b> fait ce travail. On a commenté son code. L’écriture d’une fonction récursive est souvent quelque chose de complexe. C’est le cas ici. Le lecteur ne perdra rien s’il ne le comprend pas. Il existe des bibliothèques qui font ce travail. L’appel récursif a lieu aux lignes 64 et 72 ;
+  </li>
+  <li>l’intérêt de ce code est qu’il n’a pas été écrit pour la seule classe <b>[Personne3]</b>. Il est valable pour toute classe ayant des attributs ayant pour valeurs des types d’objets différents, tant que les classes utilisées par la classe principale, ont comme elle la méthode <b>[getAttributes]</b> des lignes 27-29
+  </li>
 </ul>
+
 <p>Le script <strong>[json-03.php]</strong> utilise la classe <strong>[Personne3]</strong> de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -3324,8 +3530,10 @@
 </code></pre></div>
 
 <ul>
-<li>lignes 30-45 : on donne deux enfants à <strong>[$enfant1]</strong> ;</li>
+  <li>lignes 30-45 : on donne deux enfants à <b>[$enfant1]</b> ;
+  </li>
 </ul>
+
 <p>Les résultats de l’exécution sont les suivants :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
 <span class="normal"><a href="#__codelineno-20-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>------------------------père

@@ -1099,60 +1099,65 @@
   
 
 
-<p><a id="refheadingtoc185701971629160"></a>
-<a id="toc42690859"></a>
+<p><a id="toc42690087"></a>
 <a id="toc42690473"></a>
-<a id="toc42690087"></a></p>
+<a id="toc42690859"></a>
+<a id="refheadingtoc185701971629160"></a></p>
 <h1 id="20-exercice-dapplication-version-10">20. Exercice d’application – version 10</h1>
 <p>La version précédente a montré que les données fiscales, partagées par tous les utilisateurs de l’application, devraient être stockées dans une mémoire de portée <strong>[Application]</strong>. Nous allons utiliser un serveur Redis <strong>[https://redis.io]</strong> pour implémenter celle-ci.</p>
-<p><a id="refheadingtoc185703971629160"></a>
-<a id="toc42690860"></a>
+<p><a id="toc42690088"></a>
 <a id="toc42690474"></a>
-<a id="toc42690088"></a></p>
+<a id="toc42690860"></a>
+<a id="refheadingtoc185703971629160"></a></p>
 <h2 id="201-redis">20.1. Redis</h2>
 <p>La mémoire de portée <strong>[Application]</strong> sera implémentée par un serveur Redis. Les scripts PHP ayant besoin de cette mémoire d’application seront des clients de ce serveur :</p>
 <p><img src="images/10000000000006E50000016D026275D9.png" style="width:14.011cm;height:2.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E50000016D026275D9.png" /></p>
-<p><a id="refheadingtoc185705971629160"></a>
-<a id="toc42690861"></a>
+<p><a id="toc42690089"></a>
 <a id="toc42690475"></a>
-<a id="toc42690089"></a></p>
+<a id="toc42690861"></a>
+<a id="refheadingtoc185705971629160"></a></p>
 <h2 id="202-installation-de-redis">20.2. Installation de Redis</h2>
 <p>Laragon vient avec un serveur Redis non activé par défaut. Il faut donc commencer par l’activer :</p>
 <p><img src="images/100000000000073600000303CE510638.png" style="width:14.652cm;height:6.121cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000073600000303CE510638.png" /></p>
 <ul>
-<li>en <strong>[3]</strong>, activer le serveur <strong>[Redis]</strong> ;</li>
-<li>en <strong>[4]</strong>, laisser le port <strong>[6379]</strong> que les clients Redis utilisent par défaut ;</li>
+  <li>en <b>[3]</b>, activer le serveur <b>[Redis]</b> ;
+  </li>
+  <li>en <b>[4]</b>, laisser le port <b>[6379]</b> que les clients Redis utilisent par défaut ;
+  </li>
 </ul>
+
 <p>Les services Laragon sont automatiquement relancés après activation de Redis :</p>
 <p><img src="images/10000000000004F6000001F85B242593.png" style="width:10.081cm;height:4.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F6000001F85B242593.png" /></p>
-<p><a id="refheadingtoc185707971629160"></a>
-<a id="toc42690862"></a>
+<p><a id="toc42690090"></a>
 <a id="toc42690476"></a>
-<a id="toc42690090"></a></p>
+<a id="toc42690862"></a>
+<a id="refheadingtoc185707971629160"></a></p>
 <h2 id="203-le-client-redis-en-mode-commande">20.3. Le client Redis en mode commande</h2>
 <p>Le serveur Redis peut être interrogé en mode commande. On ouvre un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
 <p><img src="images/100000000000079C00000250F06351A7.png" style="width:18.04cm;height:5.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000079C00000250F06351A7.png" /></p>
 <ul>
-<li>en <strong>[1]</strong>, la commande <strong>[redis-cli]</strong> lance le client en mode commande du serveur Redis ;</li>
+  <li>en <b>[1]</b>, la commande <b>[redis-cli]</b> lance le client en mode commande du serveur Redis ;
+  </li>
 </ul>
+
 <p>En juillet 2019, le client Redis peut utiliser 172 commandes pour dialoguer avec le serveur <strong>[https://redis.io/commands#list]</strong>. L’une d’elles <strong>[command count]</strong> <strong>[2]</strong>, affiche ce nombre <strong>[3]</strong>.</p>
 <p>Nous n’allons présenter que celles dont nous allons avoir besoin dans notre application PHP. Nous allons utiliser Redis pour une unique chose : stocker un tableau <strong>[‘attribut’=&gt;’valeur’]</strong> dans la mémoire de Redis. Cela se fait avec la commande Redis <strong>[set attribut valeur]</strong> <strong>[4]</strong>. La valeur peut ensuite être récupérée avec la commande <strong>[get attribut]</strong> <strong>[5]</strong>. C’est tout ce dont nous aurons besoin.</p>
 <p>Il peut être nécessaire de vider la mémoire de Redis. Cela se fait avec la commande <strong>[flushdb]</strong> <strong>[6]</strong>. Ensuite si on demande la valeur de l’attribut <strong>[titre]</strong> <strong>[7]</strong>, on obtient une référence <strong>[nil]</strong> <strong>[8]</strong> indiquant que l’attribut n’a pas été trouvé. On peut également utiliser la commande <strong>[exists]</strong> <strong>[9-10]</strong> pour vérifier l’existence d’un attribut.</p>
 <p>Pour quitter le client Redis, taper la commande <strong>[quit]</strong> <strong>[11]</strong>.</p>
-<p><a id="refheadingtoc185709971629160"></a>
-<a id="toc42690863"></a>
+<p><a id="toc42690091"></a>
 <a id="toc42690477"></a>
-<a id="toc42690091"></a></p>
+<a id="toc42690863"></a>
+<a id="refheadingtoc185709971629160"></a></p>
 <h2 id="204-installation-dun-client-redis-pour-php">20.4. Installation d’un client Redis pour PHP</h2>
 <p>Il nous faut maintenant installer un client Redis pour PHP :</p>
 <p><img src="images/10000000000006C1000001661065C383.png" style="width:13.72cm;height:2.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006C1000001661065C383.png" /></p>
 <p>Il existe plusieurs bibliothèques implémentant un client Redis. Nous utiliserons la bibliothèque <strong>[Predis]</strong> <strong>[https://github.com/nrk/predis]</strong> (juillet 2019). Celle-ci comme les précédentes s’installe avec <strong>[composer]</strong> dans un terminal Laragon :</p>
 <p><img src="images/1000000000000748000002925C134594.png" style="width:17.26cm;height:6.091cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000748000002925C134594.png" /></p>
 <p><a id="codeduserveur"></a>
-<a id="toc42690864"></a>
-<a id="toc42690478"></a>
+<a id="refheadingtoc1906941531191796"></a>
 <a id="toc42690092"></a>
-<a id="refheadingtoc1906941531191796"></a></p>
+<a id="toc42690478"></a>
+<a id="toc42690864"></a></p>
 <h2 id="205-code-du-serveur">20.5. Code du serveur</h2>
 <p><img src="images/100000000000017A000001060D4D315E.png" style="width:3.5cm;height:2.431cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017A000001060D4D315E.png" /></p>
 <p>Le fichier de configuration <strong>[config-server.json]</strong> évolue de la façon suivante :</p>
@@ -1198,9 +1203,12 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>lignes 5-15 : la version 10 n’amène rien de nouveau en dehors du script <strong>[impots-server.php]</strong>. Elle utilise des éléments des verions 08 et 09 ;</li>
-<li>ligne 19 : une dépendance nécessaire à la bibliothèque <strong>[predis]</strong> que l’on vient d’installer ;</li>
+  <li>lignes 5-15 : la version 10 n’amène rien de nouveau en dehors du script <b>[impots-server.php]</b>. Elle utilise des éléments des verions 08 et 09 ;
+  </li>
+  <li>ligne 19 : une dépendance nécessaire à la bibliothèque <b>[predis]</b> que l’on vient d’installer ;
+  </li>
 </ul>
+
 <p>Le code du serveur <strong>[impots-server.php]</strong> évolue de la façon suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1354,25 +1362,38 @@
 
 <p><strong>Commentaires</strong></p>
 <ul>
-<li>ligne 15 : on donne l’alias <strong>[ServerDaoWithRedis]</strong> à la classe <strong>[\Application\ServerDaoWithSession]</strong> pour refléter le changement d’implémentation du script serveur ;</li>
-<li>lignes 18-19 : la session est conservée. Nous avons ici deux informations à mémoriser :<ul>
-<li>le fait que l’utilisateur se soit authentifié correctement. Cette information est de portée <strong>[session]</strong> : elle est liée à un utilisateur précis et n’est pas valable pour les autres utilisateurs ;</li>
-<li>les données de l’administration fiscale. Cette information est de portée <strong>[application]</strong> : elle n’est pas liée à un utilisateur précis mais est valable pour tous les utilisateurs ;</li>
+  <li>ligne 15 : on donne l’alias <b>[ServerDaoWithRedis]</b> à la classe <b>[\Application\ServerDaoWithSession]</b> pour refléter le changement d’implémentation du script serveur ;
+  </li>
+  <li>lignes 18-19 : la session est conservée. Nous avons ici deux informations à mémoriser :
+    <ul>
+      <li>le fait que l’utilisateur se soit authentifié correctement. Cette information est de portée <b>[session]</b> : elle est liée à un utilisateur précis et n’est pas valable pour les autres utilisateurs ;
+      </li>
+      <li>les données de l’administration fiscale. Cette information est de portée <b>[application]</b> : elle n’est pas liée à un utilisateur précis mais est valable pour tous les utilisateurs ;
+      </li>
+    </ul>
+  </li>
+  <li>lignes 54-64 : création du client <b>[redis]</b> qui va communiquer avec le serveur <b>[redis]</b>. Ce client va communiquer avec le port par défaut du serveur. Si celui-ci ne communiquait pas sur son port par défaut ou s’il n’était pas sur la machine <b>[localhost]</b>, il faudrait passer ces informations au constructeur de la classe <b>[\Predis\Client]</b> ;
+  </li>
+  <li>ligne 59 : on connecte tout de suite le client au serveur pour savoir si celui-ci répond ;
+  </li>
+  <li>lignes 60-65 : si la connexion au serveur Redis échoue, on envoie une réponse d’erreur au client et un mail sera envoyé à l’administrateur de l’application ;
+  </li>
+  <li>ligne 67 : on demande au serveur <b>[redis]</b>, la clé <b>[taxAdminData]</b>. Si elle n’est pas trouvée, alors les données fiscales sont prises en base de données (ligne 72) ;
+  </li>
+  <li>ligne 75 : la clé <b>[taxAdminData]</b> est placée dans la mémoire <b>[redis]</b> associée à la chaîne jSON de la variable <b>[$taxAdminData]</b> qui est un objet de type <b>[TaxAdminData]</b>. La méthode <b>[$redis→set]</b> s’attend à une chaîne de caractères pour la valeur de la clé. Elle va donc chercher à transformer l’objet de type <b>[TaxAdminData]</b> en type <b>[string]</b>. C’est alors implicitement, la méthode <b>[TaxAdminData-&gt;__toString]</b> qui va être appelée. Celle-ci produit la chaîne jSON de l’objet <b>[TaxAdminData]</b> ;
+  </li>
+  <li>ligne 84 : la clé <b>[taxAdminData]</b> est dans la mémoire<b>[redis]</b>, alors on récupère sa valeur. On sait que c’est la chaîne jSON d’un objet <b>[TaxAdminData]</b>. On décode alors celle-ci pour obtenir un tableau d’attributs ;
+  </li>
+  <li>ligne 85 : à partir de ce tableau, un nouvel objet <b>[TaxAdminData]</b> est instancié ;
+  </li>
+  <li>ligne 87 : la couche <b>[dao]</b> est instanciée ;
+  </li>
 </ul>
-</li>
-<li>lignes 54-64 : création du client <strong>[redis]</strong> qui va communiquer avec le serveur <strong>[redis]</strong>. Ce client va communiquer avec le port par défaut du serveur. Si celui-ci ne communiquait pas sur son port par défaut ou s’il n’était pas sur la machine <strong>[localhost]</strong>, il faudrait passer ces informations au constructeur de la classe <strong>[\Predis\Client]</strong> ;</li>
-<li>ligne 59 : on connecte tout de suite le client au serveur pour savoir si celui-ci répond ;</li>
-<li>lignes 60-65 : si la connexion au serveur Redis échoue, on envoie une réponse d’erreur au client et un mail sera envoyé à l’administrateur de l’application ;</li>
-<li>ligne 67 : on demande au serveur <strong>[redis]</strong>, la clé <strong>[taxAdminData]</strong>. Si elle n’est pas trouvée, alors les données fiscales sont prises en base de données (ligne 72) ;</li>
-<li>ligne 75 : la clé <strong>[taxAdminData]</strong> est placée dans la mémoire <strong>[redis]</strong> associée à la chaîne jSON de la variable <strong>[$taxAdminData]</strong> qui est un objet de type <strong>[TaxAdminData]</strong>. La méthode <strong>[$redis→set]</strong> s’attend à une chaîne de caractères pour la valeur de la clé. Elle va donc chercher à transformer l’objet de type <strong>[TaxAdminData]</strong> en type <strong>[string]</strong>. C’est alors implicitement, la méthode <strong>[TaxAdminData-&gt;__toString]</strong> qui va être appelée. Celle-ci produit la chaîne jSON de l’objet <strong>[TaxAdminData]</strong> ;</li>
-<li>ligne 84 : la clé <strong>[taxAdminData]</strong> est dans la mémoire<strong>[redis]</strong>, alors on récupère sa valeur. On sait que c’est la chaîne jSON d’un objet <strong>[TaxAdminData]</strong>. On décode alors celle-ci pour obtenir un tableau d’attributs ;</li>
-<li>ligne 85 : à partir de ce tableau, un nouvel objet <strong>[TaxAdminData]</strong> est instancié ;</li>
-<li>ligne 87 : la couche <strong>[dao]</strong> est instanciée ;</li>
-</ul>
-<p><a id="refheadingtoc185711971629160"></a>
-<a id="toc42690865"></a>
+
+<p><a id="toc42690093"></a>
 <a id="toc42690479"></a>
-<a id="toc42690093"></a></p>
+<a id="toc42690865"></a>
+<a id="refheadingtoc185711971629160"></a></p>
 <h2 id="206-code-du-client">20.6. Code du client</h2>
 <p><img src="images/10000000000001C60000012B855C7CB0.png" style="width:4.201cm;height:2.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C60000012B855C7CB0.png" /></p>
 <p>La version 10 du client est identique à la version 9. Seul change le fichier de configuration <strong>[config-client.json]</strong> :</p>
@@ -1413,10 +1434,10 @@
 <span class="odt-code-line">Terminé</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc185713971629160"></a>
-<a id="toc42690866"></a>
+<p><a id="toc42690094"></a>
 <a id="toc42690480"></a>
-<a id="toc42690094"></a></p>
+<a id="toc42690866"></a>
+<a id="refheadingtoc185713971629160"></a></p>
 <h2 id="207-tests-codeception-du-client">20.7. Tests [Codeception] du client</h2>
 <p><img src="images/10000000000001CB000001AE771AA7CC.png" style="width:4.25cm;height:3.98cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CB000001AE771AA7CC.png" /></p>
 <p>La classe de test <strong>[ClientMetierTest]</strong> de la version 10 est identique à celle de la version 09 à une exception près :</p>
@@ -1438,8 +1459,10 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 10 : l’environnement du test est celui du client de la version 10 ;</li>
+  <li>ligne 10 : l’environnement du test est celui du client de la version 10 ;
+  </li>
 </ul>
+
 <p>Avant de commencer les tests, supprimons à l’aide du client <strong>[redis-cli]</strong> la clé <strong>[taxAdminData]</strong> de la mémoire du serveur <strong>[redis]</strong> :</p>
 <p><img src="images/10000000000002A90000016365250EAD.png" style="width:6.31cm;height:3.29cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A90000016365250EAD.png" /></p>
 <p>Maintenant, exécutons le test :</p>
@@ -1474,29 +1497,41 @@
 
 <p>On a déjà dit qu’à chaque test, le constructeur de la classe de test est réexécuté, ce qui fait que la classe <strong>[ClientDao]</strong> testée est à chaque test instanciée avec un cookie de session inexistant. Tout se passe donc comme si les 11 tests représentaient 11 utilisateurs différents, avec 11 sessions différentes.</p>
 <ul>
-<li>ligne 6 : les données fiscales sont prises en base de données ;</li>
-<li>lignes 13, 20 : les données fiscales sont prises dans la mémoire <strong>[redis]</strong>. On a donc bien là une mémoire de portée <strong>[application]</strong> partagée par tous les utilisateurs de l’application ;</li>
+  <li>ligne 6 : les données fiscales sont prises en base de données ;
+  </li>
+  <li>lignes 13, 20 : les données fiscales sont prises dans la mémoire <b>[redis]</b>. On a donc bien là une mémoire de portée <b>[application]</b> partagée par tous les utilisateurs de l’application ;
+  </li>
 </ul>
-<p><a id="refheadingtoc185715971629160"></a>
-<a id="toc42690867"></a>
+
+<p><a id="toc42690095"></a>
 <a id="toc42690481"></a>
-<a id="toc42690095"></a></p>
+<a id="toc42690867"></a>
+<a id="refheadingtoc185715971629160"></a></p>
 <h2 id="208-interface-web-du-serveur-redis">20.8. Interface web du serveur [Redis]</h2>
 <p>Nous avons vu que le serveur <strong>[Redis]</strong> pouvait être géré en mode commande. Il peut également être géré grâce à une interface web :</p>
 <p><img src="images/100000000000078C000002E3B41FA763.png" style="width:15.341cm;height:5.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078C000002E3B41FA763.png" /></p>
 <ul>
-<li>en <strong>[4]</strong>, l’URL d’aministration ;</li>
-<li>en <strong>[5]</strong>, les clés mémorisées par le serveur ;</li>
-<li>en <strong>[6]</strong>, l’état actuel du serveur ;</li>
+  <li>en <b>[4]</b>, l’URL d’aministration ;
+  </li>
+  <li>en <b>[5]</b>, les clés mémorisées par le serveur ;
+  </li>
+  <li>en <b>[6]</b>, l’état actuel du serveur ;
+  </li>
 </ul>
+
 <p>En cliquant sur <strong>[5]</strong>, on obtient des informations sur la clé <strong>[taxAdminData]</strong> :</p>
 <p><img src="images/10000000000006AD000002EEF7B4330F.png" style="width:13.562cm;height:5.95cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006AD000002EEF7B4330F.png" /></p>
 <ul>
-<li>en <strong>[7]</strong>, l’URL qui donne accès aux informations de la clé <strong>[taxAdminData]</strong> <strong>[8]</strong> ;</li>
-<li>en <strong>[9]</strong>, le statut de la clé ;</li>
-<li>en <strong>[10]</strong>, sa valeur : on reconnaît la chaîne jSON d’un objet de type <strong>[TaxAdminData]</strong> ;</li>
-<li>en <strong>[11]</strong>, on peut supprimer la clé ;</li>
-<li>en <strong>[12]</strong>, on peut en ajouter une autre ;</li>
+  <li>en <b>[7]</b>, l’URL qui donne accès aux informations de la clé <b>[taxAdminData]</b> <b>[8]</b> ;
+  </li>
+  <li>en <b>[9]</b>, le statut de la clé ;
+  </li>
+  <li>en <b>[10]</b>, sa valeur : on reconnaît la chaîne jSON d’un objet de type <b>[TaxAdminData]</b> ;
+  </li>
+  <li>en <b>[11]</b>, on peut supprimer la clé ;
+  </li>
+  <li>en <b>[12]</b>, on peut en ajouter une autre ;
+  </li>
 </ul>
 
 

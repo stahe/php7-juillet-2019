@@ -1105,10 +1105,10 @@
   
 
 
-<p><a id="refheadingtoc822363439697744"></a>
-<a id="toc42690737"></a>
+<p><a id="toc42689965"></a>
 <a id="toc42690351"></a>
-<a id="toc42689965"></a></p>
+<a id="toc42690737"></a>
+<a id="refheadingtoc822363439697744"></a></p>
 <h1 id="14-exercice-dapplication-version-6">14. Exercice d’application – version 6</h1>
 <p><img src="images/100000000000033900000176F745DD56.png" style="width:7.64cm;height:3.462cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000033900000176F745DD56.png" /></p>
 <p>Nous venons d’implémenter la structure en couches suivante :</p>
@@ -1116,115 +1116,158 @@
 <p>Le SGBD utilisé dans les exemples était MySQL. Au paragraphe <a href="#_Architecture"><u><span style="color: #0563c1">lien</span></u></a> nous avions remarqué que rien dans la classe implémentant la couche <strong>[dao]</strong> ne laissait supposer qu’on utilisait un SGBD particulier. C’est ce que nous allons vérifier maintenant en utilisant un autre SGBD, le SGBD PostgreSQL. L’architecture en couches devient la suivante :</p>
 <p><img src="images/10000000000006CE0000018D52E71EDC.png" style="width:13.831cm;height:3.151cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006CE0000018D52E71EDC.png" /></p>
 <p><a id="installationdu"></a>
-<a id="toc42690738"></a>
-<a id="toc42690352"></a>
+<a id="refheadingtoc822383439697744"></a>
 <a id="toc42689966"></a>
-<a id="refheadingtoc822383439697744"></a></p>
+<a id="toc42690352"></a>
+<a id="toc42690738"></a></p>
 <h2 id="141-installation-du-sgbd-postgresql">14.1. Installation du  SGBD PostgreSQL</h2>
 <p>Les distributions du SGBD PostgreSQL sont disponibles à l’URL <strong>[https://www.postgresql.org/download/]</strong> (mai 2019). Nous montrons l’installation de la version pour Windows 64 bits :</p>
 <p><img src="images/1000000000000769000001BF973D6CB8.png" style="width:15.061cm;height:3.551cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000769000001BF973D6CB8.png" /></p>
 <p><img src="images/10000000000009120000010F66A7F239.png" style="width:18.432cm;height:2.151cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000009120000010F66A7F239.png" /></p>
 <ul>
-<li>en <strong>[1-4]</strong>, on télécharge l’installateur du SGBD ;</li>
+  <li>en <b>[1-4]</b>, on télécharge l’installateur du SGBD ;
+  </li>
 </ul>
+
 <p>On lance l’installateur téléchargé :</p>
 <p><img src="images/10000000000007D40000032285ACD5D7.png" style="width:15.911cm;height:6.37cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D40000032285ACD5D7.png" /></p>
 <ul>
-<li>en <strong>[6]</strong>, indiquez un dossier d’installation ;</li>
+  <li>en <b>[6]</b>, indiquez un dossier d’installation ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000007D00000030C5349EB67.png" style="width:15.881cm;height:6.19cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D00000030C5349EB67.png" /></p>
 <ul>
-<li>en <strong>[8]</strong>, l’option <strong>[Stack Builder]</strong> est inutile pour ce qu’on veut faire ici ;</li>
-<li>en <strong>[10]</strong>, laissez la valeur qui vous sera présentée ;</li>
+  <li>en <b>[8]</b>, l’option <b>[Stack Builder]</b> est inutile pour ce qu’on veut faire ici ;
+  </li>
+  <li>en <b>[10]</b>, laissez la valeur qui vous sera présentée ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000007D30000032A461AD3B1.png" style="width:15.9cm;height:6.43cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007D30000032A461AD3B1.png" /></p>
 <ul>
-<li>en <strong>[12-13]</strong>, on a mis ici le mot de passe <strong>[root]</strong>. Ce sera le mot de passe de l’administrateur du SGBD qui s’appelle <strong>[postgres]</strong>. PostgreSQL l’appelle également le super-utilisateur ;</li>
-<li>en <strong>[15]</strong>, laissez la valeur par défaut : c’est le port d’écoute du SGBD ;</li>
+  <li>en <b>[12-13]</b>, on a mis ici le mot de passe <b>[root]</b>. Ce sera le mot de passe de l’administrateur du SGBD qui s’appelle <b>[postgres]</b>. PostgreSQL l’appelle également le super-utilisateur ;
+  </li>
+  <li>en <b>[15]</b>, laissez la valeur par défaut : c’est le port d’écoute du SGBD ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000007DB00000329DCE6E296.png" style="width:15.96cm;height:6.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007DB00000329DCE6E296.png" /></p>
 <ul>
-<li>en <strong>[17]</strong>, laissez la valeur par défaut ;</li>
-<li>en <strong>[19]</strong>, le résumé de la configuration de l’installation ;</li>
+  <li>en <b>[17]</b>, laissez la valeur par défaut ;
+  </li>
+  <li>en <b>[19]</b>, le résumé de la configuration de l’installation ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000007DA0000031222A77818.png" style="width:15.952cm;height:6.241cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007DA0000031222A77818.png" /></p>
 <p><img src="images/10000000000006840000033F938D03A7.png" style="width:15.451cm;height:7.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006840000033F938D03A7.png" /></p>
 <p>Sous windows, le SGBD PostgreSQL est installé comme un service windows lancé automatiquement. La plupart du temps ce n’est pas souhaitable. Nous allons modifier cette configuration. Tapez <strong>[services]</strong> dans la barre de recherche de Windows <strong>[24-26]</strong> :</p>
 <p><img src="images/1000000000000772000002F0F6A10596.png" style="width:15.131cm;height:5.972cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000772000002F0F6A10596.png" /></p>
 <ul>
-<li>en <strong>[29]</strong>, on voit que le service du SGBD PostgreSQL est en mode automatique. On change cela en accédant aux propriétés du service <strong>[30]</strong> :</li>
+  <li>en <b>[29]</b>, on voit que le service du SGBD PostgreSQL est en mode automatique. On change cela en accédant aux propriétés du service <b>[30]</b> :
+  </li>
 </ul>
+
 <p><img src="images/10000000000007A3000003000B13CB94.png" style="width:15.521cm;height:6.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007A3000003000B13CB94.png" /></p>
 <ul>
-<li>en <strong>[31-32]</strong>, mettez le démarrage en mode manuel ;</li>
-<li>en <strong>[33]</strong>, arrêtez le service ;</li>
+  <li>en <b>[31-32]</b>, mettez le démarrage en mode manuel ;
+  </li>
+  <li>en <b>[33]</b>, arrêtez le service ;
+  </li>
 </ul>
+
 <p>Lorsque vous voudrez démarrer manuellement le SGBD, revenez à l’application <strong>[services]</strong>, cliquez droit sur le service <strong>[postgresql]</strong> (34) et lancez le (35).</p>
-<p><a id="refheadingtoc900763955410047"></a>
-<a id="toc42690739"></a>
+<p><a id="toc42689967"></a>
 <a id="toc42690353"></a>
-<a id="toc42689967"></a></p>
+<a id="toc42690739"></a>
+<a id="refheadingtoc900763955410047"></a></p>
 <h2 id="142-activation-de-lextension-pdo-du-sgbd-postgresql">14.2. Activation de l’extension PDO du SGBD PostgreSQL</h2>
 <p>Nous allons modifier le fichier <strong>[php.ini]</strong> qui configure PHP (cf paragraphe <a href="#_Configuration_de_PHP"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
 <p><img src="images/10000000000007A40000042DC1FB1A3C.png" style="width:15.53cm;height:8.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007A40000042DC1FB1A3C.png" /></p>
 <ul>
-<li>en <strong>[2]</strong>, vérifiez que l’extension PDO de PostgreSQL est activée. Ceci fait, sauvegardez la modification puis relancez Laragon pour être sûrs que la modification va être prise en compte. Ensuite vérifiez la configuration de PHP directement à partir de Laragon <strong>[3-5]</strong>.</li>
+  <li>en <b>[2]</b>, vérifiez que l’extension PDO de PostgreSQL est activée. Ceci fait, sauvegardez la modification puis relancez Laragon pour être sûrs que la modification va être prise en compte. Ensuite vérifiez la configuration de PHP directement à partir de Laragon <b>[3-5]</b>.
+  </li>
 </ul>
-<p><a id="refheadingtoc900783955410047"></a>
-<a id="toc42690740"></a>
+
+<p><a id="toc42689968"></a>
 <a id="toc42690354"></a>
-<a id="toc42689968"></a></p>
+<a id="toc42690740"></a>
+<a id="refheadingtoc900783955410047"></a></p>
 <h2 id="143-administrer-postgresql-avec-loutil-pgadmin">14.3. Administrer PostgreSQL avec l’outil [pgAdmin]</h2>
 <p>Lancez le service windows du SGBD PostgreSQL (cf paragraphe <a href="#_Installation_du_"><u><span style="color: #0563c1">lien</span></u></a>). Puis de la même façon que vous avez lancé l’outil <strong>[services]</strong>, lancez l’outil <strong>[pgadmin]</strong> qui permet d’administrer le SGBD PostgreSQL <strong>[1-3]</strong> :</p>
 <p><img src="images/10000000000006600000035818B2CB82.png" style="width:12.951cm;height:6.79cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006600000035818B2CB82.png" /></p>
 <p>Il est possible qu’à un moment donné on vous demande le mot de passe du super-utilisateur. Celui-ci s’appelle <strong>[postgres]</strong>. Vous avez défini son mot de passe lors de l’installation du SGBD. Dans ce document, nous avons donné le mot de passe <strong>[root]</strong> au super-utilisateur lors de l’installation.</p>
 <ul>
-<li>en <strong>[4]</strong>, <strong>[pgAdmin]</strong> est une application web ;</li>
-<li>en <strong>[5]</strong>, la liste des serveurs PostgreSQL détectés par <strong>[pgAdmin]</strong>, ici 1 ;</li>
-<li>en <strong>[6]</strong>, le serveur PostgreSQL que nous avons lancé ;</li>
-<li>en <strong>[7]</strong>, les bases de données du SGBD, ici 1 ;</li>
-<li>en <strong>[8]</strong>, la base <strong>[postgresql]</strong> est gérée par le super-utilisateur <strong>[postgres]</strong> ;</li>
+  <li>en <b>[4]</b>, <b>[pgAdmin]</b> est une application web ;
+  </li>
+  <li>en <b>[5]</b>, la liste des serveurs PostgreSQL détectés par <b>[pgAdmin]</b>, ici 1 ;
+  </li>
+  <li>en <b>[6]</b>, le serveur PostgreSQL que nous avons lancé ;
+  </li>
+  <li>en <b>[7]</b>, les bases de données du SGBD, ici 1 ;
+  </li>
+  <li>en <b>[8]</b>, la base <b>[postgresql]</b> est gérée par le super-utilisateur <b>[postgres]</b> ;
+  </li>
 </ul>
+
 <p>Créons tout d’abord un utilisateur <strong>[admimpots]</strong> avec le mot de passe <strong>[mdpimpots]</strong> :</p>
 <p><img src="images/10000000000007C30000016064A704A0.png" style="width:15.77cm;height:2.791cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000007C30000016064A704A0.png" /></p>
 <p><img src="images/10000000000006B7000002C2C2023F5E.png" style="width:13.641cm;height:5.601cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006B7000002C2C2023F5E.png" /></p>
 <ul>
-<li>en <strong>[17]</strong>, on a mis <strong>[mdpimpots]</strong> ;</li>
+  <li>en <b>[17]</b>, on a mis <b>[mdpimpots]</b> ;
+  </li>
 </ul>
+
 <p><img src="images/1000000000000718000002119833D399.png" style="width:14.41cm;height:4.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000718000002119833D399.png" /></p>
 <ul>
-<li>en <strong>[21]</strong>, le code SQL que va émettre l’outil <strong>[pgAdmin]</strong> vers le SGBD PostgreSQL. C’est une façon d’apprendre le langage SQL propriétaire de PostgreSQL ;</li>
-<li>en <strong>[22]</strong>, après validation de l’assistant <strong>[Save]</strong>, l’utilisateur <strong>[admimpots]</strong> a été créé ;</li>
+  <li>en <b>[21]</b>, le code SQL que va émettre l’outil <b>[pgAdmin]</b> vers le SGBD PostgreSQL. C’est une façon d’apprendre le langage SQL propriétaire de PostgreSQL ;
+  </li>
+  <li>en <b>[22]</b>, après validation de l’assistant <b>[Save]</b>, l’utilisateur <b>[admimpots]</b> a été créé ;
+  </li>
 </ul>
+
 <p>Maintenant nous créons la base <strong>[dbimpots-2019]</strong> :</p>
 <p><img src="images/10000000000006DB0000018BF44756B9.png" style="width:13.93cm;height:3.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006DB0000018BF44756B9.png" /></p>
 <p>On clique droit sur <strong>[23]</strong>, puis <strong>[24-25]</strong> pour créer une nouvelle base de données. Dans l’onglet <strong>[26]</strong>, on définit le nom de la base <strong>[27]</strong> et son propriétaire <strong>[admimpots]</strong> <strong>[28]</strong>.</p>
 <p><img src="images/100000000000066D00000277A309E941.png" style="width:13.061cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066D00000277A309E941.png" /></p>
 <ul>
-<li>en <strong>[30]</strong>, le code SQL de création de la base ;</li>
-<li>en <strong>[31]</strong>, après validation de l’assistant <strong>[Save]</strong>, la base <strong>[dbimpots-2019]</strong> est créée ;</li>
+  <li>en <b>[30]</b>, le code SQL de création de la base ;
+  </li>
+  <li>en <b>[31]</b>, après validation de l’assistant <b>[Save]</b>, la base <b>[dbimpots-2019]</b> est créée ;
+  </li>
 </ul>
+
 <p>Maintenant, nous allons créer la table <strong>[tbtranches]</strong> avec les colonnes <strong>[id, limites, coeffr, coeffn]</strong>. Une particularité de PostgreSQL est que les noms de colonnes sont sensibles à la casse (majuscules / minuscules) ce qui n’est habituellement pas le cas avec les autres SGBD. Ainsi avec MySQL, l’ordre <strong>[select limites, coeffR, coeffN from tbtranches]</strong> fonctionnera même si les colonnes réelles de la table <strong>[tbtranches]</strong> sont <strong>[LIMITES, COEFFR, COEFFN]</strong>. Avec PostgreSQL, l’ordre SQL ne fonctionnera pas. On pourrait alors écrire <strong>[select LIMITES, COEFFR, COEFFN from tbtranches]</strong> mais ça ne fonctionnera toujours pas, car PostgreSQL va exécuter l’ordre <strong>[select limites, coeffr, coeffn from tbtranches]</strong> : il passe par défaut les noms des colonnes en minuscules. Pour qu’il ne fasse pas cela, il faut écrire : <strong>[select &quot;LIMITES&quot;, &quot;COEFFR&quot;, &quot;COEFFN&quot; from tbtranches]</strong>, ç-à-d qu’il faut protéger les noms des colonnes avec des guillemets. Pour ces raisons, nous allons donner aux colonnes des noms en minuscules. Les noms des objets d’une base de données peuvent être une source d’incompatibilité entre SGBD, certains noms étant des mots réservés dans certains SGBD et pas dans d’autres.</p>
 <p>Nous créons la table <strong>[tbtranches]</strong> :</p>
 <p><img src="images/100000000000079A0000048B433655B5.png" style="width:15.451cm;height:9.231cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000079A0000048B433655B5.png" /></p>
 <ul>
-<li>utilisez le bouton <strong>[40]</strong> pour créer des colonnes ;</li>
+  <li>utilisez le bouton <b>[40]</b> pour créer des colonnes ;
+  </li>
 </ul>
+
 <p><img src="images/100000000000057D000002F44236F3AC.png" style="width:11.15cm;height:6.002cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000057D000002F44236F3AC.png" /></p>
 <p><img src="images/100000000000072A000002AC435E99B4.png" style="width:14.589cm;height:5.44cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000072A000002AC435E99B4.png" /></p>
 <ul>
-<li>après avoir terminé l’assistant de création par <strong>[Save]</strong>, la table <strong>[tbtranches]</strong> est créée <strong>[52-53]</strong> ;</li>
+  <li>après avoir terminé l’assistant de création par <b>[Save]</b>, la table <b>[tbtranches]</b> est créée <b>[52-53]</b> ;
+  </li>
 </ul>
+
 <p>Il nous faut indiquer au SGBD qu’il doit lui-même générer la clé primaire <strong>[id]</strong> lors de l’insertion d’une ligne dans la table :</p>
 <p><img src="images/1000000000000652000002E49E6050ED.png" style="width:12.84cm;height:5.871cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000652000002E49E6050ED.png" /></p>
 <ul>
-<li>en <strong>[56]</strong> on accède aux propriétés de la clé primaire <strong>[id]</strong> ;</li>
-<li>en <strong>[59]</strong>, on indique que la colonne est de type <strong>[Identity]</strong>. Cela va entraîner que le SGBD va générer les valeurs de la clé primaire ;</li>
+  <li>en <b>[56]</b> on accède aux propriétés de la clé primaire <b>[id]</b> ;
+  </li>
+  <li>en <b>[59]</b>, on indique que la colonne est de type <b>[Identity]</b>. Cela va entraîner que le SGBD va générer les valeurs de la clé primaire ;
+  </li>
 </ul>
+
 <p><img src="images/10000000000003E00000015718B80DB0.png" style="width:7.871cm;height:2.721cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E00000015718B80DB0.png" /></p>
 <ul>
-<li>en <strong>[62]</strong>, le code SQL généré pour cette opération ;</li>
+  <li>en <b>[62]</b>, le code SQL généré pour cette opération ;
+  </li>
 </ul>
+
 <p>La table <strong>[tbtranches]</strong> est désormais prête.</p>
 <p>Nous refaisons les mêmes opérations pour créer la table <strong>[tbconstantes]</strong>. Nous donnons le résultat à obtenir :</p>
 <p><img src="images/1000000000000679000003877ED3FC08.png" style="width:13.151cm;height:7.171cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000679000003877ED3FC08.png" /></p>
@@ -1361,10 +1404,10 @@
 </code></pre></div>
 
 <p><a id="remplissagedela"></a>
-<a id="toc42690741"></a>
-<a id="toc42690355"></a>
+<a id="refheadingtoc341911203525481"></a>
 <a id="toc42689969"></a>
-<a id="refheadingtoc341911203525481"></a></p>
+<a id="toc42690355"></a>
+<a id="toc42690741"></a></p>
 <h2 id="144-remplissage-de-la-table-tbtranches">14.4. Remplissage de la table [tbtranches]</h2>
 <p>Nous avons déjà fait ce travail avec le SGBD MySQL au paragraphe <a href="#_Remplissage_de_base"><u><span style="color: #0563c1">lien</span></u></a>. Il nous suffit de modifier le fichier <strong>[database.json]</strong> qui décrit la base de données :</p>
 <p><img src="images/100000000000034C000001212ADD794F.png" style="width:7.82cm;height:2.68cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000034C000001212ADD794F.png" /></p>
@@ -1393,10 +1436,14 @@
 </code></pre></div>
 
 <ul>
-<li>ligne 2 : le DSN a changé, <strong>[pgsql]</strong> indiquant qu’on a affaire au SGBD Postgres ;</li>
-<li><span style="color: #000000">lignes 5 et 9 : on a précédé le nom des tables par le nom du schéma auquel elles appartiennent </span><strong><span style="color: #000000">[public]</span></strong><span style="color: #000000">. Ce n’était pas indispensable puisque que </span><strong><span style="color: #000000">[public]</span></strong><span style="color: #000000"> est le schéma utilisé par défaut lorsqu’aucun schéma n’est précisé dans le nom de la table ;</span></li>
-<li>lignes 6-8, 10-19 : les noms des colonnes ont changé ;</li>
+  <li>ligne 2 : le DSN a changé, <b>[pgsql]</b> indiquant qu’on a affaire au SGBD Postgres ;
+  </li>
+  <li><span style="color: #000000">lignes 5 et 9 : on a précédé le nom des tables par le nom du schéma auquel elles appartiennent </span><b><span style="color: #000000">[public]</span></b><span style="color: #000000">. Ce n’était pas indispensable puisque que </span><b><span style="color: #000000">[public]</span></b><span style="color: #000000"> est le schéma utilisé par défaut lorsqu’aucun schéma n’est précisé dans le nom de la table ;</span>
+  </li>
+  <li>lignes 6-8, 10-19 : les noms des colonnes ont changé ;
+  </li>
 </ul>
+
 <p>Le script <strong>[MainTransferAdminDataFromJsonFile2PostgresDatabase.php]</strong> de remplissage de la base <strong>[dbimpots-2019]</strong> est le suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line">&lt;?php</span>
@@ -1445,19 +1492,22 @@
 <p><span style="color: #000000">Lorsqu’on exécute ce script, on obtient le résultat suivant dans la table </span><strong><span style="color: #000000">[tbtranches]</span></strong><span style="color: #000000"> :</span></p>
 <p><img src="images/1000000000000775000002B0FE71B410.png" style="width:15.151cm;height:5.46cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000775000002B0FE71B410.png" /></p>
 <ul>
-<li><span style="color: #000000">on clique droit sur </span><strong><span style="color: #000000">[1]</span></strong><span style="color: #000000">, puis ensuite </span><strong><span style="color: #000000">[2-3]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">en </span><strong><span style="color: #000000">[4]</span></strong><span style="color: #000000">, on a bien les données des tranches d’impôts ;</span></li>
+  <li><span style="color: #000000">on clique droit sur </span><b><span style="color: #000000">[1]</span></b><span style="color: #000000">, puis ensuite </span><b><span style="color: #000000">[2-3]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">en </span><b><span style="color: #000000">[4]</span></b><span style="color: #000000">, on a bien les données des tranches d’impôts ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">On refait la même chose pour la table des constantes </span><strong><span style="color: #000000">[tbconstantes]</span></strong><span style="color: #000000"> :</span></p>
 <p><img src="images/100000000000066700000204B8506A3C.png" style="width:13.011cm;height:4.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066700000204B8506A3C.png" /></p>
 <p><img src="images/100000000000063C00000201376D4538.png" style="width:12.671cm;height:4.07cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000063C00000201376D4538.png" /></p>
 <p><img src="images/1000000000000690000001FFF7A56810.png" style="width:13.341cm;height:4.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000690000001FFF7A56810.png" /></p>
 <p><span style="color: #000000">On notera que pour l’exécution du script, l’application Laragon n’a pas besoin d’être active : on n’a besoin ni du serveur Apache, ni du SGBD MySQL. On a seulement besoin du SGBD PostgreSQL dont on a lancé le service windows.</span></p>
 <p><a id="calculdelimpot1"></a>
-<a id="toc42690742"></a>
-<a id="toc42690356"></a>
+<a id="refheadingtoc900803955410047"></a>
 <a id="toc42689970"></a>
-<a id="refheadingtoc900803955410047"></a></p>
+<a id="toc42690356"></a>
+<a id="toc42690742"></a></p>
 <h2 id="145-calcul-de-limpot">14.5. Calcul de l’impôt</h2>
 <p><img src="images/10000000000006AF00000194B78C4923.png" style="width:13.581cm;height:3.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006AF00000194B78C4923.png" /></p>
 <p><span style="color: #000000">Les couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> (3) et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> (2) ont déjà été écrites. Nous avons déjà écrit le script principal pour le SGBD MySQL au paragraphe </span><a href="#_Calcul_de_l’impôt"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000">. Il nous suffit de reprendre le script </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInMySQLDatabase.php]</span></strong><span style="color: #000000"> et de l’adapter au SGBD PostgreSQL. Il s’appelle désormais </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase.php]</span></strong><span style="color: #000000"> :</span></p>
@@ -1514,17 +1564,17 @@
 <p><span style="color: #000000">Seules les lignes 12-22 qui chargent les fichiers nécessaires à l’exécution de l’application changent. Elles changent parce que la valeur </span><strong><span style="color: #000000">[__DIR__]</span></strong><span style="color: #000000"> change : elle désigne désormais le dossier </span><strong><span style="color: #000000">[version-07/Main]</span></strong><span style="color: #000000">.</span></p>
 <p><strong><span style="color: #000000">Résultats d’exécution</span></strong></p>
 <p><span style="color: #000000">Les mêmes que ceux obtenus dans les versions précédentes.</span></p>
-<p><a id="refheadingtoc185667971629160"></a>
-<a id="toc42690743"></a>
+<p><a id="toc42689971"></a>
 <a id="toc42690357"></a>
-<a id="toc42689971"></a></p>
+<a id="toc42690743"></a>
+<a id="refheadingtoc185667971629160"></a></p>
 <h2 id="146-tests-codeception">14.6. Tests [Codeception]</h2>
 <p><span style="color: #000000">Comme pour les versions précédentes, nous validons cette version avec des tests </span><strong><span style="color: #000000">[Codeception]</span></strong><span style="color: #000000"> :</span></p>
 <p><img src="images/10000000000001AC0000020FC3FE17BA.png" style="width:3.961cm;height:4.881cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AC0000020FC3FE17BA.png" /></p>
-<p><a id="refheadingtoc185669971629160"></a>
-<a id="toc42690744"></a>
+<p><a id="toc42689972"></a>
 <a id="toc42690358"></a>
-<a id="toc42689972"></a></p>
+<a id="toc42690744"></a>
+<a id="refheadingtoc185669971629160"></a></p>
 <h3 id="1461-test-de-la-couche-dao">14.6.1. Test de la couche [dao]</h3>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[DaoTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1578,17 +1628,22 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 9-28 : définition de l’environnement du test. Nous utilisons le même, sans la couche </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000">, que celui utilisé par le script principal </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</span></strong><span style="color: #000000"> décrit au paragraphe </span><a href="#_Calcul_de_l’impôt_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 34-39 : construction de la couche </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 38 : l’attribut </span><strong><span style="color: #000000">[$this→taxAdminData]</span></strong><span style="color: #000000"> contient les données à tester ;</span></li>
-<li><span style="color: #000000">lignes 42-44 : la méthode </span><strong><span style="color: #000000">[testTaxAdminData]</span></strong><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 9-28 : définition de l’environnement du test. Nous utilisons le même, sans la couche </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000">, que celui utilisé par le script principal </span><b><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</span></b><span style="color: #000000"> décrit au paragraphe </span><a href="#_Calcul_de_l’impôt_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 34-39 : construction de la couche </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 38 : l’attribut </span><b><span style="color: #000000">[$this→taxAdminData]</span></b><span style="color: #000000"> contient les données à tester ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 42-44 : la méthode </span><b><span style="color: #000000">[testTaxAdminData]</span></b><span style="color: #000000"> est celle décrite au paragraphe </span><a href="#_Tests_de_la"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/100000000000060B0000015A4A8CF10A.png" style="width:14.331cm;height:3.2cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000060B0000015A4A8CF10A.png" /></p>
-<p><a id="refheadingtoc185671971629160"></a>
-<a id="toc42690745"></a>
+<p><a id="toc42689973"></a>
 <a id="toc42690359"></a>
-<a id="toc42689973"></a></p>
+<a id="toc42690745"></a>
+<a id="refheadingtoc185671971629160"></a></p>
 <h3 id="1462-test-de-la-couche-metier">14.6.2. Test de la couche [métier]</h3>
 <p><span style="color: #000000">Le test </span><strong><span style="color: #000000">[MetierTest.php]</span></strong><span style="color: #000000"> est le suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1647,11 +1702,16 @@
 
 <p><strong><span style="color: #000000">Commentaires</span></strong></p>
 <ul>
-<li><span style="color: #000000">lignes 9-28 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><strong><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</span></strong><span style="color: #000000"> décrit au paragraphe </span><a href="#_Calcul_de_l’impôt_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">lignes 34-40 : construction des couches </span><strong><span style="color: #000000">[dao]</span></strong><span style="color: #000000"> et </span><strong><span style="color: #000000">[métier]</span></strong><span style="color: #000000"> ;</span></li>
-<li><span style="color: #000000">ligne 39 : l’attribut </span><strong><span style="color: #000000">[$this→métier]</span></strong><span style="color: #000000"> référence la couche </span><strong><span style="color: #000000">[métier]</span></strong></li>
-<li><span style="color: #000000">lignes 43-49 : les méthodes </span><strong><span style="color: #000000">[test1, test2…, test11]</span></strong><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span></li>
+  <li><span style="color: #000000">lignes 9-28 : définition de l’environnement du test. Nous utilisons le même que celui utilisé par le script principal </span><b><span style="color: #000000">[MainCalculateImpotsWithTaxAdminDataInPostgresDatabase]</span></b><span style="color: #000000"> décrit au paragraphe </span><a href="#_Calcul_de_l’impôt_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">lignes 34-40 : construction des couches </span><b><span style="color: #000000">[dao]</span></b><span style="color: #000000"> et </span><b><span style="color: #000000">[métier]</span></b><span style="color: #000000"> ;</span>
+  </li>
+  <li><span style="color: #000000">ligne 39 : l’attribut </span><b><span style="color: #000000">[$this→métier]</span></b><span style="color: #000000"> référence la couche </span><b><span style="color: #000000">[métier]</span></b>
+  </li>
+  <li><span style="color: #000000">lignes 43-49 : les méthodes </span><b><span style="color: #000000">[test1, test2…, test11]</span></b><span style="color: #000000"> sont celles décrites au paragraphe </span><a href="#_Tests_de_la_1"><u><span style="color: #0563c1">lien</span></u></a><span style="color: #000000"> ;</span>
+  </li>
 </ul>
+
 <p><span style="color: #000000">Les résultats du test sont les suivants :</span></p>
 <p><img src="images/100000000000062100000189747666A0.png" style="width:14.53cm;height:3.641cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000062100000189747666A0.png" /></p>
 
