@@ -1088,22 +1088,22 @@
   
 
 
-<p><a id="toc42689899"></a>
-<a id="toc42690285"></a>
+<p><a id="refheadingtoc788212244347140"></a>
 <a id="toc42690671"></a>
-<a id="refheadingtoc788212244347140"></a></p>
+<a id="toc42690285"></a>
+<a id="toc42689899"></a></p>
 <h1 id="9-les-traits">9. Les Traits</h1>
 <p>Les <strong>Traits</strong> sont des structures analogues à des classes. Néanmoins on ne peut les instancier. Elles sont destinées à être incluses dans des classes. L’inclusion d’un <strong>Trait</strong> dans une classe a le même effet que si l’on avait copié le code du <strong>Trait</strong> dans la classe. On met dans un <strong>Trait</strong> du code susceptible d’être réutilisé dans plusieurs classes.</p>
-<p><a id="toc42689900"></a>
-<a id="toc42690286"></a>
+<p><a id="refheadingtoc788232244347140"></a>
 <a id="toc42690672"></a>
-<a id="refheadingtoc788232244347140"></a></p>
+<a id="toc42690286"></a>
+<a id="toc42689900"></a></p>
 <h2 id="91-larborescence-des-scripts">9.1. L’arborescence des scripts</h2>
 <p><img src="images/1000000000000160000002D26E146949.png" style="width:2.791cm;height:5.732cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000160000002D26E146949.png" /></p>
-<p><a id="toc42689901"></a>
-<a id="toc42690287"></a>
+<p><a id="refheadingtoc788252244347140"></a>
 <a id="toc42690673"></a>
-<a id="refheadingtoc788252244347140"></a></p>
+<a id="toc42690287"></a>
+<a id="toc42689901"></a></p>
 <h2 id="92-inclusion-dun-trait-dans-une-classe">9.2. Inclusion d’un trait dans une classe</h2>
 <p>Le script <strong>[traits-01.php]</strong> montre une utilisation basique d’un trait dans une classe :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1205,10 +1205,10 @@
 <p>Les résultats des lignes 3-10 montrent que les classes <strong>[Class04]</strong> et <strong>[Class05]</strong> ont la même contenu ;</p>
 <p><strong>Conclusion</strong></p>
 <p>L’utilisation de l’instruction <strong>[use Trait]</strong> dans une classe est équivalente à inclure le code de <strong>[Trait]</strong> dans la classe.</p>
-<p><a id="toc42689902"></a>
-<a id="toc42690288"></a>
+<p><a id="refheadingtoc788272244347140"></a>
 <a id="toc42690674"></a>
-<a id="refheadingtoc788272244347140"></a></p>
+<a id="toc42690288"></a>
+<a id="toc42689902"></a></p>
 <h2 id="93-utiliser-un-meme-trait-dans-differentes-classes">9.3. Utiliser un même trait dans différentes classes</h2>
 <p>Un premier intérêt du <strong>trait</strong> semble être la réutilisation d’un même code (attributs +méthodes) entre différentes classes. Nous allons voir cependant qu’on peut arriver au même objectif en utilisant de simples classes.</p>
 <p>Le partage d’un <em>trait</em> entre classes est illustré par le script <strong>[trait-02.php]</strong> suivant :</p>
@@ -1474,10 +1474,10 @@
   </li>
 </ul>
 
-<p><a id="toc42689903"></a>
-<a id="toc42690289"></a>
+<p><a id="refheadingtoc788292244347140"></a>
 <a id="toc42690675"></a>
-<a id="refheadingtoc788292244347140"></a></p>
+<a id="toc42690289"></a>
+<a id="toc42689903"></a></p>
 <h2 id="94-regrouper-des-methodes-dans-un-trait">9.4. Regrouper des méthodes dans un trait</h2>
 <p><span style="color: #000000">Dans l’exemple précédent, le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> comportait attributs et méthodes. Nous considérons ici le cas où il ne contient que des méthodes. Dans ce cas, le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> ressemble à une factorisation de méthodes qu’on peut alors utiliser dans différentes classes. Comme le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> n’a ici pas d’attribut, on va considérer le cas où les méthodes qu’ils rassemblent travaillent uniquement sur des paramètres qu’on leur passe. En fait, ce n’est pas obligatoire : un trait peut travailler sur un attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000"> sans avoir cet attribut. C’est alors aux classes qui utilisent ce trait de fournir l’attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000">.</span></p>
 <p><span style="color: #000000">Dans le cas où le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> n’a que des méthodes qui travaillent uniquement sur des paramètres qu’on leur passe, nous montrerons que le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> peut alors être remplacé par une </span><strong><span style="color: #000000">classe</span></strong><span style="color: #000000"> ayant les mêmes méthodes que le </span><strong><span style="color: #000000">trait</span></strong><span style="color: #000000"> et déclarées statiques.</span></p>
@@ -1610,10 +1610,10 @@
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a>Class03-&gt;doSomethingElse
 </code></pre></div></td></tr></table></div>
 <p><span style="color: #000000">On a bien le même résultat qu’avec le trait </span><strong><span style="color: #000000">[Trait01]</span></strong><span style="color: #000000"> ce qui montre que l’usage de celui-ci peut être évité. On a écrit que les méthodes d’un trait peuvent travailler sur un attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000"> sans que le trait ait cet attribut. C’est alors aux classes qui utilisent ce trait de fournir l’attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000">. C’est un cas exotique : autant ‘remonter’ l’attribut </span><strong><span style="color: #000000">[$this→attribut1]</span></strong><span style="color: #000000"> que les classes utilisant le trait doivent avoir, dans le trait lui-même. Ainsi il fera forcément partie des attributs de la classe utilisant le trait.</span></p>
-<p><a id="toc42689904"></a>
-<a id="toc42690290"></a>
+<p><a id="refheadingtoc788312244347140"></a>
 <a id="toc42690676"></a>
-<a id="refheadingtoc788312244347140"></a></p>
+<a id="toc42690290"></a>
+<a id="toc42689904"></a></p>
 <h2 id="95-heritage-multiple-avec-un-trait">9.5. Héritage multiple avec un trait</h2>
 <p><span style="color: #000000">Il est fréquent de lire dans la littérature PHP que le trait permettrait l’héritage multiple : la possibilité pour une classe d’hériter de plusieurs classes. Le langage C++ possède cette possibilité mais pas les langages Java ou C# qui ne connaissent que l’héritage simple. Nous allons montrer que si effectivement l’usage d’un trait dans une classe dérivée permet d’implémenter quelque chose qui ressemble à l’héritage multiple, ce cas d’usage peut là encore s’implémenter avec de simples classes.</span></p>
 <p><span style="color: #000000">Le script </span><strong><span style="color: #000000">[trait-06.php]</span></strong><span style="color: #000000"> met en œuvre une classe dérivée et un trait :</span></p>
@@ -1800,10 +1800,10 @@
 </code></pre></div></td></tr></table></div>
 <p><span style="color: #000000">De cet exemple, on peut conclure que là encore le trait n’est pas indispensable mais il faut reconnaître qu’il permet l’écriture d’un code plus court dans la classe dérivée.</span></p>
 <p><a id="utiliseruntrait"></a>
-<a id="refheadingtoc1417873837603249"></a>
-<a id="toc42689905"></a>
+<a id="toc42690677"></a>
 <a id="toc42690291"></a>
-<a id="toc42690677"></a></p>
+<a id="toc42689905"></a>
+<a id="refheadingtoc1417873837603249"></a></p>
 <h2 id="96-utiliser-un-trait-a-la-place-dune-classe-abstraite">9.6. Utiliser un trait à la place d’une classe abstraite</h2>
 <p>On rencontre souvent le cas d’utilisation suivant : on crée une interface <strong>I</strong> assez générale qui peut donner naissance à plusieurs implémentations. Celles-ci partagent un code commun mais diffèrent par d’autres méthodes. On peut implémenter ce cas d’utilisation de deux façons :</p>
 <ol>
@@ -2072,10 +2072,10 @@
 </code></pre></div>
 
 <p>On obtient bien les mêmes résultats.</p>
-<p><a id="toc42689906"></a>
-<a id="toc42690292"></a>
+<p><a id="refheadingtoc788332244347140"></a>
 <a id="toc42690678"></a>
-<a id="refheadingtoc788332244347140"></a></p>
+<a id="toc42690292"></a>
+<a id="toc42689906"></a></p>
 <h2 id="97-conclusion">9.7. Conclusion</h2>
 <p><span style="color: #000000">Des exemples précédents, il ressort que les cas d’utilisation où l’usage du trait amènerait un avantage net ne sont pas clairs. Sur nos exemples on peut toujours s’en passer en le remplaçant par une classe. Il semble cependant que son utilisation soit pratique pour factoriser du code entre différentes classes dérivées, comme si ce code appartenait à une classe parent. C’est ce que nous ferons dans un exemple à suivre.</span></p>
 

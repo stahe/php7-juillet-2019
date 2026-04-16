@@ -1099,23 +1099,23 @@
   
 
 
-<p><a id="toc42690087"></a>
-<a id="toc42690473"></a>
+<p><a id="refheadingtoc185701971629160"></a>
 <a id="toc42690859"></a>
-<a id="refheadingtoc185701971629160"></a></p>
+<a id="toc42690473"></a>
+<a id="toc42690087"></a></p>
 <h1 id="20-exercice-dapplication-version-10">20. Exercice d’application – version 10</h1>
 <p>La version précédente a montré que les données fiscales, partagées par tous les utilisateurs de l’application, devraient être stockées dans une mémoire de portée <strong>[Application]</strong>. Nous allons utiliser un serveur Redis <strong>[https://redis.io]</strong> pour implémenter celle-ci.</p>
-<p><a id="toc42690088"></a>
-<a id="toc42690474"></a>
+<p><a id="refheadingtoc185703971629160"></a>
 <a id="toc42690860"></a>
-<a id="refheadingtoc185703971629160"></a></p>
+<a id="toc42690474"></a>
+<a id="toc42690088"></a></p>
 <h2 id="201-redis">20.1. Redis</h2>
 <p>La mémoire de portée <strong>[Application]</strong> sera implémentée par un serveur Redis. Les scripts PHP ayant besoin de cette mémoire d’application seront des clients de ce serveur :</p>
 <p><img src="images/10000000000006E50000016D026275D9.png" style="width:14.011cm;height:2.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E50000016D026275D9.png" /></p>
-<p><a id="toc42690089"></a>
-<a id="toc42690475"></a>
+<p><a id="refheadingtoc185705971629160"></a>
 <a id="toc42690861"></a>
-<a id="refheadingtoc185705971629160"></a></p>
+<a id="toc42690475"></a>
+<a id="toc42690089"></a></p>
 <h2 id="202-installation-de-redis">20.2. Installation de Redis</h2>
 <p>Laragon vient avec un serveur Redis non activé par défaut. Il faut donc commencer par l’activer :</p>
 <p><img src="images/100000000000073600000303CE510638.png" style="width:14.652cm;height:6.121cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000073600000303CE510638.png" /></p>
@@ -1128,10 +1128,10 @@
 
 <p>Les services Laragon sont automatiquement relancés après activation de Redis :</p>
 <p><img src="images/10000000000004F6000001F85B242593.png" style="width:10.081cm;height:4.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F6000001F85B242593.png" /></p>
-<p><a id="toc42690090"></a>
-<a id="toc42690476"></a>
+<p><a id="refheadingtoc185707971629160"></a>
 <a id="toc42690862"></a>
-<a id="refheadingtoc185707971629160"></a></p>
+<a id="toc42690476"></a>
+<a id="toc42690090"></a></p>
 <h2 id="203-le-client-redis-en-mode-commande">20.3. Le client Redis en mode commande</h2>
 <p>Le serveur Redis peut être interrogé en mode commande. On ouvre un terminal Laragon (cf paragraphe <a href="#_Installation_de_Laragon"><u><span style="color: #0563c1">lien</span></u></a>) :</p>
 <p><img src="images/100000000000079C00000250F06351A7.png" style="width:18.04cm;height:5.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000079C00000250F06351A7.png" /></p>
@@ -1144,20 +1144,20 @@
 <p>Nous n’allons présenter que celles dont nous allons avoir besoin dans notre application PHP. Nous allons utiliser Redis pour une unique chose : stocker un tableau <strong>[‘attribut’=&gt;’valeur’]</strong> dans la mémoire de Redis. Cela se fait avec la commande Redis <strong>[set attribut valeur]</strong> <strong>[4]</strong>. La valeur peut ensuite être récupérée avec la commande <strong>[get attribut]</strong> <strong>[5]</strong>. C’est tout ce dont nous aurons besoin.</p>
 <p>Il peut être nécessaire de vider la mémoire de Redis. Cela se fait avec la commande <strong>[flushdb]</strong> <strong>[6]</strong>. Ensuite si on demande la valeur de l’attribut <strong>[titre]</strong> <strong>[7]</strong>, on obtient une référence <strong>[nil]</strong> <strong>[8]</strong> indiquant que l’attribut n’a pas été trouvé. On peut également utiliser la commande <strong>[exists]</strong> <strong>[9-10]</strong> pour vérifier l’existence d’un attribut.</p>
 <p>Pour quitter le client Redis, taper la commande <strong>[quit]</strong> <strong>[11]</strong>.</p>
-<p><a id="toc42690091"></a>
-<a id="toc42690477"></a>
+<p><a id="refheadingtoc185709971629160"></a>
 <a id="toc42690863"></a>
-<a id="refheadingtoc185709971629160"></a></p>
+<a id="toc42690477"></a>
+<a id="toc42690091"></a></p>
 <h2 id="204-installation-dun-client-redis-pour-php">20.4. Installation d’un client Redis pour PHP</h2>
 <p>Il nous faut maintenant installer un client Redis pour PHP :</p>
 <p><img src="images/10000000000006C1000001661065C383.png" style="width:13.72cm;height:2.841cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006C1000001661065C383.png" /></p>
 <p>Il existe plusieurs bibliothèques implémentant un client Redis. Nous utiliserons la bibliothèque <strong>[Predis]</strong> <strong>[https://github.com/nrk/predis]</strong> (juillet 2019). Celle-ci comme les précédentes s’installe avec <strong>[composer]</strong> dans un terminal Laragon :</p>
 <p><img src="images/1000000000000748000002925C134594.png" style="width:17.26cm;height:6.091cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000748000002925C134594.png" /></p>
 <p><a id="codeduserveur"></a>
-<a id="refheadingtoc1906941531191796"></a>
-<a id="toc42690092"></a>
+<a id="toc42690864"></a>
 <a id="toc42690478"></a>
-<a id="toc42690864"></a></p>
+<a id="toc42690092"></a>
+<a id="refheadingtoc1906941531191796"></a></p>
 <h2 id="205-code-du-serveur">20.5. Code du serveur</h2>
 <p><img src="images/100000000000017A000001060D4D315E.png" style="width:3.5cm;height:2.431cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017A000001060D4D315E.png" /></p>
 <p>Le fichier de configuration <strong>[config-server.json]</strong> évolue de la façon suivante :</p>
@@ -1390,10 +1390,10 @@
   </li>
 </ul>
 
-<p><a id="toc42690093"></a>
-<a id="toc42690479"></a>
+<p><a id="refheadingtoc185711971629160"></a>
 <a id="toc42690865"></a>
-<a id="refheadingtoc185711971629160"></a></p>
+<a id="toc42690479"></a>
+<a id="toc42690093"></a></p>
 <h2 id="206-code-du-client">20.6. Code du client</h2>
 <p><img src="images/10000000000001C60000012B855C7CB0.png" style="width:4.201cm;height:2.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C60000012B855C7CB0.png" /></p>
 <p>La version 10 du client est identique à la version 9. Seul change le fichier de configuration <strong>[config-client.json]</strong> :</p>
@@ -1434,10 +1434,10 @@
 <span class="odt-code-line">Terminé</span>
 </code></pre></div>
 
-<p><a id="toc42690094"></a>
-<a id="toc42690480"></a>
+<p><a id="refheadingtoc185713971629160"></a>
 <a id="toc42690866"></a>
-<a id="refheadingtoc185713971629160"></a></p>
+<a id="toc42690480"></a>
+<a id="toc42690094"></a></p>
 <h2 id="207-tests-codeception-du-client">20.7. Tests [Codeception] du client</h2>
 <p><img src="images/10000000000001CB000001AE771AA7CC.png" style="width:4.25cm;height:3.98cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CB000001AE771AA7CC.png" /></p>
 <p>La classe de test <strong>[ClientMetierTest]</strong> de la version 10 est identique à celle de la version 09 à une exception près :</p>
@@ -1503,10 +1503,10 @@
   </li>
 </ul>
 
-<p><a id="toc42690095"></a>
-<a id="toc42690481"></a>
+<p><a id="refheadingtoc185715971629160"></a>
 <a id="toc42690867"></a>
-<a id="refheadingtoc185715971629160"></a></p>
+<a id="toc42690481"></a>
+<a id="toc42690095"></a></p>
 <h2 id="208-interface-web-du-serveur-redis">20.8. Interface web du serveur [Redis]</h2>
 <p>Nous avons vu que le serveur <strong>[Redis]</strong> pouvait être géré en mode commande. Il peut également être géré grâce à une interface web :</p>
 <p><img src="images/100000000000078C000002E3B41FA763.png" style="width:15.341cm;height:5.86cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000078C000002E3B41FA763.png" /></p>

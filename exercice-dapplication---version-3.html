@@ -1100,23 +1100,23 @@
 
 
 <p><a id="exercicedapplication-"></a>
-<a id="refheading399101881943603"></a>
-<a id="toc42689890"></a>
+<a id="toc42690662"></a>
 <a id="toc42690276"></a>
-<a id="toc42690662"></a></p>
+<a id="toc42689890"></a>
+<a id="refheading399101881943603"></a></p>
 <h1 id="8-exercice-dapplication-version-3">8. Exercice d&#x27;application – version 3</h1>
 <p>On reprend l&#x27;exercice déjà étudié précédemment (paragraphes <a href="exercice-dapplication---versions-1-et-2.html#refheading398861881943603">4.3</a> et <a href="exercice-dapplication---versions-1-et-2.html#refheading398881881943603">4.4</a>) pour le résoudre avec un code PHP utilisant une classe.</p>
-<p><a id="toc42689891"></a>
-<a id="toc42690277"></a>
+<p><a id="refheadingtoc788112244347140"></a>
 <a id="toc42690663"></a>
-<a id="refheadingtoc788112244347140"></a></p>
+<a id="toc42690277"></a>
+<a id="toc42689891"></a></p>
 <h2 id="81-larborescence-des-scripts">8.1. L’arborescence des scripts</h2>
 <p><img src="images/10000000000002490000021FB053AF72.png" style="width:5.421cm;height:5.001cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002490000021FB053AF72.png" /></p>
 <p><a id="lexceptionexceptionimpots"></a>
-<a id="refheadingtoc55583710956990"></a>
-<a id="toc42689892"></a>
+<a id="toc42690664"></a>
 <a id="toc42690278"></a>
-<a id="toc42690664"></a></p>
+<a id="toc42689892"></a>
+<a id="refheadingtoc55583710956990"></a></p>
 <h2 id="82-lexception-exceptionimpots">8.2. L’exception [ExceptionImpots]</h2>
 <p>Dans la version 03, lorsqu’un constructeur ou une méthode de classe rencontrera une erreur, elle lancera une exception de type <strong>[ExceptionImpots]</strong> suivant :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -1160,10 +1160,10 @@
 </ul>
 
 <p><a id="laclassetaxadmindata"></a>
-<a id="refheadingtoc55579710956990"></a>
-<a id="toc42689893"></a>
+<a id="toc42690665"></a>
 <a id="toc42690279"></a>
-<a id="toc42690665"></a></p>
+<a id="toc42689893"></a>
+<a id="refheadingtoc55579710956990"></a></p>
 <h2 id="83-la-classe-taxadmindata">8.3. La classe [TaxAdminData]</h2>
 <p>Dans la version 02, les données de l’administration fiscale ont été rassemblées :</p>
 <ul>
@@ -1516,10 +1516,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$data→setLimites($limites)→setCoeffR($coeffR)→setCoeffN($coeffN) ;
 </code></pre></div>
 <p>En effet, la valeur de <strong>[$data→setLimites($limites)]</strong> (ligne 32 du code) est <strong>[$this]</strong>, donc ici <strong>[$data]</strong>. On peut donc appeler la méthode <strong>[setCoeffR($coeffR)]</strong> de cet objet et ainsi de suite, puisqu’à son tour, cette méthode rend elle aussi <strong>[$this]</strong> (ligne 37 du code). Cette écriture des méthodes d’une classe qui fait que les méthodes qui ne devraient rien rendre rendent l’objet <strong>[$this]</strong> s’appellent une écriture <strong>fluente</strong>. Elle facilite l’utilisation de ces méthodes.</p>
-<p><a id="toc42689894"></a>
-<a id="toc42690280"></a>
+<p><a id="refheadingtoc55581710956990"></a>
 <a id="toc42690666"></a>
-<a id="refheadingtoc55581710956990"></a></p>
+<a id="toc42690280"></a>
+<a id="toc42689894"></a></p>
 <h2 id="84-linterface-interfaceimpots">8.4. L’interface [InterfaceImpots]</h2>
 <p>Nous définissons maintenant l’interface <strong>[InterfaceImpots]</strong> suivante <strong>[InterfaceImpots.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1610,10 +1610,10 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>la ligne 7 du fichier taxpayersdata.txt est erronée
 </code></pre></div></td></tr></table></div>
 <p><a id="laclasseutilitaires"></a>
-<a id="refheadingtoc55585710956990"></a>
-<a id="toc42689895"></a>
+<a id="toc42690667"></a>
 <a id="toc42690281"></a>
-<a id="toc42690667"></a></p>
+<a id="toc42689895"></a>
+<a id="refheadingtoc55585710956990"></a></p>
 <h2 id="85-la-classe-utilitaires">8.5. La classe [Utilitaires]</h2>
 <p>Nous définissons par ailleurs une classe <strong>[Utilitaires]</strong> dans un fichier <strong>[Utilitaires.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1648,10 +1648,10 @@
 </ul>
 
 <p><a id="laclasseabstraite"></a>
-<a id="refheadingtoc55587710956990"></a>
-<a id="toc42689896"></a>
+<a id="toc42690668"></a>
 <a id="toc42690282"></a>
-<a id="toc42690668"></a></p>
+<a id="toc42689896"></a>
+<a id="refheadingtoc55587710956990"></a></p>
 <h2 id="86-la-classe-abstraite-abstractbaseimpots">8.6. La classe abstraite [AbstractBaseImpots]</h2>
 <p>L’interface <strong>[InterfaceImpots]</strong> sera implémentée par la classe abstraite <strong>[AbstractBaseImpots]</strong> suivante <strong>[AbstractBaseImpots.php]</strong> :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1936,10 +1936,10 @@
   </li>
 </ul>
 
-<p><a id="toc42689897"></a>
-<a id="toc42690283"></a>
+<p><a id="refheadingtoc788132244347140"></a>
 <a id="toc42690669"></a>
-<a id="refheadingtoc788132244347140"></a></p>
+<a id="toc42690283"></a>
+<a id="toc42689897"></a></p>
 <h2 id="87-la-classe-impotswithtaxadmindatainjsonfile">8.7. La classe [ImpotsWithTaxAdminDataInJsonFile]</h2>
 <p>La classe abstraite <strong>[AbstractBaseImpots]</strong> n’implémente pas la méthode <strong>[getTaxAdminData]</strong> de l’interface <strong>[InterfaceImpots]</strong>. Il nous faut donc la définir dans une classe dérivée. Nous le faisons dans la classe dérivée <strong>[ImpotsWithTaxAdminDataInJsonFile]</strong> suivante :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1983,10 +1983,10 @@
   </li>
 </ul>
 
-<p><a id="toc42689898"></a>
-<a id="toc42690284"></a>
+<p><a id="refheadingtoc614822007114397"></a>
 <a id="toc42690670"></a>
-<a id="refheadingtoc614822007114397"></a></p>
+<a id="toc42690284"></a>
+<a id="toc42689898"></a></p>
 <h2 id="88-le-script-mainphp">8.8. Le script [main.php]</h2>
 <p>Ces classes et interface sont exploitées par le script <strong>[main.php]</strong> suivant :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">

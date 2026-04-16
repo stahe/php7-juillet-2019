@@ -1132,31 +1132,31 @@
   
 
 
-<p><a id="toc42689878"></a>
-<a id="toc42690264"></a>
+<p><a id="refheadingtoc55563710956990"></a>
 <a id="toc42690650"></a>
-<a id="refheadingtoc55563710956990"></a></p>
+<a id="toc42690264"></a>
+<a id="toc42689878"></a></p>
 <h1 id="7-les-exceptions-et-erreurs">7. Les exceptions et erreurs</h1>
 <p>Lorsqu’une méthode d’une classe rencontre une erreur irrécupérable (fichier inexistant, base de données non connectée, connexion réseau hors service), elle n’affiche pas une erreur sur une console (fichier, base de données) mais <strong>lance une exception</strong>. Toutes les exceptions étendent la classe <strong>[\Exception]</strong>. Outre des exceptions, le fonctionnement interne de PHP émet également des erreurs dont la classe de base est la classe <strong>[\Error]</strong>. Les deux classes implémentent l’interface PHP <strong>[\Throwable]</strong>.</p>
-<p><a id="toc42689879"></a>
-<a id="toc42690265"></a>
+<p><a id="refheadingtoc787972244347140"></a>
 <a id="toc42690651"></a>
-<a id="refheadingtoc787972244347140"></a></p>
+<a id="toc42690265"></a>
+<a id="toc42689879"></a></p>
 <h2 id="71-larborescence-des-scripts">7.1. L’arborescence des scripts</h2>
 <p><img src="images/1000000000000182000001F53C2F7898.png" style="width:3.571cm;height:4.642cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000182000001F53C2F7898.png" /></p>
-<p><a id="toc42689880"></a>
-<a id="toc42690266"></a>
+<p><a id="refheadingtoc55565710956990"></a>
 <a id="toc42690652"></a>
-<a id="refheadingtoc55565710956990"></a></p>
+<a id="toc42690266"></a>
+<a id="toc42689880"></a></p>
 <h2 id="72-linterface-throwable">7.2. L’interface [\Throwable]</h2>
 <p>L’interface <strong>[\Throwable]</strong> est la suivante :</p>
 <p><img src="images/10000000000003B60000030A9D5E70DD.png" style="width:7.541cm;height:6.181cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B60000030A9D5E70DD.png" /></p>
 <p>Le rôle des méthodes de l’interface est le suivant :</p>
 <p><img src="images/1000000000000624000001A276916377.png" style="width:12.48cm;height:3.32cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000624000001A276916377.png" /></p>
-<p><a id="toc42689881"></a>
-<a id="toc42690267"></a>
+<p><a id="refheadingtoc55567710956990"></a>
 <a id="toc42690653"></a>
-<a id="refheadingtoc55567710956990"></a></p>
+<a id="toc42690267"></a>
+<a id="toc42689881"></a></p>
 <h2 id="73-les-exceptions-predefinies-dans-php-7">7.3. Les exceptions prédéfinies dans PHP 7</h2>
 <p>PHP 7 définit plusieurs classes d’exceptions :</p>
 <p><img src="images/1000000000000699000003EB5A5396D7.png" style="width:15.641cm;height:9.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000699000003EB5A5396D7.png" /></p>
@@ -1167,18 +1167,18 @@
   </li>
 </ul>
 
-<p><a id="toc42689882"></a>
-<a id="toc42690268"></a>
+<p><a id="refheadingtoc55569710956990"></a>
 <a id="toc42690654"></a>
-<a id="refheadingtoc55569710956990"></a></p>
+<a id="toc42690268"></a>
+<a id="toc42689882"></a></p>
 <h2 id="74-les-erreurs-predefinies-dans-php-7">7.4. Les erreurs prédéfinies dans PHP 7</h2>
 <p>PHP 7 définit plusieurs classes d’erreurs :</p>
 <p><img src="images/10000000000001B60000023C194A52DA.png" style="width:4.061cm;height:5.301cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B60000023C194A52DA.png" /></p>
 <p>La classe <strong>[\Error]</strong> est la classe parent de toutes les erreurs prédéfinies dans PHP. La classe <strong>[ErrorException]</strong> permet d’encapsuler une instance de la classe <strong>[\Error]</strong> dans une instance de la classe <strong>[\Exception]</strong>. Ceci permet d’uniformiser la gestion des erreurs en ne traitant que des exceptions.</p>
-<p><a id="toc42689883"></a>
-<a id="toc42690269"></a>
+<p><a id="refheadingtoc55571710956990"></a>
 <a id="toc42690655"></a>
-<a id="refheadingtoc55571710956990"></a></p>
+<a id="toc42690269"></a>
+<a id="toc42689883"></a></p>
 <h2 id="75-exemple-1">7.5. Exemple 1</h2>
 <p>Le premier exemple <strong>[exceptions-01.php]</strong> montre à la fois des erreurs PHP et une exception :</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1252,10 +1252,10 @@
   </li>
 </ul>
 
-<p><a id="toc42689884"></a>
-<a id="toc42690270"></a>
+<p><a id="refheadingtoc787992244347140"></a>
 <a id="toc42690656"></a>
-<a id="refheadingtoc787992244347140"></a></p>
+<a id="toc42690270"></a>
+<a id="toc42689884"></a></p>
 <h2 id="76-gerer-les-exceptions">7.6. Gérer les exceptions</h2>
 <p><span style="color: #000000">Le script </span><strong><span style="color: #000000">[exceptions-02.php]</span></strong><span style="color: #000000"> montre comment gérer les exceptions :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1316,10 +1316,10 @@
   </li>
 </ul>
 
-<p><a id="toc42689885"></a>
-<a id="toc42690271"></a>
+<p><a id="refheadingtoc788012244347140"></a>
 <a id="toc42690657"></a>
-<a id="refheadingtoc788012244347140"></a></p>
+<a id="toc42690271"></a>
+<a id="toc42689885"></a></p>
 <h2 id="77-parametres-de-la-clause-catch">7.7. Paramètres de la clause [catch]</h2>
 <p><span style="color: #000000">Examinons le script </span><strong><span style="color: #000000">[exceptions-03.php]</span></strong><span style="color: #000000"> suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1438,10 +1438,10 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a>#1 {main}
 <a id="__codelineno-2-12" name="__codelineno-2-12"></a>thrown in C:\Data\st-2019\dev\php7\php5-exemples\exemples\exceptions\exceptions-03.php on line 58
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689886"></a>
-<a id="toc42690272"></a>
+<p><a id="refheadingtoc788032244347140"></a>
 <a id="toc42690658"></a>
-<a id="refheadingtoc788032244347140"></a></p>
+<a id="toc42690272"></a>
+<a id="toc42689886"></a></p>
 <h2 id="78-clause-finally">7.8. Clause [finally]</h2>
 <p>La structure try / catch peut avoir un troisième élément et devenir une structure <strong>try / catch / finally</strong>. Le code de la clausse <strong>[finally]</strong> est exécuté dans les deux cas suivants :</p>
 <ul>
@@ -1552,10 +1552,10 @@
 <p><strong><span style="color: #000000">Résultats</span></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Quatrième test
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689887"></a>
-<a id="toc42690273"></a>
+<p><a id="refheadingtoc788052244347140"></a>
 <a id="toc42690659"></a>
-<a id="refheadingtoc788052244347140"></a></p>
+<a id="toc42690273"></a>
+<a id="toc42689887"></a></p>
 <h2 id="79-creer-ses-propres-classes-dexceptions">7.9. Créer ses propres classes d’exceptions</h2>
 <p>Dans un projet un peu important, il est utile de différentier les différentes erreurs en les encapsulant dans différentes classes d’exceptions. Dans le script précédent, nous avons vu que toute exception pouvait être interceptée par une clause <strong>[catch (\Throwable]</strong>. C’est recommandé si on n’a aucune idée de l’erreur interceptée et que le traitement est le même pour toutes les erreurs. C’est parfois le cas mais on a souvent besoin d’adapter le traitement au type exact de l’erreur. Il faut alors différentier les erreurs entre-elles.</p>
 <p>Examinons le script <strong>[exceptions-06.php]</strong> suivant :</p>
@@ -1751,10 +1751,10 @@
   </li>
 </ul>
 
-<p><a id="toc42689888"></a>
-<a id="toc42690274"></a>
+<p><a id="refheadingtoc788072244347140"></a>
 <a id="toc42690660"></a>
-<a id="refheadingtoc788072244347140"></a></p>
+<a id="toc42690274"></a>
+<a id="toc42689888"></a></p>
 <h2 id="710-relancer-une-exception">7.10. Relancer une exception</h2>
 <p><span style="color: #000000">Une exception peut être lancée plusieurs fois comme le montre le script </span><strong><span style="color: #000000">[exceptions-07.php]</span></strong><span style="color: #000000"> suivant :</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
@@ -1801,10 +1801,10 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>test dans try / catch / finally externe
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a>finally 2
 </code></pre></div></td></tr></table></div>
-<p><a id="toc42689889"></a>
-<a id="toc42690275"></a>
+<p><a id="refheadingtoc788092244347140"></a>
 <a id="toc42690661"></a>
-<a id="refheadingtoc788092244347140"></a></p>
+<a id="toc42690275"></a>
+<a id="toc42689889"></a></p>
 <h2 id="711-exploitation-dune-pile-dexceptions">7.11. Exploitation d’une pile d’exceptions</h2>
 <p><span style="color: #000000">Une exception peut encapsuler une autre exception qui elle-même peut en encapsuler une autre formant finalement une pile d’exceptions. Voici un exemple </span><strong><span style="color: #000000">[exceptions-08.php]</span></strong><span style="color: #000000"> :</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-14">14</a></span>
